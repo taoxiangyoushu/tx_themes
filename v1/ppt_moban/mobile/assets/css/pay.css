@@ -1,0 +1,599 @@
+.payApp {
+  background-size: 100% 40%;
+  min-height: 100vh;
+  background-color: #F7F7F7;
+}
+.payApp .infoBox {
+  padding: 0 0.75rem;
+}
+.payApp .info {
+  width: 100%;
+  margin: auto;
+  padding: 1rem 0.625rem 0.375rem 0.625rem;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.23rem 0px rgba(135, 135, 135, 0.19);
+  border-radius: 0.3125rem;
+}
+.payApp .info1 {
+  box-shadow: none;
+}
+.payApp h3 {
+  color: #333333;
+  font-size: 0.88rem;
+  font-weight: bold;
+  margin-bottom: 0.8125rem;
+}
+.payApp .infoLeft {
+  color: #666;
+  width: 30%;
+}
+.payApp .infoRight {
+  width: 70%;
+  text-align: right;
+  color: #333;
+}
+.payApp .infoMain {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.3125rem;
+}
+.payApp .infoMain .border-b {
+  border-bottom: 1px solid #f2f2f2;
+}
+.payApp .infoMain div {
+  height: 2.5rem;
+  line-height: 2.75rem;
+  font-size: 0.88rem;
+}
+.payApp .couponBoxBox {
+  padding: 0 0.75rem;
+  margin-top: 0.625rem;
+}
+.payApp .couponBoxBox .couponBoxBox1 {
+  background-color: #ffffff;
+  padding: 1rem 0.625rem 1rem 0.625rem;
+  border-radius: 0.3125rem;
+}
+.payApp .payType {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.23rem 0px rgba(135, 135, 135, 0.19);
+  border-radius: 0.3125rem;
+  margin: auto;
+  padding: 0.63rem;
+  padding-bottom: 0rem;
+  margin-top: 0.63rem;
+  display: none;
+}
+.payApp .payType .payText {
+  color: #333333;
+  font-size: 0.88rem;
+  font-weight: bold;
+}
+.payApp .payType .tapTypeImg {
+  color: #333333;
+  font-size: 0.88rem;
+}
+.payApp .payType .tapTypeImg img {
+  width: 1.55rem;
+  height: 1.55rem;
+  margin-right: 0.375rem;
+  margin-top: -0.25rem;
+}
+.payApp .payDivBox {
+  padding: 0 0.75rem;
+}
+.payApp .dsf-Pay {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.23rem 0px rgba(135, 135, 135, 0.19);
+  border-radius: 0.7rem;
+  width: 90%;
+  margin: auto;
+  padding: 1.4rem;
+  margin-top: 1.05rem;
+  display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.payApp .dsf-Pay .PayName img {
+  width: 1.55rem;
+  height: 1.55rem;
+  margin-right: 0.81rem;
+}
+.payApp .dsf-Pay .PayName {
+  display: flex;
+  align-items: center;
+}
+.payApp .dsf-Pay .noselectImg {
+  width: 0.92rem;
+  height: 0.92rem;
+}
+.payApp .payTypeBox {
+  display: flex;
+  justify-content: space-between;
+  height: 2.84rem;
+  line-height: 2.84rem;
+}
+.payApp .payTypeBox .isSelect img {
+  width: 0.92rem;
+  height: 0.92rem;
+}
+.bottomBox {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.bottomBox p {
+  width: 100%;
+  background-color: #fff5df;
+  text-align: center;
+  padding: 0.5rem 0;
+  color: #7b580c;
+  font-size: 0.7rem;
+}
+.payBox {
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  padding: 0.19rem 0;
+}
+.payBox .amount {
+  width: 58%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+.payBox .amount div {
+  width: 100%;
+  padding-left: 1rem;
+  color: #999999;
+  font-size: 0.84rem;
+}
+.payBox .payBotton {
+  width: 10rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  padding: 0.72rem 0;
+  line-height: normal;
+  font-size: 1rem;
+  margin-right: 0.75rem;
+  background: linear-gradient(270deg, #FF496E 0%, #FF8147 100%);
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.payBox div.total {
+  color: #333333;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.payBox div.total span {
+  color: #F6652B;
+}
+.payBox div.total #amountText {
+  font-size: 1rem;
+}
+#author {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+.info.appreciationInfo {
+  margin-top: 1.11rem;
+}
+.info.couponBox {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.info.couponBox #coupon {
+  border: none;
+  outline: none;
+  font-size: 0.88rem;
+  border: solid 0.0625rem #f2f2f2;
+  border-radius: 0.25rem;
+  width: 77%;
+  padding-left: 0.5625rem;
+}
+.info.couponBox .use_now {
+  background: #FF4670;
+  color: #fff;
+  display: inline-block;
+  border-radius: 0.25rem;
+  text-align: center;
+  font-size: 1rem;
+  width: 4rem;
+  height: 2.125rem;
+  line-height: 2.1875rem;
+}
+.info.couponBox .use_now.active {
+  background: #FF4670;
+}
+.claim-coupons {
+  display: none;
+}
+.no_pay_text {
+  color: #797979;
+  text-align: center;
+  margin-top: 1.47rem;
+  display: none;
+}
+.appreciationUL {
+  font-size: 1.11rem;
+  color: #222222;
+  margin-top: 0.59rem;
+}
+.appreciationUL .appreciationLI {
+  height: 3.17rem;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+.appreciationUL .appreciationLI > div {
+  display: flex;
+  align-items: center;
+}
+.appreciationUL .appreciationLI > div .good_name {
+  color: #222222;
+  line-height: normal;
+}
+.appreciationUL .appreciationLI > div i {
+  width: 0.96rem;
+  height: 0.96rem;
+  background-color: #ffffff;
+  border-radius: 0.07rem;
+  border: solid 0.07rem #dcdcdc;
+  display: inline-block;
+  margin-right: 0.88rem;
+}
+.appreciationUL .appreciationLI > div img {
+  margin-left: 0.37rem;
+  margin-top: -0.22rem;
+}
+.appreciationUL .appreciationLI > div .original-price {
+  line-height: normal;
+  color: #c0c0c0;
+  text-decoration: line-through;
+  font-size: 0.96rem;
+}
+.appreciationUL .appreciationLI > div .current-price {
+  color: #222222;
+}
+.appreciationUL .appreciationLI .priceBox {
+  width: 42%;
+  justify-content: end;
+}
+.appreciationUL .introduce {
+  color: #006fff;
+  font-size: 0.88rem;
+  text-align: center;
+  background: #e4f0ff;
+  padding: 0.29rem;
+  line-height: normal;
+}
+.appreciationUL .selected i {
+  background: url('../img/check.png') no-repeat;
+  background-size: 100% 100%;
+}
+.appreciation {
+  display: none;
+}
+.customer-wx {
+  left: 0;
+  top: 66%;
+}
+.payAppBox {
+  padding-bottom: 8.84rem;
+}
+#toastId p {
+  margin: 0;
+}
+.modal-content {
+  background-image: linear-gradient(0deg, #ffffff 0%, #ffe7fa 100%);
+  border-radius: 0.74rem;
+}
+.modal-header,
+.modal-footer {
+  border: 0;
+}
+.modal-content,
+.modal-footer {
+  text-align: center;
+}
+.btn_clone {
+  width: 90%;
+  background-image: linear-gradient(0deg, #FF4C6D 47%, #f3bdc5 100%);
+  border: 0;
+  color: #ffffff;
+  padding: 0.63rem 0;
+  font-size: 1.03rem;
+  border-radius: 1.11rem;
+}
+.modal-body {
+  padding: 0 20.33px;
+}
+.modal-body img {
+  width: 90%;
+}
+.linkUrl {
+  padding: 0.55rem 1.33rem;
+  width: 90%;
+  text-align: left;
+  background: #eaf3ff;
+  border-radius: 0.94rem;
+  margin: 1.22rem auto;
+  color: #666666;
+  font-size: 0.88rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.modal-dialog {
+  margin: 27.17px;
+  margin-top: 30%;
+}
+.contentBox {
+  margin-top: 0.74rem;
+}
+.contentBox .tips1 {
+  color: #333;
+  font-size: 0.9rem;
+}
+.contentBox .tips2 {
+  font-size: 0.9rem;
+  color: #ff7e00;
+  margin-bottom: 1.47rem;
+}
+.modal-footer {
+  padding-top: 0;
+  padding-bottom: 2.06rem;
+}
+.errTipBox {
+  position: fixed;
+  width: 70%;
+  background: linear-gradient(180deg, #deeafa, #fff);
+  height: 10rem;
+  top: 40%;
+  left: 15%;
+  z-index: 1000;
+  border-radius: 0.59rem;
+  display: none;
+}
+.errTipBox .e_tittle {
+  height: 2.51rem;
+  line-height: 2.51rem;
+  padding-left: 1.11rem;
+  border-bottom: 1.33px solid #efefef;
+}
+.errTipBox p {
+  text-align: center;
+  padding-top: 1rem;
+}
+.errTipBox .y_e {
+  position: absolute;
+  bottom: 0;
+  height: 3.32rem;
+  color: #ff7e00;
+  width: 100%;
+  text-align: center;
+  line-height: 3.32rem;
+  border-bottom-right-radius: 0.59rem;
+  border-bottom-left-radius: 0.59rem;
+  border-top: 1.33px solid #d2e6ff;
+  font-size: 1.18rem;
+}
+.noPayWay {
+  display: none;
+}
+.amountTextBox2 {
+  color: #ff7e00 !important;
+  font-weight: bold;
+}
+.coupons_pop {
+  position: fixed;
+  width: 80%;
+  top: 50%;
+  margin-left: 10%;
+  margin-top: -4.66rem;
+  z-index: 1000;
+  background: linear-gradient(180deg, #fef2fc, #fff);
+  border-radius: 1.16rem;
+  display: none;
+}
+.coupons_pop #copyInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.coupons_pop .title {
+  font-size: 1.16rem;
+  color: #142338;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1.16rem;
+}
+.coupons_pop p.p2 {
+  padding: 0 1.16rem;
+  font-size: 0.82rem;
+  color: #333333;
+  margin-top: 1.16rem;
+  text-align: left;
+}
+.coupons_pop p.p2 .copy_pop {
+  color: #418bf8;
+  text-decoration: underline;
+}
+.coupons_pop .p3 {
+  font-size: 0.82rem;
+  color: #999999;
+  text-align: left;
+  padding: 0 1.16rem;
+  margin-top: 0.47rem;
+}
+.coupons_pop .bottom {
+  display: flex;
+  justify-content: space-between;
+  height: 2.91rem;
+  width: 100%;
+  margin-top: 1.16rem;
+}
+.coupons_pop .bottom .cancel_btn {
+  width: 50%;
+  text-align: center;
+  font-size: 1.16rem;
+  color: #c7cddf;
+  line-height: 2.91rem;
+  border-top: 1.68px solid #f7e1cc;
+  border-right: 1.68px solid #f7e1cc;
+}
+.coupons_pop .bottom .determine_btn {
+  width: 50%;
+  text-align: center;
+  font-size: 1.16rem;
+  color: #FF4C6D;
+  font-weight: bold;
+  line-height: 2.91rem;
+  border-top: 1.68px solid #f7e1cc;
+}
+#CustomModal .modal-content {
+  background: #ffffff;
+}
+#CustomModal .contentBox {
+  margin-top: 0;
+}
+#CustomModal .taobaoPay > div {
+  position: relative;
+}
+#CustomModal .taobaoPay > div.taobao-input2 {
+  margin-top: 1.47rem;
+}
+#CustomModal .taobaoPay > div span {
+  position: absolute;
+  top: 0.81rem;
+  font-size: 0.96rem;
+  left: 1.22rem;
+  color: #1c1c1c;
+}
+#CustomModal .taobaoPay > div input {
+  width: 100%;
+  border: none;
+  height: 2.95rem;
+  padding-left: 5.89rem;
+  border-radius: 1.47rem;
+  background: #f7f7f7;
+  outline: none;
+}
+#CustomModal .taobaoPay .taobao-payBtn {
+  background: linear-gradient(0deg, #ff7e00, #f3983e);
+  margin-top: 1.47rem;
+  height: 2.95rem;
+  line-height: 2.95rem;
+  border-radius: 7.37rem;
+  color: #fff;
+}
+#CustomModal .taobaoPay .taobao-buyBtn {
+  margin-top: 1.47rem;
+  height: 2.95rem;
+  line-height: 2.95rem;
+  border-radius: 7.37rem;
+  border: 1.33px solid #ff7e00;
+  color: #ff7e00;
+}
+#CustomModal .taobaoPay .taobao-buyBtn img {
+  width: 1.11rem;
+  vertical-align: text-top;
+  margin-right: 0.37rem;
+}
+#toastId {
+  z-index: 1051;
+}
+.customer-wx {
+  display: none;
+}
+.payApp .taobao_pay,
+.payApp .redBook_pay {
+  display: none;
+}
+.aigc-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.aigc-page .close-aigc {
+  width: 1.11rem;
+  margin-left: -1.77rem;
+  margin-top: -8.84rem;
+}
+.modal input::-webkit-input-placeholder {
+  font-size: 0.8rem;
+}
+.modal input:-moz-placeholder {
+  font-size: 0.8rem;
+}
+.modal input::-moz-placeholder {
+  font-size: 0.8rem;
+}
+.modal input:-ms-input-placeholder {
+  font-size: 0.8rem;
+}
+.commodityInformation {
+  background-color: #fff;
+  border-radius: 0.31rem 0.31rem 0.31rem 0.31rem;
+  margin: 0.63rem 0.75rem;
+  padding: 0.63rem;
+  padding-top: 0.84rem;
+  padding-bottom: 1.2rem;
+}
+.commodityInformation .brand {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.commodityInformation .brand img {
+  width: 1.38rem;
+  height: 1rem;
+  margin-right: 0.3rem;
+}
+.commodityInformation .productDetails {
+  padding-top: 0.63rem;
+}
+.commodityInformation .productDetails img {
+  width: 5rem;
+  height: 5rem;
+}
+.commodityInformation .details {
+  width: calc(100% - 6rem);
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 0.4rem;
+}
+.commodityInformation .details b {
+  font-weight: bold;
+  font-size: 0.88rem;
+  line-height: 1.25rem;
+  display: block;
+}
+.commodityInformation .details .label {
+  color: #FE7070;
+  display: inline-block;
+  border: 1px solid #FE7070;
+  font-weight: 400;
+  font-size: 0.63rem;
+  padding: 0.2rem 0.38rem;
+  margin: 0.3rem 0;
+}
+.commodityInformation .details .amount {
+  color: #FF5900;
+  font-size: 0.75rem;
+}
+.commodityInformation .details .amount span {
+  font-size: 1rem;
+  font-weight: bold;
+}

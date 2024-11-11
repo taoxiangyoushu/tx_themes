@@ -1,0 +1,638 @@
+body {
+  background-color: #ECF9FF;
+  padding-bottom: 24px;
+  background: linear-gradient(0deg, #FFFFFF 0%, #ECF9FF 60%, #FFE6FA 100%);
+}
+html {
+  min-height: 100vh;
+}
+.scrollCS {
+  background-color: transparent;
+}
+.haderNav {
+  position: static;
+}
+.mainDiv {
+  padding-top: 34px;
+}
+.ContentMain {
+  background-color: #fff;
+  border-radius: 10px;
+}
+.ContentMain .orderTips {
+  color: #ff4c6d;
+  font-size: 12px;
+  line-height: 48px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  background-color: #fff7fd;
+}
+.ContentMain .line {
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #ffdef8;
+  opacity: 0.2;
+  margin: 16px auto;
+}
+.ContentMain .searchParameters {
+  height: 60px;
+  margin-top: 25px;
+  font-size: 14px;
+}
+.ContentMain .searchParameters .orderId-name {
+  font-size: 16px;
+  color: #222;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+}
+.ContentMain .searchParameters input.orderId {
+  width: 334px;
+  height: 40px;
+  border-radius: 4px 0 0 4px;
+  border: solid 1px #ff4c6d;
+  float: left;
+  margin: 0 0 0 10px;
+  background-color: #fff;
+  outline: 0;
+  padding-left: 10px;
+}
+.ContentMain .searchParameters .searchBtn {
+  width: 109px;
+  height: 40px;
+  background-color: #ff4c6d;
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+  float: left;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.ContentMain .searchParameters .searchBtn:hover {
+  background-color: #f12f53;
+}
+.ContentMain .searchParameters .pointOut {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+}
+.ContentMain .pointOut {
+  height: 134px;
+  line-height: 146px;
+  font-size: 12px;
+  color: #666;
+}
+.ContentMain .wxorder {
+  cursor: pointer;
+  position: relative;
+  margin-right: 18px;
+}
+.ContentMain .wxorder span {
+  margin-top: 10px;
+}
+.ContentMain .aliorder {
+  width: 130px;
+  cursor: pointer;
+  position: relative;
+}
+.ContentMain .aliorder:hover .orderImg {
+  display: block;
+}
+.ContentMain .wxorder:hover .orderImg {
+  display: block;
+}
+.ContentMain .taobaoOrder:hover .orderImg {
+  display: block;
+}
+.ContentMain .taobaoOrder {
+  position: relative;
+  cursor: pointer;
+  display: none;
+}
+.ContentMain .taobaoOrder > img {
+  width: 19px;
+}
+.ContentMain .taobaoOrder .orderImg {
+  width: 260px;
+  left: -160px;
+}
+.ContentMain .taobaoOrder .orderImg:after {
+  left: 200px;
+}
+.ContentMain .wxorder img,
+.ContentMain .aliorder img,
+.ContentMain .taobaoOrder img {
+  vertical-align: middle;
+  margin-right: 2px;
+  margin-top: -3px;
+}
+.ContentMain .orderImg {
+  position: absolute;
+  z-index: 10;
+  left: -220px;
+  width: 400px;
+  padding: 10px;
+  background: #fff;
+  margin-top: -15px;
+  box-shadow: 0 0 8px 0px #d3d2d2;
+  display: none;
+  top: 88px;
+}
+.ContentMain .orderIMG-s {
+  width: 100%;
+}
+.ContentMain .orderImg:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 278px;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-width: 14px;
+  border-bottom-color: currentColor;
+  color: #ffffff;
+}
+.ContentMain a:focus,
+.ContentMain a {
+  outline: 0;
+  text-decoration: none;
+}
+.ContentMain .report-block {
+  padding: 0 20px;
+}
+.ContentMain .orderIdBox {
+  position: relative;
+  float: left;
+}
+.ContentMain .orderIdBox .deleteS {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  width: 16px;
+  height: 16px;
+  background: url(../../img/delete2.png) no-repeat;
+  cursor: pointer;
+}
+.ContentMain .orderIdBox .deleteS:hover {
+  background: url(../../img/delete3.png) no-repeat;
+}
+.table > thead > tr > th {
+  border-bottom: 0;
+}
+.table > caption + thead > tr:first-child > td,
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > td,
+.table > thead:first-child > tr:first-child > th {
+  border-top: #E5E5E5 1px solid;
+}
+.report-box {
+  background: #fff;
+  min-height: 570px;
+  position: relative;
+}
+.report-box .orderInformation {
+  border: none;
+}
+.report-box .orderInformation thead {
+  height: 45px;
+  background-color: #F8F9FA;
+  font-size: 14px;
+  color: #222;
+  border-bottom: 1px solid #efefef;
+}
+.report-box .orderInformation thead tr {
+  border-color: #E5E5E5;
+}
+.report-box .orderInformation thead tr th {
+  vertical-align: middle;
+  font-weight: bold;
+  text-align: center;
+}
+.report-box .orderInformation thead tr th:first-child {
+  padding-left: 20px;
+  text-align: left;
+}
+.report-box .orderInformation tbody tr {
+  height: 50px;
+  border-bottom: 1px solid #E5E5E5;
+  border-color: #E5E5E5;
+}
+.report-box .orderInformation tbody tr th {
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  padding: 30px 8px;
+}
+.report-box .orderInformation tbody tr th.first {
+  padding-left: 20px;
+  text-align: left;
+}
+.report-box .orderInformation tbody tr th.titles {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 90px;
+}
+.report-box .orderInformation tbody tr th .report-status {
+  display: inline-block;
+  border-radius: 500px;
+  background: #edf9ff;
+  vertical-align: middle;
+  border: 1px solid #06b3fb;
+  color: #06b3fb;
+  font-size: 14px;
+  text-align: center;
+  padding: 4px 10px;
+}
+.report-box .orderInformation tbody tr th .report-status.status-1 {
+  border-color: #ff881e;
+  background: #fff7ed;
+  color: #ff881e;
+}
+.report-box .orderInformation tbody tr th .report-status.status-2 {
+  border-color: #007BFF;
+  background: #DCEFFE;
+  color: #007BFF;
+}
+.report-box .orderInformation tbody tr th .report-status.status-3 {
+  border-color: #F46262;
+  background: #FEE8E8;
+  color: #F46262;
+}
+.report-box .orderInformation tbody tr th .report-operate {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+}
+.report-box .orderInformation tbody tr th .report-operate .download {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: #c1c1c1;
+  text-decoration: none;
+}
+.report-box .orderInformation tbody tr th .report-operate .delete {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.report-box .orderInformation tbody tr th .report-operate.rateExplicit .download {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background: #008bff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 6px;
+  color: #fff;
+}
+.report-box .orderInformation tbody tr th .report-operate.rateExplicit .download:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background: #008bffb5;
+}
+.report-box .orderInformation tbody tr th .report-operate.rateExplicit .delete {
+  background: #ff5560;
+  color: #ffffff;
+}
+.report-box .orderInformation tbody tr th .report-operate.rateExplicit .delete:hover {
+  background: rgba(255, 85, 96, 0.86);
+}
+.report-box .orderInformation tbody tr th .report-operate.rateImplicit .download {
+  cursor: default;
+  pointer-events: none;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background: #f2f2f2;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 6px;
+  color: #c1c1c1;
+}
+.report-box .orderInformation tbody tr th .report-operate.rateImplicit .delete {
+  background: #f2f2f2;
+  color: #c1c1c1;
+  cursor: default;
+}
+.report-box .orderInformation tbody tr th .scanFollow {
+  font-size: 0;
+}
+.report-box .orderInformation tbody tr th .scanFollow .codeBox {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  line-height: 75px;
+  border: 1px solid #ededed;
+  margin-right: 18px;
+  vertical-align: middle;
+}
+.report-box .orderInformation tbody tr th .scanFollow .codeBox img {
+  width: 50%;
+}
+.report-box .orderInformation tbody tr th .scanFollow .tipsText {
+  display: inline-block;
+  vertical-align: middle;
+}
+.report-box .orderInformation tbody tr th .scanFollow .tipsText .p-1 {
+  color: #50b674;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  line-height: 1.1;
+  margin-top: 6px;
+}
+.report-box .orderInformation tbody tr th .scanFollow .tipsText .p-2 {
+  color: #999999;
+  font-size: 12px;
+  text-align: left;
+  line-height: 1.1;
+  margin-top: 8px;
+}
+.report-box .nodata-block {
+  text-align: center;
+  padding-top: 90px;
+}
+.report-box .nodata-block .nodata-text {
+  color: #9099b3;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+.report-box .nodata-block .toSubmit {
+  width: 120px;
+  height: 36px;
+  background: #ff7e00;
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  line-height: 36px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.report-box .nodata-block .toSubmit a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+.report-box .nodata-block .toSubmit:hover {
+  box-shadow: 0 0 5px 0px #ff7e00;
+}
+.report-box .nodata-block .report-tips {
+  color: #b7bccb;
+  font-size: 12px;
+  margin-top: 40px;
+}
+.report-box .expiration-tips {
+  background: #edf9ff;
+  font-size: 12px;
+  color: #0d81fc;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  position: absolute;
+  width: calc(100% - 60px);
+  bottom: 160px;
+}
+.mask_body {
+  position: fixed;
+  background: #000;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  display: none;
+}
+.delete-pop {
+  width: 402px;
+  height: 232px;
+  background: #fff;
+  position: fixed;
+  z-index: 1002;
+  top: 50%;
+  left: 50%;
+  margin-top: -101px;
+  margin-left: -201px;
+  border-radius: 12px;
+  display: none;
+}
+.delete-pop .pop_top {
+  height: 46px;
+  border-bottom: 1px solid #ebebeb;
+  padding: 0 22px;
+}
+.delete-pop .pop_top .pop_title {
+  float: left;
+  font-size: 18px;
+  color: #252525;
+  line-height: 46px;
+}
+.delete-pop .pop_top img {
+  width: 14px;
+  vertical-align: middle;
+  float: right;
+  margin-top: 16px;
+  cursor: pointer;
+}
+.delete-pop .pop_cont .p1 {
+  color: #006dff;
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.delete-pop .pop_cont .back_block {
+  width: 320px;
+  height: 60px;
+  background: #f0f6ff;
+  margin: 0 auto;
+  padding: 8px 0;
+}
+.delete-pop .pop_cont .back_block .p2 {
+  color: #5d5d5d;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.delete-pop .pop_cont .back_block .p3 {
+  color: #5d5d5d;
+  text-align: center;
+}
+.delete-pop .pop_bottom {
+  height: 66px;
+  padding: 16px 136px 0;
+}
+.delete-pop .pop_bottom .cancel_btn {
+  width: 60px;
+  height: 34px;
+  background: #f2f2f2;
+  color: #777777;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 34px;
+  float: left;
+  cursor: pointer;
+}
+.delete-pop .pop_bottom .cancel_btn:hover {
+  background: #e5e5e5;
+}
+.delete-pop .pop_bottom .cancel_btn:active {
+  background: #d3d3d3;
+}
+.delete-pop .pop_bottom .determine_btn {
+  width: 60px;
+  height: 34px;
+  background: #ff7e00;
+  color: #ffffff;
+  border-radius: 6px;
+  float: left;
+  font-size: 14px;
+  text-align: center;
+  line-height: 34px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.delete-pop .pop_bottom .determine_btn:hover {
+  background: #ff7e00;
+}
+.delete-pop .pop_bottom .determine_btn:active {
+  background: #ff7e00;
+}
+@media (max-width: 1600px) {
+  .report-box .report-item .report-info {
+    margin-right: 2%;
+  }
+  .report-box .report-item .report-status {
+    margin-right: 2%;
+  }
+}
+.loadLine {
+  text-align: center;
+  padding-top: 20vh;
+  display: none;
+}
+.loadLine p {
+  margin-top: 10px;
+}
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected {
+  transition: background-color 999999999s !important;
+}
+.hader {
+  padding: 24px 42px 22px 42px;
+  background-color: transparent;
+  font-size: 0;
+}
+.hader .title {
+  color: #333333;
+  font-size: 16px;
+  float: left;
+  line-height: 40px;
+}
+.hader .Verification {
+  width: 320px;
+  height: 38px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: solid 1px #ebebeb;
+  float: left;
+  margin-left: 23px;
+  margin-right: 20px;
+}
+.hader .Verification .form-control {
+  height: 36px;
+}
+.hader .Verification input {
+  width: calc(100% - 100px);
+  float: left;
+  border: 0;
+  box-shadow: none;
+  outline: 0;
+  line-height: 36px;
+}
+.hader .Verification .VerificationCode {
+  width: 100px;
+  float: left;
+  color: #2490ff;
+  font-size: 14px;
+  text-align: center;
+  line-height: 36px;
+  position: relative;
+  cursor: pointer;
+}
+.hader .Verification .VerificationCode::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  height: 21px;
+  border-left: 1px solid #ebebeb;
+}
+.hader .Verification .VerificationCode.forbid {
+  color: #999999;
+}
+.hader > input {
+  float: left;
+  width: 166px;
+  height: 38px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 0;
+  box-shadow: none;
+  outline: 0;
+  border: solid 1px #ebebeb;
+  margin-right: 20px;
+}
+.Search {
+  width: 98px;
+  height: 38px;
+  background-color: #ff7e00;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  float: left;
+  text-align: center;
+  line-height: 38px;
+  cursor: pointer;
+}
+td {
+  height: 54px;
+  line-height: 54px !important;
+  border: 0;
+}
+.form-control:focus {
+  border-color: transparent;
+}
+.buttons1 span,
+.buttons1 a {
+  cursor: pointer;
+  color: #2792ff;
+  display: inline-block;
+  margin: 0 6px;
+  text-decoration: none;
+}
+#copyInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}

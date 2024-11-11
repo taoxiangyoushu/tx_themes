@@ -1,0 +1,969 @@
+.bylwsenior .NormalBox,
+.wxzs .NormalBox,
+.ktbg .NormalBox,
+.rws .NormalBox,
+.qklw .NormalBox,
+.kclw .NormalBox,
+.dybg .NormalBox,
+.zjcaigc .NormalBox,
+.sxbg .NormalBox,
+.lwdbppt .NormalBox {
+  display: none;
+}
+.bylwsenior .step2 .stepMain,
+.wxzs .step2 .stepMain,
+.ktbg .step2 .stepMain,
+.rws .step2 .stepMain,
+.qklw .step2 .stepMain,
+.kclw .step2 .stepMain,
+.dybg .step2 .stepMain,
+.zjcaigc .step2 .stepMain,
+.sxbg .step2 .stepMain,
+.lwdbppt .step2 .stepMain {
+  width: calc(100% - 3.6rem);
+}
+.zjcaigc .step2 .stepMain {
+  width: 85%;
+}
+.aigcTips .steptop {
+  width: 54%;
+}
+.aigcTips .stepType {
+  font-size: 1.61rem;
+  color: #222222;
+}
+.aigcTips .steptop {
+  font-size: 1.39rem;
+  color: #ffffff;
+}
+.aigcTips .stepMain {
+  margin-top: 0.3rem;
+  margin-left: 1.18rem;
+}
+.aigcTips .stepMain p {
+  font-size: 1.6rem;
+  color: #333;
+  background-size: 85%;
+  background-position: 0 90%;
+}
+.aigcTips .step2 > img {
+  height: auto;
+  width: 3.56rem !important;
+}
+.aigcTips .stepMainTop {
+  display: flex;
+  position: relative;
+  margin-top: 2.4rem;
+  margin-bottom: 3rem;
+}
+.aigcTips .stepMainTop .Tradition {
+  width: 11.82rem;
+  height: 10.68rem;
+  background-color: #ffffff;
+  box-shadow: inset 0rem 0rem 1.59rem 0rem rgba(73, 73, 73, 0.19);
+  border-radius: 0.45rem;
+  border: solid 0.05rem #f0f0f0;
+  padding: 1.5rem 2.7rem 1.5rem 1.5rem;
+  color: #999999;
+  font-size: 1.09rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.aigcTips .stepMainTop .Tradition .TraditionTop {
+  color: #333333;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px dashed #333333;
+}
+.aigcTips .stepMainTop .vsBox {
+  width: 3.32rem;
+  height: 3.32rem;
+  background-color: #006eff;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  line-height: 3.32rem;
+  font-size: 1.41rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -5.4rem;
+  margin-top: -1.7rem;
+}
+.aigcTips .stepMainTop .Now {
+  width: 14.86rem;
+  height: 13.36rem;
+  background-color: #ffffff;
+  box-shadow: inset 0rem 0rem 1.59rem 0rem rgba(0, 109, 255, 0.19);
+  border-radius: 0.45rem;
+  border: solid 0.05rem #b5dfff;
+  padding: 1.4rem 2.55rem;
+  text-align: center;
+  color: #333333;
+  font-size: 1.36rem;
+  margin-left: -1.8rem;
+}
+.aigcTips .stepMainTop .Now .TraditionTop {
+  color: #333333;
+  border-bottom: 1px dashed #333333;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  color: #fa4e33;
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aigcTips .stepMainTop .Now .Fire {
+  width: 1.23rem;
+  height: 1.55rem;
+  margin-right: 0.5rem;
+  margin-top: -2px;
+}
+.aigcTips .stepMainBottom img {
+  float: none;
+}
+.aigcTips .stepMainBottom .tipsTo {
+  color: #999999;
+  font-size: 1.22rem;
+  margin-top: 0.2rem;
+}
+.aigcTips .stepMainBottom .tipsTo .color1 {
+  color: #fd6813;
+}
+.aigcTips .stepMainBottom .tipsTo .color2 {
+  color: #e30213;
+  font-size: 1.2rem;
+}
+.aigcTips .stepMainBottom .tipsTo .color3 {
+  color: #9ac844;
+  font-size: 1.2rem;
+}
+.aigcTips .stepMainBottom .tipsTo img {
+  height: 0.73rem;
+  margin-top: -0.2rem;
+}
+.aigcTips .stepMainBottom .CaseImg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 3rem;
+  position: relative;
+  margin-top: 1.7rem;
+}
+.aigcTips .stepMainBottom .CaseImg .Excessive {
+  position: absolute;
+  left: 50%;
+  z-index: 100;
+  margin-left: -3.3rem;
+  width: 3.56rem;
+}
+.aigcTips .stepMainBottom .CaseImg div > img {
+  width: 11.18rem;
+  height: 14.23rem;
+}
+.aigcTips .stepMainBottom .CaseImg .Tradition2,
+.aigcTips .stepMainBottom .CaseImg .Now2 {
+  position: relative;
+}
+.aigcTips .stepMainBottom .CaseImg .Tradition2 .topTips {
+  background-image: linear-gradient(90deg, #f9473b 1%, #fe6f0b 100%), linear-gradient(#ee3b86, #ee3b86);
+}
+.aigcTips .stepMainBottom .CaseImg .Now2 .topTips {
+  background-image: linear-gradient(90deg, #739c27 0%, #bff063 100%), linear-gradient(#ee3b86, #ee3b86);
+}
+.aigcTips .stepMainBottom .CaseImg .topTips {
+  width: 7.18rem;
+  height: 2.41rem;
+  background-blend-mode: normal,
+                    normal;
+  border-radius: 0.45rem 0rem 0.45rem 0rem;
+  color: #ffffff;
+  text-align: center;
+  line-height: 2.41rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+.example {
+  float: right;
+}
+.wxzsBox {
+  display: none;
+}
+.wxzs .wxzsBox {
+  display: block;
+}
+.wxzs .step1 .steptop {
+  width: auto;
+  padding: 0 1.25rem;
+}
+.wxzs .VersionTips {
+  color: #999999;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.wxzs .VersionTips span {
+  color: #0072ff;
+}
+.wxzs .Referenc {
+  height: 20.11rem;
+  width: calc(100% - 1.6rem);
+  background-image: linear-gradient(0deg, #f6f8fb 0%, #f4f4fa 100%);
+  box-shadow: 0rem 0rem 0.47rem 0.03rem rgba(125, 140, 166, 0.19);
+  border-radius: 0.5rem;
+  border: solid 0.05rem #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem;
+  margin-bottom: 6.7rem;
+}
+.wxzs .Referenc .cardLeft,
+.wxzs .Referenc .cardRight {
+  width: 48%;
+  height: 18.8rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+}
+.wxzs .Referenc .haderTop {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #eeeeee;
+}
+.wxzs .Referenc .Label {
+  border-radius: 0.2rem;
+  padding: 0.45rem 0.9rem;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+.wxzs .Referenc .LabelLeft {
+  background-image: linear-gradient(90deg, #ffba00 0%, #ff9e04 100%);
+  display: inline-block;
+}
+.wxzs .Referenc .LabelRight {
+  background-image: linear-gradient(-90deg, #0071ff 0%, #0090ff 100%);
+  display: inline-block;
+}
+.wxzs .Referenc .Content {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 2em;
+  padding: 1.2rem;
+  position: relative;
+  min-height: 15rem;
+}
+.wxzs .Referenc .cardLeft .Description {
+  color: #ff6000;
+  right: -2rem;
+  background: url('../img/yellow.png') no-repeat;
+}
+.wxzs .Referenc .cardRight .Description {
+  color: #0072ff;
+  background: url('../img/blue.png') no-repeat;
+}
+.wxzs .Referenc .Description {
+  width: auto;
+  display: inline-block;
+  background-color: #ffffff;
+  padding: 1rem 1.7rem;
+  font-size: 1.22rem;
+  position: absolute;
+  right: -2rem;
+  bottom: -3.4rem;
+  background-color: #fff;
+  background-size: 100% 100% !important;
+}
+.wxzs .Referenc .Description .Middle {
+  margin: 0.7rem 0;
+}
+.wxzs .VersionTips {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.wxzs .Referenc2 {
+  background-color: #ffffff;
+  box-shadow: inset 0px 0px 17.5px 0px rgba(0, 109, 255, 0.19);
+  border-radius: 5px;
+  border: solid 0.5px rgba(181, 223, 255, 0.8);
+  padding: 1.72rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+.wxzs .Referenc2 .Referenc2Top {
+  font-weight: bold;
+  padding-bottom: 1.8rem;
+  margin-bottom: 1.8rem;
+  border-bottom: 1px dashed #60748f;
+  position: relative;
+}
+.wxzs .Referenc2 .Referenc2Top::before {
+  content: '';
+  width: 0.44rem;
+  height: 3.33rem;
+  background-color: #0073ff;
+  display: inline-block;
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  border-radius: 4px;
+}
+.wxzs .Referenc2 .Referenc2Top .Rp1 {
+  font-size: 1.44rem;
+  color: #0073ff;
+}
+.wxzs .Referenc2 .Referenc2Top .Rp2 {
+  font-size: 1.22rem;
+  color: #333333;
+}
+.wxzs .Referenc2 .StepsBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wxzs .Referenc2 .StepsBox .card {
+  background: url('../img/p2-1.png') no-repeat;
+  background-size: 100% 100%;
+  padding: 1rem 1.2rem;
+  display: inline-block;
+  position: relative;
+}
+.wxzs .Referenc2 .StepsBox .card p {
+  color: #666666;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.wxzs .Referenc2 .StepsBox .card span {
+  position: absolute;
+  left: -0.5rem;
+  top: -0.5rem;
+  width: 1.72rem;
+  height: 1.72rem;
+  line-height: 1.72rem;
+  background-color: #ffffff;
+  border: solid 0.06rem #0071fe;
+  color: #0071fe;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 50%;
+}
+.ktbgBox {
+  display: none;
+}
+.ktbg .ktbgBox {
+  display: block;
+}
+.ktbg .step1 .steptop {
+  width: auto;
+  padding: 0 1.25rem;
+}
+.ktbg .longText span {
+  display: inline-block;
+  background: url('../img/button-sj.png') no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.3rem 1.2rem 0.3rem 0.8rem;
+  margin-left: 0.7rem;
+  line-height: normal;
+  margin-top: -0.4rem;
+}
+.ktbg .Referenc {
+  margin-top: 0.7rem;
+  margin-bottom: 2rem;
+}
+.ktbg .Referenc img {
+  height: 27.8rem;
+}
+.ktbg .Referenc2 {
+  color: #222222;
+  font-size: 1.22rem;
+}
+.ktbg .Referenc2 p {
+  margin: 1rem 0;
+}
+.ktbg .Process {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ktbg .Process > div {
+  position: relative;
+}
+.ktbg .Process > div span {
+  position: absolute;
+  left: 0.8rem;
+  top: 0.6rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.22rem;
+}
+.ktbg .Process > div img {
+  width: 12rem;
+}
+.ktbg .Process > img {
+  width: 4.8rem;
+}
+.rwsBox {
+  display: none;
+}
+.rws .rwsBox {
+  display: block;
+}
+.rws .step1 .steptop {
+  width: auto;
+  padding: 0 1.25rem;
+}
+.rws .imgmb {
+  width: 24.33rem;
+}
+.rws .imgrws {
+  width: 22.67rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.rws .Referenc {
+  margin-top: 2.5rem;
+  position: relative;
+  padding-bottom: 3rem;
+  margin-bottom: 3.8rem;
+}
+.rws .Referenc1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.2rem;
+}
+.rws .Referenc1 .Grey {
+  width: 12.67rem;
+  min-height: 9.11rem;
+  background-color: #ffffff;
+  box-shadow: inset 0rem 0rem 1.94rem 0rem rgba(88, 88, 88, 0.19);
+  border-radius: 0.56rem;
+  border: solid 0.06rem #e4e4e4;
+  margin-right: -2rem;
+  padding: 0 1rem;
+}
+.rws .Referenc1 .Grey .GreyHder {
+  color: #868686;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1.2rem 0;
+  border-bottom: 1px dashed #e4e4e4;
+  padding-right: 1rem;
+  font-weight: bold;
+}
+.rws .Referenc1 .Grey .GreyHder img {
+  position: relative;
+  top: -2px;
+  width: 1.4rem;
+}
+.rws .Referenc1 .Grey .GreyContent {
+  text-align: center;
+  padding-right: 1rem;
+  margin-top: 1rem;
+  color: #999999;
+  font-size: 1.4rem;
+}
+.rws .Referenc1 .Yellow {
+  width: 22.22rem;
+  min-height: 12.28rem;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 1rem 0.11rem rgba(144, 170, 255, 0.19), inset 0rem 0rem 1.94rem 0rem rgba(255, 234, 0, 0.19);
+  border-style: solid;
+  border-width: 0.06rem;
+  border-color: #ff9e04;
+  border-radius: 1rem;
+  padding: 1.28rem 1rem 1rem 1rem;
+}
+.rws .Referenc1 .Yellow .GreyHder {
+  text-align: center;
+  border-bottom: 1px dashed #eae2d6;
+  padding-bottom: 1.28rem;
+  font-weight: bold;
+}
+.rws .Referenc1 .Yellow .GreyHder img {
+  width: 2.2rem;
+  vertical-align: middle;
+  position: relative;
+  top: -0.2rem;
+}
+.rws .Referenc1 .Yellow .GreyContent {
+  color: #666666;
+  font-size: 1.34rem;
+  text-align: center;
+  margin-top: 1.7rem;
+}
+.rws .Referenc1 .Yellow .GreyContent span {
+  color: #ff6c00;
+}
+.rws .Referenc1 .Yellow .GreyContent p {
+  margin: 0.4rem 0;
+}
+.qklwBox {
+  display: none;
+}
+.qklw .qklwBox {
+  display: block;
+}
+.qklw .step1 .steptop {
+  width: auto;
+  padding: 0 1.25rem;
+}
+.qklw .Referenc {
+  padding: 2rem 2.4rem;
+  margin-top: 1.55rem;
+  width: 100%;
+  font-size: 1.2rem;
+  min-height: 30.61rem;
+  background-color: #ffffff;
+  box-shadow: inset 0rem 0rem 1.94rem 0rem rgba(0, 109, 255, 0.19);
+  border-radius: 0.56rem;
+  border: solid 0.06rem rgba(181, 223, 255, 0.8);
+  position: relative;
+  margin-bottom: 3.6rem;
+}
+.qklw .Referenc p b {
+  color: #252525;
+}
+.qklw .Referenc > p {
+  color: #686868;
+  line-height: 2.3rem;
+}
+.qklw .Referenc .Title {
+  color: #006cff;
+}
+.qklw .Referenc .color1 {
+  color: #202020;
+}
+.qklw .Referenc .SuitableBox {
+  position: absolute;
+  bottom: -2.9rem;
+  right: 0;
+  display: flex;
+}
+.qklw .Referenc .SuitableBox .Circle {
+  width: 5.94rem;
+  height: 5.94rem;
+  background-color: #fff;
+  border: solid 0.1rem #1e7cff;
+  border-radius: 50%;
+  text-align: center;
+  color: #006bff;
+  font-size: 1.2rem;
+  padding-top: 1.2rem;
+  margin-left: 0.6rem;
+}
+.qklw .Referenc1 {
+  display: flex;
+  align-items: center;
+  margin-top: 1.2rem;
+  justify-content: space-between;
+}
+.qklw .Referenc1 .leftBox {
+  width: 16.61rem;
+  min-height: 16.67rem;
+  background-color: #ffffff;
+  box-shadow: inset 0rem 0rem 1.94rem 0rem rgba(0, 109, 255, 0.19);
+  border: solid 0.06rem rgba(181, 223, 255, 0.8);
+  border-radius: 0.56rem;
+  padding-top: 1rem;
+}
+.qklw .Referenc1 .leftBox p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 3.5rem;
+  padding-right: 1.5rem;
+}
+.qklw .Referenc1 .leftBox p img {
+  width: 2.5rem;
+  margin-right: 0.6rem;
+}
+.qklw .Referenc1 .rightBox {
+  width: 16.72rem;
+  height: 19.67rem;
+  border-radius: 0.56rem;
+  border: solid 0.06rem #c8e3ff;
+  margin-left: -1.5rem;
+  background-color: #fff;
+  padding-left: 2.4rem;
+  padding-top: 1.5rem;
+  color: #006cff;
+  font-size: 1.39rem;
+}
+.qklw .Referenc1 .rightBox p {
+  display: flex;
+  align-items: center;
+  line-height: 3.22rem;
+  padding-right: 1.5rem;
+}
+.qklw .Referenc1 .rightBox p img {
+  width: 1.6rem;
+  margin-right: 0.6rem;
+}
+.sxbgBox {
+  display: none;
+}
+.sxbg .sxbgBox {
+  display: block;
+}
+.sxbg .step1 .steptop {
+  width: auto;
+  padding: 0 1.25rem;
+}
+.sxbg .Referenc {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+.sxbg .Referenc .leftBox {
+  width: 16.72rem;
+  height: 21.11rem;
+}
+.sxbg .Referenc .leftBox img {
+  width: 100%;
+  height: 100%;
+}
+.sxbg .Referenc .rightBox {
+  background: url('../img/k1.png') no-repeat;
+  background-size: 100% 100%;
+  width: 18.56rem;
+  min-height: 23rem;
+  margin-left: -6rem;
+  margin-top: 1.6rem;
+  position: relative;
+  padding: 0 2rem;
+  right: -1rem;
+}
+.sxbg .Referenc .rightBox .rightBoxTop {
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  font-size: 1.44rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+.sxbg .Referenc .rightBox .rightBoxTop img {
+  width: 1.7rem;
+  margin-top: -2px;
+}
+.sxbg .Referenc .rightBox .ReferencContent {
+  width: 100%;
+  height: 16rem;
+  background-color: #ffffff;
+  border-radius: 0.56rem;
+  padding: 1rem 1.4rem;
+  color: #333333;
+  font-size: 1.22rem;
+  font-weight: bold;
+  line-height: 2.8rem;
+}
+.sxbg .Referenc .rightBox .NumberOfWords {
+  color: #ff6b00;
+  font-size: 1.22rem;
+  border: 1px solid #ffb27a;
+  border-right: 0;
+  text-align: center;
+  border-radius: 2rem 0 0 2rem;
+  background-color: #fff3e1;
+  position: absolute;
+  right: 0.88rem;
+  padding: 0 1.1rem;
+  bottom: 2.6rem;
+}
+.sxbg .Referenc2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.34rem;
+  margin-top: 1.8rem;
+}
+.sxbg .Referenc2 .card {
+  width: 50%;
+  padding: 0.34rem;
+}
+.sxbg .Referenc2 .card > div {
+  background-color: #ffffff;
+  box-shadow: inset 0rem 0rem 1.94rem 0rem rgba(0, 109, 255, 0.19);
+  border-radius: 0.56rem;
+  border: solid 0.06rem #a0d6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666666;
+  font-size: 1.22rem;
+  padding: 1.7rem 0;
+}
+.sxbg .Referenc2 .card > div b {
+  font-size: 1.44rem;
+  color: #333333;
+}
+.sxbg .Referenc2 .card img {
+  width: 2.89rem;
+  margin-right: 1rem;
+}
+.dbpptBox {
+  display: none;
+}
+.lwdbppt .dbpptBox {
+  display: block;
+}
+.lwdbppt .step1 .steptop {
+  width: auto;
+  padding: 0 1.25rem;
+}
+.lwdbppt .Referenc {
+  position: relative;
+  margin-top: 1.6rem;
+  margin-bottom: 8.4rem;
+}
+.lwdbppt .leftBox {
+  width: 25.67rem;
+  height: 18.89rem;
+  margin-left: -1rem;
+}
+.lwdbppt .leftBox img {
+  width: 100%;
+}
+.lwdbppt .rightBox {
+  width: 20rem;
+  height: 13.22rem;
+  background-color: #ffffff;
+  box-shadow: inset 0rem 0rem 1.94rem 0rem rgba(255, 119, 122, 0.19);
+  border: 1px solid #ff5560;
+  border-radius: 0.6rem;
+  position: absolute;
+  right: 0;
+  bottom: -4rem;
+  padding: 0.5rem 2rem;
+}
+.lwdbppt .rightBox::after {
+  content: ' ';
+  width: 90%;
+  height: 0.44rem;
+  background-color: #ffd6d7;
+  border-radius: 0.22rem;
+  position: absolute;
+  top: -0.8rem;
+  left: 5%;
+}
+.lwdbppt .rightBox .Arrowhead {
+  text-align: right;
+}
+.lwdbppt .rightBox p {
+  font-size: 1.44rem;
+  color: #ff5560;
+}
+.lwdbppt .rightBox p span {
+  color: #333333;
+}
+.lwdbppt .rightBox p::after {
+  display: block;
+  width: 4.11rem;
+  height: 0.22rem;
+  background-color: #ff777a;
+  border-radius: 0.06rem;
+  content: ' ';
+  margin-top: 0.4rem;
+}
+.lwdbppt .rightBox .vacancies {
+  height: 2.78rem;
+  background-color: #fff1f1;
+  border-radius: 0.44rem;
+  width: 100%;
+  margin-top: 1.6rem;
+}
+.lwdbppt .rightBox .NumberWords {
+  background-color: #ff6c76;
+  border-radius: 0.5rem 0rem 0.5rem 0rem;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 0.3rem 0.8rem 0.2rem 0.8rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.lwdbppt .rightBox .Circle {
+  width: 6.89rem;
+  position: absolute;
+  left: -4rem;
+  top: 4.6rem;
+}
+.lwdbppt .Referenc1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.34rem;
+  margin-top: 2rem;
+}
+.lwdbppt .Referenc1 .card {
+  width: 50%;
+  padding: 0.34rem;
+}
+.lwdbppt .Referenc1 .card > div {
+  background-color: #ffffff;
+  box-shadow: inset 0rem 0rem 1.94rem 0rem rgba(0, 109, 255, 0.19);
+  border-radius: 0.56rem;
+  border: solid 0.06rem #a0d6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.44rem;
+  padding: 1rem 0;
+  color: #333333;
+}
+.lwdbppt .Referenc1 .card img {
+  width: 5rem;
+  height: 5rem;
+  margin-left: -1rem;
+}
+.kclwBox {
+  display: none;
+}
+.kclw .kclwBox {
+  display: block;
+}
+.kclw .step1 .steptop {
+  width: auto;
+  padding: 0 1.25rem;
+}
+.kclw .Referenc {
+  padding: 2rem 3.28rem;
+  margin-top: 1.55rem;
+  width: 100%;
+  font-size: 1.2rem;
+  min-height: 30.61rem;
+  background-color: #ffffff;
+  box-shadow: inset 0rem 0rem 1.94rem 0rem rgba(0, 109, 255, 0.19);
+  border-radius: 0.56rem;
+  border: solid 0.06rem rgba(181, 223, 255, 0.8);
+  position: relative;
+  margin-bottom: 2.4rem;
+}
+.kclw .Referenc p b {
+  color: #252525;
+}
+.kclw .Referenc > p {
+  color: #686868;
+  line-height: 2rem;
+  margin-bottom: 0.7rem;
+}
+.kclw .Referenc .Title {
+  color: #006cff;
+}
+.kclw .Referenc .color1 {
+  color: #202020;
+}
+.kclw .Referenc .NumberWords {
+  position: absolute;
+  right: 2rem;
+  bottom: 1rem;
+  width: 13.44rem;
+  background-color: #ffffff;
+  border-radius: 1.51rem;
+  border: solid 0.06rem #4091ff;
+  color: #006cff;
+  font-size: 1.22rem;
+  text-align: center;
+  padding: 0.7rem 0;
+}
+.kclw .Referenc .text2 {
+  line-height: 1.6rem;
+  text-indent: 2em;
+}
+.kclw .Referenc2 {
+  min-height: 15.67rem;
+  background-color: #ffffff;
+  box-shadow: inset 0rem 0rem 1.94rem 0rem rgba(0, 109, 255, 0.19);
+  border-radius: 0.56rem;
+  border: solid 0.06rem rgba(181, 223, 255, 0.8);
+  padding: 1.4rem 2.5rem;
+  color: #202020;
+  margin-top: 1rem;
+  font-size: 1.39rem;
+}
+.kclw .Referenc2 .Ability {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+.kclw .Referenc2 .Ability > div {
+  width: 50%;
+  margin-top: 1rem;
+}
+.kclw .Referenc2 .Ability img {
+  width: 1.61rem;
+  height: 1.61rem;
+}
+.dybgBox {
+  display: none;
+}
+.dybg .dybgBox {
+  display: block;
+}
+.dybg .step1 .steptop {
+  width: auto;
+  padding: 0 1.25rem;
+}
+.dybg .Referenc {
+  margin-bottom: 3.6rem;
+}
+.dybg .Referenc .Description {
+  color: #999999;
+  font-size: 1.22rem;
+  font-weight: bold;
+  margin: 1.4rem 0;
+}
+.dybg .Referenc .Description span {
+  color: #0072ff;
+}
+.dybg .mainBox {
+  display: flex;
+}
+.dybg .leftBox {
+  margin: -0.4rem 0 0 -0.4rem;
+}
+.dybg .leftBox img {
+  width: 16rem;
+}
+.dybg .rightBox {
+  margin-left: -5.4rem;
+}
+.dybg .rightBox img {
+  width: 19.2rem;
+}
+.dybg .Referenc1 {
+  background-image: linear-gradient(0deg, #f2f7ff 0%, #dbf2ff 100%);
+  box-shadow: 0rem 0rem 0.52rem 0.03rem rgba(125, 140, 166, 0.19);
+  border-radius: 0.56rem;
+  border: solid 0.06rem #ffffff;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1.56rem;
+  margin-top: 2rem;
+}
+.dybg .Referenc1 > div {
+  width: calc(50% - 0.7rem);
+  background-color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #333333;
+  font-size: 1.44rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+.dybg .Referenc1 .bottomDiv {
+  margin-top: 1.4rem;
+}
+.dybg .Referenc1 img {
+  width: 2.28rem;
+  margin-right: 0.8rem;
+}

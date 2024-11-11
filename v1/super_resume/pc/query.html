@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>超级简历 - 查询结果</title>
+    <link rel="shortcut icon" href="../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css?v=cj0005">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=cj0005">
+    <link rel="stylesheet" href="../pc/assets/css/query/query.css?v=cj0005">
+    <!-- <link rel="stylesheet" href="../pc/assets/css/styles.css" /> -->
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!--[if lt IE 9]>
+    <script src="https://fastly.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://fastly.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        var JANE_NAME = 'super_resume'
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        // var USER_TOKEN = 'bXlWWDZhMzY0NTlmYjFjYjgxZjU='
+    </script>
+</head>
+
+<body>
+<div class="haderNav navbarBox">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="../pc/assets/img/cjjl_logo.png" alt="超级简历">
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse topNav" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./index.html">首页</a></li>
+                        <li class="active"><a href="#">我的订单</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="content">
+    <div class="content-box">
+        <div class="head-search">
+            <div class="">
+                <span class="searchText">订单查询</span>
+                <input id="orderId" class="orderId" type="text" placeholder="请输入您的订单编号查询">
+                <span class="clearSearch"></span>
+                <div class="search-btn searchBtn">查询</div>
+            </div>
+            <div class="orderIdGuide">
+                <div class="order-ali">
+                    <img src="../pc/assets/img/order-ali.png" alt="">
+                    <span>支付宝订单号?</span>
+                    <div class="orderId orderId2">
+                        <img src="../pc/assets/img/aliId.png" alt="">
+                    </div>
+                </div>
+                <div class="order-wx">
+                    <img src="../pc/assets/img/order-wx.png" alt="">
+                    <span>微信订单号?</span>
+                    <div class="orderId orderId1">
+                        <img src="../pc/assets/img/wxId.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-card">
+            <table class="orderInformation table" border="1" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th width="180">订单编号</th>
+                        <th width="160">商品名称</th>
+                        <th width="170">支付时间</th>
+                        <th width="140">实付金额</th>
+                        <th width="150">状态</th>
+                        <th width="280" class="operation-tr">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody order-area">
+
+                </tbody>
+            </table>
+            <div class="nodata-block">
+                <img src="../pc/assets/img/empty.png" alt="">
+                <p class="nodata-text">输入订单号查询！</p>
+            </div>
+            <div class="loadLine">
+                <img src="../pc/assets/img/loading2.gif" alt="">
+                <p>加载中...</p>
+            </div>
+            <input type="text" id="CopyCOde">
+        </div>
+    </div>
+    <div class="useFlow-block">
+        <div class="head-u">
+            <img src="../pc/assets/img/useFlow.png" alt="">
+            <span>使用流程</span>
+            <div>电脑端兑换并编辑简历，体验更佳</div>
+        </div>
+        <div class="procedure-block">
+            <div class="tag-pc">
+                <img src="../pc/assets/img/pc-icon.png" alt="">
+                <span>电脑端</span>
+            </div>
+            <div class="block_1">
+                <div class="stepBox step1">
+                    <p class="text-p">
+                        <span class="No-n">1</span>
+                        点击<a href="http://www.wondercv.com" target="_blank">www.wondercv.com</a><b>【超级简历】</b>官网，点击右上角<b>【登录/注册】</b>
+                    </p>
+                    <div class="step-img">
+                        <img src="../pc/assets/img/one_step.png" alt="">
+                    </div>
+                </div>
+                <img class="arrow-i" src="../pc/assets/img/step_arrow.png" alt="">
+                <div class="stepBox step2">
+                    <p class="text-p">
+                        <span class="No-n">2</span>
+                        选择<b>【扫码快速登录】</b> 或 <b>【手机号码登录】</b>登录
+                    </p>
+                    <div class="step-img">
+                        <img src="../pc/assets/img/two_step.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="block_1">
+                <div class="stepBox step3">
+                    <p class="text-p">
+                        <span class="No-n">3</span>
+                        点击导航栏中的<b>【超级会员】-【立即购买】</b>
+                    </p>
+                    <div class="step-img">
+                        <img src="../pc/assets/img/three_step.png" alt="">
+                    </div>
+                </div>
+                <img class="arrow-i" src="../pc/assets/img/step_arrow.png" alt="">
+                <div class="stepBox step4">
+                    <p class="text-p">
+                        <span class="No-n">4</span>
+                        选择对应级别的会员后点击<b>【升级会员】按钮</b>
+                    </p>
+                    <div class="step-img">
+                        <img src="../pc/assets/img/four_step.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="block_1">
+                <div class="stepBox step5">
+                    <p class="text-p">
+                        <span class="No-n">5</span>
+                        在<b>【开通会员】</b>弹窗右下角，点击<b>【兑换优惠券】</b>
+                    </p>
+                    <div class="step-img">
+                        <img src="../pc/assets/img/five_step.png" alt="">
+                    </div>
+                </div>
+                <img class="arrow-i" src="../pc/assets/img/step_arrow.png" alt="">
+                <div class="stepBox step6">
+                    <p class="text-p">
+                        <span class="No-n">6</span>
+                        在<b>【兑换优惠券】</b>弹窗中输入兑换码后，选择<b>【兑换】</b>后，点击<b>【使用】按钮</b>
+                    </p>
+                    <div class="step-img">
+                        <img src="../pc/assets/img/six_step.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="procedure-block" style="padding: 64px 12px;height: 385px;">
+            <div class="tag-pc">
+                <img src="../pc/assets/img/iohone_icon.png" alt="">
+                <span>手机端</span>
+            </div>
+            <div class="Mobile_application_process">
+                <div>
+                    <p>
+                        <span>1</span>
+                        在<b>应用商店</b> <br>下载<b>【超级简历】APP</b>
+                    </p>
+                    <img src="../pc/assets/img/iphone_one_step.png" alt="">
+                    <p style="margin-bottom: 0px;margin-top: 10px;">
+                        或<b>直接扫码下载【超级简历】</b>
+                    </p>
+                    <img src="../pc/assets/img/iphone_code.png" alt="">
+                </div>
+                <img src="../pc/assets/img/iphone_arr_icon.png" alt="" class="Process_Arrow">
+                <div>
+                    <p>
+                        <span>2</span>
+                        打开app，在<br><b>【我的】</b>页面<b>登录/注册</b>
+                    </p>
+                    <img src="../pc/assets/img/iphone_two_step.png" alt="">
+                </div>
+                <img src="../pc/assets/img/iphone_arr_icon.png" alt="" class="Process_Arrow">
+                <div>
+                    <p>
+                        <span>3</span>
+                        <b>微信直接登录</b><br>或输入<b>手机号</b>登录
+                    </p>
+                    <img src="../pc/assets/img/iphone_three_step.png" alt="">
+                </div>
+                <img src="../pc/assets/img/iphone_arr_icon.png" alt="" class="Process_Arrow">
+                <div>
+                    <p>
+                        <span>4</span>
+                        在<b>【我的】</b>页面<br><b>点击【超级会员】</b>
+                    </p>
+                    <img src="../pc/assets/img/iphone_four_step.png" alt="">
+                </div>
+                <img src="../pc/assets/img/iphone_arr_icon.png" alt="" class="Process_Arrow">
+                <div>
+                    <p>
+                        <span>5</span>
+                        在<b>【超级会员】</b><br>页面<b>点击【兑换优惠券】</b>
+                    </p>
+                    <img src="../pc/assets/img/iphone_five_step.png" alt="">
+                </div>
+                <img src="../pc/assets/img/iphone_arr_icon.png" alt="" class="Process_Arrow">
+                <div>
+                    <p>
+                        <span>6</span>
+                        选择<b>【兑换优惠券】-<br>【填写兑换码】</b> ，确认兑换
+                    </p>
+                    <img src="../pc/assets/img/iphone_six_step.png" alt="">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="CustomerService">
+    <img class="img-ico" src="../pc/assets/img/kf_ico_nor.png" alt="">
+    <img class="img-ico-active" src="../pc/assets/img/kf_ico_pre.png" alt="">
+    <div class="customerBox">
+        <div class="head">
+            <img src="../pc/assets/img/kf.png" alt="">
+            <span class="customer-title">联系客服</span>
+        </div>
+        <div class="customerCode">
+            <img class="customer-qr" src="" alt="">
+        </div>
+        <div class="segmentation-line"></div>
+        <div class="customerWay">
+            <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+            <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+            <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+            <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+        </div>
+        <p class="noCustomer">商家未设置客服</p>
+        <img class="customBg" src="../pc/assets/img/bg1.png" alt="">
+    </div>
+</div>
+<div class="mask_body"></div>
+<div class="delete-pop">
+    <div class="pop_top">
+        <div class="pop_title">删除提醒</div>
+        <img class="close_pop" src="../pc/assets/img/delete_report.png" alt="">
+    </div>
+    <div class="pop_cont">
+        <p class="p1">是否确定删除订单？删除后，无法恢复</p>
+        <div class="back_block">
+            <p class="p2">系统仅保留7天内的订单，</p>
+            <p class="p3">确保您的订单不会被覆盖和盗窃</p>
+        </div>
+    </div>
+    <div class="pop_bottom">
+        <div class="cancel_btn">取消</div>
+        <div class="determine_btn">确定</div>
+    </div>
+</div>
+
+<div class="Bottom"></div>
+</body>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../pc/assets/js/jquery.min.js?v=cj0005"></script>
+<script src="../pc/assets/js/bootstrap.min.js?v=cj0005"></script>
+<script src="../pc/assets/js/bootstrapValidator.min.js?v=cj0005"></script>
+<script src="../pc/assets/js/coco-message.js?v=cj0005"></script>
+ <script src="https://api.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=cj0005"></script>
+<script src="../pc/assets/js/common.js?v=cj0005"></script>
+<script>
+    function startQuerying(){
+        if(getQueryVariable('oid')) {
+            $('#orderId').val(getQueryVariable('oid'))
+            query(false)
+        }else if(localStorage.getItem('oid')) {
+            $('#orderId').val(localStorage.getItem('oid'))
+            query(false)
+        }
+        $('#orderId').change()
+    }
+    $('#orderId').on('input',function (){
+        if(!$('#orderId').val()){
+            $(".clearSearch").hide()
+        }else{
+            $(".clearSearch").css('display', 'inline-block')
+        }
+    })
+    $('#orderId').on('change',function (){
+        if(!$('#orderId').val()){
+            $(".clearSearch").hide()
+        }else{
+            $(".clearSearch").css('display', 'inline-block')
+        }
+    })
+
+    var isTrue;
+    $('.searchBtn').click(function() {
+        if(isTrue) return
+        isTrue = true
+        setTimeout(() => {
+            isTrue = false
+        },3000)
+        if(!$('#orderId').val()) {
+            cocoMessage.destroyAll();
+            cocoMessage.error("请输入订单号或优惠券后查询!", 2000);
+            $(".guide").html("输入订单号/优惠券查询结果")
+            $('.orderInformation').hide()
+            $('.nodata-block').show()
+            $(".useFlow-block").hide()
+        }else {
+            query(true)
+        }
+    })
+
+    function query(e) {
+        cocoMessage.destroyAll();
+        if(e) cocoMessage.success('正在为您查询...')
+        $('.loadLine').show()
+        $('.nodata-block').hide()
+        $('.order-area').children().remove()
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: $('#orderId').val(),
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME,
+            }),
+            success: function (res) {
+                $('.nodata-block').hide()
+                $('.order-area').children().remove()
+                var text = "";
+                var automaticPolling = false;
+                if(res.data.length) {
+                    for(var i=0; i<res.data.length; i++) {
+                        var payId = res.data[i].order_sn
+                        var resData = res.data[i]
+                        var rate_ExplicitImplicit = '购买成功'
+                        var statusClass = ''
+                        if(!resData.card_code && resData.order_status != 60){
+                            statusClass = 'noClick'
+                            rate_ExplicitImplicit = '处理中'
+                            if( resData.order_status == '41' ){
+                                rate_ExplicitImplicit = '未支付'
+                            }
+                        }
+                        text += '<tr>\n' +
+                            '                        <td>'+ resData.order_sn +'</td>\n' +
+                            '                        <td class="titles">'+ resData.goods_name +'</td>\n' +
+                            '                        <td>'+ resData.created +'</td>\n' +
+                            '                        <td><span class="price-text">￥'+ resData.order_amount +'</span></td>\n' +
+                            '                        <td><span class="state-block">' + rate_ExplicitImplicit +'</span></td>\n' +
+                            '                        <td>\n' +
+                            '                            <div class="operate-block '+ statusClass +'">\n' +
+                            '                                <span class="copyCode" data-code="'+ resData.card_code +'">复制兑换码</span>\n' +
+                            '                                <span class="deleteOrder" data-orderid="'+ resData.order_sn +'">删除订单</span>\n' +
+                            '                            </div>\n' +
+                            '                        </td>\n' +
+                            '                    </tr>'
+                        if(!resData.card_code && resData.order_status != 60){
+                            automaticPolling = true
+                        }
+                    }
+                    if(automaticPolling){
+                        setTimer()
+                    }
+                    $('.order-area').append(text)
+                    $('.orderInformation').show()
+                    $(".useFlow-block").show()
+                    localStorage.setItem('oid',$('#orderId').val());
+                    $('.deleteS').show()
+                }else {
+                    deleteS(true)
+                   $('.orderInformation').hide()
+                    $('.nodata-block').show()
+                    $(".useFlow-block").hide()
+                    cocoMessage.destroyAll();
+                    if(res.code == 400) {
+                        cocoMessage.error(res.codeMsg, 2000);
+                        $(".guide").html(res.codeMsg)
+                    }else {
+                        cocoMessage.error("未查询到结果!", 2000);
+                        $(".guide").html("非常抱歉，没有找到该订单号。<\/br>请重新核对是否输入了正确的订单号或者记录已被删除")
+                    }
+                }
+                $('.loadLine').hide()
+            },
+            error: function () {
+               $('.orderInformation').hide()
+                $('.nodata-block').show()
+                cocoMessage.destroyAll();
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                $('.deleteS').hide()
+                $('.loadLine').hide()
+            },
+        });
+    }
+    var timers = null
+    function setTimer() {
+        clearTimeout(timers);
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: $('#orderId').val(),
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME
+            }),
+            success: function (res) {
+                for(var i=0; i<res.data.length; i++) {
+                    var resData = res.data[i]
+                    if(resData.order_status != 60) {
+                        timers = setTimeout(()=>{
+                            setTimer()
+                        },5000)
+                        return
+                    }
+                }
+                clearTimeout(timers);
+                query(false)
+            },
+            error: function() {
+                timers = setTimeout(()=>{
+                    setTimer()
+                },5000)
+            }
+        });
+    }
+
+
+    $(document).on('click','.deleteOrder',function (){
+        $(".mask_body").show();
+        $(".delete-pop").show()
+        $(".delete-pop").attr('data-orderid',$(this).attr('data-orderid'))
+    })
+    // 删除
+    $(".cancel_btn , .close_pop").on('click', function (){
+        $(".mask_body").hide();
+        $(".delete-pop").hide()
+    })
+    $(".determine_btn").click(function (){
+        closeMsg = cocoMessage.loading('正在删除...');
+        $.ajax({
+            type: 'get',
+            url: urls + '/api/client/order/del?user_token='+ USER_TOKEN +'&orderSn='+ $(".delete-pop").attr('data-orderid') +'&jane_name=' + JANE_NAME,
+            success: function (res) {
+                if (res.code == 200) {
+                    $(".mask_body").hide();
+                    $(".delete-pop").hide()
+                    $('.orderId').val( $(".delete-pop").attr('data-orderid') )
+                    query(false)
+                }else {
+                    cocoMessage.error(res.codeMsg, 2000);
+                    closeMsg()
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                closeMsg()
+            },
+        });
+    })
+
+    $('.deleteS').click(function() {
+        deleteS()
+        $('.deleteS').hide()
+    })
+    function deleteS(clearInput) {
+        // 请求没有数据,判断是查询的本地id且查询的id和本地id一致, 就删除本地id(该id未支付)
+        if(localStorage.getItem('oid') == $('.orderId').val()) {
+            localStorage.removeItem('oid')
+        }
+        if(!clearInput){
+            $('.orderId').val('')
+        }
+    }
+
+    $(document).on('click','.CopyCode',function (){
+        var text = $(this).data('code')
+        if(text) {
+            $("#copyInput").val(text)
+            $("#copyInput").select()
+            try {
+                var state = document.execCommand("copy");
+            } catch (err) {
+                var state = false;
+            }
+            if (state) {
+                cocoMessage.success(1000, "复制成功", function() {
+                });
+            } else {
+                cocoMessage.error(1000, "复制失败", function() {
+                });
+            }
+        }else {
+            cocoMessage.error("复制失败, 请联系客服!", 2000);
+        }
+    })
+
+    $(".clearSearch").on('click',function (event){
+        event.stopPropagation()
+        $("#orderId").val('')
+        $(".clearSearch").hide()
+    })
+
+    $(document).on('click', '.copyCode', function (){
+        var text = $(this).attr('data-code')
+        $("#CopyCOde").val(text)
+        $("#CopyCOde").select()
+        try {
+            var state = document.execCommand("copy");
+        } catch (err) {
+            var state = false;
+        }
+        if (state) {
+            cocoMessage.success(1000, "复制成功", function() {
+            });
+        } else {
+            cocoMessage.error(1000, "复制失败", function () {
+            });
+        }
+    })
+</script>
+</html>

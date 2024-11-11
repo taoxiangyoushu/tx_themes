@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>早降重-提取报告</title>
+    <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css">
+<!--    <link rel="stylesheet" href="../pc/assets/css/kefu.css">-->
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0022">
+    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0022">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
+
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
+        var JANE_NAME = 'zjchong';
+    </script>
+</head>
+<body>
+<div class="app clearfix" id="app" data-key="queryApp">
+    <div class="nav-bar">
+        <div class="block1620 clearfix" id="memberCarrier">
+            <div class="logo-box pull-left">
+                <h1 class="hide">早降重 智能降重 </h1>
+                <a href="./index.html" title="早降重官网">
+                    <img src="../pc/assets/img/logo.png" alt="logo"/>
+                </a>
+                <div class="txter">
+                    <p>第六代人工智能神经网络降重模型</p>
+                    <p>进一步优化修改后的语句通顺度、连贯性、上下文结构，较上一代提升50%</p>
+                </div>
+            </div>
+            <div class="pull-right">
+                <div class="nav-activity">
+                    <a href="./hd/index.html" target="_blank">福利活动</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-body block1620">
+        <div>
+            <div class="ctn-body">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane report-cont active">
+                        <div>
+                            <form class="form-inline form-search clearfix">
+                                <div class="form-group pull-left"><label >订单编号：</label>
+                                    <input type="text" id="order-id" value="" placeholder="请输入您的订单编号" class="form-control">
+                                    <div class="clearInput"></div>
+                                    <button type="button" class="btn btn-search search-icon">查 询</button>
+                                </div>
+                                <div class="Order pull-left clearfix"><a href="javascript:;"
+                                                                         class="WeChat-order"><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozOEIxQ0IzMzk1MjUxMUU4OUJENkJDNzZDNTJBRDgwRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozOEIxQ0IzNDk1MjUxMUU4OUJENkJDNzZDNTJBRDgwRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjM4QjFDQjMxOTUyNTExRTg5QkQ2QkM3NkM1MkFEODBFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjM4QjFDQjMyOTUyNTExRTg5QkQ2QkM3NkM1MkFEODBFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+qIgXAwAAAvFJREFUeNqclU1IVFEUx8+9743jRBpEELkoSoI+SFo2hJpQlAWSZh8kuAha2aJF2yKCiHZtjII2QbXIASsQrBYWQZQt8mOR1bIoRCGIivl67/a7940f88bE6eJ/5t3zzv2fc//nnFEdHTkvbmmQVyI5T8QPRYzaBTqw7gPbwBrwC3wGL0SZIdFmVIqcSeBfYzgTUfkSX0oaJFTXeOiVylUHNoAWAl7CLwPTRfZTi530ApmNpFrB1D8IK5eRbjH6A/7H3Hm1mNQacrpZip69Vp1UszRni15G8l733P21ZFEgm1iLccTZlFS/DAfz3oBkdaPkFJp6gY10CzbPZRxdy64fBHgMbGFS2FqclkstVToTevekppj2JZStbI/PE9rlmUc4dZFBZDR6LtIRGAb5TlQSu/d7SHCvlsDrib2eRKdO8eQARRsjqD3RzPNr0eEQ7dO0rBShOqNJvS1W0X5e2Id6FJ92OelwhkCa63VIQaOXGV6GNm3vtaNMHGVmIeE7zEB0UFJw1ASW9ALvPoJp3NrxseEeLkG63pLWL8oSPaVTEibqNpvxH11Ldm0QTaH1dvHNFiKulkC3U+STkD+NtUxKl0ZvQexA9dCzvW78rJ4FnYBgEszyvI5RToof1MPTiM0mcnl+PqOVs5p+imkKmb7uKqx0k9J6M8F+RxHkDv5vyfgbthuibIYqFWuvGQ3Jy7L0nZ/k+XhPhHFivMHnNkTiYNsr55ekMjapq2WJGhnVFOBBLH273Qh2ljZkog5T+ftsNkVtMy/VFXRPl0mqzV0ffSak4A1z5UNlA1DRf3IaplP4TLBL0rc/baXLZFP0uBc+96Xg2ugspi8rmH1b2N0LOsVmVQUU2DolYaoNvjKzXf/3a1LKMhH0wTNm+XT04wdZMhzkxYlomqohVPY/xTlJBjddN2j7Z+bayBrMAJNkr/dshZSvONhKF/Q78hKXX3ENUeNuPI3sJ1Anl0hjbACrQBZ8B++owxOHQFU0z18BBgDuPQuUSZHEYAAAAABJRU5ErkJggg==">微信订单编号？
+                                    <span><img
+                                            src="../pc/assets/img/wxId.jpg"
+                                            alt=""></span></a><a href="javascript:;" class="Alipay-order"><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQTU3RjE5Mzk1MjUxMUU4QTE5MDk1MDkzOTQxRENFRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQTU3RjE5NDk1MjUxMUU4QTE5MDk1MDkzOTQxRENFRiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNBNTdGMTkxOTUyNTExRThBMTkwOTUwOTM5NDFEQ0VGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNBNTdGMTkyOTUyNTExRThBMTkwOTUwOTM5NDFEQ0VGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+zvNCNwAAAx5JREFUeNqUVE1IVUEUPmfuNfE3qQemghK0qSDIWkVS0b/9SJALgyBxZVEUtWrRJsGgRRaljzYVSUFUlBJptbKIEAoi0MzFC4oyLCIJKr13Tt959z7fD+9lb+C7587MOd+cOT/DFediRMJErh8HiyGymLMsJkNNTNJARMuA+cBPYEyEn5FQP+xGoANhiTz8eI7aEaeROiAlUwHDDmY5CImNfwzhK6A4JWQ/kp8kNelaXA+yt8ChOQnj6tLKbMegvyV12eAaFAfRSmNkGLKS8hvFzDQID7YmSQvwnWdLjWuHcLSTwzCGc1cBB3K4TOz6A+TaGr2fSw4W2O+Cu6Xx2AbjtSYkDIHiMfAKN3qH2c5EREPZiL8S1QLxVfHdzS6TX8sibRkhHAEGgUK9jQSeBlclehISKmaA9UCJOoS9TeTYehf1sy/YTyNtCRFejh4iqertQiCaWJz1NW3YVnjKG3LE8TlwAdCof0H0a0KSdohRsjSFBN3DvDY9utQAT2V5DtI1Ib4BHggjsJiGfCRWvdVcSCSLXRVIqTyl7vTzUoQu4Wcap66DbEqWmRSh2O+LNWQcOQve4iwhKOIF3eMTCSPxzUlh6WQjSzCNwEC9/K6xxFqUrCnzZ8xqdmwdSGPqbBbSSfV0DDuVlkyvsOlENdyCh82zydD4MV3DgS3iORPoIPXySLy3JWvTfUVH8VDcWuQ2a+870pyhtBSbZ8QzPhkQFtoyhOA4QqC56A1jnnwOhIe1Bm+KvixEh8XD4ZYvpitRj/XQIY6dRNc9QNbfY7UDBiOw2g/7CIjWIgynkZOnWL/OFd3jQR0ybSOfuizxMcSvOiho+gD5G7dpxFpPZvlg3AXxZVTDIIe1Lq4+fedjmvVFpsD7HISBPmH7BjR+YFYFuQOom+NRmYLhC/unYJdWjQvvtBMnhJ3d6N0+EFeD7ERe7xRLORI5Cods8EpxUJ8y4/RjY29Qq/kQwkdr2mF/FP+ezlMeadEquYOgr8Bk4D8ph6DfANNo6qKbRfENKmA75EYkZ0/Yqpq4YuAXoM0yDJ0+pKRf37DMav0rwADiwTNHGFcGSgAAAABJRU5ErkJggg==">支付宝订单编号？
+                                    <span><img
+                                            src="../pc/assets/img/aliId.png"
+                                            alt=""></span></a></div>
+                            </form>
+                            <div class="resWrap">
+                                <table class="table table-m">
+                                    <colgroup>
+                                        <col class="ddh">
+                                        <col class="lwbt">
+                                        <col class="bb">
+                                        <col class="zt">
+                                        <col class="tjrq">
+                                        <col class="cz">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th width="200px">订单号</th>
+                                        <th>论文标题</th>
+                                        <th width="120px">版本</th>
+                                        <th width="120px">状态</th>
+                                        <th width="150px">下单时间</th>
+                                        <th class="operation-tr" width="180px">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="report-area">
+                                    </tbody>
+                                </table>
+                                <div class="no-res nodata-block">
+                                    <img src="../pc/assets/img/no-report.png?v=5b04ddfd3f7bdde3e7d98fd404125631">
+                                    <p class="nodata-text">请输入订单号/优惠券查询结果</p>
+                                    <div class="toSubmit">
+                                        <a href="./index.html">提交降重</a>
+                                    </div>
+                                </div>
+
+                                <div class="loadLine">
+                                    <img src="../pc/assets/img/loading2.gif" alt="">
+                                    <p>加载中...</p>
+                                </div>
+                                <div class="foot-attend">
+                                    提醒：为保护用户隐私，降重结果保留30天，请尽快下载结果到电脑上保存！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suspend-bar">
+                    <img src="../pc/assets/img/zaojiangchongkf_pre_ico2.png" class="icon">
+                    <img src="../pc/assets/img/zaojiangchongkf_pre_ico.png" class="icon1">
+                    <div class="customerBox">
+                        <div class="head">
+                            <img src="../pc/assets/img/kf1.png" alt="">
+                            <span class="customer-title"></span>
+                        </div>
+                        <div class="customerCode">
+                            <img class="customer-qr" src="" alt="">
+                        </div>
+                        <div class="segmentation-line"></div>
+                        <div class="customerWay">
+                            <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+                            <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+                            <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+                            <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+                        </div>
+                        <p class="noCustomer">商家未设置客服</p>
+                        <img class="customBg" src="../pc/assets/img/bg1.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="intro-bar">
+                <div class="intro-link clearfix">
+                    <div>
+                        <a class="a-link a-blue pull-left only-jc" href="./index.html">立即降重</a>
+<!--                        <a class="a-link a-yellow pull-right"-->
+<!--                           href="./demo/zjchong/suggestLianmen.html"-->
+<!--                           target="_blank">报告样例</a>-->
+                    </div>
+                </div>
+                <div class="intro-step">
+                    <h2>只需<span>4步</span>即可完成降重</h2>
+                    <ul class="clearfix">
+                        <li>
+                            <img src="../pc/assets/img/intro-step-1.png" alt="">
+                            <p>上传论文</p>
+                        </li>
+                        <li>
+                            <img src="../pc/assets/img/intro-step-2.png" alt="" class="step-icon">
+                            <p>核对结算</p>
+                            <img src="../pc/assets/img/intro-step-arrow.png" alt="" class="arrow">
+                        </li>
+                        <li>
+                            <img src="../pc/assets/img/intro-step-3.png" alt="">
+                            <p>等待结果</p>
+                            <img src="../pc/assets/img/intro-step-arrow.png" alt="" class="arrow">
+                        </li>
+                        <li>
+                            <img src="../pc/assets/img/intro-step-4.png" alt="">
+                            <p>下载报告</p>
+                            <img src="../pc/assets/img/intro-step-arrow.png" alt="" class="arrow">
+                        </li>
+                    </ul>
+                </div>
+                <div class="intro-tab">
+                    <div class="r-bar-tab">
+                        <ul class="clearfix">
+                            <li class="r-1 ">版本对比</li>
+                            <li class="r-2 active">常见问题</li>
+                        </ul>
+                        <div class="line"></div>
+                    </div>
+                    <div class="r-bar-ctn">
+                        <div class="bbdb" style="display: none">
+                            <div class="c-bbdb">
+                                <div class="my-table clearfix">
+                                    <div class="my-table-col col-0">
+                                        <div>报告版本</div>
+                                        <div class="bg-skyblue">单价</div>
+                                        <div>耗时</div>
+                                        <div class="bg-skyblue">建议</div>
+                                        <div>数据训练</div>
+                                        <div class="bg-skyblue">网络模型</div>
+                                        <div >导出word</div>
+                                        <div class="bg-skyblue">评分</div>
+                                        <div>原文对比</div>
+                                        <div class="bg-skyblue">导出txt</div>
+                                        <div >同义词</div>
+                                        <div class="bg-skyblue">在线修改</div>
+                                        <div >分布图</div>
+                                        <div class="bg-skyblue">报告样例</div>
+                                    </div>
+                                    <div class="my-table-col col-1">
+                                        <div class="bg-blue">降AIGC率</div>
+                                        <div class="bg-skyblue fs-blue bbbold normal_ver">
+                                                <span>
+                                                    <span class="dbPrice-aigc">
+                                                        元/千字
+                                                    </span>
+                                                </span>
+                                        </div>
+                                        <div class="fs-blue">5min/千字</div>
+                                        <div class="bg-skyblue">1条</div>
+                                        <div >上亿</div>
+                                        <div class="bg-skyblue">全新算法</div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><span class="sample-a"><a href="./demo_aigc_compare.html" target="_blank">查看</a></span></div>
+                                    </div>
+                                    <div class="my-table-col col-2">
+                                        <div class="bg-blue">降查重率</div>
+                                        <div class="bg-skyblue fs-blue bbbold high_ver">
+                                                <span>
+                                                    <span class="dbPrice-lwjc">
+                                                       元/千字
+                                                    </span>
+                                                </span>
+                                        </div>
+                                        <div class="fs-blue">3min/千字</div>
+                                        <div class="bg-skyblue">2条</div>
+                                        <div>上亿</div>
+                                        <div class="bg-skyblue">第六代</div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><span class="sample-a"><a href="./demo_cc_compare.html" target="_blank">查看</a></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-cpcs-aigc">
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>耗时</p>
+                                        <h3>1千字/5min</h3>
+                                        <img src="../pc/assets/img/r-bar-1.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>单价</p>
+                                        <h3 class="price-cs-aigc" style="font-size: 18px"></h3>
+                                        <img src="../pc/assets/img/r-bar-2.png" alt="">
+                                    </div>
+
+
+                                </div>
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>模型指数</p>
+                                        <h3>PPL  35<span class="minus">-</span></h3>
+                                        <img src="../pc/assets/img/r-bar-3.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>数据训练</p>
+                                        <h3>上亿</h3>
+                                        <img src="../pc/assets/img/r-bar-5.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>句子建议</p>
+                                        <h3>三条</h3>
+
+                                        <img src="../pc/assets/img/r-bar-6.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>网络模型</p>
+                                        <h3>第七代</h3>
+                                        <img src="../pc/assets/img/r-bar-4.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="r-bar-detail detail-new">
+                                    <h6>更多介绍</h6>
+                                    <ul>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-new-1.png" alt="">
+                                            <p>多系统支持</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-new-2.png" alt="">
+                                            <p>多样化降重</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-new-3.png" alt="">
+                                            <p>导出WORD</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-new-4.png" alt="">
+                                            <p>保学术诚信</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="c-cpsc-lwjc">
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>单价</p>
+                                        <h3 class="price-cs-lwjc" style="font-size: 18px"></h3>
+                                        <img src="../pc/assets/img/r-bar-2.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>耗时</p>
+                                        <h3>3min/千字</h3>
+                                        <img src="../pc/assets/img/r-bar-1.png" alt="">
+                                    </div>
+
+
+                                </div>
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>数据训练</p>
+                                        <h3>亿级+</h3>
+                                        <img src="../pc/assets/img/r-bar-4.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>句子建议</p>
+                                        <h3>三条</h3>
+                                        <img src="../pc/assets/img/r-bar-5.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>网络模型</p>
+                                        <h3>第六代</h3>
+                                        <img src="../pc/assets/img/r-bar-6.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>模型指数</p>
+                                        <h3>PPL  35<span class="minus">-</span></h3>
+                                        <img src="../pc/assets/img/r-bar-3.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="r-bar-detail">
+                                    <h6>报告详情</h6>
+                                    <ul>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-1.png" alt="">
+                                            <p>报告评分</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-2.png" alt="">
+                                            <p>原文对比</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-3.png" alt="">
+                                            <p>导出WORD</p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-4.png" alt="">
+                                            <p>导出TXT</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-5.png" alt="">
+                                            <p>同义词建议</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-6.png" alt="">
+                                            <p>在线修改</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cjwt" >
+                            <div class="cjwt-jc">
+                                <dl>
+                                    <dt>降重比例</dt>
+                                    <dd>
+                                        自动降重语义分析引擎会将解析出的重复句子全部修改一遍，由于系统不会自动提交查重，所以系统是无法预知修改后的文章能降低多少比例的。根据惯例，重复率越高，降重越明显。
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>降重效果</dt>
+                                    <dd>
+                                        当然自动降重的效果是无法与专业的老师人工修改相提并论的，系统也不能评判修改后的句子是否符合要求。相比人工降重的价格，极具性价比。
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>重要提示</dt>
+                                    <dd class="redText">
+                                        1、提交之前，请确认能接受机器降重带来的误差和局限性再支付费用，确认支付后不接受任何形式退款；
+                                    </dd>
+                                    <dd class="redText">2、此系统只是降重软件，报告内不含查重率；</dd>
+                                    <dd class="redText">3、请使用相同查重系统的结果来评判降重效果。</dd>
+                                </dl>
+                            </div>
+                            <div class="cjwt-aigc">
+                                <dl>
+                                    <dt>降AIGC系统介绍</dt>
+                                    <dd>
+                                        对比语言模型和思维逻辑，轻松降低“AIGC检测系统”的AI疑似率，支持市面上主流AIGC疑似率系统，赋能AI生成文章，保障学术诚信。
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>降AIGC疑似率效果</dt>
+                                    <dd>
+                                        市面上的查重系统和AICG针对AI的算法会使用多种不同的AI检测模型进行计算，即使是纯人工手写的论文都存在误判虚高的现象；目前我们的产品基于主流知W的AIGC系统进行深度优化和更新，效果更好。
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>重要提示</dt>
+                                    <dd class="redText">
+                                        1、提交之前，请确认能接受机器带来的误差和局限性再支付费用，确认支付后不接受任何形式退款；
+                                    </dd>
+                                    <dd class="redText">2、此系统只是降AIGC疑似率软件，查重结果内不含查重率及疑似率；</dd>
+                                    <dd class="redText">3、请使用相同AIGC检测系统的结果来评判降AIGC率的效果。</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mask_body"></div>
+<div class="delete-pop">
+    <input  id="copyInput" type="text">
+    <div class="pop_top">
+        <div class="pop_title">删除提醒</div>
+        <img class="close_pop" src="../pc/assets/img/delete2.png" alt="">
+    </div>
+    <div class="pop_cont">
+        <p class="p1">是否确定删除订单？删除后，无法恢复</p>
+        <div class="back_block">
+            <p class="p2">系统仅保留30天内的订单，</p>
+            <p class="p3">确保您的论文不会被覆盖和盗窃</p>
+        </div>
+    </div>
+    <div class="pop_bottom">
+        <div class="cancel_btn">取消</div>
+        <div class="determine_btn">确定</div>
+    </div>
+</div>
+<div class="SingleDownload">
+    <div class="pop_top">
+        <div class="pop_title">下载结果</div>
+        <img class="close_pop" src="../pc/assets/img/delete2.png" alt="">
+    </div>
+    <div class="pop_cont">
+
+    </div>
+    <div class="Loading">
+        <img src="../pc/assets/img/loading2.gif" alt="">
+    </div>
+    <div class="pop_bottom">
+        <div class="determine_package">打包下载</div>
+    </div>
+</div>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../pc/assets/js/jquery.min.js"></script>
+<script src="../pc/assets/js/coco-message.js"></script>
+<script src="../pc/assets/js/common.js?v=p24.0022"></script>
+<script src="../pc/assets/js/order_result.js?v=p24.0022"></script>
+<script src="../pc/assets/js/bootstrapValidator.min.js"></script>
+
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=p24.0022"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0022"></script><script>
+    $(".r-bar-tab ul li").click(function () {
+        $(".r-bar-tab ul li").removeClass('active')
+        $(this).addClass('active')
+        if ($(this).hasClass('r-1')) {
+            $(".r-bar-ctn .bbdb").show()
+            $(".r-bar-ctn .cjwt").hide()
+        }
+        if ($(this).hasClass('r-2')) {
+            $(".r-bar-ctn .bbdb").hide()
+            $(".r-bar-ctn .cjwt").show()
+        }
+    })
+    function startQuerying(){
+        if(getQueryVariable('oid') && !memberFu.isLogin) {
+            $('#order-id').val(getQueryVariable('oid'))
+            query(false)
+        }else if(localStorage.getItem('oid') && !memberFu.isLogin) {
+            $('#order-id').val(localStorage.getItem('oid'))
+            query(false)
+        }
+    }
+    $('#order-id').on('input',function (){
+        if(!$('#order-id').val()){
+            $(".clearInput").hide()
+        }else{
+            $(".clearInput").show()
+        }
+    })
+
+    var isTrue;
+    $('.search-icon').click(function() {
+        if(isTrue) return
+        isTrue = true
+        setTimeout(() => {
+            isTrue = false
+        },3000)
+        if(!$('#order-id').val() && !memberFu.isLogin) {
+            cocoMessage.destroyAll();
+            cocoMessage.error("请输入订单号或优惠券后查询!", 2000);
+            // $(".guide").html("输入订单号/优惠券查询结果")
+            // $('.report-area').hide()
+            $('.nodata-block').show()
+        }else {
+            query(true)
+        }
+    })
+
+    function query(e) {
+        cocoMessage.destroyAll();
+        if(e) cocoMessage.success('正在为您查询...')
+        $('.loadLine').show()
+        $('.nodata-block').hide()
+        $('.report-area').children().remove()
+        $(".clearInput").show()
+        var pay_Id = ''
+        if(memberFu.isLogin && !$('#order-id').val()) {
+            pay_Id = 'all_project_order'
+        }else {
+            pay_Id = $('#order-id').val()
+        }
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: pay_Id,
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME,
+            }),
+            success: function (res) {
+                var text = "";
+                var automaticPolling = false;
+                $(".operation-tr").attr('width', '180px')
+                if(res.data.length && res.data[0].jane_name==JANE_NAME) {
+                    for(var i=0; i<res.data.length; i++) {
+                        var payId = res.data[i].order_sn
+                        var resData = res.data[i]
+                        var rate_ExplicitImplicit = ''
+                        var statusClass = ''
+                        if(resData.order_status == 60){
+                            rate_ExplicitImplicit = 'rateExplicit'
+                            statusClass = 'status-2'
+                        }else{
+                            rate_ExplicitImplicit = 'rateImplicit'
+                            statusClass = 'status-1'
+                        }
+                        text += '<tr>' +
+                            '        <td class="ellipsis">'+  resData.order_sn +'</td>' +
+                            '        <td class="ellipsis">'+ resData.place_order_data.title.value +'</td>' +
+                            '        <td class="ellipsis">'+ resData.goods_name +'</td>' +
+                            '        <td class="state">'+ resData.order_status_human +'</td>' +
+                            '        <td>'+ res.data[i].created +'</td>' +
+                            '        <td class="download">'
+                            if(!resData.isBind && threeMsg.wx && !resData.end_product){
+                                text += '<div class="scanFollow">' +
+                                    '    <div class="codeBox">' +
+                                    '        <img class="codeImg'+ i +'" src="../pc/assets/img/loading2.gif" alt="">' +
+                                    '    </div>' +
+                                    '    <div class="tipsText">' +
+                                    '        <p class="p-1">扫码关注</p>' +
+                                    '        <p class="p-1 noMarginTop">实时了解订单进度</p>' +
+                                    '        <p class="p-2">如果您未绑定</p>' +
+                                    '        <p class="p-2 noMarginTop">请一定保存订单号</p>' +
+                                    '    </div>' +
+                                    '</div>'
+                            }else{
+                                if(res.data[i].isPartDownload) {
+                                    text += "<div class=\"DownloadSeparately titles\" data-id=\""+resData.order_sn+"\"><span>下载</span></div>";
+                                    if(resData.end_product) {
+                                        text += "<a class=\"delete-report\" data-orderid='"+resData.order_sn+"' href=\"javascript:void(0)\"><span class=\"deleteText\">删 除</span></a> ";
+                                    }
+                                }else if(resData.end_product) {
+                                    text += "<a class=\"complete\" href=\""+resData.end_product+"\" target=\"_blank\"><span class=\"allowText\">下 载</span></a> ";
+                                    text += "<a class=\"delete-report\" data-orderid='"+resData.order_sn+"' href=\"javascript:void(0)\"><span class=\"deleteText\">删 除</span></a> ";
+                                }else {
+                                    text += "<div class=\"nots\"><span>下 载</span></div> ";
+                                }
+                            }
+                            text += '</td>' +
+                            '    </tr>'
+                        if(resData.order_status != 60) {
+                            automaticPolling = true
+                            if(threeMsg.wx && !resData.isBind){
+                                $(".operation-tr").attr('width', '210px')
+                                getWxCode(resData.order_sn, 'codeImg'+i)
+                            }
+                        }else{
+                            if(WxTimeOut){
+                                WxTime = 0
+                                clearTimeout(WxTimeOut)
+                            }
+                        }
+                    }
+                    if(automaticPolling){
+                        setTimer(pay_Id)
+                    }
+                    $('.report-area').append(text)
+                    $('.report-area').show()
+                    if(!memberFu.isLogin) {
+                        localStorage.setItem('oid',$('#order-id').val());
+                    }
+                    $('.deleteS').show()
+                }else {
+                    deleteS(true)
+                    $('.report-area').hide()
+                    $('.nodata-block').show()
+                    cocoMessage.destroyAll();
+                    if(res.code == 400) {
+                        cocoMessage.error(res.codeMsg, 2000);
+                        $(".guide").html(res.codeMsg)
+                    }else if(e && $('.orderId').val()) {
+                        cocoMessage.error("未查询到结果!", 2000);
+                        $(".guide").html("非常抱歉，没有找到该订单号。<\/br>请重新核对是否输入了正确的订单号或者记录已被删除")
+                    }else {
+                        $(".guide").html("非常抱歉，没有找到订单记录")
+                    }
+                    clearTimeout(timers);
+                }
+                $('.loadLine').hide()
+            },
+            error: function () {
+                $('.report-area').hide()
+                $('.nodata-block').show()
+                cocoMessage.destroyAll();
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                $('.deleteS').hide()
+                $('.loadLine').hide()
+                clearTimeout(timers);
+            },
+        });
+    }
+
+    function deleteS(clearInput) {
+        // 请求没有数据,判断是查询的本地id且查询的id和本地id一致, 就删除本地id(该id未支付)
+        if(localStorage.getItem('oid') == $('#order-id').val()) {
+            localStorage.removeItem('oid')
+        }
+        if(!clearInput){
+            $('#order-id').val('')
+        }
+    }
+
+    var timers = null
+    function setTimer(pay_Id) {
+        clearTimeout(timers);
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: pay_Id,
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME
+            }),
+            success: function (res) {
+                for(var i=0; i<res.data.length; i++) {
+                    var resData = res.data[i]
+                    if(resData.order_status != 60) {
+                        timers = setTimeout(()=>{
+                            setTimer(pay_Id)
+                        },60000)
+                        return
+                    }
+                }
+                clearTimeout(timers);
+                query(false)
+            },
+            error: function() {
+                timers = setTimeout(()=>{
+                    setTimer(pay_Id)
+                },60000)
+            }
+        });
+    }
+
+    var price_lwjc = ''
+    var price_aigc = ''
+    function setPriceTips2(){
+        for(var i=0; i<typeData.length; i++) {
+            if(typeData[i].short_name == 'lwjc'){
+                price_lwjc = typeData[i].selling_price + '元/' + (typeData[i].unit_count/1000 == 1?'':typeData[i].unit_count/1000) + '千字'
+            }
+            if(typeData[i].short_name == 'aigclwjc'){
+                price_aigc = typeData[i].selling_price + '元/' + (typeData[i].unit_count/1000 == 1?'':typeData[i].unit_count/1000) + '千字'
+            }
+        }
+        $(".price-cs-aigc").text(price_aigc?price_aigc:'获取中')
+        $(".price-cs-lwjc").text(price_lwjc?price_lwjc:'获取中')
+        detail_change()
+        $(".dbPrice-lwjc").text(price_lwjc?price_lwjc:'获取中')
+        $(".dbPrice-aigc").text(price_aigc?price_aigc:'获取中')
+    }
+
+    // 删除报告
+    $(document).on('click','.delete-report',function (){
+        $(".mask_body").show();
+        $(".delete-pop").attr('data-orderid',$(this).attr('data-orderid'))
+        $(".delete-pop").show()
+    })
+
+    $(".cancel_btn").on('click', function (){
+        $(".mask_body").hide();
+        $(".delete-pop").hide()
+    })
+
+    $(".close_pop").on('click', function (){
+        $(".mask_body").hide();
+        $(".delete-pop").hide();
+        $(".SingleDownload").hide()
+        clearTimeout(order_resultTimeout);
+    })
+
+    $(".determine_btn").click(function (){
+        closeMsg = cocoMessage.loading('正在删除...');
+        $.ajax({
+            type: 'get',
+            url: urls + '/api/client/order/del?user_token='+ USER_TOKEN +'&orderSn='+ $(".delete-pop").attr('data-orderid') +'&jane_name=' + JANE_NAME,
+            success: function (res) {
+                if (res.code == 200) {
+                    $(".mask_body").hide();
+                    $(".delete-pop").hide()
+                    $('.orderId').val( $(".delete-pop").attr('data-orderid') )
+                    query(false)
+                }else {
+                    cocoMessage.error(res.codeMsg, 2000);
+                    closeMsg()
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                closeMsg()
+            },
+        });
+    })
+
+    var WxTime = 300;
+    var WxTimeOut = null;
+    function getWxCode(order_id, element){
+        $.ajax({
+            type: 'GET',
+            url: urls + '/weixin/qr/bind_order?order_id=' + order_id,
+            success: function (res){
+                if(res.code == 200){
+                    $('.'+element).attr('src', res.data)
+                    $('.'+element).css('width', '100%')
+                    WxTime = 300
+                    WxPolling(order_id)
+                }
+            },
+            error: function (err){
+            }
+        })
+    }
+
+    function WxPolling(order_id){
+        $.ajax({
+            type: 'GET',
+            url: urls + '/weixin/qr/regist/query?bindOid=' + order_id,
+            success: function (res){
+                if(res.code == 200){
+                    if(!res.data.isbind){
+                        clearTimeout(WxTimeOut)
+                        WxTimeOut = setTimeout(function (){
+                            if(WxTime > 0){
+                                WxTime--
+                                WxPolling(order_id)
+                            }
+                        },1000)
+                    }else{
+                        query(false)
+                        clearTimeout(WxTimeOut)
+                    }
+                }
+            },
+            error: function (err){
+
+            }
+        })
+    }
+
+    $(".clearInput").on('click',function (){
+        $("#order-id").val('')
+        $(".clearInput").hide()
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 为移动设备添加 viewport；-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 指定请求和响应遵循的缓存机制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>芝士PPT - 查询结果</title>
+    <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=17.7">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css">
+    <link rel="stylesheet" href="../mobile/assets/css/query/query.css?v=17.8">
+    <script>
+        var JANE_NAME = 'ppt_moban'
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+    </script>
+</head>
+
+<body>
+    <div class="pageHeader">
+        <a href="./index.html">
+            <img src="../mobile/assets/img/returnImg.png" alt="">
+        </a>
+        <span>我的订单</span>
+    </div>
+    <div class="container containerMain">
+        <div class="orderTipsPop">
+            <div class="maskHader">
+                什么是订单号
+                <img src="../mobile/assets/img/delete.png" class="hidePop" alt="">
+            </div>
+            <div class="maskContent">
+                <p class="active_tips block_tips" data-ordertips="wx">
+                    <img src="../mobile/assets/img/order-wx.png" alt=""> 微信订单号
+                </p>
+                <img class="orderTipImg WxOrder" src="../mobile/assets/img/wxId.jpg" alt="">
+                <p class="block_tips" data-ordertips="ali">
+                    <img src="../mobile/assets/img/order-ali.png" alt=""> 支付宝订单号
+                </p>
+                <img class="orderTipImg AliOrder" src="../mobile/assets/img/aliId.png" alt="">
+                <div class="toabaoID">
+                    <p><img class="taobao-icon" src="../mobile/assets/img/taobao.png" alt="">淘宝订单号</p>
+                    <img src="../mobile/assets/img/taobao_oid.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="searchBox">
+            <input type="text" id="searchID" placeholder="请输入您的订单号或优惠券">
+            <span class="deleteS"></span>
+            <span class="searchText">搜索</span>
+        </div>
+        <p class="orderIdTips">
+            <img src="../mobile/assets/img/orderIdTips.png" alt="订单号">
+            什么是订单号
+        </p>
+        <div class="resultBox">
+
+        </div>
+        <div class="nodata">
+            <img src="../mobile/assets/img/nodata.png" alt="">
+            <p class="toSearch">输入订单号/优惠券查询结果</p>
+            <div class="toHome">
+                <a href="./">去下单</a>
+            </div>
+        </div>
+        <div class="prompt">
+            <p class="prompt-title">
+                温馨提示：
+            </p>
+            <p class="prompt-text">
+                亲，高端汇报PPT模板的商品为<span class="redClass">电子文件，非实物，不支持退换货，谨慎下单</span> 。下单即发货，不退不换。高峰期订单较多，发货时间会有所延长。
+            </p>
+            <p class="prompt-title">
+                安全保障：
+            </p>
+            <p class="prompt-text">
+                系统保留<span class="redClass">30天以内</span>的订单，超过30天则被删除，购买成功后请尽快复制链接下载!
+            </p>
+            <p class="prompt-text redClass">
+                请慎重记录并保管好您的订单号以便日后查询，离开此页则不再显示。
+            </p>
+        </div>
+        <input id="copyInput" type="text">
+    </div>
+    <div class="dashi_wx_box text_a_c">
+        <div class="customerBox">
+            <i class="close-wx"></i>
+            <div class="head">
+                <img src="../mobile/assets/img/kf.png" alt="">
+                <span class="customer-title"></span>
+            </div>
+            <div class="customerCode">
+                <img class="customer-qr" src="" alt="">
+            </div>
+            <div class="segmentation-line"></div>
+            <div class="customerWay">
+                <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+                <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+                <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+                <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+            </div>
+            <p class="noCustomer">商家未设置客服</p>
+            <img class="customBg" src="../mobile/assets/img/bg1.png" alt="">
+        </div>
+    </div>
+    <div class="delete_pop">
+        <p class="title">是否确定删除订单？</p>
+        <p class="p3">删除后，无法恢复</p>
+        <p class="p3">系统仅保留30天内的订单，确保您的订单不会被覆盖和盗窃</p>
+        <div class="bottom">
+            <div class="cancel_btn">取消</div>
+            <div class="determine_btn">确定</div>
+        </div>
+    </div>
+    <div class="mask"></div>
+    <div class="customer-wx" id="customer-wx1">
+        <img src="../mobile/assets/img/dd_wap_nor.png" alt="客服">
+    </div>
+    <div id="filing-information"></div>
+    <!--    <div class="ForTheRecord">-->
+    <!--        COPYRIGHT © 2022-2023 湖南淘项有术网络信息科技有限公司-->
+    <!--    </div>-->
+</body>
+<script src="../mobile/assets/js/jquery.min.js"></script>
+<script src="../mobile/assets/js/bootstrap.min.js"></script>
+<script src="../mobile/assets/js/alert.min.js"></script>
+<script src="../mobile/assets/js/clipboard.min.js"></script>
+<script src="../mobile/assets/js/message.js"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=1.9"></script>
+<script src="../mobile/assets/js/Drag.js"></script>
+<script src="../mobile/assets/js/zepto_min.js"></script>
+<script src="../mobile/assets/js/common.js"></script>
+<script>
+    $(".orderIdTips").on('click',function (){
+        $(".mask").show();
+        $(".orderTipsPop").show();
+    })
+
+    $(".mask").on('click',function (){
+        $(".mask").hide();
+        $(".orderTipsPop").hide();
+        $(".SingleDownload").hide();
+    })
+
+    $(".hidePop").on('click',function (){
+        $(".mask").hide();
+        $(".orderTipsPop").hide();
+        $(".SingleDownload").hide();
+    })
+    function startQuerying(){
+        if(getQueryVariable('oid')) {
+            $('#searchID').val(getQueryVariable('oid'))
+            query(true)
+        }else if(localStorage.getItem('orderId')) { // 链接未携带oid说明不是支付成功页面过来, 查看是否有本地记录
+            $('#searchID').val(localStorage.getItem('orderId'))
+            query(true)
+        }
+    }
+    var order_sn = ''
+    var decide = 60;
+    var oid = ''
+    var setTime = ''
+    var source = ''
+    // 先判断是不是微信端打开的
+    if (/(micromessenger)/i.test(navigator.userAgent)) {
+        source = 2
+    } else {
+        // 判断h5还是pc true就是h5
+        let client =
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                navigator.userAgent
+            );
+        if (client) {
+            source = 7
+        } else {
+            source = 1
+        }
+    }
+
+    var isTrue;
+    $('.searchText').click(function() {
+        if(isTrue) return
+        isTrue = true
+        setTimeout(() => {
+            isTrue = false
+        },3000)
+        if(!$('#searchID').val()) {
+            // toastNone()
+            toast({
+                msg: "请输入订单号或优惠券后查询",
+                type: 'error',
+                time: 2000
+            })
+        }else {
+            query(true)
+        }
+    })
+    function query(e) {
+        // toastNone()
+        if(e){
+            toast({
+                msg: "正在为您查询",
+                type: 'loading',
+                time: 2000
+            })
+        }
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: $('#searchID').val(),
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME,
+            }),
+            success: function (res) {
+                var text = "";
+                var automaticPolling = false;
+                if(res.data.length && res.data[0].jane_name==JANE_NAME) {
+                    for(var i=0; i<res.data.length; i++) {
+                        var payId = res.data[i].order_sn
+                        var resData = res.data[i]
+                        var rate_ExplicitImplicit = ''
+                        var statusClass = ''
+                        if(resData.order_status == 60){
+                            rate_ExplicitImplicit = 'rateExplicit'
+                            statusClass = 'status-2'
+                        }else{
+                            rate_ExplicitImplicit = 'rateImplicit'
+                            statusClass = 'status-1'
+                        }
+                        text += "<div class=\"card\">";
+                        text += "    <div class=\"cardHader\">";
+                        text += "        <span>订单编号："+resData.order_sn+"</span>";
+                        text += "        <span class=\""+statusClass+"\">"+resData.order_status_human+"</span>";
+                        text += "    </div>";
+                        text += "    <div class=\"productDetails\">";
+                        text += "        <img src=\"../mobile/assets/img/commodityPicture.png\" alt=\"\">";
+                        text += "        <div class=\"details\">";
+                        text += "            <b id=\"title\">300页-高端工作汇报年中总结PPT模板|思考框架·逻辑图·数据</b>";
+                        text += "            <div class=\"quantityBox\">";
+                        text += "               <div class=\"label\">";
+                        text += "                   不支持7天无理由";
+                        text += "               </div>";
+                        text += "               <span class=\"quantity\">*1</span>";
+                        text += "            </div>";
+                        text += "            <div class=\"amount\">";
+                        text += "                ￥<span id=\"amountTextTop\">"+resData.order_amount+"</span>";
+                        text += "            </div>";
+                        text += "        </div>";
+                        text += "    </div>";
+                        text += "    <p class=\"TotalAmount\">合计：￥"+resData.order_amount+"</p>";
+                        text += "    <div class=\"ButtonDiv "+rate_ExplicitImplicit+"\">";
+                        text += "        <div class=\"delete delete_btn\"  data-orderid=\""+resData.order_sn+"\">";
+                        text += "            删除订单";
+                        text += "        </div>";
+                        text += "        <div class=\"copyLink CopyText\" data-code=\""+resData.end_product+"\">";
+                        text += "            复制链接";
+                        text += "        </div>";
+                        text += "    </div>";
+                        text += "</div>";
+                        if(resData.order_status != 60) {
+                            automaticPolling = true
+                        }
+                    }
+                    if(automaticPolling){
+                        setTimer()
+                    }
+                    $('.nodata').hide()
+                    $('.resultBox').show()
+                    $('.resultBox').children().remove()
+                    $('.resultBox').append(text)
+                    localStorage.setItem('oid',$('#searchID').val());
+                    $('.deleteS').show()
+                }else {
+                    deleteS(true)
+                    $('.resultBox').hide()
+                    $('.nodata').show()
+                    if(res.code == 400) {
+                        toast({msg:res.codeMsg, time:2000});
+                        $(".toSearch").html(res.codeMsg)
+                    }else {
+                        toast({
+                            msg: "未查询到结果",
+                            type: 'error',
+                            time: 2000
+                        })
+                        $(".toSearch").text("非常抱歉，没有找到该订单号。请重新核对是否输入了正确的订单号或者记录已被删除")
+                    }
+                }
+            },
+            error: function () {
+                $('.resultBox').hide()
+                $('.nodata').show()
+                toast({
+                    msg: "请求失败!请检查网络",
+                    type: 'error',
+                    time: 2000
+                })
+                $('.deleteS').hide()
+            },
+        });
+    }
+    $('.deleteS').click(function() {
+        deleteS()
+        $('.deleteS').hide()
+        $('.resultBox').hide()
+        $('.nodata').show()
+    })
+    function deleteS(clearInput) {
+        // 请求没有数据,判断是查询的本地id且查询的id和本地id一致, 就删除本地id(该id未支付)
+        if(localStorage.getItem('oid') == $('#searchID').val()) {
+            localStorage.removeItem('oid')
+        }
+        if(!clearInput){
+            $('#searchID').val('')
+        }
+    }
+
+    // 有内容展示删除图标, 没有内容隐藏图标, 图标删除会和本地存储对比, 相同删除本地存储和输入框内容, 不相同只删除输入框内容
+    $("#searchID").on("input", function() {
+        if(!$(this).val().length) {
+            $('.deleteS').hide()
+        }else {
+            $('.deleteS').show()
+        }
+    });
+
+    var timers = null
+    function setTimer() {
+        clearTimeout(timers);
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: $('#searchID').val(),
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME
+            }),
+            success: function (res) {
+                for(var i=0; i<res.data.length; i++) {
+                    var resData = res.data[i]
+                    if(resData.order_status != 60) {
+                        timers = setTimeout(()=>{
+                            setTimer()
+                        },5000)
+                        return
+                    }
+                }
+                clearTimeout(timers);
+                query(false)
+            },
+            error: function() {
+                timers = setTimeout(()=>{
+                    setTimer()
+                },5000)
+            }
+        });
+    }
+
+    $(document).on('click','.rateExplicit .delete_btn',function (){
+        $(".mask").show();
+        $(".delete_pop").show()
+        $(".delete_pop").attr('data-orderid',$(this).attr('data-orderid'))
+    })
+
+    $(".mask").on('click',function (){
+        $(".mask").hide();
+        $(".delete_pop").hide();
+    })
+
+    $(".cancel_btn").on('click',function (){
+        $(".mask").hide();
+        $(".delete_pop").hide();
+    })
+
+    $(".determine_btn").click(function (){
+        $(".mask").hide();
+        $(".delete_pop").hide();
+        toast({
+            msg: '删除中,请稍后...',
+            type: 'loading',
+            time: 20000
+        })
+        $.ajax({
+            type: 'get',
+            url: urls + '/api/client/order/del?user_token='+ USER_TOKEN +'&orderSn='+ $(".delete_pop").attr('data-orderid') +'&jane_name=' + JANE_NAME,
+            success: function (res) {
+                if (res.code == 200) {
+                    toastNone()
+                    $('#searchID').val( $(".delete_pop").attr('data-orderid') )
+                    query(false)
+                }else {
+                    toast(res.codeMsg)
+                }
+            },
+            error: function () {
+                toast("请求失败!请检查网络")
+            },
+        });
+    })
+
+    $(document).on('click', '.rateExplicit .CopyText', function () {
+        var text = $(this).data('code')
+        console.log(text , 'text')
+        if (text) {
+            $("#copyInput").val(text)
+            $("#copyInput").select()
+            try {
+                var state = document.execCommand("copy");
+            } catch (err) {
+                var state = false;
+            }
+            if (state) {
+                toast('复制成功')
+            } else {
+                toast({
+                    msg: "复制失败,请手动复制",
+                    type: 'error',
+                    time: 2000
+                })
+            }
+        } else {
+            toast({
+                msg: "成品分配中, 请稍等...",
+                type: 'error',
+                time: 2000
+            })
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,411 @@
+body {
+    background-color: #F7F7F7;
+}
+.pageHeader {
+    background-color: transparent;
+}
+.orderTipsPop,
+.SingleDownload {
+    position: fixed;
+    width: 92%;
+    z-index: 1001;
+    background: #fff;
+    top: 18%;
+    padding-bottom: .6rem;
+    border-radius: .4rem;
+    display: none;
+
+    p {
+        font-size: .88rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin: .63rem;
+        color: #626262;
+
+        img {
+            margin-right: .5rem;
+        }
+    }
+
+    &>img {
+        width: 93%;
+        margin: 0 1.18rem;
+    }
+
+    .hidePop {
+        position: absolute;
+        width: .8rem;
+        height: .8rem;
+        right: .8rem;
+        top: 1rem;
+    }
+
+    .orderTipsTitle {
+        display: flex;
+        justify-content: start;
+
+        .block_tips {
+            position: relative;
+            display: none;
+
+            &.active_tips:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background: #517fff;
+                bottom: -1.18rem;
+            }
+        }
+    }
+    .taobao-icon {
+        width: 1.9rem;
+    }
+}
+
+.searchBox {
+    margin-top: .63rem;
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #searchID {
+        font-size: .88rem;
+        color: #999999;
+        border: none;
+        padding: .63rem;
+        width: 76%;
+        border-radius: .3125rem;
+        outline: none;
+    }
+    .searchText {
+        font-size: 1rem;
+        color: #fff;
+        padding: .56rem 1.22rem;
+        position: relative;
+        background-color: #FF496E;
+        border-radius: .3125rem;
+    }
+}
+
+.orderIdTips {
+    display: inline-block;
+    img {
+        vertical-align: middle;
+        width: .75rem;
+        height: .75rem;
+        margin-right: 2px;
+        margin-top: -0.2rem;
+    }
+
+    font-size: .75rem;
+    font-weight: bold;
+    color: #FF496E;
+    margin: .63rem 0;
+}
+
+
+.nodata {
+    text-align: center;
+    margin-top: 2rem;
+    &>img {
+        width: 9.09rem;
+    }
+
+    .toSearch {
+        font-size: .75rem;
+        color: #999;
+    }
+
+    .toHome {
+        width: 6rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        background-image: linear-gradient(90deg,
+            #ff8542 0%,
+            #ff466f 100%);
+        border-radius: .6rem;
+        text-align: center;
+        line-height: normal;
+        padding: .5rem 0;
+        margin: 0 auto;
+        margin-top: 2.5rem;
+        box-shadow: 0rem 0rem 1rem 0rem rgba(255, 103, 87, 0.28);
+        a {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            color: inherit;
+        }
+    }
+}
+
+.prompt {
+    font-size: .75rem;
+    color: #999999;
+    padding-top: 2.5rem;
+    .prompt-title {
+        color: #FF496E;
+        font-weight: bold;
+        margin: .31rem 0;
+    }
+    .redClass {
+        color: #FF496E;
+    }
+    .prompt-text.redClass {
+        margin: .31rem 0;
+    }
+}
+
+
+
+.orderTipsPop .maskContent {
+    text-align: center;
+    overflow-y: auto;
+    padding-bottom: 1rem;
+}
+
+.orderTipsPop .maskContent>img {
+    width: 90%;
+}
+
+.toabaoID {
+    display: none;
+
+    .taobao-icon {
+        width: .69rem;
+    }
+
+    img {
+        width: 90%;
+    }
+}
+
+.maskHader {
+    padding: .72rem;
+    position: relative;
+    font-size: 1rem;
+    border-bottom: 1px solid #ededed;
+}
+
+
+.productDetails {
+    padding-top: .63rem;
+    padding-bottom: 1.31rem;
+    border-bottom: 1px solid #DDDDDD;
+    img {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+.quantityBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .quantity {
+        color: #090909;
+        font-size: .85rem;
+        font-weight: bold;
+    }
+}
+.details {
+    width: calc(100% - 5.5rem);
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: .4rem;
+    b {
+        font-weight: bold;
+        font-size: .88rem;
+        line-height: 1.25rem;
+        display: block;
+    }
+    .label {
+        color: #FE7070;
+        display: inline-block;
+        border: 1px solid #FE7070;
+        font-weight: 400;
+        font-size: .63rem;
+        padding: .2rem .38rem;
+        margin: .3rem 0;
+    }
+    .amount {
+        color: #FF5900;
+        font-size: .75rem;
+        span {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+}
+.resultBox {
+    .card {
+        background-color: #fff;
+        padding: .63rem;
+        border-radius: .31rem;
+        margin-bottom: .63rem;
+    }
+    .cardHader {
+        color: #333;
+        font-size: .75rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: .31rem 0;
+    }
+    .TotalAmount {
+        text-align: right;
+        font-size: .75rem;
+        color: #090909;
+        padding: .63rem 0;
+    }
+    .ButtonDiv {
+        text-align: center;
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: .38rem;
+        .delete {
+            width: 4.75rem;
+            border-radius: .31rem .31rem .31rem .31rem;
+            border: .03rem solid #707070;
+            color: #000;
+            padding: .44rem 0;
+            line-height: normal;
+        }
+        .copyLink {
+            width: 4.75rem;
+            background: linear-gradient( 270deg, #FF496E 0%, #FF8147 100%);
+            border-radius: .31rem .31rem .31rem .31rem;
+            color: #fff;
+            padding: .44rem 0;
+            line-height: normal;
+            margin-left: .44rem;
+        }
+    }
+}
+
+.complainBox .complainTS {
+    padding: 1rem 0 !important;
+    font-size: .8rem !important;
+    img {
+        width: 1rem !important;
+        height: 1rem !important;
+    }
+}
+
+
+.delete_pop {
+    position: fixed;
+    width: 80%;
+    top: 50%;
+    left: 0;
+    margin-left: 10%;
+    margin-top: -10rem;
+    z-index: 1000;
+    background: linear-gradient(180deg, #deeafa, #fff);
+    border-radius: 1rem;
+    display: none;
+
+    #copyInput {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .title {
+        font-size: 1rem;
+        color: #142338;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    p.p2 {
+        padding: 0 2rem;
+        font-size: .7rem;
+        color: #333333;
+        margin-top: 2rem;
+        text-align: left;
+
+        .copy_pop {
+            color: #006dff;
+            text-decoration: underline;
+        }
+    }
+
+    .p3 {
+        font-size: .8rem;
+        color: #999999;
+        text-align: left;
+        padding: 0 1rem;
+        margin-top: .4rem;
+    }
+
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        height: 3rem;
+        width: 100%;
+        margin-top: 1rem;
+
+        .cancel_btn {
+            width: 50%;
+            text-align: center;
+            font-size: 1rem;
+            color: #c7cddf;
+            line-height: 3rem;
+            border-top: 1px solid #d2e6ff;
+            border-right: 1px solid #d2e6ff;
+        }
+
+        .determine_btn {
+            width: 50%;
+            text-align: center;
+            font-size: 1rem;
+            color: #418bf8;
+            font-weight: bold;
+            line-height: 3rem;
+            border-top: 1px solid #d2e6ff;
+        }
+    }
+}
+
+.searchBox {
+    position: relative;
+    .deleteS {
+        display: none;
+        position: absolute;
+        right: 5.3rem;
+        top: 0.8rem;
+        width: 2rem;
+        height: 2rem;
+        background: url('../../img/delete2.png') no-repeat;
+        cursor: pointer;
+    }
+}
+
+#copyInput {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+
+.status-1 {
+    color: #ff881e;
+}
+.status-2 { // 成功
+    color: #007BFF;
+}
+.resultBox .rateImplicit .CopyText , .resultBox .rateImplicit .delete_btn{
+    background: #f2f2f2;
+    color: #c1c1c1;
+    border-color: #f2f2f2;
+}

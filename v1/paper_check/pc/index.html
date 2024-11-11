@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>论文查重</title>
+    <meta name="description" content="24小时自助检测，可以快速准确地检测出毕业论文、博士、硕士论文、期刊论文中的不当引用、过度引用、论文抄袭、伪造、篡改等学术不端行为" />
+    <meta name="keywords" content="检测重复率,论文查重,论文检测,毕业论文抄袭查重检测" />
+    <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../pc/assets/css/select2.min.css">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0022">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0022">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        var JANE_NAME = 'paper_platform';
+    </script>
+</head>
+<body>
+<div class="home_page clearfix" id="App">
+    <div class="view-bg">
+        <div class="head">
+           <div class="head-content">
+               <div class="logo f-l">
+                   <img src="../pc/assets/img/logo.png" alt="">
+               </div>
+               <div class="f-r" id="memberCarrier">
+                    <div class="nav-download">
+                        <a href="./query.html">下载报告</a>
+                    </div>
+                   <div class="nav-activity">
+                       <a href="./hd/index.html" target="_blank">福利活动</a>
+                   </div>
+               </div>
+           </div>
+        </div>
+        <div class="banner">
+            <p class="introduce">备受关注的<span class="switch-text"></span>平台</p>
+            <p class="describe">多品类官方合作查重品牌， 安全/准确/权威满足你的查重需求</p>
+            <div class="plagiarismCheck-btn">
+                <a href="#checkBlock">立即查重</a>
+            </div>
+        </div>
+        <div id="checkBlock">
+            <div class="content">
+                <div class="plagiarismCheck-block clearfix">
+                    <div class="system-submit f-l">
+                        <form class="plagiarismCheck-form" id="">
+                            <div class="form-group check-system">
+                                <label class="label-t">查重系统</label>
+                                <div class="main-container check-system-block"></div>
+                            </div>
+                            <div class="form-group check-version">
+                                <label class="label-t label-x">检测版本</label>
+                                <div class="main-container check-version-block">
+                                    <div class="version-item active" data-type="bd">本科版</div>
+                                    <div class="version-item" data-type="sb">硕博版</div>
+                                    <div class="version-item" data-type="zc">职称版</div>
+                                    <div class="version-item" data-type="ty">通用版</div>
+                                </div>
+                            </div>
+                            <div class="form-group paper-temp">
+                                <label class="label-t label-s">论文模版</label>
+                                <div class="main-container paper-temp-block">
+                                    <select style="line-height: 38px;height: 38px;width: 672px" class="form-control" id="selectTemp">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group paper-title">
+                                <label class="label-t label-s">论文题目</label>
+                                <div class="main-container paper-title-block">
+                                    <input autocomplete="off" class="form-control" maxlength="50" name="paper-title" type="text" placeholder="必填，请输入论文标题，最大字符50字" id="title"/>
+                                </div>
+                            </div>
+                            <div class="form-group paper-author">
+                                <label class="label-t label-s">论文作者</label>
+                                <div class="main-container paper-author-block">
+                                    <input autocomplete="off" class="form-control" maxlength="15" name="paper-author" type="text" placeholder="必填，请输入论文标题，最大字符15字" id="author"/>
+                                    <div class="date-block">
+                                        <label class="label-t label-date label-s">日期</label>
+                                        <input type="text" readonly class="form-control" data-date-autoclose="true" data-date-format="yyyy-mm-dd"  autocomplete="off" id="date" placeholder="发表论文收稿日期">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group paper-upload">
+                                <label class="label-t">提交方式</label>
+                                <div class="main-container paper-upload-block">
+                                    <div class="upload-type">
+                                        <span class="toCheck"><input id="content" class="SubmissionMode" type="radio" name="upload_type" value="content" checked/><span>粘贴文本</span></span>
+                                        <span class="toCheck"><input id="file" class="SubmissionMode" type="radio" name="upload_type" value="file"/><span>上传文档</span></span>
+                                        <div class="notice-block f-r">
+                                            <img src="../pc/assets/img/notice.png" alt="">
+                                            <span>检测须知</span>
+                                            <div class="notice">
+                                                亲，准备论文查重的文档，一定要<span>word的doc或docx格式；</span>提交查重检测前<span>删除封面、图标、致谢、一级页眉页脚的学校信息；</span> 目录、附录、参考文献等要跟提交学校的保持一致；
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-upload">
+                                        <div class="InputBox">
+                                            <textarea name="textareaName" id="textareaText" maxlength="300000" placeholder="内容字数 200~30万字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交!"></textarea>
+                                        </div>
+                                        <div class="UploadBox">
+                                            <input name="docUpload" id="ThesisInput" type="file" single ref="docUpload" file-upload="" accept=".doc,.docx,.txt,text/plain">
+                                            <div class="Not">
+                                                <img src="../pc/assets/img/Upload.png" alt="上传">
+                                                <p>点击或拖拽文件到此处上传</p>
+                                                <span>文档支持txt、doc(x)，文件大小不得超过15M</span>
+                                            </div>
+                                            <div class="Complete">
+                                                <div class="CompleteBox">
+                                                    <div class="fileIcoBox">
+                                                        <img class="fileIco Loading" src="../pc/assets/img/Middle.png" alt="">
+                                                        <img class="fileIco DocumentText" src="../pc/assets/img/DocumentText.png" alt="">
+                                                        <img class="fileIco DocumentWord" src="../pc/assets/img/DocumentWord.png" alt="">
+                                                        <img class="lodingGif Loading" src="../pc/assets/img/loading2.gif" alt="">
+                                                    </div>
+                                                    <div class="fileBox">
+                                                        <p class="fileNameThesis"></p>
+                                                        <div class="statusDIV">
+                                                            <div class="UploadedSuccess">
+                                                                <img class="UploadedSuccessfully" src="../pc/assets/img/UploadedSuccessfully.png" alt="">
+                                                                <span>上传成功</span>
+                                                                <span class="deleteFileThesis deleteFileThesisico"><img src="../pc/assets/img/Deletewd.png" alt=""> 删除</span>
+                                                            </div>
+                                                            <div class="UploadFailed">
+                                                                <img class="UploadFailedfully" src="../pc/assets/img/UploadFailed.png" alt="">
+                                                                <span>上传失败</span>
+                                                                <span class="deleteFileThesis deleteFileThesisText">重新上传</span>
+                                                            </div>
+                                                            <div class="Loading">
+                                                                <span>正在解析...</span>
+                                                                <span class="deleteFileThesis deleteFileThesisText">重新上传</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="submit-block">
+                                        <div class="submit-btn f-l">立即检测</div>
+                                        <p class="f-r">计费方式: <span class="unit-price"></span><span class="unit-tips"></span> <span class="wordCount">当前输入: <span class="word-num">0</span>字</span> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="system-introduce f-l">
+                        <div class="introduce-title"><span class="system-name"></span>品牌介绍</div>
+                        <div class="introduce-item aigcIntroduce">
+                            <p class="i-name">AIGC检测是什么? </p>
+                            <p class="i-text "></p>
+                        </div>
+                        <div class="introduce-item comparisonLibrary">
+                            <p class="i-name">对比库范围：</p>
+                            <p class="i-text "></p>
+                        </div>
+                        <div class="introduce-item detectionAlgorithm">
+                            <p class="i-name">检测算法：</p>
+                            <p class="i-text "></p>
+                        </div>
+                        <div class="introduce-item applyUser">
+                            <p class="i-name">适用人群：</p>
+                            <p class="i-text "></p>
+                        </div>
+                        <div class="parameter">
+                            <p class="parameter-item detectionScope">
+                                检测范围：<span class="p-text "></span>
+                            </p>
+                            <p class="parameter-item detectingLanguage">
+                                检测语种：<span class="p-text "></span>
+                            </p>
+                            <p class="parameter-item timeConsuming">
+                                预计耗时：<span class="p-text "></span>
+                            </p>
+                            <p class="parameter-item reportSample">
+                                报告样例：<span class="p-text"><a href="">点击查看</a>(官网授权合作)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="loading-block">
+                    <img src="../pc/assets/img/loading2.gif" alt="">
+                </div>
+                <div class="right-introduce">
+                    <p class="p3">直连高校查重系统</p>
+                    <p class="p4">论文安全不泄露</p>
+                    <div class="integrate-introduce">
+                        <div class="ii-item">
+                            <img src="../pc/assets/img/i-dxt.png" alt="">
+                            <p class="p1">多系统支持</p>
+                            <p class="p2">满足你的查重需求</p>
+                        </div>
+                        <div class="ii-item">
+                            <img src="../pc/assets/img/i-sf.png" alt="">
+                            <p class="p1">智能算法准确</p>
+                            <p class="p2">亿级别互联网网页数据库资源</p>
+                        </div>
+                        <div class="ii-item">
+                            <img src="../pc/assets/img/i-aq.png" alt="">
+                            <p class="p1">看得见的安全</p>
+                            <p class="p2">安全加密，不存在原文泄露担忧</p>
+                        </div>
+                        <div class="ii-item noMarginRight">
+                            <img src="../pc/assets/img/i-sjk.png" alt="">
+                            <p class="p1">海量数据库</p>
+                            <p class="p2">为查重比对提供有力支撑</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="information-block">
+        <img src="../pc/assets/img/data.png" alt="">
+        <p class="p1">查重50w+文档，来自真实用户的反馈与推荐</p>
+        <div class="user-reviews">
+            <div class="ur-item">
+                <div class="f-l">
+                    <img src="../pc/assets/img/user1.png" alt="">
+                </div>
+                <div class="ur-text f-l">
+                    <p class="u-name">@万同学    本科毕业生</p>
+                    <p class="u-text">用了维普查重，和学校最终结果一模一样，顺利毕业答辩了~</p>
+                </div>
+            </div>
+            <div class="ur-item">
+                <div class="f-l">
+                    <img src="../pc/assets/img/user2.png" alt="">
+                </div>
+                <div class="ur-text f-l">
+                    <p class="u-name">@张同学    硕博毕业生</p>
+                    <p class="u-text">说句实话，使用大师查重的免费查重，确实对我来说是一个福音，还有就是检测速度确实蛮快的，准确率</p>
+                </div>
+            </div>
+            <div class="ur-item noMarginRight">
+                <div class="f-l">
+                    <img src="../pc/assets/img/user3.png" alt="">
+                </div>
+                <div class="ur-text f-l">
+                    <p class="u-name">@June老师     </p>
+                    <p class="u-text">找外文查重特别难，很怕假的，找到这家用了UK版本，很准确！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="guide">
+        <p class="p1">
+            <img class="star" src="../pc/assets/img/xing.png" alt="">
+            准备好开始查重了吗？
+        </p>
+        <div class="btn-check"><a href="#checkBlock">立即查重</a></div>
+    </div>
+    <div id="filing-information"></div>
+    <div class="fixedBox">
+        <div class="distributionEntrance" data-idistributor="0">
+            <a id="distribution" href="./fx/init.html" target="_blank" rel="noopener noreferrer">
+                <img src="../pc/assets/img/distributionEntrance.gif" alt="">
+            </a>
+        </div>
+        <div>
+            <div class="customer" style="float: right;">
+                    <div class="icon">
+                        <img src="../pc/assets/img/lunwenkf_ico.png" alt="" class="icon1">
+                        <img src="../pc/assets/img/lunwenkf_ico1.png" alt="" class="icon2">
+                        <!-- <span>客服</span> -->
+                    </div>
+                <div class="customerBox">
+                    <div class="head">
+                        <img src="../pc/assets/img/kf1.png" alt="">
+                        <span class="customer-title"></span>
+                    </div>
+                    <div class="customerCode">
+                        <img class="customer-qr" src="" alt="">
+                    </div>
+                    <div class="segmentation-line"></div>
+                    <div class="customerWay">
+                        <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+                        <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+                        <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+                        <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+                    </div>
+                    <p class="noCustomer">商家未设置客服</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="toTop" style="float: right;">
+                    <img src="../pc/assets/img/top1.png" alt="" class="icon3">
+                    <img src="../pc/assets/img/top.png" alt="" class="icon4">
+                    <!-- <span>置顶</span> -->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../pc/assets/js/jquery.min.js"></script>
+<script src="../pc/assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../pc/assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../pc/assets/js/coco-message.js"></script>
+<script src="../pc/assets/js/typed.min.js"></script>
+<script src="../pc/assets/js/select2.min.js"></script>
+<script src="../pc/assets/js/common.js?v=p24.0022"></script>
+<script src="../pc/assets/js/bootstrapValidator.min.js"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0022"></script>
+<script>
+    $('#date').datetimepicker({minView: 2, language: "zh-CN"});
+    var typed = new Typed('.switch-text', {
+        strings: ['论文查重', '准确安全', '严选加密'], // 要轮流显示的字符串数组
+        typeSpeed: 150, // 打字速度（单位：字符/每秒）
+        backSpeed: 10, // 删除速度
+        loop: true, // 是否循环播放
+        backDelay: 800, // 每个字符串之间延迟的时间
+        showCursor: false, // 显示光标
+        fadeOut: true,
+    });
+
+    // 维普格式检测大学生版  模板获取
+    var cqvip_getFormatTemplate = []
+    function getFormaTemplate() {
+        $.ajax({
+            type: 'post',
+            url: urls + "/api/tool/get_types?scenes_id=get_paper_check_params_data",
+            data: {
+                type: 'cqvip_getFormatTemplate',
+                temp_type: '2'
+            },
+            success: function (res){
+                if(res.code == 200){
+                    cqvip_getFormatTemplate = res.data
+                    $("#selectTemp").append("<option disabled='true' value='' selected>请选择或输入关键词搜索模板</option>");
+                    for(var i=0;i<res.data.length;i++) {
+                        $("#selectTemp").append("<option value='"+ res.data[i].tempId +"'>"+ res.data[i].tempName +"</option>");
+                    }
+                    if($('#selectTemp')[0]){
+                        $('#selectTemp').select2();
+                    }
+                }else{
+                    cocoMessage.error( res.codeMsg, 2000);
+                }
+            },
+            error: function (err){
+
+            }
+        })
+    }
+
+    var uploadType = 'content'
+    var minWords = ''
+    var maxWords = ''
+
+    $(document).on('click',".check-system-block .system-item",function (){
+        $(".check-system-block .system-item").removeClass('active')
+        $(this).addClass('active')
+        $(".date-block").fadeOut()
+        if( (typeData[$(this).attr('data-name')].length >= 1) && ($(this).attr('data-name') == 'turnitin' || $(this).attr('data-name') == 'wanfang' || $(this).attr('data-name') == 'weipu' || $(this).attr('data-name') == 'yuanwenjian') ){
+            if($(this).attr('data-name') == 'turnitin'){
+                var versionDom = ''
+                for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
+                    if(typeData[$(this).attr('data-name')][i].short_name == "turnitin") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">国际版</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "turnitinuk") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">UK版</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "turnitinai") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">国际版+AI</div>'
+                    }
+                }
+                $(".check-version-block").empty().append(versionDom)
+            }
+            if($(this).attr('data-name') == 'wanfang'){
+                var versionDom = ''
+                for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
+                    if(typeData[$(this).attr('data-name')][i].short_name == "wanfangbd") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">本科版</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "wanfangmd") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">硕博版</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "wanfangpu") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">职称版</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "wanfanggl") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">通用版</div>'
+                    }
+                }
+                $(".check-version-block").empty().append(versionDom)
+            }
+            if($(this).attr('data-name') == 'weipu'){
+                var versionDom = ''
+                for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
+                    if(typeData[$(this).attr('data-name')][i].short_name == "cqvip") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">本科版</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "cqvipmd") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">硕博版</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "cqvipzc") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">职称版</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "cqvipbj") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">编辑部版</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "cqvipaigc") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">AIGC检测</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "cqvipgs") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">格式检测大学生版</div>'
+                    }
+                }
+                $(".check-version-block").empty().append(versionDom)
+            }
+            if($(this).attr('data-name') == 'yuanwenjian') {
+                var versionDom = ''
+                for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
+                    if(typeData[$(this).attr('data-name')][i].short_name == "ywjbd") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">本科版</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "ywjmd") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">硕博版</div>'
+                    }
+                }
+                $(".check-version-block").empty().append(versionDom)
+            }
+            $(".check-version").show()
+            $(".version-item").first().click()
+        }else{
+            $(".check-version").hide()
+            //计费方式
+            var explain = ''
+            var unit = ''
+            if(typeData[$(this).attr('data-name')][0].unit_type != '字'){
+                // explain = '不满一件按一件计算'
+            }else{
+                if(typeData[$(this).attr('data-name')][0].unit_count < 10000 && (typeData[$(this).attr('data-name')][0].unit_count%1000==0)) {
+                    unit = (typeData[$(this).attr('data-name')][0].unit_count/1000) + '千'
+                }
+                if(typeData[$(this).attr('data-name')][0].unit_count >= 10000 && (typeData[$(this).attr('data-name')][0].unit_count%10000==0)) {
+                    unit = (typeData[$(this).attr('data-name')][0].unit_count/10000) + '万'
+                }
+                explain = '不满' + unit + typeData[$(this).attr('data-name')][0].unit_type + '按' + unit + typeData[$(this).attr('data-name')][0].unit_type + '计算'
+            }
+            $(".unit-price").text(typeData[$(this).attr('data-name')][0].selling_price +'元/'+typeData[$(this).attr('data-name')][0].unit_count+typeData[$(this).attr('data-name')][0].unit_type)
+            $(".unit-tips").text(explain)
+            //右侧介绍
+            $(".system-name").text(systemInfo[$(this).attr('data-name')].name)
+            $(".detectingLanguage .p-text").text(systemInfo[$(this).attr('data-name')].Language)
+            $(".timeConsuming .p-text").text(systemInfo[$(this).attr('data-name')].timeConsuming + '（高峰期会有所延长）')
+            if(systemInfo[$(this).attr('data-name')].comparisonLibrary){
+                $(".comparisonLibrary .i-text").text(systemInfo[$(this).attr('data-name')].comparisonLibrary)
+                $(".comparisonLibrary").show()
+            }else{
+                $(".comparisonLibrary").hide()
+            }
+            if(systemInfo[$(this).attr('data-name')].detectionAlgorithm){
+                $(".detectionAlgorithm .i-text").text(systemInfo[$(this).attr('data-name')].detectionAlgorithm)
+                $(".detectionAlgorithm").show()
+            }else{
+                $(".detectionAlgorithm").hide()
+            }
+            if(systemInfo[$(this).attr('data-name')].aigcIntroduce){
+                $(".aigcIntroduce .i-text").text(systemInfo[$(this).attr('data-name')].aigcIntroduce)
+                $(".aigcIntroduce").show()
+            }else{
+                $(".aigcIntroduce").hide()
+            }
+            if(systemInfo[$(this).attr('data-name')].detectionScope){
+                $(".detectionScope .p-text").text(systemInfo[$(this).attr('data-name')].detectionScope)
+                $(".detectionScope").show()
+            }else{
+                $(".detectionScope").hide()
+            }
+            if(systemInfo[$(this).attr('data-name')].reportSample){
+                $(".reportSample a").attr('href', systemInfo[$(this).attr('data-name')].reportSample)
+                $(".reportSample").show()
+            }else{
+                $(".reportSample").hide()
+            }
+            if(systemInfo[$(this).attr('data-name')].applyUser){
+                $(".applyUser .i-text").text(systemInfo[$(this).attr('data-name')].applyUser)
+                $(".applyUser").show()
+            }else{
+                $(".applyUser").hide()
+            }
+            //限制条件
+            var noNum = ''
+            var prohibitEn = '暂不支持英语等非中文论文，非中文论文请勿提交!'
+            if($(this).attr('data-name')=='paperPass' || $(this).attr('data-name')=='zaojiance') {
+                noNum = '，不可输入符号或数字'
+            }
+            $("#title").attr('maxlength', typeData[$(this).attr('data-name')][0].data.title_maxlength)
+            $("#title").attr('placeholder','必填，最大字符'+ typeData[$(this).attr('data-name')][0].data.title_maxlength +'字'+noNum)
+            $("#author").attr('maxlength', typeData[$(this).attr('data-name')][0].data.author_maxlength)
+            $("#author").attr('placeholder','必填，最大字符'+ typeData[$(this).attr('data-name')][0].data.author_maxlength +'字'+noNum)
+            $("#textareaText").attr('maxlength', typeData[$(this).attr('data-name')][0].data.max_words)
+            if($(this).attr('data-name')=='dashichachong' || $(this).attr('data-name')=='weipu' || $(this).attr('data-name')=='ithenticate' || $(this).attr('data-name')=='turnitin' || $(this).attr('data-name')=='checkPass' ){
+                $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。')
+            }else{
+                $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。' + prohibitEn)
+            }
+            minWords =  typeData[$(this).attr('data-name')][0].data.min_words
+            maxWords = typeData[$(this).attr('data-name')][0].data.max_words
+
+            // 提交方式
+            if( typeData[$(this).attr('data-name')][0].data.support_submit_types.content) {
+                $("#content").parent().show()
+            }else{
+                $("#content").parent().hide()
+            }
+            if( typeData[$(this).attr('data-name')][0].data.support_submit_types.file) {
+                $("#file").parent().show()
+            }else{
+                $("#file").parent().hide()
+            }
+           // 切换后也有该方式 不改变提交方式
+            if( !typeData[$(this).attr('data-name')][0].data.support_submit_types[uploadType] ) {
+                ($(".toCheck:visible")[0]).click()
+            }
+        }
+    })
+
+    $(".check-version-block").on('click', '.version-item', function (){
+        $(".check-version-block .version-item").removeClass('active')
+        $(this).addClass('active')
+        if($(this).attr('data-type') == 'cqvipzc' || $(this).attr('data-type') == 'wanfangpu'){
+            $(".date-block").fadeIn()
+            $(".date-block").css('display', 'inline-block')
+        }else{
+            $(".date-block").fadeOut()
+        }
+        if($(this).attr('data-type') == 'cqvipgs'){
+            $(".paper-temp").fadeIn()
+            $(".paper-temp").css('display', 'inline-block')
+        }else{
+            $(".paper-temp").fadeOut()
+        }
+        var explain = ''
+        var unit = ''
+        //价格
+        for(var i=0; i<typeData[$(".system-item.active").attr('data-name')].length; i++){
+            if(typeData[$(".system-item.active").attr('data-name')][i].short_name == $(this).attr('data-type')) {
+                $(".system-item.active").find('.system-price').text(typeData[$(".system-item.active").attr('data-name')][i].selling_price + '元/' + typeData[$(".system-item.active").attr('data-name')][i].unit_count + typeData[$(".system-item.active").attr('data-name')][i].unit_type)
+                if(typeData[$(".system-item.active").attr('data-name')][i].unit_type != '字'){
+                    // explain = '不满一件按一件计算'
+                }else{
+                    if(typeData[$(".system-item.active").attr('data-name')][i].unit_count < 10000 && (typeData[$(".system-item.active").attr('data-name')][i].unit_count%1000==0)) {
+                        unit = (typeData[$(".system-item.active").attr('data-name')][i].unit_count/1000) + '千'
+                    }
+                    if(typeData[$(".system-item.active").attr('data-name')][i].unit_count >= 10000 && (typeData[$(".system-item.active").attr('data-name')][i].unit_count%10000==0)) {
+                        unit = (typeData[$(".system-item.active").attr('data-name')][i].unit_count/10000) + '万'
+                    }
+                    explain = '不满' + unit + typeData[$(".system-item.active").attr('data-name')][i].unit_type + '按' + unit + typeData[$(".system-item.active").attr('data-name')][i].unit_type + '计算'
+                }
+                $(".unit-price").text(typeData[$(".system-item.active").attr('data-name')][i].selling_price +'元/'+typeData[$(".system-item.active").attr('data-name')][i].unit_count+typeData[$(".system-item.active").attr('data-name')][i].unit_type)
+                $(".unit-tips").text(explain)
+                //限制条件
+                var noNum = ''
+                var prohibitEn = '暂不支持英语等非中文论文，非中文论文请勿提交!'
+                if($('.system-item.active').attr('data-name')=='wanfang' || $('.system-item.active').attr('data-name')=='weipu') {
+                    noNum = '，不可输入符号或数字'
+                }
+                $("#title").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].data.title_maxlength)
+                $("#title").attr('placeholder','必填，最大字符'+ typeData[$(".system-item.active").attr('data-name')][i].data.title_maxlength +'字' + noNum)
+                $("#author").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].data.author_maxlength)
+                $("#author").attr('placeholder','必填，最大字符'+ typeData[$(".system-item.active").attr('data-name')][i].data.author_maxlength +'字' + noNum)
+                $("#textareaText").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].data.max_words)
+                if($(".system-item.active").attr('data-name')=='dashichachong' || $(".system-item.active").attr('data-name')=='weipu' || $(".system-item.active").attr('data-name')=='ithenticate' || $(".system-item.active").attr('data-name')=='turnitin' || $(".system-item.active").attr('data-name')=='checkPass' ){
+                    $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(".system-item.active").attr('data-name')][i].data.min_words +'~'+ typeData[$(".system-item.active").attr('data-name')][i].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。')
+                }else{
+                    $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(".system-item.active").attr('data-name')][i].data.min_words +'~'+ typeData[$(".system-item.active").attr('data-name')][i].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。' + prohibitEn)
+                }
+                minWords = typeData[$(".system-item.active").attr('data-name')][i].data.min_words
+                maxWords = typeData[$(".system-item.active").attr('data-name')][i].data.max_words
+
+                // 提交方式
+                if( typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.content) {
+                    $("#content").parent().show()
+                }else{
+                    $("#content").parent().hide()
+                }
+                if( typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file) {
+                    $("#file").parent().show()
+                }else{
+                    $("#file").parent().hide()
+                }
+                // 切换后也有该方式 不改变提交方式
+                if( !typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types[uploadType] ) {
+                    ($(".toCheck:visible")[0]).click()
+                }
+            }
+        }
+        //右侧介绍
+        $(".system-name").text(systemInfo[$(this).attr('data-type')].name)
+        $(".detectingLanguage .p-text").text(systemInfo[$(this).attr('data-type')].Language)
+        $(".timeConsuming .p-text").text(systemInfo[$(this).attr('data-type')].timeConsuming + '（高峰期会有所延长）')
+        if(systemInfo[$(this).attr('data-type')].comparisonLibrary){
+            $(".comparisonLibrary .i-text").text(systemInfo[$(this).attr('data-type')].comparisonLibrary)
+            $(".comparisonLibrary").show()
+        }else{
+            $(".comparisonLibrary").hide()
+        }
+        if(systemInfo[$(this).attr('data-type')].detectionAlgorithm){
+            $(".detectionAlgorithm .i-text").text(systemInfo[$(this).attr('data-type')].detectionAlgorithm)
+            $(".detectionAlgorithm").show()
+        }else{
+            $(".detectionAlgorithm").hide()
+        }
+        if(systemInfo[$(this).attr('data-type')].aigcIntroduce){
+            $(".aigcIntroduce .i-text").text(systemInfo[$(this).attr('data-type')].aigcIntroduce)
+            $(".aigcIntroduce").show()
+        }else{
+            $(".aigcIntroduce").hide()
+        }
+        if(systemInfo[$(this).attr('data-type')].detectionScope){
+            $(".detectionScope .p-text").text(systemInfo[$(this).attr('data-type')].detectionScope)
+            $(".detectionScope").show()
+        }else{
+            $(".detectionScope").hide()
+        }
+        if(systemInfo[$(this).attr('data-type')].reportSample){
+            $(".reportSample a").attr('href', systemInfo[$(this).attr('data-type')].reportSample)
+            $(".reportSample").show()
+        }else{
+            $(".reportSample").hide()
+        }
+        if(systemInfo[$(this).attr('data-type')].applyUser){
+            $(".applyUser .i-text").text(systemInfo[$(this).attr('data-type')].applyUser)
+            $(".applyUser").show()
+        }else{
+            $(".applyUser").hide()
+        }
+    })
+
+    $(".upload-type .toCheck").on('click', function (){
+        $(this).find('.SubmissionMode').click()
+    })
+
+    $(".SubmissionMode").on('change',function (){
+        uploadType = $(this).val()
+        if($(this).val() == 'file'){
+            $(".InputBox").hide();
+            $(".UploadBox").show();
+            $(".wordCount").hide()
+        }
+        if($(this).val() == 'content'){
+            $(".InputBox").show();
+            $(".UploadBox").hide();
+            $(".wordCount").show()
+        }
+    })
+
+    $('.upload-type .toCheck .SubmissionMode').on('click', function (event){
+        event.stopPropagation()
+    })
+
+    $("#textareaText").on('input', function (){
+        $(".word-num").text($(this).val().length)
+        if($(this).val().length>0){
+            $($("#textareaText").parent()).removeClass('error')
+        }
+    })
+
+    $("#ThesisInput").on('change', function (){
+        if($(this)[0].files[0]){
+            $('.Not , .UploadedSuccess , .UploadFailed').hide()
+            $('.Complete , .Loading , .lodingGif').show()
+            var fileName = $("#ThesisInput")[0].files[0].name
+            $(".fileNameThesis").text(fileName);
+            $($("#ThesisInput").parent()).removeClass('error')
+            setTimeout(function (){
+                $('.Not , .UploadFailed , .Loading , .lodingGif').hide()
+                $('.Complete , .UploadedSuccess').show()
+                fileNameImgType(fileName)
+            },500)
+        }else{
+            UploadFailed()
+        }
+    })
+
+    $(".deleteFileThesis").on('click',function (){
+        $("#ThesisInput").val('')
+        $("#ThesisInput").trigger('change');
+        $('.Not').show()
+        $('.Complete').hide()
+    })
+
+    function UploadFailed() {
+        $('.Not , .UploadedSuccess , .Loading , .lodingGif , .DocumentText , .DocumentWord').hide()
+        $('.Complete , .UploadFailed').show()
+    }
+
+    function fileNameImgType(fileName) {
+        if(fileName.slice(fileName.lastIndexOf(".") + 1) == 'txt') {
+            $('.DocumentText').show()
+            $('.DocumentWord').hide()
+        }else {
+            $('.DocumentText').hide()
+            $('.DocumentWord').show()
+        }
+    }
+
+
+    $("#title").on('input', function (){
+        // $(".titleNumber").text($(this).val().length)
+        $($("#title").parent()).removeClass('has-error')
+    })
+
+    $("#author").on('input', function (){
+        // $(".authorNumber").text($(this).val().length)
+        $($("#author").parent()).removeClass('has-error')
+    })
+
+    $("#date").on('change', function (){
+        $($("#date").parent()).removeClass('has-error')
+    })
+
+    $("#selectTemp").on('change', function (){
+        if($("#selectTemp").val()){
+            $($("#selectTemp").parent()).removeClass('has-error')
+            $(".select2-selection__rendered").css('color', '#555')
+        }
+    })
+
+
+    // 显示数据
+    function dropDownType(typeData){
+
+        var systemEl = ''
+        var active = true
+        for(var i=0; i<sequenceArr.length; i++) {
+            if (active) {
+                systemEl += ' <div class="system-item active" data-name="'+ sequenceArr[i] +'">\n' +
+                    '             <div class="system-top">\n' +
+                    '                 <img src="../pc/assets/img/logo-'+ sequenceArr[i] +'.png?v=3" alt="" class="system-logo">\n' +
+                    '             </div>\n' +
+                    '             <div class="system-bottom">\n' +
+                    '                 <p class="system-price"></p>\n' +
+                    '             </div>\n' +
+                    '             <img class="checked" src="../pc/assets/img/checked.png" alt="">\n' +
+                    '         </div>'
+            }else{
+                systemEl += ' <div class="system-item " data-name="'+ sequenceArr[i] +'">\n' +
+                    '             <div class="system-top">\n' +
+                    '                 <img src="../pc/assets/img/logo-'+ sequenceArr[i] +'.png?v=3" alt="" class="system-logo">\n' +
+                    '             </div>\n' +
+                    '             <div class="system-bottom">\n' +
+                    '                 <p class="system-price"></p>\n' +
+                    '             </div>\n' +
+                    '             <img class="checked" src="../pc/assets/img/checked.png" alt="">\n' +
+                    '         </div>'
+            }
+            active = false
+        }
+        $(".check-system-block").append(systemEl)
+        var is_first = true
+        for(var i=0; i<$(".system-item").length; i++){
+           if(typeData.hasOwnProperty($($(".system-item")[i]).data('name'))){
+               $($(".system-item")[i]).show()
+               $($(".system-item")[i]).css('display','inline-block')
+               // 价格
+               $($(".system-item")[i]).find('.system-price').text(typeData[$($(".system-item")[i]).data('name')][0].selling_price + '元/' + typeData[$($(".system-item")[i]).data('name')][0].unit_count + typeData[$($(".system-item")[i]).data('name')][0].unit_type)
+           }else{
+               $($(".system-item")[i]).hide()
+           }
+           $(".loading-block").hide()
+           $(".plagiarismCheck-block").show()
+           if($($(".system-item")[i]).is(':visible') && is_first){
+               is_first = false
+               $($(".system-item")[i]).click()
+           }
+        }
+        setClassStyle()
+    }
+
+    function setClassStyle(){
+        for(var i=0; i<$(".system-item:visible").length; i++){
+            if( (i+1) % 4 == 0 ) {
+                $($(".system-item:visible")[i]).addClass('noMarginRight')
+            }
+            if( $(".system-item:visible").length > 4 && $(".system-item:visible").length < 8 ) {
+                if( (i+1) > 4 ) {
+                    $($(".system-item:visible")[i]).addClass('noMarginBottom')
+                }
+            }
+            if( $(".system-item:visible").length > 8 ) {
+                if( (i+1) > 8 ) {
+                    $($(".system-item:visible")[i]).addClass('noMarginBottom')
+                }
+            }
+        }
+    }
+
+    function verify(){
+
+        if(($(".system-item.active").attr('data-name')=='weipu' && $(".version-item.active").attr('data-type') == 'cqvipgs')){
+            if(!$("#selectTemp").val()){
+                $($("#selectTemp").parent()).addClass('has-error')
+                cocoMessage.error("请选择论文模板", 2000);
+                return false
+            }else{
+                $($("#selectTemp").parent()).removeClass('has-error')
+            }
+        }
+
+        if($("#title").val().length <= 0 ){
+            $($("#title").parent()).addClass('has-error')
+            cocoMessage.error("请填写论文题目", 2000);
+            return false
+        }else{
+            $($("#title").parent()).removeClass('has-error')
+
+        }
+
+        if($("#author").val().length <= 0 ){
+            $($("#author").parent()).addClass('has-error')
+            cocoMessage.error("请填写论文作者", 2000);
+            return false
+        }else{
+            $($("#author").parent()).removeClass('has-error')
+        }
+
+        if( ($(".system-item.active").attr('data-name')=='wanfang' && $(".version-item.active").attr('data-type') == 'wanfangpu') || ($(".system-item.active").attr('data-name')=='weipu' && $(".version-item.active").attr('data-type') == 'cqvipzc')) {
+            if(!$("#date").val()) {
+                $($("#date").parent()).addClass('has-error')
+                cocoMessage.error("请选择期刊发表日期", 2000);
+                return false
+            }else{
+                $($("#date").parent()).removeClass('has-error')
+            }
+        }
+
+        if( uploadType == 'content'){
+            if($("#textareaText").val().length <= minWords || $("#textareaText").val().length > maxWords ){
+                $($("#textareaText").parent()).addClass('error')
+                cocoMessage.error("内容字数在"+ minWords +"~"+ maxWords +"字符", 2000);
+                return false
+            }else{
+                $($("#textareaText").parent()).removeClass('error')
+                return true
+            }
+        }
+
+        if( uploadType == 'file'){
+            if($("#ThesisInput")[0].files[0]){
+                $($("#ThesisInput").parent()).removeClass('error')
+                return true
+            }else{
+                $($("#ThesisInput").parent()).addClass('error')
+                cocoMessage.error("请上传论文或填写论文内容", 2000);
+                return false
+            }
+        }
+    }
+
+    // 提交按钮
+    var throttling = true
+    var check_system = ''
+    var closeMsg = ''
+    $(".submit-btn").on('click', function (){
+        // is强制登录拦截
+		if(memberFu.interceptLogin && memberFu.interceptLogin()) return false;
+
+        if(verify()){
+            if(!throttling){
+                return
+            }
+            throttling = false
+            closeMsg = cocoMessage.loading('正在提交,请稍后...');
+            var data = {
+                title: $("#title").val(),
+                author: $("#author").val()
+            }
+            var goodID = ''
+            if($(".version-item.active").attr('data-type') == 'wanfangpu' || $(".version-item.active").attr('data-type') == 'cqvipzc') {
+                data.date =  $("#date").val()
+            }
+            if($(".version-item.active").attr('data-type') == 'cqvipgs') {
+                data.temp_id =  $("#selectTemp").val()
+            }
+            if(uploadType == 'content'){
+                data.content = $("#textareaText").val()
+            }
+            if(uploadType== 'file'){
+                data.file = $("#ThesisInput")[0].files[0]
+            }
+            if($(".check-version").is(':visible')){
+                data.check_name = $(".version-item.active").attr('data-type')
+                goodID =  $(".version-item.active").attr('data-id')
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "turnitinai"){
+                    check_system = "Turnitin国际版+AI"
+                }
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "turnitin"){
+                    check_system = "Turnitin国际版"
+                }
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "turnitinuk"){
+                    check_system = "TurnitinUK版"
+                }
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "wanfangpu"){
+                    check_system = "万方职称版"
+                }
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "wanfanggl"){
+                    check_system = "万方通用版"
+                }
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "wanfangbd"){
+                    check_system = "万方本科版"
+                }
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "wanfangmd"){
+                    check_system = "万方硕博版"
+                }
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "cqvipzc"){
+                    check_system = "维普职称版"
+                }
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "cqvip"){
+                    check_system = "维普本科版"
+                }
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "cqvipbj"){
+                    check_system = "维普编辑部版"
+                }
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "cqvipmd"){
+                    check_system = "维普硕博版"
+                }
+
+            }else{
+                data.check_name = typeData[$(".system-item.active").attr('data-name')][0].short_name
+                goodID = typeData[$(".system-item.active").attr('data-name')][0].goods_id
+                check_system = typeData[$(".system-item.active").attr('data-name')][0].name
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "ithenticate"){
+                    check_system = "Ithenticate"
+                }
+                if(typeData[$(".system-item.active").attr('data-name')][0].short_name == "paperpass"){
+                    check_system = "PaperPass"
+                }
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: urls+ '/api/project/paper_check/order/create',
+                processData: false,
+                contentType: false,
+                xhrFields: {
+                    withCredentials: true
+                },
+                data: getFormData(data),
+                success: function (res){
+                    if(res.code == 200){
+                        unifiedCreate( res.data, data, goodID)
+                    }else{
+                        throttling = true
+                        closeMsg()
+                        cocoMessage.error(res.codeMsg, 2000);
+                    }
+                },
+                error: function (err){
+                    throttling = true
+                    closeMsg()
+                    cocoMessage.error("请求失败!请检查网络", 2000);
+                }
+            })
+        }
+    })
+
+    function unifiedCreate(data, info, goodID) {
+        if(!Object.keys(typeData).length){
+            closeMsg()
+            cocoMessage.error("请求失败!请检查网络", 2000);
+        }
+        var form_data = {
+            goods_id: goodID,
+            domain_record: window.location.origin,
+            source: 1,
+            'data[rid][label]': '记录id',
+            'data[rid][value]': data.pay_id,
+            'data[title][label]':'论文标题',
+            'data[title][value]': info.title,
+            'data[author][label]':'论文作者',
+            'data[author][value]': info.author,
+            customer_invitation: dct_code,
+        }
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/unified/create?user_token='+ USER_TOKEN + '&jane_name='+ JANE_NAME+(suffix?'&'+suffix:'') + (suffix2?'&'+suffix2:''),
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData(form_data),
+            success: function(resData) {
+                if (resData.code == 200) {
+                    throttling = true
+                    closeMsg();
+                    $(".deleteFileThesis").click()
+                    $($(".toCheck")[0]).click()
+                    // word_num.log('./pay.html?order_sn=' + resData.data.order_sn + '&NumberWords=' + data.word_num  +  '&created=' + resData.data.created + '&order_amount=' + resData.data.order_amount + '&pay_wap_url=' + resData.data.pay_wap_url + '&title=' + info.title + '&author='+ info.author)
+                    location.href = './pay.html?commitId=' + resData.data.order_sn + '&goodsid='+ form_data.goods_id;
+                } else {
+                    throttling = true
+                    closeMsg();
+                    cocoMessage.error(resData.codeMsg, 3000);
+                }
+            },
+            error: function(err) {
+                throttling = true
+                closeMsg();
+                cocoMessage.error("请求失败!请检查网络", 2000);
+            }
+        });
+    }
+
+    $(".toTop").on('click', function (){
+        $('html ,body').animate({scrollTop: 0}, 300);
+    })
+
+    $(window).scroll(function (){
+        if($(window).scrollTop() >= 22){
+            $(".view-bg>.head").addClass('bgA')
+        }else{
+            $(".view-bg>.head").removeClass('bgA')
+        }
+    })
+
+    $(function (){
+        if($(window).scrollTop() >= 22){
+            $(".view-bg>.head").addClass('bgA')
+        }else{
+            $(".view-bg>.head").removeClass('bgA')
+        }
+    })
+</script>
+</body>
+</html>

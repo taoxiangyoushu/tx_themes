@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>文献下载</title>
+	<!-- Bootstrap -->
+	<link rel="shortcut icon" href="../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
+	<link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
+	<link rel="stylesheet" href="../pc/assets/css/index/index.css?v=1.1">
+	<link rel="stylesheet" href="../pc/assets/css/common.css?v=1.1">
+	<link rel="stylesheet" href="../pc/assets/css/swipeslider.css?v=17.9">
+	<!-- <link rel="stylesheet" href="../pc/assets/css/styles.css" /> -->
+	<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+	<!--[if lt IE 9]>
+      <script src="https://fastly.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://fastly.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+	<script>
+		var JANE_NAME = 'wxxz'
+		var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+	</script>
+</head>
+
+<body>
+	<div class="haderNav navbarBox indexApp">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">切换导航</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="./index.html">
+							<img src="../pc/assets/img/logo.png" alt="文献下载">
+							<span>文献下载</span>
+						</a>
+					</div>
+
+					<div class="collapse navbar-collapse topNav" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">首页</a></li>
+							<li><a href="./query.html">我的订单</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+	<div class="bannerBox">
+		<div class="container">
+			<div class="bannerBox-left">
+				<p><img src="../pc/assets/img/icon_book.png">海量文献，百余学科分类</p>
+				<h5>
+					文献下载
+					<img src="../pc/assets/img/title.png">
+				</h5>
+				<div class="bannerBox-text">
+					<span>2亿+外文文献</span><span>1千万+外文电子图书</span><span>4百万册中文电子图书</span>
+				</div>
+				<!-- 立即购买 -->
+				<a href="#goumai">
+					<div class="Submission">
+						立即购买
+					</div>
+				</a>
+			</div>
+			<img src="../pc/assets/img/banner.png" class="bannerBox-img">
+
+			<div class="Exchangecodes" id="goumai">
+				<h3>
+					购买兑换码，更多会员权益等您来
+				</h3>
+				<!-- 会员购买 -->
+				<div class="Memberpurchase">
+					<div class="Members Members1" data-name="wxydhyk">
+						<div>
+							<img src="../pc/assets/img/icon_monthly membership.png">
+							月度会员
+						</div>
+
+						<div class="MembersPrice">
+							<div class="MembersPrice-title">仅需<span class="unit-price"></span>元/天</div>
+							<p class="CurrentPrice">
+								<span class="money-i">￥</span>
+								<span class="priceText">获取中</span>
+								<span class="date">/月</span>
+							</p>
+							<p class="OriginalPrice">原价：￥69</p>
+							<div class="Immediately">立即购买</div>
+						</div>
+						<div class="loading-M">
+							<img src="../pc/assets/img/loading.png" alt="">
+							<p>获取中...</p>
+						</div>
+					</div>
+					<div class="Members Members2" data-name="wxndhyk">
+						<div>
+							<img src="../pc/assets/img/icon_annual member.png">
+							年度会员
+						</div>
+						<div class="MembersPrice">
+							<div class="MembersPrice-title">仅需<span class="unit-price"></span>元/天</div>
+							<p class="CurrentPrice">
+								<span class="money-i">￥</span>
+								<span class="priceText">获取中</span>
+								<span class="date">/年</span>
+							</p>
+							<p class="OriginalPrice">原价：￥499</p>
+							<div class="Immediately">立即购买</div>
+						</div>
+						<div class="loading-M">
+							<img src="../pc/assets/img/loading.png" alt="">
+							<p>获取中...</p>
+						</div>
+					</div>
+					<div class="Members Members3" data-name="wxlnhyk">
+						<div>
+							<img src="../pc/assets/img/icon_two-year membership.png">
+							两年会员
+							<span class="Members3-span">买两年送一年</span>
+						</div>
+						<div class="MembersPrice">
+							<div class="MembersPrice-title">仅需<span class="unit-price"></span>元/天</div>
+							<p class="CurrentPrice">
+								<span class="money-i">￥</span>
+								<span class="priceText">获取中</span>
+								<span class="date">/3年</span>
+							</p>
+							<p class="OriginalPrice">原价：￥999</p>
+							<div class="Immediately">立即购买</div>
+						</div>
+						<div class="loading-M">
+							<img src="../pc/assets/img/loading.png" alt="">
+							<p>获取中...</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- 会员权益 -->
+				<div class="Memberrights">
+					<p class="Memberrights-title">
+						<span></span>会员权益
+					</p>
+
+					<div class="table1">
+						<table class="table Details-title">
+
+							<tr>
+								<td><span>服务</span></td>
+								<td><span>会员权益</span></td>
+								<td><span>服务</span></td>
+								<td><span>会员权益</span></td>
+							</tr>
+						</table>
+					</div>
+					<div class="table2">
+						<table class="table Details table-bordered">
+							<!-- <caption>基本的表格布局</caption> -->
+							<!-- <thead>
+							  <tr>
+								<th>名称</th>
+								<th>城市</th>
+							  </tr>
+							</thead> -->
+							<tbody>
+								<tr>
+									<td>文献服务</td>
+									<td>会员每月免费50篇</td>
+									<td>英文润色</td>
+									<td>优惠券</td>
+								</tr>
+								<tr>
+									<td>单篇购买</td>
+									<td>每篇6元</td>
+									<td>学术翻译</td>
+									<td>优惠券</td>
+								</tr>
+								<tr>
+									<td>GPT4.0</td>
+									<td>会员每月免费50次</td>
+									<td>科技查新</td>
+									<td>优惠券</td>
+								</tr>
+								<tr>
+									<td>智谱AI商用大模型</td>
+									<td>会员免费</td>
+									<td>查收查引</td>
+									<td>优惠券</td>
+								</tr>
+								<tr>
+									<td>写作指导课程</td>
+									<td>会员免费</td>
+									<td>课题查询</td>
+									<td><img src="../pc/assets/img/green check.png"></td>
+								</tr>
+								<tr>
+									<td>会员专享视频</td>
+									<td>官网8折</td>
+									<td>影响因子</td>
+									<td><img src="../pc/assets/img/green check.png"></td>
+								</tr>
+								<tr>
+									<td>论文查重</td>
+									<td>官网8折</td>
+									<td>预警期刊</td>
+									<td><img src="../pc/assets/img/green check.png"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 外文文献 -->
+	<div class="Forlangliterature">
+		<div class="container">
+			<h3>外文文献</h3>
+			<p>提供3亿+专业资源的搜索</p>
+			<div class="Forlanglit-div">
+				<div class="Forlanglittext">
+					<p>
+						<img src="../pc/assets/img/icon_periodical.png">
+						外文期刊
+					</p>
+					<p>Foreign language periodical</p>
+					<li>5.8万+ 期刊 </li>
+					<li>3亿+ 期刊文献</li>
+					<li>200+ 源数据库</li>
+					<li>200万+ 每年新增</li>
+					<span class="Backgrounddots1"></span>
+				</div>
+				<div class="Forlanglittext">
+					<p>
+						<img src="../pc/assets/img/icon_degree.png">
+						外文学位
+					</p>
+					<p>Foreign language degree</p>
+					<li>900+ 博士培养单位 </li>
+					<li>1300+ 硕士培养单位</li>
+					<li>150万+ 学位文献</li>
+					<li>10万+ 每年新增</li>
+				</div>
+				<div class="Forlanglittext">
+					<p>
+						<img src="../pc/assets/img/icon_conference.png">
+						外文会议
+					</p>
+					<p>Foreign language conference</p>
+					<li>11家权威会议机构 </li>
+					<li>600万+ 会议文献</li>
+					<li>20万+ 每年新增</li>
+					<li style="list-style: none;margin-left: 24px;">...</li>
+					<span class="Backgrounddots2"></span>
+				</div>
+				<div class="Forlanglittext">
+					<p>
+						<img src="../pc/assets/img/icon_electronic book.png">
+						外文图书
+					</p>
+					<p>Foreign language books</p>
+					<li>全球电子图书收录 </li>
+					<li>最大外文电子书库</li>
+					<li>多语种覆盖</li>
+					<li>内容广泛跨多领域</li>
+					<span class="Backgrounddots3"></span>
+				</div>
+				<div class="Forlanglittext">
+					<p>
+						<img src="../pc/assets/img/icon_report.png">
+						科技报告
+					</p>
+					<p>Technology report</p>
+					<li>100+ 权威研究所</li>
+					<li>400万+ 科技报告文献</li>
+					<li>2万+ 每年新增</li>
+					<li style="list-style: none;margin-left: 24px;">...</li>
+					<span class="Backgrounddots4"></span>
+				</div>
+			</div>
+
+
+			<!-- 背景圆点 -->
+
+
+
+		</div>
+	</div>
+
+	<!-- 中文文献 -->
+	<div class="Chinesesliterature">
+		<div class="container">
+			<div class="Chineseslit-left">
+				<h3>中文文献</h3>
+				<p>精准传递文献代查代检，我们来帮您!</p>
+				<ul>
+					<li><img src="../pc/assets/img/blue check.png">8000w+维普所有题录和全文数据库</li>
+					<li><img src="../pc/assets/img/blue check.png">400w册中文电子图书</li>
+				</ul>
+			</div>
+			<img src="../pc/assets/img/chinese literature.png" alt="" class="Chineseslit-img">
+		</div>
+	</div>
+
+	<!-- 一站式服务-->
+	<div class="One-stopservice">
+		<div class="container">
+			<h3>一站式服务，文献下载更轻松</h3>
+
+			<div class="stopservice-div">
+				<div>
+					<img src="../pc/assets/img/select1.png">
+					<p>选择套餐</p>
+					<p>选择会员套餐点击购买 </p>
+				</div>
+				<div>
+					<img src="../pc/assets/img/pay.png">
+					<p>确认支付</p>
+					<p>提供多种支付方式</p>
+				</div>
+				<div>
+					<img src="../pc/assets/img/copy.png">
+					<p>复制兑换码</p>
+					<p>可在订单页获取兑换码 </p>
+				</div>
+				<div>
+					<img src="../pc/assets/img/affix.png">
+					<p>使用兑换码</p>
+					<p>在订单页按使用流程兑换</p>
+				</div>
+				<img src="../pc/assets/img/line.png" class="stopservice-img">
+			</div>
+			<!-- 立即购买 -->
+			<a href="#goumai">
+				<div class="Submission">
+					立即购买
+				</div>
+			</a>
+
+		</div>
+
+	</div>
+
+
+	<!-- 底部 -->
+	<div id="filing-information"></div>
+
+
+	<!-- 客服 -->
+	<div class="CustomerService">
+		<img class="img-ico" src="../pc/assets/img/kf_ico_nor.png" alt="">
+		<img class="img-ico-active" src="../pc/assets/img/kf_ico_pre.png" alt="">
+		<div class="customerBox">
+			<div class="head">
+				<img src="../pc/assets/img/kf.png" alt="">
+				<span class="customer-title">联系客服</span>
+			</div>
+			<div class="customerCode">
+				<img class="customer-qr" src="" alt="">
+			</div>
+			<div class="segmentation-line"></div>
+			<div class="customerWay">
+				<p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+				<p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+				<p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+				<p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+			</div>
+			<p class="noCustomer">商家未设置客服</p>
+			<img class="customBg" src="../pc/assets/img/bg1.png" alt="">
+		</div>
+	</div>
+
+	<div class="fiexBox">
+		<img class="img1" src="../pc/assets/img/zd_nor.png" alt="">
+		<img class="img2" src="../pc/assets/img/zd_pre.png" alt="">
+	</div>
+</body>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../pc/assets/js/jquery.min.js"></script>
+<script src="../pc/assets/js/bootstrap.min.js"></script>
+<script src="../pc/assets/js/bootstrapValidator.min.js"></script>
+<script src="../pc/assets/js/coco-message.js"></script>
+<script src="../pc/assets/js/swipeslider.min.js"></script>
+<script src="../pc/assets/js/common.js"></script>
+<script type="text/javascript">
+	$(window).load(function () {
+		$('#responsiveness').swipeslider();
+	});
+</script>
+<script>
+	function setPriceInfo(data) {
+		for(var i=0; i<data.length; i++) {
+			for(var j=0; j<$(".Memberpurchase .Members").length; j++) {
+				if( $($(".Memberpurchase .Members")[j]).attr('data-name') == data[i].short_name ) {
+					$($(".Memberpurchase .Members")[j]).attr('data-goodId', data[i].goods_id)
+					$($(".Memberpurchase .Members")[j]).find('.priceText').text(Number(data[i].selling_price))
+					if(data[i].short_name == 'wxydhyk') {
+						$($(".Memberpurchase .Members")[j]).find('.unit-price').text( (Number(data[i].selling_price)/30).toFixed(2) )
+					}
+					if(data[i].short_name == 'wxndhyk') {
+						$($(".Memberpurchase .Members")[j]).find('.unit-price').text( (Number(data[i].selling_price)/365).toFixed(2) )
+					}
+					if(data[i].short_name == 'wxlnhyk') {
+						$($(".Memberpurchase .Members")[j]).find('.unit-price').text( (Number(data[i].selling_price)/1095).toFixed(2) )
+					}
+				}
+			}
+		}
+		$(".Members .MembersPrice").show()
+		$(".Members .loading-M").hide()
+	}
+	$('.Immediately').click(
+		function () {
+			var closeMsg = cocoMessage.loading('正在提交,请稍后...');
+			$('.Immediately').attr('disabled', true);
+			var goodsId = $(this).parents(".Members").attr('data-goodId')
+			if (!goodsId) {
+				cocoMessage.error('商品信息不存在', 2000);
+				setTimeout(function () {
+					$('.Immediately').attr('disabled', false);
+				}, 1000)
+				closeMsg();
+				return
+			}
+			var typefun = function () {
+				if (screen.width >= 768) {
+					return 1;
+				} else if (/MicroMessenger/.test(window.navigator.userAgent)) {
+					return 2;
+				} else {
+					return 7;
+				}
+			}
+			var formData = {
+				user_token: USER_TOKEN,
+				jane_name: JANE_NAME,
+				goods_id: goodsId,
+				domain_record: window.location.origin,
+				source: typefun(),
+			}
+			var form_data = getFormData(formData)
+			$.ajax({
+				type: 'post',
+				url: urls + '/api/client/order/unified/create?user_token=' + USER_TOKEN + '&jane_name=' + JANE_NAME + (suffix ? '&' + suffix : ''),
+				processData: false,
+				contentType: false,
+				xhrFields: {
+					withCredentials: true
+				},
+				data: form_data,
+				success: function (result) {
+					if (result.code == 200) {
+						window.location.href = './pay.html?order_sn=' + result.data.order_sn;
+					} else {
+						cocoMessage.error(result.codeMsg, 2000);
+					}
+					$('.Immediately').attr('disabled', false);
+					closeMsg();
+				},
+				error: function (err) {
+					$('.Immediately').attr('disabled', false)
+					closeMsg();
+					cocoMessage.error("请求失败!请检查网络", 2000);
+				},
+				complete: function () {
+					closeMsg();
+					$('.Immediately').attr('disabled', false)
+				}
+			});
+		}
+	)
+	$('.fiexBox').click(function () {
+		document.documentElement.scrollTop = 0;
+		document.body.scrollTop = 0;
+	})
+	function returnFloat(value) {
+		var value = Math.round(parseFloat(value) * 100) / 100;
+		var xsd = value.toString().split(".");
+		if (xsd.length == 1) {
+			value = value.toString() + ".00";
+			return value;
+		}
+		if (xsd.length > 1) {
+			if (xsd[1].length < 2) {
+				value = value.toString() + "0";
+			}
+			return value;
+		}
+	}
+</script>
+
+</html>

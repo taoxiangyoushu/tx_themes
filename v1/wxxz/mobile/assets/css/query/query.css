@@ -1,0 +1,667 @@
+body {
+  background-color: #F7F7F7;
+}
+.pageHeader {
+  background-color: transparent;
+}
+.orderTipsPop,
+.SingleDownload {
+  position: fixed;
+  width: 100%;
+  z-index: 1001;
+  background: #fff;
+  bottom: 0rem;
+  padding-bottom: 0.6rem;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  display: none;
+  height: 85%;
+}
+.orderTipsPop p,
+.SingleDownload p {
+  font-size: 0.88rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 0.63rem;
+  color: #626262;
+}
+.orderTipsPop p img,
+.SingleDownload p img {
+  margin-right: 0.5rem;
+}
+.orderTipsPop > img,
+.SingleDownload > img {
+  width: 93%;
+  margin: 0 1.18rem;
+}
+.orderTipsPop .hidePop,
+.SingleDownload .hidePop {
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  right: 0.8rem;
+  top: 1rem;
+}
+.orderTipsPop .orderTipsTitle,
+.SingleDownload .orderTipsTitle {
+  display: flex;
+  justify-content: start;
+}
+.orderTipsPop .orderTipsTitle .block_tips,
+.SingleDownload .orderTipsTitle .block_tips {
+  position: relative;
+  display: none;
+}
+.orderTipsPop .orderTipsTitle .block_tips.active_tips:after,
+.SingleDownload .orderTipsTitle .block_tips.active_tips:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #517fff;
+  bottom: -1.18rem;
+}
+.orderTipsPop .taobao-icon,
+.SingleDownload .taobao-icon {
+  width: 1.9rem;
+}
+.searchBox {
+  margin-top: 0.63rem;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searchBox #searchID {
+  font-size: 0.88rem;
+  color: #999999;
+  border: none;
+  padding: 0.63rem;
+  width: 76%;
+  border-radius: 0.3125rem;
+  outline: none;
+}
+.searchBox .searchText {
+  font-size: 1rem;
+  color: #fff;
+  padding: 0.5rem 1.22rem;
+  position: relative;
+  background-color: #3369FE;
+  border-radius: 0.3125rem;
+  line-height: 1.5rem;
+}
+.orderIdTips {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #006CFF;
+  margin: 0.63rem 0;
+}
+.orderIdTips img {
+  vertical-align: middle;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 2px;
+  margin-top: -0.2rem;
+}
+.nodata {
+  text-align: center;
+  margin-top: 2rem;
+}
+.nodata > img {
+  width: 9.09rem;
+}
+.nodata .toSearch {
+  font-size: 0.75rem;
+  color: #999;
+}
+.nodata .toHome {
+  width: 6rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #648dff 0%, #356bfe 100%);
+  border-radius: 0.3125rem;
+  text-align: center;
+  line-height: normal;
+  padding: 0.5rem 0;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+  box-shadow: 0px 0px 10px 0px rgba(117, 160, 225, 0.3);
+}
+.nodata .toHome a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+.prompt {
+  font-size: 0.75rem;
+  color: #999999;
+  padding-top: 2.5rem;
+}
+.prompt .prompt-title {
+  color: #FF496E;
+  font-weight: bold;
+  margin: 0.31rem 0;
+}
+.prompt .redClass {
+  color: #FF496E;
+}
+.prompt .prompt-text.redClass {
+  margin: 0.31rem 0;
+}
+.orderTipsPop .maskContent {
+  text-align: center;
+  overflow-y: auto;
+  padding-bottom: 1rem;
+  padding: 0.72rem;
+  padding-top: 0rem;
+  height: 100%;
+}
+.orderTipsPop .maskContent > img {
+  width: 90%;
+}
+.toabaoID {
+  display: none;
+}
+.toabaoID .taobao-icon {
+  width: 0.69rem;
+}
+.toabaoID img {
+  width: 90%;
+}
+.maskHader {
+  padding: 0.72rem;
+  position: relative;
+  font-size: 1rem;
+  border-bottom: 1px solid #ededed;
+  font-weight: bold;
+  color: #333333;
+}
+.productDetails {
+  padding-top: 0.63rem;
+  padding-bottom: 1.31rem;
+  border-bottom: 1px solid #DDDDDD;
+}
+.productDetails img {
+  width: 5rem;
+  height: 5rem;
+}
+.quantityBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.quantityBox .quantity {
+  color: #090909;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+.details {
+  width: calc(100% - 5.5rem);
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 0.4rem;
+}
+.details b {
+  font-weight: bold;
+  font-size: 0.88rem;
+  line-height: 1.25rem;
+  display: block;
+}
+.details .label {
+  color: #FE7070;
+  display: inline-block;
+  border: 1px solid #FE7070;
+  font-weight: 400;
+  font-size: 0.63rem;
+  padding: 0.2rem 0.38rem;
+  margin: 0.3rem 0;
+}
+.details .amount {
+  color: #FF5900;
+  font-size: 0.75rem;
+}
+.details .amount span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.resultBox .card {
+  background-color: #fff;
+  padding: 0.63rem;
+  border-radius: 0.31rem;
+  margin-bottom: 0.63rem;
+}
+.resultBox .cardHader {
+  color: #333;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.31rem 0;
+}
+.resultBox .TotalAmount {
+  text-align: right;
+  font-size: 0.75rem;
+  color: #090909;
+  padding: 0.63rem 0;
+}
+.resultBox .ButtonDiv {
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 0.38rem;
+}
+.resultBox .ButtonDiv .delete {
+  width: 4.75rem;
+  border-radius: 0.31rem 0.31rem 0.31rem 0.31rem;
+  border: 0.03rem solid #707070;
+  color: #000;
+  padding: 0.44rem 0;
+  line-height: normal;
+}
+.resultBox .ButtonDiv .copyLink {
+  width: 4.75rem;
+  background: linear-gradient(270deg, #FF496E 0%, #FF8147 100%);
+  border-radius: 0.31rem 0.31rem 0.31rem 0.31rem;
+  color: #fff;
+  padding: 0.44rem 0;
+  line-height: normal;
+  margin-left: 0.44rem;
+}
+.complainBox .complainTS {
+  padding: 1rem 0 !important;
+  font-size: 0.8rem !important;
+}
+.complainBox .complainTS img {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+.delete_pop {
+  position: fixed;
+  width: 80%;
+  top: 50%;
+  left: 0;
+  margin-left: 10%;
+  margin-top: -10rem;
+  z-index: 1000;
+  background: linear-gradient(180deg, #deeafa, #fff);
+  border-radius: 1rem;
+  display: none;
+}
+.delete_pop #copyInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.delete_pop .title {
+  font-size: 1rem;
+  color: #142338;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.delete_pop p.p2 {
+  padding: 0 2rem;
+  font-size: 0.7rem;
+  color: #333333;
+  margin-top: 2rem;
+  text-align: left;
+}
+.delete_pop p.p2 .copy_pop {
+  color: #006dff;
+  text-decoration: underline;
+}
+.delete_pop .p3 {
+  font-size: 0.8rem;
+  color: #999999;
+  text-align: left;
+  padding: 0 1rem;
+  margin-top: 0.4rem;
+}
+.delete_pop .bottom {
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+.delete_pop .bottom .cancel_btn {
+  width: 50%;
+  text-align: center;
+  font-size: 1rem;
+  color: #c7cddf;
+  line-height: 3rem;
+  border-top: 1px solid #d2e6ff;
+  border-right: 1px solid #d2e6ff;
+}
+.delete_pop .bottom .determine_btn {
+  width: 50%;
+  text-align: center;
+  font-size: 1rem;
+  color: #418bf8;
+  font-weight: bold;
+  line-height: 3rem;
+  border-top: 1px solid #d2e6ff;
+}
+.searchBox {
+  position: relative;
+}
+.searchBox .deleteS {
+  display: none;
+  position: absolute;
+  right: 6.25rem;
+  top: 0.8125rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  background: url('../../img/delete2.png') no-repeat;
+  cursor: pointer;
+  background-size: 100% 100%;
+}
+#copyInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.status-1 {
+  color: #ff881e;
+}
+.status-2 {
+  color: #007BFF;
+}
+.resultBox .rateImplicit .CopyText,
+.resultBox .rateImplicit .delete_btn {
+  background: #f2f2f2;
+  color: #c1c1c1;
+  border-color: #f2f2f2;
+}
+.tab-content > .active {
+  height: 100%;
+  overflow: scroll;
+}
+.Hot-Headlines .Hot-Head {
+  color: #555555;
+  font-size: 0.75rem;
+  height: 0.9375rem;
+}
+.Hot-Headlines .Hot-Content .nav-tabs {
+  border-bottom: none;
+}
+.Hot-Headlines .Hot-Content .nav > li > a {
+  padding: 0.625rem 0rem;
+}
+.Hot-Headlines .Hot-Content .nav-tabs > li {
+  text-align: center;
+  width: 25%;
+}
+.Hot-Headlines .Hot-Content .nav-tabs > li img {
+  width: 1.125rem;
+}
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(4) {
+  margin-right: 0%;
+}
+.Hot-Headlines .Hot-Content .nav-tabs > li > a {
+  font-size: 0.875rem;
+  color: #888888;
+}
+.Hot-Headlines .Hot-Content .nav-tabs > li.active > a,
+.Hot-Headlines .Hot-Content .nav-tabs > li.active > a:focus,
+.Hot-Headlines .Hot-Content .nav-tabs > li.active > a:hover {
+  color: #006dff;
+  border-color: transparent;
+  border-bottom: 0.125rem solid transparent;
+  border-bottom-color: #006dff;
+  font-weight: bold;
+}
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(1).active > a,
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(1).active > a:focus,
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(1).active > a:hover {
+  color: #1296DB;
+  border-bottom-color: #1296DB;
+}
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(2).active > a,
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(2).active > a:focus,
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(2).active > a:hover {
+  color: #50B674;
+  border-bottom-color: #50B674;
+}
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(3).active > a,
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(3).active > a:focus,
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(3).active > a:hover {
+  color: #FD2442;
+  border-bottom-color: #FD2442;
+}
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(4).active > a,
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(4).active > a:focus,
+.Hot-Headlines .Hot-Content .nav-tabs > li:nth-child(4).active > a:hover {
+  color: #FC8848;
+  border-bottom-color: #FC8848;
+}
+.Hot-Headlines .Hot-Content .nav-tabs > li > a:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: #006dff;
+}
+.Hot-Headlines .Hot-Content .Content-title {
+  padding: 0.9375rem 1.25rem;
+}
+.Hot-Headlines .Hot-Content .Content-title .Contitle {
+  width: 49%;
+  padding: 0rem 0.875rem;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  background-color: #f8f8f8;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  color: #333333;
+  cursor: pointer;
+  float: left;
+  margin-top: 0.625rem;
+}
+.Hot-Headlines .Hot-Content .Content-title .Contitle:hover {
+  background-color: #f1f7ff;
+  color: #006dff;
+}
+.Hot-Headlines .Hot-Content .Content-title .Contitle .Adopted {
+  color: #006dff;
+  font-size: 0.75rem;
+  display: none;
+  float: right;
+}
+.Hot-Headlines .Hot-Content .Content-title .Contitle:hover > .Adopted {
+  display: block;
+}
+.Hot-Headlines .Hot-Content .Content-title .Contitle:hover > .Contitle-span {
+  display: inline-block;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.Hot-Headlines .Hot-Content .Content-title > div:nth-child(odd) {
+  margin-right: 2%;
+}
+.Hot-Headlines .Hot-Content .Another-batch {
+  padding: 0rem 1.25rem;
+}
+.Hot-Headlines .Hot-Content .Another-batch span {
+  float: right;
+  margin-top: 1rem;
+}
+.nav > li {
+  float: left;
+}
+.tab-content > .active > img {
+  width: 100%;
+  margin-top: 0.625rem;
+}
+.Process {
+  padding: 0.9375rem;
+  display: none;
+}
+.Process .container {
+  background-color: #ffffff;
+  border-radius: 0.3125rem;
+  padding-top: 0.9375rem;
+  padding-bottom: 1.25rem;
+}
+.Process h3 {
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #333333;
+}
+.Process .Computer {
+  width: 32%;
+  padding: 0.375rem 0.9375rem;
+  background: #4977F8;
+  border-radius: 0.75rem 0rem 0.75rem 0rem;
+  font-size: 1rem;
+  color: #FFFFFF;
+  margin-top: 0.5rem;
+}
+.Process .Computer img {
+  width: 0.9375rem;
+}
+.Process .news_list {
+  text-align: center;
+  padding-left: 1.875rem;
+  margin-top: 0.74rem;
+}
+.Process .news_list .leftSolide {
+  display: inline-block;
+  position: relative;
+}
+.Process .news_list .leftSolide::after {
+  display: inline-block;
+  position: absolute;
+  left: -1.125rem;
+  top: 1.3rem;
+  content: '';
+  height: calc(100% - 3rem);
+  border-left: 1px dashed #3369FE;
+}
+.Process .news_list .StepsText {
+  text-align: left;
+  color: #333333;
+  font-size: 0.94rem;
+  padding: 0.78rem 0;
+}
+.Process .news_list .StepsText span {
+  font-weight: bold;
+}
+.Process .news_list .code2 {
+  max-width: 8.78rem;
+}
+.Process .news_list img {
+  max-width: 98%;
+}
+.Process .news_list .StepsTexts {
+  position: relative;
+}
+.Process .news_list .StepsTexts i {
+  display: inline-block;
+  background-color: #3369FE;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  font-style: normal;
+  padding: 0.2rem 0.4rem 0.2rem 0.46rem;
+  line-height: normal;
+  position: absolute;
+  left: -1.8rem;
+  z-index: 100;
+  top: 0.7rem;
+}
+.Orderdetails .container {
+  padding: 1rem 0.625rem;
+  background-color: #FFFFFF;
+  border-radius: 0.3125rem;
+  padding-top: 0.375rem;
+}
+.Orderdetails .container .contentsorder div {
+  width: 50%;
+  font-size: 0.875rem;
+  border-bottom: solid 0.0625rem #DDDDDD;
+  height: 2.96rem;
+  line-height: 2.96rem;
+}
+.Orderdetails .container .contentsorder div.l-d {
+  width: 40%;
+}
+.Orderdetails .container .contentsorder div.r-d {
+  width: 60%;
+}
+.Orderdetails .container .contentsorder div.codeSpan {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.Orderdetails .container .contentsorder div:nth-child(1) {
+  width: 70%;
+  color: #333333;
+  font-weight: bold;
+  font-size: 0.75rem;
+  border-bottom: none;
+}
+.Orderdetails .container .contentsorder div:nth-child(2) {
+  width: 30%;
+  color: #333333;
+  font-weight: bold;
+  font-size: 0.75rem;
+  border-bottom: none;
+}
+.Orderdetails .container .contentsorder div:nth-child(odd) {
+  display: inline-block;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+}
+.Orderdetails .container .contentsorder div:nth-child(even) {
+  float: right;
+  text-align: right;
+  font-family: PingFangSC-Regular, PingFangSC-Regular;
+}
+.Orderdetails .container .content-button {
+  margin-top: 1.1875rem;
+}
+.Orderdetails .container .content-button:before {
+  content: '';
+  display: inline-block;
+  clear: both;
+}
+.Orderdetails .container .content-button .delete {
+  float: right;
+  padding: 0.4375rem 0.625rem;
+  font-size: 0.875rem;
+  border-radius: 0.3125rem;
+  border: 0.0625rem solid #707070;
+  font-family: Microsoft YaHei;
+}
+.Orderdetails .container .content-button .copyLink {
+  float: right;
+  padding: 0.5rem 0.625rem;
+  font-size: 0.875rem;
+  border-radius: 0.3125rem;
+  background: linear-gradient(270deg, #3369FE 0%, #638FFF 100%);
+  color: #ffffff;
+  margin-left: 0.625rem;
+  font-family: Microsoft YaHei;
+}
+.Orderdetails .container .content-button.status-no .delete {
+  pointer-events: none;
+}
+.Orderdetails .container .content-button.status-no .copyLink {
+  background: linear-gradient(270deg, #a1a7b9 0%, #b9becb 100%);
+  pointer-events: none;
+}
+.Orderdetails .container .content-button.status-noBtn .delete {
+  display: none;
+}
+.Orderdetails .container .content-button.status-noBtn .copyLink {
+  display: none;
+}

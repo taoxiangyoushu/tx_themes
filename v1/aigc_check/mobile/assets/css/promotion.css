@@ -1,0 +1,25 @@
+.claim-coupons {
+  display: block !important;
+  height: 4rem;
+  text-align: center;
+  line-height: 4rem;
+  border: 1px solid #ff2f2f;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  border-radius: 0.95rem;
+  font-size: 1.7rem;
+  color: #ff2f2f;
+  font-weight: bold;
+}
+.claim-coupons:focus {
+  color: #ff2f2f;
+  text-decoration: none;
+}
+.claim-coupons img {
+  vertical-align: middle;
+  margin-top: -4px;
+  margin-right: 6px;
+  width: 1.9rem;
+}
+/*# sourceMappingURL=promotion.css.map */

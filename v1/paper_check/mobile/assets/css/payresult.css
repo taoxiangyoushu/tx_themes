@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #f5f6f8;
+  padding: 0 0.97rem;
+}
+.paySuccess {
+  text-align: center;
+}
+.paySuccess .statusI {
+  margin-top: 2.9rem;
+  width: 4.52rem;
+  height: 4.52rem;
+}
+.paySuccess .payStatusText {
+  margin-top: 1.81rem;
+  text-align: center;
+  color: #080808;
+  font-size: 1rem;
+}
+.paySuccess .orderInform {
+  margin-top: 4rem;
+  padding: 0 0.97rem 0.97rem 0.97rem;
+  border-bottom: 0.33px solid #cecece;
+}
+.paySuccess .orderInform p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.65rem;
+  font-size: 0.87rem;
+}
+.paySuccess .orderInform p .left {
+  color: #999999;
+}
+.paySuccess .orderInform p .right {
+  color: #686868;
+}
+.paySuccess .orderInform p .right.redText {
+  color: #7d58fb;
+}
+.paySuccess .buttons {
+  margin-top: 5.48rem;
+}
+.paySuccess .buttons > div {
+  width: 19.35rem;
+  height: 2.9rem;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0.97rem;
+  line-height: 2.9rem;
+  border-radius: 3.23rem;
+  box-sizing: border-box;
+}
+.paySuccess .buttons > div:last-child {
+  margin-top: 1.55rem;
+}
+.paySuccess .buttons .queryOrder {
+  color: #505050;
+  border: 1px solid #d1d1d1;
+}
+.paySuccess .buttons .submitOrder {
+  background-image: linear-gradient(90deg, #7b5af8 0%, #c26bfd 100%);
+  color: #fff;
+}
+.payFail {
+  display: none;
+  text-align: center;
+}
+.payFail .statusI {
+  margin-top: 2.9rem;
+  width: 4.52rem;
+  height: 4.52rem;
+}
+.payFail .payStatusText {
+  margin-top: 1.81rem;
+  text-align: center;
+  color: #080808;
+  font-size: 1rem;
+}
+.payFail .failText {
+  font-size: 0.87rem;
+  color: #686868;
+  margin-top: 1.61rem;
+}
+.payFail .buttons {
+  margin-top: 6.13rem;
+}
+.payFail .buttons > div {
+  width: 19.35rem;
+  height: 2.9rem;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0.97rem;
+  line-height: 2.9rem;
+  border-radius: 3.23rem;
+  box-sizing: border-box;
+}
+.payFail .buttons > div:last-child {
+  margin-top: 1.55rem;
+}
+.payFail .buttons .toHome {
+  color: #505050;
+  border: 0.33px solid #ccc;
+}
+.payFail .buttons .backPay {
+  background-image: linear-gradient(90deg, #7b5af8 0%, #c26bfd 100%);
+  color: #fff;
+}
+/*# sourceMappingURL=payresult.css.map */

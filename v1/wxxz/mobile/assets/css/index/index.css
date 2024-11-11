@@ -1,0 +1,707 @@
+@keyframes myLoading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+a {
+  text-decoration: none !important;
+}
+.bannerBox {
+  background-image: url(../../img/bg.png);
+  padding: 2.5rem 0rem 4.375rem 0px;
+  background-size: 100% 100%;
+  position: relative;
+  margin-top: 3.125rem;
+}
+/* 图片简介 */
+.Brief-rightimg {
+  position: absolute;
+  right: 0px;
+  top: 1.5rem;
+  width: 8.9375rem;
+}
+/* 左边内容 */
+.Brief-left {
+  width: 100%;
+  overflow: hidden;
+}
+.Brief-left img {
+  width: 16.25rem;
+}
+.Brief-Subheading {
+  padding: 0.4375rem;
+  font-family: MicrosoftYaHei;
+  background: linear-gradient(90deg, #CDEAFF 0%, #C8E8FF 100%);
+  width: 50%;
+  font-size: 0.75rem;
+  color: #354B82;
+  border-radius: 1.875rem 1.875rem 1.875rem 0rem;
+  text-align: center;
+}
+.Brief-Subheading img {
+  width: 12px;
+  position: relative;
+  top: -0.0625rem;
+}
+.Brief-left > b {
+  font-size: 3.25rem;
+  display: inline-block;
+  color: #00082a;
+  font-family: MicrosoftYaHei-Bold;
+}
+.Brief-lefttext1 {
+  width: 31.4375rem;
+  height: 1.5625rem;
+  margin-top: 0.875rem;
+  margin-left: 2rem;
+}
+.Brief-lefttext1 > div {
+  display: inline-block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-right: solid 0.0625rem #6a6485;
+  text-align: center;
+}
+.Brief-lefttext1 > div:nth-child(1) {
+  padding-left: 0rem;
+}
+.Brief-lefttext1 > div > a {
+  font-size: 1.375rem;
+  letter-spacing: 0.3125rem;
+  color: #6a6485;
+  font-family: MicrosoftYaHei;
+}
+.Brief-lefttext1 > div:nth-child(3) {
+  border: none;
+}
+.Brief-lefttext2 {
+  width: 100%;
+  margin-left: 1.25rem;
+  margin-top: 1.875rem;
+}
+.Brief-lefttext2 > div {
+  font-size: 1.5rem;
+  width: 9rem;
+  height: 3rem;
+  display: inline-block;
+  background-color: #faf9f9;
+  border-radius: 4.875rem;
+  text-align: center;
+  line-height: 3rem;
+  color: #957bff;
+  font-weight: 600;
+  border: solid 0.0625rem #ffffff;
+  /* opacity: 0.8; */
+  margin-right: 0.625rem;
+}
+/* 提交需求 */
+.Brief-Submit {
+  width: 11.75rem;
+  height: 3.4rem;
+  background-color: #6651ff;
+  color: white;
+  border-radius: 0.625rem;
+  text-align: center;
+  line-height: 3.4rem;
+  margin-left: 2rem;
+  margin-top: 2.125rem;
+  font-size: 1.55rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: MicrosoftYaHei-Bold;
+}
+/* 超出 */
+.Brief-beyond {
+  padding: 1.25rem 0rem;
+  position: absolute;
+  width: 95%;
+  background-color: #ffffff;
+  border-radius: 0.625rem;
+  left: 2.5%;
+  bottom: -3.625rem;
+  box-shadow: #eaedff 0.0625rem 0.0625rem 0.4375rem 0rem;
+}
+.BriefDiv {
+  display: inline-block;
+  width: 32%;
+  text-align: center;
+  border-right: solid 0.0625rem #E2E5ED;
+}
+.BriefDiv > div {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  transition: all 0.2s ease-in-out;
+}
+.BriefDiv > div > p {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #4977F8;
+  font-family: MicrosoftYaHei;
+}
+.BriefDiv > div > p > a {
+  font-size: 0.75rem;
+  font-family: MicrosoftYaHei;
+  color: #4977F8;
+  font-weight: 400;
+}
+.BriefDivA {
+  display: inline-block;
+  position: relative;
+  font-size: 0.75rem;
+  color: #3e3a51;
+  font-family: MicrosoftYaHei;
+}
+.BriefDiv:nth-child(3) {
+  border: none;
+}
+.Exchangecodes {
+  padding-top: 5.625rem;
+  background: linear-gradient(#FFFFFF 0%, #EAEEFF 100%);
+}
+.Exchangecodes h3 {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 1.375rem;
+  color: #00103F;
+  text-align: center;
+}
+.Exchangecodes .Memberpurchase {
+  margin-top: 1.5625rem;
+}
+.Exchangecodes .Memberpurchase .Members {
+  display: inline-block;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 0.75rem;
+  width: 31.5%;
+  padding: 0.625rem 0.5rem;
+  position: relative;
+  top: 0rem;
+  transition: all 0.2s;
+  border-radius: 0.3125rem;
+  z-index: 10;
+}
+.Exchangecodes .Memberpurchase .Members div {
+  position: relative;
+  z-index: 100;
+  font-family: Microsoft YaHei;
+}
+.Exchangecodes .Memberpurchase .Members img {
+  width: 1rem;
+  position: relative;
+  top: -0.125rem;
+}
+.Exchangecodes .Memberpurchase .Members .Members1-img {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 0;
+  width: 3.125rem;
+}
+.Exchangecodes .Memberpurchase .Members .MembersPrice {
+  width: 100%;
+  background: linear-gradient(#ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+  height: 6.6rem;
+  margin-top: 0.3125rem;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0.125rem;
+  display: none;
+}
+.Exchangecodes .Memberpurchase .Members .MembersPrice .MembersPrice-title {
+  width: 90%;
+  margin: auto;
+  margin-top: 0.9375rem;
+  font-size: 0.625rem;
+  font-weight: 400;
+  padding: 0.25rem 0rem;
+  text-align: center;
+  border-radius: 1.25rem 1.25rem;
+  color: #ffffff;
+}
+.Exchangecodes .Memberpurchase .Members .loading-M {
+  width: 100%;
+  background: linear-gradient(#ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+  height: 6.6rem;
+  margin-top: 0.3125rem;
+  border-radius: 0.625rem;
+  padding: 2rem 0.125rem;
+  text-align: center;
+}
+.Exchangecodes .Memberpurchase .Members .loading-M img {
+  animation: myLoading 1.5s linear infinite forwards;
+}
+.Exchangecodes .Memberpurchase .Members .loading-M p {
+  font-weight: normal;
+  color: #919191;
+  margin-top: 0.4rem;
+}
+.Exchangecodes .Memberpurchase .Members .CurrentPrice {
+  text-align: center;
+  color: #17b5e3;
+  font-size: 1.25rem;
+  font-family: Microsoft YaHei;
+}
+.Exchangecodes .Memberpurchase .Members .CurrentPrice span.s1 {
+  font-size: 0.75rem;
+  position: relative;
+  left: 0.3125rem;
+}
+.Exchangecodes .Memberpurchase .Members .CurrentPrice span.s3 {
+  color: #333333;
+  font-size: 0.625rem;
+  font-weight: 400;
+  position: relative;
+  left: -0.3125rem;
+}
+.Exchangecodes .Memberpurchase .Members .OriginalPrice {
+  color: #999999;
+  text-align: center;
+  font-size: 0.625rem;
+  font-weight: 400;
+  text-decoration: line-through;
+  font-family: Microsoft YaHei;
+}
+.Exchangecodes .Memberpurchase .Members .Immediately {
+  width: 100%;
+  padding: 0.9375rem;
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 1.25rem;
+  cursor: pointer;
+}
+.Exchangecodes .Memberpurchase .Members1 {
+  background: linear-gradient(#c9f3f8 0%, #e0f1ff 100%);
+  box-shadow: 0rem 0rem 1.6875rem 0.1875rem rgba(208, 221, 255, 0.3);
+  float: left;
+  color: #01a8d9;
+  border: solid 0.125rem #c9f3f8;
+  border-top: solid 4px #cbf2f8;
+}
+.Exchangecodes .Memberpurchase .Members1 .MembersPrice-title {
+  background-color: #79dbf7;
+  font-family: Microsoft YaHei;
+}
+.Exchangecodes .Memberpurchase .Members1 .Immediately {
+  background: linear-gradient(90deg, #81e1e7 0%, #17b5e3 100%);
+  border-radius: 0.625rem;
+}
+.Exchangecodes .Memberpurchase .Members1 .Immediately:hover {
+  background: #17b5e3;
+}
+.Exchangecodes .Memberpurchase .Members2 {
+  background: linear-gradient(#cce4fd 0%, #e5efff 100%);
+  color: #2e66ff;
+  margin: 0rem 2% 0rem 3%;
+  border: solid 0.125rem #cce4fd;
+  border-top: solid 0.25rem #cce4fd;
+}
+.Exchangecodes .Memberpurchase .Members2:hover {
+  border: solid 0.125rem #507fff;
+  border-top: solid 0.25rem #507fff;
+  box-shadow: 0rem 0rem 1.6875rem 0.1875rem rgba(187, 205, 255, 0.4);
+}
+.Exchangecodes .Memberpurchase .Members2 .MembersPrice-title {
+  background-color: #4FA3FF;
+}
+.Exchangecodes .Memberpurchase .Members2 .Immediately {
+  background: linear-gradient(90deg, #51A4FF 0%, #3367F6 100%);
+  border-radius: 0.625rem;
+}
+.Exchangecodes .Memberpurchase .Members2 .Immediately:hover {
+  background: #3367f6;
+}
+.Exchangecodes .Memberpurchase .Members2 .CurrentPrice {
+  color: #2E66FF;
+}
+.Exchangecodes .Memberpurchase .Members3 {
+  background: linear-gradient(#fdd5cc 0%, #ffe5e4 100%);
+  color: #ff4545;
+  position: relative;
+  float: right;
+  border: solid 0.125rem #fdd5cc;
+  border-top: solid 0.25rem #fdd5cc;
+  z-index: 100;
+}
+.Exchangecodes .Memberpurchase .Members3:hover {
+  box-shadow: 0rem 0rem 1.6875rem 0.1875rem rgba(187, 205, 255, 0.4);
+  border: solid 0.125rem #ff8e51;
+  border-top: solid 0.25rem #ff8e51;
+}
+.Exchangecodes .Memberpurchase .Members3 .MembersPrice-title {
+  background-color: #FF8686;
+}
+.Exchangecodes .Memberpurchase .Members3 .Immediately {
+  background: linear-gradient(90deg, #FF856D 0%, #F63462 100%);
+  border-radius: 0.625rem;
+}
+.Exchangecodes .Memberpurchase .Members3 .Immediately:hover {
+  background: #f63462;
+}
+.Exchangecodes .Memberpurchase .Members3 .CurrentPrice {
+  color: #FF4545;
+}
+.Exchangecodes .Memberpurchase .Members3 .Members3-span {
+  background: linear-gradient(to right, #FF8542, #FF4670);
+  border-radius: 1.125rem 1rem 1rem 0rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 0.625rem;
+  color: #FFFFFF;
+  position: absolute;
+  top: -1.5625rem;
+  left: -0.625rem;
+  padding: 0.25rem 0.375rem;
+  z-index: 100;
+}
+.Exchangecodes .Memberpurchase .Members4 {
+  border: solid 0.125rem #00baff;
+  border-top: solid 0.25rem #00baff;
+}
+.Exchangecodes .Memberpurchase .Members4:hover {
+  box-shadow: 0rem 0rem 1.6875rem 0.1875rem rgba(187, 205, 255, 0.4);
+  border: solid 0.125rem #00baff;
+  border-top: solid 0.25rem #00baff;
+}
+.Exchangecodes .Memberpurchase .Immediately {
+  background: linear-gradient(-90deg, #356BFE 0%, #5B86FF 100%);
+  box-shadow: 0rem 0rem 1.125rem 0.125rem rgba(208, 221, 255, 0.3);
+  border-radius: 2.5rem;
+  border: 0.125rem solid #3B70FE;
+  padding: 0.75rem;
+  text-align: center;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  color: #FFFFFF;
+}
+.Exchangecodes .Memberpurchase .Immediately:hover {
+  background: #356bfe;
+}
+.Memberrights {
+  margin-bottom: 1.875rem;
+  margin-top: 3.125rem;
+}
+.Memberrights .table {
+  margin-bottom: 0.75rem;
+}
+.Memberrights .Memberrights-title {
+  color: #00154A;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: Microsoft YaHei;
+}
+.Memberrights .Memberrights-title span {
+  width: 0.25rem;
+  height: 1rem;
+  display: inline-block;
+  background-color: #3368F6;
+  border-radius: 0.125rem;
+  position: relative;
+  top: 0.0625rem;
+  margin-right: 0.5rem;
+}
+.Memberrights .Details-title {
+  margin-top: 0.9375rem;
+  border-radius: 0.625rem;
+}
+.Memberrights .Details-title tr {
+  background-color: #E1E8FA;
+  border-radius: 0.625rem;
+}
+.Memberrights .Details-title tr td {
+  width: 25%;
+  color: #152448;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding-left: 0.9375rem;
+  padding-right: 0rem;
+  font-family: Microsoft YaHei;
+}
+.Memberrights .Details-title tr td span {
+  width: 100%;
+  display: inline-block;
+  border-right: solid 0.0625rem #BAC5E3;
+}
+.Memberrights .Details-title tr td:nth-child(2) span {
+  border-right: none;
+}
+.Memberrights .Details-title tr td:nth-child(even) {
+  text-align: center;
+  padding-left: 0rem;
+}
+.Memberrights .Details {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.Memberrights .Details tr td {
+  width: 25%;
+  padding-left: 0.9375rem;
+  color: #72747E;
+  font-size: 0.75rem;
+  font-family: Microsoft YaHei;
+}
+.Memberrights .Details tr td img {
+  width: 0.875rem;
+}
+.Memberrights .Details tr:nth-child(odd) {
+  background-color: #FAFBFF;
+}
+.Memberrights .Details tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.Memberrights .Details tr td:nth-child(even) {
+  text-align: center;
+  padding-left: 0rem;
+  color: #333333;
+}
+.table > tbody > tr > td {
+  border-top: none;
+}
+.table-bordered > tbody > tr > td {
+  border: 0.0625rem solid #E2E5ED;
+}
+.Forlangliterature {
+  margin-top: 2.5rem;
+  overflow: hidden;
+}
+.Forlangliterature .Backgrounddots2 {
+  width: 3rem;
+  height: 3rem;
+  background: #3A6EFE;
+  border-radius: 50%;
+}
+.Forlangliterature h3 {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 1.375rem;
+  color: #00103F;
+  text-align: center;
+}
+.Forlangliterature p {
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #999999;
+  text-align: center;
+  margin-top: 0.625rem;
+}
+.Forlangliterature p img {
+  width: 1.5625rem;
+  position: relative;
+  top: -0.125rem;
+}
+.Forlangliterature .Forlanglit-div {
+  margin-top: 3.125rem;
+  position: relative;
+}
+.Forlangliterature .Forlanglit-div div {
+  width: 48%;
+  margin: auto;
+  padding: 0.9375rem;
+  background-color: #FFFFFF;
+  box-shadow: 0rem 0rem 1.6875rem 0.1875rem rgba(208, 221, 255, 0.3);
+  border-radius: 0.625rem;
+  display: inline-block;
+}
+.Forlangliterature .Forlanglit-div div:nth-child(even) {
+  float: right;
+}
+.Forlangliterature .Forlanglit-div div:nth-child(5) {
+  margin-left: 25%;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext {
+  position: relative;
+  border: solid 0.0625rem #ffffff;
+  margin-bottom: 0.625rem;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext p:nth-child(1) {
+  text-align: left;
+  color: #00154A;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0rem;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext p:nth-child(2) {
+  text-align: left;
+  color: #BCBCBC;
+  font-size: 0.5rem;
+  margin-top: 0rem;
+  margin-bottom: 0.3125rem;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext li::marker {
+  color: #376CFE;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext li {
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #666666;
+  line-height: 1.25rem;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext li span {
+  display: inline-block;
+  margin-left: -2%;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext:hover {
+  border: solid 0.0625rem #408cff;
+}
+.Forlanglittext:nth-child(1) .Backgrounddots1 {
+  width: 6.25rem;
+  height: 6.25rem;
+  background: #E6EDFF;
+  border-radius: 50%;
+  position: absolute;
+  left: -2.1875rem;
+  top: -1.5625rem;
+  z-index: -1;
+}
+.Forlanglittext:nth-child(2) .Backgrounddots2 {
+  width: 3rem;
+  height: 3rem;
+  background: #3A6EFE;
+  border-radius: 50%;
+  position: absolute;
+  right: -1.875rem;
+  top: -0.625rem;
+  z-index: -1;
+}
+.Backgrounddots3 {
+  width: 3.75rem;
+  height: 3.75rem;
+  background: #618BFF;
+  border-radius: 50%;
+  position: absolute;
+  left: -2.1875rem;
+  bottom: 3.125rem;
+  z-index: -1;
+}
+.Backgrounddots4 {
+  width: 3rem;
+  height: 3rem;
+  background: #E6EDFF;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 3.125rem;
+  right: -2.5rem;
+  z-index: -1;
+}
+.Chinesesliterature {
+  margin-top: 1.25rem;
+}
+.Chinesesliterature .Chineseslit-left h3 {
+  margin-top: 1.25rem;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 1.375rem;
+  color: #00103F;
+  text-align: center;
+}
+.Chinesesliterature .Chineseslit-left p {
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #999999;
+  margin: 0.75rem 0rem;
+  text-align: center;
+}
+.Chinesesliterature .Chineseslit-left ul li {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #666666;
+  text-align: center;
+  list-style: none;
+  line-height: 1.5rem;
+}
+.Chinesesliterature .Chineseslit-left ul li img {
+  width: 0.625rem;
+  margin-right: 0.3125rem;
+  position: relative;
+  top: -0.0625rem;
+}
+.Chinesesliterature .Chineseslit-img {
+  width: 100%;
+  margin-top: 1.25rem;
+}
+.One-stopservice {
+  padding-bottom: 1.875rem;
+}
+.One-stopservice h3 {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 1.375rem;
+  color: #00103F;
+  text-align: center;
+  margin-top: 3.75rem;
+  margin-bottom: 1.875rem;
+}
+.One-stopservice .stopservice-div {
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+.One-stopservice .stopservice-div div {
+  float: left;
+  width: 50%;
+  margin-bottom: 1.25rem;
+}
+.One-stopservice .stopservice-div div img {
+  width: 3.75rem;
+}
+.One-stopservice .stopservice-div div p:nth-child(2) {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #333333;
+  margin: 0.75rem 0rem 0.25rem 0rem;
+}
+.One-stopservice .stopservice-div div p:nth-child(3) {
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #999999;
+}
+.One-stopservice .stopservice-img {
+  position: absolute;
+  top: 1.25rem;
+  left: 25%;
+  width: 50%;
+  z-index: -1;
+}
+.One-stopservice .stopservice-img1 {
+  position: absolute;
+  top: 9.6875rem;
+  left: 25%;
+  width: 50%;
+  z-index: -1;
+}
+.One-stopservice .Submission {
+  padding: 0.75rem 1.875rem;
+  background: linear-gradient(-90deg, #356BFE 0%, #648DFF 100%);
+  box-shadow: 0rem 0rem 0.625rem 0rem rgba(117, 160, 225, 0.3);
+  border-radius: 2.5rem;
+  margin: auto;
+  width: 40%;
+  text-align: center;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #FFF6F6;
+  margin-top: 1.25rem;
+}
+.foot {
+  border-top: solid 1px #EEEEEE;
+  padding: 24px;
+  text-align: center;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 12px;
+  color: #999999;
+}
+/*# sourceMappingURL=index.css.map */

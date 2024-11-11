@@ -1,0 +1,498 @@
+.ctn-body {
+  width: 72.6%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url('../img/ctn-body.png') no-repeat right 99%;
+  background-color: #fff;
+}
+.ctn-body > .tab-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.ctn-body > .tab-content > .tab-pane {
+  height: 100%;
+}
+.ctn-body .placeholder {
+  color: #bdbdbd;
+}
+.ctn-body input::-webkit-input-placeholder,
+.ctn-body textarea::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #bdbdbd;
+}
+.ctn-body input:-moz-placeholder,
+.ctn-body textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #bdbdbd;
+}
+.ctn-body input::-moz-placeholder,
+.ctn-body textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #bdbdbd;
+}
+.ctn-body input:-ms-input-placeholder,
+.ctn-body textarea:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #bdbdbd;
+}
+p {
+  margin: 0;
+}
+.download a,
+.download .nots {
+  background-color: #cdcdcd;
+  border-radius: 8px;
+  color: #fff;
+  width: 60px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.download a b,
+.download .nots b {
+  display: inline-block;
+  border-radius: 2px;
+  border: solid 1px #ffffff;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 400;
+  height: 16px;
+  line-height: 14px;
+  width: 16px;
+  text-align: center;
+}
+.download a span,
+.download .nots span {
+  font-size: 12px;
+}
+.download a.complete {
+  background-image: linear-gradient(90deg, #006aff 0%, #0094ff 100%);
+  white-space: nowrap;
+}
+.download .delete-report {
+  background: #f9c86b;
+  color: #ffffff;
+}
+.scanFollow {
+  font-size: 0;
+}
+.scanFollow .codeBox {
+  display: inline-block;
+  width: 75px;
+  height: 76px;
+  text-align: center;
+  line-height: 75px;
+  border: 1px solid #ededed;
+  margin-right: 18px;
+  vertical-align: middle;
+}
+.scanFollow .codeBox img {
+  width: 50%;
+}
+.scanFollow .tipsText {
+  display: inline-block;
+  vertical-align: middle;
+}
+.scanFollow .tipsText .p-1 {
+  color: #50b674;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  line-height: 1.1;
+  margin-top: 6px;
+}
+.scanFollow .tipsText .p-2 {
+  color: #999999;
+  font-size: 12px;
+  text-align: left;
+  line-height: 1.1;
+  margin-top: 8px;
+}
+.report-cont .form-search .form-group.pull-left #order-id {
+  padding: 6px 34px 6px 12px;
+}
+.report-cont .form-search .form-group.pull-left .clearInput {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 120px;
+  top: 11px;
+  cursor: pointer;
+  background-image: url("../img/clear.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: none;
+}
+.report-cont .form-search .form-group.pull-left .clearInput:hover {
+  background-image: url("../img/clear-pr.png");
+}
+.delete-pop {
+  width: 402px;
+  height: 232px;
+  background: #fff;
+  position: fixed;
+  z-index: 1003;
+  top: 50%;
+  left: 50%;
+  margin-top: -101px;
+  margin-left: -201px;
+  border-radius: 12px;
+  display: none;
+}
+.delete-pop #copyInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.delete-pop .pop_top {
+  height: 46px;
+  border-bottom: 1px solid #dddddd;
+  padding: 0 22px;
+}
+.delete-pop .pop_top .pop_title {
+  float: left;
+  font-size: 18px;
+  color: #252525;
+  line-height: 46px;
+}
+.delete-pop .pop_top img {
+  width: 14px;
+  vertical-align: middle;
+  float: right;
+  margin-top: 16px;
+  cursor: pointer;
+}
+.delete-pop .pop_cont .p1 {
+  color: #006dff;
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.delete-pop .pop_cont .back_block {
+  width: 320px;
+  height: 60px;
+  background: #f0f6ff;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+.delete-pop .pop_cont .back_block .p2 {
+  color: #333333;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.delete-pop .pop_cont .back_block .p2 .orderId_pop {
+  margin-left: 4px;
+}
+.delete-pop .pop_cont .back_block .p2 span.copy_pop {
+  color: #005fdd;
+  text-decoration: underline;
+  margin-left: 6px;
+  cursor: pointer;
+}
+.delete-pop .pop_cont .back_block .p3 {
+  color: #5d5d5d;
+  text-align: center;
+  font-size: 12px;
+}
+.delete-pop .pop_bottom {
+  height: 66px;
+  padding: 16px 136px 0;
+}
+.delete-pop .pop_bottom .cancel_btn {
+  width: 60px;
+  height: 34px;
+  background: #f2f2f2;
+  color: #777777;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 34px;
+  float: left;
+  cursor: pointer;
+}
+.delete-pop .pop_bottom .cancel_btn:hover {
+  background: #e5e5e5;
+}
+.delete-pop .pop_bottom .cancel_btn:active {
+  background: #d3d3d3;
+}
+.delete-pop .pop_bottom .determine_btn {
+  width: 60px;
+  height: 34px;
+  background: #006dff;
+  color: #ffffff;
+  border-radius: 6px;
+  float: left;
+  font-size: 14px;
+  text-align: center;
+  line-height: 34px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.delete-pop .pop_bottom .determine_btn:hover {
+  background: #0261df;
+}
+.delete-pop .pop_bottom .determine_btn:active {
+  background: #0458c9;
+}
+.mask_body {
+  position: fixed;
+  background: #000;
+  z-index: 1002;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  display: none;
+}
+.noMarginTop {
+  margin-top: 0 !important;
+}
+.DownloadSeparately {
+  display: inline;
+}
+.DownloadSeparately span {
+  border-radius: 8px;
+  color: #fff;
+  width: 60px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  background-image: linear-gradient(90deg, #006aff 0%, #0094ff 100%);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.SingleDownload {
+  width: 369px;
+  min-height: 417px;
+  background: #fff;
+  position: fixed;
+  z-index: 1002;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -180px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  display: none;
+}
+.SingleDownload .pop_top {
+  height: 46px;
+  border-bottom: 1px solid #ebebeb;
+  padding: 0 22px;
+}
+.SingleDownload .pop_top .pop_title {
+  float: left;
+  font-size: 16px;
+  color: #222222;
+  line-height: 46px;
+  font-weight: bold;
+}
+.SingleDownload .pop_top img {
+  width: 14px;
+  vertical-align: middle;
+  float: right;
+  margin-top: 16px;
+  cursor: pointer;
+}
+.SingleDownload .pop_cont {
+  margin-bottom: 80px;
+  padding: 20px 30px;
+}
+.SingleDownload .pop_cont .OnLine {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+}
+.SingleDownload .pop_cont .OnLine .MerchandiseName {
+  display: inline-block;
+  color: #333333;
+  font-size: 14px;
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  padding-right: 10px;
+}
+.SingleDownload .pop_cont .OnLine .MerchandiseName::before {
+  content: ' ';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #252525;
+  position: relative;
+  top: -2px;
+  margin-right: 3px;
+}
+.SingleDownload .pop_cont .OnLine .zengsong,
+.SingleDownload .pop_cont .OnLine .zengzhi {
+  border-radius: 2px;
+  padding: 1px 4px 0 4px;
+  font-size: 12px;
+}
+.SingleDownload .pop_cont .OnLine .zengsong {
+  border: solid 1px #7a63ff;
+  background-color: #f5f3ff;
+  color: #7a63ff;
+}
+.SingleDownload .pop_cont .OnLine .zengzhi {
+  background-color: #ffeae8;
+  border: solid 1px #ffa49d;
+  color: #f9483a;
+}
+.SingleDownload .pop_cont .OnLine i {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  border-bottom: 1px dashed #666666;
+}
+.SingleDownload .pop_cont .OnLine .Operation {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  z-index: 10;
+  background-color: #fff;
+  font-size: 12px;
+  text-align: center;
+  width: 60px;
+}
+.SingleDownload .pop_cont .OnLine .AloneDownload {
+  cursor: pointer;
+}
+.SingleDownload .pop_cont .OnLine .AloneDownload a {
+  color: #006aff;
+}
+.SingleDownload .pop_cont .OnLine .AloneDownload.Success {
+  color: #333333;
+}
+.SingleDownload .pop_cont .OnLine .inStatus {
+  color: #ff8400;
+}
+.SingleDownload .pop_cont .OnLine .inStatus dot {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-left: 3px;
+  margin-top: 12px;
+  height: 1em;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: left;
+}
+.SingleDownload .pop_cont .OnLine .inStatus dot::before {
+  content: '...\A..\A.';
+  white-space: pre-wrap;
+  animation: dot 3s infinite step-end;
+  /*step-end确保一次动画结束后直接跳到下一帧而没有过渡*/
+}
+@keyframes dot {
+  33% {
+    transform: translateY(-2em);
+  }
+  66% {
+    transform: translateY(-1em);
+  }
+}
+.SingleDownload .pop_cont .Second {
+  position: relative;
+}
+.SingleDownload .pop_cont .Second::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: -12px;
+  width: 1px;
+  height: 32px;
+  background-color: #dbdbdb;
+  z-index: 10;
+}
+.SingleDownload .pop_cont .Second::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  bottom: 20px;
+  width: 22px;
+  height: 1px;
+  background-color: #dbdbdb;
+  z-index: 11;
+}
+.SingleDownload .pop_cont .Second .MerchandiseName {
+  padding-left: 27px;
+}
+.SingleDownload .pop_bottom {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 17px;
+  padding-bottom: 24px;
+}
+.SingleDownload .pop_bottom .determine_package {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  background-color: #a7ccff;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  user-select: none;
+  cursor: wait;
+}
+.SingleDownload .pop_bottom .determine_package.Success {
+  background-color: #006aff;
+  cursor: pointer;
+}
+.SingleDownload .Loading {
+  display: none;
+  text-align: center;
+  margin-top: 80px;
+}
+.loadLine {
+  text-align: center;
+  padding-top: 20vh;
+  display: none;
+}
+.loadLine p {
+  margin-top: 10px;
+}
+.nodata-text {
+  color: #9099b3;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+.toSubmit {
+  width: 120px;
+  height: 36px;
+  background: #1091ff;
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  line-height: 36px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.toSubmit a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+.toSubmit:hover {
+  box-shadow: 0 0 5px 0px #1091ff;
+}
+/*# sourceMappingURL=query.css.map */

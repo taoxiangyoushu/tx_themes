@@ -1,0 +1,223 @@
+blockquote,
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+  margin: 0;
+  padding: 0;
+}
+.realTime ul,
+.realTime li {
+  list-style: none;
+  overflow: hidden;
+}
+.realTime .box {
+  height: 1.67rem;
+  background: #000;
+  overflow: hidden;
+}
+.realTime .t_news {
+  width: 20rem;
+  display: inline-block;
+  height: 30px;
+  color: #333333;
+  padding-left: 0.48rem;
+  margin: 0.29rem 0;
+  overflow: hidden;
+  position: relative;
+}
+.realTime .t_news b {
+  line-height: 30px;
+  font-weight: bold;
+  display: inline-block;
+}
+.realTime .news_li,
+.realTime .swap {
+  line-height: 30px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0rem;
+  width: 100%;
+}
+.realTime .news_li a,
+.realTime .swap a {
+  color: #333333;
+}
+.realTime .swap {
+  top: 30px;
+}
+.realTime .news_li li,
+.realTime .swap li {
+  height: 30px;
+}
+.case {
+  text-align: center;
+  width: 100%;
+  max-width: 42.29rem;
+  height: 35px;
+  background-color: #fffcc2;
+  line-height: 30px;
+  margin: auto;
+  margin-top: 1.62rem;
+  color: #666666;
+  font-size: 1rem;
+  background: #fffffe;
+  background: -moz-linear-gradient(left, #fffffe 0%, #f7f7cf 33%, #fffcc2 56%, #fcfac7 64%, #f7f7cf 78%, #f8f8d3 80%, #fffffe 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #fffffe), color-stop(33%, #f7f7cf), color-stop(56%, #fffcc2), color-stop(64%, #fcfac7), color-stop(78%, #f7f7cf), color-stop(80%, #f8f8d3), color-stop(100%, #fffffe));
+  background: -webkit-linear-gradient(left, #fffffe 0%, #f7f7cf 33%, #fffcc2 56%, #fcfac7 64%, #f7f7cf 78%, #f8f8d3 80%, #fffffe 100%);
+  background: -o-linear-gradient(left, #fffffe 0%, #f7f7cf 33%, #fffcc2 56%, #fcfac7 64%, #f7f7cf 78%, #f8f8d3 80%, #fffffe 100%);
+  background: -ms-linear-gradient(left, #fffffe 0%, #f7f7cf 33%, #fffcc2 56%, #fcfac7 64%, #f7f7cf 78%, #f8f8d3 80%, #fffffe 100%);
+  background: linear-gradient(to right, #fffffe 0%, #f7f7cf 33%, #fffcc2 56%, #fcfac7 64%, #f7f7cf 78%, #f8f8d3 80%, #fffffe 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffffe', endColorstr='#fffffe', GradientType=1);
+}
+.case img {
+  vertical-align: top;
+  position: relative;
+  top: 1rem;
+  margin-right: 0.48rem;
+}
+/*侧边*/
+.fiexBox {
+  position: fixed;
+  top: 80%;
+  z-index: 1000;
+  right: 1rem;
+}
+.navBtn {
+  background: #fff;
+  padding: 0.9rem;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  border-radius: 0.6rem;
+  width: 5.8rem;
+  height: 5.8rem;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  box-shadow: 0rem 0rem 0.4rem 0rem #d3d3d3;
+}
+.quanwei:hover,
+.waiwen:hover,
+.dinggao:hover,
+.qita:hover {
+  color: #fff;
+}
+.navBtn.QQ,
+.navBtn.WX {
+  position: relative;
+  padding: 1.5rem;
+}
+.navBtn.QQ:hover .qq,
+.navBtn.QQ:hover:after {
+  display: block;
+}
+.navBtn.WX:hover .wxKF,
+.navBtn.WX:hover:after {
+  display: block;
+}
+.navBtn.QQ:after,
+.navBtn.WX:after {
+  content: '';
+  position: absolute;
+  left: -1.4rem;
+  width: 1.4rem;
+  height: 5.4rem;
+  top: 0.4rem;
+}
+.qq {
+  background: #fff;
+  position: absolute;
+  left: -27.4rem;
+  width: 26rem;
+  height: 5.4rem;
+  line-height: 5.4rem;
+  color: #333333;
+  font-size: 1.4rem;
+  top: 0.4rem;
+  box-shadow: 0rem 0rem 0.4rem 0rem #e1dfdf;
+  display: none;
+}
+.concat {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #fff;
+  width: 7.6rem;
+  height: 3rem;
+  background: #ef3b6d;
+  line-height: 3rem;
+  border-radius: 5rem;
+  margin-left: 1rem;
+}
+.concat a {
+  color: #fff;
+}
+.concat:hover {
+  background: #ff2361;
+}
+.SuccessfulCase {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.foot {
+  color: #999999;
+  font-size: 1rem;
+  text-align: center;
+  height: 4rem;
+  line-height: 4rem;
+  border-top: 1px solid #ededed;
+}
+.foot .gongan {
+  width: 16px;
+  margin-top: -4px;
+}
+.foot a {
+  text-decoration: none;
+  color: #8f8f8f;
+}
+.foot a:hover {
+  color: #337ab7;
+}
+.foot a.beian {
+  margin-left: 20px;
+}
+#filing-information {
+  color: #999999;
+  font-size: 1rem;
+  text-align: center;
+  height: 4rem;
+  line-height: 4rem;
+  border-top: 1px solid #ededed;
+}
+#filing-information a {
+  text-decoration: none;
+  color: #8f8f8f;
+}
+#filing-information a:hover {
+  color: #337ab7;
+}
+#filing-information a.beian {
+  margin-left: 20px;
+}
+/*# sourceMappingURL=common.css.map */

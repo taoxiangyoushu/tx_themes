@@ -1,0 +1,659 @@
+body {
+    background: linear-gradient(162deg, #FFF4E2 0%, #FFFFFF 49%, #FFF6F6 100%);
+    padding-bottom: 24px;
+}
+
+html {
+    min-height: 100vh;
+}
+
+.haderNav {
+    position: fixed;
+    top: 0;
+    background: #ffffff;
+}
+
+.content {
+    padding-top: 104px;
+
+    .content-box {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .head-search {
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            background-image: url("../../img/top_bg.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            // line-height: 80px;
+            padding: 20px 0px;
+            font-size: 0;
+
+            &>div {
+                display: inline-block;
+
+                .searchText {
+                    color: #333333;
+                    font-size: 16px;
+                    margin-left: 30px;
+                    margin-right: 23px;
+                }
+
+                #orderId {
+                    width: 320px;
+                    height: 38px;
+                    border: 1px solid #DDDDE3;
+                    padding-left: 17px;
+                    font-size: 14px;
+                    outline: none;
+                    border-radius: 4px;
+                }
+
+                .clearSearch {
+                    //display: inline-block;
+                    width: 14px;
+                    height: 14px;
+                    background-image: url(../../img/delete-search.png);
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    vertical-align: middle;
+                    margin-top: -10px;
+                    margin-left: -30px;
+                    margin-right: 14px;
+                    cursor: pointer;
+                    display: none;
+
+                    &:hover {
+                        background-image: url(../../img/delete-search-a.png);
+                    }
+                }
+
+                .search-btn {
+                    width: 98px;
+                    height: 38px;
+                    border-radius: 4px;
+                    background: #FF413D;
+                    display: inline-block;
+                    color: #fff;
+                    line-height: 39px;
+                    text-align: center;
+                    font-size: 16px;
+                    margin-left: 20px;
+                    cursor: pointer;
+                    position: relative;
+                    top: 1px;
+                }
+            }
+
+            .orderIdGuide {
+                .order-ali {
+                    display: inline-block;
+                    margin-left: 21px;
+                    cursor: pointer;
+                    position: relative;
+
+                    img {
+                        vertical-align: middle;
+                        margin-top: -8px;
+                    }
+
+                    span {
+                        color: #666666;
+                        font-size: 14px;
+                        margin-left: 7px;
+                        position: relative;
+                        top: 1px;
+                    }
+
+                    .orderId2 {
+                        position: absolute;
+                        top: 40px;
+                        left: -228px;
+                        width: 576px;
+                        height: 292px;
+                        background: #fff;
+                        text-align: center;
+                        line-height: 298px;
+                        box-shadow: 0 0 4px 1px #e3e3e3;
+                        z-index: 10;
+                        display: none;
+
+                        img {
+                            width: 562px;
+                            height: 281px;
+                        }
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            bottom: 100%;
+                            left: 276px;
+                            width: 0;
+                            height: 0;
+                            border-width: 10px;
+                            border-style: solid;
+                            border-color: transparent;
+                            border-bottom-width: 10px;
+                            border-bottom-color: currentColor;
+                            color: #ffffff;
+                        }
+                    }
+
+                    &:hover {
+                        .orderId {
+                            display: block;
+                        }
+                    }
+                }
+
+                .order-wx {
+                    display: inline-block;
+                    margin-left: 23px;
+                    cursor: pointer;
+                    position: relative;
+
+                    img {
+                        vertical-align: middle;
+                        margin-top: -8px;
+                    }
+
+                    span {
+                        color: #666666;
+                        font-size: 14px;
+                        margin-left: 7px;
+                        position: relative;
+                        top: 1px;
+                    }
+
+                    .orderId1 {
+                        position: absolute;
+                        top: 40px;
+                        left: -228px;
+                        width: 576px;
+                        height: 292px;
+                        background: #fff;
+                        text-align: center;
+                        line-height: 298px;
+                        box-shadow: 0 0 4px 1px #e3e3e3;
+                        z-index: 10;
+                        display: none;
+
+                        img {
+                            width: 562px;
+                            height: 281px;
+                        }
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            bottom: 100%;
+                            left: 276px;
+                            width: 0;
+                            height: 0;
+                            border-width: 10px;
+                            border-style: solid;
+                            border-color: transparent;
+                            border-bottom-width: 10px;
+                            border-bottom-color: currentColor;
+                            color: #ffffff;
+                        }
+                    }
+
+                    &:hover {
+                        .orderId {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+
+        .order-card {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 0px 0px 10px 10px;
+
+            .orderInformation {
+                // display: none;
+                border: none;
+
+                thead {
+                    height: 45px;
+                    background-color: #f6f6f6;
+                    font-size: 14px;
+                    color: #686868;
+
+                    // border-bottom: 1px solid #efefef;
+                    tr {
+                        th {
+                            vertical-align: middle;
+                            font-weight: normal;
+                            border: none;
+                            text-align: center;
+
+                            // &:first-child {
+                            //     padding-left: 20px;
+                            //     //text-align: left;
+                            // }
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        height: 50px;
+                        border-bottom: 1px solid #ededed;
+
+                        td {
+                            font-weight: normal;
+                            text-align: center;
+                            vertical-align: middle;
+                            border: none;
+                            padding: 30px 8px;
+                            font-size: 14px;
+                            color: #333333;
+
+                            &.first {
+                                padding-left: 20px;
+                                text-align: left;
+                            }
+
+                            &.titles {
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                max-width: 90px;
+                            }
+
+                            .price-text {
+                                color: #FF413D;
+                                font-weight: bold;
+                            }
+
+                            .state-block {
+                                background: #DCEFFE;
+                                color: #007BFF;
+                                font-size: 14px;
+                                padding: 4px 10px;
+                                display: inline-block;
+                                border-radius: 15px;
+                                border: 1px solid #007BFF;
+                            }
+
+                            .operate-block {
+                                .copyCode {
+                                    display: inline-block;
+                                    width: 94px;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    background: #4C83FF;
+                                    border-radius: 8px;
+                                    font-size: 14px;
+                                    color: #ffffff;
+                                    margin-right: 20px;
+                                    cursor: pointer;
+                                }
+
+                                .deleteOrder {
+                                    display: inline-block;
+                                    width: 78px;
+                                    height: 30px;
+                                    background: #FF4C6D;
+                                    border-radius: 8px;
+                                    line-height: 30px;
+                                    font-size: 14px;
+                                    color: #ffffff;
+                                    cursor: pointer;
+                                }
+
+                                &.noClick {
+                                    .copyCode {
+                                        background: #b2b3b7;
+                                        pointer-events: none;
+                                    }
+
+                                    .deleteOrder {
+                                        background: #ff9fb1;
+                                        pointer-events: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .nodata-block {
+                //display: none;
+                text-align: center;
+                padding: 100px 0 160px;
+
+                .nodata-text {
+                    font-size: 14px;
+                    color: #222222;
+                    margin-top: 10px;
+                }
+            }
+
+            .loadLine {
+                display: none;
+                text-align: center;
+                height: 498px;
+                padding: 185px 0 100px;
+
+                p {
+                    margin-top: 10px;
+                }
+            }
+
+            #CopyCOde {
+                position: absolute;
+                opacity: 0;
+                z-index: -1;
+            }
+        }
+    }
+
+    .useFlow-block {
+        display: none;
+        width: 1200px;
+        background: #ffffff;
+        padding: 0 30px 30px;
+        margin: 24px auto 0;
+        border-radius: 10px;
+
+        .head-u {
+            height: 76px;
+            line-height: 76px;
+            position: relative;
+
+            img {
+                vertical-align: middle;
+                margin-top: -6px;
+                margin-right: 6px;
+            }
+
+            span {
+                color: #2C1902;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                background: #F1F1F1;
+                height: 1px;
+                bottom: 0;
+            }
+
+            div {
+                display: inline-block;
+                height: 20px;
+                border-left: solid 1px #EDEDED;
+                line-height: 20px;
+                padding-left: 12px;
+                margin-left: 10px;
+                position: relative;
+                top: -2px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                font-size: 12px;
+                color: #999999;
+            }
+        }
+
+        .procedure-block {
+            margin-top: 24px;
+            background: #FFFBF8;
+            padding: 64px 32px 0;
+            position: relative;
+
+            .tag-pc {
+                width: 120px;
+                height: 40px;
+                background: linear-gradient(-90deg, #FF7F3A, #FF4846);
+                border-radius: 12px 0px 12px 0px;
+                font-size: 16px;
+                color: #ffffff;
+                font-weight: bold;
+                text-align: center;
+                line-height: 43px;
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                img {
+                    position: relative;
+                    top: -2px;
+                    left: -4px;
+                }
+            }
+        }
+
+        .block_1 {
+            .stepBox {
+                display: inline-block;
+                width: 500px;
+
+                .text-p {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+
+                    .No-n {
+                        display: inline-block;
+                        width: 16px;
+                        height: 16px;
+                        background: #FF7D3A;
+                        color: #ffffff;
+                        text-align: center;
+                        line-height: 16px;
+                        border-radius: 50%;
+                        margin-right: 2px;
+                    }
+
+                    a {
+                        color: #FF413D;
+                        font-weight: bold;
+                    }
+                }
+
+                .step-img {
+                    margin-bottom: 30px;
+                    background: #FFFFFF;
+                    border-radius: 5px;
+                    border: 1px solid #E0E0E0;
+                    padding: 12px;
+                }
+
+                // &.step1, &.step3 {
+                //     // width: 520px;
+                // }
+                // &.step2, &.step4,&.step6 {
+                //     margin-left: 18px;
+                // }
+            }
+
+            .arrow-i {
+                margin: 0 22px;
+            }
+        }
+    }
+}
+
+.mask_body {
+    position: fixed;
+    background: #000;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    display: none;
+}
+
+.delete-pop {
+    width: 402px;
+    height: 232px;
+    background: #fff;
+    position: fixed;
+    z-index: 1002;
+    top: 50%;
+    left: 50%;
+    margin-top: -101px;
+    margin-left: -201px;
+    border-radius: 12px;
+    display: none;
+
+    .pop_top {
+        height: 46px;
+        border-bottom: 1px solid #ebebeb;
+        padding: 0 22px;
+
+        .pop_title {
+            float: left;
+            font-size: 18px;
+            color: #252525;
+            line-height: 46px;
+        }
+
+        img {
+            width: 14px;
+            vertical-align: middle;
+            float: right;
+            margin-top: 16px;
+            cursor: pointer;
+        }
+    }
+
+    .pop_cont {
+        .p1 {
+            color: #FF413D;
+            font-size: 16px;
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .back_block {
+            width: 320px;
+            height: 60px;
+            background: #FFF9ED;
+            margin: 0 auto;
+            padding: 8px 0;
+
+            .p2 {
+                color: #5d5d5d;
+                text-align: center;
+                margin-bottom: 4px;
+            }
+
+            .p3 {
+                color: #5d5d5d;
+                text-align: center;
+            }
+        }
+    }
+
+    .pop_bottom {
+        height: 66px;
+        padding: 16px 136px 0;
+
+        .cancel_btn {
+            width: 60px;
+            height: 34px;
+            background: #f2f2f2;
+            color: #777777;
+            border-radius: 6px;
+            font-size: 14px;
+            text-align: center;
+            line-height: 34px;
+            float: left;
+            cursor: pointer;
+
+            &:hover {
+                background: #e5e5e5
+            }
+
+            &:active {
+                background: #d3d3d3
+            }
+
+        }
+
+        .determine_btn {
+            width: 60px;
+            height: 34px;
+            background: #FF413D;
+            color: #ffffff;
+            border-radius: 6px;
+            float: left;
+            font-size: 14px;
+            text-align: center;
+            line-height: 34px;
+            margin-left: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: #e82d29
+            }
+
+            &:active {
+                background: #e82d29
+            }
+        }
+    }
+}
+
+#floatingBox {
+    .complainBox {
+        right: 20px;
+    }
+}
+
+.Mobile_application_process {
+    div {
+        float: left;
+        width: 165px;
+        height: 300px;
+
+        p {
+            margin-bottom: 10px;
+
+            span {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background: #FF7D3A;
+                color: #ffffff;
+                text-align: center;
+                line-height: 16px;
+                border-radius: 50%;
+                margin-right: 2px;
+            }
+
+            text-align: center;
+            font-size: 12px;
+            color: #333333;
+
+            b {
+                font-weight: bold;
+            }
+        }
+
+        img {
+            margin: auto;
+            display: block;
+        }
+    }
+
+    .Process_Arrow {
+        margin: 0px 6px;
+        float: left;
+        position: relative;
+        top: 140px;
+    }
+}

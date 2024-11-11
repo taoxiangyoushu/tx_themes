@@ -1,0 +1,12 @@
+
+#bs-example-navbar-collapse-1 {
+  height: 14.5rem;
+  width: 11.375rem;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 0.22rem 0.09rem rgba(117, 134, 175, 0.1);
+  border-radius: .625rem;
+  position: absolute;
+  right: 1rem;
+  margin-top: 1rem;
+  z-index: 100;
+}

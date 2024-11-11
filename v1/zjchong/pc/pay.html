@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>早降重 - 确认订单</title>
+    <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0022">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0022">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
+
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
+        var JANE_NAME = 'zjchong';
+    </script>
+</head>
+<body>
+<div class="app clearfix" id="app">
+    <div class="nav-bar">
+        <div class="block1620 clearfix" id="memberCarrier">
+            <div class="logo-box pull-left">
+                <h1 class="hide">早降重 智能降重 </h1>
+                <a href="./index.html" title="早降重官网">
+                    <img src="../pc/assets/img/logo.png" alt="logo"/>
+                </a>
+                <div class="txter">
+                    <p>第六代人工智能神经网络降重模型</p>
+                    <p>进一步优化修改后的语句通顺度、连贯性、上下文结构，较上一代提升50%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-body block1620">
+        <div>
+            <div class="ctn-body">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane order-cont active">
+                        <div>
+                            <div class="order-msg">
+                                <div class="row-label">
+                                    <p>请确认您的<span>订单信息</span></p></div>
+                                <div class="row-cont">
+                                    <ul class="msg-list">
+                                        <li><label>订单编号：</label>
+                                            <div style="line-height: 50px;">
+                                                <input type="text" id="copyInput2">
+                                                <span class="oid"></span>
+                                                <span class="tips_oid"><span class="copy_oid">复制</span>保存，以便查询报告</span>
+                                            </div>
+                                        </li>
+                                        <li><label>订单详情：</label>
+                                            <div class="special clearfix">
+                                                <span class="file-type"></span>
+                                                <span class="version price-unit">获取中...</span>
+                                                <span class="tit ellipsis"></span>
+                                                <span class="suggest-price pull-right"><span class="wordsNm"></span><i>字</i>
+                                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5N0UwQ0YwNzEyODQxMUVCQjUxQUNDM0Q1MEVCODczNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5N0UwQ0YwODEyODQxMUVCQjUxQUNDM0Q1MEVCODczNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjk3RTBDRjA1MTI4NDExRUJCNTFBQ0MzRDUwRUI4NzM0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjk3RTBDRjA2MTI4NDExRUJCNTFBQ0MzRDUwRUI4NzM0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+cz+0YAAAAYtJREFUeNpckjFLA0EQhe82h4WdaKOFtpb+BRsNBIUogoiFGlMISiB2/gA7FawCwcSAEEHRNnCChbVYWqoROysLG3OJ3ztnQ3DgMXP73pvb2d0wjuMgk8kEYRgGxCQ4BHkwHPzFN7gFB6Dd6/WCJEkCZ6SMG6Q3sELdRLAmqNaaONOkEakDsQlq4ASybI38LprkbXTH1HVR1HUXRdGYTN1u95Rcdi7dRB7xB/kF0bw1L5OlqcmDzlUkBiVlyBy4AY80e0bYAtO2g5JpKw7BMqiqpTqDLwhtdxHhgo00ZX8VX5XHqROdW51OJz0tvh9sVnHv1E/gTkZppJUn+ncQIvzBvYJxMOE1Nn8aTkIWsrrLQYK4BLm+EM40WfO4a9aLfoaBex0hzfhvm19lUR79cUcddNTebLMsYZ71Y3iNsjwRok/upQB5BvFDt31tCXJUjeDSP8EfgT3qQuqxQ9GrScA5hl3MF3Z/2tEceR0MAT25Rv9UbYYG6V6PnHoV85at65Ff6ZFTt73+V4ABAJFu6GW57sRBAAAAAElFTkSuQmCC" alt="">
+                                                        <span class="over-tips" >经系统后台计算，<br>实际参与降重的字数</span>
+                                                    </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="color-block"></div>
+                            <div class="order-msg">
+                                <div class="row-label">
+                                    <p>优惠券</p>
+                                </div>
+                                <div class="row-cont">
+                                    <div class="coupon"><input id="coupon" type="text" placeholder="若有优惠券请填写兑换码">
+                                        <div class="eliminateCoupon"></div>
+                                        <button type="button" class="btn btn-exchange use_now">兑换</button><!---->
+                                        <!-- 福利活动入口 -->
+                                        <div class="welfare-entrance">
+                                            <a href="./hd/index.html" target="_blank">福利活动</a>
+                                        </div>
+                                        <div class="change-res-tip errorTip"><img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB6ElEQVQ4T5WTPWgUURSFz5n1NyjYWNhYZTPzVo1iRLAI+5aAQS2sQrCwDBKb7V3QXYg2VrYWloLIapegIjPbKAQFF3F3MhvU0srCRhLWOfKSTDKuq5Dp3nn3fvfeuecRA9/XSXNsvaBpkuclXNy6fgVxmSPrzeLS6o98CrODS1wr6AbJOaR6B49tpvwIYj+gCQEnBBz3qGoxjF9keduAnjVvBFyQeNlvdZYGO3PnpBxcA/lYUMOP4rrTNgCJNTUAC2NRdxs4DJBpiTXyqHOjYfyen6f88f4vry3pnt+Kays22CBnFbKkvJ5YUwUwf+jwyFkmNrgPcXys1Z12wS6Q4J18m8O0pGya8LwmE2u+iXzkh51b+WoZZHPOP4GbhUp1Qnsc4LuAeT/qPsnPnVV1Wr6bLKZXLs2ImHWAjoDG/wCE6sUobuQLxOXSjLcFCEW+HTaCS0wBuhEGIb1KcFviPvYq5qZSXN31T7TBU7DwnL3J0aMq7P0i6YFbY9cG1gPssDWmQGSiOHJrJDB7YO3IVGakBQC13RhJ9M744af2jpUr5qGEORFX/LC7OMyJK+XSJVKLf1l5ZzXBXZFVSK8BxoA+EF5fnk4h1WmQPv/1mDLIqjUnU+E6SSNqAsJPEi8lLfNg/9ngc/4NbesOnBYa/SkAAAAASUVORK5CYII=">
+                                            <span></span>
+                                        </div>
+                                        <span class="activityTip"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="color-block"></div>
+                            <div class="order-msg payBox">
+                                <div class="row-label">
+                                    <p>订单支付<span></span></p>
+                                </div>
+                                <div class="row-cont">
+                                    <div class="clearfix2">
+                                        <div class="payType pull-left">
+                                            <div id="alipay" data-type="alipayScan" style="display: none;">
+                                                <img src="../pc/assets/img/Alipay.png" alt="">
+                                                <span>支付宝支付</span>
+                                            </div>
+                                            <div id="wx" data-type="wxScan" style="display: none;">
+                                                <img src="../pc/assets/img/wx.png" alt="">
+                                                <span>微信支付</span>
+                                            </div>
+                                            <div id="scanCodeRich" data-type="scanCodeRich" style="display: none;">
+                                                <img src="../pc/assets/img/scanpay.png" alt="">
+                                                <span>扫码支付</span>
+                                            </div>
+                                            <div id="thirdparty" data-type="thirdparty" style="display: none;">
+                                                <img src="../pc/assets/img/dsf.png" alt="">
+                                                <span>第三方支付</span>
+                                            </div>
+                                        </div>
+                                        <div class="code pull-left">
+                                            <div class="pull-left codeER">
+                                                <div id="qrcode"></div>
+                                                <div class="load">
+                                                    <img src="../pc/assets/img/loding.gif" alt="">
+                                                </div>
+                                                <div class="mask">
+                                                    <img src="../pc/assets/img/expired.png" alt="">
+                                                    <p>点击刷新</p>
+                                                </div>
+                                                <p class="tips">提示：扫码支付,请勿刷新页面</p>
+                                            </div>
+                                            <div class="pull-left titlesRight payTypeClass">
+                                                <div class="payTypes">单价: <span class="UnitPrice">暂无</span> </div>
+
+                                                <div class="amount">应付金额 <span><b>￥</b><span class="orderAmount">00.00</span></span></div>
+
+                                                <p class="auxiliary">剩余支付时间 <span class="time"><span class="payTime">--</span>秒</span>，<span class="next">已支付下一步</span></p>
+
+                                                <div class="tipsBox">
+                                                    <div class="typeTips">
+                                                        <img class="scanCodeRichWx" src="../pc/assets/img/wx.png" alt="">
+                                                        <img class="scanCodeRichAlipay" src="../pc/assets/img/Alipay.png" alt="">
+                                                        <!--                                    <img src="../pc/assets/img/ysf.png" alt="">-->
+                                                        <span>使用<span class="scanCodeRichWxText"></span><span class="scanCodeRichAlipayText"></span>扫码支付 </span>
+                                                        <!--                                    <span>使用微信扫码支付 </span>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tbPay pull-left">
+                                            <div class="Options">
+                                                <div id="XHS" class="zdyType" data-type="redBook">
+                                                    <img src="../pc/assets/img/xhs.png" alt="">
+                                                    小红书订单
+                                                </div>
+                                                <div id="TB" class="zdyType" data-type="taobao">
+                                                    <img src="../pc/assets/img/tb.png" alt="">
+                                                    淘宝订单
+                                                </div>
+                                            </div>
+
+                                            <div class="main">
+                                                <div class="tb-content">
+                                                    <div class="tb-idBox">
+                                                        <label>订单编号：</label>
+                                                        <input
+                                                                autocomplete="off" maxlength="30" name="NumberWords"
+                                                                type="text"
+                                                                placeholder="填写淘宝订单编号(必填)"
+                                                                id="tbTid"
+                                                                class="form-control tb-oid noMarginTop" />
+
+                                                        <span class="tipsDiv2">
+                                        <img src="../pc/assets/img/tipsText.png" alt="">
+                                        <div>
+                                            不满一件, 按一件计算
+                                        </div>
+                                    </span>
+                                                    </div>
+                                                    <div class="tb-idBox">
+                                                        <label>备用订单：</label>
+                                                        <!-- onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "
+                                                        onkeyup="this.value=this.value.replace(/[^\d]/g,'') "
+                                                         -->
+                                                        <input
+                                                                autocomplete="off" maxlength="60" name="NumberWords"
+                                                                type="text"
+                                                                placeholder="数额不足时填写，会合并数额"
+                                                                id="tbTid-2"
+                                                                class="form-control tb-oid" />
+                                                        <span class="tipsDiv">
+                                            <img src="../pc/assets/img/tipsText2.png" alt="">
+                                            <div>
+                                                多个备用订单
+                                                <br>
+                                                请用英文逗号分隔
+                                            </div>
+                                        </span>
+                                                    </div>
+                                                    <div class="errTip"></div>
+                                                    <div class="tb-payOrder">立即使用</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="backHome">
+                                    <a href="./index.html">返回提交页</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                <div class="suspend-bar">-->
+<!--                    <i class="icon-ww"></i>-->
+<!--                    联系卖家-->
+<!--                </div>-->
+
+            </div>
+            <div class="intro-bar">
+                <div class="intro-link clearfix">
+                    <div>
+                        <a class="a-link a-blue pull-left" href="./query.html">提取报告</a>
+                        <a class="a-link a-yellow pull-right jcReport" href="./demo.html" target="_blank">报告样例</a>
+                        <a class="a-link a-yellow pull-right aigcReport" href="./demo.html" target="_blank">报告样例</a>
+                    </div>
+                </div>
+                <div class="intro-step">
+                    <h2>只需<span>4步</span>即可完成降重</h2>
+                    <ul class="clearfix">
+                        <li>
+                            <img src="../pc/assets/img/intro-step-1.png" alt="">
+                            <p>上传论文</p>
+                        </li>
+                        <li>
+                            <img src="../pc/assets/img/intro-step-2.png" alt="" class="step-icon">
+                            <p>核对结算</p>
+                            <img src="../pc/assets/img/intro-step-arrow.png" alt="" class="arrow">
+                        </li>
+                        <li>
+                            <img src="../pc/assets/img/intro-step-3.png" alt="">
+                            <p>等待结果</p>
+                            <img src="../pc/assets/img/intro-step-arrow.png" alt="" class="arrow">
+                        </li>
+                        <li>
+                            <img src="../pc/assets/img/intro-step-4.png" alt="">
+                            <p>下载报告</p>
+                            <img src="../pc/assets/img/intro-step-arrow.png" alt="" class="arrow">
+                        </li>
+                    </ul>
+                </div>
+                <div class="intro-tab">
+                    <div class="r-bar-tab">
+                        <ul class="clearfix">
+                            <li class="r-1 ">版本对比</li>
+                            <li class="r-2 active">常见问题</li>
+                        </ul>
+                        <div class="line"></div>
+                    </div>
+                    <div class="r-bar-ctn">
+                        <div class="bbdb" style="display: none">
+                            <div class="c-bbdb">
+                                <div class="my-table clearfix">
+                                    <div class="my-table-col col-0">
+                                        <div>报告版本</div>
+                                        <div class="bg-skyblue">单价</div>
+                                        <div>耗时</div>
+                                        <div class="bg-skyblue">建议</div>
+                                        <div>数据训练</div>
+                                        <div class="bg-skyblue">网络模型</div>
+                                        <div >导出word</div>
+                                        <div class="bg-skyblue">评分</div>
+                                        <div>原文对比</div>
+                                        <div class="bg-skyblue">导出txt</div>
+                                        <div >同义词</div>
+                                        <div class="bg-skyblue">在线修改</div>
+                                        <div >分布图</div>
+                                        <div class="bg-skyblue">报告样例</div>
+                                    </div>
+                                    <div class="my-table-col col-1">
+                                        <div class="bg-blue">降AIGC率</div>
+                                        <div class="bg-skyblue fs-blue bbbold normal_ver">
+                                                <span>
+                                                    <span class="dbPrice-aigc">
+                                                        元/千字
+                                                    </span>
+                                                </span>
+                                        </div>
+                                        <div class="fs-blue">5min/千字</div>
+                                        <div class="bg-skyblue">1条</div>
+                                        <div >上亿</div>
+                                        <div class="bg-skyblue">全新算法</div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><span class="sample-a"><a href="http://rfile.zaojiangchong.com/demo/aigcNad.html" target="_blank">查看</a></span></div>
+                                    </div>
+                                    <div class="my-table-col col-2">
+                                        <div class="bg-blue">降查重率</div>
+                                        <div class="bg-skyblue fs-blue bbbold high_ver">
+                                                <span>
+                                                    <span class="dbPrice-lwjc">
+                                                       元/千字
+                                                    </span>
+                                                </span>
+                                        </div>
+                                        <div class="fs-blue">3min/千字</div>
+                                        <div class="bg-skyblue">2条</div>
+                                        <div>上亿</div>
+                                        <div class="bg-skyblue">第六代</div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue"><span class="sample-a"><a href="http://rfile.zaojiangchong.com/demo/suggestLianmen.html" target="_blank">查看</a></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-cpcs-aigc">
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>耗时</p>
+                                        <h3>1千字/5min</h3>
+                                        <img src="../pc/assets/img/r-bar-1.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>单价</p>
+                                        <h3 class="price-cs-aigc" style="font-size: 18px"></h3>
+                                        <img src="../pc/assets/img/r-bar-2.png" alt="">
+                                    </div>
+
+
+                                </div>
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>模型指数</p>
+                                        <h3>PPL  35<span class="minus">-</span></h3>
+                                        <img src="../pc/assets/img/r-bar-3.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>数据训练</p>
+                                        <h3>上亿</h3>
+                                        <img src="../pc/assets/img/r-bar-5.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>句子建议</p>
+                                        <h3>三条</h3>
+
+                                        <img src="../pc/assets/img/r-bar-6.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>网络模型</p>
+                                        <h3>第七代</h3>
+                                        <img src="../pc/assets/img/r-bar-4.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="r-bar-detail detail-new">
+                                    <h6>更多介绍</h6>
+                                    <ul>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-new-1.png" alt="">
+                                            <p>多系统支持</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-new-2.png" alt="">
+                                            <p>多样化降重</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-new-3.png" alt="">
+                                            <p>导出WORD</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-new-4.png" alt="">
+                                            <p>保学术诚信</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="c-cpsc-lwjc">
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>单价</p>
+                                        <h3 class="price-cs-lwjc" style="font-size: 18px"></h3>
+                                        <img src="../pc/assets/img/r-bar-2.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>耗时</p>
+                                        <h3>3min/千字</h3>
+                                        <img src="../pc/assets/img/r-bar-1.png" alt="">
+                                    </div>
+
+
+                                </div>
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>数据训练</p>
+                                        <h3>亿级+</h3>
+                                        <img src="../pc/assets/img/r-bar-4.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>句子建议</p>
+                                        <h3>三条</h3>
+                                        <img src="../pc/assets/img/r-bar-5.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="right-bar-row clearfix">
+                                    <div class="pull-left">
+                                        <p>网络模型</p>
+                                        <h3>第六代</h3>
+                                        <img src="../pc/assets/img/r-bar-6.png" alt="">
+                                    </div>
+                                    <div class="pull-right">
+                                        <p>模型指数</p>
+                                        <h3>PPL  35<span class="minus">-</span></h3>
+                                        <img src="../pc/assets/img/r-bar-3.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="r-bar-detail">
+                                    <h6>报告详情</h6>
+                                    <ul>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-1.png" alt="">
+                                            <p>报告评分</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-2.png" alt="">
+                                            <p>原文对比</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-3.png" alt="">
+                                            <p>导出WORD</p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-4.png" alt="">
+                                            <p>导出TXT</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-5.png" alt="">
+                                            <p>同义词建议</p>
+                                        </li>
+                                        <li>
+                                            <img src="../pc/assets/img/r-bar-d-6.png" alt="">
+                                            <p>在线修改</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cjwt">
+                            <div class="cjwt-jc">
+                                <dl>
+                                    <dt>降重比例</dt>
+                                    <dd>
+                                        自动降重语义分析引擎会将解析出的重复句子全部修改一遍，由于系统不会自动提交查重，所以系统是无法预知修改后的文章能降低多少比例的。根据惯例，重复率越高，降重越明显。
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>降重效果</dt>
+                                    <dd>
+                                        当然自动降重的效果是无法与专业的老师人工修改相提并论的，系统也不能评判修改后的句子是否符合要求。相比人工降重的价格，极具性价比。
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>重要提示</dt>
+                                    <dd class="redText">
+                                        1、提交之前，请确认能接受机器降重带来的误差和局限性再支付费用，确认支付后不接受任何形式退款；
+                                    </dd>
+                                    <dd class="redText">2、此系统只是降重软件，报告内不含查重率；</dd>
+                                    <dd class="redText">3、请使用相同查重系统的结果来评判降重效果。</dd>
+                                </dl>
+                            </div>
+                            <div class="cjwt-aigc">
+                                <dl>
+                                    <dt>降AIGC系统介绍</dt>
+                                    <dd>
+                                        对比语言模型和思维逻辑，轻松降低“AIGC检测系统”的AI疑似率，支持市面上主流AIGC疑似率系统，赋能AI生成文章，保障学术诚信。
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>降AIGC疑似率效果</dt>
+                                    <dd>
+                                        市面上的查重系统和AICG针对AI的算法会使用多种不同的AI检测模型进行计算，即使是纯人工手写的论文都存在误判虚高的现象；目前我们的产品基于主流知W的AIGC系统进行深度优化和更新，效果更好。
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>重要提示</dt>
+                                    <dd class="redText">
+                                        1、提交之前，请确认能接受机器带来的误差和局限性再支付费用，确认支付后不接受任何形式退款；
+                                    </dd>
+                                    <dd class="redText">2、此系统只是降AIGC疑似率软件，报告内不含查重率及疑似率；</dd>
+                                    <dd class="redText">3、请使用相同AIGC检测系统的结果来评判降AIGC率的效果。</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mask_body"></div>
+    <div class="coupon_pop">
+        <input  id="copyInput" type="text">
+        <div class="pop_top">
+            <div class="pop_title">支付提醒</div>
+            <img class="close_pop" src="../pc/assets/img/delete2.png" alt="">
+        </div>
+        <div class="pop_cont">
+            <p class="p1">是否使用免费券支付?</p>
+            <div class="back_block">
+                <p class="p2">订单编号: <span class="orderId_pop"></span> <span class="copy_pop">复制</span> </p>
+                <p class="p3">订单编号是查询和下载报告的唯一标识，请妥善保存。</p>
+            </div>
+        </div>
+        <div class="pop_bottom">
+            <div class="cancel_btn">取消</div>
+            <div class="determine_btn">确定</div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../pc/assets/js/jquery.min.js"></script>
+<script src="../pc/assets/js/qrcode.min.js"></script>
+<script src="../pc/assets/js/coco-message.js"></script>
+<script src="../pc/assets/js/common.js?v=p24.0022"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0022"></script>
+<script src="../pc/assets/js/bootstrapValidator.min.js"></script>
+
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0022"></script><script>
+    var uploadType = 'content'
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width: 135,
+        height: 135,
+    });
+
+    var source = ''
+
+    // 先判断是不是微信端打开的
+    let client = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if(client){
+        source = 7
+        if (/(micromessenger)/i.test(navigator.userAgent)) {
+            source = 2
+        }
+    }else{
+        source = 1
+    }
+
+    // 订单信息
+    $(".r-bar-tab ul li").click(function () {
+        $(".r-bar-tab ul li").removeClass('active')
+        $(this).addClass('active')
+        if ($(this).hasClass('r-1')) {
+            $(".r-bar-ctn .bbdb").show()
+            $(".r-bar-ctn .cjwt").hide()
+        }
+        if ($(this).hasClass('r-2')) {
+            $(".r-bar-ctn .bbdb").hide()
+            $(".r-bar-ctn .cjwt").show()
+        }
+    })
+
+    $(".oid").text(getQueryVariable('order_sn'))
+
+    var price_lwjc = ''
+    var price_aigc = ''
+    function setPriceTips(){
+        for(var i=0; i<typeData.length; i++){
+            if( typeData[i].goods_id == getQueryVariable('goodsid') ){
+                var unitCount = ( (typeData[i].unit_count / 1000)==1?'':(typeData[i].unit_count / 1000) )+ '千'
+                $(".price-unit").text(typeData[i].selling_price + '元/' + unitCount + '字')
+                $(".UnitPrice").text(typeData[i].selling_price + '元/' + unitCount + '字' + '（不满' + unitCount +'字按' + unitCount + '字计算）')
+            }
+            if(typeData[i].short_name == 'lwjc'){
+                price_lwjc = typeData[i].selling_price + '元/' + (typeData[i].unit_count/1000 == 1?'':typeData[i].unit_count/1000) + '千字'
+            }
+            if(typeData[i].short_name == 'aigclwjc'){
+                price_aigc = typeData[i].selling_price + '元/' + (typeData[i].unit_count/1000 == 1?'':typeData[i].unit_count/1000) + '千字'
+            }
+        }
+        $(".price-cs-aigc").text(price_aigc?price_aigc:'获取中')
+        $(".price-cs-lwjc").text(price_lwjc?price_lwjc:'获取中')
+        detail_change()
+        $(".dbPrice-lwjc").text(price_lwjc?price_lwjc:'获取中')
+        $(".dbPrice-aigc").text(price_aigc?price_aigc:'获取中')
+    }
+
+    //
+    var pay_type = ''  //支付方式
+    var typeAll = {
+        wx: "wxScan",
+        alipay: "alipayScan",
+        scanCodeRich: "scanCodeRich",
+        taobao: "taobao",
+        redBook: 'redBook'
+    }
+    var noPayWay = false // 未配置支付
+    var time = 600;
+    var pay_id = '';
+    var order_sn = '';
+    var contentTypeIs = true;
+    var timeout = null;
+    var timeout2 = null;
+    var Timeout = null;
+    var isVerify = false;
+    var pay_way_public = '';
+    var closeMsg = cocoMessage.loading('正在获取价格...');
+    var orderInfoData = {}
+
+    if(getQueryVariable('order_sn')){
+        order_sn = getQueryVariable('order_sn')
+    }else{
+        cocoMessage.error('订单丢失,请重新下单',2000);
+        location.href = './index.html'
+    }
+
+    function tacitPay(goods_info, pay_way, scanCodeRichInfo) {
+        pay_way_public = pay_way
+        pay_type = typeAll[pay_way.default]
+
+        if(!pay_way.alipay && !pay_way.wx && !pay_way.scanCodeRich && !pay_way.taobao && !pay_way.redBook){
+            noPayWay = true
+        }
+
+        if(pay_type == 'scanCodeRich') { // 扫码付
+            if(scanCodeRichInfo.scanCodeRichWx.enabled) {
+                $('.tipsBox .scanCodeRichWx').show()
+                $('.scanCodeRichWxText').text('微信')
+                if(!scanCodeRichInfo.scanCodeRichAlipay.enabled && pay_way.alipay) {
+                    $('#alipay').show()
+                    $('#scanCodeRich').show()
+                    $('#scanCodeRich').addClass('select')
+                }
+            }
+            if(scanCodeRichInfo.scanCodeRichAlipay.enabled) {
+                $('.tipsBox .scanCodeRichAlipay').show()
+                $('.scanCodeRichAlipayText').text('支付宝')
+                if(!scanCodeRichInfo.scanCodeRichWx.enabled && pay_way.wx) {
+                    $('#wx').show()
+                    $('#scanCodeRich').show()
+                    $('#scanCodeRich').addClass('select')
+                }
+            }
+            if(scanCodeRichInfo.scanCodeRichWx.enabled && scanCodeRichInfo.scanCodeRichAlipay.enabled){
+                $('.scanCodeRichWxText').text('微信、')
+            }
+            $('.tipsBox').show()
+            $(".code").show();
+            $('.titlesRight').removeClass('payTypeClass')
+            if(pay_way.taobao || pay_way.redBook) {// 扫码付有自定义订单的时候, 出现左侧选项
+                $('#thirdparty').show()
+                $('#scanCodeRich').show()
+                $('#scanCodeRich').addClass('select')
+            }
+        }else{
+            if(pay_way.alipay) $('#alipay').show()
+            if(pay_way.wx) $('#wx').show()
+            $('.clearfix2>.payType>div').removeClass('select')
+            $('#' + pay_way.default).addClass('select')
+            if(pay_way.taobao || pay_way.redBook) { // 第三方订单展示控制
+                if(pay_type != 'taobao' && pay_type!='redBook') $('#thirdparty').show()
+
+                if(pay_way.taobao) {
+                    $('#TB').show()
+                }
+                if(pay_way.redBook) {
+                    $('#XHS').show()
+                }
+            }
+            // 默认支付方式为淘宝或小红书的时候, 说明没有其他支付方式了
+            if(pay_type == 'taobao' || pay_type=='redBook') { // 淘宝或小红书订单(第三方订单)
+                $(".code").hide();
+                $(".tbPay").show();
+                $(".tbPay").css('paddingLeft', 0)
+
+                if(pay_type == 'taobao') { // 默认选中第三方支付方式
+                    $('#TB').addClass('Select')
+                }else {
+                    $('#XHS').addClass('Select')
+                }
+                placeholder()
+            }else {
+                $(".code").show();
+            }
+        }
+
+        if(noPayWay){
+            closeMsg()
+        }else{
+            if(pay_type == 'thirdparty'){
+                closeMsg()
+                return
+            }
+            payOrder(pay_type)
+        }
+        if(window.localStorage.getItem('CouponUltimate')){
+            $('#coupon').val(window.localStorage.getItem('CouponUltimate'))
+            $('#coupon').trigger('input')
+            $(".activityTip").text('已自动填写活动优惠券码，请点击兑换使用')
+            $(".activityTip").show();
+        }
+    }
+
+    function payOrder(payType,price) {
+        $('.load').show()
+        $(".mask").hide();
+        if(pay_type == 'taobao' || pay_type == 'redBook') {
+            $('.load').hide()
+            closeMsg()
+            // pay_id = order_sn
+            contentTypeIs = true
+            return;
+        }
+        if(pay_type == 'scanCodeRich'){
+            if(orderInfoData.pay_wap_url) {
+                $(".code").show()
+                $(".orderAmount").text(price?price:orderInfoData.order_amount)
+                qrcode.makeCode(orderInfoData.pay_wap_url + '/pay/waporder/' + (order_sn?order_sn:getQueryVariable('order_sn')) + '?source=' + source);
+                $('.load').hide()
+                time = 600
+                $('.payTime').text(time)
+                $('.order-oid').text(order_sn?order_sn:getQueryVariable('order_sn'))
+                if(!order_sn){
+                    order_sn = getQueryVariable('order_sn')
+                }
+                contentTypeIs = true
+                closeMsg()
+                payStatus()
+                countdown()
+            }else {
+                // 避免订单信息接口太慢, 导致pay_wap_url拿不到
+                setTimeout(function() {
+                    payOrder(payType,price)
+                }, 1000)
+            }
+
+        }else{
+            var formData = getFormData({
+                order_sn: order_sn || getQueryVariable('order_sn'),
+                pay_type,
+                source
+            })
+            $.ajax({
+                type: 'post',
+                url: urls + '/api/client/pay/payOrder',
+                processData: false,
+                contentType: false,
+                xhrFields: {
+                    withCredentials: true
+                },
+                data: formData,
+                success: function(data) {
+                    if(data.code == 200) {
+                        qrcode.makeCode(data.data.qrlink);
+                        $('.orderAmount').text(data.data.payment_money || '0.00')
+                        $('.load').hide()
+                        time = 600
+                        $('.payTime').text(time)
+                        pay_id = data.data.pay_id
+                        payStatus()
+                        countdown()
+                    }else if(data.code == 3001) {
+                        cocoMessage.success('订单已支付', 2000)
+                        window.location.href = "./query.html?oid=" + order_sn ;
+                    }else if(data.code == -1 && data.codeMsg == '不支持的该支付方式'){
+                        cocoMessage.error(data.codeMsg, 2000);
+                    }else {
+                        cocoMessage.error(data.codeMsg, 2000);
+                        $(".mask").show()
+                        $('.load').hide()
+                    }
+                    contentTypeIs = true
+                    closeMsg()
+                },
+                error: function(err) {
+                    cocoMessage.error("请求失败!请检查网络", 2000);
+                    contentTypeIs = true
+                    closeMsg()
+                }
+            });
+        }
+    }
+
+    // 支付方式切换
+    $('.clearfix2>.payType>div').click(function () {
+        if(pay_type) {
+            if(!contentTypeIs) return
+            if($(this).attr('data-type') != pay_type) {
+                closeMsg = cocoMessage.loading('正在切换支付方式...');
+                contentTypeIs = false
+                $('.clearfix2>.payType>div').removeClass('select')
+                if($(this).attr('data-type') == 'scanCodeRich'){
+                    $('.titlesRight').removeClass('payTypeClass')
+                    $(".tipsBox").show()
+                }else{
+                    $('.titlesRight').addClass('payTypeClass')
+                    $(".tipsBox").hide()
+                }
+                $(this).addClass('select')
+                pay_type = $(this).attr('data-type')
+                if(pay_type == 'thirdparty'){
+                    thirdpartyPayOrder()
+                    return;
+                }
+                $(".tbPay").hide();
+                $(".code").show();
+                payOrder()
+            }
+        }
+    })
+
+    // 切换自定义订单提示
+    function placeholder() {
+        if($('.zdyType.Select').attr('id')=='XHS') {
+            $('#tbTid').attr('placeholder' , '填写小红书订单编号(必填)')
+        }else {
+            $('#tbTid').attr('placeholder' , '填写淘宝订单编号(必填)')
+        }
+    }
+
+    // 切换到第三方支付
+    function thirdpartyPayOrder() {
+        $(".code.pull-left").hide();
+        contentTypeIs = true;
+        $(".tbPay").show();
+
+        if(pay_way_public.taobao) $('#TB').show()
+        if(pay_way_public.redBook) $('#XHS').show()
+
+        // 默认选中第三方支付方式
+        if(pay_way_public.redBook) {
+            $('#XHS').addClass('Select')
+        }else {
+            $('#TB').addClass('Select')
+        }
+
+        placeholder()
+        clearTimeout(Timeout)
+        time = 0
+        closeMsg();
+    }
+
+    // 切换第三方支付方式
+    $('.zdyType').click(function() {
+        $('.zdyType').removeClass('Select')
+        $(this).addClass('Select')
+        placeholder()
+        $(".errTip").text('')
+    })
+
+    // 第三方支付,确认按钮
+    var TbPaying = false
+    $(".tb-payOrder").click(function (){
+        $(".errTip").hide();
+        $(".tbPay").removeClass('errInput')
+        if(TbPaying){
+            return;
+        }
+        if(!$("#tbTid").val()) {
+            $(".errTip").text($('#tbTid').attr('placeholder'))
+            $(".tbPay").addClass('errInput')
+            $(".errTip").show();
+            return
+        }
+        var closeMsgTb = cocoMessage.loading("订单支付中", 2000);
+        let formData = getFormData({
+            order_sn: order_sn || getQueryVariable('order_sn'),
+            pay_type: $('.zdyType.Select').attr('data-type'),
+            tids: $("#tbTid").val() + ($('#tbTid-2').val()?(','+$('#tbTid-2').val()):''),
+            source
+        })
+        TbPaying = true
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/pay/payOrder',
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: formData,
+            success: function (data) {
+                TbPaying = false
+                if(data.code == 200){
+
+                }else{
+                    if(data.code == 3001){
+                        cocoMessage.success('订单已支付', 2000)
+                        window.location.href = window.location.origin + "/query_order?oid=" + order_sn ;
+                        return
+                    }
+                    $(".tbPay").addClass('errInput')
+                    $(".errTip").text(data.codeMsg)
+                    $(".errTip").show();
+                }
+            },
+            error: function (err) {
+                TbPaying = false
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                contentTypeIs = true
+            },
+            complete: function (){
+                closeMsgTb()
+            }
+        })
+    })
+
+    // 支付倒计时
+    function countdown(){
+        clearTimeout(timeout2)
+        timeout2 = setTimeout(function (){
+            time --
+            $('.payTime').text(time>0? time : 0)
+            if(time > 0){
+                countdown()
+            }
+        },1000)
+    }
+
+    // 订单轮询
+    function payStatus() { // 轮询
+        clearTimeout(Timeout);
+        $.ajax({
+            type: 'get',
+            url: urls + '/apirs/order/is_pay?pay_id=' + order_sn,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                clearTimeout(Timeout);
+                if (time <= 0) {
+                    $(".mask").show();
+                }
+                if (!res.data) {
+                    if (time > 0) {
+                        Timeout = setTimeout(function () {
+                            payStatus();
+                        }, 1000);
+                    }
+                }else {
+                    clearTimeout(Timeout);
+                    window.location.href = "./query.html?oid=" + order_sn ;
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+            },
+        });
+    }
+
+    // 刷新支付二维码
+    $('.code .mask').click(function() { // 点击刷新
+        $(".mask").hide();
+        $('.load').show();
+        payOrder()
+    })
+
+    // 下一步
+    $('.next').click(function() {
+        if(isVerify) return
+        isVerify = true
+        setTimeout(() => {
+            isVerify = false
+        },3000)
+        var form_data = getFormData({
+            pay_id: order_sn
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/pay/verifyOrder',
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: form_data,
+            success: function (res) {
+                if (res.code == 3001) {
+                    cocoMessage.destroyAll();
+                    cocoMessage.success('订单已支付', 2000)
+                    window.location.href = "./query.html?oid=" + order_sn;
+                }else {
+                    cocoMessage.destroyAll();
+                    cocoMessage.error("您的订单未支付", 2000);
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+            },
+            complete: function () {
+                isVerify = false
+            }
+        });
+    })
+
+    $("#coupon").on('input',function (){
+        if($(this).val().length > 0){
+            $(".use_now").addClass('can')
+            $(".eliminateCoupon").css('display','inline-block')
+        }else{
+            $(".use_now").removeClass('can')
+            $(".eliminateCoupon").hide()
+        }
+    })
+
+    $(".eliminateCoupon").on('click', function (){
+        $("#coupon").val('')
+        $("#coupon").trigger('input')
+        $("#coupon").trigger('change')
+    })
+
+    $("#coupon").on('change',function (){
+        $(".errorTip").hide();
+        $(".activityTip").hide()
+    })
+
+    let canClick = true;
+    $(".use_now").on('click',function() {
+        if(!$("#coupon").val()){
+            closeMsg = cocoMessage.error('请输入优惠券兑换码',2000);
+            $("#coupon").trigger('input')
+            return;
+        }
+        if(!canClick){
+            return
+        }
+        canClick = false
+        closeMsg = cocoMessage.loading('正在兑换优惠券...');
+
+        var formData = getFormData({
+            order_sn: order_sn || getQueryVariable('order_sn'),
+            code: $("#coupon").val()
+        })
+
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/variation/order',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                canClick = true
+                closeMsg()
+                if (res.code == 200) {
+                    $('.orderId_pop').text(res.data.order_sn)
+                    $('.order-oid').text(res.data.order_sn)
+                    if(Number(res.data.order_amount) == 0) {
+                        $(".coupon_pop").show();
+                        $(".mask_body").show();
+                    }else{
+                        if(noPayWay){
+                            cocoMessage.error("此优惠券不满足免单条件！", 2000);
+                            return;
+                        }
+                        $(".oid").text(res.data.order_sn)
+                        order_sn = res.data.order_sn
+                        payOrder('',res.data.order_amount)
+                    }
+                }else {
+                    // cocoMessage.error(res.codeMsg, 2000);
+                    $(".errorTip span").text(res.codeMsg)
+                    $(".errorTip").css('display','inline-block');
+                    $(".activityTip").hide()
+                    closeMsg()
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                contentTypeIs = true
+                closeMsg()
+                canClick = true
+            },
+        });
+
+    })
+
+    $(".copy_pop").on('click',function (){
+        var text = $(".orderId_pop").text()
+        $("#copyInput").val(text)
+        $("#copyInput").select()
+        try {
+            var state = document.execCommand("copy");
+        } catch (err) {
+            var state = false;
+        }
+        if (state) {
+            cocoMessage.success(1000, "复制成功", function() {
+            });
+        } else {
+            cocoMessage.error(1000, "复制失败", function() {
+            });
+        }
+    })
+
+    $(".copy_oid").on('click',function (){
+        var text = $(".oid").text()
+        $("#copyInput2").val(text)
+        $("#copyInput2").select()
+        try {
+            var state = document.execCommand("copy");
+        } catch (err) {
+            var state = false;
+        }
+        if (state) {
+            cocoMessage.success(1000, "复制成功", function() {
+            });
+        } else {
+            cocoMessage.error(1000, "复制失败", function() {
+            });
+        }
+    })
+
+    function couponsPay() {
+        var formData2 = getFormData({
+            order_sn: $('.orderId_pop').text(),
+            pay_type: 'coupons',
+            source
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/pay/payOrder',
+            data: formData2,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                if (res.code == 200) {
+
+                }else if(res.code == 3001) {
+                    cocoMessage.success('订单已支付', 2000)
+                    window.location.href = "./query.html?oid=" + $('.orderId_pop').text();
+                }else {
+                    cocoMessage.error(res.codeMsg, 2000);
+                    closeMsg()
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                contentTypeIs = true
+                closeMsg()
+            },
+        });
+    }
+
+    $(".close_pop").on('click',function (){
+        $(".coupon_pop").hide();
+        $(".mask_body").hide();
+    })
+    $(".cancel_btn").on('click',function (){
+        $(".coupon_pop").hide();
+        $(".mask_body").hide();
+    })
+    $(".determine_btn").on('click',function (){
+        couponsPay()
+    })
+</script>
+</body>
+</html>

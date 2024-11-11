@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.clearfix {
+    &:before {
+        content: '';
+        display:block;
+        height:0;
+        clear:both;
+        visibility:hidden;
+    }
+}
+.f-l {
+    float: left;
+}
+.f-r {
+    float: right;
+}
+.noMarginRight {
+    margin-right: 0 !important;
+}
+.noMarginBottom {
+    margin-bottom: 0 !important;
+}
+p {
+    margin: 0;
+    line-height: normal;
+}
+.fixedBox {
+    position: fixed;
+    right: 0;
+    top: 60%;
+    // width: 58px;
+    //height: 150px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 20px 0;
+    .customer {
+        color: #939393;
+        font-size: 12px;
+        text-align: center;
+        cursor: pointer;
+        background: #fff;
+        width: 58px;
+        height: 64px;
+        padding-top: 16px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        box-shadow: 0 0 4px 0px #d9d9d9;
+        .icon2{
+            display: none;
+        }
+        &:hover .icon2{
+            display: inline;
+        }
+        &:hover .icon1{
+            display: none;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            height: 130px;
+            width: 20px;
+            left: -16px;
+            bottom: 6px;
+            visibility: hidden;
+        }
+        span {
+            display: inline-block;
+            margin-top: 4px;
+        }
+        &:hover {
+            color: #755afd;
+             background: linear-gradient(90deg, #5868FF, #8253FC, #7A56FC, #5468FF);
+        }
+        
+        
+        &:hover .customerBox {
+            display: block;
+        }
+        &:hover {
+            &:after {
+                visibility: visible;
+            }
+        }
+        
+    }
+    .toTop {
+        color: #939393;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 10px;
+        cursor: pointer;
+        background: #fff;
+        width: 58px;
+        height: 64px;
+        padding-top: 16px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        box-shadow: 0 0 4px 0px #d9d9d9;
+        display: none;
+        .icon4{
+            display: none;
+        }
+        &:hover .icon4{
+            display: inline;
+        }
+        &:hover .icon3{
+            display: none;
+        }
+        img{
+            display: block;
+            margin: auto;
+        }
+        span {
+            display: inline-block;
+            margin-top: 4px;
+        }
+        &:hover {
+            color: #755afd;
+            background: linear-gradient(90deg, #5868FF, #8253FC, #7A56FC, #5468FF);
+        }
+        &:hover .ico-i {
+            background: linear-gradient(90deg, #8054fb, #695efc, #8054fb);
+        }
+    }
+}
+.customerBox {
+    width: 218px;
+    background-image: linear-gradient(180deg, #e3e0ff 0%, white 60%);
+    box-shadow: 0 0 5px 0px #d7d7d7;
+    border-radius: 12px;
+    margin: 0 auto;
+    position: absolute;
+    right: 70px;
+    top: 0px;
+    overflow: hidden;
+    display: none;
+    .head {
+        height: 48px;
+        line-height: 48px;
+        color: #303133;
+        font-size: 14px;
+        border-bottom: 1px solid #ffffff;
+        background: transparent !important;
+        text-align: left;
+        margin-bottom: 0;
+        position: static;
+        .customer-title {
+            width: 130px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        img {
+            vertical-align: middle;
+            margin-top: -1px;
+            margin-left: 20px;
+            margin-right: 4px;
+        }
+    }
+    .customerCode {
+        text-align: center;
+        padding: 20px 0 16px 0;
+        line-height: normal;
+        position: relative;
+        display: none;
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    .segmentation-line {
+        width: 168px;
+        height: 1px;
+        background: #e7e7e7;
+        margin: 0 auto;
+    }
+    .customerWay {
+        padding-left: 20px;
+        padding-top: 16px;
+        padding-bottom: 20px;
+        text-align: left;
+        p {
+            line-height: 2;
+            color: #666666;
+            font-size: 12px;
+            margin: 0;
+            display: none;
+            .s0 {
+                width: 30px;
+                display: inline-block;
+                font-size: 12px;
+            }
+            .s1 {
+                color: #333333;
+                margin-left: 4px;
+                font-size: 12px;
+            }
+        }
+    }
+    .noCustomer {
+        line-height: 2;
+        margin: 0;
+        font-size: 14px;
+        color: #303133;
+        padding: 15px 20px;
+        display: none;
+    }
+    .customBg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+#floatingBox {
+    .complainBox {
+        top: calc(60% - 52px);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow: 0 0 4px 0px #d9d9d9;
+    }
+}
+
+#memberCarrier {
+    .loginBox {
+        position: static !important;
+        float: right;
+        max-width: 66px;
+        margin-left: 30px;
+    }
+    .hasLogin {
+        line-height: normal;
+        margin: 9px 0 9px 0;
+    }
+    .loginButton {
+        width: 74px !important;
+        height: 32px !important;
+        line-height: 31px !important;
+        margin: 14px 0 14px 0;
+        background: #FCFBFE !important;
+        border: 1px solid #FF535F !important;
+        color: #FF535F !important;
+        &:hover {
+            background: #FFE9EB !important;
+            border: 1px solid #FF535F !important;
+        }
+    }
+    .nav-download {
+        float: left;
+    }
+    .FloatingWindow {
+        margin-top: 61px !important;
+        margin-left: -144px;
+        line-height: normal;
+    }
+    .nav-activity {
+        float: left;
+    }
+}
+
+.WeChat_button {
+    //top: 0px !important;
+}
+
+.distributionEntrance {
+    cursor: pointer;
+    display: none;
+}

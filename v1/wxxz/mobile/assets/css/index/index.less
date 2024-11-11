@@ -1,0 +1,850 @@
+@keyframes myLoading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+a {
+  text-decoration: none !important
+}
+
+.bannerBox {
+  background-image: url(../../img/bg.png);
+  // background: linear-gradient(#f4f3ff, #e7ebff);
+  padding: 2.5rem 0rem 4.375rem 0px;
+  background-size: 100% 100%;
+  position: relative;
+  margin-top: 3.125rem;
+}
+
+/* 图片简介 */
+
+.Brief-rightimg {
+  position: absolute;
+  right: 0px;
+  top: 1.5rem;
+  width: 8.9375rem;
+}
+
+/* 左边内容 */
+.Brief-left {
+  width: 100%;
+  // height: 35.8125rem;
+  overflow: hidden;
+
+  img {
+    width: 16.25rem;
+  }
+}
+
+.Brief-Subheading {
+  padding: .4375rem;
+  font-family: MicrosoftYaHei;
+  background: linear-gradient(90deg, #CDEAFF 0%, #C8E8FF 100%);
+  width: 50%;
+  font-size: .75rem;
+  color: #354B82;
+  border-radius: 1.875rem 1.875rem 1.875rem 0rem;
+  // margin-left: 2rem;
+  text-align: center;
+
+  img {
+    width: 12px;
+    position: relative;
+    top: -0.0625rem;
+  }
+}
+
+.Brief-left>b {
+  font-size: 3.25rem;
+  display: inline-block;
+  color: #00082a;
+  font-family: MicrosoftYaHei-Bold;
+}
+
+.Brief-lefttext1 {
+  width: 31.4375rem;
+  height: 1.5625rem;
+  margin-top: 0.875rem;
+  margin-left: 2rem;
+}
+
+.Brief-lefttext1>div {
+  display: inline-block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-right: solid .0625rem #6a6485;
+  text-align: center;
+}
+
+.Brief-lefttext1>div:nth-child(1) {
+  padding-left: 0rem;
+}
+
+.Brief-lefttext1>div>a {
+  font-size: 1.375rem;
+  letter-spacing: .3125rem;
+  color: #6a6485;
+  font-family: MicrosoftYaHei
+}
+
+.Brief-lefttext1>div:nth-child(3) {
+  border: none;
+}
+
+.Brief-lefttext2 {
+  width: 100%;
+  margin-left: 1.25rem;
+  margin-top: 1.875rem;
+}
+
+.Brief-lefttext2>div {
+  font-size: 1.5rem;
+  width: 9rem;
+  height: 3rem;
+  display: inline-block;
+  background-color: #faf9f9;
+  border-radius: 4.875rem;
+  text-align: center;
+  line-height: 3rem;
+  color: #957bff;
+  font-weight: 600;
+  border: solid .0625rem #ffffff;
+  /* opacity: 0.8; */
+  margin-right: .625rem;
+}
+
+/* 提交需求 */
+.Brief-Submit {
+  width: 11.75rem;
+  height: 3.4rem;
+  background-color: #6651ff;
+  color: white;
+  border-radius: .625rem;
+  text-align: center;
+  line-height: 3.4rem;
+  margin-left: 2rem;
+  margin-top: 2.125rem;
+  font-size: 1.55rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: MicrosoftYaHei-Bold;
+}
+
+/* 超出 */
+.Brief-beyond {
+  padding: 1.25rem 0rem;
+  position: absolute;
+  width: 95%;
+  // height: 9.375rem;
+  background-color: #ffffff;
+  border-radius: .625rem;
+  left: 2.5%;
+  bottom: -3.625rem;
+  box-shadow: #eaedff .0625rem .0625rem .4375rem 0rem;
+}
+
+.BriefDiv {
+  display: inline-block;
+  width: 32%;
+  // height: 4.5625rem;
+  text-align: center;
+  border-right: solid .0625rem #E2E5ED;
+}
+
+.BriefDiv>div {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  transition: all 0.2s ease-in-out;
+}
+
+.BriefDiv>div>p {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #4977F8;
+  font-family: MicrosoftYaHei;
+}
+
+.BriefDiv>div>p>a {
+  font-size: .75rem;
+  font-family: MicrosoftYaHei;
+  color: #4977F8;
+  font-weight: 400;
+}
+
+.BriefDivA {
+  display: inline-block;
+  position: relative;
+  // top: -0.4375rem;
+  font-size: .75rem;
+  color: #3e3a51;
+  font-family: MicrosoftYaHei;
+}
+
+.BriefDiv:nth-child(3) {
+  border: none;
+}
+
+// 会员购买
+.Exchangecodes {
+  padding-top: 5.625rem;
+  background: linear-gradient(#FFFFFF 0%, #EAEEFF 100%);
+  // height: 50rem;
+
+  h3 {
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    font-size: 1.375rem;
+    color: #00103F;
+    text-align: center;
+  }
+
+  .Memberpurchase {
+    margin-top: 1.5625rem;
+
+    .Members {
+      display: inline-block;
+      font-family: Microsoft YaHei;
+      font-weight: bold;
+      font-size: .75rem;
+      width: 31.5%;
+      padding: .625rem .5rem;
+      position: relative;
+      top: 0rem;
+      transition: all 0.2s;
+      border-radius: .3125rem;
+      z-index: 10;
+      div{
+        position: relative;
+        z-index: 100;
+        font-family: Microsoft YaHei;
+      }
+
+      img {
+        width: 1rem;
+        position: relative;
+        top: -0.125rem;
+      }
+      .Members1-img{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 0;
+        width: 3.125rem;
+       }
+
+
+      .MembersPrice {
+        width: 100%;
+        background: linear-gradient(#ffffff 0%,
+            rgba(255, 255, 255, 0.6) 100%);
+        height: 6.6rem;
+        margin-top: .3125rem;
+        border-radius: .625rem;
+        padding: .625rem .125rem;
+        display: none;
+
+        .MembersPrice-title {
+
+          width: 90%;
+          margin: auto;
+          margin-top: .9375rem;
+          font-size: .625rem;
+          font-weight: 400;
+          padding: .25rem 0rem;
+          text-align: center;
+          border-radius: 1.25rem 1.25rem;
+          color: #ffffff;
+        }
+      }
+
+      .loading-M {
+        width: 100%;
+        background: linear-gradient(#ffffff 0%,
+        rgba(255, 255, 255, 0.6) 100%);
+        height: 6.6rem;
+        margin-top: .3125rem;
+        border-radius: .625rem;
+        padding: 2rem .125rem;
+        text-align: center;
+        img {
+          animation: myLoading 1.5s linear infinite forwards;
+        }
+        p {
+          font-weight: normal;
+          color: #919191;
+          margin-top: .4rem;
+        }
+      }
+
+      .CurrentPrice {
+        text-align: center;
+        color: #17b5e3;
+        font-size: 1.25rem;
+        font-family: Microsoft YaHei;
+
+        span.s1 {
+          font-size: .75rem;
+          position: relative;
+          left: .3125rem;
+        }
+
+        span.s3 {
+          color: #333333;
+          font-size: .625rem;
+          font-weight: 400;
+          position: relative;
+          left: -0.3125rem;
+        }
+      }
+
+      .OriginalPrice {
+        color: #999999;
+        text-align: center;
+        font-size: .625rem;
+        font-weight: 400;
+        // line-height: 2.5rem;
+        text-decoration: line-through;
+        font-family: Microsoft YaHei;
+      }
+
+      .Immediately {
+        width: 100%;
+        padding: .9375rem;
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 1.25rem;
+        cursor: pointer;
+      }
+    }
+
+    .Members1 {
+      background: linear-gradient(#c9f3f8 0%, #e0f1ff 100%);
+      box-shadow: 0rem 0rem 1.6875rem .1875rem rgba(208, 221, 255, 0.3);
+      float: left;
+      color: #01a8d9;
+      border: solid .125rem #c9f3f8;
+      border-top: solid 4px #cbf2f8;
+      
+
+      .MembersPrice-title {
+        background-color: #79dbf7;
+        font-family: Microsoft YaHei;
+      }
+
+      .Immediately {
+        background: linear-gradient(90deg, #81e1e7 0%, #17b5e3 100%);
+        border-radius: .625rem;
+
+        // transition: all 0.5s;
+        &:hover {
+          background: #17b5e3;
+        }
+      }
+    }
+
+    .Members2 {
+      background: linear-gradient(#cce4fd 0%, #e5efff 100%);
+      color: #2e66ff;
+      margin: 0rem 2% 0rem 3%;
+      border: solid .125rem #cce4fd;
+      border-top: solid .25rem #cce4fd;
+      &:hover{
+        border: solid .125rem #507fff;
+        border-top: solid .25rem #507fff;
+        box-shadow: 0rem 0rem 1.6875rem .1875rem rgba(187, 205, 255, 0.4);
+      }
+      .MembersPrice-title {
+        background-color: #4FA3FF;
+      }
+
+      .Immediately {
+        background: linear-gradient(90deg, #51A4FF 0%, #3367F6 100%);
+        border-radius: .625rem;
+
+        &:hover {
+          background: #3367f6;
+        }
+      }
+
+      .CurrentPrice {
+        color: #2E66FF;
+      }
+    }
+
+    .Members3 {
+      background: linear-gradient(#fdd5cc 0%, #ffe5e4 100%);
+      
+      color: #ff4545;
+      position: relative;
+      float: right;
+      border: solid .125rem #fdd5cc;
+      border-top: solid .25rem #fdd5cc;
+      z-index: 100;
+      &:hover{
+        box-shadow: 0rem 0rem 1.6875rem .1875rem rgba(187, 205, 255, 0.4);
+        border: solid .125rem #ff8e51;
+      border-top: solid .25rem #ff8e51;
+      }
+      .MembersPrice-title {
+        background-color: #FF8686;
+      }
+
+      .Immediately {
+        background: linear-gradient(90deg, #FF856D 0%, #F63462 100%);
+        border-radius: .625rem;
+
+        &:hover {
+          background: #f63462;
+        }
+      }
+
+      .CurrentPrice {
+        color: #FF4545;
+      }
+
+      .Members3-span {
+        background: linear-gradient(to right, #FF8542, #FF4670);
+        border-radius: 1.125rem 1rem 1rem 0rem;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        font-size: .625rem;
+        color: #FFFFFF;
+        position: absolute;
+        top: -1.5625rem;
+        left: -0.625rem;
+        padding: .25rem .375rem;
+        z-index: 100;
+      }
+    }
+    .Members4{
+      border: solid .125rem #00baff;
+      border-top: solid .25rem #00baff;
+      &:hover{
+        box-shadow: 0rem 0rem 1.6875rem .1875rem rgba(187, 205, 255, 0.4);
+        border: solid .125rem #00baff;
+        border-top: solid .25rem #00baff;
+      }
+    }
+
+
+    .Immediately {
+      background: linear-gradient(-90deg, #356BFE 0%, #5B86FF 100%);
+      box-shadow: 0rem 0rem 1.125rem .125rem rgba(208, 221, 255, 0.3);
+      border-radius: 2.5rem;
+      border: .125rem solid #3B70FE;
+      padding: .75rem;
+      text-align: center;
+      font-family: Microsoft YaHei;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 1.25rem;
+      color: #FFFFFF;
+      &:hover{
+        background: #356bfe;
+      }
+    }
+  }
+}
+
+// 会员权益
+.Memberrights {
+  .table {
+    margin-bottom: .75rem;
+  }
+
+  margin-bottom: 1.875rem;
+  margin-top: 3.125rem;
+
+  .Memberrights-title {
+    color: #00154A;
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: Microsoft YaHei;
+
+    span {
+      width: .25rem;
+      height: 1rem;
+      display: inline-block;
+      background-color: #3368F6;
+      border-radius: .125rem;
+      position: relative;
+      top: .0625rem;
+      margin-right: .5rem;
+    }
+  }
+
+  .Details-title {
+    margin-top: .9375rem;
+    border-radius: .625rem;
+
+    tr {
+      background-color: #E1E8FA;
+      border-radius: .625rem;
+
+      td {
+        width: 25%;
+        color: #152448;
+        font-size: .875rem;
+        font-weight: bold;
+        padding-left:0.9375rem;
+        padding-right: 0rem;
+        font-family: Microsoft YaHei;
+
+        span {
+          width: 100%;
+          display: inline-block;
+          border-right: solid .0625rem #BAC5E3;
+        }
+
+      }
+
+      td:nth-child(2) {
+        span {
+          border-right: none;
+        }
+      }
+    }
+
+    tr td:nth-child(even) {
+      text-align: center;
+      padding-left: 0rem;
+    }
+  }
+
+  .Details {
+    font-size: 1rem;
+    font-weight: 400;
+
+    tr td {
+      width: 25%;
+      padding-left: .9375rem;
+      color: #72747E;
+      font-size: .75rem;
+      font-family: Microsoft YaHei;
+
+      img {
+        width: .875rem;
+      }
+    }
+
+    tr:nth-child(odd) {
+      background-color: #FAFBFF;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ffffff
+    }
+
+    tr td:nth-child(even) {
+      text-align: center;
+      padding-left: 0rem;
+      color: #333333;
+    }
+  }
+}
+
+.table>tbody>tr>td {
+  border-top: none
+}
+
+.table-bordered>tbody>tr>td {
+  border: .0625rem solid #E2E5ED;
+}
+
+// 外文文献
+.Forlangliterature {
+  margin-top: 2.5rem;
+overflow: hidden;
+
+  .Backgrounddots2 {
+    width: 3rem;
+    height: 3rem;
+    background: #3A6EFE;
+    border-radius: 50%;
+  }
+
+
+
+
+  h3 {
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    font-size: 1.375rem;
+    color: #00103F;
+    text-align: center;
+  }
+
+  p {
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    font-size: .75rem;
+    color: #999999;
+    text-align: center;
+    margin-top: .625rem;
+    img{
+      width: 1.5625rem;
+      position: relative;
+      top: -0.125rem;
+    }
+  }
+
+  .Forlanglit-div {
+    margin-top: 3.125rem;
+    position: relative;
+
+    div {
+      width: 48%;
+      margin: auto;
+      padding: .9375rem;
+      background-color: #FFFFFF;
+      box-shadow: 0rem 0rem 1.6875rem .1875rem rgba(208, 221, 255, 0.3);
+      border-radius: .625rem;
+      display: inline-block;
+    }
+
+    div:nth-child(even) {
+      float: right;
+    }
+    
+    div:nth-child(5) {
+      margin-left: 25%;
+    }
+
+    .Forlanglittext {
+      position: relative;
+      // z-index: 500;
+      border: solid .0625rem #ffffff;
+      margin-bottom: .625rem;
+
+      p:nth-child(1) {
+        text-align: left;
+        color: #00154A;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 0rem;
+      }
+
+      p:nth-child(2) {
+        text-align: left;
+        color: #BCBCBC;
+        font-size: .5rem;
+        margin-top: 0rem;
+        margin-bottom: .3125rem;
+      }
+
+      li::marker {
+        color: #376CFE;
+      }
+
+      li {
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        font-size: .75rem;
+        color: #666666;
+        line-height: 1.25rem;
+        span{
+          display: inline-block;
+          margin-left: -2%;
+        }
+      }
+
+      &:hover {
+        border: solid .0625rem #408cff;
+      }
+    }
+
+
+  }
+
+
+
+}
+
+.Forlanglittext:nth-child(1) {
+  .Backgrounddots1 {
+    width: 6.25rem;
+    height: 6.25rem;
+    background: #E6EDFF;
+    border-radius: 50%;
+    position: absolute;
+    left: -2.1875rem;
+    top: -1.5625rem;
+    z-index: -1;
+  }
+}
+
+.Forlanglittext:nth-child(2) {
+  .Backgrounddots2 {
+    width: 3rem;
+    height: 3rem;
+    background: #3A6EFE;
+    border-radius: 50%;
+    position: absolute;
+    right: -1.875rem;
+    top: -0.625rem;
+    z-index: -1;
+  }
+}
+
+
+  .Backgrounddots3 {
+    width: 3.75rem;
+    height: 3.75rem;
+    background: #618BFF;
+    border-radius: 50%;
+    position: absolute;
+    left: -2.1875rem;
+    bottom: 3.125rem;
+    z-index: -1;
+  }
+
+
+
+  .Backgrounddots4 {
+    width: 3rem;
+    height: 3rem;
+    background: #E6EDFF;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 3.125rem;
+    right: -2.5rem;
+    z-index: -1;
+  }
+// 中文文献
+.Chinesesliterature {
+  margin-top: 1.25rem;
+
+  .Chineseslit-left {
+
+      h3 {
+          margin-top: 1.25rem;
+          font-family: Microsoft YaHei;
+          font-weight: bold;
+          font-size: 1.375rem;
+          color: #00103F;
+          text-align: center;
+      }
+
+      p {
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        font-size: .75rem;
+        color: #999999;
+          margin: .75rem 0rem;
+          text-align: center;
+      }
+
+      ul li {
+          font-family: Microsoft YaHei;
+          font-weight: bold;
+          font-size: .875rem;
+          color: #666666;
+          text-align: center;
+          list-style: none;
+          line-height: 1.5rem;
+
+          img {
+            width: .625rem;
+              margin-right: .3125rem;
+              position: relative;
+              top: -0.0625rem;
+          }
+      }
+     
+
+  }
+  .Chineseslit-img{
+      width: 100%;
+      margin-top: 1.25rem;
+  }
+}
+// 一站式服务
+.One-stopservice {
+  padding-bottom: 1.875rem;
+
+  h3 {
+      font-family: Microsoft YaHei;
+      font-weight: bold;
+      font-size: 1.375rem;
+      color: #00103F;
+      text-align: center;
+      margin-top: 3.75rem;
+      margin-bottom: 1.875rem;
+  }
+
+  .stopservice-div {
+      text-align: center;
+      position: relative;
+      z-index: 5;
+
+      div {
+        float: left;
+        width: 50%;
+          margin-bottom: 1.25rem;
+          img{
+            width: 3.75rem;
+          }
+
+          p:nth-child(2) {
+              font-family: Microsoft YaHei;
+              font-weight: bold;
+              font-size: .875rem;
+              color: #333333;
+              margin: .75rem 0rem .25rem 0rem;
+          }
+
+          p:nth-child(3) {
+              font-family: Microsoft YaHei;
+              font-weight: 400;
+              font-size: .875rem;
+              color: #999999;
+          }
+      }
+  }
+
+  .stopservice-img {
+      position: absolute;
+      top: 1.25rem;
+      left: 25%;
+      width: 50%;
+      z-index: -1;
+      
+  }
+  .stopservice-img1 {
+    position: absolute;
+    top: 9.6875rem;
+    left: 25%;
+    width: 50%;
+    z-index: -1;
+    
+}
+.Submission{
+  padding: .75rem 1.875rem;
+  background: linear-gradient(-90deg, #356BFE 0%, #648DFF 100%);
+box-shadow: 0rem 0rem .625rem 0rem rgba(117,160,225,0.3);
+border-radius: 2.5rem;
+margin: auto;
+width: 40%;
+text-align: center;
+font-family: Microsoft YaHei;
+font-weight: bold;
+font-size: 1rem;
+color: #FFF6F6;
+margin-top: 1.25rem;
+}
+}
+
+.foot {
+  border-top: solid 1px #EEEEEE;
+  padding: 24px;
+  text-align: center;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 12px;
+  color: #999999;
+}

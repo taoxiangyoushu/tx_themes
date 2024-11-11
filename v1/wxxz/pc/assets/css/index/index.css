@@ -1,0 +1,592 @@
+body {
+  position: relative;
+}
+.contentBox {
+  padding-top: 80px;
+  background: linear-gradient(to bottom, #ffe6fa, #ecf9ff, #fbfeff);
+  min-height: 4000px;
+}
+@keyframes myLoading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.bannerBox {
+  width: 100%;
+  padding-top: 16px;
+  background: url("../../img/bg.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+.bannerBox .container {
+  height: 100%;
+  padding-top: 130px;
+}
+.bannerBox .container .bannerBox-left {
+  float: left;
+  margin-right: 80px;
+}
+.bannerBox .container .bannerBox-left p {
+  width: 360px;
+  height: 48px;
+  background: linear-gradient(90deg, #cdeaff 0%, #c8e8ff 100%);
+  letter-spacing: 4px;
+  font-size: 18px;
+  border-radius: 24px 24px 24px 0px;
+  text-align: center;
+  line-height: 48px;
+  color: #354b82;
+}
+.bannerBox .container .bannerBox-left p img {
+  position: relative;
+  left: -10px;
+  top: -1px;
+}
+.bannerBox .container .bannerBox-left h5 {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 68px;
+  color: #00082a;
+  margin-top: 24px;
+}
+.bannerBox .container .bannerBox-left h5 img {
+  position: relative;
+  left: -15px;
+  top: -7px;
+}
+.bannerBox .container .bannerBox-left .bannerBox-text {
+  width: 618px;
+  height: 52px;
+  border-top: solid 1px #cfd5e3;
+  border-bottom: solid 1px #cfd5e3;
+  font-size: 20px;
+  color: #354b82;
+  line-height: 52px;
+  margin-top: 32px;
+  text-align: center;
+}
+.bannerBox .container .bannerBox-left .bannerBox-text span:not(:last-child):after {
+  content: "";
+  background: #cfd5e3;
+  /* 圆点的颜色 */
+  border-radius: 50%;
+  /* 圆点形状 */
+  display: inline-block;
+  width: 8px;
+  /* 圆点大小 */
+  height: 8px;
+  /* 圆点大小 */
+  margin: 4px 16px;
+  /* 圆点之间的距离 */
+}
+.bannerBox .container .bannerBox-left .Submission {
+  margin-top: 50px;
+}
+.bannerBox .container .Exchangecodes {
+  margin-top: 100px;
+}
+.bannerBox .container .Exchangecodes h3 {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 48px;
+  color: #00103f;
+  text-align: center;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase {
+  margin-top: 50px;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members {
+  display: inline-block;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 30px;
+  width: 32%;
+  padding: 34px 20px 20px 20px;
+  position: relative;
+  top: 0px;
+  transition: all 0.2s;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members:hover {
+  top: -10px;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .Members1-img {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 0;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .MembersPrice {
+  width: 100%;
+  background: linear-gradient(#ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+  height: 280px;
+  margin-top: 34px;
+  border-radius: 20px;
+  padding: 0px 20px 30px 20px;
+  display: none;
+  position: relative;
+  z-index: 100;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .MembersPrice .MembersPrice-title {
+  width: 50%;
+  margin: auto;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 14px;
+  text-align: center;
+  border-radius: 0px 0px 20px 20px;
+  color: #ffffff;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .loading-M {
+  width: 100%;
+  background: linear-gradient(#ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+  height: 280px;
+  margin-top: 34px;
+  border-radius: 20px;
+  padding: 100px 20px 30px 20px;
+  text-align: center;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .loading-M img {
+  animation: myLoading 1.5s linear infinite forwards;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .loading-M p {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #979797;
+  font-weight: normal;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .CurrentPrice {
+  text-align: center;
+  color: #17b5e3;
+  font-size: 48px;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .CurrentPrice span.money-i {
+  font-size: 30px;
+  position: relative;
+  left: 15px;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .CurrentPrice span.date {
+  color: #333333;
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+  left: -15px;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .CurrentPrice span.priceText {
+  font-size: 48px;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .OriginalPrice {
+  color: #999999;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 40px;
+  text-decoration: line-through;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members .Immediately {
+  width: 100%;
+  padding: 15px;
+  font-size: 24px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members1 {
+  background: linear-gradient(#c9f3f8 0%, #e0f1ff 100%), url("../../img/vip1.png") no-repeat;
+  background-position: 100% 0;
+  background-blend-mode: color-burn;
+  box-shadow: 0px 0px 27px 3px rgba(208, 221, 255, 0.3);
+  border-radius: 20px;
+  color: #01a8d9;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members1 .MembersPrice-title {
+  background-color: #79dbf7;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members1 .Immediately {
+  background: linear-gradient(90deg, #81e1e7 0%, #17b5e3 100%);
+  border-radius: 10px;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members1 .Immediately:hover {
+  background: #17b5e3;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members2 {
+  background: linear-gradient(#cce4fd 0%, #e5efff 100%), url("../../img/vip2.png") no-repeat;
+  background-position: 100% 0;
+  background-blend-mode: color-burn;
+  box-shadow: 0px 0px 27px 3px rgba(208, 221, 255, 0.3);
+  border-radius: 20px;
+  color: #2e66ff;
+  margin: 0px 1% 0px 1%;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members2 .MembersPrice-title {
+  background-color: #4FA3FF;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members2 .Immediately {
+  background: linear-gradient(90deg, #51A4FF 0%, #3367F6 100%);
+  border-radius: 10px;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members2 .Immediately:hover {
+  background: #3367f6;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members2 .CurrentPrice {
+  color: #2E66FF;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members3 {
+  background: linear-gradient(#fdd5cc 0%, #ffe5e4 100%), url("../../img/vip3.png") no-repeat;
+  background-position: 100% 0;
+  background-blend-mode: color-burn;
+  box-shadow: 0px 0px 27px 3px rgba(208, 221, 255, 0.3);
+  border-radius: 20px;
+  color: #ff4545;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members3 .MembersPrice-title {
+  background-color: #FF8686;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members3 .Immediately {
+  background: linear-gradient(90deg, #FF856D 0%, #F63462 100%);
+  border-radius: 10px;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members3 .Immediately:hover {
+  background: #f63462;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members3 .CurrentPrice {
+  color: #FF4545;
+}
+.bannerBox .container .Exchangecodes .Memberpurchase .Members3 .Members3-span {
+  background: linear-gradient(to right, #FF8542, #FF4670);
+  padding: 6px 12px;
+  border-radius: 18px 16px 16px 0px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 14px;
+  color: #FFFFFF;
+  position: relative;
+  top: -5px;
+  z-index: 100;
+}
+.bannerBox .container .Exchangecodes .Memberrights {
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+.bannerBox .container .Exchangecodes .Memberrights .table {
+  margin-bottom: 12px;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Memberrights-title {
+  color: #00154A;
+  font-size: 24px;
+  font-weight: bold;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Memberrights-title span {
+  width: 4px;
+  height: 24px;
+  display: inline-block;
+  background-color: #3368F6;
+  border-radius: 2px;
+  position: relative;
+  top: 3px;
+  margin-right: 16px;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Details-title {
+  margin-top: 24px;
+  border-radius: 10px;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Details-title tr {
+  background-color: #F0F5FE;
+  border-radius: 10px;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Details-title tr td {
+  width: 25%;
+  color: #152448;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 23px;
+  padding-right: 0px;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Details-title tr td span {
+  width: 100%;
+  display: inline-block;
+  border-right: solid 1px #E2E5ED;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Details-title tr td:nth-child(4) span {
+  border-right: none;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Details-title tr td:nth-child(even) {
+  text-align: center;
+  padding-left: 0px;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Details {
+  font-size: 16px;
+  font-weight: 400;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Details tr td {
+  width: 25%;
+  padding-left: 23px;
+  color: #72747E;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Details tr:nth-child(odd) {
+  background-color: #FAFBFF;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Details tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.bannerBox .container .Exchangecodes .Memberrights .Details tr td:nth-child(even) {
+  text-align: center;
+  padding-left: 0px;
+  color: #333333;
+}
+.Forlangliterature {
+  margin-top: 100px;
+}
+.Forlangliterature .Backgrounddots2 {
+  width: 48px;
+  height: 48px;
+  background: #3A6EFE;
+  border-radius: 50%;
+}
+.Forlangliterature h3 {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 48px;
+  color: #00103F;
+  text-align: center;
+}
+.Forlangliterature p {
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 18px;
+  color: #999999;
+  text-align: center;
+  margin-top: 20px;
+}
+.Forlangliterature .Forlanglit-div {
+  margin-top: 50px;
+}
+.Forlangliterature .Forlanglit-div div {
+  width: 31%;
+  margin: auto;
+  padding: 40px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 27px 3px rgba(208, 221, 255, 0.3);
+  border-radius: 20px;
+  display: inline-block;
+}
+.Forlangliterature .Forlanglit-div div:nth-child(2) {
+  margin: 0px 2.5% 0px 2.5%;
+}
+.Forlangliterature .Forlanglit-div div:nth-child(4) {
+  margin: 48px 2.5% 0px 18%;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext {
+  position: relative;
+  border: solid 1px #ffffff;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext p:nth-child(1) {
+  text-align: left;
+  color: #00154A;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 0px;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext p:nth-child(2) {
+  text-align: left;
+  color: #BCBCBC;
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext li::marker {
+  color: #376CFE;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext li {
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 18px;
+  color: #666666;
+  line-height: 36px;
+}
+.Forlangliterature .Forlanglit-div .Forlanglittext:hover {
+  border: solid 1px #408cff;
+}
+.Forlanglittext:nth-child(1) .Backgrounddots1 {
+  width: 188px;
+  height: 188px;
+  background: #E6EDFF;
+  border-radius: 50%;
+  position: absolute;
+  left: -70px;
+  top: -50px;
+  z-index: -1;
+}
+.Forlanglittext:nth-child(3) .Backgrounddots2 {
+  width: 48px;
+  height: 48px;
+  background: #3A6EFE;
+  border-radius: 50%;
+  position: absolute;
+  right: -30px;
+  top: -10px;
+  z-index: -1;
+}
+.Forlanglittext:nth-child(4) .Backgrounddots3 {
+  width: 118px;
+  height: 118px;
+  background: #618BFF;
+  border-radius: 50%;
+  position: absolute;
+  left: -70px;
+  bottom: 50px;
+  z-index: -1;
+}
+.Forlanglittext:nth-child(5) .Backgrounddots4 {
+  width: 48px;
+  height: 48px;
+  background: #E6EDFF;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  z-index: -1;
+}
+.Chinesesliterature {
+  margin-top: 80px;
+}
+.Chinesesliterature .Chineseslit-left {
+  width: 40%;
+  display: inline-block;
+}
+.Chinesesliterature .Chineseslit-left h3 {
+  margin-top: 78px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 48px;
+  color: #00103F;
+}
+.Chinesesliterature .Chineseslit-left p {
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 16px;
+  color: #999999;
+  margin: 24px 0px;
+}
+.Chinesesliterature .Chineseslit-left ul li {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 24px;
+  color: #666666;
+}
+.Chinesesliterature .Chineseslit-left ul li img {
+  margin-right: 16px;
+  position: relative;
+  top: -1px;
+}
+.Chinesesliterature .Chineseslit-left ul li:nth-child(2) {
+  margin-top: 16px;
+}
+.Chinesesliterature .Chineseslit-img {
+  float: right;
+}
+.One-stopservice {
+  padding-bottom: 70px;
+}
+.One-stopservice h3 {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 48px;
+  color: #00103F;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.One-stopservice .stopservice-div {
+  text-align: center;
+  position: relative;
+  z-index: 500;
+}
+.One-stopservice .stopservice-div div {
+  width: 24%;
+  display: inline-block;
+  margin-bottom: 80px;
+}
+.One-stopservice .stopservice-div div p:nth-child(2) {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 24px;
+  color: #333333;
+  margin: 12px 0px 4px 0px;
+}
+.One-stopservice .stopservice-div div p:nth-child(3) {
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 16px;
+  color: #999999;
+}
+.One-stopservice .stopservice-img {
+  position: absolute;
+  top: 50px;
+  left: 15%;
+  width: 70%;
+  z-index: -1;
+}
+.foot {
+  border-top: solid 1px #EEEEEE;
+  padding: 24px;
+  text-align: center;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  font-size: 12px;
+  color: #999999;
+}
+.table > tbody > tr > td {
+  border-top: none;
+}
+.table-bordered > tbody > tr > td {
+  border: 1px solid #E2E5ED;
+}
+.Submission {
+  width: 200px;
+  height: 56px;
+  background: linear-gradient(90deg, #648dff 0%, #356bfe 100%);
+  border-radius: 28px;
+  margin: auto;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 56px;
+  cursor: pointer;
+}
+.Submission:hover {
+  background: linear-gradient(90deg, #356bfe 0%, #648dff 100%);
+}
+@media (max-width: 1200px) {
+  .bannerBox .container .bannerBox-left {
+    margin-right: 0px;
+  }
+  .bannerBox .container .bannerBox-img {
+    width: 300px;
+    position: relative;
+    top: 50px;
+  }
+  .bannerBox .container .Exchangecodes .Memberpurchase .Members .MembersPrice .MembersPrice-title {
+    width: 70%;
+  }
+  .Chinesesliterature .Chineseslit-img {
+    width: 500px;
+  }
+  .Forlangliterature .Forlanglit-div .Forlanglittext p:nth-child(2) {
+    font-size: 12px;
+  }
+  .Chinesesliterature .Chineseslit-left ul li {
+    font-size: 20px;
+  }
+  .bannerBox .container .Exchangecodes .Memberpurchase .Members3 .Members3-span {
+    font-size: 12px;
+  }
+  .bannerBox .container .Exchangecodes .Memberpurchase .Members {
+    font-size: 26px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

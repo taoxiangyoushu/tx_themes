@@ -1,0 +1,152 @@
+
+.dashi_wx_box.text_a_c {
+    display: none;
+    position: fixed;
+    //background: #fff;
+    z-index: 1000;
+    border-radius: .24rem;
+    width: 74%;
+    top: 30%;
+    padding: 1.2rem;
+    box-sizing: border-box;
+    left: 13%;
+    .close-wx {
+      background: url('../img/delete3.png') no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      width: .87rem;
+      height: .87rem;
+      right: 1.33rem;
+      top: 1.07rem;
+    }
+  }
+  .kfTitle {
+    color: #333333;
+    font-size: 1.33rem;
+    font-weight: bold;
+  }
+  .kf_main {
+    margin-top: .93rem;
+    color: #666666;
+    &>p {
+      display: none;
+    }
+  }
+  .step img {
+    width: 1.33rem;
+  }
+  .customer-wx {
+    position: fixed;
+    width: 3.33rem;
+    height: 3.33rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 1.33rem 0rem
+      rgba(0, 0, 0, 0.09);
+    border-radius: 50%;
+    right: 0.6rem;
+    top: 70%;
+    z-index:100;
+    text-align: center;
+    line-height: 3.33rem;
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .mask {
+    background: #000;
+    opacity: .7;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: none;
+  }
+
+.customerBox {
+  width: 100%;
+  background-image: linear-gradient(180deg, #e4f3ff 0%, white 60%);
+  border-radius: 18px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  .head {
+    height: 3.2rem;
+    line-height: 3.2rem;
+    color: #303133;
+    font-size: 1.07rem;
+    border-bottom: 1.44px solid #ffffff;
+    background: transparent !important;
+    text-align: left;
+    .customer-title {
+      width: 9.33rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    img {
+      vertical-align: middle;
+      margin-top: -0.04rem;
+      margin-left: .94rem;
+      margin-right: .19rem;
+      width: 1.4rem;
+    }
+  }
+  .customerCode {
+    text-align: center;
+    padding: 1.33rem 0 1.07rem 0;
+    line-height: normal;
+    position: relative;
+    display: none;
+    img {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+  .segmentation-line {
+    width: 11.2rem;
+    height: 1.44px;
+    background: #e7e7e7;
+    margin: 0 auto;
+  }
+  .customerWay {
+    padding-left: .94rem;
+    padding-top: .75rem;
+    padding-bottom: .94rem;
+    text-align: left;
+    p {
+      line-height: 2;
+      color: #666666;
+      font-size: .93rem;
+      margin: 0;
+      display: none;
+      .s0 {
+        width: 2.27rem;
+        display: inline-block;
+        font-size: .93rem;
+      }
+      .s1 {
+        color: #333333;
+        margin-left: 6px;
+        font-size: .93rem;
+      }
+    }
+  }
+  .noCustomer {
+    line-height: 2;
+    margin: 0;
+    font-size: .93rem;
+    color: #303133;
+    padding: 22.56px 30px;
+    display: none;
+  }
+  .customBg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

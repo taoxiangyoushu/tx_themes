@@ -1,0 +1,236 @@
+.CircleBG {
+  width: 38.1rem;
+  height: 44rem;
+  background: url('../img/box-Contentbg.png') no-repeat;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-top: -23rem;
+  margin-left: -19.4rem;
+  z-index: 10001;
+  background-size: 100% 100%;
+}
+.Discounts_box {
+  display: none;
+}
+.box-Content {
+  position: relative;
+  z-index: 10000;
+  height: 100%;
+  background-position: 50% 20%;
+  background-size: 78%;
+}
+.box-Content .ContentText {
+  width: 27.1rem;
+  margin-left: -13.6rem;
+  position: absolute;
+  top: 3.4rem;
+  left: 50%;
+  text-align: center;
+}
+.box-Content .ContentText > img {
+  max-width: 73%;
+  margin: 1.6rem 0 1.4rem 0;
+}
+.box-Content .Contenthader {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+.box-Content .Contenthader .but_close {
+  position: absolute;
+  right: -2rem;
+  cursor: pointer;
+  top: -2.5rem;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+}
+.box-Content .Contenthader img {
+  width: 2rem;
+}
+.box-Content .wcode {
+  width: 12.8rem;
+  height: 12.8rem;
+  border-radius: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  margin-top: 1.4rem;
+}
+.box-Content .wcode #codeBox {
+  margin: 0.9rem 0 0 0.9rem;
+}
+.box-Content .ButtonDiv a {
+  display: inline-block;
+  background-image: linear-gradient(-77deg, #ff3e4c 0%, #ff9476 100%), linear-gradient(#ffffff, #ffffff);
+  background-blend-mode: normal, 
+                normal;
+  box-shadow: 0rem 0.6rem 0.4rem 0.1rem rgba(255, 185, 176, 0.7);
+  width: 15.8rem;
+  height: 3.5rem;
+  font-size: 1.8rem;
+  color: #fff;
+  line-height: 3.1rem;
+  border-radius: 1.8rem;
+  margin: 0 auto;
+  border: 0.2rem solid #fff;
+  text-decoration: none;
+}
+.box-Content .DiscountsTips {
+  color: #7b5b5b;
+  font-size: 1rem;
+  margin-top: 1.4rem;
+}
+.box-Content .Prompt {
+  overflow: hidden;
+  color: #2b0101;
+  font-size: 1rem;
+  padding: 2.2rem 1rem 0 1rem;
+  width: 24rem;
+  margin: 0 auto;
+  padding-top: 1.8rem;
+}
+.box-Content .Prompt > div {
+  float: left;
+  width: 30%;
+}
+.box-Content .Prompt > div img {
+  margin-bottom: 1rem;
+  max-width: 2.35rem;
+}
+.box-Content .Prompt > img {
+  float: left;
+  width: 5%;
+  margin-top: 2rem;
+}
+.box-Content .Prompt p {
+  line-height: normal;
+}
+.box-Content .GuaranteeTheBottom {
+  width: 25rem;
+  height: 13.9rem;
+  background-color: #ffefec;
+  border-radius: 1rem;
+  margin: auto;
+  margin-top: 3rem;
+  padding: 1.4rem 0;
+}
+.box-Content .GuaranteeTheBottom #Cell-phoneNumber {
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 1.95rem;
+  border: solid 0.1rem #ffffff;
+  outline: 0 !important;
+  color: #3d3d3d;
+  font-size: 1.6rem;
+  padding-left: 3rem;
+}
+.box-Content .GuaranteeTheBottom #Cell-phoneNumber::placeholder {
+  color: #909090;
+  font-size: 1.2rem;
+}
+.box-Content .GuaranteeTheBottom .phoneNumber {
+  position: relative;
+  width: 90%;
+  margin: auto;
+}
+.box-Content .GuaranteeTheBottom .phoneNumber img {
+  position: absolute;
+  top: 1.36rem;
+  left: 1.4rem;
+  width: 1.2rem;
+}
+.box-Content .GuaranteeTheBottom .GetCode {
+  display: inline-block;
+  margin: 1.2rem auto 0.8rem;
+  border-radius: 1.6rem;
+  cursor: pointer;
+  width: 90%;
+  background: url('../img/buttonBg.png') no-repeat;
+  background-size: 100% 100%;
+}
+.box-Content .GuaranteeTheBottom .GetCode > div {
+  width: 100%;
+  height: 3.4rem;
+  line-height: 3.4rem;
+  border-radius: 1.6rem;
+}
+.box-Content .GuaranteeTheBottom .GetCode > div.Not {
+  color: #ffffff;
+}
+.box-Content .GuaranteeTheBottom .GetCode > div.Not .text1 {
+  vertical-align: middle;
+  margin: 0 0.4rem;
+}
+.box-Content .GuaranteeTheBottom .GetCode > div.Not .text2 {
+  display: none;
+}
+.box-Content .GuaranteeTheBottom .GetCode > div.Not img {
+  width: 2rem;
+}
+.box-Content .GuaranteeTheBottom .GetCode > div.success .text2 {
+  display: inline-block;
+}
+.box-Content .GuaranteeTheBottom .GetCode > div.success .text1 {
+  display: none;
+}
+.box-Content .GuaranteeTheBottom .GetCode > div.success img {
+  display: none;
+}
+.box-Content .GuaranteeTheBottom .GetCode > div.success span {
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+.box-Content .GuaranteeTheBottom .Rules {
+  color: #260f0f;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.box-Content .GuaranteeTheBottom .Rules span {
+  color: #6b4b4b;
+  font-weight: 400;
+}
+.box-Content .GuaranteeTheBottom .CopyCode {
+  font-size: 1rem !important;
+  text-decoration: underline;
+  margin-left: 0.4rem;
+  cursor: pointer;
+}
+.box-Content .GuaranteeTheBottom #copyInput2 {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.fiexBox .fiexBoxP {
+  float: right;
+}
+.fiexBox .navBtn.WX {
+  float: right;
+}
+.fiexBox .Activity {
+  cursor: pointer;
+  display: none;
+}
+.mask_body {
+  position: fixed;
+  background: #000;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  display: none;
+}
+.toast {
+  z-index: 1000000;
+}
+.Activity {
+  position: fixed;
+  right: 0;
+  bottom: 2rem;
+}
+.Activity img {
+  width: 6rem;
+}

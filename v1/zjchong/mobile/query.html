@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 为移动设备添加 viewport；-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-order_status-bar-style" content="black"/>
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 指定请求和响应遵循的缓存机制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>早降重 - 查询结果</title>
+    <meta name="description" content="Master Ai率检测可以区分人工编写的内容和AI模型生成的文本。Master Ai率检测系统快速生成报告，识别文本AIGC值的高低 ，提示文本内容可能由AI生成。"/>
+    <meta name="keywords" content="Master AI率检测,AI检测,AIGC检测"/>
+    <link rel="shortcut icon" href="../mobile/assets/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../mobile/assets/css/loading.css">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css">
+    <link rel="stylesheet" href="../mobile/assets/css/alert.css">
+    <link rel="stylesheet" href="../mobile/assets/css/query.css?v=m24.0004">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0004">
+    <link rel="stylesheet" href="../mobile/assets/css/complain.css?v=m24.0004">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0004">
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        var JANE_NAME = 'zjchong'
+    </script>
+</head>
+<body>
+<div class="dashi_wx_box text_a_c">
+    <div class="customerBox">
+        <i class="close-wx"></i>
+        <div class="head">
+            <img src="../mobile/assets/img/kf.png" alt="">
+            <span class="customer-title"></span>
+        </div>
+        <div class="customerCode">
+            <img class="customer-qr" src="" alt="">
+        </div>
+        <div class="segmentation-line"></div>
+        <div class="customerWay">
+            <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+            <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+            <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+            <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+        </div>
+        <p class="noCustomer">商家未设置客服</p>
+        <img class="customBg" src="../mobile/assets/img/bg1.png" alt="">
+    </div>
+</div>
+<div class="mask mask-fixed"></div>
+<div class="customer-wx" id="customer-wx1">
+    <img src="../mobile/assets/img/kfwx.png" alt="客服">
+</div>
+<div class="orderTipsPop">
+    <div class="maskHader">
+        什么是订单号
+        <img src="../mobile/assets/img/delete.png" class="hidePop" alt="">
+    </div>
+<!--    <div class="orderTipsTitle">-->
+<!--        <p class="active_tips block_tips" data-ordertips="wx">-->
+<!--            <img src="../mobile/assets/img/order-wx.png" alt=""> 微信-->
+<!--        </p>-->
+<!--        <p class="block_tips" data-ordertips="ali">-->
+<!--            <img src="../mobile/assets/img/order-ali.png" alt=""> 支付宝-->
+<!--        </p>-->
+<!--        <p class="block_tips" data-ordertips="zh">-->
+<!--            <img src="../mobile/assets/img/order-zh.png" alt=""> 多码合一-->
+<!--        </p>-->
+<!--    </div>-->
+    <div class="maskContent">
+        <p class="active_tips block_tips" data-ordertips="wx">
+            <img src="../mobile/assets/img/order-wx.png" alt=""> 微信订单号
+        </p>
+        <img class="orderTipImg WxOrder" src="../mobile/assets/img/wxId.jpg" alt="">
+        <p class="block_tips" data-ordertips="ali">
+            <img src="../mobile/assets/img/order-ali.png" alt=""> 支付宝订单号
+        </p>
+        <img class="orderTipImg AliOrder" src="../mobile/assets/img/aliId.png" alt="">
+        <div class="toabaoID">
+            <p><img class="taobao-icon" src="../mobile/assets/img/taobao.png" alt="">淘宝订单号</p>
+            <img src="../mobile/assets/img/taobao_oid.png" alt="">
+        </div>
+    </div>
+<!--    <img class="orderTipImg ZhOrder" src="../mobile/assets/img/ali_out_trade_num.png" alt="">-->
+</div>
+<div class="searchBox">
+    <input type="text" id="searchID"placeholder="请输入您的订单号或优惠券">
+    <span class="deleteS"></span>
+    <span class="searchText">搜索</span>
+</div>
+<p class="orderIdTips">
+    <img src="../mobile/assets/img/orderIdTips.png" alt="订单号">
+    什么是订单号
+</p>
+<div class="resultBox">
+</div>
+<div class="nodata">
+    <img src="../mobile/assets/img/nodata.png" alt="">
+    <p class="toSearch">输入订单号/优惠券查询结果</p>
+    <div class="toHome">
+        <a href="./index.html">去提交</a>
+    </div>
+</div>
+<div class="prompt">
+    <p class="prompt-title">
+        温馨提示:
+    </p>
+    <p class="prompt-text">
+        安全保障：系统保留30天以内的订单，超过30天则被删除，确保您的论文不会被覆盖和盗窃，完成后请尽快下载!
+    </p>
+    <p class="prompt-text prompt-text2">
+        请慎重记录并保管好您的订单号以便日后查询，离开此页则不再显示
+    </p>
+</div>
+<div class="delete_pop">
+    <p class="title">是否确定删除订单？</p>
+    <p class="p3">删除后，无法恢复</p>
+    <p class="p3">系统仅保留30天内的订单，确保您的论文不会被覆盖和盗窃</p>
+    <div class="bottom">
+        <div class="cancel_btn">取消</div>
+        <div class="determine_btn">确定</div>
+    </div>
+</div>
+
+<div class="SingleDownload">
+    <div class="maskHader">
+        下载结果
+        <img class="hidePop" src="../mobile/assets/img/delete.png" alt="">
+    </div>
+    <div class="pop_cont">
+    </div>
+    <div class="pop_bottom">
+        <div class="determine_package">打包下载</div>
+    </div>
+</div>
+
+<div class="down_pop">
+    <img class="close_downPop" src="../mobile/assets/img/delete3.png" alt="">
+    <div class="imgBlock">
+        <img src="../mobile/assets/img/download_ico.png" alt="">
+        <p></p>
+    </div>
+    <div class="copyBtn">复制链接去电脑浏览器下载 <span class="recommend">推荐</span></div>
+    <p class="p11">
+        <img src="../mobile/assets/img/warn_ico.png" alt="">手机下载影响体验，建议电脑端下载查看<br/>
+    </p>
+    <div class="downBtn">
+        <a href="">手机下载</a>
+    </div>
+</div>
+<input id="copyInput">
+<script src="../mobile/assets/js/jquery.min.js"></script>
+<script src="../mobile/assets/js/message.js"></script>
+<script src="../mobile/assets/js/alert.min.js"></script>
+<script src="../mobile/assets/js/clipboard.min.js"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0004"></script>
+<script src="../mobile/assets/js/bootstrapValidator.min.js"></script>
+<script src="../mobile/assets/js/order_result.js?v=m24.0004"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=m24.0004"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0004"></script>
+<script>
+
+    if(/MicroMessenger/.test(window.navigator.userAgent)) {
+        $(".down_pop").addClass('wxBro')
+    }else{
+
+    }
+
+    var payId = ''
+    $(".orderIdTips").on('click',function (){
+        $(".mask").show();
+        $(".orderTipsPop").show();
+    })
+
+    $(".mask").on('click',function (){
+        $(".mask").hide();
+        $(".orderTipsPop").hide();
+        $(".SingleDownload").hide();
+        $(".down_pop").hide()
+    })
+
+    $(".hidePop").on('click',function (){
+        $(".mask").hide();
+        $(".orderTipsPop").hide();
+        $(".SingleDownload").hide();
+    })
+
+    // function showOrder(payWay) {
+    //     if(payWay.default == 'scanCodeRich'){
+    //         $(".block_tips[data-ordertips='zh']").hide()
+    //         $(".block_tips[data-ordertips='wx']").hide()
+    //         $(".block_tips[data-ordertips='ali']").hide()
+    //         $(".ZhOrder").show()
+    //     }else{
+    //         $(".block_tips[data-ordertips='zh']").hide()
+    //         $(".block_tips[data-ordertips='wx']").show()
+    //         $(".block_tips[data-ordertips='ali']").show()
+    //         $(".WxOrder").show()
+    //     }
+    // }
+
+    function startQuerying(){
+        if(getQueryVariable('oid')) {
+            $('#searchID').val(getQueryVariable('oid'))
+            query(true)
+        }else if(localStorage.getItem('orderId')) { // 链接未携带oid说明不是支付成功页面过来, 查看是否有本地记录
+            $('#searchID').val(localStorage.getItem('orderId'))
+            query(true)
+        }
+    }
+
+    // function throttle(method, context) {
+    //     clearTimeout(method.tid);
+    //     method.tid = setTimeout(function(){
+    //         method.call(context);
+    //     },1500);
+    // }
+
+    var throttle = function(func, delay) {
+        var timer = null;
+        return function() {
+            var context = this;
+            var args = arguments;
+            if (!timer) {
+                func.apply(context,args)
+                timer = setTimeout(function() {
+                    timer = null;
+                }, delay);
+            }
+        }
+    }
+
+    $(".searchText").on('click', throttle(aaa,2000))
+
+    function aaa(){
+        if(!$('#searchID').val()){
+            toast('请输入订单号或优惠券!')
+            $('.resultBox').hide()
+            $('.nodata').show()
+            $(".toSearch").html("输入订单号/优惠券查询结果")
+            return;
+        }
+        query(true)
+    }
+
+    function query(e) {
+        if(e) {
+            toast({
+                msg: '正在为您查询订单...',
+                type: 'loading'
+            })
+        }
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: $('#searchID').val()
+            }),
+            success: function (res) {
+                var text = "";
+                var automaticPolling = false
+                if(res.data.length) {
+                    $('.resultBox').show()
+                    for(var i=0; i<res.data.length; i++) {
+                        var statusColor = res.data[i].order_status == 60? 'completed' : [res.data[i].order_status == 80? 'processed':'']
+                        var operateText = ''
+                        var word_num = ''
+                        var showWord = ''
+                        if(res.data[i].place_order_data.word_num){
+                            word_num = res.data[i].place_order_data.word_num.value
+                        }else{
+                            word_num = '--'
+                            showWord = 'hide-word'
+                        }
+
+                        if(res.data[i].isPartDownload) {
+                            operateText =   '<div class="report-operate">' +
+                                    '            <div data-goodsname="'+res.data[i].goods_name+'" data-endProduct="'+ res.data[i].end_product +'" data-id="'+res.data[i].order_sn+'" class="report-download downloadable DownloadSeparately titles">' +
+                                    '                <span>下载</span>' +
+                                    '            </div>'
+                            if(res.data[i].end_product) {
+                                operateText +=
+                                    '            <div class="report-order">' +
+                                    '                <a href="/">再下单</a>' +
+                                    '            </div>' +
+                                    '            <div class="report-delete" data-orderid="'+ res.data[i].order_sn +'">' +
+                                    '               删除' +
+                                    '            </div>' +
+                                    '        </div>'
+                            }
+                        }else if(res.data[i].end_product){
+                            operateText =   '        <div class="report-operate">' +
+                                '            <div class="report-download downloadable downloadPop">' +
+                                '                <span data-goodsname="'+res.data[i].goods_name+'" data-endProduct="'+ res.data[i].end_product +'" data-url="'+ res.data[i].end_product +'">下载</span>' +
+                                '            </div>' +
+                                '            <div class="report-delete" data-orderid="'+ res.data[i].order_sn +'">' +
+                                '               删除' +
+                                '            </div>' +
+                                '        </div>'
+                        }else{
+                            operateText =   '        <div class="report-operate">' +
+                                            '            <div class="report-download unDownloadable">' +
+                                            '                <a href="javascript:void(0);">下载</a>' +
+                                            '            </div>' +
+                                            '        </div>'
+                        }
+
+                        text += '<div class="resultItem">' +
+                            '        <div class="report-status '+statusColor+'">'+ (res.data[i].order_status_human || '创作失败') +'</div>' +
+                            '        <div class="report-title">'+ res.data[i].place_order_data.title.value +'</div>' +
+                            '        <div class="report-info">' +
+                            '            <p class="report-text">' +
+                            '               <span class="t-label">订单编号：</span>' +
+                            '               <span class="report-id">'+ res.data[i].order_sn +'</span>' +
+                            '            </p>' +
+                            '            <p class="report-text">' +
+                            '                <span class="t-label"><span class="space2">类</span>型：</span>' +
+                            '                <span class="report-id">'+ res.data[i].goods_name +'</span>' +
+                            '            </p>' +
+                            '            <p class="report-text '+ showWord +'">' +
+                            '                <span class="t-label"><span class="space2">字</span>数：</span>' +
+                            '                <span class="report-id">'+ word_num +'</span>' +
+                            '            </p>' +
+                            '            <p class="report-text">' +
+                            '                <span class="t-label">下单时间：</span>' +
+                            '                <span class="report-id">'+ res.data[i].created +'</span>' +
+                            '            </p>' +
+                            '        </div>' +
+                                    operateText +
+                            '    </div>'
+
+                        if(res.data[i].order_status != 60) {
+                            automaticPolling = true
+                        }
+                    }
+                    if(automaticPolling){
+                        setTimer()
+                    }
+                    $('.nodata').hide()
+                    $('.resultBox').children().remove()
+                    $('.resultBox').append(text)
+                    localStorage.setItem('orderId', $('#searchID').val())
+                    $('.deleteS').show()
+                }else {
+                    deleteS(true)
+                    $('.resultBox').hide()
+                    $('.nodata').show()
+                    if(res.code == 400) {
+                        toast({msg:res.codeMsg, time:2000});
+                        $(".toSearch").html(res.codeMsg)
+                    }else {
+                        toast({msg:"未查询到结果!", time:2000});
+                        // $('.deleteS').hide()
+                        $(".toSearch").text("非常抱歉，没有找到该订单号。请重新核对是否输入了正确的订单号或者记录已被删除")
+                    }
+                }
+            },
+            error: function () {
+                $('.resultBox').hide()
+                $('.nodata').show()
+                toast({msg:"请求失败!请检查网络", time:2000 });
+                $('.deleteS').hide()
+            },
+        });
+    }
+
+    $('.deleteS').click(function() {
+        deleteS()
+        $('.deleteS').hide()
+        $('.resultBox').hide()
+        $('.nodata').show()
+    })
+
+    function deleteS(clearInput) {
+        // 请求没有数据,判断是查询的本地id且查询的id和本地id一致, 就删除本地id(该id未支付)
+        if(localStorage.getItem('orderId') == $('#searchID').val()) { // 请求没有数据,判断是查询的本地id且查询的id和本地id一致, 就删除本地id(该id未支付)
+            localStorage.removeItem('orderId')
+        }
+        if(!clearInput){
+            $('#searchID').val('')
+        }
+    }
+
+    // 有内容展示删除图标, 没有内容隐藏图标, 图标删除会和本地存储对比, 相同删除本地存储和输入框内容, 不相同只删除输入框内容
+    $("#searchID").on("input", function() {
+        if(!$(this).val().length) {
+            $('.deleteS').hide()
+        }else {
+            $('.deleteS').show()
+        }
+    });
+
+
+    var timers = null
+    function setTimer() {
+        clearTimeout(timers);
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: $('#searchID').val()
+            }),
+            success: function (res) {
+                if(res.data.length) {
+                    for(var i=0; i<res.data.length; i++) {
+                        var resData = res.data[i]
+                        if(resData.order_status != 60) {
+                            timers = setTimeout(()=>{
+                                setTimer()
+                            },60000)
+                            return
+                        }
+                    }
+                }
+                clearTimeout(timers);
+                query(false)
+            },
+            error: function() {
+                timers = setTimeout(()=>{
+                    setTimer()
+                },60000)
+            }
+        });
+    }
+
+    // $(".block_tips").on('click',function (){
+    //     $(".block_tips").removeClass('active_tips')
+    //     $(this).addClass('active_tips')
+    //     var data = $(this).attr('data-ordertips')
+    //     if(data=='wx'){
+    //         $(".orderTipImg").hide()
+    //         $(".WxOrder").show()
+    //     }else if(data=='ali'){
+    //         $(".orderTipImg").hide()
+    //         $(".AliOrder").show()
+    //     }else if(data=='zh'){
+    //         $(".orderTipImg").hide()
+    //         $(".ZhOrder").show()
+    //     }
+    // })
+
+    $(".fixed-problem").on('click',function (){
+        $(".myProblems").show()
+        $(".mask").show()
+        document.body.style.height = '100vh'
+        document.body.style['overflow-y'] = 'hidden'
+    })
+    $(".p-item").on('click',function (){
+        if($(this).hasClass('activePr')){
+            $(".p-item").removeClass('activePr')
+            $(".p-a").stop(false,true).slideUp(100)
+            return
+        }
+        $(".p-a").stop(false,true).slideUp(100)
+        $(".p-item").removeClass('activePr')
+        $(this).addClass('activePr')
+        $($(this).find('.p-a')).stop(false,true).slideDown(100)
+    })
+
+    $(document).on('click','.report-delete',function (){
+        $(".mask").show();
+        $(".delete_pop").show()
+        $(".delete_pop").attr('data-orderid',$(this).attr('data-orderid'))
+    })
+
+    $(document).on('click', '.downloadPop', function (){
+        $(".mask").show();
+        $(".down_pop").show()
+        $(".down_pop .downBtn a").attr('href',$(this).find('span').attr('data-url'))
+        $(".down_pop .imgBlock p").text($(this).find('span').attr('data-goodsname'))
+    })
+
+    $(".copyBtn").on('click',function (){
+        var text = window.location.href
+        if(text.indexOf('?') != -1) {
+            if(getQueryVariable('oid')){
+                if( getQueryVariable('oid') != $(this).attr('data-oid')){
+                    text = text.replace(getQueryVariable('oid') , $(this).attr('data-oid') )
+                }
+            }else{
+                text += ('&oid=' + $(this).attr('data-oid'))
+            }
+        }else{
+            text +=  ('?oid=' + $(this).attr('data-oid'))
+        }
+        $("#copyInput").val(text)
+        $("#copyInput").select()
+        try {
+            var state = document.execCommand("copy");
+        } catch (err) {
+            var state = false;
+        }
+        if (state) {
+            $(".mask").hide();
+            $(".down_pop").hide()
+            toast('复制成功')
+        } else {
+            $(".mask").hide();
+            $(".down_pop").hide()
+            toast({
+                msg: "复制失败,请手动复制",
+                type: 'error',
+                time: 2000
+            })
+        }
+    })
+
+    $(document).on('click','.SingleDownload .pop_bottom .copyBtn',function (){
+        var text = window.location.href
+        if(text.indexOf('?') != -1) {
+            if(getQueryVariable('oid')){
+                if( getQueryVariable('oid') != $(this).attr('data-oid')){
+                    text = text.replace(getQueryVariable('oid') , $(this).attr('data-oid') )
+                }
+            }else{
+                text += ('&oid=' + $(this).attr('data-oid'))
+            }
+        }else{
+            text +=  ('?oid=' + $(this).attr('data-oid'))
+        }
+        $("#copyInput").val(text)
+        $("#copyInput").select()
+        try {
+            var state = document.execCommand("copy");
+        } catch (err) {
+            var state = false;
+        }
+        if (state) {
+            $(".mask").hide();
+            $(".SingleDownload").hide()
+            toast('复制成功')
+        } else {
+            $(".mask").hide();
+            $(".SingleDownload").hide()
+            toast({
+                msg: "复制失败,请手动复制",
+                type: 'error',
+                time: 2000
+            })
+        }
+    })
+
+    $(".close_downPop").on('click',function (){
+        $(".mask").hide();
+        $(".down_pop").hide()
+    })
+
+    $(".mask").on('click',function (){
+        $(".mask").hide();
+        $(".delete_pop").hide();
+        $(".down_pop").hide()
+    })
+
+    $(".cancel_btn").on('click',function (){
+        $(".mask").hide();
+        $(".delete_pop").hide();
+    })
+
+    $(".determine_btn").on('click',function (){
+        $(".mask").hide();
+        $(".delete_pop").hide();
+        toast({
+            msg: '删除中,请稍后...',
+            type: 'loading',
+            time: 20000
+        })
+        $.ajax({
+            type: 'get',
+            url: urls + '/api/client/order/del?user_token='+ USER_TOKEN +'&orderSn='+ $(".delete_pop").attr('data-orderid') +'&jane_name=' + JANE_NAME,
+            success: function (res) {
+                if (res.code == 200) {
+                    toastNone()
+                    $('#searchID').val( $(".delete_pop").attr('data-orderid') )
+                    query(false)
+                }else {
+                    toast(data.codeMsg)
+                }
+            },
+            error: function () {
+                toast("请求失败!请检查网络")
+            },
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+.outline-level1 {
+  margin-left: 10px;
+}
+.outline-level2 {
+  margin-left: 20px;
+}
+.outline-level3 {
+  margin-left: 30px;
+}
+#editor,
+#editor2 {
+  height: 100%;
+  overflow: auto;
+  outline: 0 !important;
+  color: #333333;
+  line-height: 36px;
+  z-index: 100;
+  position: relative;
+  padding-bottom: 20px;
+}
+#editor::-webkit-scrollbar,
+#editor2::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  border-radius: 10px;
+}
+#editor::-webkit-scrollbar-thumb,
+#editor2::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #adadaba4;
+}
+#editor::-webkit-scrollbar-track,
+#editor2::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #fff;
+}
+.recommendColor {
+  border: solid 1px #7371d6;
+}
+.editorBox {
+  position: relative;
+}
+.editorBox:before {
+  content: attr(placeholder);
+  font-size: 14px;
+  color: #999999;
+  line-height: 21px;
+  padding-top: 6px;
+  position: absolute;
+}
+.outline-title:before {
+  content: attr(data-lvt) " ";
+  opacity: 0.6;
+}
+.outline-lv1 {
+  font-size: 16px;
+}
+.outline-lv2 {
+  padding-left: 13px;
+  font-size: 16px;
+}
+.outline-lv3 {
+  padding-left: 24px;
+  font-size: 14px;
+}
+.outline-lv4 {
+  padding-left: 35px;
+  font-size: 12px;
+}
+.editTitle {
+  border-radius: 10px;
+  border: solid 1px #f2f4fb;
+  padding-left: 15px;
+  width: 680px;
+  position: relative;
+  float: left;
+}
+.editTitle .title {
+  color: #999999;
+  font-size: 14px;
+  margin-right: 14px;
+}
+.editTitle .segmentation {
+  color: #f0f0f0;
+}
+.editTitle .editInput {
+  width: 532px;
+  display: inline-block;
+}
+.editTitle .editInput .form-control {
+  border: 0 !important;
+}
+.editNumber {
+  border-radius: 10px;
+  border: solid 1px #f2f4fb;
+  padding-left: 8px;
+  width: 170px;
+  position: relative;
+  float: left;
+  margin-left: 8px;
+}
+.editNumber .title {
+  color: #999999;
+  font-size: 14px;
+  margin-right: 4px;
+}
+.editNumber .segmentation {
+  color: #f0f0f0;
+}
+.editNumber .editInput {
+  width: 80px;
+  display: inline-block;
+}
+.editNumber .editInput .form-control {
+  border: 0 !important;
+  padding-left: 7px;
+}
+.editButton {
+  float: left;
+  margin-left: 8px;
+  line-height: 18px;
+}
+.editButton button {
+  padding: 9px 23px;
+  background-blend-mode: normal,
+        normal;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.editButton .button1 {
+  color: #fff;
+  background-image: linear-gradient(90deg, #7370d5 0%, #7c98ef 100%), linear-gradient(#ee3b86, #ee3b86);
+  border: solid 1px #ffffff;
+}
+.editButton .button1:hover {
+  background-image: linear-gradient(90deg, #7c98ef 0%, #7370d5 100%), linear-gradient(#ee3b86, #ee3b86);
+}
+.editButton .button2 {
+  border: solid 1px #7579db;
+  color: #7579db;
+  background-color: #fff;
+}
+.editMain {
+  padding: 0 27px;
+  height: calc(100% - 116px);
+  box-sizing: border-box;
+}
+.editMain > div {
+  height: 100%;
+  float: left;
+  width: 50%;
+}
+.editMain .editRight {
+  height: 100%;
+  padding: 16px 0;
+}
+.editMain .haderText b {
+  color: #272e38;
+  font-size: 20px;
+  padding-left: 16px;
+  padding-top: 17px;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+.editMain .haderText p {
+  color: #999999;
+  font-size: 12px;
+}
+.editMain .haderText p span {
+  padding: 2px 4px;
+  background-color: #eee;
+}
+.editMain .haderText .norm {
+  font-size: 14px;
+  color: #7372d6;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+}
+.editMain .haderText :hover .FloatingWindow {
+  display: block;
+}
+.editMain .haderText .FloatingWindow {
+  z-index: 1000;
+  display: none;
+  padding: 14px 20px 24px 20px;
+  font-size: 14px;
+  width: 277px;
+  position: absolute;
+  right: -290px;
+  top: -24px;
+  background-color: #fff;
+  box-shadow: 0px 0px 13px 0px rgba(126, 145, 213, 0.2);
+}
+.editMain .haderText .FloatingWindow .p1 {
+  color: #7372d6;
+  margin-bottom: 10px;
+}
+.editMain .haderText .FloatingWindow .p2 {
+  color: #999999;
+}
+.editMain .haderText .FloatingWindow div {
+  padding: 4px 23px;
+  color: #272e38;
+  background-color: #f5f6f7;
+  margin-bottom: 20px;
+  margin-top: 6px;
+}
+.editMain .editLeft {
+  height: 100%;
+}
+.editMain .leftBoxMain {
+  padding-right: 11px;
+}
+.editMain .rightBoxMain {
+  padding-left: 11px;
+}
+.editMain .editLeft,
+.editMain .editRight {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 13px 0px rgba(225, 225, 225, 0.51);
+  border-radius: 10px;
+  padding: 16px;
+  cursor: pointer;
+}
+.editMain .editLeft:hover,
+.editMain .editRight:hover {
+  box-shadow: 0px 0px 18px 0px rgba(115, 114, 214, 0.23);
+}
+.editMain .editLeft.checked .recommend,
+.editMain .editRight.checked .recommend {
+  border: solid 1px #7372d6;
+}
+.editzdy {
+  overflow: hidden;
+  margin-top: 16px;
+}
+.editzdy .editTips {
+  float: left;
+  display: none;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
+  color: #d81e06;
+  font-weight: bold;
+  background: url('../img/Warning2.png') no-repeat;
+  padding-left: 24px;
+  background-position: 0 50%;
+}
+.editzdy .editTips2 {
+  display: none;
+}
+.editButtons {
+  font-size: 14px;
+  float: right;
+}
+.editButtons div {
+  cursor: pointer;
+}
+.editButtons .prohibit {
+  cursor: auto;
+  border-color: #ccc;
+  color: #ccc;
+}
+.editGenerate {
+  float: right;
+  width: 75px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  line-height: 32px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  user-select: none;
+}
+.checked .editGenerate {
+  background-color: #7371d6;
+  cursor: pointer;
+}
+.anew {
+  float: right;
+  width: 75px;
+  border-radius: 4px;
+  line-height: 30px;
+  text-align: center;
+  border: solid 1px #7579db;
+  color: #7579db;
+  box-sizing: border-box;
+  margin-right: 13px;
+}
+.editai {
+  margin-top: 16px;
+}
+.rightBox {
+  overflow: hidden;
+  width: 100%;
+}
+.editTips2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-right: 0;
+  text-align: center;
+  margin-top: 0;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff6e9;
+  border-radius: 0 0 10px 10px;
+  z-index: 100;
+}
+.editTips2 .WordsText {
+  color: #ff8023;
+}
+.editTips2 img {
+  margin-right: 10px;
+  margin-top: -2px;
+}
+.PageTurning {
+  float: left;
+  margin-right: 20px;
+  margin-top: 2px;
+}
+.PageTurning > div {
+  background-color: #ffffff;
+  border-radius: 4px;
+  display: inline-block;
+}
+.PageTurning .TowardsTheLeft {
+  padding: 4px 10px;
+  margin-right: 6px;
+  font-size: 0;
+  font-size: 14px;
+  color: #ccc;
+  border: 1px solid #ccc;
+}
+.PageTurning .iconImg2,
+.PageTurning .iconImg4 {
+  display: none;
+}
+.PageTurning .TowardsTheRight,
+.PageTurning .Regenerate {
+  padding: 4px 10px;
+  font-size: 0;
+  font-size: 14px;
+  cursor: pointer;
+  color: #ccc;
+  border: 1px solid #ccc;
+}
+.PageTurning .TowardsTheLeft.ok:hover,
+.PageTurning .TowardsTheRight.ok:hover {
+  background-color: #a3a2ff;
+  color: #ffffff;
+  cursor: pointer;
+}
+.PageTurning .ok {
+  border: solid 1px #7579db;
+  color: #7371d6;
+  cursor: pointer;
+}
+.PageTurning .ok .iconImg1 {
+  display: none;
+}
+.PageTurning .ok .iconImg2 {
+  display: inline-block;
+}
+.PageTurning .ok .iconImg3 {
+  display: none;
+}
+.PageTurning .ok .iconImg4 {
+  display: inline-block;
+}
+.editGenerate2 {
+  float: right;
+}
+.editGenerate2.isGenerating {
+  background-color: #e0e0e0;
+  color: #fff;
+  pointer-events: none;
+}
+.delete {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+}
+.recommend {
+  position: relative;
+  height: calc(100% - 106px);
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 13px 0px rgba(242, 244, 251, 0.09);
+  border-radius: 10px;
+  border: solid 1px #f2f4fb;
+  margin-top: 8px;
+  width: 100%;
+  padding-right: 10px;
+}
+.loging {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  z-index: 100;
+}
+.loging img {
+  margin-top: 30%;
+}
+.editGenerate.gray {
+  background-color: #e0e0e0;
+  color: #fff;
+}
+.EditPopup .quantity span {
+  color: #7579db;
+}
+#editor p,
+#editor2 p {
+  min-height: 36px;
+}
+#editor2 {
+  padding-bottom: 20px;
+}
+.recommendColor #ImportantHint {
+  display: none !important;
+}
+#ImportantHint {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-left: 50px;
+  padding-top: 130px;
+  line-height: 32px;
+  color: #333333;
+  font-size: 14px;
+}
+#ImportantHint b {
+  font-size: 16px;
+}
+#ImportantHint .ImportantHintP1 {
+  margin-top: 4px;
+}
+#ImportantHint .ImportantHintP1 span {
+  color: #ff4622;
+}
+#ImportantHint .ImportantHintP2 span {
+  color: #ff4622;
+}
+.editMain .editLeft,
+.editMain .editRight {
+  padding: 0;
+}
+.editMain .editLeft .topTips,
+.editMain .editRight .topTips {
+  padding-left: 16px;
+  margin-top: 10px;
+}
+.editMain .editLeft .zxtopTips,
+.editMain .editRight .zxtopTips {
+  margin-top: 18px;
+}
+.editMain .EditingMainbox {
+  padding: 0 16px 16px 16px;
+  height: calc(100% - 106px);
+}
+.editMain .EditingMainbox .recommend {
+  height: calc(100% - 40px);
+}
+.typeTab {
+  height: 58px;
+  background-image: linear-gradient(0deg, rgba(248, 249, 255, 0.3) 0%, #e5e7fc 65%, #e1e3fb 78%);
+  border-radius: 10px 10px 0 0;
+  color: #5c5e7a;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 58px;
+}
+.typeTab > div {
+  width: 50%;
+  float: left;
+}
+.typeTab .Select {
+  background-color: #ffffff;
+  border-radius: 10px 10px 0px 0px;
+  color: #6765e9;
+  position: relative;
+}
+.typeTab .Select::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #6765e9;
+  border-radius: 1.5px;
+  bottom: 8px;
+  left: 50%;
+  margin-left: -15px;
+}
+.typeTab .RealTimeTips {
+  display: inline-block;
+  position: relative;
+}
+.typeTab .RealTimeTips:hover .TipsText {
+  display: block;
+}
+.typeTab .RealTimeTips .TipsText {
+  display: none;
+  position: absolute;
+  left: 20px;
+  top: 26px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  padding: 12px 22px 12px 12px;
+  font-size: 12px;
+  width: 278px;
+  z-index: 1000;
+  line-height: 16px;
+  color: #ffffff;
+  font-weight: 400;
+}
+.typeTab .tabOption {
+  position: relative;
+}
+.typeTab .LabelBeta {
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  margin-left: 26px;
+  background-color: #ff2828;
+  border-radius: 7.98px 7.98px 8.02px 0px;
+  line-height: normal;
+  padding: 1px 8px;
+  color: #fff;
+}

@@ -1,0 +1,384 @@
+blockquote,
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+  margin: 0;
+  padding: 0;
+}
+/*body,*/
+/*button,*/
+/*input,*/
+/*select,*/
+/*textarea {*/
+/*  font: 12px/1.5 tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;*/
+/*  font-family: "YaHei Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Microsoft, Arial, sans-serif;*/
+/*}*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: courier new, courier, monospace;
+}
+small {
+  font-size: 12px;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+legend {
+  color: #000;
+}
+fieldset,
+img {
+  border: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+button {
+  border-radius: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.realTime {
+  text-align: center;
+  padding: 10px 0;
+}
+.realTime ul,
+.realTime li {
+  list-style: none;
+  overflow: hidden;
+}
+.realTime .box {
+  height: 35px;
+  background: #000;
+  overflow: hidden;
+}
+.realTime .t_news {
+  width: 100%;
+  display: inline-block;
+  height: 82px;
+  color: #333333;
+  padding-left: 10px;
+  margin: 5px 0;
+  overflow: hidden;
+  position: relative;
+}
+.realTime .t_news b {
+  line-height: 30px;
+  font-weight: bold;
+  display: inline-block;
+}
+.realTime .news_li,
+.realTime .swap {
+  line-height: 30px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+}
+.realTime .news_li a,
+.realTime .swap a {
+  color: #333333;
+  text-decoration: none;
+}
+.realTime .swap {
+  top: 108px;
+}
+.SuccessfulCase {
+  color: #999;
+}
+.SuccessfulCase span {
+  color: #4688ff;
+}
+@media (min-width: 768px) {
+  .topNav ul {
+    float: right;
+  }
+  .topNav button {
+    float: right;
+    margin-top: 6px;
+  }
+  .navbar-default .navbar-nav > .active:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    height: 2px;
+    background-color: #159357;
+    width: 33px;
+    margin: auto;
+  }
+  .navbar-default .navbar-nav > .active > a {
+    background-color: transparent;
+  }
+}
+.navbar-default {
+  border: 0;
+  background-color: transparent;
+}
+.bottomMain span {
+  font-size: 16px;
+  color: #999;
+}
+.bottomMain li {
+  color: #666;
+  font-size: 12px;
+  line-height: 40px;
+}
+.erweima {
+  float: left;
+  text-align: center;
+}
+.erweima img {
+  width: 110px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+.erweima .gzh {
+  margin-left: 10px;
+}
+.indexBottom .col-xs-12 .erweima {
+  float: none;
+  display: inline-block;
+}
+.indexBottom .col-xs-12 .gzh {
+  margin-left: 30px;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0;
+}
+.container .container-fluid {
+  padding: 0;
+  height: 66px;
+  line-height: 66px;
+}
+.container .navbar-collapse {
+  padding: 0;
+}
+.container .navbar {
+  margin-bottom: 0;
+}
+.navBox {
+  border-bottom: 1px solid #c5d4ff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navBox a {
+  font-size: 16px;
+}
+.navBox.scrollCS {
+  background-color: #fff;
+  z-index: 100;
+  box-shadow: 0px 0px 27px 3px rgba(142, 142, 146, 0.2);
+}
+.navBox.scrollCS .navbar-default .navbar-nav > .active a {
+  color: #005aff;
+}
+.navBox.scrollCS .navbar-default .navbar-nav > .active:after {
+  background-color: #005aff;
+}
+.navBox.scrollCS .navbar-default .navbar-nav > .active > a,
+.navBox.scrollCS .navbar-default .navbar-nav > .active > a:focus,
+.navBox.scrollCS .navbar-default .navbar-nav > .active > a:hover {
+  color: #005aff;
+}
+.navBox.scrollCS .navbar-default .navbar-nav > li > a:hover {
+  color: #005aff;
+}
+.navBox.scrollCS .navbar-default .navbar-nav > li > a {
+  color: #333333;
+}
+.navbar-default .navbar-nav > .active a {
+  color: #3f3f3f;
+  font-weight: bold;
+}
+.navbar-default .navbar-nav > .active:after {
+  background-color: #3c65ff;
+  height: 2px;
+  border-radius: 2px;
+  position: absolute;
+  left: 25px;
+  bottom: 21px;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: #005aff;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #005aff;
+}
+.navbar > .container-fluid .navbar-brand {
+  margin-left: 0;
+  padding-left: 0;
+}
+.navbar-nav > li > a {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 80px;
+}
+.navbar-brand {
+  height: auto;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #3f3f3f;
+}
+.topNav ul {
+  margin-right: -15px;
+}
+.has-success .form-control:focus,
+.has-success .form-control {
+  border: solid 0.9px #adadad;
+  box-shadow: none;
+}
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+  outline: 0;
+}
+.fiexBox {
+  width: 68px;
+  height: 68px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 11px 1px rgba(44, 98, 254, 0.35);
+  text-align: center;
+  position: fixed;
+  right: 20px;
+  top: 60%;
+  padding-top: 18px;
+  cursor: pointer;
+  z-index: 1000;
+}
+.fiexBox .img2 {
+  display: none;
+}
+.fiexBox p {
+  color: #2c62fe;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.fiexBox:hover {
+  background-color: #3c65ff;
+  box-shadow: 0px 0px 7px 3px rgba(117, 134, 175, 0.1);
+}
+.fiexBox:hover p {
+  color: #fff;
+}
+.fiexBox:hover .img1 {
+  display: none;
+}
+.fiexBox:hover .img2 {
+  display: inline-block;
+}
+.fiexBox {
+  display: none;
+}
+.ForTheRecord {
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 34px;
+}
+.foot {
+  text-align: center;
+  line-height: 63px;
+  border-top: 1px solid #96b3ef;
+  background: #082373;
+}
+.foot a {
+  color: #ffffff;
+  margin-right: 6px;
+}
+.foot img.gongan {
+  width: 18px;
+  margin-right: 4px;
+  margin-top: -2px;
+}
+.quotation {
+  float: right;
+  width: 104px;
+  height: 34px;
+  border-radius: 17px;
+  background-color: #2c62fe;
+  text-align: center;
+  line-height: 34px;
+  color: #fff !important;
+  margin-top: 23px;
+  margin-right: 26px;
+  text-decoration: none !important;
+}
+.quotation:hover {
+  color: #fff;
+}
+.navbar-brand {
+  padding: 20px 15px;
+}
+.nav > li > a {
+  padding: 0 26px;
+}
+/*# sourceMappingURL=common.css.map */

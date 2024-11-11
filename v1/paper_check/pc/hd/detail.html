@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动详情</title>
+    <link rel="shortcut icon" href="../../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="stylesheet" href="../../pc/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/common.css?v=pa24.0030">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/participationActivities.css?v=pa24.0030">
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        var JANE_NAME = 'paper_platform';
+    </script>
+</head>
+<body>
+<div class="home_page clearfix" id="App">
+    <div class="head">
+        <div class="head-content">
+            <div class="logo f-l">
+                <a href="./index.html" target="_self"></a>
+                <img src="../../pc/hd/assets/img/logo.png" alt="">
+            </div>
+            <div class="f-r" id="memberCarrier">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <p class="navigation-top">
+            <span><a href="./index.html">< 返回</a></span>
+        </p>
+        <div id="loader">
+            <div id="shadow"></div>
+            <div id="box"></div>
+        </div>
+        <div class="couponsType-block-loading">
+            <img src="../../pc/hd/assets/img/loading.png" alt="">
+        </div>
+        <div class="couponsType-block">
+        </div>
+        <div class="taskDetails">
+
+            <div class="g_block">
+                <p class="subtitle">你将获得</p>
+                <div class="getS_block">
+                    <div class="coupon-details">
+                        <div class="c_d_top">
+                            <p class="c_d_p1"></p>
+                            <p class="c_d_p2"><span class="c_d_p3"></span></spam><span class="c_d_p4"></span></p>
+                        </div>
+                        <div class="c_d_bottom">
+                            <p class="deadline"></p>
+                        </div>
+                    </div>
+                    <div class="coupon_describe">
+                        <div class="c_db_t">
+                            <p class="c_db_p1">活动时间：<span class="acTime"></span> </p>
+                            <p class="c_db_p1">参与次数：<span class="acFrequency">每个账号仅支持参加一次</span></p>
+                            <p class="c_db_p1">发放方式：<span class="acGrant"></span></p>
+                        </div>
+                        <div class="c_db_cs">
+                            <div class="c_db_csBtn">未完成</div>
+                        </div>
+                        <div class="c_db_wc">
+                            查看券码
+                        </div>
+                        <div class="c_db_csL">
+                            <img src="../../pc/hd/assets/img/loading.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="getS_block-loading">
+                    <img src="../../pc/hd/assets/img/loading.png" alt="">
+                </div>
+            </div>
+            <div class="f_block">
+                <p class="subtitle">你需要做</p>
+                <div class="fulfils_block">
+                    <div class="fulfil_details">
+                        <div class="f_d_img">
+                            <img src="" alt="">
+                            <p class="preview_text show_preview">点击查看大图</p>
+                        </div>
+                        <ul class="f_d_text f_bz">
+                            <li>带上话题 <span class="tag"></span> </li>
+                            <li>发布的视频中确保出现 <span class="f_content"></span>界面或元素，文案不低于<span class="wordNum"></span>字</li>
+                            <li>播放量<span class="num1"></span>以上，点赞<span class="num2"></span>+</li>
+                            <li>发布完成后，需要提供满足上述要求的可访问链接和截图证明</li>
+                        </ul>
+                        <ul class="f_d_text f_dy">
+                            <li>带上话题 <span class="tag"></span> </li>
+                            <li>发布的图文或视频中确保出现 <span class="f_content"></span>界面或元素，文案不低于<span class="wordNum"></span>字</li>
+                            <li>播放量<span class="num1"></span>以上，点赞<span class="num2"></span>+</li>
+                            <li>发布完成后，需要提供满足上述要求的可访问链接和截图证明</li>
+                        </ul>
+                        <ul class="f_d_text f_xhs">
+                            <li>带上话题 <span class="tag"></span> </li>
+                            <li>发布的图文或视频中确保出现 <span class="f_content"></span>界面或元素，文案不低于<span class="wordNum"></span>字</li>
+                            <li>播放量<span class="num1"></span>以上，点赞<span class="num2"></span>+</li>
+                            <li>发布完成后，需要提供满足上述要求的可访问链接和截图证明</li>
+                        </ul>
+                        <ul class="f_d_text f_zh">
+                            <li>打开该知乎问答 <a class="q_url" target="_blank" href=""><span class="tag"></span></a> </li>
+                            <li>在该问答下写关于 <span class="f_content"></span>话题的体验分享，回答内容至少<span class="wordNum"></span>字</li>
+                            <li>回答中至少需要包含一张<span class="num1"></span>界面的图片，点赞<span class="num2"></span>+</li>
+                            <li>发布完成后，需要提供满足上述要求的可访问链接和截图证明</li>
+                        </ul>
+                        <ul class="f_d_text f_gzh">
+                            <li> 打开微信，扫描左侧二维码或直接搜索<span class="tag"></span></li>
+                            <li>点击关注按钮，关注<span class="tag"></span>成功</li>
+                        </ul>
+                    </div>
+                    <div class="fulfil_example">
+                        <span class="example_tag">示例</span>
+                        <img src="../../pc/hd/assets/img/shili_qw.png" alt="">
+                    </div>
+                </div>
+                <div class="fulfils_block-loading">
+                    <img src="../../pc/hd/assets/img/loading.png" alt="">
+                </div>
+            </div>
+            <div class="s_block">
+                <p class="subtitle">提交结果</p>
+                <div class="submit_block hasLink">
+                    <div class="statusImg_block">
+                        <img src="" alt="">
+                        <div class="SIB_mask"></div>
+                        <p class="status_text_i">
+                            <img src="../../pc/hd/assets/img/wait.png" alt="">
+                            审核中
+                        </p>
+                        <p class="status_text_e">
+                            <img src="../../pc/hd/assets/img/fault.png" alt="">
+                            审核失败
+                        </p>
+                        <p class="status_text_s">
+                            <img src="../../pc/hd/assets/img/pass.png" alt="">
+                            审核通过
+                        </p>
+                    </div>
+                    <div class="img_block">
+                        <div class="upload_box uploadBox upload-block">
+                            <input type="file" id="exampleInputFile" accept="image/jpg, image/png, image/jpeg">
+                            <span>+</span>
+                        </div>
+                        <div class="preview_box preview file-block">
+                            <img id="collectionCode" src="" alt="">
+                            <div class="delete-file">
+                                <img class="delete-img" src="../../pc/hd/assets/img/Deletewd.png" alt="">
+                            </div>
+                        </div>
+                        <p class="img_err"></p>
+                    </div>
+                    <div class="uploadImg_text">
+                        <p class="p1">上传截图</p>
+                        <p class="p2">请务必确保按照需要做的步骤进行截图，不要上传无关的图片</p>
+                        <div class="link_block">
+                            <span>链接地址：</span>
+                            <div class="link_input">
+                                <input type="text" id="link" placeholder="请填写分享后的链接（链接必须为可访问地址）">
+                                <span class="submit_link">提交审核</span>
+                            </div>
+                        </div>
+                        <p class="p3">温馨提示：审核失败后，可重新提交审核</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="previewImg">
+    <div class="close_preview">
+        <img src="../../pc/hd/assets/img/closePr.png" alt="">
+    </div>
+    <img src="" alt="">
+</div>
+<div class="mask"></div>
+<div class="coupon_pop">
+    <p class="p_title">您已获得1张<span></span></p>
+    <div class="coupon_performance">
+        <div class="c-t">
+            <p class="c_type_p"></p>
+            <p class="c_name_p"><span class="c_name_p1"></span><span class="c_name_p2"></span></p>
+        </div>
+        <div class="c-b"></div>
+    </div>
+    <p class="p1">您的券码：<span class="c-code"></span><span class="copyT">复制</span></p>
+    <p class="p2">核销地址：<a href="" target="_blank"><span class="link_text"></span></a></p>
+    <input type="text" id="copyInput">
+    <div class="btn_block">
+        <span class="btn_1">我知道了</span>
+        <span class="btn_2">
+            <a href="" target="_blank">去使用</a>
+        </span>
+    </div>
+</div>
+<script src="../../pc/hd/assets/js/jquery.min.js"></script>
+<script src="../../pc/hd/assets/js/coco-message.js"></script>
+<script src="../../pc/hd/assets/js/qrcode.min.js"></script>
+<script src="../../pc/hd/assets/js/html2canvas.min.js"></script>
+<script src="../../pc/hd/assets/js/common.js?v=pa24.0030"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pa24.0030"></script>
+<script>
+
+    var activityObj = {
+        'activity_gzh': {
+            'f_d_img': '../../pc/hd/assets/img/loading2.gif',
+            'example_img': '../../pc/hd/assets/img/shili_qw.png',
+        },
+        'activity_bz': {
+            'f_d_img': '../../pc/hd/assets/img/bilibili.png',
+            'example_img': '../../pc/hd/assets/img/shili_bilibili.png',
+        },
+        'activity_zh': {
+            'f_d_img': '../../pc/hd/assets/img/zhihu.png',
+            'example_img': '../../pc/hd/assets/img/shili_zh.png',
+        },
+        'activity_xhs': {
+            'f_d_img': '../../pc/hd/assets/img/xhs.png',
+            'example_img': '../../pc/hd/assets/img/shili_xhs.png',
+        },
+        'activity_dy': {
+            'f_d_img': '../../pc/hd/assets/img/douyin.png',
+            'example_img': '../../pc/hd/assets/img/shili_dy.png',
+        },
+    }
+
+    function infoSuccess(data) {
+
+    }
+
+    function success_info(e) {
+
+    }
+
+    $(document).on('click', '.coupons-item', function (){
+        $(".coupons-item").removeClass('active')
+        $(this).addClass('active')
+        receiveCoupon()
+        $(".f_d_text").hide()
+        if($(this).attr('data-type') == 'activity_gzh'){
+            $(".s_block").hide()
+            $(".preview_text").addClass('show_preview')
+            // $(".fulfil_example").addClass('gzh')
+            $(".f_d_img").addClass('loading')
+            getWxQrcode()
+            $(".f_d_text.f_gzh").show()
+            $(".f_d_text.f_gzh").css('display', 'inline-block')
+            $(".coupon_describe .acGrant").text('关注成功后，查看券码使用')
+        }else{
+            $(".f_d_img").removeClass('loading')
+            $(".s_block").show()
+            $(".preview_text").removeClass('show_preview')
+            // $(".fulfil_example").removeClass('gzh')
+            $(".coupon_describe .acGrant").text('审核通过后，查看券码使用')
+        }
+        if($(this).attr('data-type') == 'activity_bz'){
+            $(".f_d_text.f_bz").show()
+            $(".f_d_text.f_bz").css('display', 'inline-block')
+        }
+        if($(this).attr('data-type') == 'activity_zh'){
+            $(".f_d_text.f_zh").show()
+            $(".f_d_text.f_zh").css('display', 'inline-block')
+        }
+        if($(this).attr('data-type') == 'activity_xhs'){
+            $(".f_d_text.f_xhs").show()
+            $(".f_d_text.f_xhs").css('display', 'inline-block')
+        }
+        if($(this).attr('data-type') == 'activity_dy'){
+            $(".f_d_text.f_dy").show()
+            $(".f_d_text.f_dy").css('display', 'inline-block')
+        }
+        $(".f_d_img img").attr('src', activityObj[$(this).attr('data-type')].f_d_img)
+        $(".fulfil_example img").attr('src', activityObj[$(this).attr('data-type')].example_img)
+
+        for(var i=0;i<activityInfo.length;i++){
+            if(activityInfo[i].type == $(this).attr('data-type')){
+                $(".coupon-details .c_d_p1").text(activityInfo[i].award[0].type_sec)
+                $(".coupon-details .c_d_p3").text(activityInfo[i].award[0].goods_name)
+                $(".coupon-details .c_d_p4").text( activityInfo[i].award[0].discount)
+                $(".coupon-details .deadline").text( '长期有效' )
+                if(activityInfo[i].award[0].end_time){
+                    $(".coupon_describe .acTime").text( activityInfo[i].award[0].end_time + '截止' )
+                }else{
+                    $(".coupon_describe .acTime").text( '长期有效' )
+                }
+                if($(this).attr('data-type') == 'activity_zh') {
+                    $(".f_d_text .tag").text(activityInfo[i].demand.question_link)
+                    $(".f_d_text .q_url").attr('href',activityInfo[i].demand.question_link)
+                    $(".f_d_text .f_content").text(activityInfo[i].demand.topic)
+                    $(".f_d_text .wordNum").text(activityInfo[i].demand.ask_num)
+                    $(".f_d_text .num1").text(activityInfo[i].demand.content)
+                    $(".f_d_text .num2").text(activityInfo[i].demand.like)
+                }else{
+                    $(".f_d_text .tag").text(activityInfo[i].demand.topic)
+                    $(".f_d_text .f_content").text(activityInfo[i].demand.content)
+                    $(".f_d_text .wordNum").text(activityInfo[i].demand.content_num)
+                    $(".f_d_text .num1").text(activityInfo[i].demand.view_num)
+                    $(".f_d_text .num2").text(activityInfo[i].demand.like)
+                }
+                if( $(this).attr('data-type') == 'activity_gzh'){
+                    $(".f_d_text .tag").text('“'+ activityInfo[i].three_config_name +'”')
+                }
+            }
+        }
+        $(".fulfil_example").css('height', $(".fulfil_details").outerHeight()+'px')
+        $(".fulfil_example").css('line-height', $(".fulfil_details").outerHeight()+'px')
+    })
+
+    $(".show_preview").click(function () {
+        $(".previewImg").show()
+    })
+
+    $(".previewImg").click(function () {
+        $(".previewImg").hide()
+    })
+
+    function complete_info(data , code) {
+        if(code && code == 4003) {
+            location.href = './index.html'
+        }
+        getActivityInfo()
+    }
+
+    var activeType = getQueryVariable('type');
+    var activityInfo = []
+    function getActivityInfo() {
+        $.ajax({
+            type: 'post',
+            url: urls + "/api/client/activity/list?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME + '',
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function success(res) {
+                $(".couponsType-block").show()
+                $(".couponsType-block-loading").hide()
+                $(".getS_block").show()
+                $(".getS_block-loading").hide()
+                $(".fulfils_block").show()
+                $(".fulfils_block-loading").hide()
+                $("#loader").hide()
+                $(".taskDetails").show()
+                if(res.code == '200') {
+                    var activeIndex = ''
+                    var temp = null
+                    for(var j=0;j<res.data.length;j++){
+                        if(res.data[j].type == activeType){
+                            activeIndex = j
+                        }
+                    }
+                    temp = res.data.splice(activeIndex,1)
+                    res.data.unshift(temp[0])
+                    activityInfo = res.data
+                    var element = ''
+                    for(var i=0;i<res.data.length;i++) {
+                        // if(i==0){
+                        //     $(".coupon-details .c_d_p1").text(res.data[i].award[0].type_sec)
+                        //     $(".coupon-details .c_d_p2").text( res.data[i].award[0].goods_name +'  '+ res.data[i].award[0].discount)
+                        //     $(".coupon-details .deadline").text( '长期有效' )
+                        //     $(".coupon_describe .acTime").text( '长期有效' )
+                        // }
+                        if(res.data[i].type != 'activity_tg'){
+                            element += ' <div class="coupons-item" data-type="'+ res.data[i].type +'">\n' +
+                                '                <p class="c-name">'+  res.data[i].award[0].type_sec +'</p>\n' +
+                                '                <p class="c-t-name">'+ res.data[i].award[0].goods_name +'  '+ res.data[i].award[0].discount +'</p>\n' +
+                                '                <div class="taskBrief-block">\n' +
+                                '                    <p class="p-task">'+ res.data[i].type_des +'</p>\n' +
+                                '                    <p class="p-consuming">活动预计耗时：3秒</p>\n' +
+                                '                </div>\n' +
+                                '            </div>'
+                        }
+                    }
+                    $(".couponsType-block").append(element)
+                    $(".coupons-item")[0].click()
+                }else{
+                    cocoMessage.error(res.codeMsg, 2000);
+                }
+            }
+        });
+    }
+    function receiveCoupon() {
+        $(".c_db_csL").show()
+        $(".c_db_cs").hide()
+        $(".c_db_wc").hide()
+        $(".statusImg_block").hide()
+        $(".statusImg_block .status_text_i").hide()
+        $(".statusImg_block .status_text_e").hide()
+        $(".statusImg_block .status_text_s").hide()
+        $(".submit_block").removeClass('successBox')
+        $(".img_block").show()
+        $(".img_block").css('display', 'inline-block')
+        $("#link").val('')
+        $("#link").attr('disabled', false)
+        $(".submit_link").removeClass('submitN')
+        $(".c_db_csBtn").text('未完成')
+        $.ajax({
+            type: 'post',
+            url: urls + "/api/client/activity/getCoupons?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME + '&activity_type='+ $(".coupons-item.active").attr('data-type') +'&applicant=',
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function success(res) {
+                if(res.code == '200') {
+                    if(res.data.status == 4){
+                        $(".c_db_csL").hide()
+                        $(".c_db_wc").show()
+                        $(".statusImg_block>img").attr('src',res.data.image_list[0])
+                        $("#link").val(res.data.act_link)
+                        $("#link").attr('disabled', 'disabled')
+                        // $(".submit_link").addClass('cannotClick')
+                        $(".submit_block").addClass('successBox')
+                        $(".submit_link").addClass('submitN')
+                        $(".img_block").hide()
+                        $(".coupon_pop .c-code").text(res.data.coupon_code)
+                        $(".coupon_pop .p_title span").text(res.data.coupon_type)
+                        $(".coupon_performance .c_type_p").text(res.data.coupon_type)
+                        $(".coupon_performance .c_name_p1").text(res.data.coupon_goods_name)
+                        $(".coupon_performance .c_name_p2").text(res.data.coupon_discount)
+                        $(".coupon-details .c_d_p1").text(res.data.coupon_type)
+                        $(".coupon-details .c_d_p3").text(res.data.coupon_goods_name)
+                        $(".coupon-details .c_d_p4").text(res.data.coupon_discount)
+                        if(res.data.coupon_expired) {
+                            var dataArr = res.data.coupon_expired.split('-')
+                            $(".coupon-details .deadline").text('有效期至 '+dataArr[0]+'年'+dataArr[1]+'月'+dataArr[2]+'日')
+                            $(".coupon_performance .c-b").text('有效期至 '+dataArr[0]+'年'+dataArr[1]+'月'+dataArr[2]+'日')
+                        }else{
+                            $(".coupon_performance .c-b").text( '长期有效' )
+                        }
+                        if(res.data.coupon_use_domain){
+                            $(".coupon_pop .link_text").text(window.location.protocol +'//'+res.data.coupon_use_domain)
+                            $(".coupon_pop .p2 a").attr('href', window.location.protocol +'//'+res.data.coupon_use_domain)
+                            $(".btn_block a").attr('href', window.location.protocol +'//'+res.data.coupon_use_domain)
+                        }else{
+                            $(".coupon_pop .link_text").text(window.location.origin)
+                            $(".coupon_pop .p2 a").attr('href', window.location.origin)
+                            $(".btn_block a").attr('href', window.location.origin)
+                        }
+                        $(".statusImg_block .status_text_s").show()
+                        $(".statusImg_block").show()
+                        $(".statusImg_block").css('display', 'inline-block')
+                    }else{
+                        $(".c_db_csL").hide()
+                        $(".c_db_cs").show()
+                        if(res.data.image_list){
+                            $(".statusImg_block>img").attr('src',res.data.image_list[0])
+                            if(res.data.status == 1){
+                                $("#link").val(res.data.act_link)
+                                $("#link").attr('disabled', 'disabled')
+                                $(".submit_link").addClass('submitN')
+                                $(".img_block").hide()
+                                $(".c_db_csBtn").text('进行中')
+                                $(".statusImg_block .status_text_i").show()
+                            }
+                            if(res.data.status == 3){
+                                $("#link").val(res.data.act_link)
+                                $(".statusImg_block .status_text_e").show()
+                            }
+                            $(".statusImg_block").show()
+                            $(".statusImg_block").css('display', 'inline-block')
+                        }
+                    }
+                    if(res.data.coupon_expired) {
+                        var dataArr = res.data.coupon_expired.split('-')
+                        $(".coupon-details .deadline").text('有效期至 '+dataArr[0]+'年'+dataArr[1]+'月'+dataArr[2]+'日')
+                    }
+                }else if(res.code == '-1'){
+                    $(".c_db_csL").hide()
+                    $(".c_db_cs").show()
+                }else{
+                    $(".c_db_csL").hide()
+                    $(".c_db_cs").show()
+                    cocoMessage.error(res.codeMsg, 2000);
+                }
+            },
+            error: function (err){
+                $(".c_db_csL").hide()
+                $(".c_db_cs").show()
+            }
+        });
+    }
+
+    function getWxQrcode() {
+        $(".f_d_img img").attr('src', '../../pc/hd/assets/img/loading2.gif')
+        activityObj.activity_gzh.f_d_img = '../../pc/hd/assets/img/loading2.gif'
+        $.ajax({
+            type: 'post',
+            url: urls + "/weixin/qr/activity_bind?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&_session_type=user&applicant=",
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function success(res) {
+                if(res.code == '200') {
+                    activityObj.activity_gzh.f_d_img = res.data
+                    if($('.coupons-item.active').attr('data-type') == 'activity_gzh'){
+                        $(".f_d_img").removeClass('loading')
+                        $(".f_d_img img").attr('src', res.data)
+                        $(".previewImg>img").attr('src', res.data)
+                    }
+                }else{
+                    cocoMessage.error(res.codeMsg, 2000);
+                }
+            }
+        });
+    }
+    // getWxQrcode()
+
+    // 图片上传
+    var fid = ''
+    $("#exampleInputFile").on('change',function (e){
+        if($("#exampleInputFile")[0].files[0]){
+            $(".upload-block").hide()
+            $(".file-block").show()
+            $(".voucher_err").removeClass('error')
+
+            var files = e.target.files;
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $(".file-block #collectionCode").attr('src' , e.target.result)
+                }
+                reader.readAsDataURL(file);
+            }
+            var formdata = new FormData()
+            formdata.append('file',  $("#exampleInputFile")[0].files[0])
+            formdata.append('type',  'dist')
+            $.ajax({
+                type: 'POST',
+                url: urls + '/unified/upload/image',
+                processData: false,
+                contentType: false,
+                xhrFields: {
+                    withCredentials: true
+                },
+                data: formdata,
+                success: function (res){
+                    if(res.code == 200){
+                        fid = res.data.path
+                    }else{
+                        if(res.codeMsg){
+                            cocoMessage.error(res.codeMsg, 2000);
+                        }else{
+                            cocoMessage.error('文件上传失败，请重试', 2000);
+                        }
+                        $("#collectionCode_err").text('文件上传失败，请重试')
+                        $("#collectionCode_err").show();
+                    }
+                }
+            })
+        }else{
+            $(".upload-block").show()
+            $(".file-block").hide()
+            fid = ''
+        }
+    })
+
+    $(".delete-img").on('click',function (){
+        $("#exampleInputFile").val('')
+        $("#exampleInputFile").trigger('change')
+    })
+
+    $(".submit_link").click(function (){
+        if(!fid){
+            cocoMessage.error('请上传截图', 2000);
+            return
+        }
+        if(!$("#link").val()){
+            cocoMessage.error('请填写链接地址', 2000);
+            return
+        }
+        var form_data = {
+            'activity_type': $('.coupons-item.active').attr('data-type'),
+            'act_bind_link': $("#link").val(),
+            'image_list[0]': fid,
+            'activity_type': $(".coupons-item.active").attr('data-type'),
+            'applicant': ''
+        }
+        $(".submit_link").text('提交中...')
+        $(".submit_link").addClass('submitN')
+        $.ajax({
+            type: 'post',
+            url: urls + "/api/client/activity/apply?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData(form_data),
+            success: function success(res) {
+                if(res.code == '200') {
+                    $(".submit_link").text('提交审核')
+                    $(".submit_link").removeClass('submitN')
+                    $(".delete-img").click()
+                    $("#link").val('')
+                    receiveCoupon()
+                    cocoMessage.success('提交成功', 2000);
+                }else{
+                    cocoMessage.error(res.codeMsg, 2000);
+                    $(".submit_link").text('提交审核')
+                    $(".submit_link").removeClass('submitN')
+                }
+            },
+            error: function (err) {
+                cocoMessage.error('提交失败，请重试', 2000);
+                $(".submit_link").text('提交审核')
+                $(".submit_link").removeClass('submitN')
+            }
+        });
+    })
+
+    $(".c_db_wc").click(function (){
+        $(".mask").show()
+        $(".coupon_pop").show()
+    })
+
+    $(".btn_block .btn_1").click(function (){
+        $(".mask").hide()
+        $(".coupon_pop").hide()
+    })
+
+    $(".copyT").on('click',function (){
+        var text = $('.coupon_pop .c-code').text()
+        $("#copyInput").val(text)
+        $("#copyInput").select()
+        try {
+            var state = document.execCommand("copy");
+        } catch (err) {
+            var state = false;
+        }
+        if (state) {
+            cocoMessage.success(1000, "复制成功", function() {
+            });
+        } else {
+            cocoMessage.error(1000, "复制失败", function() {
+            });
+        }
+    })
+</script>
+</body>
+</html>

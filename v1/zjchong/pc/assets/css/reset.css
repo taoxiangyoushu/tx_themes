@@ -1,0 +1,220 @@
+@charset "UTF-8";
+/*
+ @author lrg
+ @last-mod-time 20201012
+ */
+
+/***************************global style************************************/
+.hidden-m {
+    display: none;
+}
+.table-m {
+    border-collapse: collapse;
+    table-layout: fixed !important;
+}
+/*文字垂直居中*/
+.table-m>tbody>tr>td,.table-m>thead>tr>th{
+    vertical-align: middle;
+}
+/**带边框的表格*/
+.table-border-m {
+    /*border: 1px solid #ccc;*/
+    border-collapse: collapse;
+    table-layout: fixed !important;
+}
+.table-border-m tr td {
+    border: 1px solid #EBEBEB;
+}
+.table-border-m tr td:first-child {
+    border-left: none !important;
+}
+.table-border-m tr td:last-child {
+    border-right: none !important;
+}
+/*超出自动显示省略号*/
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -icab-text-overflow: ellipsis;
+    -khtml-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+}
+
+.btn.focus,.btn:focus,.btn:hover {
+    text-decoration: none;
+}
+
+/**控制div中的img的css**/
+.div-img {
+    /*外层没有固定高宽的情形*/
+    /*width: 150px;
+    height: 150px;
+    border: 1px solid #ccc;
+    */
+    margin: 0px auto;
+    text-align: center;
+}
+.div-img em {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    height: 100%;
+    vertical-align: middle;
+}
+.div-img img {
+    vertical-align: middle;
+    max-width: 100%;
+    max-height: 100%;
+    /* for IE6 _height: 100%; */
+    _width: 100%;
+}
+
+/*****************************************************************************************/
+/*******页面共用css*******/
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.hide {
+    display: none !important;
+}
+
+body {
+    -ms-overflow-style:scrollbar;/*IE10右侧滚动条会遮挡部分内容*/
+    font-family:微软雅黑,宋体,SimSun,Arial, Helvetica;
+    font-size:14px;
+    margin:0;
+    padding:0;
+    min-width:1200px;
+}
+a{
+    text-decoration: none;
+    outline: none;
+}
+a:link,a:visited{
+    text-decoration: none;
+}
+a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+ol,ul,li,dl{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*override bootstrap style*/
+.container-fluid {
+    padding-right:0;
+    padding-left:0;
+}
+.container-fluid .row{
+    margin-left:0;
+    margin-right:0;
+    padding-right:0;
+    padding-left:0;
+}
+.btn:active.focus, .btn:active:focus,
+.btn.active.focus, .btn.active:focus{
+    outline:none;
+}
+.block1620{
+    margin:0 auto;
+    max-width:1620px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    position: relative;
+}
+
+
+.filePrew {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 40px;
+    width:100%;
+    min-height: 20px;
+    height:100%;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.my-btn:active{
+    background-color: #0858af !important;
+}
+.my-btn:hover{
+    box-shadow: 0 4px 10px -4px #3f51b5;
+}
+
+.my-btn-o {
+    /*background-color: #fd9d3e;*/
+    /*background: linear-gradient(to right, #fc7c3a, #fd9d3e);*/
+}
+.my-btn-o:hover{
+}
+
+/*错误提示*/
+  .cl-message {
+      border-radius: 4px;
+      overflow: hidden;
+      min-width: 100px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid #EBEEF5;
+      position: fixed;
+      left: 50%;
+  //top: 0px;
+      -webkit-transform: translateX(-70%);
+      transform: translateX(-70%);
+      background-color: #edf2fc;
+      -webkit-transition: opacity .3s,top .4s,-webkit-transform .4s;
+      transition: opacity .3s,top .4s,-webkit-transform .4s;
+      transition: opacity .3s,transform .4s,top .4s;
+      transition: opacity .3s,transform .4s,top .4s,-webkit-transform .4s;
+      padding: 15px 15px 15px 20px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      top:-50px;
+      .cl-message__icon{
+          margin-right: 10px;
+          margin-top:-2px;
+          width:16px;
+          height:16px;
+          float:left;
+      }
+      .cl-message__content {
+          margin:0;
+          padding: 0;
+          font-size: 14px;
+          line-height: 1;
+      }
+      &.cl-message--error {
+          background-color: #fef0f0;
+          border-color: #fde2e2;
+          z-index: 2001;
+          .cl-message__icon{
+              background: url(../img/error_24px.png) no-repeat center;
+              background-size: contain;
+          }
+          .cl-message__content {
+              color: #F56C6C;
+          }
+      }
+  }
+.form-control{
+    box-shadow: none;
+}

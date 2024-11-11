@@ -1,0 +1,427 @@
+.bannerBox {
+  background: url('../../img/bg.jpg') no-repeat;
+  background-size: 100%;
+  padding-top: 2.9rem;
+}
+.bannerBox .blodText {
+  color: #001027;
+  font-size: 2.19rem;
+  line-height: 2.6rem;
+}
+.bannerBox .blodText span {
+  color: #005aff;
+}
+.bannerBox .bannerTips {
+  background: url('../../img/subheading-bg.png') no-repeat;
+  color: #ffffff;
+  font-size: 0.81rem;
+  background-size: 100% ;
+  width: 15.47rem;
+  padding: 0.4rem 0;
+  text-align: center;
+  margin: 0.9rem 0;
+}
+.bannerBox .GOSubmit {
+  width: 5.63rem;
+  background-image: linear-gradient(90deg, #3b44ff 0%, #00b4ff 100%);
+  border-radius: 0.78rem;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  padding: 0.4rem;
+  line-height: initial;
+  text-decoration: none;
+}
+.bannerBox .GOSubmitTips {
+  font-size: 0.63rem;
+  color: #7e8088;
+  margin-top: 0.8rem;
+}
+.StepsBox {
+  background-color: #f0f6fc;
+  padding-bottom: 2rem;
+  background: linear-gradient(to right, #f2f7fd, #e4eefa);
+}
+.UniversalHead {
+  text-align: center;
+  padding-top: 2.5rem;
+}
+.UniversalHead b span {
+  font-size: 1.31rem;
+  color: #101329;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+.UniversalHead img {
+  width: 1.47rem;
+  height: 0.44rem;
+}
+.UniversalHead p {
+  color: #7d7e83;
+  font-size: 0.81rem;
+  margin-top: 0.5rem;
+}
+.TodayData {
+  background: url('../../img/kx-bg.png') no-repeat;
+  background-size: 100% 100%;
+  margin-top: 1.56rem;
+  padding-bottom: 0.7rem;
+}
+.TodayData .Quantity {
+  display: flex;
+  justify-content: space-evenly;
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding-top: 0.9rem;
+}
+.TodayData .Quantity b {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.6rem;
+}
+.TodayData .Quantity i {
+  display: inline-block;
+  width: 0.03rem;
+  height: 2.5rem;
+  background-color: #d7e2eb;
+  border-radius: 0.02rem;
+  opacity: 0.8;
+}
+.Stepsdiv {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.7rem 0.9rem 0.6rem 0.9rem;
+  background: url('../../img/a_06.png') no-repeat;
+  background-size: 100% 100%;
+  margin-top: -0.8rem;
+}
+.Stepsdiv > div {
+  width: 50%;
+  font-size: 0.69rem;
+  padding-top: 0.8rem;
+  padding-left: 2.2rem;
+  padding-bottom: 0.78rem;
+}
+.Stepsdiv > div span {
+  color: #005aff;
+}
+.Stepsdiv > div span b {
+  font-weight: bold;
+  font-size: 1.13rem;
+}
+.FiveStepsBox {
+  padding-bottom: 2.5rem;
+}
+.FiveStepsDiv {
+  margin-top: 1.1rem;
+}
+.FiveStepsDiv .FiveStepsTop {
+  display: flex;
+  justify-content: center;
+}
+.FiveStepsDiv .FiveStepsBottom {
+  display: flex;
+  justify-content: center;
+}
+.FiveStepsDiv .card {
+  width: 5.94rem;
+  height: 6.25rem;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 0.22rem 0.09rem rgba(117, 134, 175, 0.1);
+  border-radius: 0.58rem;
+  border: solid 0.03rem rgba(108, 158, 255, 0.2);
+  margin: 0.45rem 0.4rem;
+  position: relative;
+}
+.FiveStepsDiv .icoBox {
+  text-align: center;
+}
+.FiveStepsDiv .icoBox img {
+  width: 2.22rem;
+  height: 2.22rem;
+  margin: 0.81rem 0;
+}
+.FiveStepsDiv .text {
+  text-align: center;
+  background-color: #4688ff;
+  border-radius: 0 0 0.58rem 0.58rem;
+  padding-top: 0.3rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 0.2rem;
+}
+.FiveStepsDiv .text p {
+  color: #c2d8ff;
+  font-size: 0.63rem;
+  margin-bottom: -0.3rem;
+}
+.FiveStepsDiv .text b {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+.ProvideBox {
+  background-color: #f1f8ff;
+  padding-bottom: 1.5rem;
+}
+.ProvideBox .ProvideCard {
+  display: flex;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 0.28rem 0.19rem rgba(136, 161, 207, 0.1);
+  border-radius: 0.63rem;
+  margin-bottom: 1rem;
+}
+.ProvideBox .ProvideCard img {
+  width: 9.38rem;
+  height: 7.25rem;
+}
+.ProvideBox .ProvideCard .textBox {
+  padding: 1.3rem 0.5rem 0 1.34rem;
+  font-size: 0.69rem;
+  color: #999999;
+}
+.ProvideBox .ProvideCard .textBox div {
+  margin-top: 0.4rem;
+}
+.ProvideBox .ProvideCard b {
+  color: #333333;
+  font-size: 0.81rem;
+}
+.ProvideBox .cardBox {
+  margin-top: 1.56rem;
+}
+.ReliableBox {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.ReliableBox .Characters {
+  height: 11.6rem;
+  margin-top: 0.5rem;
+}
+.ReliableMain .cardMain {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.ReliableMain .cardMain .ReliableCard {
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 0.22rem 0.09rem rgba(117, 134, 175, 0.1);
+  border-radius: 0.31rem;
+  width: 47%;
+  margin: 0 1.5%;
+  font-size: 0.69rem;
+  padding-bottom: 1.53rem;
+  margin-bottom: 0.6rem;
+  color: #999;
+}
+.ReliableMain .cardMain img {
+  width: 2.31rem;
+  height: 2.31rem;
+  margin: 1.5rem 0 1.3rem;
+}
+.ReliableMain .cardMain b {
+  color: #333333;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.ReliableMain .cardMain div {
+  margin-top: 0.3rem;
+}
+.SwiperBox {
+  padding-bottom: 1.5rem;
+}
+.ContentQuestion {
+  margin-top: 1.56rem;
+  padding-bottom: 2.3rem;
+}
+.problemCard {
+  background-color: #ffffff;
+  border-radius: 0.31rem;
+  border: solid 1px #dfdfdf;
+  padding: 0 1rem;
+  margin-bottom: 0.94rem;
+}
+.problemCard .Ask {
+  color: #666666;
+  font-size: 0.69rem;
+  padding: 0.63rem 0;
+}
+.problemCard .Ask .q {
+  color: #333333;
+  font-weight: bold;
+}
+.problemCard .Ask img {
+  width: 0.59rem;
+  height: 0.59rem;
+}
+.problemCard .Ask .q2,
+.problemCard .Ask .q3 {
+  width: 80%;
+  display: inline-block;
+  vertical-align: top;
+}
+.problemCard .Answer {
+  font-size: 0.63rem;
+  color: #999999;
+  border-top: 1px solid #dfdfdf;
+  padding: 0.72rem 0 1.06rem 0;
+  display: none;
+}
+.problemCard .Switch {
+  float: right;
+  cursor: pointer;
+}
+.problemCard .Switch .Off {
+  display: none;
+}
+.indexBottom {
+  background: url('../../img/bottom-bg.png') no-repeat;
+  background-size: 100% auto;
+  background-position: 100% 100%;
+  background-color: #f1f8ff;
+}
+.indexBottom #formSubmit {
+  padding-bottom: 0.7rem;
+}
+.indexBottom .SubmitTop {
+  text-align: center;
+  color: #353b53;
+  font-size: 1.31rem;
+  padding-top: 2.63rem;
+  margin-bottom: 1.5rem;
+  background: url('../../img/bottomzs.png') no-repeat;
+  background-position: 100% 50%;
+}
+.indexBottom .SubmitTop p {
+  font-weight: bold;
+}
+.indexBottom .SubmitTop p span {
+  color: #005aff;
+}
+.indexBottom .SubmitContainer {
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 0.28rem 0.19rem rgba(136, 161, 207, 0.1);
+  border-radius: 0.63rem;
+  border: solid 0.03rem #f0f4f7;
+}
+.indexBottom .SubmitContainer .mainHader {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #101329;
+  border-bottom: 1px solid #e1e4ea;
+  padding: 0.97rem 0;
+  padding-left: 1rem;
+}
+.indexBottom .SubmitContainer label {
+  color: #333333;
+  font-size: 0.75rem;
+}
+.indexBottom .SubmitContainer label span {
+  color: #ff0000;
+}
+.indexBottom .Verification {
+  overflow: hidden;
+}
+.indexBottom .Verification .VerificationCode_s {
+  width: calc(100% - 5.8rem);
+  float: left;
+}
+.indexBottom .Verification .VerificationCode {
+  color: #666666 !important;
+  font-size: 0.69rem;
+  background-color: #f4f6f9 !important;
+  border-radius: 0.31rem;
+  border: solid 0.03rem #dcdfe6 !important;
+  box-shadow: none;
+  float: right;
+  padding: 8px 12px;
+}
+.indexBottom .requirements {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0.31rem;
+  border: solid 0.03rem #dcdfe6;
+  padding: 0.5rem;
+  font-size: 0.69rem;
+}
+.indexBottom .button_s {
+  text-align: center;
+}
+.indexBottom .button_s .tj {
+  background-color: #005aff;
+  border-color: #005aff;
+  padding: 0.53rem 1.68rem;
+  outline: 0 !important;
+}
+.indexBottom .Statement {
+  color: #ffffff;
+  font-size: 0.69rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+.tj:hover {
+  box-shadow: 2px 2px 10px #06C;
+}
+.form-control:focus,
+.remark:focus,
+.main .requirements:focus {
+  border-color: #3f83ff;
+  outline: 0;
+  -webkit-box-shadow: inset 0 0.22rem 0.09rem rgba(63, 131, 255, 0.1), 0 0 8px rgba(162, 204, 238, 0.6);
+  box-shadow: 0rem 0rem 0.22rem 0.09rem rgba(63, 131, 255, 0.1);
+}
+.main textarea {
+  border: solid 1px #ccc;
+}
+.navbarBox {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.bannerBox {
+  margin-top: 50px;
+}
+#myModal_s {
+  text-align: center;
+}
+#myModal_s .close {
+  opacity: 1;
+}
+#myModal_s .modal-header {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+#myModal_s .modal-header img {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+#myModal_s .modal-body {
+  padding-top: 0;
+}
+#myModal_s .modal-body img {
+  width: 2.44rem;
+  margin-bottom: 1rem;
+}
+#myModal_s .modal-body p {
+  color: #333333;
+  font-size: 0.75rem;
+}
+#myModal_s .dialogTips {
+  color: #999999;
+  font-size: 0.63rem;
+  margin-top: 1rem;
+}
+#myModal_s .modal-dialog {
+  margin: 2rem;
+  margin-top: 40%;
+}
+#myModal_s .modal-dialog .modal-content {
+  padding-bottom: 1.05rem;
+}
+#full_feature {
+  margin-top: 1.6rem;
+}

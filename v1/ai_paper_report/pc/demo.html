@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>样例</title>
+    <link rel="shortcut icon" href="../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../pc/assets/css/dissertation.css?v=p24.0040">
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
+        var JANE_NAME = 'dsxz';
+    </script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="navigation_bar">
+        <a href="./index.html"><img src="../pc/assets/img/Example_logo.png" alt=""></a>
+    </div>
+    <div id="demoBox"></div>
+    <script src="../pc/demo/data.js?v=p24.0040"></script>
+    <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+    <script src="../pc/assets/js/jquery.min.js?v=p24.0040"></script>
+    <!-- 活动js -->
+    <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0040"></script>
+</body>
+<script>
+    var bylw = {
+        // 样例名称
+        name: '毕业论文样例',
+        // 右侧主题内容
+        content: [
+            {
+                level: '论文内容',// 一级提纲文字
+                key: 'lwnr', // key值
+                hue: 'blue', // 色调
+                imgUrl1: '../pc/assets/img/txt.png?v=p24.0040', // 默认图标
+                imgUrl2: '../pc/assets/img/txt1.png?v=p24.0040', // 选中图表
+                introduce: { // 一级提纲对应的内容介绍
+                    title: '论文内容',
+                    bgImg: '../pc/assets/img/biaoti.png', // 文字左侧图标
+                    details: [
+                        {
+                            "b": '结构严谨，逻辑清晰', // 粗体
+                            "span": '引言到结论，环环相扣、逻辑顺畅。结构科学专业，论点逐步展开与充分论证整体逻辑的连贯、严密。'
+                        },
+                        {
+                            "b": '研究深度，内容丰富',
+                            "span": '研究理论专业，结合领域方向理论框架，核心研究问题分析全面，研究结论科学、可靠。'
+                        },
+                        {
+                            "b": '专业水平，高度价值',
+                            "span": '精准使用专业术语、深度选择研究方法，严格遵循学术写作规范。理论见解新颖，学术参考价值大。'
+                        },
+                    ]
+                },
+                exhibition: [ // 内容图片及标题
+                    {
+                        name: '封面与诚信声明',
+                        key: 'fmycxsm',
+                        content: [
+                            {
+                                name: '封面',
+                                url: '../pc/assets/img/Exampleimg1.png?v=p24.0040'
+                            },
+                            {
+                                name: '诚信声明',
+                                url: '../pc/assets/img/Exampleimg2.png?v=p24.0040'
+                            },
+                        ],
+                    },
+                    {
+                        name: '目录与摘要',
+                        key: 'zyyml',
+                        content: [
+                            {
+                                name: '目录',
+                                url: '../pc/assets/img/Exampleimg4.png?v=p24.0040'
+                            },
+                            {
+                                name: '摘要',
+                                url: '../pc/assets/img/Exampleimg3.png?v=p24.0040'
+                            },
+                        ],
+                    },
+                    {
+                        name: '正文内容（片段）',
+                        key: 'zwnr',
+                        content: [
+                            {
+                                name: '正文内容（片段）',
+                                url: '../pc/assets/img/Exampleimg5.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            },
+            {
+                level: '实证数据',
+                key: 'szsj',
+                hue: 'orange',
+                imgUrl1: '../pc/assets/img/shuju.png?v=p24.0040',
+                imgUrl2: '../pc/assets/img/shuju1.png?v=p24.0040',
+                introduce: {
+                    title: '实证数据',
+                    bgImg: '../pc/assets/img/biaoti2.png',
+                    details: [
+                        {
+                            "b": '实证数据，论证充分',
+                            "span": '通过大量详实的实证数据进行了验证与支撑，对比友商杜撰数据的产品具备强可靠性。结合数据进行深度分析，论文说服力强，逻辑路径清晰，研究结果可靠、可行。'
+                        },
+                        {
+                            "b": '结合数据，甄选图表',
+                            "span": '根据数据特性选择合适的多维数据图表展示数据分布特点，如:根据数据特性针对选择绘制三维图表，直观的展示多维数据情况，方便分析;通过箱体图展示统计数据的概率分布情况。'
+                        }
+                    ]
+                },
+                exhibition: [
+                    {
+                        name: '数据分析图文',
+                        key: 'sjfxtw',
+                        content: [
+                            {
+                                name: '数据分析图文',
+                                url: '../pc/assets/img/Exampleimg6.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            },
+            {
+                level: '内容元素',
+                key: 'nrys',
+                hue: 'purple',
+                imgUrl1: '../pc/assets/img/yuansu.png?v=p24.0040',
+                imgUrl2: '../pc/assets/img/yuansu1.png?v=p24.0040',
+                introduce: {
+                    title: '内容元素',
+                    bgImg: '../pc/assets/img/biaoti3.png',
+                    details: [
+                        {
+                            "b": '详实准确的数据分析表格',
+                            "span": '数据呈现精确、结构设计清晰'
+                        },
+                        {
+                            "b": '结构清晰的流程分析框架',
+                            "span": '分析流程逻辑严密、视觉化解读路径'
+                        },
+                        {
+                            "b": '严谨推导的数学公式模型',
+                            "span": '定量定性分析、研究说服力强'
+                        },
+                        {
+                            "b": '清晰易懂的代码模块示例',
+                            "span": '算法实现高效、代码逻辑简洁明了'
+                        }
+                    ]
+                },
+                exhibition: [
+                    {
+                        name: '流程结构',
+                        key: 'lcjg',
+                        content: [
+                            {
+                                name: '流程结构',
+                                url: '../pc/assets/img/Exampleimg7.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '数学公式模型',
+                        key: 'sxgsmx',
+                        content: [
+                            {
+                                name: '数学公式模型',
+                                url: '../pc/assets/img/Exampleimg8.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '分析表格',
+                        key: 'fxbg',
+                        content: [
+                            {
+                                name: '分析表格',
+                                url: '../pc/assets/img/Exampleimg9.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '代码示例',
+                        key: 'dmsl',
+                        content: [
+                            {
+                                name: '代码示例',
+                                url: '../pc/assets/img/Exampleimg10.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                ]
+            },
+            {
+                level: '论文结尾',
+                key: 'lwjw',
+                hue: 'green',
+                imgUrl1: '../pc/assets/img/jiewei.png?v=p24.0040',
+                imgUrl2: '../pc/assets/img/lunwen1.png?v=p24.0040',
+                introduce: {
+                    title: '论文结尾',
+                    bgImg: '../pc/assets/img/biaoti4.png',
+                    details: [
+                        {
+                            "b": '文献丰富，深度剖析',
+                            "span": '结合大量的最新文献,对相关领域进行创新性研究,内容广度、深度为学术领域的高标准，研究结论科学、可靠。'
+                        },
+                        {
+                            "b": '格式规范，细节完美',
+                            "span": '严格遵循各类学术论文标准,结构完整、格式规范、排版美观。'
+                        }
+                    ]
+                },
+                exhibition: [
+                    {
+                        name: '参考文献与致谢',
+                        key: 'ckwxyzx',
+                        content: [
+                            {
+                                name: '参考文献',
+                                url: '../pc/assets/img/Exampleimg11.png?v=p24.0040'
+                            },
+                            {
+                                name: '致谢',
+                                url: '../pc/assets/img/Exampleimg12.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            },
+        ]
+    }
+
+
+    var ktbg = {
+        // 样例名称
+        name: '开题报告样例',
+        // 右侧主题内容
+        content: [
+            {
+                level: '报告模板',// 一级提纲文字
+                key: 'lwnr', // key值
+                hue: 'blue', // 色调
+                imgUrl1: '../pc/assets/img/muban2.png?v=p24.0040', // 默认图标
+                imgUrl2: '../pc/assets/img/muban1.png?v=p24.0040', // 选中图表
+                introduce: { // 一级提纲对应的内容介绍
+                    title: '报告模板',
+                    bgImg: '../pc/assets/img/biaoti.png', // 文字左侧图标
+                    details: [
+                        {
+                            "b": '结构完整', // 粗体
+                            "span": '涵盖“报告正文”、”完成措施及进度安排“、“主要参考文献“、“指导教师意见“、“答辩小组意见“等所有必要部分，形成一套完备的开题报告框架。'
+                        },
+                        {
+                            "b": '格式规范',
+                            "span": '报告采用了统一的字体、字号与行间距，标题与正文区分明显，确保了文档的整洁与易读性，符合高校开题报告格式标准。'
+                        }
+                    ]
+                },
+                exhibition: [ // 内容图片及标题
+                    {
+                        name: '报告格式',
+                        key: 'bggs',
+                        content: [
+                            {
+                                name: '报告格式',
+                                url: '../pc/assets/img/ktbgExample1.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            },
+            {
+                level: '报告内容',
+                key: 'szsj',
+                hue: 'orange',
+                imgUrl1: '../pc/assets/img/baogao2.png?v=p24.0040',
+                imgUrl2: '../pc/assets/img/baogao1.png?v=p24.0040',
+                introduce: {
+                    title: '报告内容',
+                    bgImg: '../pc/assets/img/biaoti2.png',
+                    details: [
+                        {
+                            "b": '逻辑清晰',
+                            "span": '报告按照清晰的逻辑顺序展开，从研究背景到具体的研究计划，层次分明，易于理解。无论是选题依据还是研究内容，都涵盖了开题报告所需的所有要素，确保了报告的完整性。'
+                        },
+                        {
+                            "b": '内容充实',
+                            "span": '通过精心编排的文章结构，“选题依据“、“研究现状“、“研究内容“、“研究方法“、“可行性分析“，读者能够迅速把握研究的重点与脉络，内容充实、详尽。'
+                        },
+                        {
+                            "b": '论述严谨',
+                            "span": '精准的表述和严谨的论证风格，报告在论证过程中始终保持客观立场，依靠事实进行分析，避免主观臆断，增强研究的可信度，提升了报告的可信度与权威性。'
+                        }
+                    ]
+                },
+                exhibition: [
+                    {
+                        name: '选题依据',
+                        key: 'xtyj',
+                        content: [
+                            {
+                                name: '选题依据',
+                                url: '../pc/assets/img/ktbgExample2.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '研究现状',
+                        key: 'yjxz',
+                        content: [
+                            {
+                                name: '研究现状',
+                                url: '../pc/assets/img/ktbgExample3.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '主要研究内容',
+                        key: 'zyyjnr',
+                        content: [
+                            {
+                                name: '主要研究内容',
+                                url: '../pc/assets/img/ktbgExample4.png?v=p24.0040'
+                            },
+                        ],
+                    },
+                    {
+                        name: '研究方法及分析',
+                        key: 'yjffjfx',
+                        content: [
+                            {
+                                name: '研究方法',
+                                url: '../pc/assets/img/ktbgExample6.png?v=p24.0040'
+                            },
+                            {
+                                name: '可行性分析',
+                                url: '../pc/assets/img/ktbgExample7.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '措施进度及文献',
+                        key: 'csjdjwx',
+                        content: [
+                            {
+                                name: '完成措施及进度安排',
+                                url: '../pc/assets/img/ktbgExample8.png?v=p24.0040'
+                            },
+                            {
+                                name: '参考文献',
+                                url: '../pc/assets/img/ktbgExample9.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            }
+        ]
+    }
+
+
+    var rws = {
+        // 样例名称
+        name: '任务书样例',
+        // 右侧主题内容
+        content: [
+            {
+                level: '任务书内容',// 一级提纲文字
+                key: 'lwnr', // key值
+                hue: 'blue', // 色调
+                imgUrl1: '../pc/assets/img/muban2.png?v=p24.0040', // 默认图标
+                imgUrl2: '../pc/assets/img/muban.png?v=p24.0040', // 选中图表
+                introduce: { // 一级提纲对应的内容介绍
+                    title: '任务书内容',
+                    bgImg: '../pc/assets/img/biaoti.png', // 文字左侧图标
+                    details: [
+                        {
+                            "b": '结构完整', // 粗体
+                            "span": '任务书结构完整，包含“选题来源”、“主要任务和目标”、“主要内容和基本要求”、“完成措施及进度安排”、“参考文献”等任务书所有的必要的要素，保证了学生和导师之间有共同的理解。'
+                        },
+                        {
+                            "b": '清晰可行',
+                            "span": '重点详细描述了任务书的核心问题——如何进行本次研究，具体要完成哪些调研，实验，分析等任务，确保了研究计划的可行性。'
+                        },
+                        {
+                            "b": '内容完整',
+                            "span": '任务书先陈述选题的来源背景，基于背景，明确主要的任务和目标，再进一步展开具体的研究内容与实际的基本要求，形成了完整的研究框架。'
+                        }
+                    ]
+                },
+                exhibition: [ // 内容图片及标题
+                    {
+                        name: '封面及选题来源',
+                        key: 'fmycxsm',
+                        content: [
+                            {
+                                name: '封面',
+                                url: '../pc/assets/img/rwsExample1.png?v=p24.0040'
+                            },
+                            {
+                                name: '选题来源',
+                                url: '../pc/assets/img/rwsExample2.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '任务及内容要求',
+                        key: 'rwjnryq',
+                        content: [
+                            {
+                                name: '主要任务和目标',
+                                url: '../pc/assets/img/rwsExample3.png?v=p24.0040'
+                            },
+                            {
+                                name: '主要内容和基本要求',
+                                url: '../pc/assets/img/rwsExample4.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '预期安排及文献',
+                        key: 'yqapjwx',
+                        content: [
+                            {
+                                name: '预期结果进度安排',
+                                url: '../pc/assets/img/rwsExample5.png?v=p24.0040'
+                            },
+                            {
+                                name: '参考文献',
+                                url: '../pc/assets/img/rwsExample6.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            },
+        ]
+    }
+
+    var qklw = {
+        // 样例名称
+        name: '期刊论文样例',
+        // 右侧主题内容
+        content: [
+            {
+                level: '论文内容',// 一级提纲文字
+                key: 'lwnr', // key值
+                hue: 'blue', // 色调
+                imgUrl1: '../pc/assets/img/txt.png?v=p24.0040', // 默认图标
+                imgUrl2: '../pc/assets/img/txt1.png?v=p24.0040', // 选中图表
+                introduce: { // 一级提纲对应的内容介绍
+                    title: '论文内容',
+                    bgImg: '../pc/assets/img/biaoti.png', // 文字左侧图标
+                    details: [
+                        {
+                            "b": '结构严谨，逻辑清晰', // 粗体
+                            "span": '引言到结论，环环相扣、逻辑顺畅。结构科学专业，论点逐步展开与充分论证，整体逻辑的连贯、严密。'
+                        },
+                        {
+                            "b": '专业水平，高度价值',
+                            "span": '精准使用专业术语、深度选择研究方法，严格遵循学术写作规范。理论见解新颖，学术参考价值大。'
+                        },
+                        {
+                            "b": '文献丰富，深度剖析',
+                            "span": '结合大量的最新文献，对相关领域进行创新性研究，内容广度、深度为学术领域的高标准，研究结论科学、可靠。'
+                        },
+                    ]
+                },
+                exhibition: [ // 内容图片及标题
+                    {
+                        name: '摘要',
+                        key: 'zy',
+                        content: [
+                            {
+                                name: '摘要',
+                                url: '../pc/assets/img/qklwExample1.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '正文内容 (片段）',
+                        key: 'zwnr',
+                        content: [
+                            {
+                                name: '正文内容 (片段）',
+                                url: '../pc/assets/img/qklwExample3.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '参考文献',
+                        key: 'ckwx',
+                        content: [
+                            {
+                                name: '参考文献',
+                                url: '../pc/assets/img/qklwExample2.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            },
+            {
+                level: '实证数据',
+                key: 'szsj',
+                hue: 'orange',
+                imgUrl1: '../pc/assets/img/shuju.png?v=p24.0040',
+                imgUrl2: '../pc/assets/img/shuju1.png?v=p24.0040',
+                introduce: {
+                    title: '实证数据',
+                    bgImg: '../pc/assets/img/biaoti2.png',
+                    details: [
+                        {
+                            "b": '实证数据，论证充分',
+                            "span": '通过大量详实的实证数据进行了验证与支撑，对比友商杜撰数据的产品具备强可靠性。结合数据进行深度分析，论文说服力强，逻辑路径清晰，研究结果可靠、可行。'
+                        },
+                        {
+                            "b": '结合数据，甄选图表',
+                            "span": '根据数据特性选择合适的多维数据图表展示数据分布特点，如：根据数据特性针对选择绘制三维图表，直观的展示多维数据情况，方便分析；通过箱体图展示统计数据的概率分布情况。'
+                        }
+                    ]
+                },
+                exhibition: [
+                    {
+                        name: '数据分析图文',
+                        key: 'sjfxtw',
+                        content: [
+                            {
+                                name: '数据分析图片',
+                                url: '../pc/assets/img/qklwExample4.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            },
+            {
+                level: '内容元素',
+                key: 'nrys',
+                hue: 'purple',
+                imgUrl1: '../pc/assets/img/yuansu.png?v=p24.0040',
+                imgUrl2: '../pc/assets/img/yuansu1.png?v=p24.0040',
+                introduce: {
+                    title: '内容元素',
+                    bgImg: '../pc/assets/img/biaoti3.png',
+                    details: [
+                        {
+                            "b": '详实准确的数据分析表格',
+                            "span": '数据呈现精确、结构设计清晰'
+                        },
+                        {
+                            "b": '结构清晰的流程分析框架',
+                            "span": '分析流程逻辑严密、视觉化解读路径'
+                        },
+                        {
+                            "b": '严谨推导的数学公式模型',
+                            "span": '定量定性分析、研究说服力强'
+                        },
+                        {
+                            "b": '清晰易懂的代码模块示例',
+                            "span": '算法实现高效、代码逻辑简洁明了'
+                        }
+                    ]
+                },
+                exhibition: [
+                    {
+                        name: '流程结构',
+                        key: 'lcjg',
+                        content: [
+                            {
+                                name: '流程结构',
+                                url: '../pc/assets/img/Exampleimg7.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '数学公式模型',
+                        key: 'sxgsmx',
+                        content: [
+                            {
+                                name: '数学公式模型',
+                                url: '../pc/assets/img/Exampleimg8.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '分析表格',
+                        key: 'fxbg',
+                        content: [
+                            {
+                                name: '分析表格',
+                                url: '../pc/assets/img/Exampleimg9.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '代码示例',
+                        key: 'dmsl',
+                        content: [
+                            {
+                                name: '代码示例',
+                                url: '../pc/assets/img/Exampleimg10.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                ]
+            }
+        ]
+    }
+
+    var wxzs = {
+        // 样例名称
+        name: '文献综述样例',
+        // 右侧主题内容
+        content: [
+            {
+                level: '文献综述内容',// 一级提纲文字
+                key: 'lwnr', // key值
+                hue: 'blue', // 色调
+                imgUrl1: '../pc/assets/img/muban2.png?v=p24.0040', // 默认图标
+                imgUrl2: '../pc/assets/img/muban1.png?v=p24.0040', // 选中图表
+                introduce: { // 一级提纲对应的内容介绍
+                    title: '文献综述内容',
+                    bgImg: '../pc/assets/img/biaoti.png', // 文字左侧图标
+                    details: [
+                        {
+                            "b": '文献相关，全面准确', // 粗体
+                            "span": '参考文献全面，涵盖该领域的主流观点、最新进展以及争议焦点。具有代表性能准确反映该领域的核心研究成果。'
+                        },
+                        {
+                            "b": '层次分明，清晰连贯',
+                            "span": '主次分明，重点突出，各部分之间紧密相连，形成有机整体。不同文献的观点、数据和结论巧妙串联。'
+                        },
+                        {
+                            "b": '简洁流畅，准确清晰',
+                            "span": '运用的语言表达观点，简洁流畅，避免模糊不清或产生歧义。术语专业恰当，简洁的文字传达丰富的信息，言简意赅，重点突出。'
+                        }
+                    ]
+                },
+                exhibition: [ // 内容图片及标题
+                    {
+                        name: '前言',
+                        key: 'qy',
+                        content: [
+                            {
+                                name: '前言',
+                                url: '../pc/assets/img/wxzsExample1.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '正文内容 (片段）',
+                        key: 'zwnr',
+                        content: [
+                            {
+                                name: '正文内容 (片段）',
+                                url: '../pc/assets/img/wxzsExample3.png?v=p24.0040'
+                            },
+                        ],
+                    },
+                    {
+                        name: '参考文献',
+                        key: 'ckwx',
+                        content: [
+                            {
+                                name: '参考文献',
+                                url: '../pc/assets/img/wxzsExample2.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            },
+        ]
+    }
+
+    var sjbg = {
+        // 样例名称
+        name: '实践报告样例',
+        // 右侧主题内容
+        content: [
+            {
+                level: '实践报告内容',// 一级提纲文字
+                key: 'lwnr', // key值
+                hue: 'blue', // 色调
+                imgUrl1: '../pc/assets/img/muban2.png?v=p24.0040', // 默认图标
+                imgUrl2: '../pc/assets/img/muban.png?v=p24.0040', // 选中图表
+                introduce: { // 一级提纲对应的内容介绍
+                    title: '实践报告内容',
+                    bgImg: '../pc/assets/img/biaoti.png', // 文字左侧图标
+                    details: [
+                        {
+                            "b": '结构完整', // 粗体
+                            "span": '报告结构完整，从实践背景与目的出发，详细描述了实习期间的具体实践内容，并在最后进行了总结与展望，内容连贯完整。'
+                        },
+                        {
+                            "b": '内容质量',
+                            "span": '实习目的清晰，目标明确，合理可行，实习内容丰富、全面具体，工作内容分析深入。'
+                        },
+                        {
+                            "b": '文字通顺',
+                            "span": '报告语言流畅，用词准确，逻辑连贯，过渡自然，内容有条理，便于理解。'
+                        }
+                    ]
+                },
+                exhibition: [ // 内容图片及标题
+                    {
+                        name: '报告封面',
+                        key: 'bgfm',
+                        content: [
+                            {
+                                name: '报告封面',
+                                url: '../pc/assets/img/sjbgExample1.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '实践背景与内容',
+                        key: 'sjbjybr',
+                        content: [
+                            {
+                                name: '背景目的',
+                                url: '../pc/assets/img/sjbgExample2.png?v=p24.0040'
+                            },
+                            {
+                                name: '实践内容',
+                                url: '../pc/assets/img/sjbgExample3.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '实践感悟与总结',
+                        key: 'sjgwyzj',
+                        content: [
+                            {
+                                name: '收获感悟',
+                                url: '../pc/assets/img/sjbgExample4.png?v=p24.0040'
+                            },
+                            {
+                                name: '总结展望',
+                                url: '../pc/assets/img/sjbgExample5.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            },
+        ]
+    }
+
+    var aigc = {
+        // 样例名称
+        name: '降AIGC率样例',
+        // 右侧主题内容
+        content: [
+            {
+                level: '内容比对示例',// 一级提纲文字
+                key: 'lwnr', // key值
+                hue: 'blue', // 色调
+                imgUrl1: '../pc/assets/img/muban2.png?v=p24.0040', // 默认图标
+                imgUrl2: '../pc/assets/img/muban1.png?v=p24.0040', // 选中图表
+                introduce: { // 一级提纲对应的内容介绍
+                    title: '内容比对示例',
+                    bgImg: '../pc/assets/img/biaoti.png', // 文字左侧图标
+                    details: [
+                        {
+                            "b": '结构严谨，逻辑清晰', // 粗体
+                            "span": '引言到结论，环环相扣、逻辑顺畅。结构科学专业，论点逐步展开与充分论证整体逻辑的连贯、严密。'
+                        },
+                        {
+                            "b": '研究深度，内容丰富',
+                            "span": '研究理论专业，结合领域方向理论框架，核心研究问题分析全面，研究结论科学、可靠。'
+                        },
+                        {
+                            "b": '专业水平，高度价值',
+                            "span": '精准使用专业术语、深度选择研究方法，严格遵循学术写作规范。理论见解新颖，学术参考价值大。'
+                        },
+                    ]
+                },
+                exhibition: [ // 内容图片及标题
+                    {
+                        name: '内容片段',
+                        key: 'nrdb',
+                        content: [
+                            {
+                                name: '封面',
+                                url: '../pc/assets/img/jaigcExample1.png?v=p24.0040'
+                            },
+                        ],
+                    }
+                ]
+            },
+            {
+                level: '格式比对示例',
+                key: 'szsj',
+                hue: 'orange',
+                imgUrl1: '../pc/assets/img/baogao2.png?v=p24.0040',
+                imgUrl2: '../pc/assets/img/baogao1.png?v=p24.0040',
+                introduce: {
+                    title: '排版格式比对示例',
+                    bgImg: '../pc/assets/img/biaoti2.png',
+                    details: [
+                        {
+                            "b": '实证数据，论证充分',
+                            "span": '通过大量详实的实证数据进行了验证与支撑，对比友商杜撰数据的产品具备强可靠性。结合数据进行深度分析，论文说服力强，逻辑路径清晰，研究结果可靠、可行。'
+                        },
+                        {
+                            "b": '结合数据，甄选图表',
+                            "span": '根据数据特性选择合适的多维数据图表展示数据分布特点，如:根据数据特性针对选择绘制三维图表，直观的展示多维数据情况，方便分析;通过箱体图展示统计数据的概率分布情况。'
+                        }
+                    ]
+                },
+                exhibition: [
+                    {
+                        name: '图表',
+                        key: 'pbgsbd',
+                        content: [
+                            {
+                                name: '图表',
+                                url: '../pc/assets/img/jaigcExample2.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '公式',
+                        key: 'gs',
+                        content: [
+                            {
+                                name: '公式',
+                                url: '../pc/assets/img/jaigcExample3.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '表格',
+                        key: 'bg',
+                        content: [
+                            {
+                                name: '表格',
+                                url: '../pc/assets/img/jaigcExample4.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            },
+            {
+                level: '批注版示例',
+                key: 'nrys',
+                hue: 'purple',
+                imgUrl1: '../pc/assets/img/yuansu.png?v=p24.0040',
+                imgUrl2: '../pc/assets/img/yuansu1.png?v=p24.0040',
+                introduce: {
+                    title: '批注版示例',
+                    bgImg: '../pc/assets/img/biaoti3.png',
+                    details: [
+                        {
+                            "b": '详实准确的数据分析表格',
+                            "span": '数据呈现精确、结构设计清晰'
+                        },
+                        {
+                            "b": '结构清晰的流程分析框架',
+                            "span": '分析流程逻辑严密、视觉化解读路径'
+                        },
+                        {
+                            "b": '严谨推导的数学公式模型',
+                            "span": '定量定性分析、研究说服力强'
+                        },
+                        {
+                            "b": '清晰易懂的代码模块示例',
+                            "span": '算法实现高效、代码逻辑简洁明了'
+                        }
+                    ]
+                },
+                exhibition: [
+                    {
+                        name: '批注片段',
+                        key: 'pzssl',
+                        content: [
+                            {
+                                name: '流程结构',
+                                url: '../pc/assets/img/jaigcExample5.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            }
+        ]
+    }
+
+    var dbppt = {
+        // 样例名称
+        name: '答辩PPT样例',
+        // 右侧主题内容
+        content: [
+            {
+                level: '答辩PPT内容',// 一级提纲文字
+                key: 'lwnr', // key值
+                hue: 'blue', // 色调
+                imgUrl1: '../pc/assets/img/muban2.png?v=p24.0040', // 默认图标
+                imgUrl2: '../pc/assets/img/muban.png?v=p24.0040', // 选中图表
+                introduce: { // 一级提纲对应的内容介绍
+                    title: '答辩PPT内容',
+                    bgImg: '../pc/assets/img/biaoti.png', // 文字左侧图标
+                    details: [
+                        {
+                            "b": '逻辑编排与核心观点', // 粗体
+                            "span": '整个PPT在真实还原论文内容的基础上进行了深度的逻辑编排，内容完整保留了原论文的核心观点。页面观点明确，论证过程严谨，逻辑链条完整。'
+                        },
+                        {
+                            "b": '排版结构与内容过渡',
+                            "span": 'PPT按照“研究背景”、“研究目标”、“研究方法”、“研究成果”、“总结展望”的逻辑顺序展开，各部分之间过渡自然，衔接紧密，形成一个有机的整体。'
+                        },
+                        {
+                            "b": '设计风格与视觉效果',
+                            "span": '整体设计风格简洁大方，配色方案合适，对比度高、视觉舒适。字体大小适中，标题与正文区分明显，便于阅读。页面布局合理，元素排列整齐。'
+                        }
+                    ]
+                },
+                exhibition: [ // 内容图片及标题
+                    {
+                        name: '封面及目录',
+                        key: 'fmjml',
+                        content: [
+                            {
+                                name: '封面',
+                                url: '../pc/assets/img/dbpptExample1.png?v=p24.0040'
+                            },
+                            {
+                                name: '目录',
+                                url: '../pc/assets/img/dbpptExample2.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '背景与问题',
+                        key: 'bjywt',
+                        content: [
+                            {
+                                name: '背景与问题',
+                                url: '../pc/assets/img/dbpptExample3.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '研究目标',
+                        key: 'yjmb',
+                        content: [
+                            {
+                                name: '研究目标',
+                                url: '../pc/assets/img/dbpptExample4.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '设计过程',
+                        key: 'sjgc',
+                        content: [
+                            {
+                                name: '设计过程',
+                                url: '../pc/assets/img/dbpptExample5.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '研究与结论',
+                        key: 'yjyjl',
+                        content: [
+                            {
+                                name: '研究与结论',
+                                url: '../pc/assets/img/dbpptExample6.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '总结与致谢',
+                        key: 'zjyzx',
+                        content: [
+                            {
+                                name: '总结与致谢',
+                                url: '../pc/assets/img/dbpptExample7.png?v=p24.0040'
+                            }
+                        ],
+                    } 
+                ]
+            },
+        ]
+    }
+
+    var dybg = {
+        // 样例名称
+        name: '调研报告样例',
+        // 右侧主题内容
+        content: [
+            {
+                level: '调研报告内容',// 一级提纲文字
+                key: 'lwnr', // key值
+                hue: 'blue', // 色调
+                imgUrl1: '../pc/assets/img/muban2.png?v=p24.0040', // 默认图标
+                imgUrl2: '../pc/assets/img/muban.png?v=p24.0040', // 选中图表
+                introduce: { // 一级提纲对应的内容介绍
+                    title: '调研报告内容',
+                    bgImg: '../pc/assets/img/biaoti.png', // 文字左侧图标
+                    details: [
+                        {
+                            "b": '目标明确，问题精准', // 粗体
+                            "span": '调研目标明确具体，具有明确性和价值导向。调研问题设计贴合调研目的，具备针对性与重要性，问题表述清晰。'
+                        },
+                        {
+                            "b": '分析深入，结论准确',
+                            "span": '数据分析部分，应用了恰当的分析方法，对数据进行了深入处理和解释。'
+                        },
+                        {
+                            "b": '逻辑严密，论证无瑕',
+                            "span": '逻辑框架清晰，各部分联系紧密。论证过程完善，结论证据支持充分。'
+                        }
+                    ]
+                },
+                exhibition: [ // 内容图片及标题
+                    {
+                        name: '报告封面',
+                        key: 'bgfm',
+                        content: [
+                            {
+                                name: '报告封面',
+                                url: '../pc/assets/img/dybgExample1.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '目录与摘要',
+                        key: 'mlyzy',
+                        content: [
+                            {
+                                name: '目录',
+                                url: '../pc/assets/img/dybgExample2.png?v=p24.0040'
+                            },
+                            {
+                                name: '摘要',
+                                url: '../pc/assets/img/dybgExample3.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '正文内容 (片段)',
+                        key: 'zwnr',
+                        content: [
+                            {
+                                name: '正文内容 (片段)',
+                                url: '../pc/assets/img/dybgExample4.png?v=p24.0040'
+                            }
+                        ],
+                    }
+                ]
+            },
+        ]
+    }
+
+    var kclw = {
+        // 样例名称
+        name: '课程论文样例',
+        // 右侧主题内容
+        content: [
+            {
+                level: '课程论文内容',// 一级提纲文字
+                key: 'lwnr', // key值
+                hue: 'blue', // 色调
+                imgUrl1: '../pc/assets/img/muban2.png?v=p24.0040', // 默认图标
+                imgUrl2: '../pc/assets/img/muban.png?v=p24.0040', // 选中图表
+                introduce: { // 一级提纲对应的内容介绍
+                    title: '课程论文内容',
+                    bgImg: '../pc/assets/img/biaoti.png', // 文字左侧图标
+                    details: [
+                        {
+                            "b": '学术深度，见解独到', // 粗体
+                            "span": '学术功底深厚，对已有理论进行了深入剖析，观点新颖，见解独特。'
+                        },
+                        {
+                            "b": '紧扣主题，方向明确',
+                            "span": '始终围绕课程的核心内容展开，研究的相关性和针对性高。'
+                        },
+                        {
+                            "b": '结构合理，层次分明',
+                            "span": '从引言到结论，论文结构紧凑有序，每一部分都层次分明，逻辑关系紧密。'
+                        }
+                    ]
+                },
+                exhibition: [ // 内容图片及标题
+                    {
+                        name: '封面与目录',
+                        key: 'fmycxsm',
+                        content: [
+                            {
+                                name: '封面',
+                                url: '../pc/assets/img/kclwExample1.png?v=p24.0040'
+                            },
+                            {
+                                name: '目录',
+                                url: '../pc/assets/img/kclwExample2.png?v=p24.0040'
+                            }
+                        ],
+                    },
+                    {
+                        name: '正文内容 (片段)',
+                        key: 'rwjnryq',
+                        content: [
+                            {
+                                name: '正文内容 (片段）',
+                                url: '../pc/assets/img/kclwExample3.png?v=p24.0040'
+                            },
+                        ],
+                    }
+                ]
+            },
+        ]
+    }
+
+
+    function getQueryVariable(variable){
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if(pair[0] == variable){return decodeURI(pair[1]);}
+        }
+        return(false);
+    }
+    var data = {
+        'bylw': bylw,
+        'ktbg': ktbg,
+        'rws': rws,
+        'qklw':qklw,
+        'wxzs':wxzs,
+        'sjbg':sjbg,
+        'aigc':aigc,
+        'dbppt':dbppt,
+        'dybg':dybg,
+        'kclw':kclw
+        
+    }
+    var paramValue = getQueryVariable('type')
+    if(paramValue==''){
+        data[paramValue]=bylw
+    }
+    var nameText = data[paramValue].name
+    var content = data[paramValue].content
+
+    
+
+    // 组装html
+    var text = ''
+    text += "<div class=\"Sample_Graduation_Thesis\" id=\"Sample_Graduation\">";
+    text +=     catalogue(content) // 左侧导航
+    text += "   <div class=\"All_contentsample\" id=\"gaodu\">";
+    text +=         HeadNavigation(nameText) // 头部导航
+    text +=         MainContent(content) // 右侧内容
+    text += "   </div>";
+    text += "</div>";
+    $('#demoBox').append(text)
+
+    function catalogue(content) { // 左侧导航html整理
+        var text = ''
+        text += "<div class=\"Example_leftnavigation\">";
+        for(var i=0; i<content.length; i++) {
+            // 一级目录
+            text += "<!-- 左侧导航 -->";
+            text += "<div id=\""+content[i].key+"\" class=\"Left_style Suspended_content_paper\">";
+            text += "    <div class=\"Left_stylehead " +(i==0 ? 'selectedSiblingsClass':'')+"\">"; // selectedSiblingsClass
+            text += "        <span class=\"pictures_displaying\"><img src=\""+content[i].imgUrl1+"\" alt=\"\">"+content[i].level+"</span>";
+            text += "        <span class=\"Image_hiding\"><img src=\""+content[i].imgUrl2+"\" alt=\"\">"+content[i].level+"</span>";
+            text += "    </div>";
+
+            // 二级目录
+            var exhibition = content[i].exhibition
+            for(var t=0; t<exhibition.length; t++) {
+                text += "    <a href=\"#"+exhibition[t]['key']+"\"><span class=\"abstract classChange "+(t==0&&i==0?'selectedClass':'')+" \" id=\""+exhibition[t]['key']+"Id\" data-a=\"1\">"+exhibition[t].name+"</span></a>"; // selectedClass
+            }
+
+            if(i<content.length-1) {
+                text += "    <li class=\"Title_Down\"></li>";
+            }
+            text += "</div>";
+        }
+        text += "</div>";
+        return text
+    }
+
+    function HeadNavigation(nameText) { // 头部导航html整理
+        var text = ''
+        text += "<!-- 头部导航 -->";
+        text += "<div class=\"Head_navigation\">";
+        text += "    <div class=\"Head_navDIV\">";
+        text += "        <div class=\"Detailed_explanation\">"+nameText+"</div>";
+        text += "        <!-- <div class=\"Product_Comparison\">产品对比</div>  -->";
+        text += "    </div>";
+        text += "</div>";
+        return text;
+    }
+
+    function MainContent(content) { // 右侧html整理
+        var text = ''
+        text += "<!-- 右侧内容 -->";
+        text += "<div class=\"Right_side_content\">";
+        text += "    <!-- 内容 -->";
+        text += "    <div class=\"content_body dialogBox\" id=\"Content_sliding\">";
+        text += "       <div class=\"Details_papercontent\">";
+        for(var i=0; i<content.length; i++) {
+            var introduce = content[i].introduce
+            var exhibition = content[i].exhibition
+
+            for(var o=0; o<exhibition.length; o++) {
+                var orientationID = exhibition[o]['key']
+                var NavigationClass = 'serialNumber'
+                // 第一级 · 目录介绍
+                if(o==0 && introduce) {
+                    text += "<div id=\""+orientationID+"\" class=\""+NavigationClass+"\">";
+                    text += "       <div>";
+                    text += "           <div class=\"content_validity\">";
+                    text += "               <div class=\"content_valhead Color_paper_contenthead\">";
+                    text += "                   <img src=\""+introduce.bgImg+"\" alt=\"\">";
+                    text += "                   <span>"+introduce.title+"</span>";
+                    text += "               </div>";
+                    text += "               <div class=\"content_valbody Color_paper_contentbody\">";
+                    for(var t=0; t<introduce.details.length; t++) {
+                        text += "               <li><span>"+introduce.details[t].b+"</span><span style=\"width: calc(100% - "+ (introduce.details[t].b.length+5)*12 +"px)\">"+introduce.details[t].span+"</span>";
+                        text += "               </li>";
+                    }
+                    text += "               </div>";
+                    text += "           </div>";
+                    text += "       </div>";
+                    orientationID = ''
+                    NavigationClass = ''
+                }
+
+                // 第二级 · 内容图片
+                text += "<div id=\""+orientationID+"\" class=\""+NavigationClass+"\">";
+                var imgContent = exhibition[o].content
+                var className = imgContent.length>1? 'widthOneHalf' : 'widthAll'
+                for(var q=0; q<imgContent.length; q++) {
+                    text += "    <div class=\"Image_Introduction spacing_box "+className+"\">";
+                    text += "        <img alt=\"\" src=\""+imgContent[q].url+"\">";
+                    text += "        <span class=\"catalogue catalogue_content_color\">"+imgContent[q].name+"</span>";
+                    text += "    </div>";
+                }
+                text += "</div>";
+
+                if(!orientationID) {
+                    text += "</div>";
+                }
+            }
+        }
+        text += "       </div>";
+        text += "    </div>";
+        text += "</div>";     
+        return text;
+    }
+    $(document).ready(function () {
+        $("#Content_sliding").scroll(function () {
+            $(".classChange").removeClass("selectedClass");
+            $(".Left_stylehead").removeClass("selectedSiblingsClass");
+             if($("#Content_sliding").scrollTop()>=($(".Details_papercontent").height() - $("#Content_sliding").height())) {
+                 $("#" + $(".serialNumber:last").attr("id") + "Id").addClass("selectedClass");
+                  $("#" + $(".serialNumber:last").attr("id") + "Id")
+                  .parent()
+                  .siblings(".Left_stylehead")
+                  .addClass("selectedSiblingsClass");
+                    return false
+                }
+
+            $(".serialNumber").each(function () {
+                $(".classChange").removeClass("selectedClass");
+                $(".Left_stylehead").removeClass("selectedSiblingsClass");
+                // 将当前元素距离顶部变成正数和本身元素高度对比
+                if (($("#" + $(this).attr("id")).position().top * -1) <= ($("#" + $(this).attr("id")).height() - 220)) {
+                    $("#" + $(this).attr("id") + "Id").addClass("selectedClass");
+                    $("#" + $(this).attr("id") + "Id")
+                        .parent()
+                        .siblings(".Left_stylehead")
+                        .addClass("selectedSiblingsClass");
+                    return false;
+                }
+            });
+        });
+    });
+
+    window.onload = function () {
+        document.title = nameText;
+    };
+</script>
+
+</html>

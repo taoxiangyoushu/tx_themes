@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 为移动设备添加 viewport；-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 指定请求和响应遵循的缓存机制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Master AI率检测</title>
+    <meta name="description" content="Master Ai率检测可以区分人工编写的内容和AI模型生成的文本。Master Ai率检测系统快速生成报告，识别文本AIGC值的高低 ，提示文本内容可能由AI生成。"/>
+    <meta name="keywords" content="Master AI率检测,AI检测,AIGC检测"/>
+    <link rel="shortcut icon" href="../mobile/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0001">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0001">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0001">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0001">
+    <link rel="stylesheet" href="../mobile/assets/css/Discounts.css?v=m24.0001">
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        var JANE_NAME = 'aigc_check'
+    </script>
+    <!-- head_script -->
+</head>
+<body>
+<div class="index_app">
+    <div class="sampleMask"></div>
+    <div class="banner">
+        <p>高效识别学术文本中的AI生成内容</p>
+    </div>
+    <div class="logo">
+        <img src="../mobile/assets/img/logo.png?v1" alt="">
+    </div>
+    <div class="form">
+        <h3>提交论文</h3>
+        <form class="ContainerTo clearfix" id="ContainerTo">
+            <div class="form-group form-group_s card card3 Conditions aigcTips">
+                <label class="label_s"><span class="required">*</span>题目: </label>
+                <div class="inputBox">
+                    <input autocomplete="off" maxlength="60" name="contenteditable2" type="text"
+                           placeholder="请正确填写论文题目(60字内)" id="contenteditable2" class="form-control"/>
+                </div>
+                <span id="contenteditable2_err"></span>
+            </div>
+            <div class="form-group form-group_s card card3 Conditions aigcTips" style="margin-top: 2rem;">
+                <label class="label_s"><span class="required">*</span>作者: </label>
+                <div class="inputBox">
+                    <input autocomplete="off" maxlength="15" name="contenteditable3" type="text"
+                           placeholder="请正确填写作者姓名(15字内)" id="contenteditable3" class="form-control"/>
+                </div>
+                <span id="contenteditable3_err"></span>
+            </div>
+
+            <div class="form-group form-group_s short card card4 jiangAIGCContent">
+                <div class="divBox">
+                    <div class="AIGCContentTop">
+                        <div class="AIGCContentType Select" id-key="1">粘贴文本</div>
+                        <div class="AIGCContentType" id-key="2">上传文档</div>
+                    </div>
+
+                    <div class="Thesis">
+                        <div class="InputBox">
+                            <textarea name="textareaName" id="textareaText" maxlength="300000"
+                                      placeholder="内容字数 200~30万字，提交内容建议去除封面，目录，仅提交正文。"></textarea>
+                        </div>
+                        <div class="UploadBox">
+                            <input name="docUpload" id="ThesisInput" type="file" single ref="docUpload" file-upload=""
+                                   accept=".doc,.docx,.txt,text/plain">
+                            <div class="Not">
+                                <img src="../mobile/assets/img/uploadfiles.png" alt="上传">
+                                <p>点击此处上传<span>AIGC</span>待检测文档</p>
+                                <span>文档支持txt、doc(x)，文件大小不得超过10M</span>
+                            </div>
+                            <div class="Complete">
+                                <div class="CompleteBox">
+                                    <div class="fileIcoBox">
+                                        <div class="fileIco-upload">
+                                              <img class="fileIco-delete" src="../mobile/assets/img/close.png" alt="">
+                                        </div>
+                                        <p class="fileName"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span id="jiangAIGCContent_err"></span>
+                    <span id="jiangAIGCContent_err2"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group groupSubmit">
+                <button id="generate" class="btn btn-primary generate">立即检测</button>
+                <div class="btn-newblock">
+                    <button type="button" class="btn btn-primary query">查询结果</button>
+                    <button type="button" class="btn btn-primary swatch">
+                        报告样例
+                        <a href="./demo.html" target="_blank"></a>
+                    </button>
+
+                </div>
+            </div>
+            <div class="form-group form-group_s short card checkbox">
+                <input class="inputCheck" type="checkbox" checked="checked"> 我已阅读并同意: 当前仅支持识别中文文本，检测结果由
+                系统自动生成，为您提供的是相关线索而非判断依据和 （或者）判断标准，仅供参考。
+            </div>
+            <div class="case realTime">
+                <img src="../mobile/assets/img/horn.png" alt="">
+                <div class="t_news">
+                    <ul class="news_li">
+
+                    </ul>
+                    <ul class="swap"></ul>
+                </div>
+            </div>
+
+            <div class="tipsInfo">
+                <p class="tipsTitle"><img class="warning" src="../mobile/assets/img/warning.png" alt=""> 注意事项: </p>
+                <div class="Universal">
+                    <p>1. 检测范围：包括但不限于
+                        <img src="../mobile/assets/img/gpt3.png" style="margin-left: 4px;" alt=""><span>ChatGPT-3.5</span><img
+                                src="../mobile/assets/img/gpt4.png" alt=""><span>ChatGPT-4.0</span> <img
+                                src="../mobile/assets/img/gemini.png" alt=""><span>Gemini</span> <img
+                                src="../mobile/assets/img/claude.png" style="margin-top: -1px;" alt=""><span>Claude</span>
+                        <img src="../mobile/assets/img/wyyx.png" style="margin-top: -1px;" alt=""><span>文心一言</span>
+                        <img src="../mobile/assets/img/tyqw.png" alt=""><span>通义千问</span> <img
+                                src="../mobile/assets/img/zpai.png" alt=""><span>智谱AI</span></p>
+                    <p>2. 系统在检测时会分析论文的上下文关系， 所以请您提交论文正文内容，如果是非正文的检测将不能保证检测的准确性</p>
+                    <p>3. 非正文部分(如标题、公式、图表、参考文献等)建议删除</p>
+                    <p>4. 此系统一旦提交，开始检测后，就会产生成本，不接受退款，多谢理解</p>
+                    <p class="redText">5. 请勿上传目录和封面，否则会检测失败！</p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="aigcTips">
+        <div class="reason">
+            <div class="top">为什么选择<span>AI率检测?</span></div>
+            <div class="block1">
+                <div class="item">
+                    <img src="../mobile/assets/img/gx-ico.png" alt="">
+                    <p class="p1">高效检测</p>
+                    <p class="p2">采用先进检测技术</p>
+                    <p class="p2">拥有高效检测能力</p>
+                </div>
+                <div class="item">
+                    <img src="../mobile/assets/img/lx-ico.png" alt="">
+                    <p class="p1">类型多样</p>
+                    <p class="p2">支持期刊/学位/</p>
+                    <p class="p2">课程论文等检测</p>
+                </div>
+            </div>
+            <div class="block1">
+                <div class="item">
+                    <img src="../mobile/assets/img/cc-ico.png" alt="">
+                    <p class="p1">层次丰富</p>
+                    <p class="p2">详细的可视化报告</p>
+                    <p class="p2">轻松识别AIGC问题</p>
+                </div>
+                <div class="item">
+                    <img src="../mobile/assets/img/aq-ico.png" alt="">
+                    <p class="p1">安全可靠</p>
+                    <p class="p2">采用先进加密技术</p>
+                    <p class="p2">确保隐私不被泄露</p>
+                </div>
+            </div>
+            <div class="block2">
+                《中华人民共和国学位法 (草案) 》第六章第三十三条明确：已经获得学位者，在获得该学位过程中如有<span class="red">人工智能代写</span>等学术不端行为，经学位评定委员会审议决定，可由学位授予单位
+                <span class="red">撤销</span>学位证书。
+            </div>
+        </div>
+        <div class="problem">
+            <div class="tabHader row">
+                <div class="commonProblem col-sm-6 Select" ContentKey="commonProblemBox">
+                    <img class="img1" src="../mobile/assets/img/commonProblem1.png" alt="">
+                    <img class="img2" src="../mobile/assets/img/commonProblem2.png" alt="">
+                    常见问题
+                </div>
+                <i class="link"></i>
+                <div class="MustRead col-sm-6" ContentKey="MustReadBox">
+                    <img class="img1" src="../mobile/assets/img/BeCareful1.png" alt="">
+                    <img class="img2" src="../mobile/assets/img/BeCareful2.png" alt="">
+                    上传必读
+                </div>
+            </div>
+            <div class="problemBox">
+                <div class="commonProblemBox Select">
+                    <div class="problem1">
+                        <b>
+                            AIGC检测服务是什么
+                        </b>
+                        <p>
+                            AIGC检测服务可以区分人工编写的内容和AI模型生成的文本。
+                            系统将快速生成报告，识别文本AIGC值的高低。AIGC检测服务目前作为辅助工具，仅提示文本内容可能由AI生成。
+                        </p>
+                    </div>
+                    <div class="problem2">
+                        <b>
+                            AIGC检测结果说明
+                        </b>
+                        <p>
+                            检测结果由系统自动生成，为您提供的是相关线索而非判断依据和（或者）判断标准，仅供参考。
+                        </p>
+                        <p>
+                            1）AIGC值与论文质量无关，仅表示论文中内容片段存在AI生成可能性的概率。
+                        </p>
+                        <p>
+                            2）检测结果代表论文是否疑似AI生成，仅供参考。
+                        </p>
+                        <p>
+                            3）由于AI模型的差异性，检测结果可能存在误差。
+                        </p>
+                    </div>
+                </div>
+                <div class="MustReadBox">
+                    <p>当前版本<span>仅支持中文内容</span>检测，英文数字等非中文内容自动忽略</p>
+                    <p>支持上传<span> doc、docx、pdf、txt</span>格式，文本不超过100万字符</p>
+                    <p>文件大小<span>不超过 10M</span>，若超过10M导致上传失败，建议您删除送检文献中图片、图表、表格后，再进行上传
+                    </p>
+                    <p><span>为了不影响检测结果</span>，让系统准确识别参考文献，请在正文后标明<span>“参考文献”</span>字样，并在之后按照《信息与文献参考文献著录规则》(GBIT7714-2015)规范参考文献格式
+                    </p>
+                    <p>使用doc、docx文档查重时，系统无法识别<span>脚注、尾注</span>，请知悉</p>
+                    <p><span>修订、批注</span>模式会导致报告内容缺失，请核查后上传</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dashi_wx_box text_a_c">
+    <div class="customerBox">
+        <i class="close-wx"></i>
+        <div class="head">
+            <img src="../mobile/assets/img/kf.png" alt="">
+            <span class="customer-title"></span>
+        </div>
+        <div class="customerCode">
+            <img class="customer-qr" src="" alt="">
+        </div>
+        <div class="segmentation-line"></div>
+        <div class="customerWay">
+            <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+            <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+            <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+            <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+        </div>
+        <p class="noCustomer">商家未设置客服</p>
+        <img class="customBg" src="../mobile/assets/img/bg1.png" alt="">
+    </div>
+</div>
+
+<div class="dashi_fz text_a_c">
+    <i class="close-fz"></i>
+    <div class="attract">
+        <img src="../mobile/assets/img/logo2.png" alt="logo">
+    </div>
+    <div class="copyBox">
+        <div class="copy_url">复制链接至电脑端</div>
+    </div>
+</div>
+
+<div class="mask"></div>
+<div class="customer-wx" id="customer-wx1">
+    <img src="../mobile/assets/img/kfwx.png" alt="客服">
+</div>
+    <div class="fiexBox">
+        <div class="Activity">
+            <img src="../mobile/assets/img/xc2.gif" alt="">
+        </div>
+    </div>
+<div id="filing-information" class="ForTheRecord">Copyright © 2022-2024 淘项有术</div>
+
+<!-- 优惠卷活动 -->
+<div class="mask_body"></div>
+<div class="Discounts_box">
+    <div class="CircleBG">
+        <div class="box-Content">
+            <div class="ContentText">
+                <div class="Contenthader">
+                    AI检测新认证用户专享
+                    <div class="but_close">
+                        <img src="../mobile/assets/img/but_close.png" alt="关闭">
+                    </div>
+                </div>
+                <img src="../mobile/assets/img/Discounts.png" alt="">
+                <div class="ButtonDiv">
+                    <a href="#" target="_blank" rel="noopener noreferrer">立即领取</a>
+                </div>
+                <p class="DiscountsTips">每个认证用户仅限领取一次,15天有效期</p>
+
+                <div class="Prompt">
+                    <div>
+                        <img src="../mobile/assets/img/task.png" alt="">
+                        <p>点击领取</p>
+                        <p>完成任务</p>
+                    </div>
+                    <img src="../mobile/assets/img/arrowyh.png" alt="">
+                    <div>
+                        <img src="../mobile/assets/img/certificate.png" alt="">
+                        <p>填写手机号</p>
+                        <p>获取优惠券</p>
+                    </div>
+                    <img src="../mobile/assets/img/arrowyh.png" alt="">
+                    <div>
+                        <img src="../mobile/assets/img/pay.png" alt="">
+                        <p>支付输入</p>
+                        <p>券码兑换</p>
+                    </div>
+                </div>
+                <div class="GuaranteeTheBottom">
+                    <div class="phoneNumber">
+                        <img src="../mobile/assets/img/ico_phone.png" alt="">
+                        <input
+                            placeholder="请输入注册手机号"
+                            id="Cell-phoneNumber"
+                            onkeyup="this.value=this.value.replace(/^(0+)|[^\d]+/g,'') "
+                            onafterpaste="this.value=this.value.replace(/^(0+)|[^\d]+/g,'') "
+                            autocomplete="off" maxlength="11"
+                            type="text">
+                    </div>
+                    <div class="GetCode">
+                        <input id="copyInput2" type="text">
+                        <div class="Not">
+                            <img src="../mobile/assets/img/icon_left.png" alt="">
+                            <span class="text1">获取优惠券</span>
+                            <span class="text2">优惠券码：<span class="CouponCode"></span> <span class="CopyCode">复制</span></span>
+                            <img src="../mobile/assets/img/icon_right.png" alt="">
+                        </div>
+                    </div>
+                    <p class="Rules">支付时填写券码兑换，<span>请妥善保存优惠券码</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../mobile/assets/js/jquery.min.js"></script>
+<script src="../mobile/assets/js/bootstrap.min.js"></script>
+<script src="../mobile/assets/js/clipboard.min.js"></script>
+<script src="../mobile/assets/js/common.js?v=1.1"></script>
+<script src="../mobile/assets/js/bootstrap-select.js"></script>
+<script src="../mobile/assets/js/bootstrapValidator.min.js"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0001"></script>
+<script src="../mobile/assets/js/message.js"></script>
+<script src="../mobile/assets/js/Discounts.js?v=m24.0001"></script>
+<script src="../mobile/assets/js/Drag.js"></script>
+<script>
+    var order_openid = ''
+    order_openid = getQueryVariable('openid')
+
+    function setPriceInfo(){
+        if(!order_openid){
+            if(/MicroMessenger/.test(window.navigator.userAgent) && threeMsg.wx){
+                location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + threeMsg.wx + '&otherUrl=' + encodeURIComponent(window.location.href)
+            }
+        }
+    }
+
+    $("#ContainerTo").bootstrapValidator({
+        excluded: [':disabled', ':hidden'], //[':disabled', ':hidden', ':not(:visible)'] //设置隐藏组件可验证
+        feedbackIcons: {
+            valid: 'glyphicon',
+            invalid: 'glyphicon',
+            validating: 'glyphicon'
+        },
+        fields: {
+            contenteditable2: {
+                container: "#contenteditable2_err",
+                validators: {
+                    callback: {
+                        message: '论文标题不能为空且最多60个字',
+                        callback: function (value, validator, $field) {
+                            if (value.length >= 1 && value.length <= 60) {
+                                return true
+                            } else {
+                                return false
+                            }
+                        }
+                    }
+                }
+            },
+            contenteditable3: {
+                container: "#contenteditable3_err",
+                validators: {
+                    callback: {
+                        message: '论文作者不能为空且最多15个字',
+                        callback: function (value, validator, $field) {
+                            if (value.length >= 1 && value.length <= 15) {
+                                return true
+                            } else {
+                                return false
+                            }
+                        }
+                    }
+                }
+            },
+            textareaName: {
+                container: "#jiangAIGCContent_err",
+                validators: {
+                    callback: {
+                        message: '内容长度需要在[200-300000]字之间',
+                        callback: function (value, validator, $field) {
+                            if (value.length >= 200 && value.length <= 300000) {
+                                return true
+                            } else {
+                                return false
+                            }
+                        }
+                    }
+                }
+            },
+            docUpload: {
+                container: "#jiangAIGCContent_err2",
+                validators: {
+                    notEmpty: {
+                        message: '文档不能为空'
+                    }
+                }
+            }
+
+        }
+    });
+    let throttling = true;
+    if (getQueryVariable('qhclickid')) {
+        window.localStorage.setItem('qhclickid', getQueryVariable('qhclickid'))
+    }
+    if (getQueryVariable('bd_vid')) {
+        window.localStorage.setItem('bd_vid', window.location.href)
+    }
+
+    $('.generate').click(function () {
+        // if (!$('.inputCheck').prop("checked")) {
+        //     toast('请确认知晓并同意 "生成的论文范文仅用于参考,不作为毕业、发表使用" 条款!', 3000)
+        //     return
+        // }
+
+        var bootstrapValidator = $("#ContainerTo").data("bootstrapValidator").validate();
+        if (bootstrapValidator.isValid()) {
+            if (!throttling) return
+            toast({
+                msg: '正在提交,请稍后...',
+                type: 'loading',
+                time: 20000
+            })
+            throttling = false
+            var pathName = ''
+            var locationPathname = window.location.pathname
+            if (locationPathname.slice(locationPathname.length - 1, locationPathname.length) !== '/') {
+                locationPathname += '/'
+            }
+            if (window.location.pathname.indexOf('index.html') != -1) {
+                pathName = window.location.pathname.replace('index.html', 'query.html')
+            } else {
+                pathName = locationPathname + 'query.html'
+            }
+            var formData = {
+                goods_id: typeData[0].goods_id,
+                frontNotifyUrl: window.location.origin + pathName + '?oid=#outTradeNo#',
+                domain_record: window.location.origin, // 本地测试需要替换写死, 上线前切记恢复自动获取
+                source: /MicroMessenger/.test(window.navigator.userAgent) ? 2 : 7
+            }
+
+            if (order_openid) {
+                formData['wx_param[appid]'] = threeMsg.wx
+                formData['wx_param[openId]'] = order_openid
+            }
+
+            if (window.localStorage.getItem('qhclickid')) {
+                formData['qhclickid'] = window.localStorage.getItem('qhclickid')
+            }
+            if (window.localStorage.getItem('bd_vid')) {
+                formData['bd_vid'] = window.localStorage.getItem('bd_vid')
+            }
+
+            // 降aigc
+            // if (typeData[$('#type_s').val()].short_name == 'zjcaigc') {
+            //     formData['data[title][value]'] = $('#contenteditable2').val()
+            //     formData['data[paper_type][label]'] = '论文类型';
+            //     formData['data[paper_type][value]'] = $("input[name='FamilyCategory']:checked").val();
+            //     formData['upload_type'] = $('.AIGCContentType.Select').attr('id-key');
+            //     if ($('.AIGCContentType.Select').attr('id-key') == 1) {
+            //         formData['content'] = $('#textareaText').val();
+            //     } else {
+            //         formData['data[file_path][label]'] = '文件地址';
+            //         formData['data[file_path][value]'] = file_path;
+            //     }
+            // } else {
+            //     formData['data[title][value]'] = $('#contenteditable').val()
+            // }
+
+            var formData_1 = {
+                title: $("#contenteditable2").val(),
+                author: $("#contenteditable3").val()
+            }
+            if($('.AIGCContentType.Select').attr('id-key') == '1'){
+                formData_1.content = $("#textareaText").val()
+            }
+            if($('.AIGCContentType.Select').attr('id-key') == '2'){
+                formData_1.file = $("#ThesisInput")[0].files[0]
+            }
+
+
+            $.ajax({
+                type: 'POST',
+                url: urls+ '/api/project/aigc_check/pre_handle/upload?user_token=' + USER_TOKEN + '&jane_name=' + JANE_NAME + '&domain_record=' + window.location.origin,
+                processData: false,
+                contentType: false,
+                xhrFields: {
+                    withCredentials: true
+                },
+                data: getFormData(formData_1),
+                success: function (res){
+                    if(res.code == 200){
+                        formData['data[rid][label]'] = '记录id'
+                        formData['data[rid][value]'] = res.data.rid
+                        $.ajax({
+                            type: 'post',
+                            url: urls + '/api/client/order/unified/create?user_token=' + USER_TOKEN + '&jane_name=' + JANE_NAME + (suffix ? '&' + suffix : '') + (suffix2?'&'+suffix2:''),
+                            data: getFormData(formData),
+                            processData: false,
+                            contentType: false,
+                            xhrFields: {
+                                withCredentials: true
+                            },
+                            success: function (resData) {
+                                toastNone()
+                                if (resData.code == 200) {
+                                    throttling = true
+                                    if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器
+                                        let pathName = window.location.pathname
+                                        if (window.location.pathname.indexOf('index.html') !== -1) {
+                                            pathName = pathName.replace('index.html', 'pay.html')
+                                        } else {
+                                            pathName = pathName + 'pay.html'
+                                        }
+                                        location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.origin + pathName + '?order_sn=' + resData.data.order_sn + '&goods=&payId=')
+                                        return
+                                    }
+
+                                    location.href = './pay.html?order_sn=' + resData.data.order_sn;
+                                } else {
+                                    throttling = true
+                                    toast(resData.codeMsg)
+                                }
+                            },
+                            error: function (err) {
+                                toastNone()
+                                throttling = true
+                                // error_dl(err)
+                            }
+                        });
+                    }else{
+                        throttling = true
+                       toast(res.codeMsg, 2000);
+                    }
+                },
+                error: function (err){
+                    throttling = true
+                    toast("请求失败!请检查网络", 2000);
+                }
+            })
+        }
+    })
+
+    $('.query').on('click', function () {
+        window.location.href = './query.html'
+    })
+    $("#NumberWords").bind("input propertychange", function () { // 控制只能输入数字
+        $(this).val($(this).val().replace(/^\D/g, ''));
+    });
+
+    $(".sample").on('click', function () {
+        $(".sampleMask").show();
+        $(".samplePop").show();
+    })
+    $(".sampleClose").on('click', function () {
+        $(".sampleMask").hide();
+        $(".samplePop").hide();
+        $('.zslwPop').hide()
+        $('.zsbgPop').hide()
+    })
+    $(".sampleMask").on('click', function () {
+        $(".sampleMask").hide();
+        $(".samplePop").hide();
+        $('.zslwPop').hide()
+        $('.zsbgPop').hide()
+    })
+    $(".sam-zsbg").on('click', function () {
+        $('.sampleMask').show()
+        $('.zsbgPop').show()
+    })
+    $(".sam-zslw").on('click', function () {
+        $('.sampleMask').show()
+        $('.zslwPop').show()
+    })
+    $(".profession").on('click', function () {
+        $(".mask").show();
+        $(".dashi_fz").show();
+    })
+    $(".close-fz").on('click', function () {
+        $(".mask").hide();
+        $(".dashi_fz").hide();
+    })
+    var clipboard = new Clipboard('.copy_url', {
+        text: function () {
+            return window.location.href;
+        },
+    });
+
+    //复制成功响应
+    clipboard.on('success', function (e) {
+        $(".mask").hide();
+        $(".dashi_fz").hide();
+        toast({
+            msg: "复制成功",
+            type: 'success',
+            time: 2000
+        })
+    });
+
+    //复制失败响应
+    clipboard.on('error', function (e) {
+        toast({
+            msg: "复制失败!请重新尝试",
+            type: 'error',
+            time: 2000
+        })
+    });
+    $(".fixed-problem").on('click', function () {
+        $(".myProblems").show()
+        $(".mask").show()
+        document.body.style.height = '100vh'
+        document.body.style['overflow-y'] = 'hidden'
+    })
+    $(".p-item").on('click', function () {
+        if ($(this).hasClass('activePr')) {
+            $(".p-item").removeClass('activePr')
+            $(".p-a").stop(false, true).slideUp(100)
+            return
+        }
+        $(".p-a").stop(false, true).slideUp(100)
+        $(".p-item").removeClass('activePr')
+        $(this).addClass('activePr')
+        $($(this).find('.p-a')).stop(false, true).slideDown(100)
+    })
+
+    $(".uploadText").on('click', function () {
+        $("#uploadFile").click()
+    })
+
+
+    $(".delete-file").on('click', function () {
+        $("#uploadFile").val('')
+        $("#uploadFile").trigger('change')
+        $("#proposal_err").hide();
+        $(".proposal-file").removeClass('active')
+        fid = '';
+        ktbg_generate = false
+    })
+
+
+
+    // AIGC科类
+    $('.AIGCContentType').click(function () {
+        $("#ContainerTo").data('bootstrapValidator').resetForm();
+        $('.AIGCContentType').removeClass('Select')
+        $(this).addClass("Select")
+        if ($(this).attr('id-key') == 1) {
+            $('.InputBox').show()
+            $('.UploadBox').hide()
+        } else {
+            $('.InputBox').hide()
+            $('.UploadBox').show()
+        }
+    })
+
+    // 早降重 - 降aigc率
+    $("#ThesisInput").on('change', function () {
+        if ($(this)[0].files[0]) {
+            $('.Not').hide()
+            $('.Complete').show()
+            var fileName = $("#ThesisInput")[0].files[0].name
+            $(".fileName").text(fileName);
+        } else {
+            $('.Not').show()
+            $('.Complete').hide()
+        }
+    })
+
+    $(".fileIco-delete").on('click', function (){
+        $("#ThesisInput").val('')
+        $("#ThesisInput").trigger('change')
+    })
+
+    $(".deleteFileThesis").on('click', function () {
+        $("#ThesisInput").val('')
+        $("#ThesisInput").trigger('change');
+        $('.Not').show()
+        $('.Complete').hide()
+    })
+    $(".toCheck").on('click', function () {
+        $(this).find(".FamilyCategory").click()
+    })
+    $(".FamilyCategory").on('click', function (event) {
+        event.stopPropagation()
+    })
+
+    $(".problem .tabHader>div").on('click', function (){
+        $(".problem .tabHader>div").removeClass('Select')
+        $(this).addClass('Select')
+        $('.problemBox>div').removeClass('Select')
+        $('.'+$(this).attr('contentkey')).addClass('Select')
+    })
+</script>
+</body>
+</html>

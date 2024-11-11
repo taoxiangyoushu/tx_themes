@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 为移动设备添加 viewport；-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 指定请求和响应遵循的缓存机制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>文献下载 - 查询结果</title>
+    <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=17.7">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=1.0">
+    <link rel="stylesheet" href="../mobile/assets/css/query/query.css?v=18.1">
+    <script>
+        var JANE_NAME = 'wxxz'
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        //  var USER_TOKEN = 'bXlWWDZhMzY0NTlmYjFjYjgxZjU='
+    </script>
+</head>
+
+<body>
+    <!-- 什么是订单号弹窗 -->
+    <div class="orderTipsPop">
+        <div class="maskHader">
+            什么是订单号?
+            <img src="../mobile/assets/img/tc_exit.png" class="hidePop" alt="">
+        </div>
+        <div class="maskContent">
+            <div class="Hot-Headlines">
+                <div class="Hot-Content">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item active">
+                          <a class="nav-link " id="economy-tab" data-toggle="tab" href="#economy" role="tab" aria-controls="economy" aria-selected="true" aria-expanded="true">
+                            <img src="../mobile/assets/img/wap_zfb_s.png">
+                            支付宝</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="Education-tab" data-toggle="tab" href="#Education" role="tab" aria-controls="Education" aria-selected="false">
+                            <img src="../mobile/assets/img/wap_wx_s.png">
+                            微信</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="Literature-tab" data-toggle="tab" href="#Literature" role="tab" aria-controls="Literature" aria-selected="false">
+                            <img src="../mobile/assets/img/wap_xhs_s.png">
+                            小红书</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" id="Medicine-tab" data-toggle="tab" href="#Medicine" role="tab" aria-controls="Medicine" aria-selected="true">
+                            <img src="../mobile/assets/img/wap_tb_s.png">
+                            淘宝</a>
+                          </li>
+                    </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade active in" id="economy" role="tabpanel" aria-labelledby="economy-tab">
+                            <img src="../mobile/assets/img/zfb_order_img1.jpg" alt="">
+                           <img src="../mobile/assets/img/zfb_order_img2.jpg" alt="">
+                           <img src="../mobile/assets/img/zfb_order_img3.jpg" alt="">
+                        </div>
+                        <div class="tab-pane fade" id="Education" role="tabpanel" aria-labelledby="Education-tab">
+                           <img src="../mobile/assets/img/wx_order_img1.jpg" alt="">
+                           <img src="../mobile/assets/img/wx_order_img2.jpg" alt="">
+                           <img src="../mobile/assets/img/wx_order_img3.jpg" alt="">
+                        </div>
+                        <div class="tab-pane fade" id="Literature" role="tabpanel" aria-labelledby="Literature-tab">
+                            <img src="../mobile/assets/img/wap_tb_zf_jpg.jpg">
+                        </div>
+                        <div class="tab-pane fade " id="Medicine" role="tabpanel" aria-labelledby="Medicine-tab">
+                            <img src="../mobile/assets/img/wap_xhs_zf_jpg.jpg">
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pageHeader">
+        <a href="./index.html">
+            <img src="../mobile/assets/img/return_home_icon.png" alt="">
+        </a>
+        <span>我的订单</span>
+    </div>
+    <div class="container containerMain">
+
+        <div class="searchBox">
+            <input type="text" id="searchID" placeholder="请输入您的订单号查询">
+            <span class="deleteS"></span>
+            <span class="searchText">搜索</span>
+        </div>
+        <p class="orderIdTips">
+            <img src="../mobile/assets/img/wap_dd_ts_icon.png" alt="订单号">
+            什么是订单号
+        </p>
+        <div class="resultBox">
+
+        </div>
+        <div class="nodata">
+            <img src="../mobile/assets/img/ddh_icon.png" alt="">
+            <p class="toSearch">输入订单号进行查询</p>
+            <div class="toHome">
+                <a href="./">去下单</a>
+            </div>
+        </div>
+        <input id="copyInput" type="text">
+    </div>
+
+
+    <!-- 订单 -->
+    <!-- <div class="Orderdetails">
+        <div class="container">
+           <div class="contentsorder">
+            <div>订单编号：A2016458997946548922</div><div>购买成功</div>
+            <div>激活码</div><div>此处显示激活码字符</div>
+            <div>实际付款</div><div>￥299.00</div>
+            <div>下单时间</div><div>2024-08-08 17:448:17</div>
+           </div>
+            <div class="content-button">
+                <div class="copyLink">复制兑换码</div>
+                <div class="delete delete_btn">删除订单</div>
+
+            </div>
+        </div>
+    </div> -->
+
+
+<!-- 使用流程 -->
+<div class="Process">
+    <div class="container">
+        <h3>使用流程</h3>
+        <div class="Computer"><img src="../mobile/assets/img/wap_com_icon.png"> 电脑端</div>
+
+        <div class="news_list">
+            <div class="leftSolide">
+                <div class="Steps">
+                    <p class="StepsText StepsTexts"><i>1</i>打开网址：<a href="https://www.keyanzhidian.com/">www.keyanzhidian.com</a> 或<span>点击该网址</span>直接跳转进入<span>【科研支点】</span>官网，点击右上角<span>【登录/注册】</span></p>
+                    <img src="../mobile/assets/img/wap_com_one.png" alt="">
+                </div>
+                <div class="Steps">
+                    <p class="StepsText StepsTexts"><i>2</i>选择<span>【微信扫码登录】或【手机验证码登录】</span></p>
+                    <img src="../mobile/assets/img/wap_com_two.png" alt="">
+                </div>
+                <div class="Steps">
+                    <p class="StepsText StepsTexts"><i>3</i>点击右上角<span>【个人中心】</span>-<span>【兑换码】</span>或右侧悬浮导航的<span>【兑换码】</span>进入。</p>
+                    <img src="../mobile/assets/img/wap_com_t.png" alt="">
+                </div>
+                <div class="Steps">
+                    <p class="StepsText StepsTexts"><i>4</i><span>输入兑换码，</span>点击确认兑换。</p>
+
+                </div>
+            </div>
+            <img src="../mobile/assets/img/wap_com_f.png" alt="">
+        </div>
+
+    </div>
+</div>
+
+
+    <div class="dashi_wx_box text_a_c">
+        <div class="customerBox">
+            <i class="close-wx"></i>
+            <div class="head">
+                <img src="../mobile/assets/img/kf.png" alt="">
+                <span class="customer-title"></span>
+            </div>
+            <div class="customerCode">
+                <img class="customer-qr" src="" alt="">
+            </div>
+            <div class="segmentation-line"></div>
+            <div class="customerWay">
+                <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+                <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+                <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+                <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+            </div>
+            <p class="noCustomer">商家未设置客服</p>
+            <img class="customBg" src="../mobile/assets/img/bg1.png" alt="">
+        </div>
+    </div>
+    <div class="delete_pop">
+        <p class="title">是否确定删除订单？</p>
+        <p class="p3">删除后，无法恢复</p>
+        <p class="p3">系统仅保留30天内的订单，确保您的订单不会被覆盖和盗窃</p>
+        <div class="bottom">
+            <div class="cancel_btn">取消</div>
+            <div class="determine_btn">确定</div>
+        </div>
+    </div>
+    <div class="mask"></div>
+    <div class="customer-wx" id="customer-wx1">
+        <img src="../mobile/assets/img/PPTkf_ico.png" alt="客服">
+    </div>
+    <div id="filing-information"></div>
+    <!--    <div class="ForTheRecord">-->
+    <!--        COPYRIGHT © 2022-2023 湖南淘项有术网络信息科技有限公司-->
+    <!--    </div>-->
+</body>
+<script src="../mobile/assets/js/jquery.min.js"></script>
+<script src="../mobile/assets/js/bootstrap.min.js"></script>
+<script src="../mobile/assets/js/alert.min.js"></script>
+<script src="../mobile/assets/js/clipboard.min.js"></script>
+<script src="../mobile/assets/js/message.js"></script>
+ <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=1.9"></script>
+<script src="../mobile/assets/js/Drag.js"></script>
+<script src="../mobile/assets/js/zepto_min.js"></script>
+<script src="../mobile/assets/js/common.js"></script>
+<script>
+    $(".orderIdTips").on('click',function (){
+        $(".mask").show();
+        $(".orderTipsPop").show();
+    })
+
+    $(".mask").on('click',function (){
+        $(".mask").hide();
+        $(".orderTipsPop").hide();
+        $(".SingleDownload").hide();
+    })
+
+    $(".hidePop").on('click',function (){
+        $(".mask").hide();
+        $(".orderTipsPop").hide();
+        $(".SingleDownload").hide();
+    })
+    function startQuerying(){
+        if(getQueryVariable('oid')) {
+            $('#searchID').val(getQueryVariable('oid'))
+            $('#searchID').change()
+            query(true)
+        }else if(localStorage.getItem('orderId')) { // 链接未携带oid说明不是支付成功页面过来, 查看是否有本地记录
+            $('#searchID').val(localStorage.getItem('orderId'))
+            $('#searchID').change()
+            query(true)
+        }
+    }
+    var order_sn = ''
+    var decide = 60;
+    var oid = ''
+    var setTime = ''
+    var source = ''
+    // 先判断是不是微信端打开的
+    if (/(micromessenger)/i.test(navigator.userAgent)) {
+        source = 2
+    } else {
+        // 判断h5还是pc true就是h5
+        let client =
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                navigator.userAgent
+            );
+        if (client) {
+            source = 7
+        } else {
+            source = 1
+        }
+    }
+
+    var isTrue;
+    $('.searchText').click(function() {
+        if(isTrue) return
+        isTrue = true
+        setTimeout(() => {
+            isTrue = false
+        },3000)
+        if(!$('#searchID').val()) {
+            // toastNone()
+            toast({
+                msg: "请输入订单号或优惠券后查询",
+                type: 'error',
+                time: 2000
+            })
+        }else {
+            query(true)
+        }
+    })
+    function query(e) {
+        // toastNone()
+        if(e){
+            toast({
+                msg: "正在为您查询",
+                type: 'loading',
+                time: 2000
+            })
+        }
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: $('#searchID').val(),
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME,
+            }),
+            success: function (res) {
+                var text = "";
+                var automaticPolling = false;
+                if(res.data.length) {
+                    for(var i=0; i<res.data.length; i++) {
+                        var resData = res.data[i]
+                        var statusClass = ''
+                        var card_code = resData.card_code
+                        var stateText = '购买成功'
+                        if(!resData.card_code && resData.order_status != 60){
+                            statusClass = 'status-no'
+                            card_code = '处理中'
+                            if( resData.order_status == '41' ){
+                                stateText = '未支付'
+                                card_code = '订单未支付'
+                                statusClass = 'status-noBtn'
+                            }
+                        }
+
+
+                        text += "<div class=\"Orderdetails\">";
+                        text += "<div class=\"container\">";
+                        text += "<div class=\"contentsorder\">";
+                        text += "<div>订单编号："+resData.order_sn+"</div><div>"+ stateText +"</div>";
+                        text += "<div class='l-d'>激活码</div><div class='r-d codeSpan'>"+ card_code +"</div>";
+                        text += " <div>实际付款</div><div>￥"+ resData.order_amount +"</div>";
+                        text += "<div class='l-d'>下单时间</div><div class='r-d'>"+ resData.created +"</div>";
+                        text += "</div>";
+                        text += "<div class=\"content-button "+ statusClass +"\">";
+                        text += "<div class=\"copyLink\" data-orderid=\""+resData.card_code+"\">复制兑换码</div>";
+                        text += "<div class=\"delete delete_btn\"  data-orderid=\""+resData.order_sn+"\">删除订单</div>";
+                        text += "</div>";
+                        text += " </div>";
+                        text += "</div>";
+
+                        if(resData.order_status != 60 && !resData.card_code) {
+                            automaticPolling = true
+                        }
+                    }
+                    if(automaticPolling){
+                        setTimer()
+                    }
+                    $('.nodata').hide()
+                    $('.resultBox').show()
+                    $('.resultBox').children().remove()
+                    $('.resultBox').append(text)
+                    localStorage.setItem('oid',$('#searchID').val());
+                    $('.deleteS').show()
+                }else {
+                    deleteS(true)
+                    $('.resultBox').hide()
+                    $('.nodata').show()
+                    if(res.code == 400) {
+                        toast({msg:res.codeMsg, time:2000});
+                        $(".toSearch").html(res.codeMsg)
+                    }else {
+                        toast({
+                            msg: "未查询到结果",
+                            type: 'error',
+                            time: 2000
+                        })
+                        $(".toSearch").text("非常抱歉，没有找到该订单号。请重新核对是否输入了正确的订单号或者记录已被删除")
+                    }
+                }
+            },
+            error: function () {
+                $('.resultBox').hide()
+                $('.nodata').show()
+                toast({
+                    msg: "请求失败!请检查网络",
+                    type: 'error',
+                    time: 2000
+                })
+                $('.deleteS').hide()
+            },
+        });
+    }
+    $('.deleteS').click(function() {
+        deleteS()
+        $('.deleteS').hide()
+        // $('.resultBox').hide()
+        // $('.nodata').show()
+    })
+    function deleteS(clearInput) {
+        // 请求没有数据,判断是查询的本地id且查询的id和本地id一致, 就删除本地id(该id未支付)
+        if(localStorage.getItem('oid') == $('#searchID').val()) {
+            localStorage.removeItem('oid')
+        }
+        if(!clearInput){
+            $('#searchID').val('')
+        }
+    }
+
+    // 有内容展示删除图标, 没有内容隐藏图标, 图标删除会和本地存储对比, 相同删除本地存储和输入框内容, 不相同只删除输入框内容
+    $("#searchID").on("input", function() {
+        if(!$(this).val().length) {
+            $('.deleteS').hide()
+        }else {
+            $('.deleteS').show()
+        }
+    });
+    $("#searchID").on("change", function() {
+        if(!$(this).val().length) {
+            $('.deleteS').hide()
+        }else {
+            $('.deleteS').show()
+        }
+    });
+
+    var timers = null
+    function setTimer() {
+        clearTimeout(timers);
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: $('#searchID').val(),
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME
+            }),
+            success: function (res) {
+                for(var i=0; i<res.data.length; i++) {
+                    var resData = res.data[i]
+                    if(resData.order_status != 60) {
+                        timers = setTimeout(()=>{
+                            setTimer()
+                        },5000)
+                        return
+                    }
+                }
+                clearTimeout(timers);
+                query(false)
+            },
+            error: function() {
+                timers = setTimeout(()=>{
+                    setTimer()
+                },5000)
+            }
+        });
+    }
+
+    $(document).on('click','.content-button .delete_btn',function (){
+        $(".mask").show();
+        $(".delete_pop").show()
+        $(".delete_pop").attr('data-orderid',$(this).attr('data-orderid'))
+    })
+
+    $(".mask").on('click',function (){
+        $(".mask").hide();
+        $(".delete_pop").hide();
+    })
+
+    $(".cancel_btn").on('click',function (){
+        $(".mask").hide();
+        $(".delete_pop").hide();
+    })
+
+    $(".determine_btn").click(function (){
+        $(".mask").hide();
+        $(".delete_pop").hide();
+        toast({
+            msg: '删除中,请稍后...',
+            type: 'loading',
+            time: 20000
+        })
+        $.ajax({
+            type: 'get',
+            url: urls + '/api/client/order/del?user_token='+ USER_TOKEN +'&orderSn='+ $(".delete_pop").attr('data-orderid') +'&jane_name=' + JANE_NAME,
+            success: function (res) {
+                if (res.code == 200) {
+                    toastNone()
+                    $('#searchID').val( $(".delete_pop").attr('data-orderid') )
+                    query(false)
+                }else {
+                    toast(res.codeMsg)
+                }
+            },
+            error: function () {
+                toast("请求失败!请检查网络")
+            },
+        });
+    })
+
+    $(document).on('click', '.copyLink', function () {
+        var text = $(this).data('orderid')
+        if (text) {
+            $("#copyInput").val(text)
+            $("#copyInput").select()
+            try {
+                var state = document.execCommand("copy");
+            } catch (err) {
+                var state = false;
+            }
+            if (state) {
+                toast('复制成功')
+            } else {
+                toast({
+                    msg: "复制失败,请手动复制",
+                    type: 'error',
+                    time: 2000
+                })
+            }
+        }else{
+            toast('没有检测到激活码,请手动复制或刷新页面')
+        }
+    })
+</script>
+</html>

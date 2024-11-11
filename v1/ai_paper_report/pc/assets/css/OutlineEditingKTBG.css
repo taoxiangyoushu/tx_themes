@@ -1,0 +1,307 @@
+.ProfessionalEdition.ktbgsenior#App #outline {
+  display: inline-block;
+}
+.ProfessionalEdition.ktbgsenior#App #generate {
+  display: none;
+}
+.OutlineEditingKTBG {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+}
+.OutlineEditingKTBG .OutlineEditingBox {
+  width: 1098px;
+  height: 838px;
+  background-image: linear-gradient(0deg, #ecf0ff 0%, #ffffff 100%);
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 10vh;
+  height: 89vh;
+  max-height: calc(770px);
+}
+.OutlineEditingKTBG .editHader {
+  padding: 28px 29px;
+  overflow: hidden;
+  position: relative;
+}
+.OutlineEditingKTBG .delete {
+  position: absolute;
+  right: 34px;
+  top: 32px;
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+.OutlineEditingKTBG .mainHader {
+  padding-top: 8px;
+  margin-bottom: 14px;
+}
+.OutlineEditingKTBG .mainHader b {
+  font-size: 20px;
+  color: 272E38;
+  font-weight: bold;
+}
+.OutlineEditingKTBG .mainHader p {
+  color: #9091A5;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.OutlineEditingKTBG .OutlineEditingMain {
+  height: calc(100% - 110px);
+  padding: 0 30px;
+}
+.OutlineEditingKTBG .OutlineEditingMain .EstimatedNumberWords {
+  font-size: 14px;
+  line-height: 36px;
+  color: #999;
+  display: none;
+}
+.OutlineEditingKTBG .OutlineEditingMain .EstimatedNumberWords .NumberWordsKTBG {
+  color: #333;
+}
+.OutlineEditingKTBG .OutlineEditingMain .EstimatedNumberWords .NumberWordsTips {
+  display: none;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 30px;
+  color: #fff;
+  background-color: #000;
+  position: absolute;
+  top: -36px;
+  left: -128px;
+  width: 275px;
+  text-align: center;
+  border-radius: 4px;
+}
+.OutlineEditingKTBG .OutlineEditingMain .EstimatedNumberWords .WordsTipsDiv {
+  position: relative;
+  margin-left: 3px;
+  top: -1px;
+  cursor: pointer;
+}
+.OutlineEditingKTBG .OutlineEditingMain .EstimatedNumberWords .WordsTipsDiv:hover .NumberWordsTips {
+  display: block;
+}
+.OutlineEditingKTBG .OutlineEditingMain .confirmedKTBGzdy {
+  width: 75px;
+  height: 30px;
+  background: #7371D6;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  color: #fff;
+  float: right;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.OutlineEditingKTBG .OutlineEditingMain .confirmedKTBGzdy:hover {
+  background: #4e4cca;
+}
+.OutlineEditingKTBG .leftBoxMain,
+.OutlineEditingKTBG .rightBoxMain {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 13px 0px rgba(225, 225, 225, 0.51);
+  border-radius: 10px;
+  height: 100%;
+  float: left;
+  width: calc(50% - 10px);
+  padding: 16px;
+}
+.OutlineEditingKTBG .leftBoxMain {
+  float: left;
+}
+.OutlineEditingKTBG .rightBoxMain {
+  float: right;
+}
+.OutlineEditingKTBG .original {
+  border-radius: 10px;
+  border: 1px solid #7372D6;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 13px 0px rgba(242, 244, 251, 0.09);
+  height: calc(100% - 76px);
+  padding: 20px 8px 20px 12px;
+}
+.OutlineEditingKTBG .original .outlineContent {
+  height: 100%;
+  overflow: auto;
+}
+.outlineContent {
+  padding-right: 18px;
+}
+.outlineContent .aidashi {
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #EEEEEE;
+  line-height: 32px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  position: relative;
+  box-sizing: border-box;
+}
+.outlineContent .aidashi:hover {
+  background-color: #ededff;
+  border: 1px solid #8d8ddf;
+}
+.outlineContent .aidashi:hover .add_icon,
+.outlineContent .aidashi:hover .subtracting_icon {
+  display: inline-block;
+}
+.outlineContent .outline-lv1 {
+  padding-left: 16px;
+  position: relative;
+  color: #333;
+  font-weight: bold;
+}
+.outlineContent .outline-lv1::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 4px;
+  height: 24px;
+  border-radius: 4px;
+  border: 2px solid #7579DB;
+}
+.outlineContent .outline-lv2 {
+  padding-left: 28px;
+}
+.outlineContent::-webkit-scrollbar,
+.previewContent::-webkit-scrollbar {
+  width: 5px;
+}
+.outlineContent::-webkit-scrollbar-track,
+.previewContent::-webkit-scrollbar-track {
+  background: #E5E5E5;
+  border-radius: 20px;
+}
+.outlineContent::-webkit-scrollbar-thumb,
+.previewContent::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  height: 100px;
+  background-color: #ccc;
+}
+.outlineContent::-webkit-scrollbar-button,
+.previewContent::-webkit-scrollbar-button {
+  background-color: #fff;
+  height: 7px;
+}
+.preview {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 13px 0px rgba(242, 244, 251, 0.09);
+  border-radius: 10px;
+  border: 1px solid #F5F5F5;
+  height: calc(100% - 126px);
+  position: relative;
+}
+.preview .previewTips {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #FFF4F4;
+  font-size: 14px;
+  color: #E71717;
+  padding-left: 12px;
+  line-height: 40px;
+}
+.preview .previewTips img {
+  margin-right: 6px;
+}
+.preview .previewContent {
+  height: 100%;
+  overflow: auto;
+  padding: 10px 0;
+}
+.preview .previewContent .sort {
+  position: absolute;
+  right: 50px;
+  top: 5px;
+  display: none;
+}
+.preview .previewContent .sort > span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.preview .previewContent .up_lv {
+  background-image: url('../img/up_s.png');
+  background-repeat: no-repeat;
+}
+.preview .previewContent .down_lv {
+  background-image: url('../img/down_s.png');
+  background-repeat: no-repeat;
+}
+.preview .previewContent .up_lv_no .up_lv {
+  background-image: url('../img/up_n.png');
+}
+.preview .previewContent .down_lv_no .down_lv {
+  background-image: url('../img/down_n.png');
+}
+.preview .aidashi {
+  color: #333;
+  font-size: 14px;
+  line-height: 32px;
+  position: relative;
+  box-sizing: border-box;
+}
+.preview .aidashi:hover {
+  background-color: #ededff;
+}
+.preview .aidashi:hover .add_icon,
+.preview .aidashi:hover .subtracting_icon {
+  display: inline-block;
+}
+.preview .aidashi:hover .sort {
+  display: inline-block;
+}
+.preview .outline-lv1 {
+  padding-left: 20px;
+}
+.preview .outline-lv2 {
+  padding-left: 46px;
+}
+.preview .outline-lv3 {
+  padding-left: 58px;
+}
+.EditPopup.EditPopupPay .recommend.preview {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.EditPopup.EditPopupPay .recommend.preview .subtracting_icon {
+  display: none !important;
+}
+.EditPopup.EditPopupPay .sort {
+  display: none !important;
+}
+.add_icon,
+.subtracting_icon {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  display: none;
+}
+.add_icon {
+  background: url('../img/add_icon.png') no-repeat;
+  background-position: 50% 50%;
+}
+.subtracting_icon {
+  background: url('../img/subtracting_icon.png') no-repeat;
+  background-position: 50% 50%;
+}
+/*# sourceMappingURL=OutlineEditingKTBG.css.map */

@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Master AI率检测 - 查询结果</title>
+    <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0020">
+    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0020">
+    <!-- <link rel="stylesheet" href="../assets/css/styles.css" /> -->
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!--[if lt IE 9]>
+    <script src="https://fastly.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://fastly.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        var JANE_NAME = 'aigc_check';
+    </script>
+</head>
+
+<body>
+<div class="head-nav">
+    <div class="container" id="memberCarrier">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="../pc/assets/img/logo.png" alt="logo">
+                    </a>
+                    <div class="logoTips" style="float: left;">
+                        <p>用AI语言模型检测AIGC</p>
+                        <p>实现快速、准确识别学术文本中的AI生成内容</p>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse topNav" id="bs-example-navbar-collapse-1">
+                    <div class="nav-activity">
+                        <a href="./hd/index.html" target="_blank">福利活动</a>
+                    </div>
+                    <a class="Sample" href="./demo.html" target="_blank" rel="noopener noreferrer">AIGC报告样例</a>
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">提交检测</a></li>
+                        <li class="active"><a href="#">下载报告</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="container mainDiv" id="App" data-key="queryApp">
+    <div class="leftDiv">
+        <div class="ContentMain">
+            <div class="report-block">
+                <div class="search-block">
+                    <span class="order-text">订单编号</span>
+                    <input type="text" id="order-id" placeholder="请输入您的订单编号">
+                    <span class="search-icon">
+                        搜索
+                        <span class="clearInput"></span>
+                    </span>
+                    <div class="orderId-guide">
+                        <img src="../pc/assets/img/order-wx.png" alt="">
+                        微信订单号?
+                        <div class="orderId orderId1">
+                            <img src="../pc/assets/img/wxId.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="orderId-guide">
+                        <img src="../pc/assets/img/order-ali.png" alt="">
+                        支付宝订单号?
+                        <div class="orderId orderId2">
+                            <img src="../pc/assets/img/aliId.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="report-box">
+                    <table class="orderInformation table" border="1" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th width="180">订单号</th>
+                                <th >文章标题</th>
+                                <th width="170">下单时间</th>
+                                <th width="120">状态</th>
+                                <th width="180" class="operation-tr">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody report-area"></tbody>
+                    </table>
+                    <div class="nodata-block">
+                        <img src="../pc/assets/img/nodata.png" alt="">
+                        <p class="nodata-text">请输入订单号/优惠券查询结果</p>
+                        <div class="toSubmit">
+                            <a href="./index.html">提交检测</a>
+                        </div>
+                        <p class="report-tips">温馨提示: 请确认输入订单编号正确或已成功提交检测，如有疑问请联系在线客服。</p>
+                    </div>
+                    <div class="loadLine">
+                        <img src="../pc/assets/img/loading2.gif" alt="">
+                        <p>加载中...</p>
+                    </div>
+                    <div class="expiration-tips">检测报告保留30天，请尽快下载报告到电脑永久保存，仅支持中文，计费方式: <span class="price-tips"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rightDiv">
+        <div class="Reason">
+            <div class="ReasonAsk">为什么选择<span class="Blue">AI率检测？</span></div>
+            <div class="ReasonMain">
+                <div class="row Strength">
+                    <div class="col-sm-6 card1">
+                        <img class="StrengthImg" src="../pc/assets/img/EfficientDetection.png" alt="">
+                        <div class="StrengthText">
+                            <b>高效检测</b>
+                            <p>采用先进检测技术</p>
+                            <p>拥有高效检测能力</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 card2">
+                        <img class="StrengthImg" src="../pc/assets/img/varietyFormats.png" alt="">
+                        <div class="StrengthText">
+                            <b>类型多样</b>
+                            <p>支持期刊/学位/</p>
+                            <p>课程论文等检测</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 card3">
+                        <img class="StrengthImg" src="../pc/assets/img/RichInLevels.png" alt="">
+                        <div class="StrengthText">
+                            <b>层次丰富</b>
+                            <p>详细的可视化报告</p>
+                            <p>轻松识别AIGC问题</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 card4">
+                        <img class="StrengthImg" src="../pc/assets/img/Safety.png" alt="">
+                        <div class="StrengthText">
+                            <b>安全可靠</b>
+                            <p>采用先进加密技术</p>
+                            <p>确保隐私不被泄露</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Declare">
+                《中华人民共和国学位法 (草案) 》第六章第三十三条明确：在获得该学位过程中如有人工智能代写等学术不端行为，经学位评定委员会审议决定，可由学位授予单位撤销学位证书。
+            </div>
+        </div>
+        <div class="problem">
+            <div class="tabHader row">
+                <div class="commonProblem col-sm-6 Select" ContentKey="commonProblemBox">
+                    <img class="img1" src="../pc/assets/img/commonProblem1.png" alt="">
+                    <img class="img2" src="../pc/assets/img/commonProblem2.png" alt="">
+                    常见问题
+                </div>
+                <i class="link"></i>
+                <div class="MustRead col-sm-6" ContentKey="MustReadBox">
+                    <img class="img1" src="../pc/assets/img/BeCareful1.png" alt="">
+                    <img class="img2" src="../pc/assets/img/BeCareful2.png" alt="">
+                    上传必读
+                </div>
+            </div>
+            <div class="problemBox">
+                <div class="commonProblemBox Select">
+                    <div class="problem1">
+                        <b>
+                            AIGC检测服务是什么
+                        </b>
+                        <p>
+                            AIGC检测服务可以区分人工编写的内容和AI模型生成的文本。 系统将快速生成报告，识别文本AIGC值的高低。AIGC检测服务目前作为辅助工具，仅提示文本内容可能由AI生成。
+                        </p>
+                    </div>
+                    <div class="problem2">
+                        <b>
+                            AIGC检测结果说明
+                        </b>
+                        <p>
+                            检测结果由系统自动生成，为您提供的是相关线索而非判断依据和（或者）判断标准，仅供参考。
+                        </p>
+                        <p>
+                            1）AIGC值与论文质量无关，仅表示论文中内容片段存在AI生成可能性的概率。
+                        </p>
+                        <p>
+                            2）检测结果代表论文是否疑似AI生成，仅供参考。
+                        </p>
+                        <p>
+                            3）由于AI模型的差异性，检测结果可能存在误差。
+                        </p>
+                    </div>
+                </div>
+                <div class="MustReadBox">
+                    <p>当前版本<span>仅支持中文内容</span>检测，英文数字等非中文内容自动忽略</p>
+                    <p>支持上传<span> doc、docx、txt</span>格式，文本不超过100万字符</p>
+                    <p>文件大小<span>不超过 30M</span>，若超过30M导致上传失败，建议您删除送检文献中图片、图表、表格后，再进行上传</p>
+                    <p><span>为了不影响检测结果，</span>让系统准确识别参考文献，请在正文后标明<span>“参考文献”</span>字样，并在之后按照《信息与文献参考文献著录规则》(GBIT7714-2015)规范参考文献格式</p>
+                    <p>使用doc、docx文档查重时，系统无法识别<span>脚注、尾注</span>，请知悉</p>
+                    <p><span>修订、批注</span>模式会导致报告内容缺失，请核查后上传</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="CustomerService">
+    <img class="img-ico" src="../pc/assets/img/masterkf_pre_ico.png" alt="">
+    <img class="img-ico-active" src="../pc/assets/img/masterkf_nor_ico.png" alt="">
+    <div class="customerBox">
+        <div class="head">
+            <img src="../pc/assets/img/kf1.png" alt="">
+            <span class="customer-title"></span>
+        </div>
+        <div class="customerCode">
+            <img class="customer-qr" src="" alt="">
+        </div>
+        <div class="segmentation-line"></div>
+        <div class="customerWay">
+            <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+            <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+            <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+            <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+        </div>
+        <p class="noCustomer">商家未设置客服</p>
+        <img class="customBg" src="../pc/assets/img/bg1.png" alt="">
+    </div>
+</div>
+<div class="mask_body"></div>
+<div class="delete-pop">
+    <div class="pop_top">
+        <div class="pop_title">删除提醒</div>
+        <img class="close_pop" src="../pc/assets/img/delete_report.png" alt="">
+    </div>
+    <div class="pop_cont">
+        <p class="p1">是否确定删除订单？删除后，无法恢复</p>
+        <div class="back_block">
+            <p class="p2">系统仅保留30天内的订单，</p>
+            <p class="p3">确保您的论文不会被覆盖和盗窃</p>
+        </div>
+    </div>
+    <div class="pop_bottom">
+        <div class="cancel_btn">取消</div>
+        <div class="determine_btn">确定</div>
+    </div>
+</div>
+
+</body>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../pc/assets/js/jquery.min.js"></script>
+<script src="../pc/assets/js/bootstrap.min.js"></script>
+<script src="../pc/assets/js/bootstrapValidator.min.js"></script>
+<script src="../pc/assets/js/coco-message.js"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=p24.0020"></script>
+<script src="../pc/assets/js/common.js?v=p24.0020"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0020"></script>
+<script>
+    function startQuerying(){
+        if(getQueryVariable('oid') && !memberFu.isLogin) {
+            $('#order-id').val(getQueryVariable('oid'))
+            query(false)
+        }else if(localStorage.getItem('oid') && !memberFu.isLogin) {
+            $('#order-id').val(localStorage.getItem('oid'))
+            query(false)
+        }
+    }
+
+    $('#order-id').on('input',function (){
+        if(!$('#order-id').val()){
+            $(".clearInput").hide()
+        }else{
+            $(".clearInput").show()
+        }
+    })
+
+    var isTrue;
+    $('.search-icon').click(function() {
+        if(isTrue) return
+        isTrue = true
+        setTimeout(() => {
+            isTrue = false
+        },3000)
+        if(!$('#order-id').val() && !memberFu.isLogin) {
+            cocoMessage.destroyAll();
+            cocoMessage.error("请输入订单号或优惠券后查询!", 2000);
+            $(".guide").html("输入订单号/优惠券查询结果")
+           $('.report-area').hide()
+            $('.nodata-block').show()
+        }else {
+            query(true)
+        }
+    })
+
+    function query(e) {
+        cocoMessage.destroyAll();
+        if(e) cocoMessage.success('正在为您查询...')
+        $('.loadLine').show()
+        $('.nodata-block').hide()
+        $('.report-area').children().remove()
+        $(".clearInput").show()
+        var pay_Id = ''
+        if(memberFu.isLogin && !$('#order-id').val()) {
+            pay_Id = 'all_project_order'
+        }else {
+            pay_Id = $('#order-id').val()
+        }
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: pay_Id,
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME,
+            }),
+            success: function (res) {
+                $('.report-area').children().remove()
+                var text = "";
+                var automaticPolling = false;
+                $('.operation-tr').attr('width', '180px')
+                if(res.data.length && res.data[0].jane_name==JANE_NAME) {
+                    for(var i=0; i<res.data.length; i++) {
+                        var payId = res.data[i].order_sn
+                        var resData = res.data[i]
+                        var rate_ExplicitImplicit = ''
+                        var statusClass = ''
+                        if(resData.order_status=='97') {
+                            rate_ExplicitImplicit = 'rateExplicit'
+                            statusClass = 'status-3'
+                        }else if(resData.end_product){
+                            rate_ExplicitImplicit = 'rateExplicit'
+                            statusClass = 'status-2'
+                        }else{
+                            rate_ExplicitImplicit = 'rateImplicit'
+                            statusClass = 'status-1'
+                        }
+                        text += '  <tr>' +
+                            '          <th class="first">'+ resData.order_sn +'</th>' +
+                            '          <th class="titles" title="'+ resData.place_order_data.title.value +'">'+ resData.place_order_data.title.value +'</th>' +
+                            '          <th class="">'+ resData.created +'</th>' +
+                            '          <th>'+
+                            '              <div class="report-status '+ statusClass +'">' +
+                            '                  <div class="status-icon"></div>' +
+                                               resData.order_status_human +
+                            '              </div>'+
+                            '          </th>' +
+                            '          <th>'
+                            if(!resData.isBind && threeMsg.wx && !resData.end_product){
+                                text += '<div class="scanFollow">' +
+                                    '    <div class="codeBox">' +
+                                    '        <img class="codeImg'+ i +'" src="../pc/assets/img/loading2.gif" alt="">' +
+                                    '    </div>' +
+                                    '    <div class="tipsText">' +
+                                    '        <p class="p-1">扫码关注</p>' +
+                                    '        <p class="p-1 noMarginTop">实时了解订单进度</p>' +
+                                    '        <p class="p-2">如果您未绑定</p>' +
+                                    '        <p class="p-2 noMarginTop">请一定保存订单号</p>' +
+                                    '    </div>' +
+                                    '</div>'
+                            }else{
+                                text += '<div class="report-operate '+ rate_ExplicitImplicit +'">' +
+                                    '        <a class="download" href="'+ resData.end_product +'" target="_blank">下载</a>'+
+                                    '        <div class="delete delete_btn" data-orderid="'+ resData.order_sn  +'">' +
+                                    '             删除' +
+                                    '        </div>' +
+                                    '    </div>'
+                            }
+
+                        text+= '          </th>' +
+                            '      </tr>'
+                        if(resData.order_status != 60) {
+                            automaticPolling = true
+                            if(threeMsg.wx && !resData.isBind){
+                                $('.operation-tr').attr('width', '240px')
+                                getWxCode(resData.order_sn, 'codeImg'+i)
+                            }
+                        }else{
+                            if(WxTimeOut){
+                                WxTime = 0
+                                clearTimeout(WxTimeOut)
+                            }
+                        }
+                    }
+                    if(automaticPolling){
+                        setTimer(pay_Id)
+                    }
+                    $('.report-area').append(text)
+                    $('.report-area').show()
+                    if(!memberFu.isLogin) {
+                        localStorage.setItem('oid',$('#order-id').val());
+                    }
+                    $('.deleteS').show()
+                }else {
+                    deleteS(true)
+                   $('.report-area').hide()
+                    $('.nodata-block').show()
+                    cocoMessage.destroyAll();
+                    if(res.code == 400) {
+                        cocoMessage.error(res.codeMsg, 2000);
+                        $(".guide").html(res.codeMsg)
+                    }else if(e && $('#order-id').val()) {
+                        cocoMessage.error("未查询到结果!", 2000);
+                        $(".guide").html("非常抱歉，没有找到该订单号。<\/br>请重新核对是否输入了正确的订单号或者记录已被删除")
+                    }else {
+                        $(".guide").html("非常抱歉，没有找到订单记录")
+                    }
+                    clearTimeout(timers);
+                }
+                $('.loadLine').hide()
+            },
+            error: function () {
+               $('.report-area').hide()
+                $('.nodata-block').show()
+                cocoMessage.destroyAll();
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                $('.deleteS').hide()
+                $('.loadLine').hide()
+                clearTimeout(timers);
+            },
+        });
+    }
+
+    function deleteS(clearInput) {
+        // 请求没有数据,判断是查询的本地id且查询的id和本地id一致, 就删除本地id(该id未支付)
+        if(localStorage.getItem('oid') == $('#order-id').val()) {
+            localStorage.removeItem('oid')
+        }
+        if(!clearInput){
+            $('#order-id').val('')
+        }
+    }
+
+    var timers = null
+    function setTimer(pay_Id) {
+        clearTimeout(timers);
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: pay_Id,
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME
+            }),
+            success: function (res) {
+                for(var i=0; i<res.data.length; i++) {
+                    var resData = res.data[i]
+                    if(resData.order_status != 60) {
+                        timers = setTimeout(()=>{
+                            setTimer(pay_Id)
+                        },60000)
+                        return
+                    }
+                }
+                clearTimeout(timers);
+                query(false)
+            },
+            error: function() {
+                timers = setTimeout(()=>{
+                    setTimer(pay_Id)
+                },60000)
+            }
+        });
+    }
+
+    function setPriceTips(data){
+        var unitType = (data.unit_count / 10000) + '万'
+        if(data.unit_type == '字'){
+            $(".price-tips").text('不满'+ unitType + data.unit_type +'按'+ unitType + data.unit_type +'计算')
+        }
+    }
+
+    $(document).on('click','.rateExplicit .delete_btn',function (){
+        $(".mask_body").show();
+        $(".delete-pop").show()
+        $(".delete-pop").attr('data-orderid',$(this).attr('data-orderid'))
+    })
+
+    $(".cancel_btn").on('click', function (){
+        $(".mask_body").hide();
+        $(".delete-pop").hide()
+    })
+
+    $(".close_pop").on('click', function (){
+        $(".mask_body").hide();
+        $(".delete-pop").hide()
+    })
+
+    $(".determine_btn").click(function (){
+        closeMsg = cocoMessage.loading('正在删除...');
+        $.ajax({
+            type: 'get',
+            url: urls + '/api/client/order/del?user_token='+ USER_TOKEN +'&orderSn='+ $(".delete-pop").attr('data-orderid') +'&jane_name=' + JANE_NAME,
+            success: function (res) {
+                if (res.code == 200) {
+                    $(".mask_body").hide();
+                    $(".delete-pop").hide()
+                    $('#order-id').val( $(".delete-pop").attr('data-orderid') )
+                    query(false)
+                }else {
+                    cocoMessage.error(res.codeMsg, 2000);
+                    closeMsg()
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                closeMsg()
+            },
+        });
+    })
+
+    var WxTime = 300;
+    var WxTimeOut = null;
+    function getWxCode(order_id, element){
+        $.ajax({
+            type: 'GET',
+            url: urls + '/weixin/qr/bind_order?order_id=' + order_id,
+            success: function (res){
+                if(res.code == 200){
+                    $('.'+element).attr('src', res.data)
+                    $('.'+element).css('width', '100%')
+                    WxTime = 300
+                    WxPolling(order_id)
+                }
+            },
+            error: function (err){
+            }
+        })
+    }
+
+    function WxPolling(order_id){
+        $.ajax({
+            type: 'GET',
+            url: urls + '/weixin/qr/regist/query?bindOid=' + order_id,
+            success: function (res){
+                if(res.code == 200){
+                    if(!res.data.isbind){
+                        clearTimeout(WxTimeOut)
+                        WxTimeOut = setTimeout(function (){
+                            if(WxTime > 0){
+                                WxTime--
+                                WxPolling(order_id)
+                            }
+                        },1000)
+                    }else{
+                        query(false)
+                        clearTimeout(WxTimeOut)
+                    }
+                }
+            },
+            error: function (err){
+
+            }
+        })
+    }
+
+    $(".clearInput").on('click',function (event){
+        event.stopPropagation()
+        $("#order-id").val('')
+        $(".clearInput").hide()
+    })
+</script>
+</html>

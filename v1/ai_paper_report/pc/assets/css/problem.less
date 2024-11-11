@@ -1,0 +1,154 @@
+.fiexBoxP {
+  width: 58px;
+  height: 58px;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0px 0px 4px 0px #d3d3d3;
+  font-size: 14px;
+  color: #333333;
+  padding: 9px;
+  text-align: center;
+  border-radius: 6px 0px 0px 6px;
+  margin-top: 6px;
+  position: relative;
+  &:hover {
+    color: #006eff;
+    box-shadow: 0px 0px 4px 0px #006cff;
+  }
+  .problem-f {
+    width: 360px;
+    height: 440px;
+    position: absolute;
+    left: -374px;
+    //background: #fff;
+    color: #333333;
+    top: -240px;
+    text-align: left;
+    cursor: default;
+    display: none;
+    .p-head {
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #006eff, #0094ff);
+      height: 54px;
+      line-height: 44px;
+      text-align: left;
+      padding-left: 26px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    .p-content {
+      border-radius: 12px;
+      margin-top: -10px;
+      background: #fff;
+      padding: 24px 12px 20px 22px;
+      box-shadow: 0 0 7px 0px #bdbdbd;
+      .pro-cont {
+        height: 352px;
+        overflow-y: auto;
+        padding-right: 10px;
+        .p-item {
+          margin-bottom: 12px;
+          .p-q {
+            color: #333333;
+            font-weight: bold;
+            font-size: 13px;
+            cursor: pointer;
+            position: relative;
+            padding-left: 30px;
+            line-height: 22px;
+            top: 1px;
+            span.p-question {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              color: #ffffff;
+              font-size: 12px;
+              background: #006eff;
+              border-radius: 50%;
+              text-align: center;
+              line-height: 20px;
+              position: absolute;
+              left: 0;
+              vertical-align: middle;
+            }
+            .p-text {
+              width: 248px;
+              margin-right: 4px;
+              display: inline-block;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              vertical-align: middle;
+            }
+            span.icon-more {
+              display: inline-block;
+              width: 14px;
+              height: 6px;
+              background: url("../img/icon-down.png")no-repeat;
+              background-size: contain;
+              position: absolute;
+              right: 0;
+              top: 7px;
+              transition: background .3s;
+            }
+          }
+          .p-a {
+            display: none;
+            overflow: hidden;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #666666;
+            cursor: default;
+            &.defaultShow {
+              display: block;
+            }
+          }
+          &.activePr {
+            .p-q {
+              span.p-text {
+                white-space: pre-wrap;
+              }
+              span.icon-more {
+                background: url('../img/icon-up.png') no-repeat;
+                background-size: contain;
+                top: 6px;
+              }
+            }
+            .p-a{
+              .redText {
+                color: #d70000;
+              }
+            }
+          }
+        }
+        &::-webkit-scrollbar {
+          width: 6px;
+          background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          background-color: #006eff;
+        }
+        &::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          border-radius: 10px;
+          background-color: #F5F5F5;
+        }
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 16px;
+      top: 0;
+      right: -14px;
+    }
+  }
+  &:hover .problem-f {
+    display: block;
+  }
+}

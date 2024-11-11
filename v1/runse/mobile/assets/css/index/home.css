@@ -1,0 +1,1409 @@
+a {
+	text-decoration: none;
+}
+	/* 悬浮箭头 */
+	#Hovering-arrows {
+		background-color: #634dd1;
+		width: 45px;
+		height: 45px;
+		border-radius: 25px;
+		position: fixed;
+		right: 5%;
+		z-index: 100;
+		top: 50%;
+		/* margin-left: -920px; */
+		box-shadow: 0px 0px 20px 4px rgb(110, 65, 255, 0.2);
+		visibility: hidden;
+	}
+
+	#Hovering-arrows:hover {
+		background-color: #7f6ddc
+	}
+
+	#Hovering-arrows>img {
+		margin-left: 16px;
+		margin-top: 19px;
+		width: 13px;
+		height: 7px;
+	}
+
+/* 头部 */
+.head {
+	width: 100%;
+	height: 5.5rem;
+	/* background-color: #63513b; */
+	position: relative;
+	position: fixed;
+	background-color: #FFFFFF;
+	z-index: 100;
+}
+.logo {
+	width: 5.4375rem;
+	height: 2rem;
+	margin-top: -2rem;
+	margin-left: 2rem;
+}
+
+.head-text {
+	display: inline-block;
+	width: 14.75rem;
+	height: 2.625rem;
+	font-size: 1rem;
+	margin-top: 1.5rem;
+	padding-left: 1rem;
+	border-left: solid .0625rem #d7d6dd;
+	margin-left: 1rem;
+	font-family: MicrosoftYaHei;
+}
+#headtitle1{
+	background-color: #f2f2ff;
+	color: #6651ff;
+	border-radius: 10px;
+}
+#headtitle12{
+	position: absolute;
+	color: black;
+	top: -40px;
+	left: 19px;
+	visibility: hidden;
+}
+#JUMP{
+	background-color: #f2f2ff;
+	color: #6651ff;
+	border-radius: 10px;
+	visibility: hidden;
+}
+#JUMP1{
+	position: absolute;
+	color: black;
+	bottom: 0px;
+	left: 3px;
+}
+.navbar-nav>li>a:focus{
+	background-color: #f2f2ff;
+	color: #6651ff;
+	border-radius: 10px;
+}
+.ulTitle{
+	position: relative;
+}
+/* 头部提交需求 */
+.Demand {
+	float: right;
+	width: 7.5rem;
+	height: 2.5rem;
+	background: linear-gradient(to right, #6651ff, #957bff);
+	border-radius: 3rem;
+	font-size: 1.125rem;
+	text-align: center;
+	line-height: 2.5rem;
+	color: white;
+	margin-top: 1.5rem;
+}
+
+/* 头部下拉 */
+.Head-PullDown {
+	margin-top: 1rem;
+	margin-right: 1.25rem;
+	display: inline-block;
+	float: right;
+
+}
+
+.Head-PullDown>div>button>img {
+	width: 2.75rem;
+	/* margin-top: 4.8rem;
+    margin-left: 2rem; */
+}
+
+/* 图片简介 */
+.Brief-introduction {
+	padding: .0625rem;
+	background: linear-gradient(#f4f3ff, #e7ebff);
+	position: relative;
+	height: 33.8125rem;
+	top: 55px;
+}
+
+.Brief-rightimg {
+	position: absolute;
+	right: 0px;
+	top: 3.5rem;
+	width: 22.0625rem;
+}
+
+/* 左边内容 */
+.Brief-left {
+	width: 100%;
+	height: 35.8125rem;
+	overflow: hidden;
+}
+
+.Brief-Subheading {
+	font-family: MicrosoftYaHei;
+	background-color: #957bff;
+	width: 20rem;
+	height: 2.5rem;
+	font-size: 1.375rem;
+	color: white;
+	border-radius: 1.875rem 1.875rem 1.875rem 0rem;
+	margin-top: 7%;
+	margin-left: 2rem;
+	text-align: center;
+	line-height: 2.5rem;
+}
+
+.Brief-left>b {
+	font-size: 3.25rem;
+	margin-left: 2rem;
+	margin-top: 1.5625rem;
+	display: inline-block;
+}
+
+.Brief-lefttext1 {
+	width: 31.4375rem;
+	height: 1.5625rem;
+	margin-top: 0.875rem;
+	margin-left: 2rem;
+}
+
+.Brief-lefttext1>div {
+	display: inline-block;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	border-right: solid .0625rem #6a6485;
+	text-align: center;
+}
+.Brief-lefttext1>div:nth-child(1){
+	padding-left: 0rem;
+}
+
+.Brief-lefttext1>div>a {
+	font-size: 1.375rem;
+	letter-spacing: .3125rem;
+	color: #6a6485;
+	font-family: MicrosoftYaHei
+}
+
+.Brief-lefttext1>div:nth-child(3) {
+	border: none;
+}
+
+.Brief-lefttext2 {
+	width: 100%;
+	margin-left: 1.25rem;
+	margin-top: 1.875rem;
+}
+
+.Brief-lefttext2>div {
+	font-size: 1.5rem;
+	width: 9rem;
+	height: 3rem;
+	display: inline-block;
+	background-color: #faf9f9;
+	border-radius: 4.875rem;
+	text-align: center;
+	line-height: 3rem;
+	color: #957bff;
+	font-weight: 600;
+	border: solid .0625rem #ffffff;
+	/* opacity: 0.8; */
+	margin-right: .625rem;
+}
+
+/* 提交需求 */
+.Brief-Submit {
+	width: 11.75rem;
+	height: 3.4rem;
+	background-color: #6651ff;
+	color: white;
+	border-radius: .625rem;
+	text-align: center;
+	line-height: 3.4rem;
+	margin-left: 2rem;
+	margin-top: 2.125rem;
+	font-size: 1.55rem;
+	font-weight: 600;
+	cursor: pointer;
+	font-family: MicrosoftYaHei-Bold;
+}
+
+/* 超出 */
+.Brief-beyond {
+	position: absolute;
+	width: 95%;
+	height: 9.375rem;
+	background-color: #ffffff;
+	border-radius: .625rem;
+	left: 2.5%;
+	top: 30.0625rem;
+	box-shadow: #eaedff .0625rem .0625rem .4375rem 0rem;
+}
+
+.BriefDiv {
+	display: inline-block;
+	width: 32%;
+	height: 4.5625rem;
+	text-align: center;
+	margin-top: 2.4375rem;
+	border-right: solid .0625rem #928faa;
+}
+
+.BriefDiv>div {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	transition: all 0.2s ease-in-out;
+	position: relative;
+	top: -2rem;
+}
+
+.BriefDiv>div>p {
+	font-size: 2.25rem;
+	line-height: 0rem;
+	font-weight: 600;
+	color: #6651ff;
+	font-family: MicrosoftYaHei-Bold;
+	position: relative;
+	top: 0.8rem;
+}
+
+.BriefDiv>div>p>a {
+	font-size: 1.375rem;
+	font-family: MicrosoftYaHei;
+}
+
+.BriefDivA {
+	display: inline-block;
+	position: relative;
+	top: -0.4375rem;
+	font-size: 1.3rem;
+	color: #3e3a51;
+}
+
+.BriefDiv:nth-child(3) {
+	border: none;
+}
+
+/* 选择我们你可以得到 */
+.outcome-interior {
+	width: 100%;
+	height: 50rem;
+	margin-top: 15rem;
+}
+
+.Header-header {
+	font-size: 2rem;
+	margin-top: 4rem;
+	line-height: 0rem;
+	text-align: center;
+	font-weight: 600;
+	font-family: MicrosoftYaHei-Bold;
+}
+
+.Header-header1 {
+	margin-top: 1.5rem;
+	text-align: center;
+	font-size: 1.3rem;
+	margin-bottom: 2rem;
+}
+
+.outcome-content {
+	width: 100%;
+	height: 28.125rem;
+}
+
+.outcome-content>div {
+	margin-left: 1.25rem;
+	width: 45%;
+	height: 43%;
+	float: left;
+	border-radius: .625rem;
+	background-color: #f0f2fa;
+	margin-top: 1.25rem;
+	position: relative;
+	border: solid #efeefb .0625rem;
+}
+
+
+.outcome-content>div>img {
+	width: 4.1875rem;
+	position: absolute;
+	right: 0rem;
+	bottom: 0rem;
+}
+
+
+.outcome-content>div>h3 {
+	position: absolute;
+	font-size: 1.5rem;
+	left: 1.5rem;
+	top: 0.5rem;
+	font-weight: 600;
+	color: #23184c;
+	font-family: MicrosoftYaHei-Bold;
+}
+
+.outcome-content>div>h3>img {
+	width: 1.75rem;
+	margin-top: -0.2rem;
+	margin-right: 0.2rem;
+}
+
+.outcomeText {
+	position: absolute;
+	width: 80%;
+	top: 4rem;
+	left: 1.5rem;
+	font-size: 1.1875rem;
+	/* line-height: 4.375rem; */
+	color: #6a6485;
+	font-family: MicrosoftYaHei;
+}
+
+.outcomeText>a {
+	color: #23184c;
+	font-weight: 600;
+	font-family: MicrosoftYaHei-Bold;
+}
+
+/* 方案 */
+.scheme {
+	width: 100%;
+	height: 92.5rem;
+	background-image: linear-gradient(#f6f8ff, #c2ceff);
+}
+
+/* 方案内容 */
+.scheme-content {
+	margin: auto;
+	width: 100%;
+	height: 100%;
+}
+
+/* 需求 */
+.scheme-demand {
+	overflow: hidden;
+	width: 100%;
+	height: 94.5rem;
+	padding: .0625rem;
+	background-image: linear-gradient(#f7f9ff, #b7c5ff);
+	position: relative;
+}
+
+.scheme-navigation {
+	width: 80.125rem;
+	height: 11.75rem;
+	margin: auto;
+	border-bottom: solid .125rem #e8e6f1;
+}
+
+.scheme-navigation>div {
+	float: left;
+	height: 100%;
+	/* background-color: #6651ff; */
+	font-size: 4.5rem;
+	line-height: 12.125rem;
+	color: #8b84aa;
+	cursor: pointer;
+}
+
+.scheme-navigation>div:nth-child(2) {
+	margin-left: 11.3125rem;
+	margin-right: 11.3125rem;
+}
+
+.scheme-navigation>div:nth-child(1) {
+	margin-left: 1.625rem;
+	border-bottom: solid .1875rem #6454d6;
+	color: #6454d6;
+	font-weight: 600;
+}
+
+.scheme-navigation>div:nth-child(3) {
+	margin-right: .625rem;
+}
+
+.ccc {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.ccc>div {
+	float: left;
+}
+
+.scheme-Nancontent {
+	width: 100%;
+	height: 100%;
+}
+
+.scheme-Nancontent>div {
+	width: 92%;
+	height: 12.5rem;
+	background-color: #ffffff;
+	margin: auto;
+	margin-top: 2%;
+	border: solid #ffffff .125rem;
+	border-radius: .625rem;
+
+}
+
+.scheme-Nancontent1 {
+	position: relative;
+}
+
+.scheme-Nancontent1>div {
+	float: left;
+}
+
+.scheme-Nancontent1>img {
+	width: 11.5%;
+	position: absolute;
+	left: 35%;
+}
+
+.scheme-top {
+	width: 47%;
+	height: 100%;
+}
+
+.scheme-top>p:nth-child(1) {
+	font-size: 1.625rem;
+	font-weight: 600;
+	margin-left: 1rem;
+	font-family: MicrosoftYaHei-Bold;
+	color: #23184c;
+}
+
+.scheme-top>p:nth-child(1)>img {
+	width: 3rem;
+	margin-right: 1rem;
+}
+
+.scheme-top>p:nth-child(2) {
+	width: 85%;
+	font-size: 1.25rem;
+	margin-left: 1rem;
+	color: #8b84aa;
+	line-height: 2rem;
+	font-family: MicrosoftYaHei;
+	margin-top: -1rem;
+}
+
+.scheme-bottom {
+	padding-top: 1rem;
+
+	width: 53%;
+	height: 100%;
+	text-indent: -1rem;
+	background: linear-gradient(-45deg, #e9f2ff, #e3eeff);
+	border-radius: 0 .625rem .625rem 0;
+}
+
+.scheme-bottom>ul>li {
+	font-size: 1.2rem;
+	font-family: MicrosoftYaHei;
+	line-height: 2.6rem;
+	margin-left: -1rem;
+	list-style: none;
+}
+.scheme-bottom>ul>li::before{
+	content: ''; /* 使用伪元素添加圆点 */
+  display: inline-block;
+  width: .5rem; /* 设置圆点的宽度 */
+  height: .5rem; /* 设置圆点的高度 */
+  margin-left: -1em; /* 将圆点与文本对齐 */
+  background-color: #b7c5ff; /* 设置圆点的颜色 */
+  border-radius: 50%; /* 圆点圆形 */
+  margin-right: 0.5em; /* 可选的：在圆点和文本之间添加一些空间 */
+}
+
+/* 示例 */
+
+/* 示例 */
+.scheme-example {
+	width: 100%;
+}
+
+/* 示例轮播图 */
+a {
+	text-decoration: none;
+}
+
+#wrap {
+	position: relative;
+	width: 100%;
+	height: 27rem;
+	overflow: hidden;
+}
+
+#wrap .pic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 300rem;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.pic li {
+	float: left;
+	width: 95vw;
+	height: 27rem;
+	list-style: none;
+}
+
+.pic li div {
+	float: left;
+}
+
+
+.tab {
+	margin-left: 24%;
+	margin-top: 7%;
+	border-radius: .9375rem;
+	transition: 0.5s;
+}
+
+.tab li {
+	width: .9375rem;
+	height: .9375rem;
+	float: left;
+	background: #fff;
+	border-radius: 50%;
+	margin: .3125rem .625rem 0 0;
+	cursor: pointer;
+	margin-left: 1.625rem;
+	list-style: none;
+}
+
+.tab li.on {
+	background: #6651FE;
+}
+
+.prev {
+	top: 40%;
+	left: -1.5rem;
+	position: absolute;
+}
+
+.next {
+	top: 40%;
+	right: -1.5rem;
+	position: absolute;
+}
+
+
+.carousel {
+	width: 95%;
+	height: 31.9375rem;
+	padding: .0625rem;
+	margin: auto;
+	position: relative;
+
+}
+
+.carouselImg {
+	position: relative;
+	width: 58%;
+	background-color: white;
+	height: 27rem;
+	border-radius: .625rem 0 0 .625rem;
+	float: left;
+}
+
+.carouselImg>img {
+	width: 19rem;
+	margin-top: 3rem;
+	margin-left: 1.875rem;
+}
+
+.carouselImg>div {
+	position: absolute;
+}
+
+.carouselImg>div>img {
+	width: 7.75rem;
+	height: 3.125rem;
+}
+
+.carouselImg>div>a {
+	font-size: 1.375rem;
+	width: 5.625rem;
+	display: inline-block;
+	position: absolute;
+	color: white;
+	left: 1.0625rem;
+	top: .875rem;
+	font-family: MicrosoftYaHei-Bold;
+}
+
+/* 悬停对话框1 */
+.Dialog-Box1 {
+	position: relative;
+	float: left;
+	font-size: .8125rem;
+	width: 42%;
+}
+
+.Dialog-Box1>img {
+	width: 98%;
+	height: 27rem;
+}
+
+.Dialog-Box1>a {
+	position: absolute;
+	left: 1.5rem;
+	top: 21.25rem;
+	font-size: .83rem;
+	display: inline-block;
+	color: #12101a;
+	width: 37rem;
+	font-family: MicrosoftYaHei;
+}
+
+/* 悬停对话框2 */
+.Dialog-Box2 {
+	position: relative;
+	float: left;
+	font-size: .8125rem;
+	width: 42%;
+}
+
+.Dialog-Box2>img {
+	width: 98%;
+	height: 27rem;
+}
+
+.Dialog-Box2>a {
+	width: 65%;
+	position: absolute;
+	left: 4.625rem;
+	top: 15.4rem;
+	display: inline-block;
+	color: #12101a;
+	font-size: 3vw;
+}
+
+/*  悬停对话框3 */
+.Dialog-Box3 {
+	position: relative;
+	float: left;
+	font-size: .8125rem;
+	width: 42%;
+}
+
+.Dialog-Box3>img {
+	width: 98%;
+	height: 27rem;
+}
+
+.Dialog-Box3>a {
+	position: absolute;
+	left: 3rem;
+	top: 6.5rem;
+	font-size: 0.9rem;
+}
+
+/* 提交需求 */
+.Submit-request {
+	width: 12.5rem;
+	height: 3.75rem;
+	background-color: #6651ff;
+	color: white;
+	border-radius: .625rem;
+	text-align: center;
+	line-height: 3.75rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin: auto;
+	cursor: pointer;
+	margin-bottom: 3.75rem;
+}
+
+.Submit-request:hover {
+	opacity: 0.8;
+}
+
+/* 4步 */
+.steps {
+	width: 100%;
+	height: 33rem;
+	margin: auto;
+	/* background-color: #3e3a51; */
+	padding: .0625rem;
+}
+
+.steps-Content {
+	background-image: url("../../img/procedure-bg.png");
+	width: 92%;
+	height: 184px;
+	background-repeat: no-repeat;
+	margin: auto;
+	margin-top: 1.25rem;
+	background-size: 100% 100%;
+}
+
+.steps-Content>div {
+	float: left;
+	width: 50%;
+	height: 50%;
+	position: relative;
+	padding: 0.1rem 0.1rem;
+}
+
+.steps-Content>div>img {
+	position: relative;
+	left: .9375rem;
+	top: 1rem;
+	width: 1.6875rem;
+	margin-right: 0.2rem;
+}
+
+.steps-Content>div>a {
+	position: relative;
+	font-size: 1.5rem;
+	font-weight: 600;
+	left: .7rem;
+	top: 1.2rem;
+	color: #23184c;
+	font-family: MicrosoftYaHei-Bold;
+}
+
+.steps-Content>div>p {
+	display: inline-block;
+	width: 80%;
+	font-size: 1.25rem;
+	margin-top: 1.75rem;
+	margin-left: .9375rem;
+	color: #7b7597;
+	font-family: MicrosoftYaHei;
+}
+
+/* 学科 */
+.discipline-interior {
+	height: 36rem;
+	background-color: #f3f5fe;
+	padding: .1rem;
+	overflow: hidden;
+
+}
+
+/* 学科板块 */
+.Dis-sections {
+	overflow: hidden;
+	width: 100rem;
+	height: 26rem;
+	white-space: nowrap;
+	/* background-color: #3e3a51; */
+}
+
+.Dis-sections>div {
+	float: left;
+	background-color: #ffffff;
+	width: 16.25rem;
+	height: 21.625rem;
+	margin-left: .625rem;
+	border: solid 2px #eaecff;
+	border-radius: .625rem;
+	margin-top: 1.5625rem;
+}
+
+.DisDIV {
+	margin-top: -1rem;
+	margin-left: 2.25rem;
+	width: 85%;
+	height: 10.5625rem;
+}
+
+.DisDIV>p {
+	font-size: 1.375rem;
+	line-height: 1rem;
+	color: #7b7597;
+	font-family: MicrosoftYaHei;
+}
+
+.DisDIV>p>img {
+	width: .7rem;
+	margin-right: 0rem;
+	margin-top: -0.4rem;
+}
+.swiper-wrapper>div{
+	width: 16.25rem;
+	height: 21.625rem;
+}
+.Medical-icons{
+	/* width: 16.25rem; */
+    height: 21.5rem;
+    background-color: #ffffff;
+    border: solid .0625rem #e9ecf5;
+	border-radius: .625rem;
+	margin-right: .125rem;
+}
+.Medical-icons>img{
+	width: 4.1rem;
+	height: 4.1rem;
+	margin-left: 2.25rem;
+	margin-top: 2.5625rem;
+}
+.Medical-icons>p{
+	line-height: 0rem;
+	font-size: 1.625rem;
+	color: #23184c;
+	font-family: MicrosoftYaHei-Bold;
+	margin-left: 2.25rem;
+	font-weight: 600;
+}
+.Medical-icons>a{
+	display: inline-block;
+	background-color: #957bff;
+	width: 2.5rem;
+	height: .25rem;
+	margin-left: 2.25rem;
+	border-radius: 3rem;
+	position: relative;
+	top: -1rem;
+}
+
+/* 专家档案 */
+.Archives-experts {
+	width: 100%;
+	height: 68rem;
+	margin: auto;
+	padding: .0625rem;
+
+}
+
+/* 专家轮播图 */
+.Expert-carousel {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	/* background-color: #3e3a51; */
+}
+
+.carousel2 {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	margin-top: -2rem;
+}
+
+.carousel2 ul {
+	list-style: none;
+	width: 110%;
+	position: relative;
+	margin-left: -4rem;
+}
+
+.carousel2 ul li {
+	margin-top: 1.25rem;
+	float: left;
+	width: 46%;
+	margin-left: 1.125rem;
+	height: 26rem;
+	border-radius: .625rem;
+	position: relative;
+	box-shadow: #c5c0dc 0rem 0rem .375rem 0rem;
+
+}
+
+#unit2>li>img {
+	width: 7.5rem;
+	position: absolute;
+	bottom: 0rem;
+	right: 0rem;
+	border-radius: 0rem 0rem 1.25rem 0rem;
+}
+
+#unit2>li>h3 {
+	margin-left: 1.8125rem;
+	margin-top: 3rem;
+	font-size: 1.625rem;
+	font-weight: 400;
+	line-height: 0rem;
+	width: 9.375rem;
+	font-family: SourceHanSerifCN-Bold;
+	color: #23184c;
+}
+
+#unit2>li>div:nth-child(3) {
+	width: 8.125rem;
+	height: 1.875rem;
+	margin-left: 1.5rem;
+	background-color: #f1f4ff;
+	border-radius: 3.25rem;
+	text-align: center;
+	line-height: 1.7rem;
+	font-size: 1.125rem;
+	margin-top: 1.5rem;
+	color: #8b84aa;
+	font-family: MicrosoftYaHei;
+}
+
+#unit2>li>a {
+	display: inline-block;
+	background-color: #957bff;
+	width: 3.3125rem;
+	height: .25rem;
+	margin-left: 1.5rem;
+	border-radius: 3rem;
+	position: relative;
+	top: -0.5rem;
+}
+
+#unit2>li>p {
+	margin-top: 0rem;
+	font-weight: 700;
+	font-size: 1rem;
+	margin-left: 1.5rem;
+	color: #3e3a51;
+	font-family: MicrosoftYaHeiLight;
+}
+
+/* 教授详情 */
+.Brief-int {
+	width: 85%;
+	height: 14rem;
+	background-color: #f3f5fe;
+	border-radius: 1.25rem;
+	margin: auto;
+	padding: .0625rem;
+}
+
+.Brief-int>p {
+	margin-left: 1.5rem;
+}
+
+.Brief-int>p:nth-child(1) {
+	font-weight: 600;
+	margin-top: 1.5rem;
+	font-size: 1.375rem;
+	color: #7b7597;
+	font-family: MicrosoftYaHei-Bold;
+}
+
+.Brief-int>p:nth-child(2) {
+	line-height: 0rem;
+	font-size: 1.1rem;
+	color: #3e3a51;
+	font-family: MicrosoftYaHei;
+}
+
+.Brief-int>p:nth-child(3) {
+	font-weight: 600;
+	font-size: 1.375rem;
+	color: #7b7597;
+	font-family: MicrosoftYaHei-Bold;
+}
+
+
+.Brief-int>p:nth-child(4) {
+	line-height: 0rem;
+	font-size: 1.1rem;
+	color: #3e3a51;
+	font-family: MicrosoftYaHei;
+}
+
+.Brief-int>p:nth-child(5) {
+	line-height: 1rem;
+	font-size: 1.1rem;
+	color: #3e3a51;
+	font-family: MicrosoftYaHei;
+}
+
+/* 出版社 */
+.publishing-house {
+	width: 100%;
+	height: 23.5rem;
+	background-color: #f3f5fe;
+}
+
+.publishing {
+	padding: .0625rem;
+	width: 100%;
+	height: 100%;
+	/* margin: auto; */
+}
+
+.marquee-area {
+	width: 92%;
+	height: 13rem;
+	margin: auto;
+}
+
+.marquee-area>img {
+	width: 32%;
+	/* margin-left: 2rem; */
+	margin-top: .625rem;
+}
+.marquee-area>img:nth-child(2) {
+	margin-left: .1875rem;
+	margin-right: .1875rem;
+}
+.marquee-area>img:nth-child(5) {
+	margin-left: .1875rem;
+	margin-right: .1875rem;
+}
+
+
+/* 常见问题 */
+.FR-asked-questions {
+	width: 100%;
+
+}
+
+.FR-asked-Div {
+	position: relative;
+}
+
+.FR-asked-Div>div {
+	display: inline-block;
+	width: .375rem;
+	height: 2.5rem;
+	border-radius: 3rem;
+	background-color: #957bff;
+	position: relative;
+	left: 2rem;
+	top: 0.4rem;
+}
+
+.FR-asked-Div>p {
+	display: inline-block;
+	font-size: 2.625rem;
+	margin-top: 3rem;
+	margin-left: 2.875rem;
+	font-weight: 600;
+}
+
+.FR-asked-Div>a {
+	display: inline-block;
+	font-size: 2.625rem;
+	color: #f5f7ff;
+	font-family: MicrosoftYaHei-Bold;
+	font-weight: 600;
+	position: absolute;
+	right: 4%;
+	top: 3rem;
+}
+
+/* 常见问题框 */
+.Question-Box {
+	width: 92%;
+    height: 58rem;
+    background-color: #f5f7ff;
+    border-radius: 1.25rem;
+    margin: auto;
+}
+
+.sideMenu {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	top: 1.5625rem;
+}
+
+.sideMenuDIv {
+	/* background-color: white; */
+	margin-top: -1.0625rem;
+}
+
+.sideMenu h3 {
+	width: 100%;
+	height: 6rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 0 .625rem;
+	margin-top: 2.1875rem;
+	margin-left: .875rem;
+	font-family: MicrosoftYaHei-Bold;
+	line-height: 2rem;
+}
+
+.sideMenu h3 a {
+	color: #fff;
+}
+
+.sideMenu ul {
+	margin-left: -2.3125rem;
+	margin-top: -4.25rem;
+}
+
+.sideMenu ul li {
+	width: 96%;
+	list-style: none;
+}
+
+.sideMenu ul li a {
+	color: #242323;
+	font-size: 1.25rem;
+	/* font-weight: 400; */
+	display: inline-block;
+	line-height: 3rem;
+	font-family: MicrosoftYaHei;
+
+}
+
+.liu {
+	padding: .3125rem;
+	background-color: white;
+	border-radius: 1.25rem;
+	margin-top: -1.5625rem;
+	box-shadow: 0rem 0rem 1.25rem rgb(110, 65, 255, 0.2);
+	color: #6454d6;
+}
+
+/* 填写信息表单 */
+.Information-form {
+	width: 100%;
+	height: 95.4rem;
+	background-image: linear-gradient(#ffffff, #93a8ff);
+	position: relative;
+}
+
+/* 表单内容 */
+.form-Content {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	position: relative;
+	padding: .0625rem;
+	padding-top: 2rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.form-ConImg {
+	position: absolute;
+	right: 9.375rem;
+}
+
+.form-ConImg1 {
+	display: inline-block;
+	width: 4.375rem;
+	height: 4.375rem;
+	background-color: #e7e3ff;
+	border-radius: 3.125rem;
+	position: absolute;
+	top: 11.5625rem;
+	left: 5rem;
+}
+
+/* 标题 */
+.form-Title {
+	font-size: 3.125rem;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 6.25rem;
+}
+
+.form-Title>a {
+	color: #6651ff;
+}
+
+/* 表单框 */
+.Form-Box {
+	width: 92%;
+	height: 80rem;
+	border-radius: 1.25rem;
+	margin: auto;
+	background-color: #ffffff;
+	position: relative;
+	z-index: 50;
+	padding: .1rem;
+}
+
+.Form-Box>p {
+	font-size: 1.3rem;
+	color: #12101a;
+	font-weight: 600;
+	margin-left: 1.875rem;
+	margin-top: 1.5rem;
+	margin-bottom: .9375rem;
+	height: 3rem;
+}
+
+/* 具体内容 */
+.form-Details {
+	width: 100%;
+	height: 95%;
+	border-top: solid .0625rem #e2e1e3;
+	margin-top: -1.25rem;
+	position: relative;
+}
+
+#formSubmit>div {
+	height: 8rem;
+	font-size: 1.5rem;
+	position: relative;
+}
+
+#Submission {
+	width: 8.75rem;
+	height: 3.75rem;
+	margin: auto;
+	border-radius: .625rem;
+	border: none;
+	font-size: 1.625rem;
+	background-color: #6651ff;
+	color: white;
+	margin-left: 36%;
+}
+
+/* 表单文本框 */
+.a {
+	width: 98%;
+	height: 3.75rem;
+	border-radius: .625rem;
+	border: solid .1rem #ccc;
+	padding: 2rem;
+	background-color: white;
+	padding-left: 1rem;
+}
+
+.a:focus {
+	outline: none;
+	border: solid .0625rem #957bff;
+	box-shadow: 0rem 0rem .5rem .25rem rgb(110, 65, 255, 0.2);
+}
+
+#phone.change::-webkit-input-placeholder {
+	color: red;
+}
+
+/* 表单填写验证码框 */
+.b {
+	width: 63%;
+	height: 3.75rem;
+	border-radius: .625rem;
+	border: solid .1rem #ccc;
+	padding: 2rem;
+	padding-left: 1rem;
+}
+
+.spanaA {
+	color: #ff0000;
+	display: inline-block;
+	margin-right: 0.5rem;
+}
+
+.requirements {
+	width: 98%;
+	height: 16.25rem;
+	border-radius: .625rem;
+	border: solid .1rem #ccc;
+	padding: 1rem;
+
+}
+
+.requirements:focus {
+	box-shadow: #957bff 0rem 0rem .1875rem;
+	outline: none;
+	border: solid .0625rem #957bff;
+}
+
+input:focus {
+	box-shadow: 0rem 0rem .5rem .25rem rgb(110, 65, 255, 0.2);
+	/* box-shadow: #957bff 0rem 0rem .1875rem; */
+	/* outline-color: #957bff; */
+	border: solid .0625rem #957bff;
+	outline: none;
+}
+
+.formP {
+	width: 92%;
+	text-align: center;
+	color: white;
+	font-weight: 600;
+	font-size: 1.2rem;
+	line-height: 2.125rem;
+	margin-left: 1.875rem;
+	font-family: MicrosoftYaHei-Bold;
+}
+
+/* 项目底部 */
+.project-bottom {
+	width: 100%;
+	height: 4.125rem;
+	background-color: #93a8ff;
+	border-top: solid 1px rgb(211, 211, 211, 0.3)
+}
+
+.projectP{
+	text-align: center;
+	color: white;
+	font-size: 1.25rem;
+	font-family: MicrosoftYaHei;
+}
+.projectP img{
+	width: 16px;
+}
+.projectP a{
+	color: white;
+}
+input::-webkit-input-placeholder {
+	color: #999999;
+	font-size: 1.375rem;
+}
+
+textarea::-webkit-input-placeholder {
+	color: #999999;
+	font-size: 1.375rem;
+}
+
+.swiper-container {
+	height:28.9375rem;
+}
+
+.content-slide {
+	width: 92%;
+	margin: auto
+}
+
+.title {
+	font-size: 1.5625rem;
+	margin-bottom: .625rem;
+}
+
+.pagination {
+	position: relative;
+	left: 0;
+	text-align: center;
+	/*margin-left: 32%;*/
+	width: 100%;
+	line-height: 0rem;
+}
+.pagination>span{
+	margin-left: 2rem;
+	width: 1.2rem;
+	height: 1.2rem;
+}
+.pagination>span:nth-child(1){
+	margin-left: -0.4rem;
+}
+.swiper-pagination-switch {
+	display: inline-block;
+	width: .625rem;
+	height: .625rem;
+	border-radius: .625rem;
+	background: #ffffff;
+	margin: 0 .1875rem;
+	cursor: pointer;
+	margin-left: .625rem;
+}
+
+.swiper-active-switch {
+	background: #6651ff;
+}
+
+.swiper-wrapper>div{
+	width: 160px;
+}
+.swiper-slide{
+	width: 160px;
+}

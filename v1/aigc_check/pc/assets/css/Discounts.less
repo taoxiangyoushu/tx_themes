@@ -1,0 +1,240 @@
+.CircleBG {
+	width: 504px;
+	height: 544px;
+    background: url('../img/box-Contentbg.png') no-repeat;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -252px;
+    margin-top: -352px;
+    z-index: 10001;
+}
+.Discounts_box {
+    display: none;
+}
+.box-Content {
+    background: url('../img/cricle.png') no-repeat;
+    position: relative;
+    z-index: 10000;
+    height: 100%;
+    background-position: 50% 50%;
+    .ContentText {
+        width: 271px;
+        height: 358px;
+        margin-top: -203px;
+        margin-left: -136px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+    }
+    .Contenthader {
+        text-align: center;
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 30px;
+        img {
+            position: absolute;
+            right: -30px;
+            cursor: pointer;
+        }
+    }
+    .wcode {
+        width: 128px;
+        height: 128px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.4);
+        display: inline-block;
+        margin-top: 14px;
+        #codeBox {
+            margin: 9px 0 0 9px;
+        }
+    }
+
+    .ButtonDiv {
+        background-image: linear-gradient(-77deg, 
+		#ff3e4c 0%, 
+		#ff9476 100%), 
+        linear-gradient(
+            #ffffff, 
+            #ffffff);
+        background-blend-mode: normal, 
+            normal;
+        box-shadow: 0px 6px 4px 1px 
+            rgba(255, 185, 176, 0.7);
+        width: 158px;
+	    height: 35px;
+        font-size: 18px;
+        color: #fff;
+        line-height: 31px;
+        border-radius: 18px;
+        margin: 0 auto;
+        border: 2px solid #fff;
+        margin-top: 20px;
+    }
+    .DiscountsTips {
+        color: #7b5b5b;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+    .Prompt {
+        overflow: hidden;
+        color: #2b0101;
+        font-size: 12px;
+        padding-top: 22px;
+        padding: 22px 10px 0 10px;
+        &>div {
+            float: left;
+            width: 30%;
+            img {
+                margin-bottom: 10px;
+            }
+        }
+        &>img {
+            float: left;
+            width: 5%;
+            margin-top: 20px;
+        }
+        p {
+            line-height: normal;
+        }
+    }
+    .GuaranteeTheBottom {
+        width: 271px;
+        height: 139px;
+        background-color: #ffefec;
+        border-radius: 10px;
+        margin-top: 40px;
+        padding: 14px 0;
+        #Cell-phoneNumber {
+            font-size: 14px !important;
+            width: 246px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 19.5px;
+            border: solid 1px #ffffff;
+            outline: 0 !important;
+            color: #3d3d3d;
+            font-size: 16px;
+            padding-left: 34px;
+            &::placeholder {
+                color: #909090;
+                font-size: 12px;
+            }
+        }
+        .phoneNumber {
+            position: relative;
+            img {
+                position: absolute;
+                top: 13px;
+                left: 28px;
+            }
+        }
+        .GetCode {
+            background-color: #ffdad6;
+            padding: 1px 1px 2px 1px;
+            display: inline-block;
+            margin: 12px auto 8px;
+            border-radius: 16px;
+            border: 1px solid #ff6762;
+            cursor: pointer;
+            &>div {
+                width: 244px;
+                height: 34px;
+                line-height: 34px;
+                background-image: linear-gradient(-77deg, 
+                    #ff3e4c 0%, 
+                    #ff9476 100%), 
+                linear-gradient(
+                    #ffffff, 
+                    #ffffff);
+                background-blend-mode: normal, 
+                    normal;
+                border-radius: 16px;
+                &.Not {
+                    color: #ffffff;
+                    box-shadow: 0.6px 0.8px 0px 0px 
+                        rgba(255, 0, 30, 0.7);
+                        font-size: 16px;
+                    .text1 {
+                        vertical-align:middle;
+                        margin: 0 4px;
+                    }
+                    .text2 {
+                        display: none;
+                    }
+                }
+                &.success {
+                    .text2 {
+                        display: inline-block;
+                    }
+                    .text1 {
+                        display: none;
+                    }
+                    img {
+                        display: none;
+                    }
+                    span {
+                        color: #ffffff;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .Rules {
+            color: #260f0f;
+            font-size: 12px;
+            font-weight: bold;
+            span {
+                color: #6b4b4b;
+                font-weight: 400;
+            }
+        }
+        .CopyCode {
+            font-size: 12px !important;
+            text-decoration: underline;
+            margin-left: 4px;
+            cursor: pointer;
+        }
+        #copyInput2 {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+}
+.fiexBox {
+    .fiexBoxP {
+        float: right;
+    }
+    .navBtn.WX {
+        float: right;
+    }
+    .Activity {
+        cursor: pointer;
+        display: none;
+    }
+}
+
+
+.mask_body {
+    position: fixed;
+    background: #000;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    display: none;
+}
+
+.Activity {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    top: calc(62% - 130px) ;
+    right: 10px;
+}

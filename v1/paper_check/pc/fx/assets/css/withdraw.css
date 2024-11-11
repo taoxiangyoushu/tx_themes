@@ -1,0 +1,355 @@
+.withdrawBox {
+  display: none;
+}
+.withdrawBox .mask_body {
+  position: fixed;
+  background: #000;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+.withdrawBox .withdrawalMain {
+  width: 100%;
+  max-width: 808px;
+  height: 777px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-top: -388px;
+  margin-left: -390px;
+  background: #FFFFFF;
+  z-index: 1000;
+  border-radius: 10px;
+  border: 1px solid #F1F1F1;
+}
+.withdrawBox .close,
+.withdrawBox .closeConfirmPopUp {
+  position: absolute;
+  right: 20px;
+  top: 21px;
+}
+.withdrawBox .dialog__title {
+  font-size: 16px;
+  color: #000000;
+  text-align: left;
+  padding: 18px 20px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.withdrawBox .withdrawalFlow {
+  background: #FFF9F7;
+  width: 100%;
+  margin: auto;
+  font-size: 12px;
+  color: #333333;
+  padding: 20px;
+}
+.withdrawBox .dialog__main {
+  padding: 16px 20px 0 20px;
+  max-height: calc(100% - 145px);
+  overflow: auto;
+}
+.withdrawBox .mainFlow {
+  overflow: hidden;
+  margin: 20px 0;
+}
+.withdrawBox .mainFlow img {
+  margin-right: 14px;
+}
+.withdrawBox .mainFlow > div {
+  float: left;
+  width: 33.3%;
+}
+.withdrawBox .mainFlow .text {
+  display: inline-block;
+  vertical-align: middle;
+}
+.withdrawBox .mainFlow .item1 > div,
+.withdrawBox .mainFlow .item2 > div,
+.withdrawBox .mainFlow .item3 > div {
+  display: inline-block;
+}
+.withdrawBox .mainFlow .item1 .text,
+.withdrawBox .mainFlow .item2 .text,
+.withdrawBox .mainFlow .item3 .text {
+  text-align: left;
+}
+.withdrawBox .mainFlow .item3 {
+  text-align: right;
+}
+.withdrawBox .notice {
+  line-height: 20px;
+}
+.withdrawBox .notice p {
+  color: #666;
+}
+.withdrawBox .title {
+  color: #333;
+  font-weight: bold;
+}
+.balance {
+  font-size: 14px;
+  color: #333333;
+  margin-top: 24px;
+}
+.balance span {
+  font-weight: bold;
+}
+.plagiarismCheck-form {
+  margin-top: 12px;
+}
+.check-version-block {
+  overflow: hidden;
+}
+.check-version-block .version-item {
+  width: 170px;
+  height: 50px;
+  background: #FAFAFA;
+  border-radius: 4px;
+  border: 1px solid #F4F4F4;
+  text-align: center;
+  line-height: 46px;
+  font-size: 14px;
+  color: #726F6D;
+  float: left;
+  cursor: pointer;
+}
+.check-version-block .version-item + .version-item {
+  margin-left: 22px;
+}
+.check-version-block .version-item span {
+  display: inline-block;
+  width: 56px;
+  text-align: left;
+  padding-left: 6px;
+}
+.check-version-block .version-item.active {
+  background-color: #FFF5F4;
+  background-image: url('../img/kuang.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.paper-title-block {
+  max-width: 320px;
+}
+.label-t {
+  font-size: 14px;
+  color: #333;
+}
+.label-t span {
+  color: #F56C6C;
+}
+.initiated {
+  width: 100%;
+  border-top: 1px solid #E8EBF1;
+  padding: 22px 24px;
+  position: absolute;
+  bottom: 0;
+  left: 01;
+}
+.initiated .initiatedBt {
+  width: 96px;
+  height: 40px;
+  background: #FF6347;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #FFFFFF;
+  float: right;
+  cursor: pointer;
+}
+.initiated .initiatedBt:hover {
+  background: #ff583a;
+}
+.initiated .amountBox {
+  font-size: 18px;
+  color: #333333;
+}
+.initiated .amountBox span {
+  font-size: 24px;
+  color: #333333;
+  font-weight: bold;
+}
+.uploadBox {
+  width: 80px;
+  height: 80px;
+  border-radius: 3px;
+  border: 1px solid #F1F1F1;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.uploadBox:hover {
+  border-color: #999;
+}
+.uploadBox span {
+  font-size: 30px;
+  color: #999999;
+  line-height: 80px;
+}
+.uploadBox #exampleInputFile,
+.uploadBox #exampleInputFile2 {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.uploadDiv .file-block,
+.uploadDiv .file-block2 {
+  display: none;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.uploadDiv .file-block > #collectionCode,
+.uploadDiv .file-block2 > #collectionCode,
+.uploadDiv .file-block > #voucher,
+.uploadDiv .file-block2 > #voucher {
+  width: 100%;
+  height: 100%;
+}
+.uploadDiv .file-block:hover,
+.uploadDiv .file-block2:hover {
+  background-color: #ccc;
+}
+.uploadDiv .file-block:hover .delete-file,
+.uploadDiv .file-block2:hover .delete-file,
+.uploadDiv .file-block:hover .delete-file2,
+.uploadDiv .file-block2:hover .delete-file2 {
+  display: block;
+}
+.uploadDiv .delete-file,
+.uploadDiv .delete-file2 {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.uploadDiv .delete-file img,
+.uploadDiv .delete-file2 img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -4px;
+  margin-top: -4px;
+  cursor: pointer;
+}
+.wxItem,
+.yhkItem {
+  display: none;
+}
+.ConfirmPopUpWindow {
+  display: none;
+}
+.ConfirmPopUpWindow .mask_body {
+  z-index: 1001;
+  position: fixed;
+  background: #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+.ConfirmPopUpWindow .windowBox {
+  width: 320px;
+  height: 306px;
+  border-radius: 10px;
+  border: 1px solid #F1F1F1;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-top: -160px;
+  margin-left: -153px;
+  background: #FFFFFF;
+  z-index: 1002;
+  padding: 20px;
+  text-align: center;
+}
+.ConfirmPopUpWindow .totalAmount {
+  font-size: 16px;
+  color: #333333;
+}
+.ConfirmPopUpWindow .totalAmount span {
+  font-size: 30px;
+  font-weight: bold;
+}
+.ConfirmPopUpWindow .close {
+  width: 10px;
+  height: 10px;
+}
+.ConfirmPopUpWindow .title {
+  font-size: 12px;
+  color: #333333;
+  margin-top: 20px;
+}
+.ConfirmPopUpWindow .details {
+  background: #F7F7F7;
+  border-radius: 5px;
+  width: 280px;
+  margin: 10px auto 0;
+  padding: 20px 0;
+}
+.ConfirmPopUpWindow .details p {
+  text-align: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 12px;
+  color: #666666;
+}
+.ConfirmPopUpWindow .details p + p {
+  margin-top: 4px;
+}
+.ConfirmPopUpWindow .details .rightText {
+  float: right;
+}
+.ConfirmPopUpWindow .confirmed {
+  width: 280px;
+  height: 36px;
+  background: #FF6347;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  line-height: 36px;
+  position: absolute;
+  bottom: 20px;
+  cursor: pointer;
+}
+.ConfirmPopUpWindow .confirmed:hover {
+  background: #fc5537;
+}
+.help-block {
+  font-size: 12px;
+  color: #606266;
+}
+.has-error .form-control {
+  border-color: #F56C6C;
+}
+.has-error .checkbox,
+.has-error .checkbox-inline,
+.has-error .control-label,
+.has-error .help-block,
+.has-error .radio,
+.has-error .radio-inline,
+.has-error.checkbox label,
+.has-error.checkbox-inline label,
+.has-error.radio label,
+.has-error.radio-inline label {
+  color: #F56C6C;
+}
+.closeConfirmPopUp {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=withdraw.css.map */

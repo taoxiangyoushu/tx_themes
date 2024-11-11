@@ -1,0 +1,147 @@
+.fiexBoxP {
+  width: 58px;
+  height: 58px;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0px 0px 4px 0px #d3d3d3;
+  font-size: 14px;
+  color: #333333;
+  padding: 9px;
+  text-align: center;
+  border-radius: 6px 0px 0px 6px;
+  margin-top: 6px;
+  position: relative;
+}
+.fiexBoxP:hover {
+  color: #006eff;
+  box-shadow: 0px 0px 4px 0px #006cff;
+}
+.fiexBoxP .problem-f {
+  width: 360px;
+  height: 440px;
+  position: absolute;
+  left: -374px;
+  color: #333333;
+  top: -240px;
+  text-align: left;
+  cursor: default;
+  display: none;
+}
+.fiexBoxP .problem-f .p-head {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #006eff, #0094ff);
+  height: 54px;
+  line-height: 44px;
+  text-align: left;
+  padding-left: 26px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.fiexBoxP .problem-f .p-content {
+  border-radius: 12px;
+  margin-top: -10px;
+  background: #fff;
+  padding: 24px 12px 20px 22px;
+  box-shadow: 0 0 7px 0px #bdbdbd;
+}
+.fiexBoxP .problem-f .p-content .pro-cont {
+  height: 352px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.fiexBoxP .problem-f .p-content .pro-cont .p-item {
+  margin-bottom: 12px;
+}
+.fiexBoxP .problem-f .p-content .pro-cont .p-item .p-q {
+  color: #333333;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+  line-height: 22px;
+  top: 1px;
+}
+.fiexBoxP .problem-f .p-content .pro-cont .p-item .p-q span.p-question {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+  font-size: 12px;
+  background: #006eff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  left: 0;
+  vertical-align: middle;
+}
+.fiexBoxP .problem-f .p-content .pro-cont .p-item .p-q .p-text {
+  width: 248px;
+  margin-right: 4px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+.fiexBoxP .problem-f .p-content .pro-cont .p-item .p-q span.icon-more {
+  display: inline-block;
+  width: 14px;
+  height: 6px;
+  background: url("../img/icon-down.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 0;
+  top: 7px;
+  transition: background 0.3s;
+}
+.fiexBoxP .problem-f .p-content .pro-cont .p-item .p-a {
+  display: none;
+  overflow: hidden;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666666;
+  cursor: default;
+}
+.fiexBoxP .problem-f .p-content .pro-cont .p-item .p-a.defaultShow {
+  display: block;
+}
+.fiexBoxP .problem-f .p-content .pro-cont .p-item.activePr .p-q span.p-text {
+  white-space: pre-wrap;
+}
+.fiexBoxP .problem-f .p-content .pro-cont .p-item.activePr .p-q span.icon-more {
+  background: url('../img/icon-up.png') no-repeat;
+  background-size: contain;
+  top: 6px;
+}
+.fiexBoxP .problem-f .p-content .pro-cont .p-item.activePr .p-a .redText {
+  color: #d70000;
+}
+.fiexBoxP .problem-f .p-content .pro-cont::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+.fiexBoxP .problem-f .p-content .pro-cont::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #006eff;
+}
+.fiexBoxP .problem-f .p-content .pro-cont::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+.fiexBoxP .problem-f:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 16px;
+  top: 0;
+  right: -14px;
+}
+.fiexBoxP:hover .problem-f {
+  display: block;
+}

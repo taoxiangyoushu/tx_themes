@@ -1,0 +1,741 @@
+.view-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 1200px;
+  margin-top: -60px;
+  padding-top: 102px;
+}
+#App > .head {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+#App > .head.bgA {
+  background: #ffffff;
+  box-shadow: 0 0 4px 0 #d8c9ff;
+}
+#App > .head .head-content {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+#App > .head .logo img {
+  margin-top: 14.5px;
+}
+#App > .head .nav-download {
+  width: 80px;
+  height: 30px;
+  background: #7d55fc;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s;
+  position: relative;
+}
+#App > .head .nav-download a {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: inherit;
+}
+#App > .head .nav-download a:hover {
+  text-decoration: none;
+}
+#App > .head .nav-download:hover {
+  box-shadow: 0 0 11px 0px #b49cff;
+}
+#App > .head .nav-activity {
+  width: 116px;
+  height: 30px;
+  background: linear-gradient(90deg, #FFA85A, #F53F3F);
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s;
+  position: relative;
+  margin-left: 12px;
+  display: none;
+}
+#App > .head .nav-activity a {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: inherit;
+}
+#App > .head .nav-activity a:hover {
+  text-decoration: none;
+}
+#App > .head .nav-activity:hover {
+  box-shadow: 0 0 11px 0px #ffaba0;
+}
+.banner {
+  width: 1200px;
+  margin: 52px auto 0;
+}
+.banner .introduce {
+  text-align: center;
+  font-size: 72px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(180deg, #131e3c 58%, #39327e);
+  background: linear-gradient(180deg, #131e3c 58%, #39327e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.banner .introduce .switch-text {
+  background: -webkit-linear-gradient(90deg, #5868fe, #7f53fb, #5867fe);
+  background: linear-gradient(90deg, #5868fe, #7f53fb, #5867fe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin: 0 14px;
+  width: 288px;
+  display: inline-block;
+}
+.banner .introduce .typed-cursor {
+  color: #5868fe;
+}
+.banner .describe {
+  color: #8089ba;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 12px;
+}
+.banner .plagiarismCheck-btn {
+  margin: 40px auto 0;
+  width: 176px;
+  height: 60px;
+  background: linear-gradient(90deg, #5968fe, #8154fb, #5667fe);
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 60px;
+  border: 6px solid #fff;
+  border-radius: 50px;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+.banner .plagiarismCheck-btn a {
+  color: inherit;
+}
+.banner .plagiarismCheck-btn a:hover {
+  text-decoration: none;
+}
+.banner .plagiarismCheck-btn:hover {
+  box-shadow: 0 0 10px 0px #ffffff;
+}
+#checkBlock {
+  padding-top: 66px;
+}
+.content {
+  width: 1200px;
+  margin: 0 auto 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+}
+.content .plagiarismCheck-block {
+  display: none;
+}
+.content .plagiarismCheck-block .system-submit {
+  width: 838px;
+  background: linear-gradient(180deg, #f7f4ff 65%, #ffffff);
+  border-radius: 10px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form {
+  padding-top: 36px;
+  padding-left: 44px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group {
+  font-size: 0;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group.check-version {
+  display: none;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .form-control {
+  border-color: #e5deff;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .form-control:focus {
+  border-color: #c2b2ff;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .has-error .form-control {
+  border-color: #ff4242;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .label-t {
+  color: #222222;
+  font-size: 14px;
+  font-weight: normal;
+  width: 80px;
+  vertical-align: top;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .label-t.label-x {
+  margin-top: 7px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .label-t.label-s {
+  margin-top: 9px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container {
+  display: inline-block;
+  width: calc(100% - 100px - 22px);
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item {
+  width: 156px;
+  height: 90px;
+  background-color: #ffffff;
+  display: inline-block;
+  margin: 0 16px 20px 0;
+  border: 1px solid #e9e9e9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  padding: 0 10px;
+  display: none;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item .system-top {
+  height: 50px;
+  border-bottom: 1px solid #e8e8e8;
+  line-height: 50px;
+  text-align: center;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item .system-top img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item .system-bottom {
+  height: 39px;
+  color: #333333;
+  font-size: 12px;
+  text-align: center;
+  line-height: 39px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item .system-bottom .system-price {
+  line-height: 39px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item .checked {
+  display: none;
+  position: absolute;
+  bottom: -1px;
+  right: 0px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item:hover {
+  border-color: #7a5af7;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item.active {
+  border-color: #7a5af7;
+  box-shadow: 0 0 6px 0px #c2b2ff;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item.active .checked {
+  display: block;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .version-item {
+  border-radius: 50px;
+  background-color: #fdfdfe;
+  color: #8c8c8c;
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 12px;
+  text-align: center;
+  line-height: 32px;
+  cursor: pointer;
+  padding: 0 14px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .version-item.active {
+  background-color: #7a5af8;
+  color: #ffffff;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container #title {
+  height: 38px;
+  box-shadow: none;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container #author {
+  height: 38px;
+  box-shadow: none;
+  width: 52%;
+  display: inline-block;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .date-block {
+  display: inline-block;
+  width: 48%;
+  display: none;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .date-block .label-date {
+  margin-left: 30px;
+  width: 46px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .date-block #date {
+  height: 38px;
+  box-shadow: none;
+  display: inline-block;
+  width: calc(100% - 46px - 30px);
+  background: #fff;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .upload-type .toCheck {
+  margin-right: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .upload-type .toCheck .SubmissionMode {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-top: -2px;
+  cursor: pointer;
+  accent-color: #7a5af8;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .upload-type .toCheck span {
+  color: #666666;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .upload-type .notice-block {
+  float: right;
+  color: #333333;
+  font-size: 12px;
+  margin-top: 3px;
+  position: relative;
+  cursor: pointer;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .upload-type .notice-block img {
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-right: 4px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .upload-type .notice-block .notice {
+  display: none;
+  position: absolute;
+  width: 160px;
+  background: #fff;
+  padding: 18px;
+  box-shadow: 0 0 6px 0 #c2b1ff;
+  border-radius: 6px;
+  right: -184px;
+  top: -22px;
+  color: #999999;
+  line-height: 1.6;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .upload-type .notice-block .notice span {
+  color: #7d55fc;
+  margin-left: 4px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .upload-type .notice-block .notice:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 54px;
+  top: 0;
+  left: -24px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .upload-type .notice-block:hover .notice {
+  display: block;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .InputBox {
+  width: 672px;
+  height: 276px;
+  margin-top: 14px;
+  border: 1px solid #e5deff;
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 6px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .InputBox textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  font-size: 13px;
+  outline: none;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .InputBox textarea:focus {
+  border-color: #c2b2ff;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .InputBox.error {
+  border-color: #ff4242;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox {
+  display: none;
+  width: 672px;
+  height: 276px;
+  border: 1px solid #ccc;
+  margin-top: 14px;
+  border-radius: 6px;
+  position: relative;
+  background: #ffffff;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox:hover {
+  border: 1px dashed #755afd;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox.error {
+  border-color: #ff4242;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox #ThesisInput {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  outline: none;
+  opacity: 0;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Not {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 66px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Not img {
+  margin-bottom: 20px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Not p {
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 17px;
+  margin-top: 6px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Not p.redText {
+  color: #ff2d2d;
+  font-size: 12px;
+  margin-top: 2px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Not span {
+  font-size: 12px;
+  color: #999999;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .CompleteBox {
+  width: 322px;
+  margin: auto;
+  margin-top: 102px;
+  overflow: hidden;
+  padding: 16px 0;
+  padding-left: 60px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .CompleteBox .fileIcoBox,
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .CompleteBox .fileBox {
+  position: relative;
+  float: left;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .CompleteBox .fileIcoBox .fileNameThesis,
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .CompleteBox .fileBox .fileNameThesis {
+  line-height: 16px;
+  margin-top: -2px;
+  min-height: 16px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .CompleteBox .fileIcoBox .lodingGif,
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .CompleteBox .fileBox .lodingGif {
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  width: 14px;
+  height: 14px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .CompleteBox .statusDIV {
+  margin-top: 10px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .CompleteBox .UploadFailed,
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .CompleteBox .UploadedSuccess {
+  display: none;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .fileIco {
+  margin-right: 20px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .fileNameThesis {
+  color: #555555;
+  max-width: 100px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 28px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Complete .deleteFileThesis {
+  margin-left: 10px;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin-top: 6px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .statusDIV {
+  font-size: 12px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .statusDIV .deleteFileThesisText {
+  color: #0070ff;
+  font-size: 12px;
+  margin-left: 20px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .statusDIV .deleteFileThesisico {
+  color: #999999;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .statusDIV .deleteFileThesisico img {
+  margin-top: -4px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .DocumentText,
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .DocumentWord {
+  display: none;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .submit-block .submit-btn {
+  width: 106px;
+  height: 38px;
+  background: linear-gradient(90deg, #5a68ff, #8254fc, #5667ff);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: all 0.3s;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .submit-block .submit-btn:hover {
+  box-shadow: 0 0 6px 0 #5d64fe;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .submit-block p {
+  color: #666666;
+  font-size: 12px;
+  margin-top: 14px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .submit-block p .word-num {
+  color: #755afd;
+  margin-right: 4px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .submit-block p .unit-price {
+  color: #755afd;
+  margin-right: 4px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .submit-block .wordCount {
+  margin-left: 6px;
+}
+.content .loading-block {
+  height: 600px;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #f7f3ff, #f8fbff);
+  width: calc(100%);
+  border-radius: 10px;
+  text-align: center;
+  line-height: 600px;
+}
+.content .loading-block img {
+  width: 31px;
+}
+.content .system-introduce {
+  width: 330px;
+  padding: 20px 14px 0 30px;
+}
+.content .system-introduce .introduce-title {
+  color: #131e3c;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #cdcdcd;
+}
+.content .system-introduce .introduce-item {
+  margin-top: 30px;
+}
+.content .system-introduce .introduce-item .i-name {
+  color: #222222;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.content .system-introduce .introduce-item .i-text {
+  color: #666666;
+  font-size: 12px;
+  text-align: justify;
+  line-height: 24px;
+}
+.content .system-introduce .parameter {
+  margin-top: 24px;
+  border-top: 1px solid #cdcdcd;
+  padding-top: 26px;
+}
+.content .system-introduce .parameter .parameter-item {
+  color: #999999;
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+.content .system-introduce .parameter .parameter-item.reportSample {
+  display: none;
+}
+.content .system-introduce .parameter .parameter-item.detectionScope {
+  display: none;
+}
+.content .system-introduce .parameter .parameter-item .p-text {
+  color: #666666;
+}
+.content .system-introduce .parameter .parameter-item .p-text a {
+  color: #755afd;
+}
+.content .right-introduce .p3 {
+  color: #151515;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 50px;
+}
+.content .right-introduce .p4 {
+  color: #151515;
+  font-size: 72px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -6px;
+}
+.content .right-introduce .integrate-introduce {
+  font-size: 0;
+  margin-top: 50px;
+  margin-bottom: 52px;
+}
+.content .right-introduce .integrate-introduce .ii-item {
+  width: 269px;
+  height: 230px;
+  box-shadow: 0 0 8px 0px #daddff;
+  border-radius: 16px;
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 14px;
+  padding: 40px 30px;
+  transition: all 0.3s;
+}
+.content .right-introduce .integrate-introduce .ii-item .p1 {
+  color: #333333;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 28px;
+}
+.content .right-introduce .integrate-introduce .ii-item .p2 {
+  color: #333333;
+  font-size: 14px;
+  margin-top: 14px;
+}
+.content .right-introduce .integrate-introduce .ii-item:hover {
+  box-shadow: 0 0 0px 2px #5568ff;
+}
+.information-block {
+  height: 498px;
+  background: linear-gradient(90deg, #eae7ff, #e2f5fe);
+  text-align: center;
+  padding-top: 80px;
+  min-width: 1200px;
+}
+.information-block .p1 {
+  color: #8089ba;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.information-block .user-reviews {
+  font-size: 0;
+  margin-top: 50px;
+}
+.information-block .user-reviews .ur-item {
+  display: inline-block;
+  width: 376px;
+  height: 126px;
+  background: #f5f5fa;
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 25px;
+  margin-right: 34px;
+}
+.information-block .user-reviews .ur-item .ur-text {
+  width: 220px;
+  color: #999999;
+  font-size: 12px;
+  text-align: left;
+  margin-left: 26px;
+}
+.information-block .user-reviews .ur-item .ur-text .u-name {
+  margin-top: 4px;
+  color: #333333;
+  font-size: 14px;
+}
+.information-block .user-reviews .ur-item .ur-text .u-text {
+  margin-top: 14px;
+}
+.guide {
+  height: 276px;
+  text-align: center;
+  padding-top: 60px;
+  border-bottom: 1px solid #dddddd;
+}
+.guide .p1 {
+  width: 600px;
+  margin: 0 auto;
+  color: #333333;
+  font-size: 60px;
+  font-weight: bold;
+  position: relative;
+}
+.guide .p1 .star {
+  position: absolute;
+  left: -120px;
+  top: -16px;
+}
+.guide .btn-check {
+  width: 176px;
+  height: 60px;
+  background: linear-gradient(90deg, #5d66fe, #8154fb, #5767fe);
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 50px;
+  margin: 36px auto 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.guide .btn-check:hover {
+  box-shadow: 0 0 8px 0 #7c57fb;
+}
+.guide .btn-check a {
+  color: inherit;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.guide .btn-check a:hover {
+  text-decoration: none;
+}
+#filing-information {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #999999;
+  font-size: 12px;
+}
+.foot {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #999999;
+  font-size: 12px;
+}
+.QRCodeDL {
+  line-height: normal !important;
+}
+/*# sourceMappingURL=index.css.map */

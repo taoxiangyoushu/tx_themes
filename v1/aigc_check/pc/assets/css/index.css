@@ -1,0 +1,314 @@
+.leftDiv .ContentMain .banner {
+  width: 100%;
+  background: url("../img/banner.png") no-repeat;
+  background-size: 100% 100%;
+  height: 90px;
+  padding-top: 58px;
+}
+.leftDiv .ContentMain .banner p {
+  color: #2b2c46;
+  font-size: 12px;
+  text-align: center;
+}
+.leftDiv .ContentMain .submit-form {
+  background-color: #fff;
+  background-image: url("../img/ct.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  margin-top: 20px;
+  padding: 30px 40px 105px 40px;
+  border-radius: 10px;
+  position: relative;
+}
+.leftDiv .ContentMain .submit-form .form-group {
+  font-size: 0;
+  margin-bottom: 32px;
+}
+.leftDiv .ContentMain .submit-form .form-group label {
+  color: #02042c;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 4px;
+  position: relative;
+  padding-left: 22px;
+  width: 72px;
+  vertical-align: middle;
+  margin-top: 7px;
+}
+.leftDiv .ContentMain .submit-form .form-group label:after {
+  content: '';
+  position: absolute;
+  background: #0670fb;
+  width: 2px;
+  height: 80%;
+  left: 0;
+  top: 10%;
+}
+.leftDiv .ContentMain .submit-form .form-group .way-content {
+  display: inline-block;
+  font-size: 14px;
+  color: #5e6582;
+  vertical-align: middle;
+}
+.leftDiv .ContentMain .submit-form .form-group .way-content li {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 36px;
+}
+.leftDiv .ContentMain .submit-form .form-group .way-content li i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-right: 6px;
+  background: url("../img/check.png") no-repeat;
+  background-size: 100% 100%;
+}
+.leftDiv .ContentMain .submit-form .form-group .way-content li.active i {
+  background: url("../img/checked.png") no-repeat;
+  background-size: 100% 100%;
+}
+.leftDiv .ContentMain .submit-form .form-group p.word-prompt {
+  display: inline-block;
+  font-size: 12px;
+  color: #b7bccb;
+  vertical-align: middle;
+  line-height: normal;
+  float: right;
+}
+.leftDiv .ContentMain .submit-form .form-group p.word-prompt .text-num {
+  color: #ff001e;
+  margin: 0 4px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower {
+  display: inline-block;
+  position: relative;
+  width: calc(100% - 72px);
+  height: 44px;
+  vertical-align: middle;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .title-num,
+.leftDiv .ContentMain .submit-form .form-group .rower .author-num {
+  position: absolute;
+  font-size: 14px;
+  color: #425382;
+  right: 12px;
+  top: 12.5px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .title-num .titleNumber,
+.leftDiv .ContentMain .submit-form .form-group .rower .author-num .titleNumber,
+.leftDiv .ContentMain .submit-form .form-group .rower .title-num .authorNumber,
+.leftDiv .ContentMain .submit-form .form-group .rower .author-num .authorNumber {
+  color: #b7bccb;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower.content-block {
+  height: 100%;
+  margin-left: 72px;
+  margin-top: 4px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower input.form-control {
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: none;
+  border-color: #e1e8ef;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower input.form-control:focus {
+  border-color: #0d81fc;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower input.form-control#title {
+  padding-right: 58px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower #err-title,
+.leftDiv .ContentMain .submit-form .form-group .rower #err-author {
+  position: absolute;
+  font-size: 12px;
+  color: #f56c6c;
+  right: 55px;
+  top: 14px;
+  display: none;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower #err-title img,
+.leftDiv .ContentMain .submit-form .form-group .rower #err-author img {
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-right: 4px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box {
+  width: 100%;
+  height: 264px;
+  border-radius: 10px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .text-box {
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+  border: 1px solid #e1e8ef;
+  border-radius: 10px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .text-box textarea#content-text {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  outline: none;
+  font-size: 14px;
+  border: none;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .text-box.active {
+  border-color: #0d81fc;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .text-box.error {
+  border-color: #f56c6c;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e1e8ef;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  display: none;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box.error {
+  border-color: #f56c6c;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box #content-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block {
+  margin-top: 80px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block .p1 {
+  font-size: 14px;
+  color: #9099b3;
+  margin-top: 20px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block .p1 .redText {
+  color: #ff001e;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block .p1 .blueText {
+  color: #0d81fc;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block .p2 {
+  color: #b7bccb;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .file-block {
+  margin-top: 80px;
+  position: relative;
+  display: none;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .file-block img.delete-file {
+  position: absolute;
+  left: 52%;
+  top: -4px;
+  cursor: pointer;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .file-block .fileName {
+  font-size: 14px;
+  color: #9099b3;
+  margin-top: 14px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .submit-block {
+  margin-top: 24px;
+  height: 46px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .submit-block .submit-btn {
+  width: 160px;
+  height: 46px;
+  background: #108df9;
+  color: #ffffff;
+  line-height: 46px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  float: left;
+  transition: all 0.3s;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .submit-block .submit-btn:hover {
+  box-shadow: 0 0 6px 0 #108df9;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .submit-block .unit-price {
+  color: #5e6582;
+  font-size: 12px;
+  float: right;
+  display: none;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .submit-block .unit-price span {
+  color: #ff001e;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower.has-error #err-title,
+.leftDiv .ContentMain .submit-form .form-group .rower.has-error #err-author {
+  display: block;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower.has-error input#title,
+.leftDiv .ContentMain .submit-form .form-group .rower.has-error input#author {
+  border-color: #f56c6c;
+}
+.leftDiv .ContentMain .submit-form .note {
+  padding-left: 72px;
+}
+.leftDiv .ContentMain .submit-form .note .p1 {
+  color: #5e6582;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.leftDiv .ContentMain .submit-form .note .p2 {
+  color: #9099b3;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.leftDiv .ContentMain .submit-form .note .p2 img {
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-left: 12px;
+  margin-right: 5px;
+}
+.leftDiv .ContentMain .submit-form .note .p2 span {
+  color: #616161;
+}
+.leftDiv .ContentMain .submit-form .note .p2.redText {
+  color: #f56c6c;
+}
+.nav-activity {
+  width: 80px;
+  height: 32px;
+  background: linear-gradient(90deg, #FFA85A, #F53F3F);
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 32px;
+  cursor: pointer;
+  margin-top: 18px;
+  position: relative;
+  float: right;
+  display: none;
+}
+.nav-activity a {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: inherit;
+}
+.nav-activity a:hover {
+  text-decoration: none;
+}
+.nav-activity a:focus {
+  text-decoration: none;
+}
+.nav-activity:hover {
+  box-shadow: 0 0 11px 0px #ffaba0;
+}
+/*# sourceMappingURL=index.css.map */

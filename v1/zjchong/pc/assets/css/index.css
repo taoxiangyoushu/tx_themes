@@ -1,0 +1,53 @@
+#app {
+  display: none;
+}
+.submit-cont .form-upload .form-group .rower .uploadType .zip-i {
+  display: none;
+}
+.submit-cont .ctn-part .file-ctn {
+  display: none;
+}
+.submit-cont .ctn-part .file-ctn .zip-type {
+  display: none;
+}
+.submit-cont .ctn-part .file-ctn .drop-mask {
+  display: none;
+}
+.submit-cont .ctn-part .file-ctn .drop-mask .upload-finish.err {
+  display: none;
+}
+.loadEffect {
+  width: 120px;
+  height: 20px;
+  background: linear-gradient(90deg, #ffffff11 33%, #d7d7d755 50%, #efefef11 66%) #f7f7f7;
+  background-size: 300% 100%;
+  animation: l1 1s infinite linear;
+  border: 0 !important;
+}
+@keyframes l1 {
+  0% {
+    background-position: right;
+  }
+}
+.foot {
+  background: #edf7ff;
+  text-align: center;
+  padding: 2px 0 8px;
+}
+.foot .gongan {
+  width: 16px;
+  margin-top: -4px;
+  margin-right: 4px;
+}
+.foot a {
+  text-decoration: none;
+  color: #8f8f8f;
+  font-size: 12px;
+}
+.foot a.beian {
+  margin-left: 20px;
+}
+.foot a:hover {
+  color: #337ab7;
+}
+/*# sourceMappingURL=index.css.map */

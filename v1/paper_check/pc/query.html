@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>论文查重-查询结果</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0022">
+    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0022">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
+
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        var JANE_NAME = 'paper_platform';
+    </script>
+</head>
+<body>
+<div class="query_page clearfix" id="App" data-key="queryApp">
+    <div class="head col-md-12">
+        <div class="logo f-l">
+            <img src="../pc/assets/img/logo.png" alt="">
+            <a href="./index.html"></a>
+        </div>
+        <div class="nav f-r" id="memberCarrier">
+            <div class="upload-h">
+                <a href="./index.html">提交论文</a>
+            </div>
+            <div class="report-h">
+                <a href="">下载报告</a>
+                <li></li>
+            </div>
+            <div class="nav-activity">
+                <a href="./hd/index.html" target="_blank">福利活动</a>
+            </div>
+        </div>
+    </div>
+    <div class="content-block">
+        <div class="block-left f-l ">
+            <div class="operation-process">
+                <p class="name">操作流程</p>
+                <div class="operation operation1">
+                    <div class="sequence sequence-line">01</div>
+                    <p class="p1">提交论文</p>
+                    <p class="p2">直接上传文档或只粘贴文本</p>
+                </div>
+                <div class="operation operation2">
+                    <div class="sequence sequence-line">02</div>
+                    <p class="p1">核对结算</p>
+                    <p class="p2">确认订单后可扫码付款</p>
+                </div>
+                <div class="operation operation3 noMarginBottom">
+                    <div class="sequence">03</div>
+                    <p class="p1">等待查重结果</p>
+                    <p class="p2">检测完成后可下载报告</p>
+                </div>
+            </div>
+            <div class="common-problem">
+                <p class="name">常见问题</p>
+                <div class="p-cont">
+                    <div class="problem-item">
+                        <p class="problem-text">
+                            <!--                       <img src="" alt="">-->
+                            <span>Q</span>
+                            大约什么时候能出结果？
+                        </p>
+                        <p class="answer">通常情况下，整个检测过程需要5至10分钟。如果是在论文检测的高峰期，则可能需要更长的时间</p>
+                    </div>
+                    <div class="problem-item">
+                        <p class="problem-text">
+                            <!--                       <img src="" alt="">-->
+                            <span>Q</span>
+                            论文查重结果准确吗？
+                        </p>
+                        <p class="answer">正版授权，含百亿的数据库资源，采用最先进的指纹比对扫描技术 ，充分保证用户查重的准确性。用报告编号支持官网验真。</p>
+                    </div>
+                    <div class="problem-item">
+                        <p class="problem-text">
+                            <img src="../pc/assets/img/jcxz.png" alt="">
+                            检测须知
+                        </p>
+                        <p class="answer">亲，准备论文查重的文档，一定要<span>word的doc或docx格式；</span>提交查重检测前<span>删除封面、图标、致谢、一级页眉页脚的学校信息；</span>目录、附录、参考文献等要跟提交学校的保持一致；</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block-right f-l ">
+            <div class="generalization">
+                <div class="g-item clearfix">
+                    <img src="../pc/assets/img/AIccxt.png" alt="" class="f-l">
+                    <div class="g-introduce f-l">
+                        <p class="p1">轻松搞定“查重系统”的重复率</p>
+                        <p class="p2">进一步优化修改后的语句通顺度、连贯性、上下文结构</p>
+                    </div>
+                    <div class="experience f-l">立即体验</div>
+                </div>
+                <div class="g-item clearfix">
+                    <img src="../pc/assets/img/AIdsxz.png" alt="" class="f-l">
+                    <div class="g-introduce f-l">
+                        <p class="p1">AI大师写作帮你轻松搞定论文写作</p>
+                        <p class="p2">论文有难题？不会应用图表公式？</p>
+                    </div>
+                    <div class="experience f-l">立即体验</div>
+                </div>
+            </div>
+            <div class="r-content">
+                <p class="subtitle"><span>查询结果</span></p>
+                <div class="contentMain">
+                    <div class="searchParameters">
+                        <span class="orderId-name">订单号：</span>
+                        <div class="orderIdBox">
+                            <input autocomplete="off" id="order-id" class="orderId form-control" maxlength="30" type="text" placeholder="输入订单号/优惠券查询结果" />
+                            <span class="deleteS"></span>
+                        </div>
+                        <div class="searchBtn">查询</div>
+                        <div class="pointOut">
+                            <div class="wxorder pull-left">
+                                <img src="../pc/assets/img/order-alipayId.png" alt="支付宝图标">
+                                <span>支付宝订单号？</span>
+                                <div class="orderImg">
+                                    <img src="../pc/assets/img/alinAd.png" alt="支付宝订单" class="orderIMG-s">
+                                </div>
+                            </div>
+                            <div class="aliorder pull-left">
+                                <img src="../pc/assets/img/order-wx.png" alt="微信图标">
+                                <span>微信订单号?</span>
+                                <div class="orderImg zhifubaoOrder">
+                                    <img src="../pc/assets/img/alinAd2.jpg" alt="微信订单" class="orderIMG-s">
+                                </div>
+                            </div>
+                            <div class="taobaoOrder pull-left">
+                                <img src="../pc/assets/img/taobao.png" alt="淘宝图标">
+                                <span>淘宝订单号?</span>
+                                <div class="orderImg taobao-Order">
+                                    <img src="../pc/assets/img/taobao_oid.png" alt="淘宝订单" class="orderIMG-s">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resultBox">
+                        <table class="orderInformation table" border="1" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th width="200">订单号</th>
+                                <th width="300">论文标题</th>
+                                <th width="200">系统</th>
+                                <th width="230">查重时间</th>
+                                <th width="150">状态</th>
+                                <th width="250">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="tbody">
+                            </tbody>
+                        </table>
+                        <div class="noData">
+                            <img src="../pc/assets/img/nodata.png" alt="">
+                            <p class="guide">请输入订单号/优惠券查询结果</p>
+                        </div>
+                        <div class="loadLine">
+                            <img src="../pc/assets/img/loading2.gif" alt="">
+                            <p>加载中...</p>
+                        </div>
+                    </div>
+                    <div class="prompt">
+                        <p class="p1">温馨提示：</p>
+                        <p class="p2">1.高峰期订单较多，检测时间会有所延长</p>
+                        <p class="p3">2.安全保障：系统保留30天以内的订单，超过30天则被删除，确保您的论文不会被覆盖和盗窃，完成后请尽快下载!</p>
+                        <p class="p4">请慎重记录并保管好您的订单号以便日后查询，离开此页则不再显示</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mask_body"></div>
+    <div class="delete-pop">
+        <div class="pop_top">
+            <div class="pop_title">删除提醒</div>
+            <img class="close_pop" src="../pc/assets/img/delete_report.png" alt="">
+        </div>
+        <div class="pop_cont">
+            <p class="p1">是否确定删除订单？删除后，无法恢复</p>
+            <div class="back_block">
+                <p class="p2">系统仅保留30天内的订单，</p>
+                <p class="p3">确保您的论文不会被覆盖和盗窃</p>
+            </div>
+        </div>
+        <div class="pop_bottom">
+            <div class="cancel_btn">取消</div>
+            <div class="determine_btn">确定</div>
+        </div>
+    </div>
+    <div class="fixedBox">
+        <div class="customer">
+            <div class="icon">
+                <img src="../pc/assets/img/lunwenkf_ico.png" alt="" class="icon1">
+                <img src="../pc/assets/img/lunwenkf_ico1.png" alt="" class="icon2">
+                <!-- <span>客服</span> -->
+            </div>
+        <div class="customerBox">
+            <div class="head">
+                <img src="../pc/assets/img/kf1.png" alt="">
+                <span class="customer-title"></span>
+            </div>
+            <div class="customerCode">
+                <img class="customer-qr" src="" alt="">
+            </div>
+            <div class="segmentation-line"></div>
+            <div class="customerWay">
+                <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+                <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+                <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+                <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+            </div>
+            <p class="noCustomer">商家未设置客服</p>
+        </div>
+    </div>
+    </div>
+</div>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../pc/assets/js/jquery.min.js"></script>
+<script src="../pc/assets/js/typed.min.js"></script>
+<script src="../pc/assets/js/coco-message.js"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=p24.0022"></script>
+<script src="../pc/assets/js/common.js?v=p24.0022"></script>
+<script src="../pc/assets/js/bootstrapValidator.min.js"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0022"></script>
+<script>
+    function startQuerying(){
+        if(getQueryVariable('oid') && !memberFu.isLogin) {
+            $('#order-id').val(getQueryVariable('oid'))
+            query(false)
+        }else if(localStorage.getItem('oid') && !memberFu.isLogin) {
+            $('#order-id').val(localStorage.getItem('oid'))
+            query(false)
+        }
+    }
+
+    var system_name = {
+        'paperpass': 'PaperPass',
+        'ithenticate': 'Ithenticate',
+        'turnitinai': 'Turnitin国际版+AI',
+        'turnitin': 'Turnitin国际版',
+        'turnitinuk': 'TurnitinUK版',
+        'wanfangpu': '万方职称版',
+        'wanfanggl': '万方通用版',
+        'wanfangbd': '万方本科版',
+        'wanfangmd': '万方硕博版',
+        'cqvipzc': '维普职称版',
+        'cqvip': '维普本科版',
+        'cqvipbj': '维普编辑部版',
+        'cqvipmd': '维普硕博版',
+    }
+    var isTrue;
+    $('.searchBtn').click(function() {
+        if(isTrue) return
+        isTrue = true
+        setTimeout(() => {
+            isTrue = false
+        },3000)
+        if(!$('.orderId').val() && !memberFu.isLogin) {
+            cocoMessage.destroyAll();
+            cocoMessage.error("请输入订单号或优惠券后查询!", 2000);
+            $(".guide").html("输入订单号/优惠券查询结果")
+            $('.tbody').hide()
+            $('.noData').show()
+        }else {
+            query(true)
+        }
+    })
+
+    function query(e) {
+        cocoMessage.destroyAll();
+        if(e) cocoMessage.success('正在为您查询...')
+        $('.loadLine').show()
+        $('.noData').hide()
+        $('.tbody').children().remove()
+        var pay_Id = ''
+        if(memberFu.isLogin && !$('.orderId').val()) {
+            pay_Id = 'all_project_order'
+        }else {
+            pay_Id = $('.orderId').val()
+        }
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: pay_Id,
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME,
+            }),
+            success: function (res) {
+                $('.tbody').show()
+                $('.tbody').children().remove()
+                var text = "";
+                var automaticPolling = false;
+                if(res.data.length && res.data[0].jane_name==JANE_NAME) {
+                    for(var i=0; i<res.data.length; i++) {
+                        var resData = res.data[i]
+                        var SystemName = system_name[resData.goods_short_name]?system_name[resData.goods_short_name]:resData.goods_name
+                        text += "<tr>";
+                        text += "<th class=\"first\">"+ resData.order_sn +"</th>";
+                        text += "<th class=\"titles\" title=\""+ resData.place_order_data.title.value +"\">"+ resData.place_order_data.title.value +"</th>";
+                        text += "<th class=\"titles\" title=\""+ SystemName +"\">"+ SystemName +"</th>";
+                        var status = resData.order_status_human
+                        var styleClass = resData.order_status==60? 'complete':'not'
+                        text += "<th>"+ resData.created +"</th>";
+                        text += "<th class=\"titles "+styleClass+"\"><span>"+ status +"</span></th>";
+                        text += "<th class=\"download\">";
+                        if(!resData.isBind && threeMsg.wx && !resData.end_product){
+                            text += '<div class="scanFollow">\n' +
+                                '    <div class="codeBox">\n' +
+                                '        <img class="codeImg'+ i +'" src="../pc/assets/img/loading2.gif" alt="">\n' +
+                                '    </div>\n' +
+                                '    <div class="tipsText">\n' +
+                                '        <p class="p-1">扫码关注</p>\n' +
+                                '        <p class="p-1 noMarginTop">实时了解订单进度</p>\n' +
+                                '        <p class="p-2">如果您未绑定</p>\n' +
+                                '        <p class="p-2 noMarginTop">请一定保存订单号</p>\n' +
+                                '    </div>\n' +
+                                '</div>'
+                        }else{
+                            if(resData.end_product) {
+                                text += "<a class=\"complete\" href=\""+resData.end_product+"\" target=\"_blank\"><span class=\"allowText\"><img src='../pc/assets/img/xiazai.png' alt=''>下载</span></a> ";
+                            }else {
+                                text += "<div class=\"nots\"><span><img src='../pc/assets/img/xiazai.png' alt=''>下载</span></div> ";
+                            }
+                            if(resData.end_product) {
+                                text += "<div class='delete-btn' data-orderid='"+ res.data[i].order_sn +"'><span>删除</span></div> ";
+                            }
+                        }
+                        text += "</th>";
+                        text += "</tr>";
+                        if(resData.order_status != 60) {
+                            automaticPolling = true
+                            if(threeMsg.wx && !resData.isBind){
+                                getWxCode(resData.order_sn, 'codeImg'+i)
+                            }
+                        }
+                    }
+                    if(automaticPolling){
+                        setTimer(pay_Id)
+                    }
+                    $('.tbody').append(text)
+                    if(!memberFu.isLogin) {
+                        localStorage.setItem('oid',$('.orderId').val());
+                    }
+                    $('.deleteS').show()
+                }else {
+                    deleteS(true)
+                    $('.tbody').hide()
+                    $('.noData').show()
+                    cocoMessage.destroyAll();
+                    if(res.code == 400) {
+                        cocoMessage.error(res.codeMsg, 2000);
+                        $(".guide").html(res.codeMsg)
+                    }else if(e && $('.orderId').val()) {
+                        cocoMessage.error("未查询到结果!", 2000);
+                        $(".guide").html("非常抱歉，没有找到该订单号。<\/br>请重新核对是否输入了正确的订单号或者记录已被删除")
+                    }else {
+                        $(".guide").html("非常抱歉，没有找到订单记录")
+                    }
+                    clearTimeout(timers);
+                }
+                $('.loadLine').hide()
+            },
+            error: function () {
+                $('.tbody').hide()
+                $('.noData').show()
+                cocoMessage.destroyAll();
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                $('.deleteS').hide()
+                $('.loadLine').hide()
+                clearTimeout(timers);
+            },
+        });
+    }
+
+    $('.deleteS').click(function() {
+        deleteS()
+        $('.deleteS').hide()
+        $('.tbody').hide()
+        $('.noData').show()
+    })
+    function deleteS(clearInput) {
+        // 请求没有数据,判断是查询的本地id且查询的id和本地id一致, 就删除本地id(该id未支付)
+        if(localStorage.getItem('oid') == $('.orderId').val()) {
+            localStorage.removeItem('oid')
+        }
+        if(!clearInput){
+            $('.orderId').val('')
+        }
+    }
+
+    // 有内容展示删除图标, 没有内容隐藏图标, 图标删除会和本地存储对比, 相同删除本地存储和输入框内容, 不相同只删除输入框内容
+    $(".orderId").on("input", function() {
+        if(!$(this).val().length) {
+            $('.deleteS').hide()
+        }else {
+            $('.deleteS').show()
+        }
+    });
+
+    $('.tbody').on("click", "a.complete", function(){
+        cocoMessage.success('正在下载...')
+    });
+
+    var timers = null
+    function setTimer(pay_Id) {
+        clearTimeout(timers);
+        $.ajax({
+            type: "post",
+            url: urls + "/api/client/order/order_list/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({
+                pay_id: pay_Id,
+                user_token: USER_TOKEN,
+                jane_name: JANE_NAME
+            }),
+            success: function (res) {
+                if(res.data.length && res.data[0].jane_name==JANE_NAME) {
+                    for(var i=0; i<res.data.length; i++) {
+                        var resData = res.data[i]
+                        if(resData.order_status != 60) {
+                            timers = setTimeout(()=>{
+                                setTimer(pay_Id)
+                            },60000)
+                            return
+                        }
+                    }
+                }
+                clearTimeout(timers);
+                query(false)
+            },
+            error: function() {
+                timers = setTimeout(()=>{
+                    setTimer(pay_Id)
+                },60000)
+            }
+        });
+    }
+
+    var WxTime = 300;
+    var WxTimeOut = null;
+    function getWxCode(order_id, element){
+        $.ajax({
+            type: 'GET',
+            url: urls + '/weixin/qr/bind_order?order_id=' + order_id,
+            success: function (res){
+                if(res.code == 200){
+                    $('.'+element).attr('src', res.data)
+                    $('.'+element).css('width', '100%')
+                    WxTime = 300
+                    WxPolling(order_id)
+                }
+            },
+            error: function (err){
+            }
+        })
+    }
+
+    function WxPolling(order_id){
+        $.ajax({
+            type: 'GET',
+            url: urls + '/weixin/qr/regist/query?bindOid=' + order_id,
+            success: function (res){
+                if(res.code == 200){
+                    if(!res.data.isbind){
+                        clearTimeout(WxTimeOut)
+                        WxTimeOut = setTimeout(function (){
+                            if(WxTime > 0){
+                                WxTime--
+                                WxPolling(order_id)
+                            }
+                        },1000)
+                    }else{
+                        query(false)
+                    }
+                }
+            },
+            error: function (err){
+
+            }
+        })
+    }
+
+    $(document).on('click','.download .delete-btn',function (){
+        $(".mask_body").show();
+        $(".delete-pop").show()
+        $(".delete-pop").attr('data-orderid',$(this).attr('data-orderid'))
+    })
+
+    $(".cancel_btn").on('click', function (){
+        $(".mask_body").hide();
+        $(".delete-pop").hide()
+    })
+
+    $(".close_pop").on('click', function (){
+        $(".mask_body").hide();
+        $(".delete-pop").hide()
+    })
+
+    $(".determine_btn").click(function (){
+        closeMsg = cocoMessage.loading('正在删除...');
+        $.ajax({
+            type: 'get',
+            url: urls + '/api/client/order/del?user_token='+ USER_TOKEN +'&orderSn='+ $(".delete-pop").attr('data-orderid') +'&jane_name=' + JANE_NAME,
+            success: function (res) {
+                if (res.code == 200) {
+                    $(".mask_body").hide();
+                    $(".delete-pop").hide()
+                    $('.orderId').val( $(".delete-pop").attr('data-orderid') )
+                    query(false)
+                }else {
+                    cocoMessage.error(res.codeMsg, 2000);
+                    closeMsg()
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                closeMsg()
+            },
+        });
+    })
+</script>
+</body>
+</html>

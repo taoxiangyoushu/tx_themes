@@ -1,0 +1,548 @@
+.container {
+  padding: 0px;
+}
+.bodycontent {
+  margin-top: 3.125rem;
+  background: linear-gradient(#FFE6FA, #ECF9FF, #FFFFFF);
+}
+.bodycontent .bodyconhead {
+  width: 100%;
+  background-image: url(../../img/banner.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bodycontent .bodyconhead img {
+  width: 100%;
+  margin-top: 2.1875rem;
+}
+.bodycontent .bodyconhead .bodycontext {
+  padding: 0.5625rem 1.25rem 0rem 1.25rem;
+}
+.bodycontent .bodyconhead .bodycontext p {
+  font-size: 0.875rem;
+  text-align: center;
+  color: #666666;
+  font-family: MicrosoftYaHei;
+}
+.bodycontent .bodyconhead .bodycontext p span {
+  background: linear-gradient(to right, #FF8542, #FF4670);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bodycontent .bodyconhead .buybutton {
+  width: 6.875rem;
+  margin: auto;
+  border-radius: 2.5rem;
+  border: solid 0.1875rem #ffffff;
+  margin-top: 0.9375rem;
+  margin-bottom: 0.9375rem;
+  background: linear-gradient(to right, #FF8542, #FF4670);
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2.25rem;
+  font-family: MicrosoftYaHei-Bold;
+  box-shadow: #f6d5d5 0px 0px 3px;
+}
+.bodycontent .Introduction {
+  padding: 0rem 1.25rem 2.1875rem 1.25rem;
+}
+.bodycontent .Introduction .Process {
+  height: 9.375rem;
+  background-color: #ffffff;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0.75rem 0.625rem 0.75rem;
+}
+.bodycontent .Introduction .Process .Processhead {
+  width: 100%;
+  border-radius: 0.3125rem;
+  background: linear-gradient(to right, #EFEFEF, #F5F5F5);
+  padding: 0.5625rem 0.375rem 0.5625rem 0.375rem;
+}
+.bodycontent .Introduction .Process .Processhead a img {
+  width: 1.5625rem;
+  position: relative;
+  top: -0.0625rem;
+}
+.bodycontent .Introduction .Process .Processhead span {
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-family: MicrosoftYaHei-Bold;
+  margin-left: 0.25rem;
+}
+.bodycontent .Introduction .Process .Processhead .Trialversion {
+  float: right;
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  padding: 0.0625rem 0.625rem;
+  line-height: 1.375rem;
+}
+.bodycontent .Introduction .Process .Processhead .Trialversion img {
+  width: 0.5625rem;
+}
+.bodycontent .Introduction .Process .Processhead .Trialversion span {
+  font-size: 0.75rem;
+  color: #FF7554;
+  font-weight: 500;
+}
+.bodycontent .Introduction .Process .Processhead .Trialversion span a {
+  color: #FF7554;
+}
+.bodycontent .Introduction .Process .Processtext .Processtext1 {
+  padding: 1rem 2.8125rem 0rem 2.8125rem;
+}
+.bodycontent .Introduction .Process .Processtext .Processtext1 img {
+  width: 100%;
+}
+.bodycontent .Introduction .Process .Processtext .Processtext2 {
+  padding-top: 1rem;
+  position: relative;
+}
+.bodycontent .Introduction .Process .Processtext .Processtext2 img {
+  width: 70%;
+  position: absolute;
+  top: 1.6875rem;
+  left: 15%;
+}
+.bodycontent .Introduction .Process .Processtext .Processtext2 div {
+  display: inline-block;
+  width: 32%;
+}
+.bodycontent .Introduction .Process .Processtext .Processtext2 div img {
+  width: 1.5rem;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  display: block;
+  margin: auto;
+}
+.bodycontent .Introduction .Process .Processtext .Processtext2 div p {
+  color: #333333;
+  font-family: MicrosoftYaHei;
+  line-height: 1.25rem;
+  text-align: center;
+}
+.bodycontent .Introduction .Process .Processtext .Processtext2 div p span {
+  color: #FF476F;
+}
+.bodycontent .Introduction .Process .Processtext .Processtext2 div p:nth-child(2) {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-top: 0.3125rem;
+}
+.bodycontent .Introduction .Process .Processtext .Processtext2 div p:nth-child(3) {
+  font-size: 0.5625rem;
+}
+.bodycontent .Introduction .Productdetails {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0.625rem;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captDetatitle {
+  border-bottom: solid 0.0625rem #DFDFDF;
+  color: #333333;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captDetatitle li {
+  font-size: 1rem;
+  height: 100%;
+  display: inline-block;
+  padding: 16px 0px 4px 0px;
+  position: relative;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captDetatitle .captDetatitle-li::after {
+  position: absolute;
+  content: '';
+  border-bottom: 0.0625rem solid #FF8542;
+  width: 100%;
+  bottom: -0.0625rem;
+  left: 0rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent {
+  background-color: #F9F9F9;
+  border-radius: 0.3125rem;
+  padding: 0.5rem;
+  margin-top: 0.75rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .captionContent-head {
+  width: 100%;
+  padding: 0.4375rem 0rem;
+  color: #333333;
+  font-weight: bold;
+  text-align: center;
+  background-color: #FFFFFF;
+  font-size: 0.75rem;
+  border-radius: 0.5625rem;
+  margin-bottom: 0.375rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .captionContent-head span {
+  color: #FF476F;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .merincludes {
+  margin-bottom: 0.375rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .merincludes p:nth-child(1) {
+  margin-bottom: 0.25rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .merincludes p {
+  color: #333333;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.875rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .merincludes li::marker {
+  color: #FF476F;
+  margin: 0px;
+  font-size: 0.9375rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .merincludes li {
+  color: #666666;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  text-indent: -0.625rem;
+  margin: 5px 0px 5px 0.625rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .merincludes li span {
+  margin-left: -0.5rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .merincludes li:nth-child(2) {
+  margin-top: -0.3125rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .merincludes1 {
+  margin-bottom: 0rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .merincludes1 p:nth-child(1) {
+  margin-bottom: 0rem;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .merincludes1 li {
+  list-style: none;
+  color: #999999;
+}
+.bodycontent .Introduction .Productdetails .captionDetails .captionContent .merincludes1 li:nth-child(2) {
+  margin-top: 0rem;
+}
+.bodycontent .Introduction .Productdetails .Slidepicture {
+  margin-top: 0.75rem;
+  overflow: hidden;
+}
+.bodycontent .Introduction .Productdetails .Slidepicture img {
+  width: 100%;
+  height: 100%;
+}
+.bodycontent .Introduction .Productdetails .Slidepicture .swiper-slide {
+  height: 410px !important;
+}
+.bodycontent .Introduction .Productdetails .Slidepicture .swiper {
+  width: 100%;
+  height: 100%;
+}
+.bodycontent .Introduction .Productdetails .Slidepicture .swiper-slide {
+  text-align: center;
+  font-size: 1.125rem;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bodycontent .Introduction .Productdetails .Slidepicture .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bodycontent .container .containerImg {
+  margin-top: 2.1875rem;
+}
+.bodycontent .container .containerImg img {
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+.bodycontent .container .containerPlate {
+  margin-top: 1.875rem;
+}
+.bodycontent .container .containerPlate div {
+  display: inline-block;
+  background: linear-gradient(130deg, #FFFFFF, #FFF6F7);
+  padding: 1.0625rem 0rem 1.0625rem 0.75rem;
+  width: 48%;
+  margin-top: 2%;
+  border-radius: 0.625rem;
+  border: solid 1px #E8E8E9;
+}
+.bodycontent .container .containerPlate div img {
+  width: 1.5rem;
+  position: relative;
+  bottom: 0.5rem;
+}
+.bodycontent .container .containerPlate div p {
+  margin-left: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #1C1F23;
+  display: inline-block;
+}
+.bodycontent .container .containerPlate div span {
+  font-size: 0.625rem;
+  color: #999999;
+  display: block;
+  position: relative;
+  top: 0.3125rem;
+  font-weight: 200;
+}
+.bodycontent .container .containerPlate div:nth-child(odd) {
+  margin-right: 2%;
+}
+.pagination {
+  margin: 0px;
+  margin-top: 0.625rem;
+  margin-bottom: 0.25rem;
+}
+.swiper-container {
+  border-radius: 0.3125rem;
+  border: solid 0.0625rem #E5E5E5;
+  background-color: #EEEEEE;
+}
+.carouselImg div {
+  background-color: #EEEEEE;
+  width: 100%;
+}
+.carouselImg div img {
+  width: 100%;
+}
+.carouselImg1 div img {
+  display: block;
+  margin: auto;
+  width: 75%;
+}
+.swiper-pagination-bullet {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.125rem;
+}
+.swiper-pagination-bullet-active {
+  padding: 0.0625rem;
+  background-color: #FF4C30;
+  border: solid 1px #FF4C30;
+}
+.pagination span {
+  background-repeat: no-repeat;
+  background-color: #EEEEEE;
+  margin-right: 0.625rem;
+}
+.pagination span:nth-child(n+2) {
+  background-size: 80% 100%;
+  background-position: 50% 0rem;
+}
+.pagination span:nth-child(1) {
+  background-image: url(../../img/thumbnail-t1.png);
+  background-size: 100% 100%;
+}
+.pagination span:nth-child(2) {
+  background-image: url(../../img/thumbnail-t2.png);
+}
+.pagination span:nth-child(3) {
+  background-image: url(../../img/thumbnail-t3.png);
+}
+.pagination span:nth-child(4) {
+  background-image: url(../../img/thumbnail-t4.png);
+}
+.pagination span:nth-child(5) {
+  background-image: url(../../img/thumbnail-t5.png);
+}
+.Product .ProductPrice .ProPrice p {
+  position: relative;
+}
+.Product .ProductPrice .ProPrice p span:nth-child(1) {
+  font-size: 0.75rem;
+  color: #FF5900;
+}
+.Product .ProductPrice .ProPrice p span:nth-child(2) {
+  font-size: 1.125rem;
+  color: #FF5900;
+  font-weight: bold;
+}
+.Product .ProductPrice .ProPrice p span:nth-child(3) {
+  font-size: 0.75rem;
+  color: #FF5A00;
+}
+.Product .ProductPrice .ProPrice p span:nth-child(4) {
+  font-size: 0.75rem;
+  color: #999999;
+  float: right;
+  position: absolute;
+  bottom: 0.125rem;
+  right: 0rem;
+}
+.Product .ProductPrice .ProPrice p:nth-child(2) {
+  color: #333333;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-top: 0.125rem;
+}
+.Product .ProductPrice .Protection {
+  background-color: #F4F4F4;
+  font-size: 0.75rem;
+  padding: 0.75rem 0.625rem;
+  border-radius: 0.125rem;
+  margin-top: 0.5rem;
+  padding-top: 0.375rem;
+}
+.Product .ProductPrice .Protection p {
+  line-height: 1.75rem;
+}
+.Product .ProductPrice .Protection p span:nth-child(1) {
+  letter-spacing: 0.9375rem;
+}
+.Product .ProductPrice .Protection .Support {
+  background-color: #FFF8F8;
+  border: solid 0.0625rem #FF7C7C;
+  color: #FF4545;
+  font-size: 0.75rem;
+  padding: 0.3125rem;
+  border-radius: 0.125rem;
+}
+.Product .immediately {
+  width: 100%;
+  padding: 0.625rem;
+  background: linear-gradient(to right, #FF8542, #FF4670);
+  text-align: center;
+  font-size: 1rem;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-family: MicrosoftYaHei-Bold;
+  border-radius: 0.3125rem;
+  margin-top: 0.75rem;
+}
+.Product .WarningSign {
+  text-align: center;
+  color: #999999;
+  font-size: 0.75rem;
+  line-height: 1.875rem;
+}
+.Userreviews {
+  background: linear-gradient(#E4F9FF, #FFFFFF);
+  padding: 1.25rem;
+  margin-bottom: 3.875rem;
+}
+.Userreviews .Userreviews-title {
+  font-size: 1.5rem;
+  color: #020202;
+  font-weight: bold;
+  font-family: MicrosoftYaHei-Bold;
+  text-align: center;
+}
+.Userreviews .Userreviews-Evaluation {
+  margin: 0.75rem 0rem;
+}
+.Userreviews .Userreviews-Evaluation div {
+  padding: 0.0625rem;
+  background-color: #ffffff;
+  border-radius: 0.625rem;
+  border: solid 1px #7cb7ff;
+}
+.Userreviews .Userreviews-Evaluation div .Evaluation {
+  padding: 1.0625rem 1.25rem;
+  background-color: #f4fdff;
+  border: none;
+  position: relative;
+}
+.Userreviews .Userreviews-Evaluation div .Evaluation img {
+  width: 1.875rem;
+}
+.Userreviews .Userreviews-Evaluation div .Evaluation .Evaluation-p1 {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #333333;
+  margin-left: 0.375rem;
+}
+.Userreviews .Userreviews-Evaluation div .Evaluation .Evaluation-p1 img {
+  width: 3.75rem;
+  position: absolute;
+  right: 1.25rem;
+  top: 1.6875rem;
+}
+.Userreviews .Userreviews-Evaluation div .Evaluation .Evaluation-p2 {
+  color: #999999;
+  font-size: 0.625rem;
+  line-height: 0.9375rem;
+  margin-top: 0.3125rem;
+}
+.Bottombuy {
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  bottom: 0rem;
+  padding: 0.9375rem 1.25rem;
+  box-shadow: #f4f4f4 0rem 0rem 0.4375rem 0rem;
+  z-index: 999;
+  display: none;
+}
+.Bottombuy .immediately {
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(to right, #FF8542, #FF4670);
+  text-align: center;
+  font-size: 1rem;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-family: MicrosoftYaHei-Bold;
+  border-radius: 0.3125rem;
+  float: right;
+}
+.Bottombuy .ProPrice {
+  float: left;
+}
+.Bottombuy .ProPrice p {
+  position: relative;
+  line-height: 1.375rem;
+}
+.Bottombuy .ProPrice p span:nth-child(1) {
+  font-size: 0.75rem;
+  color: #FF5900;
+}
+.Bottombuy .ProPrice p span:nth-child(2) {
+  font-size: 0.75rem;
+  color: #FF5900;
+  margin-left: -0.3125rem;
+}
+.Bottombuy .ProPrice p span:nth-child(3) {
+  font-size: 1.125rem;
+  color: #FF5900;
+  font-weight: bold;
+  margin-left: -0.375rem;
+}
+.Bottombuy .ProPrice p span:nth-child(4) {
+  text-decoration: line-through;
+  font-size: 0.75rem;
+  color: #bcbcbc;
+}
+.Bottombuy .ProPrice p span:nth-child(4) span {
+  color: #bcbcbc !important;
+}
+.Bottombuy .ProPrice p span:nth-child(5) {
+  font-size: 0.5625rem;
+  color: #999999;
+  float: right;
+  position: absolute;
+  bottom: 0.1875rem;
+  right: 0rem;
+}
+.Bottombuy .ProPrice p:nth-child(2) {
+  color: #999999;
+  font-size: 0.625rem;
+}
+.bottomTitle {
+  width: 100%;
+  text-align: center;
+  color: #999999;
+  font-size: 0.625rem;
+  padding: 0.5rem;
+  position: relative;
+  top: -0.125rem;
+}
+a {
+  text-decoration: none !important;
+}

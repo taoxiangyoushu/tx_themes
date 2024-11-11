@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+        <meta name="renderer" content="webkit">
+        <!-- 为移动设备添加 viewport；-->
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <!-- 删除苹果默认的工具栏和菜单栏 -->
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <!-- 设置苹果工具栏颜色 -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+        <meta name="HandheldFriendly" content="true">
+        <!-- 微软的老式浏览器 -->
+        <meta name="MobileOptimized" content="320">
+        <!-- uc强制竖屏 -->
+        <meta name="screen-orientation" content="portrait">
+        <!-- QQ强制竖屏 -->
+        <meta name="x5-orientation" content="portrait">
+        <!-- UC强制全屏 -->
+        <meta name="full-screen" content="yes">
+        <!-- QQ强制全屏 -->
+        <meta name="x5-fullscreen" content="true">
+        <!-- UC应用模式 -->
+        <meta name="browsermode" content="application">
+        <!-- QQ应用模式 -->
+        <meta name="x5-page-mode" content="app">
+        <!-- windows phone 点击无高光 -->
+        <meta name="msapplication-tap-highlight" content="no">
+        <!-- 指定请求和响应遵循的缓存机制 -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+        <meta http-equiv="Pragma" content="no-cache"/>
+        <meta http-equiv="Expires" content="0"/>
+        <!-- 优先使用 IE 最新版本和 Chrome -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title>SCI</title>
+        <meta name="description" content="SCI期刊发表,全面覆盖国内外学术圈,专业、可靠、简洁、易懂的在线SCI期刊发表平台" />
+        <meta name="keywords" content="SCI期刊发表" />
+        <link rel="shortcut icon" href="../../mobile/assets/icon.ico" type="image/vnd.microsoft.icon"/>
+        <link rel="stylesheet" href="../../mobile/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../mobile/assets/css/base.css">
+        <link rel="stylesheet" href="../../mobile/assets/css/common.css?v=16.6">
+        <link rel="stylesheet" href="../../mobile/assets/css/query/query.css">
+        <script>
+            var JANE_NAME = 'sci'
+            var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        </script>
+    </head>
+<body>
+    <div class="navBox navbarBox">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <img src="../../mobile/assets/img/icon_dh.png" alt="">
+                    </button>
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="../../mobile/assets/img/back.png" alt="首页">
+                    </a>
+                    <p class="title">我的订单</p>
+                </div>
+                            
+                <div class="collapse navbar-collapse topNav" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./index.html">首页</a></li>
+                        <li class="active"><a href="#">我的订单</a></li>
+                        <!-- <li><a href="#SubmitContainerBox">提交需求</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+	</div>
+    <div class="container containerMain">
+        <div>
+            <div class="MobilePhone">
+                <img class="phone" src="../../mobile/assets/img/phone-ico.png" alt="">
+                <input placeholder="请输入您的手机号码" type="text" class="form-control phoneInput" />
+                <span data="client_phone_query_order" class="VerificationCode">发送验证码</span>
+            </div>
+            <div class="Verification">
+                <img class="messege" src="../../mobile/assets/img/messege.png" alt="">
+                <input placeholder="请输入您验证码" type="text" class="form-control VerificationCode_s" name="phone_code" />
+                <button type="submit" name="submit" class="btn btn-primary cx button-css">查询</button>
+            </div>
+        </div>
+
+        <div class="ResultContainer">
+            <div class="Success">
+
+            </div>
+    
+            <div class="Default">
+                <img src="../../mobile/assets/img/Artwork.png" alt="">
+                <p>暂无订单</p>
+                <a href="./index.html#SubmitContainerBox">提交需求</a>
+            </div>
+            <div class="loading">
+                <img src="../../mobile/assets/img/loading2.gif?v96" alt="正在加载">
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal_s" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">提示</h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="form-group button_s">
+                        <button class="btn btn-primary determine">确定</button>
+                        <button class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Description">
+            <b>说明：</b>
+            <p>1. 您的稿件我们将在7个工作日内降重完毕，请耐心等候。人工降重完成后将可在此页面进行报告下载。</p>
+            <p>2. 系统遵守相关保密规定，全站使用HTTPS加密协议，绝不收录和泄露您处理的任何信息，请放心使用。</p>
+        </div>
+    </div>
+
+    <did class="fixeNav">
+        <div class="fn-top">
+            <span>导航</span>
+            <img class="closeNav" src="../../mobile/assets/img/icon_dh_close.png" alt="">
+        </div>
+        <div class="fn-bottom">
+            <ul>
+                <li>
+                    <img src="../../mobile/assets/img/icon_dh_home.png" alt="">
+                    首页
+                </li>
+                <li class="active">
+                    <a href="./query.html">
+                        <img src="../../mobile/assets/img/icon_dh_wddd.png" alt="">
+                        我的订单
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </did>
+    <div class="ForTheRecord">
+        COPYRIGHT © 2022-2023 湖南淘项有术网络信息科技有限公司
+    </div>
+</body>
+<script src="../../mobile/assets/js/jquery.min.js"></script>
+<script src="../../mobile/assets/js/bootstrap.min.js"></script>
+<script src="../../mobile/assets/js/message.js"></script>
+<script src="../../mobile/assets/js/common.js?v=1"></script>
+<script>
+var phone = ''
+var phone_code = ''
+var order_sn = ''
+var decide = 60;
+var oid = ''
+var setTime = ''
+var source = ''
+// 先判断是不是微信端打开的
+if (/(micromessenger)/i.test(navigator.userAgent)) {
+    source = 2
+} else {
+    // 判断h5还是pc true就是h5
+    let client =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+        );
+    if (client) {
+        source = 7
+    } else {
+        source = 1
+    }
+}
+
+$('.cx').click(function() {
+    const regex = /^1[3456789]\d{9}$/;//使用此正则即可
+    if(regex.test($('.phoneInput').val())) {
+        phone = $('.phoneInput').val()
+        phone_code = $('.VerificationCode_s').val()
+        query_list()
+    }else {
+        toast('请输入正确的手机号')
+        return
+    }
+})
+
+function query_list(isTips) {
+    $('.Default').hide()
+    $('.loading').show()
+    var form_data = getFormData({
+        phone: phone,
+        phone_code: phone_code
+    })
+    $.ajax({
+        type : 'post',
+        url : urls + "/api/client/order/query_list?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+        processData : false,
+        contentType : false,
+        xhrFields: {
+            withCredentials: true
+        },
+        data : form_data,
+        success : function(result) {
+            if(result.code == 200) {
+                $('.loading').hide()
+                if(result.data.length) {
+                    $('.Success').html(orderInfoHtml(result.data))
+                }else {
+                    $('.Default').show()
+                }
+            }else {
+                $('.Default').show()
+                $('.loading').hide()
+                if(!isTips) {
+                    toast({
+                        msg: result.codeMsg,
+                        type: 'error',
+                        time: 2000
+                    })
+                }
+            }
+        }
+    });
+}
+query_list(true)
+
+// 移动端卡片html
+function orderInfoHtml(params) {
+    var text = "";
+    for (var i = 0; i < params.length; i++) {
+        text += "                <div class=\"cardDiv\">";
+        text += "                    <div id=\"statusBox\" class=\""+'status'+params[i].order_status+"\">";
+        text += "                        "+params[i].order_status_human+"";
+        text += "                    </div>";
+        text += "                    <p class=\"OrderNumber\">订单号：<span>" + params[i].order_sn + "</span></p>";
+        text += "                    <div class=\"OrderInfo\">";
+        text += "                        <p>";
+        text += "                            <label>姓名</label>：";
+        text += "                            <span>" + params[i].name + "</span>";
+        text += "                        </p>";
+        text += "                        <p>";
+        text += "                            <label>学校</label>：";
+        text += "                            <span>"+ params[i].place_order_data.school.value  +"</span>";
+        text += "                        </p>";
+        text += "                        <p>";
+        text += "                            <label>上传时间</label>：";
+        text += "                            <span>"+params[i].created+"</span>";
+        text += "                        </p>";
+        text += "                    </div>";
+        text += "                    <div class=\"ButtonGroup\">";
+        if([45].includes(params[i].order_status)) {
+            text += "                        <div data=" + params[i].order_sn + " class=\"confirm complete\">确认</div>";
+        }
+        if([45,60].includes(params[i].order_status)) {
+            text += "                        <div data=" + params[i].end_product + " class=\"download\">下载</div>";
+        }
+        if([20].includes(params[i].order_status) && params[i].remark_explain) {
+            text += "                        <div data=" + params[i].remark_explain + " class=\"Reason\">原因</div>";
+        }
+        if([70,20,80].includes(params[i].order_status)) {
+            text += "                        <div class=\"ReissuTheOrder again\">重新下单</div>";
+        }
+        if([10,25,41].includes(params[i].order_status)) {
+            text += "                        <div data=" + params[i].order_sn + " class=\"cancel\">取消</div>";
+        }
+        text += "                    </div>";
+        text += "                </div>";
+    }
+    return text
+}
+
+
+$('.Success').on('click', '.again', function() { // 重新下单
+    window.location.href = './index.html#SubmitContainerBox'
+})
+$('.Success').on('click', '.cancel', function() { // 取消
+    $('#myModal_s').modal('show')
+    $('.modal-body').text('您确定要取消订单吗?')
+    $('.determine').attr('data' , 'cancelOrder')
+    order_sn =  $(this).attr('data')
+})
+$('.Success').on('click','.complete',function() { // 确认
+    $('#myModal_s').modal('show')
+    $('.modal-body').text('您确定订单已完成吗?')
+    $('.determine').attr('data' , 'complete')
+    order_sn =  $(this).attr('data')
+})
+$('.Success').on('click','.download',function() { // 下载
+    window.open($(this).attr('data'))
+})
+$('.Success').on('click','.Reason',function() { // 原因
+    toast($(this).attr('data'))
+})
+
+
+$('.determine').click(function() {
+    if($(this).attr('data') == 'cancelOrder') {
+        cancel_order()
+    }else if($(this).attr('data') == 'complete') {
+        confirm_complete()
+    }else if($(this).attr('data') == 'refund') {
+        // ApplyRefund() // 先去质询客服
+    }
+})
+
+
+function cancel_order() { // 取消订单
+    var form_data = getFormData({
+            order_sn: order_sn
+        })
+    $.ajax({
+        type : 'post',
+        url : urls + "/api/client/order/cancel_order",
+        processData : false,
+        contentType : false,
+        xhrFields: {
+            withCredentials: true
+        },
+        data : form_data,
+        success : function(result) {
+            if(result.code == 200) {
+                toast('已取消订单')
+                query_list()
+                $('#myModal_s').modal('hide')
+            }else {
+                toast({
+                    msg: result.codeMsg,
+                    type: 'error',
+                    time: 2000
+                })
+            }
+        }
+    });
+}
+
+function confirm_complete() { // 确认完成
+    var form_data = getFormData({
+            order_sn: order_sn
+        })
+    $.ajax({
+        type : 'post',
+        url : urls + "/api/client/order/confirm_complete",
+        processData : false,
+        contentType : false,
+        xhrFields: {
+            withCredentials: true
+        },
+        data : form_data,
+        success : function(result) {
+            if(result.code == 200) {
+                toast('已确认订单完成!')
+                query_list()
+                $('#myModal_s').modal('hide')
+            }else {
+                toast({
+                    msg: result.codeMsg,
+                    type: 'error',
+                    time: 2000
+                })
+            }
+        }
+    });
+}
+
+$(".navbar-toggle").on('click', function (){
+    $(".fixeNav").css('right', '0')
+})
+
+$(".closeNav").on('click', function (){
+    $(".fixeNav").css('right', '-10rem')
+})
+</script>
+</html>

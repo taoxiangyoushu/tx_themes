@@ -1,0 +1,520 @@
+.payApp {
+  background: url(../img/bk.png) no-repeat;
+  background-size: 100% 40%;
+  min-height: 100vh;
+  padding-top: 2.38rem;
+}
+.payApp .info {
+  width: 90%;
+  margin: auto;
+  padding: 1.9rem;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.67rem 0px rgba(135, 135, 135, 0.19);
+  border-radius: 0.95rem;
+}
+.payApp h3 {
+  color: #333333;
+  font-size: 1.43rem;
+  border-bottom: 1px solid #ecedf1;
+  padding-bottom: 1.2rem;
+  font-weight: bold;
+}
+.payApp .infoLeft {
+  color: #999999;
+  width: 30%;
+}
+.payApp .infoRight {
+  width: 70%;
+  text-align: right;
+  color: #222222;
+}
+.payApp .infoMain {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.payApp .infoMain div {
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1.43rem;
+}
+.payApp .payType {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.67rem 0px rgba(135, 135, 135, 0.19);
+  border-radius: 0.95rem;
+  width: 90%;
+  margin: auto;
+  padding: 1.9rem;
+  margin-top: 1.43rem;
+  display: none;
+}
+.payApp .payType .tapTypeImg img {
+  width: 2.1rem;
+  height: 2.1rem;
+  margin-right: 1.1rem;
+}
+.payApp .dsf-Pay {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.67rem 0px rgba(135, 135, 135, 0.19);
+  border-radius: 0.95rem;
+  width: 90%;
+  margin: auto;
+  padding: 1.9rem;
+  margin-top: 1.43rem;
+  display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.payApp .dsf-Pay .PayName img {
+  width: 2.1rem;
+  height: 2.1rem;
+  margin-right: 1.1rem;
+}
+.payApp .dsf-Pay .PayName {
+  display: flex;
+  align-items: center;
+}
+.payApp .dsf-Pay .noselectImg {
+  width: 1.24rem;
+  height: 1.24rem;
+}
+.payApp .payTypeBox {
+  display: flex;
+  justify-content: space-between;
+  height: 3.86rem;
+  line-height: 3.86rem;
+}
+.payApp .payTypeBox .isSelect img {
+  width: 1.24rem;
+  height: 1.24rem;
+}
+.bottomBox {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.bottomBox p {
+  width: 100%;
+  background-color: #fff5df;
+  text-align: center;
+  padding: 1.14rem 0;
+  color: #7b580c;
+  font-size: 1.14rem;
+}
+.payBox {
+  display: flex;
+  height: 6.67rem;
+  background-color: #fff;
+}
+.payBox .amount {
+  width: 58%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+.payBox .amount div {
+  width: 100%;
+  padding-left: 2.38rem;
+  color: #999999;
+  font-size: 1.14rem;
+}
+.payBox .payBotton {
+  width: 42%;
+  background-color: #7a55f9;
+  font-weight: bold;
+  font-size: 2.29rem;
+  color: #fff;
+  text-align: center;
+  line-height: 6.67rem;
+}
+.payBox div.total {
+  color: #333333;
+  font-size: 1.43rem;
+  font-weight: bold;
+}
+.payBox div.total span {
+  color: #5868ff;
+  font-size: 2.4rem;
+}
+#title,
+#author {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+.info.appreciationInfo {
+  margin-top: 1.5rem;
+}
+.info.couponBox {
+  margin-top: 1.5rem;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info.couponBox #coupon {
+  border: none;
+  outline: none;
+  width: 64%;
+  font-size: 1.4rem;
+  padding-left: 1.9rem;
+  border-top-left-radius: 0.95rem;
+  border-bottom-left-radius: 0.95rem;
+}
+.info.couponBox .eliminateCoupon {
+  width: 2rem;
+  height: 2rem;
+  display: none;
+}
+.info.couponBox .use_now {
+  background: #7a55f99e;
+  color: #fff;
+  display: inline-block;
+  height: 4.4rem;
+  line-height: 4.4rem;
+  border-top-right-radius: 0.95rem;
+  border-bottom-right-radius: 0.95rem;
+  width: 24%;
+  text-align: center;
+  font-size: 1.6rem;
+}
+.info.couponBox .use_now.active {
+  background: #7a55f9;
+}
+.claim-coupons {
+  display: none;
+}
+.no_pay_text {
+  color: #797979;
+  text-align: center;
+  margin-top: 2rem;
+  display: none;
+}
+.appreciationUL {
+  font-size: 1.5rem;
+  color: #222222;
+  margin-top: 0.8rem;
+}
+.appreciationUL .appreciationLI {
+  height: 4.3rem;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+.appreciationUL .appreciationLI > div {
+  display: flex;
+  align-items: center;
+}
+.appreciationUL .appreciationLI > div .good_name {
+  color: #222222;
+  line-height: normal;
+}
+.appreciationUL .appreciationLI > div i {
+  width: 1.3rem;
+  height: 1.3rem;
+  background-color: #ffffff;
+  border-radius: 0.1rem;
+  border: solid 0.1rem #dcdcdc;
+  display: inline-block;
+  margin-right: 1.2rem;
+}
+.appreciationUL .appreciationLI > div img {
+  margin-left: 0.5rem;
+  margin-top: -0.3rem;
+}
+.appreciationUL .appreciationLI > div .original-price {
+  line-height: normal;
+  color: #c0c0c0;
+  text-decoration: line-through;
+  font-size: 1.3rem;
+}
+.appreciationUL .appreciationLI > div .current-price {
+  color: #222222;
+}
+.appreciationUL .appreciationLI .priceBox {
+  width: 42%;
+  justify-content: end;
+}
+.appreciationUL .introduce {
+  color: #006fff;
+  font-size: 1.2rem;
+  text-align: center;
+  background: #e4f0ff;
+  padding: 0.4rem;
+  line-height: normal;
+}
+.appreciationUL .selected i {
+  background: url('../imgcheck.png') no-repeat;
+  background-size: 100% 100%;
+}
+.appreciation {
+  display: none;
+}
+.customer-wx {
+  left: 0;
+  top: 66%;
+}
+.payAppBox {
+  padding-bottom: 12rem;
+}
+#toastId p {
+  margin: 0;
+}
+.modal-content {
+  background-image: linear-gradient(0deg, #ffffff 0%, #c9e0ff 100%);
+  border-radius: 1rem;
+}
+.modal-header,
+.modal-footer {
+  border: 0;
+}
+.modal-content,
+.modal-footer {
+  text-align: center;
+}
+.btn_clone {
+  width: 90%;
+  background-image: linear-gradient(0deg, #5282fa 47%, #7aa8f2 100%);
+  border: 0;
+  color: #ffffff;
+  padding: 0.85rem 0;
+  font-size: 1.4rem;
+  border-radius: 1.5rem;
+}
+.modal-body {
+  padding: 0 15px;
+}
+.modal-body img {
+  width: 90%;
+}
+.linkUrl {
+  padding: 0.75rem 1.8rem;
+  width: 90%;
+  text-align: left;
+  background: #eaf3ff;
+  border-radius: 1.27rem;
+  margin: 1.65rem auto;
+  color: #666666;
+  font-size: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.modal-dialog {
+  margin: 20px;
+  margin-top: 30%;
+}
+.contentBox {
+  margin-top: 1rem;
+}
+.contentBox .tips1 {
+  color: #333;
+  font-size: 1.4rem;
+}
+.contentBox .tips2 {
+  font-size: 1.4rem;
+  color: #5282fa;
+  margin-bottom: 2rem;
+}
+.modal-footer {
+  padding-top: 0;
+  padding-bottom: 2.8rem;
+}
+.errTipBox {
+  position: fixed;
+  width: 70%;
+  background: linear-gradient(180deg, #deeafa, #fff);
+  height: 17rem;
+  top: 40%;
+  left: 15%;
+  z-index: 1000;
+  border-radius: 0.8rem;
+  display: none;
+}
+.errTipBox .e_tittle {
+  height: 3.4rem;
+  line-height: 3.4rem;
+  padding-left: 1.5rem;
+  border-bottom: 1px solid #efefef;
+}
+.errTipBox p {
+  text-align: center;
+  padding-top: 3rem;
+}
+.errTipBox .y_e {
+  position: absolute;
+  bottom: 0;
+  height: 4.5rem;
+  color: #418bf8;
+  width: 100%;
+  text-align: center;
+  line-height: 4.5rem;
+  border-bottom-right-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+  border-top: 1px solid #d2e6ff;
+  font-size: 1.6rem;
+}
+.noPayWay {
+  display: none;
+}
+.amountTextBox2 {
+  color: #0073ff !important;
+  font-weight: bold;
+}
+.coupons_pop {
+  position: fixed;
+  width: 80%;
+  top: 50%;
+  margin-left: 10%;
+  margin-top: -8rem;
+  z-index: 1000;
+  background: linear-gradient(180deg, #eee3ff, #fff);
+  border-radius: 2rem;
+  display: none;
+}
+.coupons_pop #copyInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.coupons_pop .title {
+  font-size: 2rem;
+  color: #142338;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+}
+.coupons_pop p.p2 {
+  padding: 0 2rem;
+  font-size: 1.4rem;
+  color: #333333;
+  margin-top: 2rem;
+  text-align: left;
+}
+.coupons_pop p.p2 .copy_pop {
+  color: #7a55f9;
+  text-decoration: underline;
+}
+.coupons_pop .p3 {
+  font-size: 1.4rem;
+  color: #999999;
+  text-align: left;
+  padding: 0 2rem;
+  margin-top: 0.8rem;
+}
+.coupons_pop .bottom {
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+.coupons_pop .bottom .cancel_btn {
+  width: 50%;
+  text-align: center;
+  font-size: 2rem;
+  color: #c7cddf;
+  line-height: 5rem;
+  border-top: 1px solid #d4bef6;
+  border-right: 1px solid #d4bef6;
+}
+.coupons_pop .bottom .determine_btn {
+  width: 50%;
+  text-align: center;
+  font-size: 2rem;
+  color: #7a55f9;
+  font-weight: bold;
+  line-height: 5rem;
+  border-top: 1px solid #d4bef6;
+}
+#CustomModal .modal-content {
+  background: #ffffff;
+}
+#CustomModal .contentBox {
+  margin-top: 0;
+}
+#CustomModal .taobaoPay > div {
+  position: relative;
+}
+#CustomModal .taobaoPay > div.taobao-input2 {
+  margin-top: 2rem;
+}
+#CustomModal .taobaoPay > div span {
+  position: absolute;
+  top: 1.1rem;
+  font-size: 1.3rem;
+  left: 1.65rem;
+  color: #1c1c1c;
+}
+#CustomModal .taobaoPay > div input {
+  width: 100%;
+  border: none;
+  height: 4rem;
+  padding-left: 8rem;
+  border-radius: 2rem;
+  background: #f7f7f7;
+  outline: none;
+}
+#CustomModal .taobaoPay .taobao-payBtn {
+  background: linear-gradient(180deg, #6267fd, #7a56fc);
+  margin-top: 2rem;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 10rem;
+  color: #fff;
+}
+#CustomModal .taobaoPay .taobao-buyBtn {
+  margin-top: 2rem;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 10rem;
+  border: 1px solid #1a81ef;
+  color: #1880ee;
+}
+#CustomModal .taobaoPay .taobao-buyBtn img {
+  width: 1.5rem;
+  vertical-align: text-top;
+  margin-right: 0.5rem;
+}
+#toastId {
+  z-index: 1051;
+}
+.customer-wx {
+  display: none;
+}
+.payApp .taobao_pay,
+.payApp .redBook_pay {
+  display: none;
+}
+.aigc-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.aigc-page .close-aigc {
+  width: 1.5rem;
+  margin-left: -2.4rem;
+  margin-top: -12rem;
+}
+.mask {
+  background: #000;
+  opacity: 0.7;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  display: none;
+}
+/*# sourceMappingURL=pay.css.map */

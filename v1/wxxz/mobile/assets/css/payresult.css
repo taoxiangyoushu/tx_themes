@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.paySuccess {
+  text-align: center;
+}
+.paySuccess img {
+  width: 2.75rem;
+}
+.paySuccess .Failure1 {
+  color: #50A939;
+  font-size: 0.875rem;
+}
+.paySuccess .statusI {
+  margin-top: 0.625rem;
+}
+.paySuccess .payStatusText {
+  margin-top: 1.81rem;
+  text-align: center;
+  color: #080808;
+  font-size: 1rem;
+}
+.paySuccess .failText {
+  font-size: 0.87rem;
+  color: #E9AB63;
+}
+.paySuccess .buttons {
+  margin-top: 3.125rem;
+}
+.paySuccess .buttons > div {
+  width: 19.35rem;
+  height: 2.9rem;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0.97rem;
+  line-height: 2.9rem;
+  border-radius: 3.23rem;
+  box-sizing: border-box;
+}
+.paySuccess .buttons > div:last-child {
+  margin-top: 1.25rem;
+}
+.paySuccess .buttons .queryOrder {
+  color: #505050;
+  border: 1px solid #d1d1d1;
+}
+.paySuccess .buttons .submitOrder {
+  background: linear-gradient(270deg, #FF496E 0%, #FF8147 100%);
+  color: #fff;
+}
+.payFail {
+  display: none;
+  text-align: center;
+}
+.payFail img {
+  width: 2.75rem;
+}
+.payFail .Failure {
+  color: #FF496E;
+  font-size: 0.875rem;
+}
+.payFail .Amount {
+  color: #333333;
+  font-weight: bold;
+  font-size: 1.875rem;
+  margin-top: 2.5rem;
+}
+.payFail .Amount .Amount1 {
+  font-size: 1.125rem;
+}
+.payFail .statusI {
+  margin-top: 0.625rem;
+}
+.payFail .payStatusText {
+  margin-top: 1.81rem;
+  text-align: center;
+  color: #080808;
+  font-size: 1rem;
+}
+.payFail .failText {
+  font-size: 0.87rem;
+  color: #E9AB63;
+}
+.payFail .buttons {
+  margin-top: 3.125rem;
+}
+.payFail .buttons > div {
+  width: 19.35rem;
+  height: 2.9rem;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0.97rem;
+  line-height: 2.9rem;
+  border-radius: 3.23rem;
+  box-sizing: border-box;
+}
+.payFail .buttons > div:last-child {
+  margin-top: 1.25rem;
+}
+.payFail .buttons .toHome {
+  color: #505050;
+  border: 0.33px solid #ccc;
+  border-radius: 0.5rem;
+}
+.payFail .buttons .backPay {
+  background: linear-gradient(270deg, #3369FE 0%, #638FFF 100%);
+  border-radius: 0.5rem;
+  color: #fff;
+}
+.orderInform {
+  margin-top: 4rem;
+}
+.orderInform p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.65rem;
+  font-size: 0.875rem;
+  border-bottom: solid 1px #DDDDDD;
+  padding-bottom: 0.625rem;
+}
+.orderInform p .left {
+  color: #333333;
+}
+.orderInform p .right {
+  color: #CCCCCC;
+}
+.orderInform p .right.redText {
+  color: #ff7e00;
+}
+.Paymentstatus {
+  background: #f5f6f8;
+  padding: 0 0.97rem;
+  height: 100vh;
+}
+.Paymentstatus .Payment {
+  background-color: #ffffff;
+  padding: 0.75rem;
+  padding-bottom: 3.125rem;
+  border-radius: 0.3125rem;
+}
+.pageHeader {
+  background: #f5f6f8 !important;
+}
+/*# sourceMappingURL=payresult.css.map */
