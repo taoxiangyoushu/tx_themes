@@ -25,7 +25,7 @@
     </a>
 </div>
 
-#### 
+####
 
 ---
 
@@ -55,6 +55,18 @@
 | runse           | 润色          |
 | ...             | ...         |
 
+---
+
+###  🔨 部署前必读
+
+注：搜索所有HTML文件，替换以下**USER_TOKEN**值为自己的值
+
+获取自己的值：淘项有术后台-->开放平台-->API开放-->前端开放
+
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
+        var JANE_NAME = 'dsxz';
+    </script>
 ---
 
 ### 🚨 更新说明
