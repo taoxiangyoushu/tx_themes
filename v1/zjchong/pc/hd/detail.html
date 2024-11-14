@@ -238,6 +238,7 @@
         $(".coupons-item").removeClass('active')
         $(this).addClass('active')
         receiveCoupon()
+        countClick($(this).attr('data-type'))
         $(".f_d_text").hide()
         if($(this).attr('data-type') == 'activity_gzh'){
             $(".s_block").hide()
@@ -636,6 +637,25 @@
             });
         }
     })
+
+    function countClick(activityType) {   // 活动点击  数据统计
+        $.ajax({
+            type: 'post',
+            url: urls + "/api/client/activity/view_activity?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME + '',
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({'activity_type':activityType}),
+            success: function success(res) {
+
+            },
+            error: function (err) {
+
+            }
+        });
+    }
 </script>
 </body>
 </html>

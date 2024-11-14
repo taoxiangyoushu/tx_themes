@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-datetimepicker.min.css?v=p24.0045">
         <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-select.min.css?v=p24.0015">
         <link rel="stylesheet" href="../../pc/fx/assets/css/common.css">
-        <link rel="stylesheet" href="../../pc/fx/assets/css/index.css">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/index.css?v=fx1.0">
         <link rel="stylesheet" href="../../pc/fx/assets/css/withdraw.css">
         
         <!-- head_script -->
@@ -379,7 +379,7 @@
                         <div class="form-group paper-title zfbItem">
                             <label class="label-t label-s"><span>*</span> 支付宝账号</label>
                             <div class="main-container paper-title-block">
-`                                <input autocomplete="off" class="form-control" name="zfbName" type="text" placeholder="请输入支付宝账号" id="zfbName"/>
+                                <input autocomplete="off" class="form-control" name="zfbName" type="text" placeholder="请输入支付宝账号" id="zfbName"/>
                             </div>
                             <span id="zfbName_err"></span>
                         </div>
@@ -561,20 +561,44 @@
             </div>
         </div>
     </div>
+<!-- 详情 -->
+<div class="detailsBox">
+    <div class="mask_body"></div>
+    <div class="Detailed_operation">
+        <img class="close" src="../../pc/fx/assets/img/close.png" alt="">
+        <div class="Details_Content">
+            <p class="Details_Title"><span></span>提现账户</p>
+            <div class="Withdrawal_style">
+                <p><span>提现方式</span><span id="withdrawal_mode_human"></span></p>
+                <!-- 支付宝 -->
+                <p class="zfb"><span>真实姓名</span><span id="zfb_real_name"></span></p>
+                <p class="zfb"><span>支付宝账号</span><span id="zfb_account_no"></span></p>
 
+                <!-- 微信 -->
+                <p class="wx"><span>微信名</span><span id="wx_name"></span></p>
+                <p class="wx"><span>微信号</span><span id="wx_account_no"></span></p>
+
+                <!-- 银行卡 -->
+                <p class="yhk"><span>开户支行</span><span id="bank_branch_name"></span></p>
+                <p class="yhk"><span>银行卡卡号</span><span id="bank_account_no"></span></p>
+                <p class="yhk"><span>持卡人姓名</span><span id="bank_real_name"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
     <input id="copyInput" type="text">
 </body>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
 <script src="../../pc/fx/assets/js/jquery.min.js?v=p24.0045"></script>
 <script src="../../pc/fx/assets/js/bootstrap.min.js?v=p24.0045"></script>
-<script src="../../pc/fx/assets/js/bootstrapValidator.min.js?v=p24.0011"></script>
+<script src="../../pc/fx/assets/js/bootstrapValidator.min.js?v=p24.0045"></script>
 <script src="../../pc/fx/assets/js/qrcode.min.js?v=p24.0045"></script>
 <script src="../../pc/fx/assets/js/coco-message.js?v=p24.0045"></script>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0045"></script>
 <script src="../../pc/fx/assets/js/jqPaginator.min.js?v=1.0"></script>
 <script src="../../pc/fx/assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="../../pc/fx/assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
-<script src="../../pc/fx/assets/js/bootstrap-select.js?v=p24.0015"></script>
+<script src="../../pc/fx/assets/js/bootstrap-select.js?v=p24.0045"></script>
 <script src="../../pc/fx/assets/js/html2canvas.min.js"></script>
 <script src="../../pc/fx/assets/js/common.js?v=p24.0045"></script>
 <script src="../../pc/fx/assets/js/myPage.js?v=1.0"></script>
@@ -772,6 +796,7 @@
     $('#withdrawalSearch').click(function() {
         withdrawal_list(1)
     })
+    var withdrawal_list_data = []
     // 获取提现列表
     function withdrawal_list(below) {
         below = below || 1
@@ -794,6 +819,7 @@
             success: function(data) {
                 if (data.code == 200) {
                     if(data.data.length) {
+                        withdrawal_list_data = data.data
                         $('.tbody2.table').html(tableHtml2(data.data))
                         count = data.count
                         page = Number(below)
@@ -864,13 +890,12 @@
             text += "	<td>" + data[i].created + "</td>";
             // text += "	<td>" + data[i].update + "</td>"
             text += "	<td><div class=\"status_human\"><span class=\""+statusClass+"\">" + data[i].status_human + "</span>"+ imgTips +"</div></td>";
-            if(data[i].status == 30 ) {
-                text += "	<td class=\"complaints\" data-withdrawalsn=\""+data[i].withdrawal_sn+"\">" + '发起申诉' + "</td>";
-            }else if(data[i].status == 52) {
-                text += "	<td class=\"complaints\" data-withdrawalsn=\""+data[i].withdrawal_sn+"\">" + '再次申诉' + "</td>";
-            }else {
-                text += "	<td>" + '' + "</td>";
-            }
+                text += "	<td>";
+                text += "       <span class=\"detailsTrigger\" data-index=\""+i+"\">详情</span>";
+                if(data[i].status == 30 || data[i].status == 52) {
+                text += "       <span data-withdrawalsn=\""+data[i].withdrawal_sn+"\" class=\"complaints\">发起申诉</span>";
+                text += "   </td>";
+                }
             text += "</tr>";
         }
         return text
@@ -880,6 +905,39 @@
         $('.linkBox').hide()
         $('.withdrawBox').hide()
         $('.complaintsBox').hide()
+        $('.detailsBox').hide()
+    })
+    $(document).on('click','.detailsTrigger',function(){
+        $('.detailsBox').show()
+        var data = withdrawal_list_data[$(this).data('index')]
+        var withdrawal_mode = data['withdrawal_mode'] // 提现方式
+        var withdrawal_mode_human = data['withdrawal_mode_human'] // 提现方式中文
+        var zfb_real_name = data['zfb_real_name'] // 真实姓名
+        var zfb_account_no = data['zfb_account_no'] // 支付宝账号
+        var wx_name = data['wx_name'] // 微信名
+        var wx_account_no = data['wx_account_no'] // 微信号
+        var bank_branch_name = data['bank_branch_name'] // 开户支行
+        var bank_account_no = data['bank_account_no'] // 银行卡卡号
+        var bank_real_name = data['bank_real_name'] // 持卡人姓名
+
+        $('#withdrawal_mode_human').text(withdrawal_mode_human)
+        if(withdrawal_mode == 20) { // 支付宝
+            $('.zfb').show()
+            $('.wx , .yhk').hide()
+            $('#zfb_real_name').text(zfb_real_name)
+            $('#zfb_account_no').text(zfb_account_no)
+        }else if(withdrawal_mode == 10) {
+            $('.wx').show()
+            $('.zfb , .yhk').hide()
+            $('#wx_name').text(wx_name)
+            $('#wx_account_no').text(wx_account_no)
+        }else if(withdrawal_mode == 30){
+            $('.yhk').show()
+            $('.zfb , .wx').hide()
+            $('#bank_branch_name').text(bank_branch_name)
+            $('#bank_account_no').text(bank_account_no)
+            $('#bank_real_name').text(bank_real_name)
+        }
     })
     $('.posterShare').click(function() {
         $('.posterShareBox').show()

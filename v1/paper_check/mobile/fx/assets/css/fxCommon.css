@@ -1,0 +1,57 @@
+.whiteboard {
+  width: auto !important;
+  height: auto !important;
+  padding-bottom: 4rem;
+}
+.whiteboard h3 {
+  font-size: 2.3rem !important;
+  padding-bottom: 3.39rem !important;
+}
+.closedDL {
+  right: 1rem !important;
+  top: 1rem !important;
+  display: none;
+}
+.closedDL.closehover {
+  display: block !important;
+  width: 1.5rem;
+}
+.Switchlogin {
+  height: 5.17rem !important;
+}
+#bindingMobile {
+  width: 90vw !important;
+  margin-left: -45vw !important;
+}
+.headDiv span {
+  left: 0 !important;
+}
+.obtain {
+  font-size: 1.33rem !important;
+}
+.BindingNow {
+  font-size: 1.56rem !important;
+}
+.headDiv {
+  padding: 1rem 0;
+  position: relative;
+  background-color: #FFFFFF;
+  height: 4.6875rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.headDiv p {
+  text-align: center;
+  font-size: 1.875rem;
+}
+.headDiv .hasLogin {
+  width: auto !important;
+  padding-right: 0.5rem !important;
+  height: 3rem !important;
+}
+.loginBox {
+  top: 0.8rem !important;
+  right: 1rem !important;
+}

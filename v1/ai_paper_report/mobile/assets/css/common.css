@@ -208,3 +208,27 @@ ul {
 .foot a.beian {
   margin-left: 20px;
 }
+.extension {
+  position: fixed;
+  width: 5rem;
+  height: 5rem;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 19px 1px rgba(255, 166, 166, 0.3);
+  border-radius: 50%;
+  left: 0%;
+  top: calc(75% - 12.6rem);
+  z-index: 120;
+  text-align: center;
+  font-size: 0.875rem;
+  padding-top: 0.9375rem;
+  color: #666666;
+}
+.extension img {
+  width: 1.875rem;
+  margin-bottom: 0.25rem;
+  position: relative;
+  left: 0.125rem;
+}
+#promotion {
+  display: none;
+}

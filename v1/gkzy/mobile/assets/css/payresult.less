@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #f5f6f8;
+  padding: 0 .97rem;
+}
+.paySuccess,.payFail {
+  //display: none;
+}
+.paySuccess {
+  //display: none;
+  text-align: center;
+  .statusI {
+    margin-top: 2.9rem;
+    width: 4.52rem;
+    height: 4.52rem;
+  }
+  .payStatusText {
+    margin-top: 1.81rem;
+    text-align: center;
+    color: #080808;
+    font-size: 1rem;
+  }
+  .orderInform {
+    margin-top: 4rem;
+    padding: 0 .97rem .97rem .97rem;
+    border-bottom: .33px solid #cecece;
+    p {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: .65rem;
+      font-size: .87rem;
+      .left {
+        color: #999999;
+      }
+      .right {
+        color: #686868;
+        &.redText {
+          color: #ff7e00;
+        }
+      }
+    }
+  }
+  .buttons {
+    margin-top: 5.48rem;
+    &>div {
+      width: 19.35rem;
+      height: 2.9rem;
+      text-align: center;
+      margin: 0 auto;
+      font-size: .97rem;
+      line-height: 2.9rem;
+      border-radius: 3.23rem;
+      box-sizing: border-box;
+      &:last-child {
+        margin-top: 1.55rem;
+      }
+    }
+    .queryOrder {
+      color: #505050;
+      border: 1px solid #d1d1d1;
+    }
+    .submitOrder {
+      background-image: linear-gradient(90deg, 
+      #ff7e00 0%, 
+      #fd9f41 100%);
+      color: #fff;
+    }
+  }
+}
+
+.payFail {
+  display: none;
+  text-align: center;
+  .statusI {
+    margin-top: 2.9rem;
+    width: 4.52rem;
+    height: 4.52rem;
+  }
+  .payStatusText {
+    margin-top: 1.81rem;
+    text-align: center;
+    color: #080808;
+    font-size: 1rem;
+  }
+  .failText {
+    font-size: .87rem;
+    color: #686868;
+    margin-top: 1.61rem;
+  }
+  .buttons {
+    margin-top: 6.13rem;
+    &>div {
+      width: 19.35rem;
+      height: 2.9rem;
+      text-align: center;
+      margin: 0 auto;
+      font-size: .97rem;
+      line-height: 2.9rem;
+      border-radius: 3.23rem;
+      box-sizing: border-box;
+      &:last-child {
+        margin-top: 1.55rem;
+      }
+    }
+    .toHome {
+      color: #505050;
+      border: .33px solid #ccc;
+    }
+    .backPay {
+      background-image: linear-gradient(90deg, 
+      #ff7e00 0%, 
+      #fd9f41 100%);
+      color: #fff;
+    }
+  }
+}

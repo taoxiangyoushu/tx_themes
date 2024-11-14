@@ -1,0 +1,354 @@
+.withdrawBox {
+  display: none;
+}
+.withdrawBox .mask_body {
+  position: fixed;
+  background: #000;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+.withdrawBox .withdrawalMain {
+  width: 100%;
+  max-width: 50.5rem;
+  height: 48.5625rem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-top: -24.25rem;
+  margin-left: -24.375rem;
+  background: #FFFFFF;
+  z-index: 1000;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #F1F1F1;
+}
+.withdrawBox .close,
+.withdrawBox .closeConfirmPopUp {
+  position: absolute;
+  right: 1.25rem;
+  top: 1.3125rem;
+}
+.withdrawBox .dialog__title {
+  font-size: 1rem;
+  color: #000000;
+  text-align: left;
+  padding: 1.125rem 1.25rem;
+  border-bottom: 0.0625rem solid #EEEEEE;
+}
+.withdrawBox .withdrawalFlow {
+  background: #FFF9F7;
+  width: 100%;
+  margin: auto;
+  font-size: 0.75rem;
+  color: #333333;
+  padding: 1.25rem;
+}
+.withdrawBox .dialog__main {
+  padding: 1rem 1.25rem 0 1.25rem;
+  max-height: calc(100% - 9.0625rem);
+  overflow: auto;
+}
+.withdrawBox .mainFlow {
+  overflow: hidden;
+  margin: 1.25rem 0;
+}
+.withdrawBox .mainFlow img {
+  margin-right: 0.875rem;
+}
+.withdrawBox .mainFlow > div {
+  float: left;
+  width: 33.3%;
+}
+.withdrawBox .mainFlow .text {
+  display: inline-block;
+  vertical-align: middle;
+}
+.withdrawBox .mainFlow .item1 > div,
+.withdrawBox .mainFlow .item2 > div,
+.withdrawBox .mainFlow .item3 > div {
+  display: inline-block;
+}
+.withdrawBox .mainFlow .item1 .text,
+.withdrawBox .mainFlow .item2 .text,
+.withdrawBox .mainFlow .item3 .text {
+  text-align: left;
+}
+.withdrawBox .mainFlow .item3 {
+  text-align: right;
+}
+.withdrawBox .notice {
+  line-height: 1.25rem;
+}
+.withdrawBox .notice p {
+  color: #666;
+}
+.withdrawBox .title {
+  color: #333;
+  font-weight: bold;
+}
+.balance {
+  font-size: 0.875rem;
+  color: #333333;
+  margin-top: 1.5rem;
+}
+.balance span {
+  font-weight: bold;
+}
+.plagiarismCheck-form {
+  margin-top: 0.75rem;
+}
+.check-version-block {
+  overflow: hidden;
+}
+.check-version-block .version-item {
+  width: 10.625rem;
+  height: 3.125rem;
+  background: #FAFAFA;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid #F4F4F4;
+  text-align: center;
+  line-height: 2.875rem;
+  font-size: 0.875rem;
+  color: #726F6D;
+  float: left;
+  cursor: pointer;
+}
+.check-version-block .version-item + .version-item {
+  margin-left: 1.375rem;
+}
+.check-version-block .version-item span {
+  display: inline-block;
+  width: 3.5rem;
+  text-align: left;
+  padding-left: 0.375rem;
+}
+.check-version-block .version-item.active {
+  background-color: #FFF5F4;
+  background-image: url('../img/kuang.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.paper-title-block {
+  max-width: 20rem;
+}
+.label-t {
+  font-size: 0.875rem;
+  color: #333;
+}
+.label-t span {
+  color: #F56C6C;
+}
+.initiated {
+  width: 100%;
+  border-top: 0.0625rem solid #E8EBF1;
+  padding: 1.375rem 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 01;
+}
+.initiated .initiatedBt {
+  width: 6rem;
+  height: 2.5rem;
+  background: #FF6347;
+  border-radius: 0.1875rem;
+  text-align: center;
+  line-height: 2.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #FFFFFF;
+  float: right;
+  cursor: pointer;
+}
+.initiated .initiatedBt:hover {
+  background: #ff583a;
+}
+.initiated .amountBox {
+  font-size: 1.125rem;
+  color: #333333;
+}
+.initiated .amountBox span {
+  font-size: 1.5rem;
+  color: #333333;
+  font-weight: bold;
+}
+.uploadBox {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.1875rem;
+  border: 0.0625rem solid #F1F1F1;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.uploadBox:hover {
+  border-color: #999;
+}
+.uploadBox span {
+  font-size: 1.875rem;
+  color: #999999;
+  line-height: 5rem;
+}
+.uploadBox #exampleInputFile,
+.uploadBox #exampleInputFile2 {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.uploadDiv .file-block,
+.uploadDiv .file-block2 {
+  display: none;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+}
+.uploadDiv .file-block > #collectionCode,
+.uploadDiv .file-block2 > #collectionCode,
+.uploadDiv .file-block > #voucher,
+.uploadDiv .file-block2 > #voucher {
+  width: 100%;
+  height: 100%;
+}
+.uploadDiv .file-block:hover,
+.uploadDiv .file-block2:hover {
+  background-color: #ccc;
+}
+.uploadDiv .file-block:hover .delete-file,
+.uploadDiv .file-block2:hover .delete-file,
+.uploadDiv .file-block:hover .delete-file2,
+.uploadDiv .file-block2:hover .delete-file2 {
+  display: block;
+}
+.uploadDiv .delete-file,
+.uploadDiv .delete-file2 {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.uploadDiv .delete-file img,
+.uploadDiv .delete-file2 img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.25rem;
+  margin-top: -0.25rem;
+  cursor: pointer;
+}
+.wxItem,
+.yhkItem {
+  display: none;
+}
+.ConfirmPopUpWindow {
+  display: none;
+}
+.ConfirmPopUpWindow .mask_body {
+  z-index: 1001;
+  position: fixed;
+  background: #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+.ConfirmPopUpWindow .windowBox {
+  width: 20rem;
+  height: 19.125rem;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #F1F1F1;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-top: -10rem;
+  margin-left: -9.5625rem;
+  background: #FFFFFF;
+  z-index: 1002;
+  padding: 1.25rem;
+  text-align: center;
+}
+.ConfirmPopUpWindow .totalAmount {
+  font-size: 1rem;
+  color: #333333;
+}
+.ConfirmPopUpWindow .totalAmount span {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+.ConfirmPopUpWindow .close {
+  width: 0.625rem;
+  height: 0.625rem;
+}
+.ConfirmPopUpWindow .title {
+  font-size: 0.75rem;
+  color: #333333;
+  margin-top: 1.25rem;
+}
+.ConfirmPopUpWindow .details {
+  background: #F7F7F7;
+  border-radius: 0.3125rem;
+  width: 17.5rem;
+  margin: 0.625rem auto 0;
+  padding: 1.25rem 0;
+}
+.ConfirmPopUpWindow .details p {
+  text-align: left;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 0.75rem;
+  color: #666666;
+}
+.ConfirmPopUpWindow .details p + p {
+  margin-top: 0.25rem;
+}
+.ConfirmPopUpWindow .details .rightText {
+  float: right;
+}
+.ConfirmPopUpWindow .confirmed {
+  width: 17.5rem;
+  height: 2.25rem;
+  background: #FF6347;
+  border-radius: 0.3125rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 2.25rem;
+  position: absolute;
+  bottom: 1.25rem;
+  cursor: pointer;
+}
+.ConfirmPopUpWindow .confirmed:hover {
+  background: #fc5537;
+}
+.help-block {
+  font-size: 0.75rem;
+  color: #606266;
+}
+.has-error .form-control {
+  border-color: #F56C6C;
+}
+.has-error .checkbox,
+.has-error .checkbox-inline,
+.has-error .control-label,
+.has-error .help-block,
+.has-error .radio,
+.has-error .radio-inline,
+.has-error.checkbox label,
+.has-error.checkbox-inline label,
+.has-error.radio label,
+.has-error.radio-inline label {
+  color: #F56C6C;
+}
+.closeConfirmPopUp {
+  position: absolute;
+  right: 1.25rem;
+  top: 1.25rem;
+  cursor: pointer;
+}

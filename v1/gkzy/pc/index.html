@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>高考志愿卡</title>
+	<meta name="description" content="高考志愿卡智能定制你的最佳升学路径, 学习·升学·就业·读研·留学·考公"/>
+	<meta name="keywords" content="高考志愿卡,录取概率,院校排行,招生计划,职业推荐,位次查询,录取数据,选课测评,专业推荐,专业库"/>
+    <!-- Bootstrap -->
+    <link rel="shortcut icon" href="../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="../pc/assets/css/index/index.css?v=1.0">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=1.1">
+	<!-- <link rel="stylesheet" href="../pc/assets/css/styles.css" /> -->
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!--[if lt IE 9]>
+      <script src="https://fastly.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://fastly.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+	<script>
+		var JANE_NAME = 'gkzy'
+		var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+	</script>
+</head>
+
+<body>
+	<div class="haderNav navbarBox">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+				  <!-- Brand and toggle get grouped for better mobile display -->
+				  <div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					  <span class="sr-only">切换导航</span>
+					  <span class="icon-bar"></span>
+					  <span class="icon-bar"></span>
+					  <span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						<img src="../pc/assets/img/logo.png" alt="道道">
+					</a>
+					<span class="logoTips">
+						100%内嵌
+					</span>
+				  </div>
+			  
+				  <div class="collapse navbar-collapse topNav" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+					  <li class="active"><a href="#">首页</a></li>
+					  <li><a href="./query.html">我的订单</a></li>
+					</ul>
+				  </div>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+	<div class="bannerBox">
+		<div class="container">
+			<div class="row">
+				<div class="bannerBoxLeft">
+					<h3>高考志愿卡</h3>
+					<p>定制你的最佳成长路径，陪伴你成长的AI导师</p>
+					<div>
+						6~24岁：学习 <span></span> 升学 <span></span> 就业 <span></span> 读研 <span></span> 留学 <span></span> 考公
+					</div>
+				</div>
+				<div class="bannerBoxRight">
+					<p class="FormHead">获取卡密<span>享更多特权</span></p>
+					<form id="formSubmit" data="daodao" class="clearfix">
+						<div class="group form-group">
+							<input placeholder="请输入您的手机号" type="text" class="form-control phoneInput phoneInput1" name="phone" />
+							<span id="phone_err"></span>
+						</div>
+						<div class="group form-group">
+							<div class="Verification clearfix">
+								<input placeholder="输入验证码" type="text" class="form-control VerificationCode_s VerificationCode_s1" name="phone_code" />
+								<div data="place_order" data-key="phoneInput1" class="btn btn-primary VerificationCode">发送验证码</div>
+							</div>
+							<span id="phone_code_err"></span>
+						</div>
+						<div class="button_s form-group">
+							<button data-id="formSubmit" data-key="phoneInput1" data-code="VerificationCode_s" class="btn btn-primary Submit button-css">购买激活码</button>
+						</div>
+						<p class="SubmitTips">注意：不包含<span>西藏地区</span>和<span>艺术类专业</span></p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="DataSupport">
+		<div class="container">
+			<div class="row ItemOfData">
+				<div class="col-md-3 bordeR card">
+					<p><b>1.8</b>亿人</p>
+					<span>成长档案分析</span>
+				</div>
+				<div class="col-md-3 bordeR card">
+					<p><b>16</b>年</p>
+					<span>产品研发</span>
+				</div>
+				<div class="col-md-3 bordeR card">
+					<p><b>11</b>年</p>
+					<span>市场口碑</span>
+				</div>
+				<div class="col-md-3 card">
+					<p><b>4000</b>万+</p>
+					<span>服务人数</span>
+				</div>
+			</div>
+			<h3 class="textH3">各种志愿填报功能 · 应有尽有</h3>
+			<div class="DataImg">
+				<img class="leftImg" src="../pc/assets/img/left.png" alt="">
+				<img class="rightImg" src="../pc/assets/img/right.png" alt="">
+				<img class="midImg" src="../pc/assets/img/mid.png" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="ServiceBox">
+		<div class="container">
+			<h3 class="textH3">独家原创 · 五大特色功能</h3>
+			<div class="row containerMain">
+				<div class="col-md-6 textMain textMain1"> 
+					<b>
+						14万+院系就业前景
+					</b>
+					<div class="ContentText">
+						<span>&nbsp; “就业好才是王道！”&nbsp;</span> 道道APP独家提供3301所大学14万院系超4000万大学毕业生的真实毕业去向涵盖<span>工作、读研、留学</span>和<span>真实案例</span>。
+					</div>
+				</div>
+				<div class="col-md-6 imgMain">
+					<img src="../pc/assets/img/dujia1.png" alt="">
+				</div>
+			</div>
+			<div class="row containerMain">
+				<div class="col-md-6 imgMain">
+					<img src="../pc/assets/img/liuxueneimu_img.png" alt="">
+				</div>
+				<div class="col-md-6 textMain textMainRight textMain2"> 
+					<b>
+						超详细就业、读研、留学内幕
+					</b>
+					<div class="ContentText">
+						<ul>
+							<li><img src="../pc/assets/img/blue-check.png" alt=""> 工作岗位分析</li>
+							<li><img src="../pc/assets/img/blue-check.png" alt=""> 全国读研比例</li>
+							<li><img src="../pc/assets/img/blue-check.png" alt=""> 留学学校排名</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row containerMain">
+				<div class="col-md-6 textMain textMain3"> 
+					<b>
+						真实升学+就业案例
+					</b>
+					<div class="ContentText">
+						<ul>
+							<li><img src="../pc/assets/img/yellow-check.png" alt=""> 毕业院校</li>
+							<li><img src="../pc/assets/img/yellow-check.png" alt=""> 升学记录</li>
+							<li><img src="../pc/assets/img/yellow-check.png" alt=""> 工作经历</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 imgMain">
+					<img src="../pc/assets/img/chengzhanggonglue_img.png" alt="">
+				</div>
+			</div>
+			<div class="row containerMain">
+				<div class="col-md-6 imgMain">
+					<img src="../pc/assets/img/jiuyefangxiang_img.png" alt="">
+				</div>
+				<div class="col-md-6 textMain textMainRight textMain4"> 
+					<b>
+						当公务员、进国企、名企
+						<br>
+						填报攻略
+					</b>
+					<div class="ContentText">
+						<ul>
+							<li><img src="../pc/assets/img/blue-check.png" alt=""> 公务员</li>
+							<li><img src="../pc/assets/img/blue-check.png" alt=""> 国企央企</li>
+							<li><img src="../pc/assets/img/blue-check.png" alt=""> 知名企业</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row containerMain">
+				<div class="col-md-6 textMain textMain5"> 
+					<b>
+						详细成长攻略 · 让未来清晰可见
+					</b>
+					<div class="ContentText">
+						<ul>
+							<li><img src="../pc/assets/img/yellow-check.png" alt=""> 对现状进行分析</li>
+							<li><img src="../pc/assets/img/yellow-check.png" alt=""> 明确选科要求</li>
+							<li><img src="../pc/assets/img/yellow-check.png" alt=""> 推荐详细攻略</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 imgMain">
+					<img src="../pc/assets/img/chengzhanggonglue_img.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="CourseBox">
+		<div class="container">
+			<h3 class="textH3">行业大咖 · 杨洋教授亲授精品课</h3>
+			<div class="CourseBoxMain">
+				<div class="leftContainer">
+					<div class="MainContent">
+						<img src="../pc/assets/img/product_originator_img.png" alt="">
+						<div class="text">
+							<b>杨洋教授</b>
+							<p>道道创始人   |   原哈工大「百人计划 」教授</p>
+							<div>
+								杨洋教授，留美信息学博士，2012年被985哈尔滨工业大学聘为『百人计划』副教授，专注研究成长规划16年。创办道道研究院，已帮助超过4000万人完成个性化升学和职业规划，并技术输出到腾讯、百度、搜狗、360、网易、新东方、卓越教育、各地市教育局等。此外杨洋教授还是清华大学、北京大学、香港科大、哈工大EMBA导师，国家发改委旗下全国人才大数据平台联合发起人。
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tipsText">
+					注：该课程供道道旗舰SVIP用户使用
+				</div>
+				<img class="rightImg" src="../pc/assets/img/leason_img.png" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="CaseBox">
+		<div class="container">
+			<h3 class="textH3">4000万用户都说好</h3>
+			<div class="PictureBox">
+				<div class="MainAccount">
+					<img src="../pc/assets/img/userfeedback1.jpg" alt="">
+				</div>
+				<div class="row SmallPicture">
+					<div class="col-md-6">
+						<img src="../pc/assets/img/userfeedback2-1.jpg" alt="">
+					</div>
+					<div class="col-md-6">
+						<img src="../pc/assets/img/userfeedback2-2.jpg" alt="">
+					</div>
+					<div class="col-md-6">
+						<img src="../pc/assets/img/userfeedback3-1.jpg" alt="">
+					</div>
+					<div class="col-md-6">
+						<img src="../pc/assets/img/userfeedback3-2.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="bottomImg">
+				<img src="../pc/assets/img/userfeedback4.jpg" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="UseProcBox">
+		<div class="container">
+			<h3 class="textH3">激活码使用流程</h3>
+			<div class="UseProcContent">
+				<div class="Sequence1">
+					<div class="Sequence">
+						<div>
+							01
+						</div>
+					</div>
+					<br>
+					<div class="SequenceText">
+						<b>输入验证码</b>
+						<p>输入验证码</p>
+						<p>点击购买</p>
+					</div>
+				</div>
+				<div class="Sequence2">
+					<div class="Sequence">
+						<div>
+							02
+						</div>
+					</div>
+					<br>
+					<div class="SequenceText">
+						<b>确认支付</b>
+						<p>确认支付后</p>
+						<p>复制激活码</p>
+					</div>
+				</div>
+				<div class="Sequence3"> 
+					<div class="Sequence">
+						<div>
+							03
+						</div>
+					</div>
+					<br>
+					<div class="SequenceText">
+						<b>复制激活码</b>
+						<p>可在订单页</p>
+						<p>获取激活码</p>
+					</div>
+				</div>
+				<div class="Sequence4">
+					<div class="Sequence">
+						<div>
+							04
+						</div>
+					</div>
+					<br>
+					<div class="SequenceText">
+						<b>使用激活码</b>
+						<p>在道道app或</p>
+						<p>完美志愿网页使用</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ContrastBox">
+		<div class="container">
+			<h3 class="textH3">
+				<img src="../pc/assets/img/pk.png" alt="">
+				<span>激活码使用流程</span>
+			</h3>
+			<div class="PKContent">
+				<div class="leftBox">
+					<h3>道道</h3>
+					<div>
+						<b>院系就业内幕数据×100倍</b>
+						<p>独家提供2900多所大学14万+院系毕业生的工作、读研、留学和真实案例。</p>
+					</div>
+					<div>
+						<b>独有的前程导航仪</b>
+						<p>想当公务员？进国企名企？基于1.8亿人成长轨迹为你导航，陪伴你成长。</p>
+					</div>
+					<div>
+						<b>语音控制超级方便</b>
+						<p>告别复杂的界面操作，说句话就能轻松得到你想要的信息！</p>
+					</div>
+					<div>
+						<b>10年老牌值得信任</b>
+						<p>从2013年推出完美志愿起已整整10年，服务超过4000万家庭。 </p>
+					</div>
+					<div>
+						<b>985大学教授亲手研发</b>
+						<p>道道创始人杨洋博士曾任哈工大教授，潜心研发16年，真正的匠心之作。 </p>
+					</div>
+				</div>
+				<div class="rightBox">
+					<h3>其他成品</h3>
+					<div>
+						<b>院系就业内幕数据×20倍</b>
+						<p>提供800多所大学3万+院系毕业生的工作、读研、留学和真实案例。 </p>
+					</div>
+					<div>
+						<b>无前程导航仪</b>
+						<p>不具备前程规划推荐功能。</p>
+					</div>
+					<div>
+						<b>无语音识别功能</b>
+						<p>不具备语音转文字功能，只能自己动手操作。</p>
+					</div>
+					<div>
+						<b>推出仅一两年</b>
+						<p>近几年才推出同类型产品，服务不超过10万家庭。 </p>
+					</div>
+					<div>
+						<b>研发团队</b>
+						<p>研发团队才进入起步阶段，研发时间短，经历和服务案例少。</p>
+					</div>
+				</div>
+				<div class="centerBox">
+					<div class="Circle">
+						VS
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gloryBox">
+		<div class="container">
+			<h2>
+				道道和中央政府达成合作
+			</h2>
+			<div class="BrightSpot">
+				<img src="../pc/assets/img/NDARC.png" alt="">
+				<div>
+					<p class="MainBody">中华人民共和国国家发展和改革委员会 · 城市中心</p>
+					<p class="English">National Development and Reform Commission</p>
+				</div>
+				<img class="BottomClose" src="../pc/assets/img/cooperation.png" alt="">
+				<img class="Bottomlogo" src="../pc/assets/img/daodao-yjs.png" alt="">
+				<span class="APPName">道道研究院</span>
+			</div>
+			<div class="Initial">
+				<p class="EstablishmentTime">2021年9月，共同发起成立</p>
+				<p class="EstablishmentName">「 全国人才大数据平台 」</p>
+			</div>
+		</div>
+		<div class="ForTheRecord">
+			Copyright © 2024 淘项有术
+		</div>
+	</div>
+	<div class="FloatingWindow">
+		<div class="FloatingBox">
+			<div class="FloatingWindowClo">
+				<div class="container">
+					<span class="Action">购买激活码 <span>享更多特权</span></span>
+					<form id="formSubmit2" data="daodao" class="clearfix">
+						<div class="group form-group">
+							<input placeholder="请输入您的手机号" type="text" class="form-control phoneInput phoneInput2" name="phone" />
+							<div data="place_order" data-key="phoneInput2" class="btn VerificationCode">发送验证码</div>
+						</div>
+						<div class="group group2 form-group">
+							<div class="Verification clearfix">
+								<input placeholder="输入验证码" type="text" class="form-control VerificationCode_s VerificationCode_s2" name="phone_code" />
+								<button data-id="formSubmit2" data-key="phoneInput2" data-code="VerificationCode_s2" class="btn Submit button-css">购买激活码</button>
+							</div>
+						</div>
+					</form>
+					<img class="closecc" src="../pc/assets/img/close.png" alt="">
+				</div>
+			</div>
+			<div class="container containerVip">
+			</div>
+		</div>
+	</div>
+	<div class="CustomerService">
+		<img class="img-ico" src="../pc/assets/img/daodaokf_nor_ico.png" alt="">
+		<img class="img-ico-active" src="../pc/assets/img/daodaokf_pre_ico.png" alt="">
+		<div class="customerBox">
+			<div class="head">
+				<img src="../pc/assets/img/kf.png" alt="">
+				<span class="customer-title">联系客服</span>
+			</div>
+			<div class="customerCode">
+				<img class="customer-qr" src="" alt="">
+			</div>
+			<div class="segmentation-line"></div>
+			<div class="customerWay">
+				<p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+				<p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+				<p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+				<p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+			</div>
+			<p class="noCustomer">商家未设置客服</p>
+			<img class="customBg" src="../pc/assets/img/bg1.png" alt="">
+		</div>
+	</div>
+	
+	<div class="fiexBox">
+		<img class="img1" src="../pc/assets/img/top-nol.png" alt="">
+		<img class="img2" src="../pc/assets/img/top-pre.png" alt="">
+	</div>
+</body>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../pc/assets/js/jquery.min.js"></script>
+<script src="../pc/assets/js/bootstrap.min.js"></script>
+<script src="../pc/assets/js/bootstrapValidator.min.js"></script>
+<script src="../pc/assets/js/coco-message.js"></script>
+<script src="../pc/assets/js/common.js"></script>
+
+<script>
+	$("#formSubmit").bootstrapValidator({
+        excluded:[":disabled",":hidden"], // 关键配置，表示只对于禁用域不进行验证，其他的表单元素都要验证
+        feedbackIcons: {
+            valid: 'glyphicon',
+            invalid: 'glyphicon',
+            validating: 'glyphicon'
+        },
+        fields: {
+            phone: {
+                container: "#phone_err",
+                validators: {
+                    notEmpty: {
+                        message: '手机号不能为空'
+                    },
+                    regexp: {
+                        regexp: /^1[3-9]\d{9}$/,
+                        message: '请输入正确手机号'
+                    }
+                }
+            },
+            phone_code: {
+                container: "#phone_code_err",
+                validators: {
+                    notEmpty: {
+                        message: '请输入验证码'
+                    }
+                }
+            }
+        }
+    });	
+
+	$("#formSubmit2").bootstrapValidator({
+        excluded:[":disabled",":hidden"], // 关键配置，表示只对于禁用域不进行验证，其他的表单元素都要验证
+        feedbackIcons: {
+            valid: 'glyphicon',
+            invalid: 'glyphicon',
+            validating: 'glyphicon'
+        },
+        fields: {
+            phone: {
+                container: "#phone_err",
+                validators: {
+                    notEmpty: {
+                        message: '手机号不能为空'
+                    },
+                    regexp: {
+                        regexp: /^1[3-9]\d{9}$/,
+                        message: '请输入正确手机号'
+                    }
+                }
+            },
+            phone_code: {
+                container: "#phone_code_err",
+                validators: {
+                    notEmpty: {
+                        message: '请输入验证码'
+                    }
+                }
+            }
+        }
+    });
+
+    $('.Submit').click(
+        function (){
+            var bootstrapValidator = $("#"+$(this).attr('data-id')).data("bootstrapValidator").validate();
+            if (bootstrapValidator.isValid()){
+				var closeMsg = cocoMessage.loading('正在提交,请稍后...');
+				$('.Submit').attr('disabled' , true);
+                var goodsId=null
+                if (typeData){
+                    goodsId = typeData[0].goods_id
+                }
+                if (!goodsId){
+                    cocoMessage.error('商品信息不存在' , 2000);
+                    setTimeout(function() {
+                        $('.Submit').attr('disabled' , false);
+                    }, 1000)
+                    closeMsg();
+                    return
+                }
+                var typefun = function() {
+                    if(screen.width >= 768) {
+                        return 1;
+                    }else if(/MicroMessenger/.test(window.navigator.userAgent)) {
+                        return 2;
+                    }else {
+                        return 7;
+                    }
+                }
+                var formData = {
+                    phone: $('.'+$(this).attr('data-key')).val(),
+                    phone_code: $('.'+$(this).attr('data-code')).val(),
+                    user_token: USER_TOKEN,
+                    jane_name: JANE_NAME,
+                    goods_id: goodsId,
+                    domain_record: window.location.origin,
+                    source: typefun(),
+                }
+                var form_data =  getFormData(formData)
+                $.ajax({
+                    type : 'post',
+                    url : urls + '/api/client/order/unified/create?user_token='+USER_TOKEN+'&jane_name='+JANE_NAME+(suffix?'&'+suffix:''),
+                    processData : false,
+                    contentType : false,
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    data : form_data,
+                    success : function(result) {
+                        if(result.code == 200) {
+							window.location.href = './pay.html?order_sn=' + result.data.order_sn + '&title=' + '高考志愿卡' + '&phone=' + formData.phone + '&order_amount=' + result.data.order_amount + '&created=' + result.data.created + '&pay_wap_url=' + result.data.pay_wap_url
+                        }else {
+                            cocoMessage.error(result.codeMsg, 2000);
+                        }
+						$('.Submit').attr('disabled' , false);
+						closeMsg();
+                    },
+					error: function(err) {
+						$('.Submit').attr('disabled' , false)
+						closeMsg();
+						cocoMessage.error("请求失败!请检查网络", 2000);
+					},
+                    complete: function() {
+						closeMsg();
+                        $('.Submit').attr('disabled' , false)
+                    }
+                });
+            }else {
+				if($(this).attr('data-id') == 'formSubmit2') {
+					cocoMessage.error('请填正确信息后提交!', 2000);
+				}
+			}
+        }
+    )
+	$('.fiexBox').click(function() {
+		document.documentElement.scrollTop = 0;
+		document.body.scrollTop = 0;
+	})
+</script>
+</html>

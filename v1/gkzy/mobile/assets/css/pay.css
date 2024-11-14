@@ -1,0 +1,514 @@
+.payApp {
+  background: url('../img/bk.png') no-repeat;
+  background-size: 100% 40%;
+  min-height: 100vh;
+  padding-top: 1.75rem;
+}
+.payApp .info {
+  width: 90%;
+  margin: auto;
+  padding: 1.4rem;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.23rem 0px rgba(135, 135, 135, 0.19);
+  border-radius: 0.7rem;
+}
+.payApp h3 {
+  color: #333333;
+  font-size: 1.05rem;
+  border-bottom: 1.33px solid #ecedf1;
+  padding-bottom: 0.88rem;
+  font-weight: bold;
+}
+.payApp .infoLeft {
+  color: #999999;
+  width: 30%;
+}
+.payApp .infoRight {
+  width: 70%;
+  text-align: right;
+  color: #222222;
+}
+.payApp .infoMain {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.74rem;
+}
+.payApp .infoMain div {
+  height: 2.95rem;
+  line-height: 2.95rem;
+  font-size: 1.05rem;
+}
+.payApp .payType {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.23rem 0px rgba(135, 135, 135, 0.19);
+  border-radius: 0.7rem;
+  width: 90%;
+  margin: auto;
+  padding: 1.4rem;
+  margin-top: 1.05rem;
+  display: none;
+}
+.payApp .payType .tapTypeImg img {
+  width: 1.55rem;
+  height: 1.55rem;
+  margin-right: 0.81rem;
+}
+.payApp .dsf-Pay {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.23rem 0px rgba(135, 135, 135, 0.19);
+  border-radius: 0.7rem;
+  width: 90%;
+  margin: auto;
+  padding: 1.4rem;
+  margin-top: 1.05rem;
+  display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.payApp .dsf-Pay .PayName img {
+  width: 1.55rem;
+  height: 1.55rem;
+  margin-right: 0.81rem;
+}
+.payApp .dsf-Pay .PayName {
+  display: flex;
+  align-items: center;
+}
+.payApp .dsf-Pay .noselectImg {
+  width: 0.92rem;
+  height: 0.92rem;
+}
+.payApp .payTypeBox {
+  display: flex;
+  justify-content: space-between;
+  height: 2.84rem;
+  line-height: 2.84rem;
+}
+.payApp .payTypeBox .isSelect img {
+  width: 0.92rem;
+  height: 0.92rem;
+}
+.bottomBox {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.bottomBox p {
+  width: 100%;
+  background-color: #fff5df;
+  text-align: center;
+  padding: 0.84rem 0;
+  color: #7b580c;
+  font-size: 0.84rem;
+}
+.payBox {
+  display: flex;
+  height: 4.92rem;
+  background-color: #fff;
+}
+.payBox .amount {
+  width: 58%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+.payBox .amount div {
+  width: 100%;
+  padding-left: 1.75rem;
+  color: #999999;
+  font-size: 0.84rem;
+}
+.payBox .payBotton {
+  width: 42%;
+  background-color: #ff7e00;
+  font-weight: bold;
+  font-size: 1.69rem;
+  color: #fff;
+  text-align: center;
+  line-height: 4.92rem;
+}
+.payBox div.total {
+  color: #333333;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+.payBox div.total span {
+  color: #ff7e00;
+  font-size: 1.77rem;
+}
+#title,
+#author {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+.info.appreciationInfo {
+  margin-top: 1.11rem;
+}
+.info.couponBox {
+  margin-top: 1.11rem;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.info.couponBox #coupon {
+  border: none;
+  outline: none;
+  width: 76%;
+  font-size: 1.03rem;
+  padding-left: 1.4rem;
+  border-top-left-radius: 0.7rem;
+  border-bottom-left-radius: 0.7rem;
+}
+.info.couponBox .use_now {
+  background: #f89d41;
+  color: #fff;
+  display: inline-block;
+  height: 3.24rem;
+  line-height: 3.24rem;
+  border-top-right-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
+  width: 24%;
+  text-align: center;
+  font-size: 1.18rem;
+}
+.info.couponBox .use_now.active {
+  background: #ff7e00;
+}
+.claim-coupons {
+  display: none;
+}
+.no_pay_text {
+  color: #797979;
+  text-align: center;
+  margin-top: 1.47rem;
+  display: none;
+}
+.appreciationUL {
+  font-size: 1.11rem;
+  color: #222222;
+  margin-top: 0.59rem;
+}
+.appreciationUL .appreciationLI {
+  height: 3.17rem;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+.appreciationUL .appreciationLI > div {
+  display: flex;
+  align-items: center;
+}
+.appreciationUL .appreciationLI > div .good_name {
+  color: #222222;
+  line-height: normal;
+}
+.appreciationUL .appreciationLI > div i {
+  width: 0.96rem;
+  height: 0.96rem;
+  background-color: #ffffff;
+  border-radius: 0.07rem;
+  border: solid 0.07rem #dcdcdc;
+  display: inline-block;
+  margin-right: 0.88rem;
+}
+.appreciationUL .appreciationLI > div img {
+  margin-left: 0.37rem;
+  margin-top: -0.22rem;
+}
+.appreciationUL .appreciationLI > div .original-price {
+  line-height: normal;
+  color: #c0c0c0;
+  text-decoration: line-through;
+  font-size: 0.96rem;
+}
+.appreciationUL .appreciationLI > div .current-price {
+  color: #222222;
+}
+.appreciationUL .appreciationLI .priceBox {
+  width: 42%;
+  justify-content: end;
+}
+.appreciationUL .introduce {
+  color: #006fff;
+  font-size: 0.88rem;
+  text-align: center;
+  background: #e4f0ff;
+  padding: 0.29rem;
+  line-height: normal;
+}
+.appreciationUL .selected i {
+  background: url('../img/check.png') no-repeat;
+  background-size: 100% 100%;
+}
+.appreciation {
+  display: none;
+}
+.customer-wx {
+  left: 0;
+  top: 66%;
+}
+.payAppBox {
+  padding-bottom: 8.84rem;
+}
+#toastId p {
+  margin: 0;
+}
+.modal-content {
+  background-image: linear-gradient(0deg, #ffffff 0%, #fae2ca 100%);
+  border-radius: 0.74rem;
+}
+.modal-header,
+.modal-footer {
+  border: 0;
+}
+.modal-content,
+.modal-footer {
+  text-align: center;
+}
+.btn_clone {
+  width: 90%;
+  background-image: linear-gradient(0deg, #ff7e00 47%, #f7bd84 100%);
+  border: 0;
+  color: #ffffff;
+  padding: 0.63rem 0;
+  font-size: 1.03rem;
+  border-radius: 1.11rem;
+}
+.modal-body {
+  padding: 0 20.33px;
+}
+.modal-body img {
+  width: 90%;
+}
+.linkUrl {
+  padding: 0.55rem 1.33rem;
+  width: 90%;
+  text-align: left;
+  background: #eaf3ff;
+  border-radius: 0.94rem;
+  margin: 1.22rem auto;
+  color: #666666;
+  font-size: 0.88rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.modal-dialog {
+  margin: 27.17px;
+  margin-top: 30%;
+}
+.contentBox {
+  margin-top: 0.74rem;
+}
+.contentBox .tips1 {
+  color: #333;
+  font-size: 1.03rem;
+}
+.contentBox .tips2 {
+  font-size: 1.03rem;
+  color: #ff7e00;
+  margin-bottom: 1.47rem;
+}
+.modal-footer {
+  padding-top: 0;
+  padding-bottom: 2.06rem;
+}
+.errTipBox {
+  position: fixed;
+  width: 70%;
+  background: linear-gradient(180deg, #deeafa, #fff);
+  height: 10rem;
+  top: 40%;
+  left: 15%;
+  z-index: 1000;
+  border-radius: 0.59rem;
+  display: none;
+}
+.errTipBox .e_tittle {
+  height: 2.51rem;
+  line-height: 2.51rem;
+  padding-left: 1.11rem;
+  border-bottom: 1.33px solid #efefef;
+}
+.errTipBox p {
+  text-align: center;
+  padding-top: 1rem;
+}
+.errTipBox .y_e {
+  position: absolute;
+  bottom: 0;
+  height: 3.32rem;
+  color: #ff7e00;
+  width: 100%;
+  text-align: center;
+  line-height: 3.32rem;
+  border-bottom-right-radius: 0.59rem;
+  border-bottom-left-radius: 0.59rem;
+  border-top: 1.33px solid #d2e6ff;
+  font-size: 1.18rem;
+}
+.noPayWay {
+  display: none;
+}
+.amountTextBox2 {
+  color: #ff7e00 !important;
+  font-weight: bold;
+}
+.coupons_pop {
+  position: fixed;
+  width: 80%;
+  top: 50%;
+  margin-left: 10%;
+  margin-top: -4.66rem;
+  z-index: 1000;
+  background: linear-gradient(180deg, #fff3e7, #fff);
+  border-radius: 1.16rem;
+  display: none;
+}
+.coupons_pop #copyInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.coupons_pop .title {
+  font-size: 1.16rem;
+  color: #142338;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1.16rem;
+}
+.coupons_pop p.p2 {
+  padding: 0 1.16rem;
+  font-size: 0.82rem;
+  color: #333333;
+  margin-top: 1.16rem;
+  text-align: left;
+}
+.coupons_pop p.p2 .copy_pop {
+  color: #418bf8;
+  text-decoration: underline;
+}
+.coupons_pop .p3 {
+  font-size: 0.82rem;
+  color: #999999;
+  text-align: left;
+  padding: 0 1.16rem;
+  margin-top: 0.47rem;
+}
+.coupons_pop .bottom {
+  display: flex;
+  justify-content: space-between;
+  height: 2.91rem;
+  width: 100%;
+  margin-top: 1.16rem;
+}
+.coupons_pop .bottom .cancel_btn {
+  width: 50%;
+  text-align: center;
+  font-size: 1.16rem;
+  color: #c7cddf;
+  line-height: 2.91rem;
+  border-top: 1.68px solid #f7e1cc;
+  border-right: 1.68px solid #f7e1cc;
+}
+.coupons_pop .bottom .determine_btn {
+  width: 50%;
+  text-align: center;
+  font-size: 1.16rem;
+  color: #ff7e00;
+  font-weight: bold;
+  line-height: 2.91rem;
+  border-top: 1.68px solid #f7e1cc;
+}
+#CustomModal .modal-content {
+  background: #ffffff;
+}
+#CustomModal .contentBox {
+  margin-top: 0;
+}
+#CustomModal .taobaoPay > div {
+  position: relative;
+}
+#CustomModal .taobaoPay > div.taobao-input2 {
+  margin-top: 1.47rem;
+}
+#CustomModal .taobaoPay > div span {
+  position: absolute;
+  top: 0.81rem;
+  font-size: 0.96rem;
+  left: 1.22rem;
+  color: #1c1c1c;
+}
+#CustomModal .taobaoPay > div input {
+  width: 100%;
+  border: none;
+  height: 2.95rem;
+  padding-left: 5.89rem;
+  border-radius: 1.47rem;
+  background: #f7f7f7;
+  outline: none;
+}
+#CustomModal .taobaoPay .taobao-payBtn {
+  background: linear-gradient(0deg, #ff7e00, #f3983e);
+  margin-top: 1.47rem;
+  height: 2.95rem;
+  line-height: 2.95rem;
+  border-radius: 7.37rem;
+  color: #fff;
+}
+#CustomModal .taobaoPay .taobao-buyBtn {
+  margin-top: 1.47rem;
+  height: 2.95rem;
+  line-height: 2.95rem;
+  border-radius: 7.37rem;
+  border: 1.33px solid #ff7e00;
+  color: #ff7e00;
+}
+#CustomModal .taobaoPay .taobao-buyBtn img {
+  width: 1.11rem;
+  vertical-align: text-top;
+  margin-right: 0.37rem;
+}
+#toastId {
+  z-index: 1051;
+}
+.customer-wx {
+  display: none;
+}
+.payApp .taobao_pay,
+.payApp .redBook_pay {
+  display: none;
+}
+.aigc-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.aigc-page .close-aigc {
+  width: 1.11rem;
+  margin-left: -1.77rem;
+  margin-top: -8.84rem;
+}
+.modal input::-webkit-input-placeholder {
+  font-size: 0.8rem;
+}
+.modal input:-moz-placeholder {
+  font-size: 0.8rem;
+}
+.modal input::-moz-placeholder {
+  font-size: 0.8rem;
+}
+.modal input:-ms-input-placeholder {
+  font-size: 0.8rem;
+}

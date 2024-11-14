@@ -168,6 +168,10 @@ window.onload = function (){
 				if($('.payApp').length) {
 					payWay(data.project[0].goods_info , data.project[0].pay_way )
 				}
+				
+				if(data.domain_config && data.domain_config.distribution_status) {
+					$('.distributionEntrance').show()
+				}
 			}else{
 				toast(result.codeMsg)
 			}

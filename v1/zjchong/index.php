@@ -41,11 +41,11 @@ $route = [
     ],
     '/fx/init.html'=>[
         'pc'=>__DIR__ . '/pc/fx/init.html',
-        'mobile'=>__DIR__ . '/pc/fx/init.html'
+        'mobile'=>__DIR__ . '/mobile/fx/init.html'
     ],
     '/fx/index.html'=>[
         'pc'=>__DIR__ . '/pc/fx/index.html',
-        'mobile'=>__DIR__ . '/pc/fx/index.html'
+        'mobile'=>__DIR__ . '/mobile/fx/index.html'
     ],
     '/hd/index.html'=>[
         'pc'=>__DIR__ . '/pc/hd/index.html',

@@ -613,6 +613,13 @@
   font-size: 14px;
   color: #FF6347;
   cursor: pointer;
+  margin: 0 6px;
+}
+.detailsTrigger {
+  font-size: 14px;
+  color: #FF6347;
+  cursor: pointer;
+  margin: 0 6px;
 }
 .complaintsBox {
   display: none;
@@ -908,4 +915,74 @@ a:focus {
 }
 #qrcode img {
   max-width: 100%;
+}
+.detailsBox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  display: none;
+}
+.detailsBox .mask_body {
+  position: fixed;
+  background: #000;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+.detailsBox .Detailed_operation {
+  width: 330px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  position: absolute;
+  top: 30%;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  z-index: 1000;
+}
+.detailsBox .Detailed_operation .close {
+  width: 12px;
+  height: 11px;
+  margin-top: 16px;
+  margin-right: 15px;
+}
+.detailsBox .Detailed_operation .Details_Content {
+  padding: 28px;
+}
+.detailsBox .Detailed_operation .Details_Title {
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333333;
+}
+.detailsBox .Detailed_operation .Details_Title span {
+  display: inline-block;
+  width: 2px;
+  height: 14px;
+  background: #FF6E53;
+  border-radius: 1px;
+  margin-right: 6px;
+  position: relative;
+  top: 2px;
+}
+.detailsBox .Detailed_operation .Withdrawal_style {
+  margin-top: 12px;
+}
+.detailsBox .Detailed_operation .Withdrawal_style p {
+  font-size: 12px;
+  line-height: 32px;
+  padding-left: 8px;
+}
+.detailsBox .Detailed_operation .Withdrawal_style p span:nth-child(1) {
+  color: #999999;
+  display: inline-block;
+  width: 65px;
+  margin-right: 20px;
+}
+.detailsBox .Detailed_operation .Withdrawal_style p span:nth-child(2) {
+  color: #333333;
 }

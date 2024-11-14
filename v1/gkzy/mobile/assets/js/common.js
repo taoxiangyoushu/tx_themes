@@ -1,0 +1,279 @@
+$(window).scroll(function() {
+	scrollTop($(this))
+});
+function scrollTop(this_) {
+	if(this_.scrollTop() > 30) { 
+        $('.navbarBox').addClass('scrollCS')
+    }else {
+        $('.navbarBox').removeClass('scrollCS')
+	}
+
+    if(this_.scrollTop() > 500) {
+        if(!$('.FloatingWindow').attr('isShow')) {
+            $('.FloatingWindow').show()
+        }
+    }else{
+        $('.FloatingWindow').hide()
+    }
+
+    if(this_.scrollTop()>=5400) {
+        $('.FloatingWindow').addClass('FloatingWindow2')
+    }else {
+        $('.FloatingWindow').removeClass('FloatingWindow2')
+    }
+    if(this_.scrollTop() > 600) {
+        $('.fiexBox').show()
+    }else {
+        $('.fiexBox').hide()
+    } 
+}
+scrollTop($(window));
+var urls = 'https://api.taoxiangyoushu.com'
+// var urls = 'http://api.project_libraries.report'
+
+// 封装url参数获取
+function getQueryVariable(variable){
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i=0;i<vars.length;i++) {
+			var pair = vars[i].split("=");
+			if(pair[0] == variable){return decodeURI(pair[1]);}
+	}
+	return(false);
+}
+
+var time = 60
+var permit = true // 是否允许请求
+var timeout = null;
+$('.VerificationCode').click(function() {
+    if(!permit) return
+    const regex = /^1[3456789]\d{9}$/;
+    var phone = $('.phoneInput').val()
+    var formData ={}
+    if(regex.test(phone)) {
+        formData =  getFormData({
+            phone: phone,
+            scenes_id: $(this).attr('data'),
+            _session_type: 'user'
+        })
+        $('.VerificationCode').addClass('forbid')
+        $('.VerificationCode').html('剩余<span></span>')
+        time = 60
+        counDown()
+        $.ajax({
+            type : 'post',
+            url : urls+"/api/verify_code/get_phone_validate?_session_type=user",
+            processData : false,
+            contentType : false,
+            xhrFields: {
+                        withCredentials: true
+                    },
+            data : formData,
+            success : function(result) {
+                if(result.code == 200) {
+                    toast('已发送到指定手机号,请注意查收')
+                }else if(result.code == -1) {
+                    toast({
+                        msg: result.codeMsg,
+                        type: 'error',
+                        time: 2000
+                    })
+                }else {
+                    toast({
+                        msg: '获取失败',
+                        type: 'error',
+                        time: 2000
+                    })
+                }
+            },
+        });
+    }else {
+        toast('请输入正确的手机号')
+        return
+    }
+})
+
+function counDown() {
+    permit = false
+    if (time === 0) {
+        time = 60;
+        $('.VerificationCode').html('发送验证码')
+        $('.VerificationCode').removeClass('forbid')
+        permit = true
+        clearTimeout(timeout)
+        return;
+    } else {
+        time--;
+        $('.VerificationCode>span').text(time+'S');
+    }
+    timeout = setTimeout(function() {
+        counDown();
+    },1000);
+}
+
+$('.closecc').click(function() {
+    $('.FloatingWindow').hide()
+    $('.FloatingWindow').attr('isShow','true')
+})
+
+// var clipboard = new Clipboard('.copynum', {
+// 	text: function(trigger) {
+// 		$(".mask").hide();
+// 		$(".dashi_wx_box").hide();
+// 		toast("复制成功！在微信中点右上角“添加朋友”后粘贴，即将前往微信。");
+// 		// window.location.href = "weixin://";
+// 		return trigger.getAttribute('data-clipboard-text');
+// 	}
+// });
+
+$(".close-wx").on('click',function (){
+	$(".mask").hide();
+	$(".dashi_wx_box").hide();
+})
+
+$(".customer-wx").on('click',function (){
+	$(".mask").show();
+	$(".dashi_wx_box").show();
+})
+$(".mask").on('click',function (){
+	$(".mask").hide();
+	$(".dashi_wx_box").hide();
+	$(".myProblems").hide()
+	$(".dashi_fz").hide();
+	$(".complainForm").hide();
+	document.body.style.height = 'unset'
+	document.body.style['overflow-y'] = 'auto'
+})
+
+$(".close-Pr").on('click',function (){
+	$(".mask").hide();
+	$(".myProblems").hide()
+	document.body.style.height = 'unset'
+	document.body.style['overflow-y'] = 'auto'
+})
+
+let act_code = ''
+if(getQueryVariable('ac')){
+	act_code = getQueryVariable('ac')
+	window.localStorage.setItem('act_code',getQueryVariable('ac'))
+}else{
+	if(window.localStorage.getItem('act_code')){
+		act_code = window.localStorage.getItem('act_code')
+	}
+}
+let suffix = ''
+if(act_code){
+	suffix = 'act_code='+ act_code +'&_session_type=user'
+}
+
+function getFormData(object) {
+    // 转FromData 对象
+    var formData = new FormData();
+    Object.keys(object).forEach(function (key) {
+        var value = object[key];
+        if (Array.isArray(value)) {
+            value.forEach(function (subValue, i) {
+                formData.append(key + "[" + i + "]", subValue);
+            });
+        } else {
+            formData.append(key, object[key]);
+        }
+    });
+    return formData;
+}
+
+// var goods_id = ''
+var selling_price = ''
+var payWay_Info = {}
+var parameterSet = {}
+var threeMsg= {}
+var pay_config = {}
+
+window.onload = function (){
+	$.ajax({
+		type: 'post',
+		url: urls + "/api/project/info?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME + (suffix?'&'+suffix:''),
+		xhrFields: {
+			withCredentials: true
+		},
+		success: function success(result) {
+			if(result.code == '200'){
+				var data = result.data
+
+				var seller_info = data.seller_info
+				$(".customerBox .customer-title").text(seller_info.kf_title || '联系客服')
+				$(".customerBox .customer-qr").attr('src', seller_info.kf_qr || '')
+				$('.customerBox .qqText .s1').text(seller_info.qq || '')
+				$('.customerBox .telephone .s1').text(seller_info.phone || '')
+				$('.customerBox .mailbox .s1').text(seller_info.email || '')
+				$('.customerBox .wxText .s1').text(seller_info.wx || '')
+				if(seller_info.qq) $('.customerBox  .qqText').show();
+				if(seller_info.phone) $('.customerBox  .telephone').show();
+				if(seller_info.email) $('.customerBox  .mailbox').show();
+				if(seller_info.wx) $('.customerBox  .wxText').show();
+				if(seller_info.kf_qr){
+					$(".customerBox .customerCode").show()
+				}else{
+					$(".customerBox .customerCode").hide()
+				}
+				if(seller_info.qq || seller_info.phone || seller_info.email || seller_info.wx){
+					$(".customerBox .customerWay").show()
+				}else{
+					$(".customerBox .customerWay").hide()
+				}
+				if(seller_info.kf_qr && (seller_info.qq || seller_info.phone || seller_info.email || seller_info.wx)){
+					$(".customerBox .segmentation-line").show()
+				}else{
+					$(".customerBox .segmentation-line").hide()
+				}
+				if(!seller_info.qq && !seller_info.phone && !seller_info.email && !seller_info.wx && !seller_info.kf_qr){
+					$(".noCustomer").show()
+				}else{
+					$(".noCustomer").hide()
+				}
+
+				payWay_Info = data.project[0].pay_way
+				threeMsg = data.project[0].threeMsg
+				pay_config = data.pay_config
+
+				typefun(data.project[0].goods_info)
+				setArguments(data.project[0].goods_info)
+
+				if($(".toabaoID").length && data.project[0].pay_way.taobao) {
+					$(".toabaoID").show()
+				}
+
+				// if($(".orderIdTips").length) {
+				// 	showOrder(data.project[0].pay_way)
+				// }
+
+				if($(".resultBox").length) {
+					startQuerying()
+				}
+
+				if($('.index_app').length) {
+					// dropDownType(result.data.project[0] && result.data.project[0].goods_info)
+					setPriceInfo()
+				}
+				if($('.payApp').length) {
+					payWay(data.project[0].goods_info , data.project[0].pay_way )
+				}
+			}else{
+				toast(result.codeMsg)
+			}
+		}
+	});
+}
+
+var typeData = []
+function typefun(goods_info) {
+	for(var i=0; i<goods_info.length; i++) {
+		typeData.push(goods_info[i])
+	}
+}
+
+function setArguments(info) {
+	for (var i=0;i<info.length; i++){
+		parameterSet[info[i].short_name] = info[i].goods_config
+	}
+}

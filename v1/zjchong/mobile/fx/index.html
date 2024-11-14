@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 为移动设备添加 viewport；-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 指定请求和响应遵循的缓存机制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>分销中心</title>
+        <link rel="shortcut icon" href="../../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
+        <link rel="stylesheet" href="../../mobile/fx/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../mobile/fx/assets/css/bootstrapValidator.min.css">
+        <link rel="stylesheet" href="../../mobile/fx/assets/css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="../../mobile/fx/assets/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="../../mobile/fx/assets/css/base.css">
+        <link rel="stylesheet" href="../../mobile/fx/assets/css/common.css">
+        <link rel="stylesheet" href="../../mobile/fx/assets/css/index.css">
+        <link rel="stylesheet" href="../../mobile/fx/assets/css/fxCommon.css">
+        <link rel="stylesheet" href="../../mobile/fx/assets/css/withdraw.css">
+
+        <!-- head_script -->
+        <script>
+            var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
+            var JANE_NAME = 'zjchong';
+        </script>
+    </head>
+<body>
+    <div class="distributionCenterApp">
+        <div class="headDiv" id="memberCarrier">
+            <a class="ToIndex" href="/">首页</a>
+        </div>
+        <div class="content" id="contentMain">
+            <div class="main">
+                <div class="share">
+                    <span class="labels">
+                        <span></span>
+                        分销推广
+                    </span>
+                    <div class="described">
+                        当前分佣比例：
+                        <span id="distribution_config">
+                            <span id="ratio">00.00%</span>
+                            <span id="type">（按利润额分润）</span>
+                        </span>
+                    </div>
+                    <div class="promotion">
+                        <div class="urlShare">链接分享</div>
+                        <div class="posterShare">海报分享</div>
+                    </div>
+                </div>
+
+                <div class="amount_info">
+                    <div class="labelsBox">
+                        <span class="labels">
+                            <span></span>
+                            我的钱包
+                        </span>
+                    </div>
+                    <div class="income">
+                        <div class="leftBox">
+                            <p class="incomeName">今日收益(元)</p>
+                            <span id="today_profit_money">0.00</span>
+                        </div>
+                        <i></i>
+                        <div class="rightBox">
+                            <div class="textLeft">
+                                <p class="incomeName">累计收益(元)</p>
+                                <span id="accumulate_amount">0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="withdrawal">
+                        <div class="card1">
+                            <p class="incomeName">可提现(元)</p>
+                            <span id="money">0.00</span>
+                            <span class="GoWithdrawal">去提现</span>
+                        </div>
+                        <i class="line"></i>
+                        <div class="card2">
+                            <div class="textCenter">
+                                <p class="incomeName">提现中(元)</p>
+                                <span id="freeze_money">0.00</span>
+                                <span class="tips"></span>
+                            </div>
+                        </div>
+                        <i class="line"></i>
+                        <div class="card3">
+                            <div class="textLeft">
+                                <p class="incomeName">已提现(元)</p>
+                                <span id="withdraw_money">0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contactInformation">
+                    <div>
+                        <span class="labels">
+                            <span></span>
+                            上级联系人
+                        </span>
+                    </div>
+                    <div class="infoBox">
+                        <div class="text_info">
+                            <p id="name">
+                                <span>姓名：</span>
+                                <span class="name_text infoText loadEffect"></span>
+                            </p>
+                            <p id="phone">
+                                <span>电话：</span>
+                                <span class="phone_text infoText loadEffect"></span>
+                            </p>
+                            <p id="wx" style="display: none;">
+                                <span>微信：</span>
+                                <span class="wx_text infoText loadEffect"></span>
+                            </p>
+                            <p id="qq" style="display: none;">
+                                <span>Q&nbsp;&nbsp;Q：</span>
+                                <span class="qq_text infoText loadEffect"></span>
+                            </p>
+                        </div>
+                        <div class="code2Box">
+                            <div class="code2">
+                                <div id="qrcode" class="code loadEffect">
+                                    <img src="" alt="">
+                                </div>
+                                <p>扫码加好友</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="div1">
+
+                </div>
+                <div id="div2">
+
+                </div>
+                <div class="scrollBox">
+                    <div class="tabBox">
+                        <div class="active" data-key="transactionOrders">
+                            <span>成交数据</span>
+                        </div>
+                        <div data-key="WithdrawalRecord">
+                            <span>提现记录</span>
+                        </div>
+                    </div>
+                    <div id="wrapper">
+                        <div id="scroller">
+                            <div class="scroll_div" id="scroll_div">
+                                <ul></ul>
+                                <div class="pull-loading">
+                                    上拉加载
+                                </div>
+                            </div>
+                            <div class="empty">
+                                <img src="../../mobile/fx/assets/img/empty.png" alt="">
+                                <p>暂无数据</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="linkBox">
+        <div class="contentBox">
+            <img class="close" src="../../mobile/fx/assets/img/close.png" alt="">
+            <div class="dialogHead">
+                链接分享
+            </div>
+            <div class="core">
+                <div class="GetLinkBox">
+                    <div class="orderId_pop"></div>
+                    <div class="copy_pop">
+                        复制链接
+                    </div>
+                </div>
+                <div class="introduceLink">
+                    <div class="extendText">
+                        推广渠道
+                    </div>
+                    <div class="extendTips">
+                        <p><span>① QQ</span>QQ群/QQ空间推广</p>
+                        <p><span>② 微信</span>微信群/朋友圈/视频号推广</p>
+                        <p><span>③ 小红书</span>发布笔记获取流量后推广</p>
+                        <p><span>④ 微博</span>发微博文章引流推广</p>
+                        <p><span>⑤ 抖音</span>发布相关短视频引流推广</p>
+                        <p><span>⑥ 知乎</span>发布知乎文章引流推广</p>
+                        <p><span>⑦ 贴吧</span>发布帖子引流推广</p>
+                        <p><span>⑧ 线下渠道</span>分发宣传单、海报等</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="posterShareBox">
+        <div class="contentBox">
+            <img class="close" src="../../mobile/fx/assets/img/close.png" alt="">
+            <div class="dialogHead">
+                海报分享
+            </div>
+            <div class="core">
+                <div class="poster" id="imgDiv">
+                    <img id="posterImg" src="../../mobile/fx/assets/img/dashixiezuo.jpg" alt="">
+                    <div id="qrcode2" class="Poster_QRcode"></div>
+                </div>
+                <div class="introduce">
+                    <div class="ButtonBox">
+                        <div class="DownloadPoster1 copy_pop">
+                            复制海报链接
+                        </div>
+                        <div class="DownloadPoster" id="btn">
+                            下载海报
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 去提现弹窗 -->
+     <div class="Withdrawaldiv">
+        <div class="contentBox">
+            <img class="close" src="../../mobile/fx/assets/img/close.png" alt="">
+            <div class="dialogHead">
+                <img src="../../mobile/fx/assets/img/tip.png" alt="">
+            </div>
+            <p class="tip1">温馨提示</p>
+            <p class="tip2">提现需在电脑端访问此链接进行操作</p>
+            <div class="Copy_link">
+                <div class="orderId_pop2"></div>
+                <div class="copy_pop2">
+                    复制
+                </div>
+            </div>
+        </div>
+     </div>
+    <div class="mask_body"></div>
+
+    <input id="copyInput" type="text">
+</body>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../../mobile/fx/assets/js/jquery.min.js"></script>
+<script src="../../mobile/fx/assets/js/bootstrap.min.js?v=p24.0031"></script>
+<script src="../../mobile/fx/assets/js/bootstrapValidator.min.js?v=p24.0011"></script>
+<script src="../../mobile/fx/assets/js/qrcode.min.js?v=p24.0031"></script>
+<script src="../../mobile/fx/assets/js/coco-message.js?v=p24.0031"></script>
+<script src="../../mobile/fx/assets/js/message.js?v=m24.00014"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0031"></script>
+<script src="../../mobile/fx/assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../../mobile/fx/assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../../mobile/fx/assets/js/bootstrap-select.js"></script>
+<script src="../../mobile/fx/assets/js/html2canvas.min.js"></script>
+<script src="../../mobile/fx/assets/js/common.js?v=p24.0031"></script>
+<script src="../../mobile/fx/assets/js/withdrawa.js?v=1.0"></script>
+<script src="../../mobile/fx/assets/js/complaints.js"></script>
+<script src="../../mobile/fx/assets/js/configured.js"></script>
+<script>
+    function infoSuccess(data){
+        if(data.project[0].jane_name == 'dsxz') {
+            $('#posterImg').attr('src' , '../../mobile/fx/assets/img/dashixiezuo.png')
+        }else if(data.project[0].jane_name == 'aigc_check') {
+            $('#posterImg').attr('src' , '../../mobile/fx/assets/img/masterAi.png')
+            $('#imgDiv #qrcode2').css({
+                bottom: '12px',
+                right: 'auto',
+                left: '15px',
+            })
+        }else if(data.project[0].jane_name == 'paper_platform') {
+            $('#posterImg').attr('src' , '../../mobile/fx/assets/img/lwcc.png')
+            $('#imgDiv #qrcode2').css({
+                right: '35px',
+                bottom: '24px',
+            })
+        }else if(data.project[0].jane_name == 'zjchong') {
+            $('#posterImg').attr('src' , '../../mobile/fx/assets/img/zjc.png')
+            $('#imgDiv #qrcode2').css({
+                right: '20px',
+                bottom: '13px',
+            })
+        }
+    }
+    // 未登录
+    function complete_info(data , code) {
+        if(code && code == 4003) {
+			location.href = './init.html'
+        }
+    }
+
+    function success_info(e) {
+        if(!e.is_bind_phone) {
+            // memberFu.openBinding()
+        }else if(e.is_distributor) {
+            pullOnLoad()
+            userInfo()
+        }
+    }
+    $('.orderId_pop2').text(window.location)
+
+    // 获取分销商信息
+    function userInfo() {
+        $.ajax({
+            type: 'post',
+            url: urls + "/api/client/distribution/user_info?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function(data) {
+                if (data.code == 200) {
+                    var ref = data.data
+                    $('#accumulate_amount').text(ref.accumulate_amount)
+                    $('#freeze_money').text(ref.freeze_money)
+                    $('#withdraw_money').text(ref.withdraw_money)
+                    $('#today_profit_money').text(ref.today_profit_money)
+                    $('#money , #balanceMoney').text(ref.money)
+                    $('.described').show()
+                    $('#distribution_config #ratio').text(ref.distribution_config.ratio)
+                    ref.distribution_config.type && $('#distribution_config #type').text("（" + ref.distribution_config.type + '）')
+                    $('.orderId_pop').text(window.location.protocol + '//' + ref.share_link)
+                    qrcode2.makeCode(window.location.protocol + '//' + ref.share_link);
+                    if(ref.kf_info) {
+                        $('#name , #phone , #wx , #qq' ).show().children('.infoText').removeClass('loadEffect')
+                        if(ref.kf_info.name) {
+                            $('#name .infoText').text(ref.kf_info.name)
+                        }else {
+                            $('#name').hide()
+                        }
+                        if(ref.kf_info.phone) {
+                            $('#phone .infoText').text(ref.kf_info.phone)
+                        }else {
+                            $('#phone').hide()
+                        }
+                        if(ref.kf_info.wx) {
+                            $('#wx').show()
+                            $('#wx .infoText').text(ref.kf_info.wx)
+                        }else {
+                            $('#wx').hide()
+                        }
+                        if(ref.kf_info.qq) {
+                            $('#qq').show()
+                            $('#qq .infoText').text(ref.kf_info.qq)
+                        }else {
+                            $('#qq').hide()
+                        }
+                        if(ref.kf_info.crony_code) {
+                            $('#qrcode img').attr('src' , ref.kf_info.crony_code)
+                            $('#qrcode').removeClass('loadEffect')
+                        }else {
+                            $('.code2').hide()
+                        }
+                    }
+                } else {
+                    cocoMessage.error(data.codeMsg, 2000);
+                }
+            },
+            error: function(err) {
+                cocoMessage.error('数据获取失败,请检查网络', 2000);
+            }
+        });
+    }
+
+    $('.close').click(function() {
+        $('.posterShareBox').hide()
+        $('.linkBox').hide()
+        $('.withdrawBox').hide()
+        $('.complaintsBox').hide()
+        $('.mask_body').hide()
+        $('.Withdrawaldiv').hide()
+    })
+    $('.posterShare').click(function() {
+        $('.posterShareBox').show()
+        $('.mask_body').show()
+    })
+    $('.urlShare').click(function() {
+        $('.linkBox').show()
+        $('.mask_body').show()
+    })
+    $('.mask_body').click(function(){
+        $('.linkBox').hide()
+        $('.mask_body').hide()
+        $('.posterShareBox').hide()
+        $('.Withdrawaldiv').hide()
+    })
+    $('.GoWithdrawal').click(function(){
+        $('.Withdrawaldiv').show()
+        $('.mask_body').show()
+    })
+
+    var tabIsclick = false
+    $('.tabBox>div').click(function() {
+        if(tabIsclick) {
+            $('.tabBox>div').removeClass('active')
+            $(this).addClass('active')
+            if($(this).data('key') == 'transactionOrders') {
+                $('.WithdrawalRecord').hide()
+            }else {
+                $('.transactionOrders').hide()
+            }
+            $("#scroller ul").html('')
+            $('.empty').hide()
+            $('.pull-loading').hide()
+
+            setTimeout(function() {
+                page = 0
+                isAjax = true
+                pullOnLoad()
+            }, 100)
+        }
+    })
+    $(document).ready(function() {
+        var flag = false;
+        $("#scroll_div").scroll(function(){
+            if(flag){
+                //数据加载中
+                return false;
+            }
+            var divHeight = $(this).height();
+            var nScrollHeight = $(this)[0].scrollHeight;
+            var nScrollTop = $(this)[0].scrollTop;
+            if((nScrollTop + divHeight + 20) >= nScrollHeight && isAjax) {
+                flag = true
+                flag = pullOnLoad();
+            }
+        });
+    });
+    var limit = 20;
+    var page = 0;
+    var isAjax = true
+    function pullOnLoad() {
+        page+=1
+        setTimeout(function () {
+            tabIsclick = false
+            toast({
+                msg: '正在获取数据...',
+                type: 'loading',
+                time: 20000
+            })
+            var urlType = {
+                WithdrawalRecord: '/api/client/distribution/withdrawal_list',
+                transactionOrders: '/api/client/distribution/order_list'
+            }
+            var parameters = {
+                WithdrawalRecord: {
+                    One: 'withdrawal_sn',
+                    two: 'withdrawal_amount',
+                    three: 'created',
+                    four: 'withdrawal_mode_human'
+                },
+                transactionOrders: {
+                    One: 'oid',
+                    two: 'transaction_amount',
+                    three: 'created',
+                    four: 'type_human'
+                },
+            }
+            $.ajax({
+                url: urls + urlType[$('.tabBox .active').data('key')] +'?page=' + page + '&limit=' + limit + '&user_token='+USER_TOKEN+'&jane_name='+JANE_NAME,
+                type: "post",
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function (data) {
+                    data = data.data
+                    if(data.length) {
+                        for(var i=0; i<data.length; i++) {
+                            var html = '<li>'
+                            html += '    <div class="topP">'
+                            html += '        <span class="oid">'
+                            html +=              data[i][parameters[$('.tabBox .active').data('key')].One]
+                            html += '        </span>'
+                            html += '        <span class="transaction_amount">'
+                            html +=              data[i][parameters[$('.tabBox .active').data('key')].two]
+                            html += '        </span>'
+                            html += '    </div>'
+                            html += '    <div class="bottomP">'
+                            html += '        <span class="created">'
+                            html +=              data[i][parameters[$('.tabBox .active').data('key')].three]
+                            html += '        </span>'
+                            html += '        <span class="type_human">'
+                            html +=              data[i][parameters[$('.tabBox .active').data('key')].four]
+                            html += '        </span>'
+                            html += '    </div>'
+                            html += '</li>'
+                            $("#scroller ul").append(html);
+                        }
+                        $('.pull-loading').html("上拉加载");
+                    }else {
+                        $('.pull-loading').html("没有数据了哟!");
+                        isAjax = false
+                    }
+                    if(page <=1 && !data.length) {
+                        $('.empty').show()
+                        $('.pull-loading').hide()
+                    }else {
+                        $('.empty').hide()
+                        if(data.length>6) {
+                            $('.pull-loading').show()
+                        }
+                    }
+                },
+                error: function () {
+                    console.log("出错了");
+                },
+                complete: function() {
+                    tabIsclick = true
+                    toastNone()
+                    return false
+                }
+            });
+        }, 200);
+    }
+</script>
+</html>

@@ -1,0 +1,504 @@
+body {
+  position: relative;
+}
+.bannerBox {
+  background: url('../../img/banner.jpg') no-repeat;
+  background-size: 100%;
+  background-position: 100% 100%;
+  min-height: 20.88rem;
+  padding-top: 50px;
+  background-color: #f6fbff;
+}
+.bannerBoxBg {
+  background: url('../../img/banner-t.png') no-repeat;
+  width: 100%;
+  height: calc(31.18rem - 50px);
+  background-position: 50% 100%;
+  background-size: 15.29rem;
+  display: flex;
+}
+.bannerBoxBg .container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.bannerBoxBg .containerText {
+  text-align: center;
+  padding-top: 3.6rem;
+}
+.bannerBoxBg .containerText h3 {
+  font-size: 3.79rem;
+  color: #ed7d31;
+  font-weight: bold;
+  display: inline-block;
+  letter-spacing: 0.06rem;
+}
+.bannerBoxBg .containerText p {
+  font-size: 0.93rem;
+  color: #5d6d83;
+  display: inline-block;
+  letter-spacing: 0.01rem;
+  margin: 0.7rem 0;
+}
+.bannerBoxBg .containerText b {
+  font-size: 1.19rem;
+  letter-spacing: 0.06rem;
+  color: #44546a;
+}
+.bannerBoxBg .containerText div {
+  letter-spacing: 0.02rem;
+  font-size: 0.86rem;
+  color: #536175;
+  display: inline-block;
+  border-top: 1px solid #858f9c;
+  border-bottom: 1px solid #858f9c;
+  padding: 0.4rem 0.4rem;
+  font-weight: bold;
+}
+.bannerBoxBg .containerText div span {
+  display: inline-block;
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+  background-color: #97a7bd;
+  position: relative;
+  top: -0.2rem;
+  margin: 0 0.1rem;
+}
+.formBox .formBox {
+  min-height: 13.75rem;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 0.56rem 0.06rem rgba(46, 49, 58, 0.1);
+  border-radius: 0.63rem;
+  padding: 1.25rem;
+  margin-top: -1.63rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formBox #formSubmit {
+  margin-top: 1.6rem;
+  width: 100%;
+}
+.formBox #formSubmit .group {
+  border-radius: 0.94rem;
+  border: solid 0.03rem #dddde3;
+}
+.formBox #formSubmit .clearfix {
+  display: flex;
+  align-items: center;
+}
+.formBox #formSubmit .clearfix .VerificationCode {
+  color: #ed7d31;
+  font-size: 0.71rem;
+  background-color: transparent !important;
+  border: 0 !important;
+  position: relative;
+  box-shadow: none;
+}
+.formBox #formSubmit .clearfix .VerificationCode::after {
+  height: 100%;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-left: 1px solid #dddee3;
+}
+.formBox #formSubmit .clearfix .VerificationCode.forbid {
+  color: #999999;
+}
+.formBox #formSubmit input {
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  border-radius: 0.94rem;
+  height: 2.18rem;
+}
+.formBox #formSubmit .Submit {
+  background-color: #ed7d31;
+  box-shadow: 0rem 0rem 0.56rem 0.06rem rgba(255, 162, 0, 0.3);
+  border-radius: 0.94rem;
+  width: 100%;
+  border: 0;
+  padding: 0.5rem 0 0.5rem 0;
+  font-size: 0.86rem;
+}
+.formBox .FormHead {
+  color: #333333;
+  font-size: 1.29rem;
+  font-weight: bold;
+  position: relative;
+}
+.formBox .FormHead span {
+  color: #ed7d31;
+  font-size: 1.29rem;
+}
+.formBox .FormHead::after {
+  width: 1.25rem;
+  height: 0.16rem;
+  background-color: #ff7800;
+  border-radius: 0.06rem;
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  margin-left: -0.6rem;
+}
+.formBox .SubmitTips {
+  color: #999999;
+  font-size: 0.71rem;
+  text-align: center;
+}
+.formBox .SubmitTips span {
+  color: #ed7d31;
+}
+.APPDataBox {
+  padding-top: 2.46rem;
+}
+.APPDataBox .containerMain {
+  padding: 0 0.54rem;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 2rem;
+}
+.APPDataBox .containerMain > div {
+  width: 25%;
+}
+.APPDataBox .containerMain span {
+  color: #44546a;
+  font-size: 0.79rem;
+}
+.APPDataBox .containerMain b {
+  font-size: 1.29rem;
+}
+.APPDataBox .containerMain p {
+  color: #808080;
+  font-size: 0.8rem;
+}
+.APPDataBox .borderR {
+  position: relative;
+}
+.APPDataBox .borderR::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  right: 0;
+  border-right: 1px solid #dfdfdf;
+}
+.FunctionBox {
+  padding-top: 3.39rem;
+  padding-bottom: 1rem;
+}
+.FunctionBox img {
+  width: 100%;
+  margin-top: 1rem;
+}
+.FunctionBox .FunctionIMG {
+  background: url('../../img/gh1.jpg') no-repeat;
+  background-size: 100%;
+  background-position: 0 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+}
+.SpecialFeatures {
+  background-image: linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%);
+  padding-top: 2.5rem;
+  padding-bottom: 2.46rem;
+}
+.SpecialFeatures .textDiv {
+  padding: 1.43rem;
+  background-repeat: no-repeat;
+  background-size: 7.5rem auto;
+  min-height: 17rem;
+  padding-top: 3.14rem;
+  margin-top: 2.14rem;
+}
+.SpecialFeatures .textDiv b {
+  color: #333333;
+  font-size: 1.29rem;
+  font-weight: bold;
+}
+.SpecialFeatures .textDiv .ContentText {
+  color: #585a69;
+  font-size: 0.79rem;
+  margin-top: 1rem;
+  letter-spacing: 0.01rem;
+}
+.SpecialFeatures .textDiv .ContentText span {
+  color: #ed7d31;
+}
+.SpecialFeatures .textDiv .ContentText li {
+  list-style: none;
+  color: #585a69;
+  font-size: 0.86rem;
+  margin-bottom: 0.6rem;
+}
+.SpecialFeatures .textDiv .ContentText li img {
+  width: 0.8rem;
+  margin-right: 0.6rem;
+}
+.SpecialFeatures .textDiv.textDiv1 {
+  background-image: url('../../img/1.png');
+}
+.SpecialFeatures .textDiv.textDiv2 {
+  background-image: url('../../img/2.png');
+}
+.SpecialFeatures .textDiv.textDiv3 {
+  background-image: url('../../img/3.png');
+}
+.SpecialFeatures .textDiv.textDiv4 {
+  background-image: url('../../img/4.png');
+}
+.SpecialFeatures .textDiv.textDiv5 {
+  background-image: url('../../img/5.png');
+}
+.SpecialFeatures .imgDiv img {
+  width: 100%;
+  margin-top: -5rem;
+}
+.SpecialFeatures .imgDiv.imgDiv4 img {
+  margin-top: -1rem;
+}
+.SpecialFeatures .imgDiv.imgDiv5 img {
+  margin-top: -4rem;
+}
+.ABigShot {
+  background-color: #f3f6f9;
+  padding-top: 2.46rem;
+  padding-bottom: 2.5rem;
+}
+.ABigShot .ABigShotMain {
+  background-color: #ffffff;
+  border-radius: 0.71rem;
+  margin-top: 2.14rem;
+}
+.ABigShot .ABigShotMain > .textBox {
+  padding: 1.43rem;
+}
+.ABigShot .ABigShotMain > .textBox b {
+  color: #333333;
+  font-size: 1.29rem;
+}
+.ABigShot .ABigShotMain > .textBox p {
+  font-size: 0.86rem;
+  color: #595858;
+  font-weight: bold;
+  margin-top: 0.4rem;
+}
+.ABigShot .ABigShotMain > .textBox i {
+  width: 1.43rem;
+  height: 0.14rem;
+  background-color: #ed7d31;
+  border-radius: 0.07rem;
+  display: inline-block;
+}
+.ABigShot .ABigShotMain > .textBox div {
+  margin-top: 0.8rem;
+  color: #595858;
+  font-size: 0.79rem;
+}
+.ABigShot .ABigShotMain .containerTips {
+  font-size: 0.71rem;
+  color: #ed7d31;
+  padding: 1.07rem 1.4rem;
+  border-top: 1px solid #ffcfa0;
+  margin-top: 1rem;
+}
+.ABigShot .imgBox {
+  display: flex;
+  margin-bottom: 1.7rem;
+}
+.ABigShot .imgBox .imgRight {
+  width: 52%;
+}
+.ABigShot .imgBox .imgleft {
+  width: 44%;
+  margin-right: 5%;
+}
+.AppraiseBox {
+  padding-top: 2.46rem;
+  padding-bottom: 2.5rem;
+}
+.AppraiseBox .imgBox {
+  margin-top: 2.14rem;
+}
+.AppraiseBox .imgTop {
+  display: flex;
+}
+.AppraiseBox .imgTop .Ileft {
+  width: 34%;
+}
+.AppraiseBox .imgTop .Iright {
+  width: calc(66% + 1rem);
+  padding-left: 0.25rem;
+}
+.AppraiseBox .imgTop .Iright .Iright2 {
+  margin-top: 0.25rem;
+}
+.AppraiseBox .imgTop img {
+  width: 100%;
+  height: auto;
+}
+.AppraiseBox .imgBottom img {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+.ProcessFlow .containerMain {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2.14rem;
+}
+.ProcessFlow .Sequence {
+  width: 50%;
+  text-align: center;
+  margin-bottom: 2.14rem;
+}
+.ProcessFlow .Sequence .SerialNumber {
+  width: 4.36rem;
+  text-align: center;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  background: url('../../img/step.png') no-repeat;
+  background-size: 100% 100%;
+  padding: 1.2rem 0;
+  line-height: normal;
+  margin-bottom: 0.82rem;
+}
+.ProcessFlow .Sequence b {
+  color: #333333;
+  font-size: 1.07rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+.ProcessFlow .Sequence p {
+  color: #585a69;
+  font-size: 0.79rem;
+}
+.pkBox {
+  background: url('../../img/pk_bg.png') no-repeat;
+  background-size: 100% 100%;
+  padding-top: 3.57rem;
+  padding-bottom: 2.5rem;
+}
+.pkBox .h3 img {
+  width: 4.89rem;
+  height: 2.43rem;
+  margin-top: -1rem;
+}
+.pkBox .containerMain {
+  padding-top: 2.14rem;
+}
+.pkBox .containerMain img {
+  width: 100%;
+}
+.gloryBox {
+  padding-top: 2.5rem;
+  background: url('../../img/bottom_bg.png') no-repeat;
+  background-size: 100% auto;
+  background-position: 100% 100%;
+}
+.gloryBox .Achievement {
+  background-image: linear-gradient(0deg, #fdece2 0%, #ffe8d9 15%, #fcf7f3 100%);
+  border-radius: 0.71rem;
+  text-align: center;
+  padding: 1.79rem 0.6rem 1.5rem 0.6rem;
+}
+.gloryBox .Achievement h3 {
+  color: #ed7d31;
+  font-size: 1.71rem;
+  font-weight: bold;
+}
+.gloryBox .Cooperation {
+  margin-top: 1.43rem;
+}
+.gloryBox .Cooperation img {
+  width: 100%;
+}
+.gloryBox .CooperationTime {
+  font-weight: bold;
+  margin-top: 1.36rem;
+}
+.gloryBox .CooperationTime .time {
+  color: #333333;
+  font-size: 1.29rem;
+}
+.gloryBox .CooperationTime .name {
+  font-size: 1.43rem;
+  color: #c41211;
+}
+.gloryBox .ForTheRecord {
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.79rem;
+  border-top: 0;
+  margin-top: 2.5rem;
+}
+.FloatBox {
+  height: 3.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0 0.8rem 0 0;
+  display: none;
+}
+.FloatBox.FloatingWindow2 {
+  position: absolute;
+  bottom: 3rem;
+  z-index: 500;
+  left: 0;
+}
+.FloatBox .text {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1rem;
+  color: #ffffff;
+}
+.FloatBox .text span {
+  color: #ffbf2b;
+  font-weight: bold;
+}
+.FloatBox .buttonBox {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #ff6700;
+  box-shadow: 0rem 0rem 0.64rem 0.07rem rgba(255, 162, 0, 0.2);
+  border-radius: 0.89rem;
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+  margin-left: 0.5rem;
+}
+.FloatBox .close {
+  width: 0.86rem;
+  height: 0.82rem;
+  margin-left: 0.68rem;
+}
+.FloatBox .bg {
+  background: url('../../img/vip.png') no-repeat;
+  height: calc(100% + 0.25rem);
+  margin-top: -0.26rem;
+  background-size: 14.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 0.26rem;
+}
+.h3 {
+  font-size: 1.71rem;
+  letter-spacing: 0.03rem;
+  color: #ed7d31;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected {
+  transition: background-color 999999999s !important;
+}

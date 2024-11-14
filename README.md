@@ -89,7 +89,7 @@ AI大师写作：https://www.dashixiezuo.com
 
 论文查重：https://twjs-paper.taoxiangyoushu.com
 
-早降重：https://www.zaojiangchong.com
+早降重：https://www.zaojiangchong.net
 
 Master AI检测：https://www.paperaigc.com
 

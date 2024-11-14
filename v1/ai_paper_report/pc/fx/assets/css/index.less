@@ -4,14 +4,17 @@
     min-height: 100vh;
     position: relative;
 }
+
 .content {
     width: 100%;
     max-width: 1200px;
     margin: auto;
     padding-bottom: 77px;
 }
+
 .headDiv {
     padding: 24px 0;
+
     &>span {
         font-size: 16px;
         color: #333333;
@@ -19,19 +22,23 @@
         line-height: 42px;
         cursor: pointer;
     }
+
     .toIndex {
         font-size: 16px;
         color: #333333;
         cursor: pointer;
         line-height: 40px;
+
         &:hover {
             color: #FF6347;
         }
     }
 }
+
 #memberCarrier {
     position: relative;
 }
+
 .distributionH3 {
     font-weight: bold;
     font-size: 40px;
@@ -40,23 +47,28 @@
     margin-top: 36px;
     margin-bottom: 40px;
 }
+
 .share {
     padding: 17px;
     background-color: #fff;
     padding-left: 30px;
     line-height: 34px;
+
     .described {
         font-size: 14px;
         color: #333333;
         line-height: 34px;
         margin-left: 40px;
+
         span {
             color: #FF6347;
         }
     }
+
     .promotion {
-        vertical-align:middle;
+        vertical-align: middle;
         float: right;
+
         &>div {
             float: left;
             width: 86px;
@@ -68,15 +80,18 @@
             font-size: 14px;
             line-height: 34px;
             cursor: pointer;
+
             &+div {
                 margin-left: 16px;
             }
         }
     }
+
     .labels::before {
         top: 10px;
     }
 }
+
 .labels {
     font-weight: bold;
     font-size: 14px;
@@ -85,6 +100,7 @@
     display: inline-block;
     padding-left: 8px;
     position: relative;
+
     &::before {
         width: 3px;
         height: 14px;
@@ -101,22 +117,27 @@
 .amount_info {
     overflow: hidden;
     margin-top: 14px;
+
     .amountDiv {
         width: calc(100% - 345px);
         float: left;
         padding-right: 14px;
+
         .amountBox {
             background-color: #fff;
             padding: 26px 30px;
         }
     }
+
     .overallData {
         margin-top: 14px;
         overflow: auto;
+
         &>div {
             min-width: 780px;
         }
     }
+
     .income {
         width: 300px;
         height: 110px;
@@ -124,25 +145,31 @@
         background: #FFFAF9;
         border-radius: 8px;
         float: left;
+
         &>div {
             float: left;
             width: 50%;
             font-size: 14px;
+
             p {
                 font-size: 14px;
-                color: #333333; 
+                color: #333333;
             }
+
             span {
                 font-weight: bold;
                 color: #333;
                 font-size: 24px;
             }
         }
+
         .leftBox {
             position: relative;
+
             span {
                 color: #FF6347;
             }
+
             &::before {
                 content: '';
                 position: absolute;
@@ -154,12 +181,14 @@
                 border-radius: 1px;
             }
         }
+
         .rightBox {
             .textLeft {
                 float: right;
             }
         }
     }
+
     .withdrawal {
         width: 468px;
         height: 110px;
@@ -169,18 +198,22 @@
         float: right;
         display: flex;
         justify-content: space-between;
+
         &>div {
             font-size: 14px;
             position: relative;
+
             p {
                 font-size: 14px;
-                color: #333333; 
+                color: #333333;
             }
+
             span {
                 font-weight: bold;
                 color: #333;
                 font-size: 24px;
             }
+
             .GoWithdrawal {
                 font-size: 12px;
                 color: #FF6347;
@@ -188,6 +221,7 @@
                 cursor: pointer;
             }
         }
+
         .line {
             display: inline-block;
             width: 1px;
@@ -196,11 +230,14 @@
             border-radius: 1px;
             margin-top: 6px;
         }
+
         .card3 .textLeft {
             float: right;
         }
+
         .card2 {
             text-align: center;
+
             .textCenter {
                 display: inline-block;
             }
@@ -215,10 +252,12 @@
     padding: 26px 32px;
     padding-right: 44px;
     background-color: #fff;
+
     span {
         display: inline-block;
-        vertical-align:middle;
+        vertical-align: middle;
     }
+
     .text_info {
         font-size: 14px;
         color: #333333;
@@ -227,21 +266,25 @@
         float: left;
         margin-top: 14px;
     }
+
     .infoText {
         display: inline-block;
-        vertical-align:middle;
+        vertical-align: middle;
         min-width: 120px;
         min-height: 16px;
     }
+
     .code2 {
         width: 76px;
         float: right;
         margin-top: 18px;
+
         .code {
             width: 76px;
             height: 76px;
             border: 1px solid #ccc;
         }
+
         p {
             font-size: 14px;
             color: #333333;
@@ -249,13 +292,17 @@
         }
     }
 }
+
 #imgDiv {
     position: relative;
     overflow: hidden;
-    box-sizing: border-box; /* 包含边框和内边距 */
-    text-align: left; /* 文本左对齐 */
+    box-sizing: border-box;
+    /* 包含边框和内边距 */
+    text-align: left;
+    /* 文本左对齐 */
     margin: 0;
     padding: 0;
+
     #qrcode2 {
         width: 56px;
         height: 56px;
@@ -264,64 +311,83 @@
         bottom: 17px;
     }
 }
+
 .tableBox {
     background-color: #fff;
     margin-top: 14px;
 }
+
 .recordTable {
     padding: 40px;
     padding-bottom: 10px;
     padding-top: 22px;
     position: relative;
+
     .th {
         font-weight: 400;
     }
-    .table > thead > tr > th {
+
+    .table>thead>tr>th {
         background-color: #f5f5f5;
         color: #08053a;
         font-size: 12px;
         padding: 12px;
         border-bottom: 0;
     }
+
     tbody tr td {
         height: 34px;
         line-height: 34px;
         font-size: 12px;
     }
+
     .table-hover>tbody>tr:hover {
         background-color: #fbfbfb;
     }
-    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+
+    .table>tbody>tr>td,
+    .table>tbody>tr>th,
+    .table>tfoot>tr>td,
+    .table>tfoot>tr>th,
+    .table>thead>tr>td,
+    .table>thead>tr>th {
         border-bottom: 1px solid #ddd;
         border-top: 0;
     }
+
     .tableDiv {
         min-height: 452px;
     }
+
     .Views {
         color: #0b63ff;
         font-size: 12px;
         cursor: pointer;
     }
+
     .paging2 {
         text-align: right;
     }
+
     .statusButton {
         width: 50px;
         height: 20px;
         border-radius: 10px;
         display: inline-block;
+
         &.not {
             border: solid 1px #ff8b4d;
             background-color: #fff2ed;
             color: #ff8b4d;
         }
+
         &.has {
             border: solid 1px #0b63ff;
             background-color: #eaf2ff;
             color: #0b63ff;
         }
     }
+
     .loading {
         position: absolute;
         left: 50%;
@@ -330,6 +396,7 @@
         margin-top: -60px;
         display: none;
     }
+
     .stateless {
         position: absolute;
         left: 50%;
@@ -338,6 +405,7 @@
         margin-top: -90px;
         margin-left: -129px;
         display: none;
+
         p {
             margin-top: 20px;
             font-size: 16px;
@@ -345,8 +413,10 @@
         }
     }
 }
+
 .posterShareBox {
     display: none;
+
     .mask_body {
         position: fixed;
         background: #000;
@@ -357,6 +427,7 @@
         height: 100%;
         opacity: 0.3;
     }
+
     .contentBox {
         width: 100%;
         max-width: 780px;
@@ -369,11 +440,14 @@
         background-color: #FFF7F4;
         z-index: 1000;
     }
-    .close , .closeConfirmPopUp{
+
+    .close,
+    .closeConfirmPopUp {
         position: absolute;
         right: 20px;
         top: 20px;
     }
+
     .dialogHead {
         font-weight: bold;
         font-size: 24px;
@@ -382,6 +456,7 @@
         padding-top: 36px;
         padding-bottom: 28px;
     }
+
     .core {
         width: 100%;
         max-width: 552px;
@@ -391,55 +466,65 @@
         padding: 18px;
         overflow: hidden;
     }
+
     .poster {
         float: left;
         width: 240px;
         height: 427px;
+
         img {
             width: 100%;
             height: 100%;
         }
     }
+
     .introduce {
         float: left;
         padding-left: 30px;
         position: relative;
         min-height: 427px;
     }
+
     .extendText {
         font-weight: bold;
         font-size: 14px;
         color: #333333;
         line-height: 38px;
     }
+
     .extendTips {
         color: #333333;
         font-size: 12px;
         line-height: 30px;
         padding-left: 2px;
+
         span {
             color: #F77653;
             width: 80px;
             display: inline-block;
-            vertical-align:middle;
+            vertical-align: middle;
         }
     }
+
     .ButtonBox {
         position: absolute;
         bottom: 8px;
         width: 100%;
+
         &>div {
             float: left;
+
             &+div {
                 margin-left: 20px;
             }
         }
     }
+
     .DownloadPoster {
         width: 110px;
         height: 40px;
         background: linear-gradient(-30deg, #FF4C2E 0%, #FFB39C 100%);
-        box-shadow: 0px 0px 10px 0px rgba(255,59,13,0.3);
+        box-shadow: 0px 0px 10px 0px rgba(255, 59, 13, 0.3);
         border-radius: 8px;
         text-align: center;
         color: #fff;
@@ -451,6 +536,7 @@
 
 .linkBox {
     display: none;
+
     .contentBox {
         width: 100%;
         max-width: 700px;
@@ -463,11 +549,14 @@
         background-color: #FFF7F4;
         z-index: 1000;
     }
-    .close , .closeConfirmPopUp{
+
+    .close,
+    .closeConfirmPopUp {
         position: absolute;
         right: 20px;
         top: 20px;
     }
+
     .dialogHead {
         font-weight: bold;
         font-size: 24px;
@@ -476,6 +565,7 @@
         padding-top: 36px;
         padding-bottom: 28px;
     }
+
     .mask_body {
         position: fixed;
         background: #000;
@@ -486,19 +576,21 @@
         height: 100%;
         opacity: 0.3;
     }
+
     .GetLinkBox {
         width: 100%;
         max-width: 552px;
         overflow: hidden;
         margin: auto;
     }
+
     .copy_pop {
         width: 128px;
-        height: 40px;        
+        height: 40px;
         font-weight: bold;
         font-size: 14px;
         background: linear-gradient(-30deg, #FF4C2E 0%, #FFB39C 100%);
-        box-shadow: 0px 0px 10px 0px rgba(255,59,13,0.3);
+        box-shadow: 0px 0px 10px 0px rgba(255, 59, 13, 0.3);
         border-radius: 8px;
         line-height: 40px;
         text-align: center;
@@ -506,6 +598,7 @@
         float: right;
         cursor: pointer;
     }
+
     .orderId_pop {
         width: 410px;
         height: 40px;
@@ -518,6 +611,7 @@
         padding-left: 20px;
         line-height: 40px;
     }
+
     .introduceLink {
         background-color: #fff;
         padding: 24px;
@@ -525,72 +619,89 @@
         width: 100%;
         max-width: 550px;
         margin: 35px auto 0;
+
         p {
             float: left;
             width: 50%;
         }
     }
+
     .extendText {
         font-weight: bold;
         font-size: 14px;
         color: #333333;
     }
+
     .extendTips {
         color: #333333;
         font-size: 12px;
         line-height: 30px;
         padding-left: 12px;
+
         span {
             color: #F77653;
             width: 80px;
             display: inline-block;
-            vertical-align:middle;
+            vertical-align: middle;
         }
     }
 }
+
 #copyInput {
     position: absolute;
     opacity: 0;
     z-index: -1;
     top: 0;
 }
+
 .pagination {
-    vertical-align:middle;
+    vertical-align: middle;
 }
-.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
     background-color: #FF6347;
     border-color: #FF6347;
 }
+
 .pagination>li>a {
     margin-right: 5px;
     font-size: 12px;
     color: #333;
 }
+
 .PageCountDiv {
     font-size: 14px;
     color: #555555;
     margin-right: 14px;
     display: inline-block;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 .tabBox {
     border-bottom: 1px solid #EDEDED;
     padding-left: 28px;
+
     &>div {
         display: inline-block;
-        vertical-align:middle;
+        vertical-align: middle;
         padding: 28px 0 20px 0;
         font-size: 14px;
         color: #333333;
         margin: 0 16px;
         cursor: pointer;
     }
+
     .active {
         color: #FF6347;
         position: relative;
         font-weight: bold;
         cursor: auto;
+
         &::after {
             content: '';
             position: absolute;
@@ -602,14 +713,22 @@
         }
     }
 }
+
 .complaints {
     font-size: 14px;
     color: #FF6347;
     cursor: pointer;
+    margin: 0 6px;
 }
-
+.detailsTrigger {
+    font-size: 14px;
+    color: #FF6347;
+    cursor: pointer;
+    margin: 0 6px;
+}
 .complaintsBox {
     display: none;
+
     .mask_body {
         position: fixed;
         background: #000;
@@ -620,6 +739,7 @@
         height: 100%;
         opacity: 0.3;
     }
+
     .windowBox {
         width: 100%;
         max-width: 650px;
@@ -634,6 +754,7 @@
         border: 1px solid #F1F1F1;
         padding-bottom: 20px;
     }
+
     .dialog__title {
         font-size: 16px;
         color: #000000;
@@ -641,20 +762,25 @@
         padding: 18px 20px;
         border-bottom: 1px solid #EEEEEE;
     }
+
     .dialog__main {
         padding: 10px 20px;
         height: calc(100% - 60px);
         overflow: auto;
     }
+
     .paper-title-block {
         max-width: none;
     }
+
     label {
         margin-bottom: 8px;
     }
+
     .help-block {
         margin-top: 10px;
     }
+
     .submitApplication {
         width: 84px;
         height: 32px;
@@ -666,79 +792,102 @@
         color: #FFFFFF;
         margin: 20px auto 0;
         cursor: pointer;
+
         &:hover {
             background: #ff5031;
         }
     }
+
     .close {
         margin-top: 4px;
     }
+
     .help-block {
         margin-top: 4px;
     }
 }
+
 .uploadDiv .file-block2 {
     display: inline-block !important;
 }
+
 .imgArr {
     display: inline-block;
-    vertical-align:middle;
+    vertical-align: middle;
 }
+
 .uploadBox {
-    vertical-align:middle;
+    vertical-align: middle;
     display: inline-block;
 }
+
 .file-block2 {
     margin-right: 4px;
 }
+
 .tipsText {
     font-size: 12px;
     color: #606266;
     margin-top: 10px;
 }
+
 #voucher_err {
     color: #F56C6C;
     font-size: 12px;
 }
+
 .formDiv {
     padding-bottom: 20px;
 }
-.transactionOrders  , .WithdrawalRecord{
-    .orderNumber , .withdrawal_sn {
+
+.transactionOrders,
+.WithdrawalRecord {
+
+    .orderNumber,
+    .withdrawal_sn {
         width: 200px;
     }
-    input  , button{
+
+    input,
+    button {
         background-color: transparent !important;
         box-shadow: none !important;
         border: 1px solid #DCDFE6 !important;
         display: inline-block !important;
         vertical-align: middle;
     }
+
     .bootstrap-select .dropdown-toggle:focus {
         outline: 0 !important;
     }
+
     .typeSelect {
         width: 128px;
         display: inline-block;
-        vertical-align:middle;
+        vertical-align: middle;
         margin-left: 8px;
         margin-top: -3px;
+
         .selected {
             background-color: #f1f1f1;
         }
+
         .check-mark {
             display: none !important;
         }
+
         .btn-default {
             color: #555;
         }
     }
+
     .btn {
         padding: 7px 12px;
     }
+
     .timeBox {
         display: inline-block;
-        vertical-align:middle;
+        vertical-align: middle;
         background: #FFFFFF;
         border-radius: 4px;
         border: 1px solid #DCDFE6;
@@ -746,11 +895,13 @@
         font-size: 12px;
         position: relative;
         padding-right: 14px;
+
         span {
             line-height: 34px;
             display: inline-block;
             vertical-align: middle;
         }
+
         &>input {
             border: 0 !important;
             outline: 0 !important;
@@ -759,6 +910,7 @@
             text-align: center;
         }
     }
+
     .search {
         text-align: center;
         line-height: 32px;
@@ -769,10 +921,11 @@
         color: #fff;
         font-size: 14px;
         display: inline-block;
-        vertical-align:middle;
+        vertical-align: middle;
         margin-left: 8px;
         cursor: pointer;
     }
+
     .derived {
         text-align: center;
         line-height: 32px;
@@ -783,29 +936,35 @@
         color: #FF6347;
         font-size: 14px;
         display: inline-block;
-        vertical-align:middle;
+        vertical-align: middle;
         margin-left: 8px;
         cursor: pointer;
         border: 1px solid #FF6347;
     }
 }
+
 a:focus {
-    outline: 0 !important; 
+    outline: 0 !important;
 }
+
 #pagination li a {
     border-radius: 4px;
 }
+
 .status_human {
     position: relative;
     display: inline-block;
+
     img {
         cursor: pointer;
     }
+
     .remark {
         position: absolute;
         right: -20px;
         top: 0px;
     }
+
     .TipsContent {
         background: #000000;
         border-radius: 4px;
@@ -813,7 +972,9 @@ a:focus {
         padding: 4px;
         line-height: normal;
     }
-    .status40 , .status52 {
+
+    .status40,
+    .status52 {
         width: 66px;
         height: 20px;
         background: #FF0006;
@@ -821,7 +982,9 @@ a:focus {
         padding: 4px 10px;
         color: #fff;
     }
-    .status30  , .status51{
+
+    .status30,
+    .status51 {
         width: 66px;
         height: 20px;
         background: #0096FF;
@@ -829,6 +992,7 @@ a:focus {
         padding: 4px 10px;
         color: #fff;
     }
+
     .status10 {
         width: 56px;
         height: 20px;
@@ -837,6 +1001,7 @@ a:focus {
         padding: 4px 10px;
         color: #fff;
     }
+
     .status50 {
         width: 56px;
         height: 20px;
@@ -869,6 +1034,7 @@ a:focus {
     border-width: 5px;
     border-style: solid
 }
+
 .tool_tip_bottom:before {
     top: 0;
     left: 50%;
@@ -878,13 +1044,90 @@ a:focus {
     border-color: transparent transparent rgba(0, 0, 0, .9) transparent
 }
 
-.deleteFile1 , .deleteFile2 {
+.deleteFile1,
+.deleteFile2 {
     position: absolute;
     right: 8px;
     top: 10px;
     cursor: pointer;
     display: none;
 }
+
 #qrcode img {
     max-width: 100%;
+}
+
+.detailsBox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    display: none;
+
+    .mask_body {
+        position: fixed;
+        background: #000;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+    }
+
+    .Detailed_operation {
+        width: 330px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        position: absolute;
+        top: 30%;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        z-index: 1000;
+
+        .close {
+            width: 12px;
+            height: 11px;
+            margin-top: 16px;
+            margin-right: 15px;
+        }
+        .Details_Content{
+            padding: 28px;
+        }
+        .Details_Title {
+            font-family: Microsoft YaHei;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333333;
+            span {
+                display: inline-block;
+                width: 2px;
+                height: 14px;
+                background: #FF6E53;
+                border-radius: 1px;
+                margin-right: 6px;
+                position: relative;
+                top: 2px;
+            }
+        }
+        .Withdrawal_style{
+            margin-top: 12px;
+            p{
+                font-size: 12px;
+                line-height: 32px;
+                padding-left: 8px;
+
+                span:nth-child(1){
+                    color: #999999;
+                    display: inline-block;
+                    width: 65px;
+                    margin-right: 20px;
+                }
+                span:nth-child(2){
+                    color: #333333;
+                }
+            }
+        }
+    }
 }

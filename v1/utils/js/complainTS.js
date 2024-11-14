@@ -116,6 +116,12 @@ FloatingBox.inputClick= function(this_) {
     document.querySelector('.labelTitle2').classList.remove('selected');
     document.querySelector('.labelTitle3').classList.remove('selected');
     document.querySelector('.'+this_).classList.add('selected');
+    var selectedInput_s = document.querySelector('.radioBox .selected input').value
+    if(selectedInput_s!=30) {
+        document.querySelector('.orderNumber').style.display = 'inline-block'
+    }else {
+        document.querySelector('.orderNumber').style.display = 'none'
+    }
 }
 FloatingBox.deleteRecord = function() {
     if(FloatingBox.isMobile()) {
@@ -292,6 +298,10 @@ FloatingBox.complainGenerate = function() {
 
     if(textarea_s.length<15 || textarea_s.length>100) {
         return alert('请输入15至100字内的反馈内容')
+    }
+
+    if(selectedInput_s!=30 && !contenteditable_s) {
+        return alert('请输入订单号')
     }
     if(!throttling) return
     throttling = false
@@ -804,7 +814,7 @@ Floating.prototype = {
         text += "                    </div>";
         text += "";
         text += "                    <div class=\"form-group form-group_s kind contenteditable_s\">";
-        text += "                        <label class=\"label_s\">订单号";
+        text += "                        <label class=\"label_s\"><span class=\"orderNumber\">*</span>订单号";
         if(!FloatingBox.isMobile()) {
         text += "                            <span class=\"complaint-oid\" onmouseleave = \"FloatingBox.complaintOidMouseleave()\" onmouseenter=\"FloatingBox.complaintOidMouseenter()\">";
         text += "                                <img class=\"complaint-tips\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABFVJREFUWEfFl01sG0UUx9/zOlZi0QhOFRwQhaqVkDilSfk4tGmR+FCLyiHpAQ5U4qOiUiAJ88bLpdtL7ZlxlCoIEAUBlx4gBxCtWhAqbQ+A6tALqIdGNEU9gHoB1CIncrL70FjryF7v2pvmkJV88Mx7b37z3tuZ/yJs8IMbvD6kBpiZmemvVqtPIOKuTCazi5k3I+JmuwFmvoWIt4IguMTMl/L5/M9jY2O302wuFYBS6k1ElADwYJqgAHCTmZWU8oNu9h0BPM/L9vX1fYOIz4U7nUfE077vn8nlcn+urKz8Zcez2ez9tVrtAcdx9jHzfkTcFtqfW1xcfMHzvJUkkEQAY8woM38ROl4BgJNEdLLbjuy81vp1ALC/AfsfEQ8KIb6M840FMMbsYebzocMsEY2mWThqo7W2i46EEHuFED9EbdoARkZGnMHBwXrKmPmYlNKLCbwPAPYz854wuA18mojORG2VUh4iHrXjc3Nz2dnZWb/Zpg3AGKOZWSBiUQjxbqeA0bkkYGPMcWZ2EdEIISgRoFQqjWYyGVv3K0S0I2bxHYg418gOAHwS2rza2CUzD0opf4nJmh0bCILgYKFQWO2H1QxMT0/fu7y8bJvtYQB4I67htNafAcArzPyylPJU8yJa6w8B4DAAfE5Eh2IAbFN+BAALPT09A+Pj4//Wy9cwVEodQMSvAOAGEVmItkdrfQMAHgKArUR0vdmgXC4/GgTBVQD4g4i2JPgvAMAWZn5RSvl1C4AxZpqZ37ZpJaLXEgJcsONENBydL5fLNr02zZeJ6PEE/48BwJbrhBBiPArwIzM/6fv+sOu6F+MCdBozxpxlZntgjRHRe3G2xWJxt+M4FxDxJyHEUy0AWuvfAeARx3G2T05Ozq8FQGvNoX2FiHYm+U5NTW3zff8aAFwnoq3RDNxh5nuYuV9KeSctgNb6BAC8FZam49GulNqEiLcR8T8hxKZ1AxhjDjHzpwDwazabHZ6YmPi7E3hHgLspgdb6ewB4Ou61jAPpVoI1N2Gj9kSU6lrv2IRKqeOI6ALAFBG9k6YH1gqgtS4DwCQzF6WU9WN+lbxUKj2TyWS+ZeZ5KeX2lACJ50Kcv1LqmtUKQRA8WygUvmsBsJJraWnpt1D1xB7FaaCSbEKNYI/im729vY81JFtL7ULp9X7SZbROgPplxMxHmqVaW/Mopc6GEqyjEPE8rz+fz9fP82q1esDzvEQR2hAmzHxOSvl880baAKwOzOfzy9Yo6X63c8aYo8xcFyuI6AkhjiXUfVWQVKvVnqg+TJJkq3owSZgUi8X7HMe5bBf1fX+n67r/RAEaQiSEjNWFnURpsy5cryiN1YMtb0Fc+qw+HBoaKlqJFs5bPXDe9/1TCbL8JQDYa+/8cNemUqm4UR3YsQfiQEKpVgzVUpqXYSEIArdZeiU5pTpCrbOVbLVabbf9LAOAobhPMwCo2M+zXC53sSG5utGmBugW6G7nNxzgf58QQD+2nYJgAAAAAElFTkSuQmCC\" alt=\"\">什么是订单号";

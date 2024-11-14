@@ -405,6 +405,7 @@
         $(".mask_content").show()
         $(".invite_pop").show()
         getExtensionCode(true)
+        countClick('activity_tg')
     })
 
     $(".r-c-n").on('click', function (){
@@ -424,6 +425,7 @@
         $(".mask_content").show()
         $(".invite_pop").show()
         getExtensionCode(true)
+        countClick('activity_tg')
     })
 
     $(".entrance-item-cb .entrance-btn").on('click', function (){
@@ -441,6 +443,7 @@
             return
         }
         getExtensionCode()
+        countClick($(this).parents('.entrance-item').attr('data-type'))
         window.location.href = './detail.html?type=' + $(this).parents('.entrance-item').attr('data-type')
     })
 
@@ -822,6 +825,25 @@
         $(".mask_content").hide()
         $(".coupon_pop").hide()
     })
+
+    function countClick(activityType) {   // 活动点击  数据统计
+        $.ajax({
+            type: 'post',
+            url: urls + "/api/client/activity/view_activity?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME + '',
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({'activity_type':activityType}),
+            success: function success(res) {
+
+            },
+            error: function (err) {
+
+            }
+        });
+    }
 </script>
 </body>
 </html>

@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 为移动设备添加 viewport；-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 指定请求和响应遵循的缓存机制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>高考志愿卡 - 支付订单</title>
+    <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=16.5">
+    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=16.8">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=16.5">
+	<script>
+		var JANE_NAME = 'gkzy'
+		var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+	</script>
+</head>
+<body>
+<div class="payApp">
+    <div class="payAppBox">
+        <div class="info">
+            <h3>订单信息</h3>
+            <div class="infoMain">
+                <div class="infoLeft">商品名称</div>
+                <div class="infoRight" id="title">正在获取</div>
+                <div class="infoLeft">手机号</div>
+                <div class="infoRight" id="phone">正在获取</div>
+                <div class="infoLeft">下单时间</div>
+                <div class="infoRight" id="dateTime">正在获取</div>
+                <div class="infoLeft">订单编号</div>
+                <div class="infoRight" id="orderIdText">正在获取</div>
+            </div>
+        </div>
+        <div class="info couponBox">
+            <input id="coupon" onKeyUp="value=value.replace(/[\W]/g,'')" type="text" placeholder="请输入优惠券码">
+            <span class="use_now">兑  换</span>
+        </div>
+        <!-- 优惠券广告位-->
+        <div class="claim-coupons">
+            <img src="../mobile/assets/img/youhuiquan.png" alt="">
+            领取优惠券
+        </div>
+        <div class="no_pay_text">该商家未开通扫码支付，此页面仅支持优惠券兑换</div>
+        <div class="payType">
+            <div class="payTypeBox" id="ali-pay" data-payType="alipayWap">
+                <div class="tapTypeImg"><img src="../mobile/assets/img/zfb.png" alt=""> <span>支付宝支付</span> </div>
+                <div class="isSelect isSelect1">
+                    <img class="img" src="../mobile/assets/img/noselect.png" alt="">
+                </div>
+            </div>
+            <div class="payTypeBox" id="wx-pay" data-payType="wxWap">
+                <div class="tapTypeImg"><img src="../mobile/assets/img/wx.png" alt=""> <span>微信支付</span> </div>
+                <div class="isSelect isSelect2">
+                    <img class="img" src="../mobile/assets/img/noselect.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="dsf-Pay redBook_pay" data-type="redBook" data-toggle="modal" data-target="#CustomModal">
+            <div class="PayName">
+                <img src="../mobile/assets/img/xhs.png" alt="">
+                小红书支付
+            </div>
+            <img class="noselectImg" src="../mobile/assets/img/noselect.png" alt="">
+        </div>
+        <div class="dsf-Pay taobao_pay" data-type="taobao" data-toggle="modal" data-target="#CustomModal">
+            <div class="PayName">
+                <img src="../mobile/assets/img/taobao.png" alt="">
+                淘宝支付
+            </div>
+            <img class="noselectImg" src="../mobile/assets/img/noselect.png" alt="">
+        </div>
+    </div>
+
+    <div class="bottomBox">
+        <p>请在30分钟内完成支付，如未支付完成该订单将自动取消</p>
+        <div class="payBox">
+            <div class="amount">
+                <div class="total">合计 <span>￥<span id="amountText"></span></span></div>
+                <div>计费方式：<span id="priceTetx"></span></div>
+            </div>
+            <div class="payBotton">
+                立即支付
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dashi_wx_box text_a_c">
+    <div class="customerBox">
+        <i class="close-wx"></i>
+        <div class="head">
+            <img src="../mobile/assets/img/kf.png" alt="">
+            <span class="customer-title"></span>
+        </div>
+        <div class="customerCode">
+            <img class="customer-qr" src="" alt="">
+        </div>
+        <div class="segmentation-line"></div>
+        <div class="customerWay">
+            <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+            <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+            <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+            <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+        </div>
+        <p class="noCustomer">商家未设置客服</p>
+        <img class="customBg" src="../mobile/assets/img/bg1.png" alt="">
+    </div>
+</div>
+<div class="mask"></div>
+<div class="errTipBox">
+    <div class="e_tittle">提示：</div>
+    <p class="errTip_p"></p>
+    <div class="y_e">确   定</div>
+</div>
+<div class="customer-wx">
+    <img src="../mobile/assets/img/kfwx.png" alt="客服">
+</div>
+<div class="coupons_pop">
+    <input id="copyInput" type="text">
+    <p class="title">是否使用免费券支付?</p>
+    <p class="p2">订单编号: <span class="oid_pop"></span> <span class="copy_pop">复制</span></p>
+    <p class="p3">订单编号是查询订单的唯一标识，请妥善保存。</p>
+    <div class="bottom">
+        <div class="cancel_btn">取消</div>
+        <div class="determine_btn">确定</div>
+    </div>
+</div>
+<!-- 多码支付其他浏览器支付,提示弹窗 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body">
+<!--               <img src="../mobile/assets/img/cloneImg.png" alt=""> -->
+                <div class="contentBox">
+                    <p class="tips1">因数据安全问题暂不支持手机浏览器</p>
+                    <p class="tips2">请复制链接至微信或电脑端打开</p>
+                    <div class="linkUrl"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn_clone" data-dismiss="modal">复制链接</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 淘宝支付弹窗 -->
+<div class="modal fade" id="CustomModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="payClose" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel1"><span id="typeName">淘宝</span>订单支付</h4>
+            </div>
+            <div class="modal-body">
+                <div class="contentBox taobaoPay">
+                    <div class="taobao-input1">
+                        <span>输入订单</span>
+                        <input type="text" id="taobao-tid" placeholder="请输入您的淘宝订单编号">
+                    </div>
+                    <div class="taobao-input2">
+                        <span>备用订单</span>
+                        <input type="text" id="taobao-tid-1" placeholder="数额不足时填写，会合并数额">
+                    </div>
+                    <div class="taobao-payBtn">立即支付</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../mobile/assets/js/jquery.min.js"></script>
+<script src="../mobile/assets/js/bootstrap.min.js"></script>
+<script src="../mobile/assets/js/clipboard.min.js"></script>
+<script src="../mobile/assets/js/common.js?v=1.1"></script>
+<script src="../mobile/assets/js/message.js"></script>
+<script src="../mobile/assets/js/ap.js?v=16"></script>
+<script>
+    toast({
+        msg: '正在计算价格...',
+        type: 'loading',
+        time: 20000
+    })
+
+    var orderId = ''
+    var payType = ""
+    var time = 1800
+    var source = 7
+    var Timeout = ''
+    var order_sn = getQueryVariable('commitId')
+    var payId = getQueryVariable('payId')
+    var payIs = false
+    var isTips = true
+    var noPayWay = false
+    var openid = ''
+
+    // 控制支付方式选中
+    function typeSelect(type, use) {
+        if(type == 'wxPublicNum' || type == 'wxWap') {
+            $('.isSelect2>.img').attr('src','../mobile/assets/img/select.png')
+            $('.isSelect1>.img').attr('src','../mobile/assets/img/noselect.png')
+        }else if(type == 'alipayWap') {
+            $('.isSelect1>.img').attr('src','../mobile/assets/img/select.png')
+            $('.isSelect2>.img').attr('src','../mobile/assets/img/noselect.png')
+        }
+        if(!use){
+            payType = type
+        }
+    }
+    function llqType(pay_way) {
+        isTips = false
+        if(pay_way.taobao){
+            $(".taobao_pay").css('display' , 'flex')
+        }
+        if(pay_way.redBook){
+            $(".redBook_pay").css('display' , 'flex')
+        }
+
+        if(pay_way.default == 'scanCodeRich') {
+            payType = "scanCodeRich"
+            $('.payType').hide()
+            payIs = true
+            if(!pay_config.scanCodeRichAlipay.enabled && pay_way.alipay) {
+                $('.payType').show()
+                typeSelect('wxWap',true)
+                $('#wx-pay').attr('data-paytype', 'scanCodeRich')
+            }
+            if(!pay_config.scanCodeRichWx.enabled && pay_way.wx) {
+                $('.payType').show()
+                typeSelect('alipayWap',true)
+                $('#ali-pay').attr('data-paytype', 'scanCodeRich')
+                if (/MicroMessenger/.test(window.navigator.userAgent)) {  // 微信浏览器
+                    $('#wx-pay').attr('data-payType','wxPublicNum')
+                }
+            }
+            if (/MicroMessenger/.test(window.navigator.userAgent)) {  // 微信浏览器
+                source = 2
+                if (!pay_config.scanCodeRichWx.enabled) {  // 扫码付不支持微信支付
+                    $(".modal-body .tips2").text('请复制链接至电脑端打开')
+                    $('.payBotton').attr('data-toggle' , "modal").attr("data-target" , "#myModal")
+                    isTips = true
+                    $('.linkUrl').text(window.location.href)
+                    return
+                }
+            }
+            if(!(/MicroMessenger/.test(window.navigator.userAgent)) && !(/AlipayClient/.test(window.navigator.userAgent))) {
+                if (!pay_config.scanCodeRichWx.enabled) {  // 扫码付不支持微信支付
+                    $(".modal-body .tips2").text('请复制链接至电脑端打开')
+                }
+                $('.payBotton').attr('data-toggle' , "modal").attr("data-target" , "#myModal")
+                isTips = true
+                $('.linkUrl').text(window.location.href)
+                return
+            }
+        }else {
+            if (/MicroMessenger/.test(window.navigator.userAgent)) {    // 微信浏览器
+                typeSelect('wxPublicNum')
+                $('#wx-pay').attr('data-payType','wxPublicNum')
+                source = 2
+
+                if(getQueryVariable('openid')){
+                    $('.payType').show()
+                    payIs = true
+                    $('#wx-pay').show()
+                    openid = getQueryVariable('openid')
+                }
+                if(pay_way.wx){
+                    typeSelect('wxPublicNum')
+                }else {
+                    $('#wx-pay').hide()
+                    typeSelect('alipayWap')
+                }
+
+            }else { // 除微信浏览器, 其他浏览器默认选中支付宝支付
+                if(pay_way.alipay) {
+                    typeSelect('alipayWap')
+                }else if(pay_way.wx) {
+                    typeSelect('wxWap')
+                    $('.payBotton').attr('data-toggle' , "modal").attr("data-target" , "#myModal")
+                    isTips = true
+                    $('.linkUrl').text(window.location.href)
+                }
+            }
+            if(pay_way.alipay || pay_way.wx) {
+                $('.payType').show()
+                payIs = true
+            }
+            if(!pay_way.alipay) {
+                $(".payTypeBox[data-paytype='alipayWap']").hide()
+            }
+            if(!pay_way.wx) {
+                $(".payTypeBox[data-paytype='wxWap']").hide()
+                $(".payTypeBox[data-paytype='wxPublicNum']").hide()
+            }
+
+            // 默认支付方式为淘宝或小红书, 说明没有其他支付方式了
+            if(pay_way.default == 'taobao' || pay_way.default == 'redBook') {
+                $(".noPayWay").show();
+                $(".bottomBox").hide()
+            }
+            if(pay_way.default == 'taobao'){
+                if(pay_way.scanCodeRich){
+                    payIs = true
+                    payType = "scanCodeRich"
+                    if(!(/MicroMessenger/.test(window.navigator.userAgent)) && !(/AlipayClient/.test(window.navigator.userAgent))) {
+                        $('.payBotton').attr('data-toggle' , "modal").attr("data-target" , "#myModal")
+                        isTips = true
+                        $('.linkUrl').text(window.location.href)
+                        return
+                    }
+                }
+            }
+        }
+
+    }
+
+    $('.payTypeBox').click(function() {
+        $('.payTypeBox .img').attr('src','../mobile/assets/img/noselect.png')
+        $(this).children().children('.img').attr('src','../mobile/assets/img/select.png')
+        payType = $(this).attr('data-payType')
+        
+        // 除开微信浏览器的时候, 选中微信支付就弹窗提示复制链接, 否则正常提交
+        if(!(/MicroMessenger/.test(window.navigator.userAgent))) {
+            if(payType == 'wxWap' || payType == 'scanCodeRich') {
+                if(payType == 'wxWap'){
+                    $(".modal-body .tips2").text('请复制链接至微信或电脑端打开')
+                }
+                $('.payBotton').attr('data-toggle' , "modal").attr("data-target" , "#myModal")
+                isTips = true
+                $('.linkUrl').text(window.location.href)
+                return
+            }else {
+                $('.payBotton').attr('data-toggle' , "").attr("data-target" , "")
+                isTips = false
+                return
+            }
+        }else{
+            if(payType == 'wxPublicNum') {
+                $('.payBotton').attr('data-toggle' , "").attr("data-target" , "")
+                isTips = false
+            }
+            if(payType == 'scanCodeRich' && $(this).attr('id')!=='wx-pay') {
+                $('.payBotton').attr('data-toggle' , "modal").attr("data-target" , "#myModal")
+                isTips = true
+            }
+        }
+    })
+
+    $('#title').text(getQueryVariable('title'))
+    $('#orderIdText').text(order_sn)
+    $('#phone').text(getQueryVariable('phone'))
+    $('#dateTime').text(getQueryVariable('created'))
+
+    if(!order_sn) location.href='./index.html'
+
+    function payWay(goods_info , pay_way) {
+
+        $("#priceTetx").text(goods_info[0].selling_price + '元/张')
+
+        $('#amountText').text(getQueryVariable('order_amount'))
+
+        if(!pay_way.alipay && !pay_way.wx && !pay_way.scanCodeRich && !pay_way.taobao){
+            noPayWay = true
+        }
+        if(noPayWay){
+            $(".noPayWay").show();
+            $(".no_pay_text").show();
+            $(".payType").hide();
+            $(".bottomBox").hide();
+        }
+        toastNone()
+        llqType(pay_way)
+    }
+    $('.payBotton').click(function() {
+        if(isTips) return
+        if(!payIs) return toast({msg: '暂未配置支付'})
+        if(payType == 'scanCodeRich') {
+            editUrl(order_sn)
+            window.location.href = getQueryVariable('pay_wap_url') + '/pay/waporder/' + order_sn + '?source=' + source
+        }else if(payType == 'wxPublicNum'){
+            var formData = getFormData({
+                order_sn: order_sn,
+                pay_type: payType,
+                source,
+                openid: openid,
+            })
+            $.ajax({
+                type: "POST",
+                url:urls + '/api/client/pay/payOrder',
+                processData: false,
+                contentType: false,
+                xhrFields: {
+                    withCredentials: true
+                },
+                data: formData,
+                success: function (resX) {
+                    if(resX.code !== 200){
+                        toast(resX.codeMsg)
+                        if(resX.code == 3001){
+                            toast('订单已支付')
+                            window.location.href = "./query.html?oid=" + order_sn;
+                        }
+                        return
+                    }
+                    if (typeof WeixinJSBridge == "undefined") {
+                        if (document.addEventListener) {
+                            document.addEventListener(
+                                "WeixinJSBridgeReady",
+                                onBridgeReady,
+                                false
+                            );
+                        } else if (document.attachEvent) {
+                            document.attachEvent("WeixinJSBridgeReady", onBridgeReady);
+                            document.attachEvent("onWeixinJSBridgeReady", onBridgeReady);
+                        }
+                    } else {
+                        onBridgeReady(resX.data);
+                    }
+                    function onBridgeReady(data) {
+                        window.WeixinJSBridge.invoke(
+                            "getBrandWCPayRequest",
+                            {
+                                appId: payWay_Info.wx_jsapi, //公众号名称，由商户传入
+                                timeStamp: data.timeStamp + "", //时间戳，自1970年以来的秒数
+                                nonceStr: data.nonceStr, //随机串
+                                package: "prepay_id=" + data.package,
+                                signType: data.signType, //微信签名方式：
+                                paySign: data.paySign, //微信签名
+                                jsApiList: ["chooseWXPay"]
+                            },
+                            function(res) {
+                                if (res.err_msg == "get_brand_wcpay_request:ok") {
+                                    // 使用以上方式判断前端返回,微信团队郑重提示：
+                                    //res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。
+                                }else{ //跳转支付失败页
+                                    toast('支付失败')
+                                }
+                            }
+                        );
+                    }
+                },
+                error: function () {
+                    toast("网络错误！")
+                }
+            })
+        }else{
+            var formData = getFormData({
+                order_sn: order_sn,
+                pay_type: payType,
+                source,
+                return_url: window.location.protocol + '//' + window.location.hostname + "/pay_result.html?oid=" + order_sn + "&price= "+$('#amountText').text()+"" + "&payType="+ payType + ""
+            })
+            toast({
+                msg: '正在跳转支付...',
+                type: 'loading'
+            })
+            $.ajax({
+                type: 'post',
+                url: urls + '/api/client/pay/payOrder',
+                processData: false,
+                contentType: false,
+                xhrFields: {
+                    withCredentials: true
+                },
+                data: formData,
+                success: function(data) {
+                    if(data.code == 200) {
+                        if(/MicroMessenger/.test(window.navigator.userAgent) && payType == 'alipayWap') { // 微信浏览器且支付宝支付跳转之间页
+                            _AP.pay(data.data.payUrl);
+                        }else {
+                            window.location.href = data.data.payUrl
+                        }
+                        editUrl(data.data.pay_id)
+                    }else if(data.code == 3001) {
+                        toast('订单已支付')
+                        window.location.href = "./query.html?oid=" + order_sn;
+                    } else {
+                        toast({
+                            msg: data.codeMsg,
+                            type: 'error',
+                            time: 2000
+                        })
+                    }
+                },
+                error: function(err) {
+                    toast({
+                        msg: "请求失败!请检查网络",
+                        type: 'error',
+                        time: 2000
+                    })
+                }
+            });
+        }
+    })
+
+    var zdyPayType = ''
+    // 自定义订单切换
+    $('.dsf-Pay').click(function() {
+        var dsfData = {
+            redBook: {
+                name: '小红书',
+                placeholder: '请填写小红书订单编号'
+            },
+            taobao: {
+                name: '淘宝',
+                placeholder: '请填写淘宝订单编号'
+            }
+        }
+        $('#typeName').text(dsfData[$(this).attr('data-type')].name)
+        $('#taobao-tid').attr('placeholder' , dsfData[$(this).attr('data-type')].placeholder)
+        zdyPayType = $(this).attr('data-type')
+    })
+
+    $('#CustomModal').on('hidden.bs.modal', function (e) {
+        $("#taobao-tid").val('')
+        $('#taobao-tid-1').val('')
+    })
+    // 自定义订单支付
+    let TbPaying = false
+    $(".taobao-payBtn").click(function (){
+        if(TbPaying){
+            return;
+        }
+        if(!$("#taobao-tid").val()){
+            if(zdyPayType == 'redBook'){
+                toast('请填写小红书订单编号')
+            }
+            if(zdyPayType == 'taobao'){
+                toast('请填写淘宝订单编号')
+            }
+            return;
+        }
+        toast({
+            msg: '正在支付...',
+            type: 'loading',
+            time: 20000
+        })
+        TbPaying = true
+        let formData = getFormData({
+            order_sn: order_sn,
+            pay_type: zdyPayType,
+            source,
+            tids: $("#taobao-tid").val() + ($('#taobao-tid-1').val()?(','+$('#taobao-tid-1').val()):'')
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/pay/payOrder',
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: formData,
+            success: function (data) {
+                TbPaying = false
+                if(data.code == 200){
+
+                }else{
+                    if(data.code == 3001){
+                        toast('支付成功')
+                        window.location.href = "./query.html?oid=" + order_sn + '&editionType=' + getQueryVariable('editionType');
+                        return
+                    }else{
+                        toast({
+                            msg: data.codeMsg,
+                            type: 'error',
+                            time: 3000
+                        })
+                    }
+                }
+            },
+            error: function (err) {
+                TbPaying = false
+            },
+            complete: function (){
+
+            }
+        })
+    })
+    function editUrl(pay_id) {
+        // 修改url参数保留数据,防止返回这个页面数据发生变化
+        replaceParamVal('commitId' , order_sn , 0)
+        replaceParamVal('order_amount' , $('#amountText').text() , 0)
+        // var goodsTo = JSON.stringify(goods())
+        // replaceParamVal('goods' , goodsTo||'' , 0)
+        replaceParamVal('payId' , pay_id , 0)
+    }
+    function payStatus(id) { // 轮询
+        payId = getQueryVariable('payId') || getQueryVariable('commitId') || ''
+        if(payId) {
+            $.ajax({
+            type: "get",
+            url: urls + '/apirs/order/is_pay?pay_id=' + payId,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                clearTimeout(Timeout);
+                if (!res.data) {
+                    Timeout = setTimeout(function () {
+                        payStatus();
+                    }, 1000);
+                }else {
+                    window.location.href = "./pay_result.html?oid=" + payId + "&price= "+$('#amountText').text()+"" + "&payType="+ payType + "" ;
+                }
+            },
+            error: function () {
+                toast({
+                    msg: "请求失败!请检查网络",
+                    type: 'error',
+                    time: 2000
+                })
+                clearTimeout(Timeout);
+                Timeout = setTimeout(function () {
+                    payStatus();
+                }, 5000);
+            },
+        });
+        }else {
+            clearTimeout(Timeout);
+            Timeout = setTimeout(function () {
+                payStatus();
+            }, 1000);
+        }
+    }
+    payStatus()
+
+    var contentTypeIs = true
+
+    function goods() {
+        // 组装goods
+        var goods = []
+        for(var i = 0; i< $('.appreciationLI').length; i++) {
+            if($('.appreciationLI').eq(i).hasClass('selected') && $('.appreciationLI').eq(i).is(':visible')) {
+                goods.push($('.appreciationLI').eq(i).attr('goodsId-key'))
+            }
+        }
+        return goods
+    }
+    // 修改url参数
+    function replaceParamVal(name, val, isRefresh) {
+        var url = this.location.href.toString();
+        var pattern = "[\?]" + name + '=([^&]*)';
+        var pattern2 = "[&]" + name + '=([^&]*)';
+        var replaceText = name + '=' + val;
+        var replaceText1 = "\?" + replaceText;
+        var replaceText2 = "&" + replaceText;
+        if (url.match(pattern)) {
+            var tmp = '/\\?(' + name + '=)([^&]*)/gi';
+            var nUrl = url.replace(eval(tmp), replaceText1);;
+        } else if (url.match(pattern2)) {
+            var tmp = '/&(' + name + '=)([^&]*)/gi';
+            var nUrl = url.replace(eval(tmp), replaceText2);;
+        }
+        else {
+            if (url.match('[\?]')) {
+                var nUrl= url + '&' + replaceText;
+            } else {
+                var nUrl= url + '?' + replaceText;
+            }
+        }
+        if (isRefresh) {
+            window.location.href = nUrl
+        }
+        var stateObject = { id: "" };
+        var title = "";
+        history.replaceState(stateObject, title, nUrl);
+    }
+
+    var clipboard = new Clipboard('.btn_clone', {
+        text: function () {
+            return $('.linkUrl').text();
+        },
+    });
+
+    //复制成功响应
+    clipboard.on('success', function (e) {
+        toast({
+            msg: "复制成功",
+            type: 'success',
+            time: 2000
+        })
+    });
+
+    //复制失败响应
+    clipboard.on('error', function (e) {
+        toast({
+            msg: "复制失败!请重新尝试",
+            type: 'error',
+            time: 2000
+        })
+    });
+
+    $(".mask").on('click',function (){
+        $(".mask").hide();
+        $(".errTipBox").hide()
+        $(".coupons_pop").hide();
+    })
+
+    $(".mask").on('click',function (){
+        $(".mask").hide();
+    })
+
+    $(".y_e").on('click',function (){
+        $(".mask").hide();
+        $(".errTipBox").hide()
+    })
+
+    $(".cancel_btn").on('click',function (){
+        $(".mask").hide();
+        $(".coupons_pop").hide();
+    })
+
+    $(".determine_btn").on('click',function (){
+        couponsPay()
+    })
+
+    let canClick = true;
+    //优惠券
+    $("#coupon").on('input',function (){
+        if($(this).val().length > 0){
+            $(".use_now").addClass('active')
+        }else{
+            $(".use_now").removeClass('active')
+        }
+    })
+
+    function couponsPay(){
+        var formData2 = getFormData({
+            order_sn: order_sn,
+            pay_type: 'coupons',
+            source
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/pay/payOrder',
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: formData2,
+            success: function(data) {
+                if(data.code == 200) {
+                    if(/MicroMessenger/.test(window.navigator.userAgent) && payType == 'alipayWap') {
+                        _AP.pay(data.data.payUrl);
+                    }else {
+                        window.location.href = data.data.payUrl
+                    }
+                    // 修改url参数保留数据,防止返回这个页面数据发生变化
+                    replaceParamVal('commitId' , order_sn , 0)
+                    replaceParamVal('order_amount' , $('#amountText').text() , 0)
+                    // var goodsTo = JSON.stringify(goods())
+                    // replaceParamVal('goods' , goodsTo||'' , 0)
+                    replaceParamVal('payId' , data.data.pay_id , 0)
+                }else if(data.code == 3001) {
+                    toast('订单已支付')
+                    window.location.href = "./query.html?oid=" + order_sn;
+                } else {
+                    toast({
+                        msg: data.codeMsg,
+                        type: 'error',
+                        time: 2000
+                    })
+                }
+            },
+            error: function(err) {
+                toast({
+                    msg: "请求失败!请检查网络",
+                    type: 'error',
+                    time: 2000
+                })
+            }
+        });
+    }
+
+    $(".copy_pop").on('click',function (){
+        var text = $(".oid_pop").text()
+        $("#copyInput").val(text)
+        $("#copyInput").select()
+        try {
+            var state = document.execCommand("copy");
+        } catch (err) {
+            var state = false;
+        }
+        if (state) {
+            toast('复制成功')
+        } else {
+            toast({
+                msg: "复制失败,请手动复制",
+                type: 'error',
+                time: 2000
+            })
+        }
+    })
+
+    $(".use_now").on('click',function (){
+        if(!$("#coupon").val().length){
+            toast({
+                msg: "请输入优惠券码",
+                type: 'error',
+                time: 2000
+            })
+            return;
+        }
+        if(!canClick) return;
+        canClick = false
+        toast({
+            msg: '正在兑换优惠券...',
+            type: 'loading',
+            time: 20000
+        })
+
+        contentTypeIs = false
+        var formData = getFormData({
+            order_sn: order_sn,
+            code: $("#coupon").val()
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/variation/order',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                toastNone()
+                if (res.code == 200) {
+                    order_sn = res.data.order_sn
+                    $('#dateTime').text(res.data.created)
+                    $('#orderIdText').text(res.data.order_sn)
+                    $(".oid_pop").text(res.data.order_sn)
+                    // payStatus(order_sn)
+                    if(Number(res.data.order_amount) == 0) {
+                        $(".mask").show();
+                        $(".coupons_pop").show()
+                    }else{
+                        $('#amountText').text(res.data.order_amount)
+                    }
+                }else{
+                    $(".errTip_p").text(res.codeMsg)
+                    $(".errTipBox").show();
+                    $(".mask").show();
+                }
+                contentTypeIs=true
+                canClick = true
+            },
+            error: function () {
+                toastNone()
+                toast({
+                    msg: "请求失败!请检查网络",
+                    type: 'error',
+                    time: 2000
+                })
+                contentTypeIs=true
+                canClick = true
+            },
+        })
+    })
+</script>
+</body>
+</html>

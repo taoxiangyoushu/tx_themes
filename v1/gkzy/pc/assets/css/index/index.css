@@ -1,0 +1,754 @@
+body {
+  position: relative;
+}
+.textH3 {
+  color: #ed7d31;
+  letter-spacing: 1px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 58px;
+}
+.bannerBox {
+  background: url('../../img/banner.jpg') no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 668px;
+  padding-top: 68px;
+}
+.bannerBox .container {
+  background: url('../../img/banner-t.png') no-repeat;
+  background-position: 60% 100%;
+  height: 100%;
+}
+.bannerBox .row {
+  margin-top: 102px;
+}
+.bannerBox .bannerBoxLeft {
+  text-align: center;
+  line-height: normal;
+  float: left;
+  width: 500px;
+  margin-top: 34px;
+}
+.bannerBox .bannerBoxLeft h3 {
+  letter-spacing: 5px;
+  color: #ed7d31;
+  font-size: 90px;
+  font-weight: bold;
+  letter-spacing: 4.5px;
+}
+.bannerBox .bannerBoxLeft p {
+  letter-spacing: 2px;
+  color: #5d6d83;
+  font-size: 22px;
+  margin-top: 13px;
+}
+.bannerBox .bannerBoxLeft b {
+  color: #44546a;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+}
+.bannerBox .bannerBoxLeft div {
+  color: #44546a;
+  font-size: 20px;
+  border-top: 1px solid #858f9c;
+  border-bottom: 1px solid #858f9c;
+  display: inline-block;
+  margin-top: 27px;
+  padding: 12px 10px;
+  font-weight: bold;
+}
+.bannerBox .bannerBoxLeft div span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #97a7bd;
+  position: relative;
+  top: -5px;
+  margin: 0 6px;
+}
+.bannerBox .bannerBoxRight {
+  background-color: #808080;
+  float: right;
+  width: 320px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 27px 3px rgba(157, 86, 27, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+}
+.bannerBox .FormHead {
+  color: #333333;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+.bannerBox .FormHead::after {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 4px;
+  background-color: #ff7800;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  margin-left: -20px;
+}
+.bannerBox .FormHead span {
+  color: #ed7d31;
+}
+.DataSupport .ItemOfData {
+  height: 160px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 18px 2px rgba(46, 49, 58, 0.1);
+  border-radius: 20px;
+  padding: 40px 0;
+  margin-top: -48px;
+}
+.DataSupport .bordeR {
+  position: relative;
+}
+.DataSupport .bordeR::after {
+  position: absolute;
+  right: 0;
+  content: '';
+  width: 1px;
+  height: 80px;
+  background-color: #dfdfdf;
+  top: 0;
+}
+.DataSupport .card {
+  text-align: center;
+}
+.DataSupport .card p {
+  color: #ff7e00;
+  font-size: 18px;
+}
+.DataSupport .card p b {
+  font-size: 36px;
+}
+.DataSupport .card span {
+  color: #808080;
+  font-size: 18px;
+}
+.DataSupport .DataImg {
+  min-height: 694px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  background: url('../../img/roud-bg.png') no-repeat;
+  background-position: 50% 50%;
+  position: relative;
+}
+.DataSupport .DataImg .leftImg {
+  float: left;
+}
+.DataSupport .DataImg .rightImg {
+  float: right;
+}
+.DataSupport .DataImg .midImg {
+  position: absolute;
+  left: 50%;
+  margin-left: -235px;
+}
+.ServiceBox {
+  background-image: linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%);
+  padding-top: 10px;
+  padding-bottom: 70px;
+}
+.ServiceBox b {
+  letter-spacing: 1px;
+  color: #333333;
+  font-size: 36px;
+  font-weight: bold;
+}
+.ServiceBox .ContentText {
+  color: #585a69;
+  font-size: 18px;
+  width: 426px;
+  line-height: 36px;
+  margin-top: 28px;
+}
+.ServiceBox .ContentText img {
+  margin-right: 6px;
+}
+.ServiceBox .ContentText span {
+  color: #ed7d31;
+}
+.ServiceBox .containerMain {
+  padding-top: 130px;
+}
+.ServiceBox .containerMain .textMain {
+  padding-top: 170px;
+  padding-left: 33px;
+}
+.ServiceBox .containerMain .textMainRight {
+  padding-left: 95px;
+}
+.ServiceBox .containerMain .imgMain img {
+  width: 100%;
+}
+.ServiceBox .textMain1 {
+  background: url('../../img/1.png') no-repeat;
+  background-position: 0 50px;
+}
+.ServiceBox .textMain2 {
+  background: url('../../img/2.png') no-repeat;
+  background-position: 95px 50px;
+}
+.ServiceBox .textMain3 {
+  background: url('../../img/3.png') no-repeat;
+  background-position: 0 50px;
+}
+.ServiceBox .textMain4 {
+  background: url('../../img/4.png') no-repeat;
+  background-position: 95px 50px;
+}
+.ServiceBox .textMain5 {
+  background: url('../../img/5.png') no-repeat;
+  background-position: 0 50px;
+}
+.CourseBox {
+  background-color: #f3f6f9;
+  padding-bottom: 70px;
+}
+.CourseBox .CourseBoxMain {
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-top: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.CourseBox .CourseBoxMain .MainContent .text {
+  margin-top: 20px;
+}
+.CourseBox .CourseBoxMain .MainContent img {
+  vertical-align: middle;
+}
+.CourseBox .CourseBoxMain .leftContainer {
+  width: 74%;
+  padding: 42px 32px 46px 32px;
+}
+.CourseBox .CourseBoxMain .leftContainer b {
+  color: #333333;
+  font-size: 30px;
+}
+.CourseBox .CourseBoxMain .leftContainer p {
+  color: #595858;
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 50px;
+  position: relative;
+}
+.CourseBox .CourseBoxMain .leftContainer p::after {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 4px;
+  background-color: #ed7d31;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+.CourseBox .CourseBoxMain .leftContainer div {
+  color: #595858;
+  font-size: 16px;
+  line-height: 32px;
+}
+.CourseBox .CourseBoxMain .leftContainer .text {
+  display: inline-block;
+  width: 536px;
+  vertical-align: top;
+  padding-left: 36px;
+}
+.CourseBox .CourseBoxMain .tipsText {
+  width: 100%;
+  height: 53px;
+  line-height: 53px;
+  border-top: 1px solid #ffe7cf;
+  padding-left: 30px;
+  color: #ed7d31;
+  font-size: 12px;
+}
+.CourseBox .CourseBoxMain .rightImg {
+  position: absolute;
+  right: 33px;
+  bottom: -31px;
+}
+#formSubmit {
+  padding-top: 46px;
+}
+#formSubmit input {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: solid 1px #dddde3;
+}
+#formSubmit .Verification {
+  overflow: hidden;
+}
+#formSubmit .Verification input {
+  width: 57%;
+  float: left;
+}
+#formSubmit .Verification .VerificationCode {
+  width: 40%;
+  float: right;
+  height: 40px;
+  background-color: #f3f4f7;
+  border-radius: 8px;
+  border: solid 1px #dddde3;
+  line-height: 40px;
+  padding: 0;
+  color: #333333;
+  font-size: 14px;
+}
+#formSubmit .Submit {
+  width: 260px;
+  height: 45px;
+  background-color: #ed7d31;
+  border-color: #ed7d31;
+  border-radius: 8px;
+  box-shadow: none;
+  outline: 0 !important;
+  margin-top: 8px;
+}
+#formSubmit .SubmitTips {
+  text-align: center;
+  color: #999999;
+  font-size: 12px;
+}
+#formSubmit .SubmitTips span {
+  color: #ed7d31;
+}
+#formSubmit .form-group {
+  margin-bottom: 12px;
+}
+.CaseBox {
+  padding-bottom: 68px;
+}
+.CaseBox .PictureBox {
+  margin-top: 60px;
+  overflow: hidden;
+}
+.CaseBox .PictureBox > div {
+  float: left;
+}
+.CaseBox .PictureBox .MainAccount {
+  width: 33%;
+  height: 580px;
+}
+.CaseBox .PictureBox .MainAccount img {
+  height: 100%;
+  width: 100%;
+}
+.CaseBox .PictureBox .SmallPicture {
+  width: 67%;
+  float: right;
+}
+.CaseBox .PictureBox .SmallPicture .col-md-6 {
+  height: 290px;
+  padding: 0;
+}
+.CaseBox .PictureBox .SmallPicture img {
+  width: 100%;
+  height: 100%;
+}
+.CaseBox .bottomImg {
+  margin-top: 12px;
+}
+.UseProcBox {
+  background-color: #f3f6f9;
+  padding-bottom: 68px;
+}
+.UseProcBox .UseProcContent {
+  margin-top: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.UseProcBox .UseProcContent > div {
+  float: left;
+  width: 25%;
+}
+.UseProcBox .UseProcContent::after {
+  content: '';
+  display: inline-block;
+  width: 1000px;
+  border-top: dashed 2px #b5c5dc;
+  position: absolute;
+  left: 100px;
+  top: 59px;
+}
+.UseProcBox .Sequence1 {
+  text-align: left;
+}
+.UseProcBox .Sequence1 .Sequence {
+  margin-left: 15px;
+}
+.UseProcBox .Sequence4 {
+  text-align: right;
+}
+.UseProcBox .Sequence4 .Sequence {
+  margin-right: 15px;
+}
+.UseProcBox .Sequence2,
+.UseProcBox .Sequence3 {
+  text-align: center;
+}
+.UseProcBox .Sequence {
+  width: 120px;
+  height: 120px;
+  border: solid 1px #ff7800;
+  text-align: center;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+}
+.UseProcBox .Sequence > div {
+  width: 96px;
+  height: 96px;
+  background-image: linear-gradient(180deg, #ffb200 0%, #ff7e00 100%);
+  display: inline-block;
+  text-align: center;
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: bold;
+  border-radius: 50%;
+  line-height: 96px;
+  margin-top: 12px;
+}
+.UseProcBox .SequenceText {
+  display: inline-block;
+  text-align: center;
+  margin-top: 36px;
+}
+.UseProcBox .SequenceText b {
+  color: #333333;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 7px;
+  display: inline-block;
+}
+.UseProcBox .SequenceText p {
+  color: #585a69;
+  font-size: 16px;
+}
+.ContrastBox {
+  background: url('../../img/product_bg.png') no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: 70px;
+}
+.ContrastBox .textH3 {
+  padding-top: 90px;
+}
+.ContrastBox .textH3 img {
+  vertical-align: middle;
+  margin-top: -20px;
+}
+.ContrastBox .PKContent {
+  min-height: 559px;
+  background: url('../../img/pk_bg.png') no-repeat;
+  background-size: 100% 100%;
+  margin-top: 50px;
+  position: relative;
+  overflow: hidden;
+}
+.ContrastBox .leftBox {
+  width: calc(50% - 101px);
+  float: left;
+  padding: 46px 0 46px 32px;
+}
+.ContrastBox .leftBox > div {
+  margin-top: 22px;
+}
+.ContrastBox .leftBox h3 {
+  letter-spacing: 1px;
+  color: #a74e00;
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 56px;
+  position: relative;
+}
+.ContrastBox .leftBox h3::after {
+  width: 40px;
+  height: 4px;
+  background-color: #ff8500;
+  border-radius: 2px;
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+.ContrastBox .leftBox b {
+  color: #824700;
+  font-size: 20px;
+  font-weight: bold;
+}
+.ContrastBox .leftBox p {
+  color: #b67a2c;
+  font-size: 14px;
+  margin-top: 6px;
+}
+.ContrastBox .rightBox {
+  width: calc(50% - 101px);
+  float: right;
+  padding: 46px 0 46px 50px;
+}
+.ContrastBox .rightBox > div {
+  margin-top: 22px;
+}
+.ContrastBox .rightBox h3 {
+  letter-spacing: 1px;
+  color: #666666;
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 56px;
+  position: relative;
+}
+.ContrastBox .rightBox h3::after {
+  width: 40px;
+  height: 4px;
+  background-color: #777777;
+  border-radius: 2px;
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+.ContrastBox .rightBox b {
+  color: #666;
+  font-size: 20px;
+  font-weight: bold;
+}
+.ContrastBox .rightBox p {
+  color: #999;
+  font-size: 14px;
+  margin-top: 6px;
+}
+.ContrastBox .centerBox {
+  display: inline-block;
+  width: 202px;
+  position: absolute;
+  left: 50%;
+  margin-left: -101px;
+  top: 50%;
+  margin-top: -101px;
+}
+.ContrastBox .centerBox .Circle {
+  border: solid 24px #ffffff;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background-image: linear-gradient(0deg, #ffb200 0%, #ffc944 47%, #ff9d3d 100%);
+  color: #fffcf8;
+  font-size: 72px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 150px;
+}
+.gloryBox {
+  padding-top: 70px;
+  text-align: center;
+  background: url('../../img/bottom_bg.png') no-repeat;
+  background-size: 100% auto;
+  background-position: 100% 100%;
+}
+.gloryBox .container {
+  height: 536px;
+  background-image: linear-gradient(0deg, #fdece2 0%, #ffe8d9 15%, #fcf7f3 100%);
+  border-radius: 20px;
+  padding: 70px 32px;
+}
+.gloryBox h2 {
+  letter-spacing: 1px;
+  color: #ed7d31;
+  font-size: 48px;
+  font-weight: bold;
+}
+.gloryBox .BrightSpot {
+  background-image: linear-gradient(90deg, #ffedd9 0%, #fff2e4 38%, rgba(255, 250, 247, 0.8) 100%);
+  box-shadow: 0px 0px 21px 9px rgba(237, 125, 49, 0.08);
+  border-radius: 20px;
+  border: solid 2px #ffffff;
+  width: 100%;
+  text-align: left;
+  padding: 30px;
+  margin-top: 50px;
+}
+.gloryBox .BrightSpot > div {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+.gloryBox .BrightSpot .BottomClose {
+  margin-left: 36px;
+}
+.gloryBox .BrightSpot .MainBody {
+  color: #175181;
+  font-size: 24px;
+  font-weight: bold;
+}
+.gloryBox .BrightSpot .Bottomlogo {
+  margin-left: 36px;
+}
+.gloryBox .BrightSpot .English {
+  letter-spacing: 3px;
+  color: #175181;
+  font-size: 18px;
+}
+.gloryBox .BrightSpot .APPName {
+  color: #595858;
+  font-size: 22px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 14px;
+}
+.gloryBox .Initial {
+  margin-top: 48px;
+  font-weight: bold;
+}
+.gloryBox .Initial .EstablishmentTime {
+  letter-spacing: 1px;
+  color: #333333;
+  font-size: 36px;
+  font-weight: bold;
+}
+.gloryBox .Initial .EstablishmentName {
+  color: #c41211;
+  font-size: 40px;
+}
+.gloryBox .ForTheRecord {
+  color: #ffffff;
+  font-size: 12px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border-top: 1px solid #fff;
+  margin-top: 70px;
+}
+.FloatingWindow {
+  min-height: 128px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding-top: 40px;
+  z-index: 1000;
+  display: none;
+}
+.FloatingWindow .FloatingBox {
+  position: relative;
+}
+.FloatingWindow .FloatingWindowClo {
+  padding: 12px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.FloatingWindow .FloatingWindowClo .container {
+  padding-left: 170px;
+}
+.FloatingWindow .containerVip {
+  background: url('../../img/vip.png') no-repeat;
+  min-height: 128px;
+  background-position: 0 100%;
+  position: relative;
+  z-index: 1001;
+}
+.FloatingWindow .Action {
+  color: #ffffff;
+  font-size: 26px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.FloatingWindow .Action span {
+  color: #ffbf2b;
+  font-size: 26px;
+}
+.FloatingWindow .closecc {
+  margin-left: 110px;
+  z-index: 1002;
+  position: relative;
+  cursor: pointer;
+}
+.FloatingWindow.FloatingWindow2 {
+  position: absolute;
+  bottom: 654px;
+  z-index: 1000;
+}
+#formSubmit2 {
+  position: relative;
+  z-index: 1002;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 40px;
+}
+#formSubmit2 .group {
+  background-color: #ffffff;
+  border-radius: 18px;
+  display: inline-block;
+  padding: 0 8px;
+}
+#formSubmit2 .group2 {
+  padding-right: 0;
+  margin-left: 2px;
+}
+#formSubmit2 input {
+  width: 150px;
+  display: inline-block;
+  border: 0 !important;
+  outline: 0;
+  box-shadow: none;
+  border-radius: 18px;
+  vertical-align: middle;
+  background-color: transparent !important;
+}
+#formSubmit2 .VerificationCode {
+  display: inline-block;
+  border-radius: 18px;
+  vertical-align: middle;
+  position: relative;
+  font-size: 14px;
+  color: #ff6700;
+}
+#formSubmit2 .VerificationCode::after {
+  content: '';
+  display: inline-block;
+  border-left: 1px solid #dadada;
+  position: absolute;
+  left: -2px;
+  height: 18px;
+}
+#formSubmit2 .VerificationCode.forbid {
+  color: #999999;
+}
+#formSubmit2 .button-css {
+  background-color: #ff6700;
+  border-radius: 18px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+}
+#formSubmit2 .btn.focus,
+#formSubmit2 .btn:focus,
+#formSubmit2 .btn:hover {
+  outline: 0;
+}
+#formSubmit2 .form-group {
+  margin-bottom: 0;
+}
+#formSubmit2 .has-feedback .form-control {
+  padding-right: 20px;
+}
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected {
+  transition: background-color 999999999s !important;
+}
