@@ -263,13 +263,13 @@
         createQRCodeBox: function() {
             var html = ''
             html += '<div class="QRCodeBox">'
-            html += '    <img class="closedDL " src="http://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
+            html += '    <img class="closedDL " src="https://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
             html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close_dl.png" alt="">'
             html += '    <div class="whiteboard">'
             html += '        <div class="Switchlogin">'
             html += '           <div class="SMS_verification">'
             html += '               <span class="SMS_button Switch_phone">短信验证码登录</span>'
-            html += '               <img class="SMS_image Switch_phone" src="http://api.taoxiangyoushu.com/html/v1/utils/img/Mobilelogin.png">'
+            html += '               <img class="SMS_image Switch_phone" src="https://api.taoxiangyoushu.com/html/v1/utils/img/Mobilelogin.png">'
             html += '           </div>'
             html += '        </div>'
             html += '        <h3>微信扫码登录</h3>'
@@ -325,7 +325,7 @@
 
             SMS.children('.SMS_button').css({
                 "display": "inline-block",
-                "background-image":"url(http://api.taoxiangyoushu.com/html/v1/utils/img/SMS_background.png)",
+                "background-image":"url(https://api.taoxiangyoushu.com/html/v1/utils/img/SMS_background.png)",
                 "background-size": "100% 100%",
                 "background-repeat": "no-repeat",
                 "color":"#0096FF",
@@ -436,20 +436,20 @@
           SMSloginbox: function() {
             var html = ''
             html += '<div class="SMSodeBox">'
-            html += '    <img class="closedDL" src="http://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
+            html += '    <img class="closedDL" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
             html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close_dl.png" alt="">'
             html += '    <div class="whiteboard">'
             html += '        <div class="Switchlogin">'
             html += '           <div class="WeChat_verification">'
             html += '               <span class="WeChat_button Switchscann_code">微信扫码登录</span>'
-            html += '               <img class="WeChat_image Switchscann_code" src="http://api.taoxiangyoushu.com/html/v1/utils/img/QRcode_login.png">'
+            html += '               <img class="WeChat_image Switchscann_code" src="https://api.taoxiangyoushu.com/html/v1/utils/img/QRcode_login.png">'
             html += '           </div>'
             html += '        </div>'
             html += '        <h3>短信验证码登录</h3>'
             html += '        <div class="QRCodeDL">'
             html += '            <form id="formSubmit">  '
             html += '             <div class="Enter_number border1">'
-            html += '                   <img src="http://api.taoxiangyoushu.com/html/v1/utils/img/phone.png"/>'
+            html += '                   <img src="https://api.taoxiangyoushu.com/html/v1/utils/img/phone.png"/>'
             html += '                   <input placeholder="请输入手机号" class="number_input" id="phone" autocomplete="off" name="phone"/>'
             html += '               </div>'
             html += '                   <span id="phone_err"></span>'
@@ -505,7 +505,7 @@
 
             WECHAT.children('.WeChat_button').css({
                 "display": "inline-block",
-                "background-image":"url(http://api.taoxiangyoushu.com/html/v1/utils/img/SMS_background.png)",
+                "background-image":"url(https://api.taoxiangyoushu.com/html/v1/utils/img/SMS_background.png)",
                 "background-size": "100% 100%",
                 "background-repeat": "no-repeat",
                 "color":"#0096FF",
@@ -717,7 +717,7 @@
         createMergeBox: function (){
             var html = ''
             html += '<div class="MergeBox">'
-            html += '    <img class="closedDL " src="http://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
+            html += '    <img class="closedDL " src="https://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
             html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close_dl.png" alt="">'
             html += '    <div class="QRCodeBox">'
             html += '        <div class="whiteboard">'
@@ -746,7 +746,7 @@
             html += '            <div class="QRCodeDL">'
             html += '                <form id="formSubmit2">  '
             html += '                <div class="Enter_number border1">'
-            html += '                        <img src="http://api.taoxiangyoushu.com/html/v1/utils/img/phone.png"/>'
+            html += '                        <img src="https://api.taoxiangyoushu.com/html/v1/utils/img/phone.png"/>'
             html += '                        <input placeholder="请输入手机号" class="number_input2" id="phone2" autocomplete="off" name="phone"/>'
             html += '                    </div>'
             html += '                        <span id="phone_err2"></span>'
@@ -811,7 +811,7 @@
 
             SMS.children('.SMS_button').css({
                 "display": "inline-block",
-                "background-image":"url(http://api.taoxiangyoushu.com/html/v1/utils/img/SMS_background.png)",
+                "background-image":"url(https://api.taoxiangyoushu.com/html/v1/utils/img/SMS_background.png)",
                 "background-size": "100% 100%",
                 "background-repeat": "no-repeat",
                 "color":"#0096FF",
@@ -1099,7 +1099,7 @@
         bind_phone: function() {
             var html = ''
             html += '<div class="SMSodeBox" id="bindingMobile">'
-            html += '    <img class="closedDL" src="http://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
+            html += '    <img class="closedDL" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
             html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close_dl.png" alt="">'
             html += '    <div class="whiteboard">'
             html += '        <div class="Switchlogin">'
@@ -1109,7 +1109,7 @@
             html += '        <div class="QRCodeDL">'
             html += '            <form id="formSubmit2">  '
             html += '             <div class="Enter_number border1">'
-            html += '                   <img src="http://api.taoxiangyoushu.com/html/v1/utils/img/phone.png"/>'
+            html += '                   <img src="https://api.taoxiangyoushu.com/html/v1/utils/img/phone.png"/>'
             html += '                   <input placeholder="请输入手机号" class="number_input2" id="phone2" autocomplete="off" name="phone"/>'
             html += '               </div>'
             html += '                   <span id="phone_err2"></span>'
@@ -1345,7 +1345,7 @@
         bind_phone_activity: function (){
             var html = ''
             html += '<div class="SMSodeBox" id="bindingMobile">'
-            html += '    <img class="closedDL" src="http://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
+            html += '    <img class="closedDL" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
             html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close_dl.png" alt="">'
             html += '    <div class="whiteboard">'
             html += '        <div class="Switchlogin">'
@@ -1355,7 +1355,7 @@
             html += '        <div class="QRCodeDL">'
             html += '            <form id="formSubmit2">  '
             html += '             <div class="Enter_number border1">'
-            html += '                   <img src="http://api.taoxiangyoushu.com/html/v1/utils/img/phone.png"/>'
+            html += '                   <img src="https://api.taoxiangyoushu.com/html/v1/utils/img/phone.png"/>'
             html += '                   <input placeholder="请输入手机号" class="number_input2" id="phone2" autocomplete="off" name="phone"/>'
             html += '               </div>'
             html += '                   <span id="phone_err2"></span>'
@@ -1592,7 +1592,7 @@
         phone_loginbox: function () {
             var html = ''
             html += '<div class="SMSodeBox" id="bindingMobile">'
-            html += '    <img class="closedDL" src="http://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
+            html += '    <img class="closedDL" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
             html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close_dl.png" alt="">'
             html += '    <div class="whiteboard">'
             html += '        <div class="Switchlogin">'
@@ -1602,7 +1602,7 @@
             html += '        <div class="QRCodeDL">'
             html += '            <form id="formSubmit2">  '
             html += '             <div class="Enter_number border1">'
-            html += '                   <img src="http://api.taoxiangyoushu.com/html/v1/utils/img/phone.png"/>'
+            html += '                   <img src="https://api.taoxiangyoushu.com/html/v1/utils/img/phone.png"/>'
             html += '                   <input placeholder="请输入手机号" class="number_input2" id="phone2" autocomplete="off" name="phone"/>'
             html += '               </div>'
             html += '                   <span id="phone_err2"></span>'

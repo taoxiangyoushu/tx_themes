@@ -44,6 +44,11 @@
 .order-cont .order-msg {
   font-size: 16px;
   padding: 20px 30px;
+  background: #fff;
+  border-radius: 10px;
+}
+.order-cont .order-msg.payBox {
+  min-height: 534px;
 }
 .order-cont .order-msg .row-label {
   margin-bottom: 18px;
@@ -433,7 +438,7 @@
 .order-cont .color-block {
   width: 100%;
   height: 18px;
-  background-color: #edf7ff;
+  background-color: transparent;
 }
 .order-cont .clearfix2 {
   overflow: hidden;

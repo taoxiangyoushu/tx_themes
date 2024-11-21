@@ -66,6 +66,38 @@ window.onload = function (){
 		success: function success(result) {
 			if(result.code == '200') {
 				var data = result.data
+				var seller_info = data.seller_info
+				$(".customerBox .customer-title").text(seller_info.kf_title || '联系客服')
+				$(".customerBox .customer-qr").attr('src', seller_info.kf_qr || '')
+				$('.customerBox .qqText .s1').text(seller_info.qq || '')
+				$('.customerBox .telephone .s1').text(seller_info.phone || '')
+				$('.customerBox .mailbox .s1').text(seller_info.email || '')
+				$('.customerBox .wxText .s1').text(seller_info.wx || '')
+				if(seller_info.qq) $('.customerBox  .qqText').show();
+				if(seller_info.phone) $('.customerBox  .telephone').show();
+				if(seller_info.email) $('.customerBox  .mailbox').show();
+				if(seller_info.wx) $('.customerBox  .wxText').show();
+				if(seller_info.kf_qr){
+					$(".customerBox .customerCode").show()
+				}else{
+					$(".customerBox .customerCode").hide()
+				}
+				if(seller_info.qq || seller_info.phone || seller_info.email || seller_info.wx){
+					$(".customerBox .customerWay").show()
+				}else{
+					$(".customerBox .customerWay").hide()
+				}
+				if(seller_info.kf_qr && (seller_info.qq || seller_info.phone || seller_info.email || seller_info.wx)){
+					$(".customerBox .segmentation-line").show()
+				}else{
+					$(".customerBox .segmentation-line").hide()
+				}
+				if(!seller_info.qq && !seller_info.phone && !seller_info.email && !seller_info.wx && !seller_info.kf_qr){
+					$(".noCustomer").show()
+				}else{
+					$(".noCustomer").hide()
+				}
+
 				threeMsg = data.project[0].threeMsg
 				if(data.domain_config && data.domain_config.distribution_status) {
 					$('.recruit_block').show()

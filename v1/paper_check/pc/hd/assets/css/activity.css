@@ -24,14 +24,14 @@ p {
 }
 .a-content {
   background: url("../img/b_bg.png?v1") no-repeat right center, linear-gradient(180deg, #fff4f6, #fffcfd);
-  padding-top: 84px;
+  padding-top: 74px;
   padding-bottom: 20px;
   min-height: 100vh;
 }
 .a-content .back_bav {
   width: 1200px;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 .a-content .back_bav a {
   color: #333333;
@@ -93,7 +93,7 @@ p {
 }
 .a-content .getCoupons-block {
   width: 1200px;
-  height: 430px;
+  height: 413px;
   background-image: url('../img/bg.png?v1');
   background-repeat: no-repeat;
   margin: 10px auto 0;
@@ -432,11 +432,12 @@ p {
 .a-content .recruit_block {
   width: 1200px;
   height: 124px;
-  margin: 20px auto;
+  margin: 16px auto 20px;
   border-radius: 20px;
   background: #fff;
   padding: 20px 34px;
   display: none;
+  box-shadow: 0 0 8px 0 #fff0f0;
 }
 .a-content .recruit_block .left {
   float: left;

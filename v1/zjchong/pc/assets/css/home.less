@@ -29,7 +29,7 @@
 }
 
 body {
-    min-width: 1460px;
+    min-width: 1670px;
 }
 .beforeInit{
     position: fixed;
@@ -48,19 +48,23 @@ body {
 
 }
 .app{
-    background-color:#edf7ff;
+    background: #def0ff;
+    background-image: url(../img/bg_left.png), url(../img/bg_right.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, 100% 100%;
     .nav-bar{
         height:60px;
         background:url(../img/bg-top.png) no-repeat;
         background-size: 100% 100%;
         .logo-box{
             height: 60px;
+            font-size: 0;
             a{
                 display: inline-block;
                 img{
                     vertical-align: middle;
                     position: relative;
-                    top: 5px;
+                    top: 1px;
                 }
             }
             .txter{
@@ -164,6 +168,7 @@ body {
                 background-color: #fff;
                 padding: 20px;
                 margin-bottom: 20px;
+                border-radius: 10px;
                 h2{
                     margin: 0;
                     color:#34495e;
@@ -210,9 +215,12 @@ body {
             .intro-tab{
                 background-color: #fff;
                 padding: 0 30px;
-                min-height: 670px;
+                border-radius: 10px;
                 &.aigc_height {
-                    min-height: 720px;
+                    //min-height: 720px;
+                }
+                &.zip_height {
+                    min-height: 698px;
                 }
                 .r-bar-tab{
                     position: relative;
@@ -277,6 +285,7 @@ body {
                 }
                 .r-bar-ctn{
                     padding: 24px 0;
+                    min-height: 634px;
                     >div{
                         padding: 0 10px;
                     }
@@ -450,11 +459,14 @@ body {
                         }
                     }
                     dl {
-                        margin-bottom: 18px;
+                        margin-bottom: 36px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
                         > dt {
                             font-size: 16px;
                             color: #131313;
-                            padding-bottom: 6px;
+                            padding-bottom: 15px;
                         }
                         > dd {
                             color: #7d7d7d;
@@ -485,8 +497,8 @@ body {
             position: absolute;
             left: 0;
             top: 0;
-            background: url('../img/ctn-body.png') no-repeat right 99%;
-            background-color: #fff;
+            //background: url('../img/ctn-body.png') no-repeat right 99%;
+            //background-color: #fff;
             >.tab-content {
                 width: 100%;
                 height: 100%;
@@ -504,6 +516,13 @@ body {
                         }
                     }
                 }
+            }
+            .reportBtnNew {
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 1;
             }
         }
 
@@ -841,10 +860,14 @@ body {
     //20191118 new
     @height: 40px;
 
+    .uploadTy_label {
+        font-size: 0;
+    }
     .form-upload {
         @leftW: 4em;
-        padding: 14px 30px;
-        border-top: 1px solid #f4f4f4;
+        //padding: 14px 30px;
+        //border-top: 1px solid #f4f4f4;
+        background: #ffffff;
         .form-group {
             margin: 0 0 20px;
             padding:0 @leftW;
@@ -1324,7 +1347,7 @@ body {
     }
 
     .btn-submit{
-        width: 160px;
+        width: 200px;
         height: 44px;
         line-height: 44px;
         color: #fff;
@@ -2060,7 +2083,14 @@ body {
 // aigc
 .typeSelect {
     //overflow: hidden;
-    padding: 26px 30px;
+    background: #f6fbff;
+    background-image: url(../img/img1.png?);
+    background-repeat: no-repeat;
+    background-position: 97% 90%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px 0  20px 20px;
+    height: 120px;
     &:after {
         content: '';
         display: block;
@@ -2072,7 +2102,7 @@ body {
         width: 310px;
         height: 80px;
         background-color: #ffffff;
-        border-radius: 4px;
+        border-radius: 8px;
         border: solid 1px #deedff;
         float: left;
         text-align: center;
@@ -2081,12 +2111,21 @@ body {
         position: relative;
     }
     .edition {
-        height: 46px;
-        line-height: 46px;
         position: relative;
+        line-height: 46px;
+        height: 46px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #2170d6;
+        &>div {
+            height: 100%;
+            img {
+                vertical-align: sub;
+            }
+        }
         .icon-new {
             position: absolute;
-            left: 10px;
+            left: 14px;
         }
     }
     .edition_tips {
@@ -2097,8 +2136,8 @@ body {
         position: absolute;
         width: 100%;
         bottom: 0;
-        border-bottom-left-radius: 2px;
-        border-bottom-right-radius: 2px;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
         span {
             i {
                 font-style: normal;
@@ -2180,11 +2219,11 @@ body {
         color: #2170d6;
         font-size: 18px;
         font-weight: bold;
-        vertical-align:middle;
-        span {
+        >span {
             font-size: 12px;
             color: #2170d6;
             font-weight: 400;
+            margin-left: 6px;
         }
     }
     .Select {
@@ -2192,10 +2231,10 @@ body {
             background-color: #2170d6;
             color: #fff;
         }
-        background: url('../img/icon-check.png') no-repeat;
-        background-position: 100% 0;
-        border: 1px solid #2170d6;
-        box-shadow: 0 0 4px 0px #2170d63b;
+        background: url('../img/check_max.png') no-repeat;
+        background-position: 100.5% -1px;
+        border-color: #2170d6;
+        box-shadow: 0 0 8px 0 rgba(122, 179, 253, .84);
     }
 }
 .complainBox{

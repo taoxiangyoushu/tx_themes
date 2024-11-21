@@ -9,10 +9,10 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0022">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0022">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0022">
-    <link rel="stylesheet" href="../pc/assets/css/Discounts.css?v=p24.0022">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0025">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0025">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0025">
+    <link rel="stylesheet" href="../pc/assets/css/Discounts.css?v=p24.0025">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -29,7 +29,7 @@
 </div>
 <div class="app clearfix" id="app">
     <div class="nav-bar">
-        <div class="block1620 clearfix" id="memberCarrier">
+        <div class="block1632 clearfix" id="memberCarrier">
             <div class="logo-box pull-left">
                 <h1 class="hide">早降重 智能降重 </h1>
                 <a href="./index.html" title="早降重官网">
@@ -47,254 +47,327 @@
             </div>
         </div>
     </div>
-    <div class="app-body block1620">
+    <div class="app-body block1624">
         <div>
             <div class="ctn-body">
+                <a class="reportBtnNew" href="http://rfile.zaojiangchong.com/demo/report/example.html" target="_blank">
+                    <img src="../pc/assets/img/reportNew.png">
+                </a>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane submit-cont active">
                         <div class="typeSelect" id="typeSelect">
                             <div class="placeholder-line loadEffect"></div>
                             <div class="placeholder-line loadEffect"></div>
                         </div>
-                        <div >
+                        <div style="background: #f6fbff;padding: 16px 20px 20px;border-radius: 10px;">
+                            <div class="uploadTy_label">
+                                <div class="uploadTy_text">请选择您的上传方式：</div>
+                                <div class="uploadTy_btn active" data-type="files">
+                                    <img class="icon_a" src="../pc/assets/img/icon_document_pre.png" alt="">
+                                    <img class="icon_n" src="../pc/assets/img/icon_document.png" alt="">
+                                    文档
+                                </div>
+                                <div class="uploadTy_btn" data-type="words">
+                                    <img class="icon_a" src="../pc/assets/img/icon_text_pre.png" alt="" style="width: 15px">
+                                    <img class="icon_n" src="../pc/assets/img/icon_text.png" alt=""  style="width: 15px">
+                                    文本
+                                </div>
+                                <div class="uploadTy_btn" data-type="zips">
+                                    <img class="icon_a" src="../pc/assets/img/icon_report_pre.png" alt="">
+                                    <img class="icon_n" src="../pc/assets/img/icon_report.png" alt="">
+                                    报告
+                                </div>
+                            </div>
                             <form class="form-upload">
-                                <div class="form-group brandBox" style="margin-bottom: 5px" >
-                                    <label class="control-label">品牌：</label>
-                                    <div class="rower">
-                                        <ul class="way-nav">
-                                           <li class="text-brand">选择品牌降AIGC率，更精准</li>
-                                        </ul>
-                                        <ul class="way-nav brand-btn">
-                                            <li class="brand-btn-item active" data-filetype="cnkiAIGC" data-reportname="知W的AIGC报告" data-domain="303">知W</li>
-                                            <li class="brand-btn-item" data-filetype="weipuAIGC" data-reportname="维P的AIGC报告" data-domain="301">维P</li>
-                                            <li class="brand-btn-item" data-filetype="masterAIGC" data-reportname="MasterAIGC报告" data-domain="304">MasterAIGC</li>
-                                            <li class="brand-btn-item" data-filetype="paperPassAIGC" data-reportname="PP的AIGC报告" data-domain="302">PP</li>
-                                            <li class="brand-btn-item" data-filetype="otherAIGC" data-reportname="其它" data-domain="350">其它</li>
-                                        </ul>
+                                <div class="upload_block form_block">
+                                    <div class="upload_file">
+                                        <input type="file"
+                                               class="file_upload" id="docUpload"
+                                               accept=".doc,.docx,.txt,text/plain">
+
+                                        <div class="upload_btn">
+                                            <img class="upload-icon" src="../pc/assets/img/icon_uploading.png" alt="">
+                                            <img class="uploading-icon" src="../pc/assets/img/waiting.gif" alt="">
+                                            <span>上传文件</span>
+                                        </div>
+                                        <p class="upload_tipText">点击或拖拽文件上传</p>
+                                        <p class="upload_fileInfo">
+                                            <img class="upCheck" src="../pc/assets/img/upcheck.png" alt="">
+                                            <img class="upLose" src="../pc/assets/img/uplose.png" alt="">
+                                            <span class="files_nameText"></span>
+                                            <span class="deleteFile">删除</span>
+                                        </p>
+                                        <p class="errTips">  </p>
                                     </div>
-                                </div>
-                                <div class="form-group typeBox" style="margin-bottom: 5px" >
-                                    <label class="control-label">类型：</label>
-                                    <div class="rower">
-                                        <ul class="way-nav typeUl">
-                                            <li class="qwjc active" data-type="txt">
-                                                <i class="i-radio"></i><a href="#" class="type-qw">全文降重</a>
-                                            </li>
-                                            <li data-type="zip">
-                                                <i class="i-radio"></i><a href="#" class="type-bg">报告降重</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-<!--                                <div class="form-group discipBox" style="margin-bottom: 5px">-->
-<!--                                    <label class="control-label">科类：</label>-->
-<!--                                    <div class="rower">-->
-<!--                                        <ul class="way-nav sectionUl">-->
-<!--                                            <li class="" data-section="humanities">-->
-<!--                                                <i class="i-radio"></i><a href="#">文科</a>-->
-<!--                                            </li>-->
-<!--                                            <li class="" data-section="science">-->
-<!--                                                <i class="i-radio"></i><a href="#">理科</a>-->
-<!--                                            </li>-->
-<!--                                        </ul>-->
-<!--                                    </div>-->
-<!--                                    <div class="errorer">-->
-<!--                                        <span class="required">-->
-<!--                                            <img src="../pc/assets/img/error.png" alt="">-->
-<!--                                        </span>-->
-<!--                                        <span class="err-info">请选择科类</span>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-                                <div class="form-group titleGroup">
-                                    <label for="title" class="control-label">题目：</label>
-                                    <div class="rower">
-                                        <input type="text" class="form-control" id="title" name="title"
-                                               minlength=""
-                                               maxlength="60"
-                                               placeholder="请输入您的论文题目，最长不超过60字">
-                                    </div>
-                                    <div class="errorer">
-                                        <span class="required">
-                                            <img src="../pc/assets/img/error.png" alt="">
-                                        </span>
-                                        <span class="err-info">请填写论文题目</span>
-                                    </div>
-                                </div>
-                                <div class="form-group authorGroup" style="margin-bottom: 10px">
-                                    <label for="author" class="control-label">作者：</label>
-                                    <div class="rower">
-                                        <input type="text" class="form-control" id="author" name="author"
-                                               minlength=""
-                                               maxlength="15"
-                                               placeholder="请输入您的论文作者，最长不超过15字">
-                                    </div>
-                                    <div class="errorer">
-                                        <span class="required">
-                                            <img src="../pc/assets/img/error.png" alt="">
-                                        </span>
-                                        <span class="err-info">请填写论文作者</span>
-                                    </div>
-                                </div>
-                                <div class="form-group contentGroup">
-                                    <label class="control-label">方式：</label>
-                                    <div class="rower">
-                                        <ul class="way-nav uploadType">
-                                            <li class="active word-i" data-type="words">
-                                                <i class="i-radio" ></i><a href="#">文本粘贴</a>
-                                            </li>
-                                            <li class="file-i" data-type="files">
-                                                <i class="i-radio"></i><a href="#">单篇上传</a>
-                                            </li>
-                                            <li class="zip-i" data-type="zips">
-                                                <i class="i-radio"></i><a href="#">压缩包上传</a>
-                                            </li>
-                                            <li class="uploadReport-des">
-                                                系统会自动提取“AIGC报告”中的论文，仅对AIGC率高的内容进行改写
-                                            </li>
-                                            <span class="prompt-c">
-                                                <img src="../pc/assets/img/icon-prompt.png" alt="">
-                                                仅支持中文
-                                            </span>
-                                            <span class="counter" >当前已输入<i class="impl">0</i>字符</span>
-                                        </ul>
-                                        <div class="ctn-part">
-                                            <div class="word-ctn">
-                                                    <textarea class="form-control" id="text_content" name="content"
-                                                              minlength="{{checkSystemService.current().minWords}}"
-                                                              maxlength="{{checkSystemService.current().maxWords}}"
-                                                              placeholder="内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。"></textarea>
+                                    <div class="upload_tips">
+                                        <p class="p1">文件格式支持：</p>
+                                        <div class="format_size">
+                                            <div class="format_block">
+                                                <div class="format_item">DOC</div>
+                                                <div class="format_item">DOCX</div>
+                                                <div class="format_item">TXT</div>
                                             </div>
-                                            <div class="file-ctn">
-                                                <div class="form-group zip-type" style="margin:40px 0 10px;">
-                                                    <input type="text"  id="fileType" name="fileType"
-                                                           autocomplete="off"
-                                                           readonly
-                                                           placeholder="查重报告类型">
-                                                    <img class="showMore" src="../pc/assets/img/iocn-more.png" alt="" class="icon-more">
-                                                    <div class="reportTypeBox">
-                                                        <div class="lwjcTYpe">
-                                                            <div class="reportType-item" data-filetype="wanfang" data-fileTypeName="万F的查重报告">万F</div>
-                                                            <div class="reportType-item" data-filetype="weipu" data-fileTypeName="维P的查重报告">维P</div>
-                                                            <div class="reportType-item" data-filetype="zaojiance" data-fileTypeName="早检测的查重报告">早检测</div>
-                                                            <div class="reportType-item" data-filetype="checkPass" data-fileTypeName="CheckPass的查重报告">CheckPass</div>
-                                                            <div class="reportType-item" data-filetype="MasterCheck" data-fileTypeName="大师查重的报告">大师查重</div>
-                                                            <div class="reportType-item" data-filetype="paperPass" data-fileTypeName="PP的查重报告">PP</div>
-                                                            <div class="reportType-item" data-filetype="yuanwenjian" data-fileTypeName="源W鉴的查重报告">源W鉴</div>
-                                                            <div class="reportType-item" data-filetype="cnki" data-fileTypeName="知W的查重报告">知W</div>
-                                                            <div class="reportType-item" data-filetype="cnkigr" data-fileTypeName="知W个人查重报告">知W个人查重</div>
-                                                        </div>
-                                                        <div class="aigcType">
-                                                            <div class="reportType-item" data-filetype="cnkiAIGC" data-fileTypeName="知W的AIGC报告">知WAIGC 报告</div>
-                                                            <div class="reportType-item" data-filetype="weipuAIGC" data-fileTypeName="维P的AIGC报告">维PAIGC 报告</div>
-                                                            <div class="reportType-item" data-filetype="paperPassAIGC" data-fileTypeName="PP的AIGC报告">PP AIGC报告</div>
-                                                            <div class="reportType-item" data-filetype="masterAIGC" data-fileTypeName="MasterAIGC报告">MasterAIGC报告</div>
-                                                            <div class="reportType-item" data-filetype="otherAIGC" data-fileTypeName="AIGC报告">其它</div>
-                                                        </div>
-                                                    </div>
-                                                    <p style="margin-top: 20px;">系统会自动提取“<span class="name-reportType">查重报告</span>”中的论文，仅对<span class="rate-type">重复率</span>高的内容进行改写</p>
-                                                    <p class="prompt-c-u" style="font-size: 12px;margin-top: 6px;color: #df0024;">暂不支持英语等非中文论文，非中文论文请勿提交！ </p>
+                                            <div class="size_block">
+                                                <span class="size_text">
+                                                    <img src="../pc/assets/img/icon_check.png" alt=""> 大小
+                                                </span>
+                                                <span class="size_value">15MB</span>
+                                            </div>
+                                        </div>
+                                        <div class="upload_notes">
+                                            <p class="notes_subtitle">上传须知：</p>
+                                            <p class="p2">仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
+                                            <p class="p3">目前仅支持中文，暂不支持图片、表格、公式、代码降重</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_block form_block">
+                                    <div class="border_box">
+                                        <textarea class="form-control" name="text_content" id="textContent" placeholder="内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。"></textarea>
+                                        <span class="counter">
+                                        当前已输入<i class="impl">0</i>字符</span><br/>
+                                        </span>
+                                    </div>
+                                    <span class="err-info errType_1">请填写论文内容</span>
+                                    <span class="err-info errType_2">内容字数200字~300000字</span>
+                                </div>
+                                <div class="zipFile_block form_block">
+                                    <div class="zip_description" data-type="all">系统支持各大查重报告，未识别的报告请反馈给客服处理</div>
+                                    <div class="zip_description" data-type="cnki">
+                                        上传文件名为<span class="exampleFile_name">“xxx(全文标明引文).pdf”</span>或完整的查重报告压缩包，以便系统解析降重内容，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_pdf.png" alt="">
+                                                xxx(全文标明引文).pdf
+                                            </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/jc_zw_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="wanfang">
+                                        上传文件名为<span class="exampleFile_name">“xxx(原文标注报告).pdf”</span>以便系统解析降重内容，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_pdf.png" alt="">
+                                            xxx(原文标注报告).pdf
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/jc_wf_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="weipu">
+                                        zip压缩包内需包含<span class="exampleFile_name">“xxx_比对报告.html”</span>文件，以便系统解析降重内容，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_zip.png" alt="">
+                                            张三_经济管理与财富发展.zip
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/jc_wp_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="zaojiance">
+                                        zip压缩包内需包含<span class="exampleFile_name">“详细报告.html”</span>文件，以便系统解析降重内容，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_zip.png" alt="">
+                                            张三_经济管理与财富发展.zip
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/jc_zjc_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="checkPass">
+                                        zip压缩包内需包含<span class="exampleFile_name">“xxx--详细报告.html”</span>文件，以便系统解析降重内容，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_zip.png" alt="">
+                                            张三_经济管理与财富发展.zip
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/jc_checkpass_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="MasterCheck">
+                                        zip压缩包内需包含<span class="exampleFile_name">“xxx--简明报告.html”</span>文件，以便系统解析降重内容，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_zip.png" alt="">
+                                            张三_经济管理与财富发展.zip
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/jc_dscc_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="paperPass">
+                                        仅支持上传完整zip报告，请下载PP<span class="exampleFile_name">“离线网页版报告”</span>zip，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_zip.png" alt="">
+                                            张三_经济管理与财富发展.zip
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/jc_pp_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="yuanwenjian">
+                                        zip压缩包内需包含<span class="exampleFile_name">“xxx_全文标明引文.pdf”</span>文件，以便系统解析降重内容，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_zip.png" alt="">
+                                            张三_经济管理与财富发展.zip
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/jc_ywj_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="otherAIGC">系统支持各大AIGC检测报告，未识别的报告请反馈给客服处理</div>
+                                    <div class="zip_description" data-type="masterAIGC">
+                                        仅支持上传zip，需包含文件<span class="exampleFile_name">“xxx---AIGC检测报告.html”</span>，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_zip.png" alt="">
+                                            MasterAIGC检测报告_..._张三.zip
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/aigc_masterai_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="paperPassAIGC">
+                                        仅支持上传完整zip报告，请下载PP<span class="exampleFile_name">“离线网页版报告”</span>zip，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_zip.png" alt="">
+                                            张三_经济管理与财富发展.zip
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/aigc_pp_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="wanfangAIGC">
+                                        仅支持上传pdf文件，文件名<span class="exampleFile_name">“xxx（AIGC检测报告）.pdf”</span>，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_pdf.png" alt="">
+                                            xxx（AIGC检测报告）.pdf
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/aigc_wf_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="cnkiAIGC">
+                                        支持上传pdf报告或完整zip报告，需包含文件<span class="exampleFile_name">“全文报告单_xxx.pdf”</span>，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_pdf.png" alt="">
+                                            全文报告单_xxx.pdf
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/aigc_zw_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="weipuAIGC">
+                                        仅支持上传html文件<span class="exampleFile_name">“xxx.html”</span>，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_html.png" alt="">
+                                            xxx.html
+                                        </span>
+                                        <div class="file_exampleBlock">
+                                            <div>
+                                                <img src="../pc/assets/img/aigc_wp_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="zipFile_upload">
+                                        <div class="upload_file">
+                                            <input type="file" class="file_upload" id="docUpload2">
+                                            <div class="upload_btn">
+                                                <img class="upload-icon" src="../pc/assets/img/icon_uploading.png" alt="">
+                                                <img class="uploading-icon" src="../pc/assets/img/waiting.gif" alt="">
+                                                <span>上传文件</span>
+                                            </div>
+                                            <p class="upload_tipText" >点击或拖拽文件上传</p>
+                                            <p class="upload_fileInfo">
+                                                <img class="upCheck" src="../pc/assets/img/upcheck.png" alt="">
+                                                <img class="upLose" src="../pc/assets/img/uplose.png" alt="">
+                                                <span class="files_nameText">{{ fileItem.name }}</span>
+                                                <span class="deleteFile">删除</span>
+                                            </p>
+                                            <p class="errTips"></p>
+                                        </div>
+                                        <div class="upload_tips">
+                                            <p class="p1">上传报告：</p>
+                                            <div class="report_type cc_typeBtn">
+                                                <div class="report_type_item" data-brand="cnki">知W 查重</div>
+                                                <div class="report_type_item" data-brand="wanfang">万F 查重</div>
+                                                <div class="report_type_item" data-brand="weipu">维P 查重</div>
+                                                <div class="report_type_item" data-brand="zaojiance">早检测 查重</div>
+                                                <div class="report_type_item noMarginRight" data-brand="checkPass">CheckPass 查重</div>
+                                                <div class="report_type_item" data-brand="MasterCheck">大师 查重</div>
+                                                <div class="report_type_item" data-brand="paperPass">PP 查重</div>
+                                                <div class="report_type_item" data-brand="yuanwenjian">源文鉴 查重</div>
+                                                <div class="report_type_item" data-brand="all">其它</div>
+                                            </div>
+                                            <div class="report_type aigc_typeBtn">
+                                                <div class="report_type_item" data-brand="cnkiAIGC">知W AIGC</div>
+                                                <div class="report_type_item" data-brand="wanfangAIGC">万F AIGC</div>
+                                                <div class="report_type_item" data-brand="weipuAIGC">维P AIGC</div>
+                                                <div class="report_type_item" data-brand="masterAIGC">Master AIGC</div>
+                                                <div class="report_type_item noMarginRight" data-brand="paperPassAIGC">PP AIGC</div>
+                                                <div class="report_type_item" data-brand="otherAIGC">其它</div>
+                                            </div>
+                                            <input type="text" class="platform_utl" placeholder="各平台检测机制不同，请提交平台链接">
+                                            <p class="p1 fileType_text">文件格式支持：</p>
+                                            <div class="format_size">
+                                                <div class="format_block">
+                                                    <div class="format_item zip_f">ZIP</div>
+                                                    <div class="format_item pdf_f">PDF</div>
+                                                    <div class="format_item html_f">HTML</div>
                                                 </div>
-                                                <div class="uploadTipsBox">
-                                                    <label><img src="../pc/assets/img/icon-upload-big1.png" alt="上传文档"></label>
-                                                    <p class="filesTips">将doc、docx、txt文件拖到此处，或<em>点击选择</em></p>
-                                                    <p class="filesTips" style="font-size: 12px;margin-top: 6px;">文档大小不超过30M </p>
-                                                    <p class="filesTips prompt-c-u" style="font-size: 12px;margin-top: 6px;color: #df0024;">暂不支持英语等非中文论文，非中文论文请勿提交！ </p>
-                                                    <p  class="zipsTips">
-                                                        <em>点击上传 <span class="zip-Type"></span></em>
-                                                        <span class="file-nameTip"></span>到此处，文件小于30M
-                                                    </p>
-                                                    <p class="prompt-CU1" style="font-size: 12px;margin-top: 16px;color: #df0024;">暂不支持英语等非中文论文，非中文论文请勿提交！ </p>
-                                                    <div class="backType zipBack">
-                                                        <img src="../pc/assets/img/icon-back.png" alt="" style="margin-right: 8px;margin-top: -2px;"> 返回上一步
-                                                    </div>
-                                                    <div class="zip-uploadBlock">
-                                                        <input type="file" class="docUpload zipInput"
-                                                               accept="application/zip,application/x-zip,application/x-zip-compressed">
-                                                    </div>
-                                                    <div class="pdf-uploadBlock">
-                                                        <input type="file" class="docUpload pdfInput"
-                                                               accept=".pdf">
-                                                    </div>
-                                                    <div class="html-uploadBlock">
-                                                        <input type="file" class="docUpload htmlInput"
-                                                               accept=".html">
-                                                    </div>
-                                                    <div class="txt-uploadBlock">
-                                                        <input type="file" class="docUpload fileInput"
-                                                               accept=".doc,.docx,.txt,text/plain">
-                                                    </div>
-                                                </div>
-                                                <div class="drop-mask">
-                                                    <div class="drop-body">
-                                                        <div class="fileInfo">
-                                                            <img src="../pc/assets/img/icon-file.png" alt="" class="fileIcon">
-                                                            <h6> {{paperService.getFirstPaper().file_name}}&nbsp;&nbsp;&nbsp;</h6>
-                                                            <img src="../pc/assets/img/icon-img-cha.png" alt=""
-                                                                 class="icon-img-cha"
-                                                                 ng-init="store.validateFid=1"
-                                                                 ng-if="paperService.getFirstPaper().isUploaded || paperService.getFirstPaper().hasError()"
-                                                                 ng-click="paperService.getFirstPaper().$cancel()"
-                                                            >
-                                                        </div>
-                                                        <div class="reUpload"
-                                                             ng-if="paperService.getFirstPaper().isUploaded&&!paperService.getFirstPaper().hasError()"
-                                                             ng-click="paperService.getFirstPaper().$cancel();checkSystemService.current().params.fileType='';checkSystemService.current().params.fileTypeS='';restVali()">
-                                                            <div class="reuploadImg"></div>
-                                                            重新选择
-                                                        </div>
-                                                        <div class="upload-finish err"
-                                                             ng-if="paperService.getFirstPaper().hasError()" style="color: red">
-                                                            <img src="../pc/assets/img/icon-err.png" alt="">
-                                                            {{paperService.getFirstPaper().getError()}}
-                                                        </div>
-                                                    </div>
+                                                <div class="size_block">
+                                <span class="size_text">
+                                    <img src="../pc/assets/img/icon_check.png" alt=""> 大小
+                                </span>
+                                                    <span class="size_value">30MB</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label"></label>
-                                    <div class="rower">
-                                        <button type="button" class="btn btn-submit">
-                                            <span>开始<span class="Text-jc">降重</span></span>
-                                        </button>
-                                        <span class="priceTips" style="float:right;">计费方式：<span class="impl"><span class="price-info">获取中</span>，不满千字按千字计算</span></span>
-                                    </div>
-                                </div>
                             </form>
-                            <div class="attention-list attention-txt">
-                                <h6>注意事项：</h6>
-                                <ul class="jc-zysx">
-                                    <li style="color: rgb(216, 0, 36); font-weight: bold;">1、仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</li>
-                                    <li>2、暂不支持图片、表格、公式、代码<span class="Text-jc">降重</span></li>
-                                    <li>3、下载的内容仅用于参考，不作为毕业、发表使用</li>
-                                    <li class="">4、目前仅支持中文，其它语种正在努力学习中。</li>
-                                </ul>
-                                <ul class="aigc-zysx">
-                                    <li style="color: rgb(216, 0, 36); font-weight: bold;">1、系统仅支持中文，暂不支持英语等非中文，非中文请勿提交！</li>
-                                    <li style="color: rgb(216, 0, 36); font-weight: bold;">2、仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</li>
-                                    <li>3、暂不支持图片、表格、公式、代码<span class="Text-jc">降重</span></li>
-                                    <li>4、下载的内容仅用于参考，不作为毕业、发表使用</li>
-                                </ul>
-                            </div>
-                            <div class="attention-list attention-zip">
-                                <h6>注意事项：</h6>
-                                <ul class="jc-zysx">
-                                    <li>1、仅支持<span class="impl">.zip</span>、部分<span class="impl">.pdf</span>或部分<span class="impl">.html</span>格式的文件上传。</li>
-                                    <li>2、文档大小请不要超过<span class="impl">30M</span>，否则将无法上传。可将论文中的图片删除（系统不支持图片<span class="Text-jc">降重</span>）。</li>
-                                    <li>3、下载的内容仅用于参考，不作为毕业、发表使用</li>
-                                </ul>
-                                <ul class="aigc-zysx">
-                                    <li style="color: rgb(216, 0, 36); font-weight: bold;">1、系统仅支持中文，暂不支持英语等非中文，非中文请勿提交！</li>
-                                    <li>2、仅支持<span class="impl">.zip</span>、部分<span class="impl">.pdf</span>或部分<span class="impl">.html</span>格式的文件上传。</li>
-                                    <li>3、文档大小请不要超过<span class="impl">30M</span>，否则将无法上传。可将论文中的图片删除（系统不支持图片<span class="Text-jc">降重</span>）。</li>
-                                    <li>4、下载的内容仅用于参考，不作为毕业、发表使用</li>
-                                </ul>
+                            <div class="submit-row">
+                                <div class="rower">
+                                    <button type="button" class="btn btn-submit">
+                                        <span>开始<span class="Text-jc">降重</span></span>
+                                    </button>
+                                    <span class="priceTips" style="float:right;">计费方式：
+                                        <span class="impl"><span class="price-info">获取中</span>，不满千字按千字计算</span></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-
+                    <div class="attention-list">
+                        <h6>注意事项：</h6>
+                        <ul>
+                            <li>1、上传文档/文本粘贴：仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</li>
+                            <li>2、上传报告：仅支持.zip、部分.pdf或部分.html格式的文件上传</li>
+                            <li>3、目前仅支持中文，暂不支持图片、表格、公式、代码<span class="system_text">降重</span></li>
+                            <li>4、下载的内容仅用于参考，不作为毕业、发表使用</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="distributionEntrance" data-idistributor="0">
                     <a id="distribution" href="./fx/init.html" target="_blank" rel="noopener noreferrer">
@@ -579,7 +652,7 @@
                                 <dl>
                                     <dt>重要提示</dt>
                                     <dd class="redText">1、提交之前，请确认能接受机器降重带来的误差和局限性再支付费用，确认支付后不接受任何形式退款；</dd>
-                                    <dd class="redText">2、此系统只是降重软件，报告内不含查重率；</dd>
+                                    <dd class="redText">2、降重报告的综合评分不是查重率，附带的大师查重报告仅做参考；</dd>
                                     <dd class="redText">3、请使用相同查重系统的结果来评判降重效果。</dd>
                                 </dl>
                             </div>
@@ -683,10 +756,10 @@
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="../pc/assets/js/jszip.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0022"></script>
-<script src="../pc/assets/js/Discounts.js?v=p24.0022"></script>
+<script src="../pc/assets/js/common.js?v=p24.0025"></script>
+<script src="../pc/assets/js/Discounts.js?v=p24.0025"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0022"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0025"></script>
 <script>
     var uploadType = 'content';
     var domain = '303';
@@ -695,52 +768,32 @@
     $(document).on('click','.typeSelect .card',function (){   // 版本切换
         $(".typeSelect .card").removeClass('Select')
         $(this).addClass('Select')
-        $(".attention-zip").hide()
-        $(".attention-txt").show()
         if($(this).data('type') == 'aigclwjc'){
             jc_type = 'aigclwjc'
-            $(".brandBox").show()
-            $(".qwjc").click()
-            $(".aigc-zysx").show()
-            $(".jc-zysx").hide()
             $(".cjwt-jc").hide()
             $(".cjwt-aigc").show()
             $(".intro-tab").addClass('aigc_height')
             $(".price-info").text(price_aigc?price_aigc:'获取中')
-            $(".type-qw").text('全文降AI率')
-            $(".type-bg").text('报告降AI率')
-            $('#fileType').attr('placeholder','AIGC报告类型')
-            $(".name-reportType").text('AIGC报告')
-            $(".rate-type").text('AIGC率')
-            $(".Text-jc").text('降AIGC')
+            $(".Text-jc").text('降AIGC率')
+            $(".system_text").text('降AIGC')
             $(".jcReport").hide()
             $(".aigcReport").show()
-            $(".prompt-c").show()
-            $(".prompt-c").css('display','inline')
             $("#text_content").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交！')
-            $(".prompt-c-u").show()
         }else if($(this).data('type') == 'lwjc'){
             jc_type = 'lwjc'
-            $(".brandBox").hide()
-            $(".qwjc").click()
-            $(".aigc-zysx").hide()
-            $(".jc-zysx").show()
             $(".cjwt-jc").show()
             $(".cjwt-aigc").hide()
             $(".intro-tab").removeClass('aigc_height')
             $(".price-info").text(price_lwjc?price_lwjc:'获取中')
-            $(".type-qw").text('全文降重')
-            $(".type-bg").text('报告降重')
-            $('#fileType').attr('placeholder','查重报告类型')
-            $(".name-reportType").text('查重报告')
-            $(".rate-type").text('重复率')
             $(".Text-jc").text('降重')
+            $(".system_text").text('降重')
             $(".jcReport").show()
             $(".aigcReport").hide()
-            $(".prompt-c").hide()
             $("#text_content").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。')
-            $(".prompt-c-u").hide()
         }
+        $(".uploadTy_btn.active").click()
+        $(".upload_block .deleteFile").click()
+        $(".zipFile_block .deleteFile").click()
     })
 
     $(".typeUl li").on('click',function (){           // 降重类型
@@ -1049,11 +1102,18 @@
             var text = "";
             if(typeData[i].short_name == 'lwjc'){
                 var lwjcClassArr = i==0? 'Select card lwjc':'card lwjc'
+                var unitCount = typeData[i].unit_count
+                if(typeData[i].unit_count%1000==0 && typeData[i].unit_count<10000){
+                    unitCount = typeData[i].unit_count/1000 + "千"
+                    if(typeData[i].unit_count/1000 == 1){
+                        unitCount = "千"
+                    }
+                }
                 text += "<div class=\""+lwjcClassArr+"\" goodsid=\""+typeData[i].goods_id+"\" data-type=\"lwjc\">";
                 text += "    <div class=\"edition\">";
                 text += "        <div>";
                 text += "            <img src=\"../pc/assets/img/Normal.png\" alt=\"\">";
-                text += "            <span class=\"name_s\">降查重率 <span>(<span class=\"price-d\">"+typeData[i].selling_price+"</span>元/<span class=\"unit-d\">"+typeData[i].unit_count+"</span>字)</span> </span>";
+                text += "            <span class=\"name_s\">降查重率<span>(<span class=\"price-d\">"+typeData[i].selling_price+"</span>元/<span class=\"unit-d\">"+unitCount+"</span>字)</span> </span>";
                 text += "        </div>";
                 text += "    </div>";
                 text += "    <div class=\"edition_tips\">";
@@ -1064,12 +1124,19 @@
             }
             if(typeData[i].short_name == 'aigclwjc'){
                 var aigclwjcClassArr = i==0? 'Select card aigclwjc':'card aigclwjc'
+                var unitCount = typeData[i].unit_count
+                if(typeData[i].unit_count%1000==0 && typeData[i].unit_count<10000){
+                    unitCount = typeData[i].unit_count/1000 + "千"
+                    if(typeData[i].unit_count/1000 == 1){
+                        unitCount = "千"
+                    }
+                }
                 text += "<div class=\""+aigclwjcClassArr+"\" goodsid=\""+typeData[i].goods_id+"\" data-type=\"aigclwjc\">";
                 text += "    <div class=\"edition\">";
                 text += "        <div>";
                 text += "            <img class=\"icon-new\" src=\"../pc/assets/img/new-icon.png\" alt=\"\">";
                 text += "            <img src=\"../pc/assets/img/aigc.png\" alt=\"\">";
-                text += "            <span class=\"name_s\">降AIGC率  <span>(<span class=\"price-d\">"+typeData[i].selling_price+"</span>元/<span class=\"unit-d\">"+typeData[i].unit_count+"</span>字)</span></span>";
+                text += "            <span class=\"name_s\">降AIGC率<span>(<span class=\"price-d\">"+typeData[i].selling_price+"</span>元/<span class=\"unit-d\">"+unitCount+"</span>字)</span></span>";
                 text += "        </div>";
                 text += "    </div>";
                 text += "    <div class=\"edition_tips\">";
@@ -1113,102 +1180,69 @@
     //验证
     function verify(){
         if($(".card.Select").hasClass('aigclwjc')){
-            // if($(".sectionUl li.active").length < 1)  {
-            //     $(".discipBox").addClass('has-error')
-            //     cocoMessage.error("请选择科类", 2000);
-            //     return false
-            // }else{
-            //     $(".discipBox").removeClass('has-error')
-            // }
-
-            if($(".typeUl li.active").data('type')== 'txt'){
-                if(!$("#title").val()) {
-                    $(".titleGroup").addClass('has-error')
+            if(uploadType == 'words') {
+                if(!$("#textContent").val()){
+                    $(".content_block .errType_1").show()
                     return false
                 }else{
-                    $(".titleGroup").removeClass('has-error')
-                }
-
-                if(!$("#author").val()) {
-                    $(".authorGroup").addClass('has-error')
-                    return false
-                }else{
-                    $(".authorGroup").removeClass('has-error')
-                }
-
-                if($(".uploadType li.active").data('type') == 'words') {
-                    if(!$("#text_content").val()){
-                        $(".contentGroup").addClass('has-error')
-                        return false
+                    $(".content_block .errType_1").hide()
+                    if($("#textContent").val().length < 200 || $("#textContent").val().length > 300000){
+                        $(".content_block .errType_2").show()
+                        return  false
                     }else{
-                        $(".contentGroup").removeClass('has-error')
-                        return true
-                    }
-                }
-
-                if($(".uploadType li.active").data('type') == 'files') {
-                    if($(".txt-uploadBlock input")[0].files.length == 0){
-                        $(".contentGroup").addClass('has-error')
-                        return false
-                    }else{
-                        $(".contentGroup").removeClass('has-error')
                         return true
                     }
                 }
             }
-
-            if($(".typeUl li.active").data('type')== 'zip') {
-                if($(".zip-uploadBlock input")[0].files.length == 0 && $(".pdf-uploadBlock input")[0].files.length == 0 && $(".html-uploadBlock input")[0].files.length == 0){
-                    $(".contentGroup").addClass('has-error')
+            if(uploadType == 'files') {
+                if($("#docUpload")[0].files.length == 0){
+                    $(".upload_block .upload_file").addClass('has-error')
                     return false
                 }else{
-                    $(".contentGroup").removeClass('has-error')
+                    $(".upload_block .upload_file").removeClass('has-error')
+                    return true
+                }
+            }
+            if(uploadType == 'zips') {
+                if($("#docUpload2")[0].files.length == 0){
+                    $(".zipFile_block .upload_file").addClass('has-error')
+                    return false
+                }else{
+                    $(".zipFile_block .upload_file").removeClass('has-error')
                     return true
                 }
             }
         }
         if($(".card.Select").hasClass('lwjc')){
-            if($(".typeUl li.active").data('type')== 'txt'){
-                if(!$("#title").val()) {
-                    $(".titleGroup").addClass('has-error')
+            if(uploadType == 'words') {
+                if(!$("#textContent").val()){
+                    $(".content_block .errType_1").show()
                     return false
                 }else{
-                    $(".titleGroup").removeClass('has-error')
-                }
-
-                if(!$("#author").val()) {
-                    $(".authorGroup").addClass('has-error')
-                    return false
-                }else{
-                    $(".authorGroup").removeClass('has-error')
-                }
-
-                if($(".uploadType li.active").data('type') == 'words') {
-                    if(!$("#text_content").val()){
-                        $(".contentGroup").addClass('has-error')
-                        return false
+                    $(".content_block .errType_1").hide()
+                    if($("#textContent").val().length < 200 || $("#textContent").val().length > 300000){
+                        $(".content_block .errType_2").show()
+                        return  false
                     }else{
-                        $(".contentGroup").removeClass('has-error')
-                        return true
-                    }
-                }
-
-                if($(".uploadType li.active").data('type') == 'files') {
-                    if($(".txt-uploadBlock input")[0].files.length == 0){
-                        $(".contentGroup").addClass('has-error')
-                        return false
-                    }else{
-                        $(".contentGroup").removeClass('has-error')
                         return true
                     }
                 }
             }
-            if($(".typeUl li.active").data('type')== 'zip'){
-                if($(".zip-uploadBlock input")[0].files.length == 0 && $(".pdf-uploadBlock input")[0].files.length == 0){
-                    $(".contentGroup").addClass('has-error')
+            if(uploadType == 'files') {
+                if($("#docUpload")[0].files.length == 0){
+                    $(".upload_block .upload_file").addClass('has-error')
                     return false
                 }else{
-                    $(".contentGroup").removeClass('has-error')
+                    $(".upload_block .upload_file").removeClass('has-error')
+                    return true
+                }
+            }
+            if(uploadType == 'zips') {
+                if($("#docUpload2")[0].files.length == 0){
+                    $(".zipFile_block .upload_file").addClass('has-error')
+                    return false
+                }else{
+                    $(".zipFile_block .upload_file").removeClass('has-error')
                     return true
                 }
             }
@@ -1228,48 +1262,49 @@
             throttling = false
             closeMsg = cocoMessage.loading('正在提交,请稍后...');
             var data = {
-                title: $("#title").val(),
-                author: $("#author").val()
             }
             if(jc_type == 'aigclwjc'){
-                data.domain = domain
+                data.domain = '0'
                 data.type = 'aigclwjc'
             }else{
                 data.type = 'lwjc'
             }
-            if($('.uploadType li.active').data('type') == 'words'){
-                data.content = $("#text_content").val()
+            if(uploadType == 'words'){
+                data.title = $("#textContent").val().slice(0,30)
+                data.author = '学生'
+                data.content = $("#textContent").val()
             }
-            if($('.uploadType li.active').data('type') == 'files'){
-                if(fileInputType == 'file'){
-                    data.file = $(".fileInput")[0].files[0]
-                }
+            if(uploadType == 'files'){
+                data.title = $("#docUpload")[0].files[0].name.slice(0, $("#docUpload")[0].files[0].name.lastIndexOf('.'))
+                data.author = '学生'
+                data.file = $("#docUpload")[0].files[0]
             }
-            if($('.uploadType li.active').data('type') == 'zips'){
-                if(fileInputType == 'zip'){
-                    data.file = $(".zipInput")[0].files[0]
-                    data.title = $(".zipInput")[0].files[0].name.slice(0,$(".zipInput")[0].files[0].name.lastIndexOf('.'))
+            if(uploadType == 'zips'){
+                data.title = $("#docUpload2")[0].files[0].name.slice(0, $("#docUpload2")[0].files[0].name.lastIndexOf('.'))
+                if(reportType_s == 'all' || reportType_s == 'otherAIGC'){
+                    data.check_platform = $(".platform_utl").val()
                 }
-                if(fileInputType == 'pdf'){
-                    data.file = $(".pdfInput")[0].files[0]
-                    data.title = $(".pdfInput")[0].files[0].name.slice(0,$(".pdfInput")[0].files[0].name.lastIndexOf('.'))
-                }
-                if(fileInputType == 'html'){
-                    data.file_type= filetype_lx=='cnkigr'?'cnki':filetype_lx
-                    var fileName =  $(".htmlInput")[0].files[0].name.replace(/\.[^/.]+$/,'')
-                    var content = $(".htmlInput")[0].files[0];
+                if($("#docUpload2")[0].files[0].type.indexOf('html') != -1){
+                    data.file_type= reportType_s
+                    var fileName =  $("#docUpload2")[0].files[0].name.replace(/\.[^/.]+$/,'')
+                    var content = $("#docUpload2")[0].files[0];
                     var zip = new JSZip();
-                    zip.file(fileName+"-维普AIGC报告.html", content);
+                    if(reportType_s == 'weipuAIGC'){
+                        zip.file(fileName+"-维普AIGC报告.html", content);
+                    }else{
+                        zip.file(fileName+".html", content);
+                    }
                     zip.generateAsync({type:"blob"})
                         .then(function (content){
                             data.file = new File([content] , fileName+".zip",{type: 'application/zip',})
-                            data.title = $(".htmlInput")[0].files[0].name.slice(0,$(".htmlInput")[0].files[0].name.lastIndexOf('.'))
+                            data.title = $("#docUpload2")[0].files[0].name.slice(0,$("#docUpload2")[0].files[0].name.lastIndexOf('.'))
                             uploadPre(data)
                         })
                     return;
+                }else{
+                    data.file = $("#docUpload2")[0].files[0]
                 }
-                data.file_type= filetype_lx=='cnkigr'?'cnki':filetype_lx
-
+                data.file_type = reportType_s
             }
             uploadPre(data)
         }
@@ -1292,6 +1327,20 @@
                     throttling = true
                     closeMsg()
                     cocoMessage.error(res.codeMsg, 2000);
+                    if(uploadType == 'files') {
+                        $(".upload_block .errTips").text(res.codeMsg)
+                        $(".upload_block .errTips").show()
+                        $(".upload_block .upCheck").hide()
+                        $(".upload_block .upLose").show()
+                        $(".upload_block .upload_file").addClass('has-error')
+                    }
+                    if(uploadType == 'zips') {
+                        $(".zipFile_block .errTips").text(res.codeMsg)
+                        $(".zipFile_block .errTips").show()
+                        $(".zipFile_block .upCheck").hide()
+                        $(".zipFile_block .upLose").show()
+                        $(".zipFile_block .upload_file").addClass('has-error')
+                    }
                 }
             },
             error: function (err){
@@ -1342,6 +1391,225 @@
             }
         });
     }
+
+    // 改版
+    var  reportTypeInfo =  {
+            all: {
+                zipType: ['zip', 'pdf', 'html'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf,.html'
+            },
+            cnki: {
+                zipType: ['zip', 'pdf'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
+            },
+            wanfang: {
+                zipType: [ 'pdf'],
+                fileAccept: '.pdf'
+            },
+            zaojiance: {
+                zipType: ['zip'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+            },
+            weipu: {
+                zipType: ['zip'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+            },
+            checkPass: {
+                zipType: ['zip'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+            },
+            paperPass: {
+                zipType: ['zip'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+            },
+            MasterCheck: {
+                zipType: ['zip'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+            },
+            yuanwenjian: {
+                zipType: ['zip'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+            },
+            cnkiAIGC: {
+                zipType: ['zip', 'pdf'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
+            },
+            weipuAIGC: {
+                zipType: ['html'],
+                fileAccept: '.html'
+            },
+            wanfangAIGC: {
+                zipType: ['pdf'],
+                fileAccept: '.pdf'
+            },
+            masterAIGC: {
+                zipType: ['zip'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+            },
+            paperPassAIGC: {
+                zipType: ['zip'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+            },
+            otherAIGC: {
+                zipType: ['zip', 'pdf', 'html'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf,.html'
+            },
+        };
+    var uploadType = 'files'
+    var uploading = false;
+    var reportType_s = ''
+
+
+    $(".uploadTy_btn").click(function (){
+        if(uploadType != $(this).attr('data-type')) {
+            $(".upload_block .deleteFile").click()
+            $(".zipFile_block .deleteFile").click()
+        }
+        $(".uploadTy_btn").removeClass('active')
+        $(this).addClass('active')
+        uploadType = $(this).attr('data-type')
+        $(".form_block").hide()
+        $(".intro-tab").removeClass('zip_height')
+        if(uploadType == 'words') {
+            $(".content_block").show()
+        }
+        if(uploadType == 'files') {
+            $(".upload_block").show()
+        }
+        if(uploadType == 'zips') {
+            $(".intro-tab").addClass('zip_height')
+            $(".zipFile_block").show()
+            $(".report_type").hide()
+            if($(".card.Select").data('type') == 'lwjc'){
+                $(".cc_typeBtn").show()
+                $(".cc_typeBtn .report_type_item[data-brand='all']").click()
+            }
+            if($(".card.Select").data('type') == 'aigclwjc'){
+                $(".aigc_typeBtn").show()
+                $(".aigc_typeBtn .report_type_item[data-brand='otherAIGC']").click()
+            }
+        }
+    })
+
+    $(".report_type .report_type_item").click(function (){   //  报告类型选择
+        $(".report_type .report_type_item").removeClass('active')
+        $(this).addClass('active')
+        $(".zip_description").hide()
+        reportType_s = $(this).attr('data-brand')
+        $("#docUpload2").attr('accept', reportTypeInfo[reportType_s].fileAccept)
+        $(".zipFile_upload .format_item").hide()
+        if(reportTypeInfo[reportType_s].zipType.includes('zip')){
+            $(".format_item.zip_f").css('display','inline-block')
+        }
+        if(reportTypeInfo[reportType_s].zipType.includes('pdf')){
+            $(".format_item.pdf_f").css('display','inline-block')
+        }
+        if(reportTypeInfo[reportType_s].zipType.includes('html')){
+            $(".format_item.html_f").css('display','inline-block')
+        }
+        for(var i=0;i<$(".zip_description").length;i++){
+            if($($(".zip_description")[i]).attr('data-type') == reportType_s) {
+                $($(".zip_description")[i]).show()
+                if(reportType_s == 'all' || reportType_s == 'otherAIGC'){
+                    $(".platform_utl").show()
+                }else{
+                    $(".platform_utl").hide()
+                }
+            }
+        }
+    })
+
+    $("#docUpload").change(function (){
+        var file = $(this)[0].files[0]
+        $(".upload_block .upload_file").removeClass('has-error')
+        $(".upload_block .errTips").text('')
+        $(".upload_block .errTips").hide()
+        if(file){
+            $(this).css('zIndex', '-1')
+            $('.upload_block .upload_btn .upload-icon').hide()
+            $('.upload_block .upload_btn .uploading-icon').show()
+            $('.upload_block .upload_tipText').hide()
+            $('.upload_block .upload_fileInfo .files_nameText').text(file.name)
+            $('.upload_block .upload_fileInfo .files_nameText').attr('title', file.name)
+            $('.upload_block .upload_fileInfo').show()
+            setTimeout(function (){
+                $('.upload_block .upload_btn .upload-icon').show()
+                $('.upload_block .upload_btn .uploading-icon').hide()
+                $('.upload_block .upload_btn span').text('重新上传')
+                $('.upload_block .upload_fileInfo .upCheck').show()
+                $('.upload_block .upload_fileInfo .deleteFile').show()
+            },300)
+        }else{
+            $(this).css('zIndex', '10')
+            $('.upload_block .upload_btn span').text('上传文件')
+            $('.upload_block .upload_btn .upload-icon').show()
+            $('.upload_block .upload_tipText').show()
+            $('.upload_block .upload_btn .uploading-icon').hide()
+            $('.upload_block .upload_fileInfo .files_nameText').text('')
+            $('.upload_block .upload_fileInfo .upCheck').hide()
+            $('.upload_block .upload_fileInfo .upLose').hide()
+            $('.upload_block .upload_fileInfo .deleteFile').hide()
+            $('.upload_block .upload_fileInfo').hide()
+        }
+    })
+
+    $("#docUpload2").change(function (){
+        var file = $(this)[0].files[0]
+        $(".zipFile_block .upload_file").removeClass('has-error')
+        $(".zipFile_block .errTips").hide()
+        if(file){
+            $(this).css('zIndex', '-1')
+            $('.zipFile_block .upload_btn .upload-icon').hide()
+            $('.zipFile_block .upload_btn .uploading-icon').show()
+            $('.zipFile_block .upload_tipText').hide()
+            $('.zipFile_block .upload_fileInfo .files_nameText').text(file.name)
+            $('.zipFile_block .upload_fileInfo .files_nameText').attr('title', file.name)
+            $('.zipFile_block .upload_fileInfo').show()
+            $(".zipFile_block .upload_file").removeClass('has-error')
+            setTimeout(function (){
+                $('.zipFile_block .upload_btn .upload-icon').show()
+                $('.zipFile_block .upload_btn .uploading-icon').hide()
+                $('.zipFile_block .upload_btn span').text('重新上传')
+                $('.zipFile_block .upload_fileInfo .upCheck').show()
+                $('.zipFile_block .upload_fileInfo .deleteFile').show()
+            },300)
+        }else{
+            $(this).css('zIndex', '10')
+            $('.zipFile_block .upload_btn span').text('上传文件')
+            $('.zipFile_block .upload_btn .upload-icon').show()
+            $('.zipFile_block .upload_btn .uploading-icon').hide()
+            $('.zipFile_block .upload_fileInfo .files_nameText').text('')
+            $('.zipFile_block .upload_fileInfo .upCheck').hide()
+            $('.zipFile_block .upload_fileInfo .upLose').hide()
+            $('.zipFile_block .upload_fileInfo .deleteFile').hide()
+            $('.zipFile_block .upload_fileInfo').hide()
+        }
+    })
+
+    $(".upload_block .upload_btn").click(function (){
+        $(".upload_block .deleteFile").click()
+        $("#docUpload").click()
+    })
+
+    $(".zipFile_block .upload_btn").click(function (){
+        $(".zipFile_block .deleteFile").click()
+        $("#docUpload2").click()
+    })
+
+    $(".upload_block .deleteFile").click(function (){
+        $("#docUpload").val('')
+        $("#docUpload").trigger('change')
+    })
+
+    $(".zipFile_block .deleteFile").click(function (){
+        $("#docUpload2").val('')
+        $("#docUpload2").trigger('change')
+    })
+
+
+    $("#textContent").on('input',function (){
+        $(".content_block .counter .impl").text($("#textContent").val().length)
+    })
 </script>
 </body>
 </html>

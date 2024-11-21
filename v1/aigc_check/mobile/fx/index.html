@@ -231,8 +231,7 @@
             </div>
             <div class="core">
                 <div class="poster" id="imgDiv">
-                    <img id="posterImg" src="../../mobile/fx/assets/img/dashixiezuo.jpg" alt="">
-                    <div id="qrcode2" class="Poster_QRcode"></div>
+                    <img id="posterImg" src="" alt="">
                 </div>
                 <div class="introduce">
                     <div class="ButtonBox">
@@ -283,31 +282,10 @@
 <script src="../../mobile/fx/assets/js/common.js?v=p24.0031"></script>
 <script src="../../mobile/fx/assets/js/withdrawa.js?v=1.0"></script>
 <script src="../../mobile/fx/assets/js/complaints.js"></script>
-<script src="../../mobile/fx/assets/js/configured.js"></script>
+<script src="../../mobile/fx/assets/js/configured.js?v=fx1.4"></script>
 <script>
     function infoSuccess(data){
-        if(data.project[0].jane_name == 'dsxz') {
-            $('#posterImg').attr('src' , '../../mobile/fx/assets/img/dashixiezuo.png')
-        }else if(data.project[0].jane_name == 'aigc_check') {
-            $('#posterImg').attr('src' , '../../mobile/fx/assets/img/masterAi.png')
-            $('#imgDiv #qrcode2').css({
-                bottom: '12px',
-                right: 'auto',
-                left: '15px',
-            })
-        }else if(data.project[0].jane_name == 'paper_platform') {
-            $('#posterImg').attr('src' , '../../mobile/fx/assets/img/lwcc.png')
-            $('#imgDiv #qrcode2').css({
-                right: '35px',
-                bottom: '24px',
-            })
-        }else if(data.project[0].jane_name == 'zjchong') {
-            $('#posterImg').attr('src' , '../../mobile/fx/assets/img/zjc.png')
-            $('#imgDiv #qrcode2').css({
-                right: '20px',
-                bottom: '13px',
-            })
-        }
+        $('#posterImg').attr('src' , urls + "/api/client/distribution/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=0&_session_type=user&domain="+window.location.origin)
     }
     // 未登录
     function complete_info(data , code) {
@@ -345,8 +323,7 @@
                     $('.described').show()
                     $('#distribution_config #ratio').text(ref.distribution_config.ratio)
                     ref.distribution_config.type && $('#distribution_config #type').text("（" + ref.distribution_config.type + '）')
-                    $('.orderId_pop').text(window.location.protocol + '//' + ref.share_link)
-                    qrcode2.makeCode(window.location.protocol + '//' + ref.share_link);
+                    $('.orderId_pop').text(urls + "/api/client/distribution/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=0&_session_type=user&domain="+window.location.origin)
                     if(ref.kf_info) {
                         $('#name , #phone , #wx , #qq' ).show().children('.infoText').removeClass('loadEffect')
                         if(ref.kf_info.name) {
