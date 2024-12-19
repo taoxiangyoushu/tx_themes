@@ -161,10 +161,14 @@
         background-color: #7579db;;
     }
     .EnglishLiteratureBox {
+        input[type=checkbox] {
+            margin-right: 0;
+        }
         input[type=checkbox]:checked::after {
             width: 16px;
             height: 16px;
             line-height: 17px;
+            margin-left: 2px;
         }
     }
     input[type=checkbox].inputCheck {
@@ -328,18 +332,24 @@
     .BACK-mini {
         display: block;
     }
+
+    .proposal {
+        .uploadBox {
+            color: #7579DB;
+        }
+    }
 }
 .NEW-mini {
     position: absolute;
     right: -8px;
-    top: -12px;
+    top: -14px;
 }
 
 .BACK-mini {
     display: none;
     position: absolute;
     right: -8px;
-    top: -12px;
+    top: -14px;
 }
 
 // 专业版新增样式

@@ -134,7 +134,7 @@ var systemInfo = {
 		name: 'Turnitin国际版+AI',
 		comparisonLibrary: '',
 		detectionAlgorithm: '',
-		Language: '中文/英文/小语种',
+		Language: '中文/英文/小语种（AI率检测仅支持英文，其它语言无法检测，也无法出AI率报告）',
 		detectionScope: '留学生、SCI论文、EI论文、英文写作论文',
 		timeConsuming: '10-30分钟',
 		reportSample: '',

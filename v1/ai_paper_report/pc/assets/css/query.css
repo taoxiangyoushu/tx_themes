@@ -549,20 +549,19 @@ table {
   border: 1px solid #dcdcdc;
 }
 .nav-activity {
-  width: 80px;
+  width: 100px;
   height: 30px;
-  background: linear-gradient(90deg, #FFA85A, #F53F3F);
-  color: #ffffff;
+  background: linear-gradient(180deg, #FFEFE8 3%, #FFE6EF 100%);
+  color: #E20000;
   font-size: 14px;
   border-radius: 4px;
-  text-align: center;
   line-height: 30px;
   cursor: pointer;
   margin-top: 15px;
   transition: all 0.3s;
   position: absolute;
   margin-left: 12px;
-  right: 122px;
+  right: 36px;
   top: 10px;
   display: none;
 }
@@ -582,7 +581,12 @@ table {
   text-decoration: none;
 }
 .nav-activity:hover {
-  box-shadow: 0 0 11px 0px #ffaba0;
+  background: linear-gradient(180deg, #FFE5DB 3%, #FFD9F6 100%);
+}
+.nav-activity img {
+  margin-left: 7px;
+  position: relative;
+  top: -3px;
 }
 .content.container {
   padding-left: 50px;
@@ -1567,4 +1571,3 @@ table {
 .loadLine p {
   margin-top: 10px;
 }
-/*# sourceMappingURL=query.css.map */

@@ -7,8 +7,8 @@
     <title>活动详情</title>
     <link rel="shortcut icon" href="../../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../pc/hd/assets/css/common.css?v=pa24.0032">
-    <link rel="stylesheet" href="../../pc/hd/assets/css/participationActivities.css?v=pa24.0031">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/common.css?v=pa24.0033">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/participationActivities.css?v=pa24.0033">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
@@ -107,8 +107,12 @@
                             <li>发布完成后，需要提供满足上述要求的可访问链接和截图证明</li>
                         </ul>
                         <ul class="f_d_text f_gzh">
-                            <li> 打开微信，扫描左侧二维码或直接搜索<span class="tag"></span></li>
+                            <li>打开微信，扫描左侧二维码或直接搜索<span class="tag"></span></li>
                             <li>点击关注按钮，关注<span class="tag"></span>成功</li>
+                        </ul>
+                        <ul class="f_d_text f_hf">
+                            <li>打开微信，直接搜索<span class="tag"></span></li>
+                            <li>关注微信公众号后回复关键词<span class="keyWord"></span>，领取奖品</li>
                         </ul>
                     </div>
                     <div class="fulfil_example">
@@ -227,8 +231,8 @@
 <script src="../../pc/hd/assets/js/coco-message.js"></script>
 <script src="../../pc/hd/assets/js/qrcode.min.js"></script>
 <script src="../../pc/hd/assets/js/html2canvas.min.js"></script>
-<script src="../../pc/hd/assets/js/common.js?v=pa24.0032"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pa24.0031"></script>
+<script src="../../pc/hd/assets/js/common.js?v=pa24.0033"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pa24.0033"></script>
 <script>
 
     var activityObj = {
@@ -252,7 +256,13 @@
             'f_d_img': '../../pc/hd/assets/img/douyin.png',
             'example_img': '../../pc/hd/assets/img/shili_dy.png',
         },
+        'activity_hf': {
+            'f_d_img': '../../pc/hd/assets/img/loading2.gif',
+            'example_img': '../../pc/hd/assets/img/shili_hf.png',
+        },
     }
+
+    var userPhone = ''
 
     function infoSuccess(data) {
 
@@ -265,18 +275,35 @@
     $(document).on('click', '.coupons-item', function (){
         $(".coupons-item").removeClass('active')
         $(this).addClass('active')
-        receiveCoupon()
+        if($(this).attr('data-type') != 'activity_hf'){
+            receiveCoupon()
+        }
         countClick($(this).attr('data-type'))
         $(".f_d_text").hide()
-        if($(this).attr('data-type') == 'activity_gzh'){
+        $(".f_d_img").show().css('display','inline-block')
+        $(".fulfil_details").removeClass('minHeight')
+        if($(this).attr('data-type') == 'activity_gzh' || $(this).attr('data-type') == 'activity_hf'){
             $(".s_block").hide()
             $(".preview_text").addClass('show_preview')
             // $(".fulfil_example").addClass('gzh')
             $(".f_d_img").addClass('loading')
-            getWxQrcode()
-            $(".f_d_text.f_gzh").show()
-            $(".f_d_text.f_gzh").css('display', 'inline-block')
-            $(".coupon_describe .acGrant").text('关注成功后，查看券码使用')
+            if($(this).attr('data-type') == 'activity_gzh'){
+                $(".f_d_text.f_gzh").show()
+                $(".f_d_text.f_gzh").css('display', 'inline-block')
+                $(".coupon_describe .acGrant").text('关注成功后，查看券码使用')
+                getWxQrcode()
+            }
+            if($(this).attr('data-type') == 'activity_hf'){
+                $(".f_d_text.f_hf").show()
+                $(".f_d_text.f_hf").css('display', 'inline-block')
+                $(".coupon_describe .acGrant").text('公众号回复关键词领取，查看券码使用')
+                $(".f_d_img").hide()
+                $(".fulfil_details").addClass('minHeight')
+                $(".c_db_csL").hide()
+                $(".c_db_cs").hide()
+                $(".c_db_wc").hide()
+                $(".statusImg_block").hide()
+            }
         }else{
             $(".f_d_img").removeClass('loading')
             $(".s_block").show()
@@ -329,7 +356,11 @@
                     $(".f_d_text .num2").text(activityInfo[i].demand.like)
                 }
                 if( $(this).attr('data-type') == 'activity_gzh'){
-                    $(".f_d_text .tag").text('“'+ activityInfo[i].three_config_name +'”')
+                    $(".f_d_text .tag").text('“ '+ activityInfo[i].three_config_name +' ”')
+                }
+                if( $(this).attr('data-type') == 'activity_hf'){
+                    $(".f_d_text .tag").text('“ '+ activityInfo[i].repair_three_config_name +' ”')
+                    $(".f_d_text .keyWord").text('“ '+ activityInfo[i].repair_text +' ”')
                 }
             }
         }
@@ -349,6 +380,7 @@
         if(code && code == 4003) {
             location.href = './index.html'
         }
+        userPhone = data.phone
         getActivityInfo()
     }
 
@@ -521,7 +553,7 @@
             success: function success(res) {
                 if(res.code == '200') {
                     activityObj.activity_gzh.f_d_img = res.data
-                    if($('.coupons-item.active').attr('data-type') == 'activity_gzh'){
+                    if($('.coupons-item.active').attr('data-type') == 'activity_gzh' || $('.coupons-item.active').attr('data-type') == 'activity_hf'){
                         $(".f_d_img").removeClass('loading')
                         $(".f_d_img img").attr('src', res.data)
                         $(".previewImg>img").attr('src', res.data)

@@ -12,9 +12,8 @@
 	<link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0020">
-	<link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0020">
-    <link rel="stylesheet" href="../pc/assets/css/Discounts.css?v=p24.0020">
+	<link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.00244">
+	<link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.00244">
 	<!-- <link rel="stylesheet" href="../assets/css/styles.css" /> -->
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!--[if lt IE 9]>
@@ -24,7 +23,17 @@
 	<!-- head_script -->
 	<script>
 		var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
-		var JANE_NAME = 'aigc_check';
+		var JANE_NAME = 'aigc_check'
+	</script>
+	<!--百度统计代码-->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
 	</script>
 </head>
 
@@ -52,13 +61,15 @@
 
 					<div class="collapse navbar-collapse topNav" id="bs-example-navbar-collapse-1">
 						<div class="nav-activity">
-							<a href="./hd/index.html" target="_blank">福利活动</a>
+							<a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
 						</div>
 						<a class="Sample" target="_blank" href="./demo.html">AIGC报告样例</a>
+
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="#">提交检测</a></li>
 							<li><a href="./query.html">下载报告</a></li>
 						</ul>
+
 					</div>
 				</div>
 			</nav>
@@ -113,14 +124,17 @@
 							<div class="rower content-block">
 								<div class="content-box">
 									<div class="text-box">
-										<textarea id="content-text" placeholder="内容字数 200~30万字，提交内容建议去除封面，目录，仅提交正文。"></textarea>
+										<textarea id="content-text"></textarea>
+										<span class="Paste_Tips">内容字数 200~30万字，提交内容建议去除封面、目录，<span>仅提交中文正文内容</span></span>
 									</div>
 									<div class="file-box">
 										<input type="file" id="content-file" accept=".doc,.docx,.txt">
 										<div class="upload-block">
-											<img src="../pc/assets/img/upload.png" alt="">
-											<p class="p1">请将<span class="redText">AIGC</span>待检测文档拖拽至区域  或<span class="blueText">点击上传</span></p>
-											<p class="p2">当前仅支持识别中文文本，支持txt、doc、docx文件格式，文档大小不超过10M</p>
+											<!-- <img src="../pc/assets/img/upload.png" alt=""> -->
+											<div class="Upload_paper"><img src="../pc/assets/img/Upload_paper.svg" alt=""> 上传论文</div>
+											<p class="p1"><span class="blueText">点击上传，拖动文件到框内上传</span></p>
+											<p class="p2">支持文档格式：txt、doc(x)文件格式，文档大小不超过10M</p>
+											<p class="p3">注：当前仅支持检测中文文本内容</p>
 										</div>
 										<div class="file-block">
 											<img class="file-icon" src="../pc/assets/img/files.png" alt="">
@@ -253,9 +267,6 @@
             <img src="../pc/assets/img/distributionEntrance.gif" alt="">
         </a>
     </div>
-	<div class="Activity">
-		<img src="../pc/assets/img/xc2.gif" alt="">
-	</div>
 	<div class="CustomerService">
 		<img class="img-ico" src="../pc/assets/img/masterkf_pre_ico.png" alt="">
 		<img class="img-ico-active" src="../pc/assets/img/masterkf_nor_ico.png" alt="">
@@ -278,71 +289,10 @@
 			<img class="customBg" src="../pc/assets/img/bg1.png" alt="">
 		</div>
 	</div>
-	<div id="filing-information" class="ForTheRecord">Copyright © 2022-2024 淘项有术</div>
+	<div id="filing-information" class="ForTheRecord"></div>
 
 <!-- 优惠卷活动 -->
 <div class="mask_body"></div>
-<div class="Discounts_box">
-    <div class="CircleBG">
-        <div class="box-Content">
-            <div class="ContentText">
-                <div class="Contenthader">
-                    AI检测新认证用户专享
-                    <img class="but_close" src="../pc/assets/img/but_close.png" alt="关闭">
-                </div>
-                <img src="../pc/assets/img/Discounts.png" alt="">
-                <div class="wcode">
-                    <div id="codeBox"></div>
-                </div>
-                <p class="DiscountsTips">每个认证用户仅限领取一次,15天有效期</p>
-                <div class="ButtonDiv">
-                    扫码立即领取
-                </div>
-                <div class="Prompt">
-                    <div>
-                        <img src="../pc/assets/img/task.png" alt="">
-                        <p>扫码</p>
-                        <p>完成任务</p>
-                    </div>
-                    <img src="../pc/assets/img/arrowyh.png" alt="">
-                    <div>
-                        <img src="../pc/assets/img/certificate.png" alt="">
-                        <p>填手机号</p>
-                        <p>获取优惠券</p>
-                    </div>
-                    <img src="../pc/assets/img/arrowyh.png" alt="">
-                    <div>
-                        <img src="../pc/assets/img/payIndex.png" alt="">
-                        <p>支付输入</p>
-                        <p>券码兑换</p>
-                    </div>
-                </div>
-                <div class="GuaranteeTheBottom">
-                    <div class="phoneNumber">
-                        <img src="../pc/assets/img/ico_phone.png" alt="">
-                        <input
-                            placeholder="请输入注册手机号"
-                            id="Cell-phoneNumber"
-                            onkeyup="this.value=this.value.replace(/^(0+)|[^\d]+/g,'') "
-                            onafterpaste="this.value=this.value.replace(/^(0+)|[^\d]+/g,'') "
-                            autocomplete="off" maxlength="11"
-                            type="text">
-                    </div>
-                    <div class="GetCode">
-                        <input id="copyInput2" type="text">
-                        <div class="Not">
-                            <img src="../pc/assets/img/icon_left.png" alt="">
-                            <span class="text1">获取优惠券</span>
-                            <span class="text2">优惠券码：<span class="CouponCode"></span> <span class="CopyCode">复制</span></span>
-                            <img src="../pc/assets/img/icon_right.png" alt="">
-                        </div>
-                    </div>
-                    <p class="Rules">支付时填写券码兑换，<span>请妥善保存优惠券码</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
 <script src="../pc/assets/js/jquery.min.js"></script>
@@ -350,9 +300,8 @@
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="../pc/assets/js/bootstrap.min.js"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0020"></script>
-<script src="../pc/assets/js/Discounts.js?v=p24.0020"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0020"></script>
+<script src="../pc/assets/js/common.js?v=p24.00244"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.00244"></script>
 <script>
 	$("#title").on('input', function (){
 		$(".titleNumber").text($(this).val().length)
@@ -540,5 +489,15 @@
 			}
 		});
 	}
+	$('#content-text').on('input',function(){
+        if($(this).val().length > 0){
+		$('.Paste_Tips').hide()
+		
+		}
+		else{
+		$('.Paste_Tips').show()
+
+		}
+	})
 </script>
 </html>

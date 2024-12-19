@@ -134,9 +134,18 @@
   font-size: 1.43rem;
   font-weight: bold;
 }
+.payBox div.total .symbol {
+  font-size: 1.43rem;
+}
 .payBox div.total span {
   color: #0073ff;
   font-size: 2.4rem;
+}
+.payBox div.total .Discountamount {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #D81E06;
+  display: none;
 }
 #title,
 #author {
@@ -153,6 +162,7 @@
   padding: 0;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .info.couponBox #coupon {
   border: none;
@@ -162,6 +172,14 @@
   padding-left: 1.9rem;
   border-top-left-radius: 0.95rem;
   border-bottom-left-radius: 0.95rem;
+}
+.info.couponBox .eliminateCoupon {
+  width: 2rem;
+  height: 2rem;
+  display: none;
+  position: absolute;
+  right: 28%;
+  top: 1.2rem;
 }
 .info.couponBox .use_now {
   background: #006fff82;
@@ -518,4 +536,35 @@
   z-index: 999;
   display: none;
 }
-/*# sourceMappingURL=pay.css.map */
+.Deduction {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.67rem 0px rgba(135, 135, 135, 0.19);
+  border-radius: 0.95rem;
+  width: 90%;
+  margin: auto;
+  padding: 1.9rem;
+  margin-top: 1.43rem;
+  position: relative;
+  display: none;
+}
+.Deduction .PayName img {
+  width: 2.1rem;
+  height: 2.1rem;
+  margin-right: 1.1rem;
+}
+.Deduction .PayName {
+  display: flex;
+  align-items: center;
+  color: #D81E06;
+}
+.Deduction .PayName .Discount_style {
+  position: relative;
+  top: 0.0625rem;
+}
+.Deduction .noselectImg {
+  position: absolute;
+  width: 1.24rem;
+  height: 1.24rem;
+  right: 1.9rem;
+  top: 2.3rem;
+}

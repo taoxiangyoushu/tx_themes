@@ -84,13 +84,12 @@ html body .query_page {
   background-color: #7d55fc;
 }
 .head .nav .nav-activity {
-  width: 80px;
+  width: 100px;
   height: 30px;
-  background: linear-gradient(90deg, #FFA85A, #F53F3F);
-  color: #ffffff;
+  background: linear-gradient(180deg, #FFEFE8 3%, #FFE6EF 100%);
+  color: #E20000;
   font-size: 14px;
   border-radius: 4px;
-  text-align: center;
   line-height: 30px;
   cursor: pointer;
   margin-top: 24px;
@@ -116,7 +115,12 @@ html body .query_page {
   text-decoration: none;
 }
 .head .nav .nav-activity:hover {
-  box-shadow: 0 0 11px 0px #ffaba0;
+  background: linear-gradient(180deg, #FFE5DB 3%, #FFD9F6 100%);
+}
+.head .nav .nav-activity img {
+  margin-left: 7px;
+  position: relative;
+  top: -3px;
 }
 .content-block {
   padding: 0 15px;
@@ -414,6 +418,37 @@ html body .query_page {
   padding-left: 20px;
   text-align: left;
 }
+.block-right .r-content .resultBox .orderInformation.table tbody .titles .error_msg {
+  display: none;
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 5px 5px 5px 5px;
+  padding: 4px 20px;
+  border: 1px solid #dfdfdf;
+  box-shadow: 0 0 8px 0px #d3d2d2;
+  color: #303030;
+  width: 170px;
+  left: 50%;
+  bottom: -50px;
+  transform: translateX(-50%);
+}
+.block-right .r-content .resultBox .orderInformation.table tbody .titles .error_msg:after,
+.block-right .r-content .resultBox .orderInformation.table tbody .titles .error_msg:before {
+  position: absolute;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #dfdfdf;
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  top: -10px;
+  right: 74px;
+}
+.block-right .r-content .resultBox .orderInformation.table tbody .titles .error_msg:after {
+  border-bottom: 9px solid #fff;
+  top: -8px;
+}
 .block-right .r-content .resultBox .orderInformation.table tbody .titles.not span {
   display: inline-block;
   width: 60px;
@@ -423,6 +458,21 @@ html body .query_page {
   color: #ff8b4d;
   border: 1px solid #ff8b4d;
   border-radius: 17px;
+}
+.block-right .r-content .resultBox .orderInformation.table tbody .titles.failure span {
+  cursor: pointer;
+  background: #FEE8E8;
+  border-radius: 15px 15px 15px 15px;
+  border: 1px solid #F46262;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  line-height: 28px;
+  color: #F46262;
+  position: relative;
+}
+.block-right .r-content .resultBox .orderInformation.table tbody .titles.failure span:hover .error_msg {
+  display: block;
 }
 .block-right .r-content .resultBox .orderInformation.table tbody .titles.complete span {
   display: inline-block;
@@ -734,4 +784,38 @@ a {
 #memberCarrier .loginButton {
   margin: 24px 0 !important;
 }
-/*# sourceMappingURL=query.css.map */
+.scanFollow {
+  font-size: 0;
+}
+.scanFollow .codeBox {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  line-height: 75px;
+  border: 1px solid #ededed;
+  margin-right: 18px;
+  vertical-align: middle;
+}
+.scanFollow .codeBox img {
+  width: 50%;
+}
+.scanFollow .tipsText {
+  display: inline-block;
+  vertical-align: middle;
+}
+.scanFollow .tipsText .p-1 {
+  color: #50b674;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  line-height: 1.1;
+  margin-top: 6px;
+}
+.scanFollow .tipsText .p-2 {
+  color: #999999;
+  font-size: 12px;
+  text-align: left;
+  line-height: 1.1;
+  margin-top: 8px;
+}

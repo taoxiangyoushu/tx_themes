@@ -139,7 +139,7 @@ ol,ul,li,dl{
     margin:0 auto;
     max-width:1624px;
     box-sizing: border-box;
-    padding: 0 10px;
+    padding: 0 6px;
     position: relative;
 }
 
@@ -191,7 +191,7 @@ ol,ul,li,dl{
       border: 1px solid #EBEEF5;
       position: fixed;
       left: 50%;
-  //top: 0px;
+  /* //top: 0px; */
       -webkit-transform: translateX(-70%);
       transform: translateX(-70%);
       background-color: #edf2fc;

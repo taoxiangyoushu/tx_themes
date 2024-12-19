@@ -57,21 +57,21 @@
         }
     }
     .nav-activity {
-        width: 80px;
+        width: 100px;
         height: 30px;
-        background: linear-gradient(90deg, #FFA85A, #F53F3F);
-        color: #ffffff;
+        background: linear-gradient(180deg, #FFEFE8 3%, #FFE6EF 100%);
+        color: #E20000;
         font-size: 14px;
         border-radius: 4px;
-        text-align: center;
+        /* text-align: center; */
         line-height: 30px;
         cursor: pointer;
         margin-top: 15px;
-        transition: all .3s;
+        transition: all 0.3s;
         position: relative;
-        margin-left: 12px;
-        display: none;
+        margin-right: 24px;
         float: left;
+        display: none;
         a {
             position: absolute;
             display: inline-block;
@@ -88,7 +88,12 @@
             }
         }
         &:hover {
-            box-shadow: 0 0 11px 0px #ffaba0;
+            background: linear-gradient( 180deg, #FFE5DB 3%, #FFD9F6 100%);
+        }
+        img{
+            margin-left: 7px;
+            position: relative;
+            top: -3px;
         }
     }
 }
@@ -380,9 +385,23 @@
                                     &:focus {
                                         border-color: #c2b2ff;
                                     }
+                                    &::-webkit-scrollbar {
+                                        width: 6px;
+                                    }
+                                    &::-webkit-scrollbar-thumb {
+                                        border-radius: 8px;
+                                        background: rgb(122 90 248);
+                                    }
+                                    &::-webkit-scrollbar-track {
+                                        border-radius: 8px;
+                                        background: rgba(0,0,0,0.1);
+                                    }
                                 }
                                 &.error {
                                     border-color: #ff4242;
+                                }
+                                &.identity_border {
+                                    border-color: #c2b2ff;
                                 }
                             }
                             .UploadBox {

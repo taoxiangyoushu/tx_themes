@@ -26,7 +26,7 @@ var systemInfo = {
 	},
 	turnitin: {
 		comparisonLibrary: '国际版 适合人群：非英国地区学校外语论文检测，留学生等国际论文,UK版 适合人群：在英国留学的学生使用，英国大学的论文请选择UK版',
-		Language: '中文/英文/小语种',
+		Language: '中文/英文/小语种（AI率检测仅支持英文，其它语言无法检测，也无法出AI率报告）',
 		timeConsuming: '10-30分钟',
 	},
 	ithenticate: {

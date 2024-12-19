@@ -87,6 +87,13 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this) {
     if( typeData[$('#type_s2').val()].short_name == 'qklwsenior' ) {
         formData.is_paper_type = $(".periodicalType.select").attr('data-type')
         formData.references_num_type = $(".l-numB.select").attr('data-num')
+        // 英文参考
+        var LiteratureType =$('input:checkbox[name="LiteratureType"]').is(':checked');
+        if(LiteratureType) {
+            formData.references_en_num = $('#NumberEnglishReference').val()
+        }else {
+            formData.references_en_num =0
+        }
     }
 
     if( typeData[$('#type_s2').val()].short_name == 'bylwsenior' ) {
@@ -110,6 +117,11 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this) {
             formData.references_en_num = $('#NumberEnglishReference').val()
         }else {
             formData.references_en_num =0
+        }
+
+        // 自写开题报告
+        if($(".proposal-check").is(':checked') && fid){
+            formData.fid = fid
         }
     }
 

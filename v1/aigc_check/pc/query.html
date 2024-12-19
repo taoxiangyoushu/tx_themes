@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0020">
-    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0020">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.00244">
+    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.00244">
     <!-- <link rel="stylesheet" href="../assets/css/styles.css" /> -->
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!--[if lt IE 9]>
@@ -20,7 +20,17 @@
     <![endif]-->
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
-        var JANE_NAME = 'aigc_check';
+        var JANE_NAME = 'aigc_check'
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
 </head>
 
@@ -48,13 +58,14 @@
 
                 <div class="collapse navbar-collapse topNav" id="bs-example-navbar-collapse-1">
                     <div class="nav-activity">
-                        <a href="./hd/index.html" target="_blank">福利活动</a>
+                        <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
                     </div>
                     <a class="Sample" href="./demo.html" target="_blank" rel="noopener noreferrer">AIGC报告样例</a>
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">提交检测</a></li>
                         <li class="active"><a href="#">下载报告</a></li>
                     </ul>
+
                 </div>
             </div>
         </nav>
@@ -263,8 +274,8 @@
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=ts1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0020"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0020"></script>
+<script src="../pc/assets/js/common.js?v=p24.00244"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.00244"></script>
 <script>
     function startQuerying(){
         if(getQueryVariable('oid') && !memberFu.isLogin) {

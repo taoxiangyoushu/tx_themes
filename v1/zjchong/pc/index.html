@@ -9,15 +9,24 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0025">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0025">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0025">
-    <link rel="stylesheet" href="../pc/assets/css/Discounts.css?v=p24.0025">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0033">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0033">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0033">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
         var JANE_NAME = 'zjchong';
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
 </head>
 <body>
@@ -33,7 +42,7 @@
             <div class="logo-box pull-left">
                 <h1 class="hide">早降重 智能降重 </h1>
                 <a href="./index.html" title="早降重官网">
-                    <img src="../pc/assets/img/logo.png" alt="logo"/>
+                    <img src="../pc/assets/img/logo.svg" alt="logo"/>
                 </a>
                 <div class="txter">
                     <p>第六代人工智能神经网络降重模型</p>
@@ -42,7 +51,7 @@
             </div>
             <div class="pull-right">
                 <div class="nav-activity">
-                    <a href="./hd/index.html" target="_blank">福利活动</a>
+                    <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
                 </div>
             </div>
         </div>
@@ -50,7 +59,7 @@
     <div class="app-body block1624">
         <div>
             <div class="ctn-body">
-                <a class="reportBtnNew" href="http://rfile.zaojiangchong.com/demo/report/example.html" target="_blank">
+                <a class="reportBtnNew" href="./demo.html" target="_blank">
                     <img src="../pc/assets/img/reportNew.png">
                 </a>
                 <div class="tab-content">
@@ -114,10 +123,15 @@
                                                 <span class="size_value">15MB</span>
                                             </div>
                                         </div>
-                                        <div class="upload_notes">
+                                        <div class="upload_notes jc_notes">
                                             <p class="notes_subtitle">上传须知：</p>
                                             <p class="p2">仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
-                                            <p class="p3">目前仅支持中文，暂不支持图片、表格、公式、代码降重</p>
+                                            <p class="p3">目前仅支持中英文，暂不支持其他语言、图片、表格、公式、代码降重</p>
+                                        </div>
+                                        <div class="upload_notes aigc_notes">
+                                            <p class="notes_subtitle">上传须知：</p>
+                                            <p class="p2">仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
+                                            <p class="p3">目前仅支持中文，暂不支持图片、表格、公式、代码降AIGC</p>
                                         </div>
                                     </div>
                                 </div>
@@ -139,7 +153,7 @@
                                             <img src="../pc/assets/img/icon_pdf.png" alt="">
                                                 xxx(全文标明引文).pdf
                                             </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock cnki">
                                             <div>
                                                 <img src="../pc/assets/img/jc_zw_img.png" alt="">
                                             </div>
@@ -151,21 +165,21 @@
                                             <img src="../pc/assets/img/icon_pdf.png" alt="">
                                             xxx(原文标注报告).pdf
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock wanfang">
                                             <div>
                                                 <img src="../pc/assets/img/jc_wf_img.png" alt="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="zip_description" data-type="weipu">
-                                        zip压缩包内需包含<span class="exampleFile_name">“xxx_比对报告.html”</span>文件，以便系统解析降重内容，示例：
+                                        支持上传pdf报告或完整zip报告，需包含文件<span class="exampleFile_name">“xxx_原文对照报告.pdf”</span>，示例：
                                         <span class="example_file">
-                                            <img src="../pc/assets/img/icon_zip.png" alt="">
-                                            张三_经济管理与财富发展.zip
+                                            <img src="../pc/assets/img/icon_pdf.png" alt="">
+                                           xxx_原文对照报告.pdf
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock weipu">
                                             <div>
-                                                <img src="../pc/assets/img/jc_wp_img.png" alt="">
+                                                <img src="../pc/assets/img/jc_wp_img.png?v1" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -175,7 +189,7 @@
                                             <img src="../pc/assets/img/icon_zip.png" alt="">
                                             张三_经济管理与财富发展.zip
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock zaojiance">
                                             <div>
                                                 <img src="../pc/assets/img/jc_zjc_img.png" alt="">
                                             </div>
@@ -187,7 +201,7 @@
                                             <img src="../pc/assets/img/icon_zip.png" alt="">
                                             张三_经济管理与财富发展.zip
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock checkpass">
                                             <div>
                                                 <img src="../pc/assets/img/jc_checkpass_img.png" alt="">
                                             </div>
@@ -199,7 +213,7 @@
                                             <img src="../pc/assets/img/icon_zip.png" alt="">
                                             张三_经济管理与财富发展.zip
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock mastercheck">
                                             <div>
                                                 <img src="../pc/assets/img/jc_dscc_img.png" alt="">
                                             </div>
@@ -211,7 +225,7 @@
                                             <img src="../pc/assets/img/icon_zip.png" alt="">
                                             张三_经济管理与财富发展.zip
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock paperpass">
                                             <div>
                                                 <img src="../pc/assets/img/jc_pp_img.png" alt="">
                                             </div>
@@ -223,7 +237,7 @@
                                             <img src="../pc/assets/img/icon_zip.png" alt="">
                                             张三_经济管理与财富发展.zip
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock yuanwenjian">
                                             <div>
                                                 <img src="../pc/assets/img/jc_ywj_img.png" alt="">
                                             </div>
@@ -236,7 +250,7 @@
                                             <img src="../pc/assets/img/icon_zip.png" alt="">
                                             MasterAIGC检测报告_..._张三.zip
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock masteraigc">
                                             <div>
                                                 <img src="../pc/assets/img/aigc_masterai_img.png" alt="">
                                             </div>
@@ -248,7 +262,7 @@
                                             <img src="../pc/assets/img/icon_zip.png" alt="">
                                             张三_经济管理与财富发展.zip
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock paperpassaigc">
                                             <div>
                                                 <img src="../pc/assets/img/aigc_pp_img.png" alt="">
                                             </div>
@@ -260,7 +274,7 @@
                                             <img src="../pc/assets/img/icon_pdf.png" alt="">
                                             xxx（AIGC检测报告）.pdf
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock wanfangaigc">
                                             <div>
                                                 <img src="../pc/assets/img/aigc_wf_img.png" alt="">
                                             </div>
@@ -272,7 +286,7 @@
                                             <img src="../pc/assets/img/icon_pdf.png" alt="">
                                             全文报告单_xxx.pdf
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock cnkiaigc">
                                             <div>
                                                 <img src="../pc/assets/img/aigc_zw_img.png" alt="">
                                             </div>
@@ -284,9 +298,21 @@
                                             <img src="../pc/assets/img/icon_html.png" alt="">
                                             xxx.html
                                         </span>
-                                        <div class="file_exampleBlock">
+                                        <div class="file_exampleBlock weipuaigc">
                                             <div>
                                                 <img src="../pc/assets/img/aigc_wp_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zip_description" data-type="gzdAIGC">
+                                        仅支持上传pdf文件，文件名<span class="exampleFile_name">“xxx_AIGC检测报告.pdf”</span>，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_pdf.png" alt="">
+                                             xxx_AIGC检测报告.pdf
+                                        </span>
+                                        <div class="file_exampleBlock gzdaigc">
+                                            <div>
+                                                <img src="../pc/assets/img/aigc_gzd_img.png" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -318,7 +344,7 @@
                                                 <div class="report_type_item noMarginRight" data-brand="checkPass">CheckPass 查重</div>
                                                 <div class="report_type_item" data-brand="MasterCheck">大师 查重</div>
                                                 <div class="report_type_item" data-brand="paperPass">PP 查重</div>
-                                                <div class="report_type_item" data-brand="yuanwenjian">源文鉴 查重</div>
+                                                <div class="report_type_item" data-brand="yuanwenjian">源W鉴 查重</div>
                                                 <div class="report_type_item" data-brand="all">其它</div>
                                             </div>
                                             <div class="report_type aigc_typeBtn">
@@ -326,7 +352,8 @@
                                                 <div class="report_type_item" data-brand="wanfangAIGC">万F AIGC</div>
                                                 <div class="report_type_item" data-brand="weipuAIGC">维P AIGC</div>
                                                 <div class="report_type_item" data-brand="masterAIGC">Master AIGC</div>
-                                                <div class="report_type_item noMarginRight" data-brand="paperPassAIGC">PP AIGC</div>
+                                                <div class="report_type_item noMarginRight" data-brand="gzdAIGC">格Z达 AIGC</div>
+                                                <div class="report_type_item" data-brand="paperPassAIGC">PP AIGC</div>
                                                 <div class="report_type_item" data-brand="otherAIGC">其它</div>
                                             </div>
                                             <input type="text" class="platform_utl" placeholder="各平台检测机制不同，请提交平台链接">
@@ -338,9 +365,9 @@
                                                     <div class="format_item html_f">HTML</div>
                                                 </div>
                                                 <div class="size_block">
-                                <span class="size_text">
-                                    <img src="../pc/assets/img/icon_check.png" alt=""> 大小
-                                </span>
+                                                    <span class="size_text">
+                                                        <img src="../pc/assets/img/icon_check.png" alt=""> 大小
+                                                    </span>
                                                     <span class="size_value">30MB</span>
                                                 </div>
                                             </div>
@@ -364,7 +391,8 @@
                         <ul>
                             <li>1、上传文档/文本粘贴：仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</li>
                             <li>2、上传报告：仅支持.zip、部分.pdf或部分.html格式的文件上传</li>
-                            <li>3、目前仅支持中文，暂不支持图片、表格、公式、代码<span class="system_text">降重</span></li>
+                            <li class="system_text_jc">3、目前仅支持中英文，暂不支持其他语言、图片、表格、公式、代码降重</li>
+                            <li class="system_text_aigc">3、目前仅支持中文，暂不支持图片、表格、公式、代码降AIGC</li>
                             <li>4、下载的内容仅用于参考，不作为毕业、发表使用</li>
                         </ul>
                     </div>
@@ -682,84 +710,19 @@
         </div>
     </div>
     <div class="seize"></div>
-	<div class="Activity">
-		<img src="../pc/assets/img/xc2.gif" alt="">
-	</div>
-    	
+
     <!-- 优惠卷活动 -->
     <div class="mask_body"></div>
-    <div class="Discounts_box">
-        <div class="CircleBG">
-            <div class="box-Content">
-                <div class="ContentText">
-                    <div class="Contenthader">
-                        降重新认证用户专享
-                        <img class="but_close" src="../pc/assets/img/but_close.png" alt="关闭">
-                    </div>
-                    <img src="../pc/assets/img/Discounts.png" alt="">
-                    <div class="wcode">
-                        <div id="codeBox"></div>
-                    </div>
-                    <p class="DiscountsTips">每个认证用户仅限领取一次,15天有效期</p>
-                    <div class="ButtonDiv">
-                        扫码立即领取
-                    </div>
-                    <div class="Prompt">
-                        <div>
-                            <img src="../pc/assets/img/task.png" alt="">
-                            <p>扫码</p>
-                            <p>完成任务</p>
-                        </div>
-                        <img src="../pc/assets/img/arrowyh.png" alt="">
-                        <div>
-                            <img src="../pc/assets/img/certificate.png" alt="">
-                            <p>填手机号</p>
-                            <p>获取优惠券</p>
-                        </div>
-                        <img src="../pc/assets/img/arrowyh.png" alt="">
-                        <div>
-                            <img src="../pc/assets/img/payIndex.png" alt="">
-                            <p>支付输入</p>
-                            <p>券码兑换</p>
-                        </div>
-                    </div>
-                    <div class="GuaranteeTheBottom">
-                        <div class="phoneNumber">
-                            <img src="../pc/assets/img/ico_phone.png" alt="">
-                            <input
-                                placeholder="请输入注册手机号"
-                                id="Cell-phoneNumber"
-                                onkeyup="this.value=this.value.replace(/^(0+)|[^\d]+/g,'') "
-                                onafterpaste="this.value=this.value.replace(/^(0+)|[^\d]+/g,'') "
-                                autocomplete="off" maxlength="11"
-                                type="text">
-                        </div>
-                        <div class="GetCode">
-                            <input id="copyInput2" type="text">
-                            <div class="Not">
-                                <img src="../pc/assets/img/icon_left.png" alt="">
-                                <span class="text1">获取优惠券</span>
-                                <span class="text2">优惠券码：<span class="CouponCode"></span> <span class="CopyCode">复制</span></span>
-                                <img src="../pc/assets/img/icon_right.png" alt="">
-                            </div>
-                        </div>
-                        <p class="Rules">支付时填写券码兑换，<span>请妥善保存优惠券码</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="filing-information"></div>
 </div>
-<div id="filing-information"></div>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
 <script src="../pc/assets/js/jquery.min.js"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="../pc/assets/js/jszip.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0025"></script>
-<script src="../pc/assets/js/Discounts.js?v=p24.0025"></script>
+<script src="../pc/assets/js/common.js?v=p24.0033"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0025"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0033"></script>
 <script>
     var uploadType = 'content';
     var domain = '303';
@@ -775,9 +738,12 @@
             $(".intro-tab").addClass('aigc_height')
             $(".price-info").text(price_aigc?price_aigc:'获取中')
             $(".Text-jc").text('降AIGC率')
-            $(".system_text").text('降AIGC')
             $(".jcReport").hide()
             $(".aigcReport").show()
+            $(".upload_notes.jc_notes").hide()
+            $(".upload_notes.aigc_notes").show()
+            $(".system_text_jc").hide()
+            $(".system_text_aigc").show()
             $("#text_content").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交！')
         }else if($(this).data('type') == 'lwjc'){
             jc_type = 'lwjc'
@@ -786,9 +752,12 @@
             $(".intro-tab").removeClass('aigc_height')
             $(".price-info").text(price_lwjc?price_lwjc:'获取中')
             $(".Text-jc").text('降重')
-            $(".system_text").text('降重')
             $(".jcReport").show()
             $(".aigcReport").hide()
+            $(".upload_notes.jc_notes").show()
+            $(".upload_notes.aigc_notes").hide()
+            $(".system_text_jc").show()
+            $(".system_text_aigc").hide()
             $("#text_content").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。')
         }
         $(".uploadTy_btn.active").click()
@@ -1411,8 +1380,8 @@
                 fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
             },
             weipu: {
-                zipType: ['zip'],
-                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+                zipType: ['zip', 'pdf'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
             },
             checkPass: {
                 zipType: ['zip'],
@@ -1437,6 +1406,10 @@
             weipuAIGC: {
                 zipType: ['html'],
                 fileAccept: '.html'
+            },
+            gzdAIGC: {
+                zipType: ['pdf'],
+                fileAccept: '.pdf'
             },
             wanfangAIGC: {
                 zipType: ['pdf'],

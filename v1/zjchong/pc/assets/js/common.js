@@ -153,7 +153,7 @@ window.onload = function (){
                     },
                     complete_info: function(e) { // 获取用户执行完回调
                         if(e){
-                            $('.nav-activity').css('margin-right' , '88px')
+                            $('.nav-activity').css('margin-right' , '92px')
                         }
                         if($('#app').data('key') == 'queryApp') {
 							startQuerying()

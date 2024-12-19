@@ -56,21 +56,21 @@
   box-shadow: 0 0 11px 0px #b49cff;
 }
 .head .nav-activity {
-  width: 80px;
+  width: 100px;
   height: 30px;
-  background: linear-gradient(90deg, #FFA85A, #F53F3F);
-  color: #ffffff;
+  background: linear-gradient(180deg, #FFEFE8 3%, #FFE6EF 100%);
+  color: #E20000;
   font-size: 14px;
   border-radius: 4px;
-  text-align: center;
+  /* text-align: center; */
   line-height: 30px;
   cursor: pointer;
   margin-top: 15px;
   transition: all 0.3s;
   position: relative;
-  margin-left: 12px;
-  display: none;
+  margin-right: 24px;
   float: left;
+  display: none;
 }
 .head .nav-activity a {
   position: absolute;
@@ -88,7 +88,12 @@
   text-decoration: none;
 }
 .head .nav-activity:hover {
-  box-shadow: 0 0 11px 0px #ffaba0;
+  background: linear-gradient(180deg, #FFE5DB 3%, #FFD9F6 100%);
+}
+.head .nav-activity img {
+  margin-left: 7px;
+  position: relative;
+  top: -3px;
 }
 .banner {
   width: 1200px;
@@ -379,8 +384,22 @@
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .InputBox textarea:focus {
   border-color: #c2b2ff;
 }
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .InputBox textarea::-webkit-scrollbar {
+  width: 6px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .InputBox textarea::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #7a5af8;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .InputBox textarea::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.1);
+}
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .InputBox.error {
   border-color: #ff4242;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .InputBox.identity_border {
+  border-color: #c2b2ff;
 }
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox {
   display: none;
@@ -749,4 +768,3 @@
 .QRCodeDL {
   line-height: normal !important;
 }
-/*# sourceMappingURL=index.css.map */

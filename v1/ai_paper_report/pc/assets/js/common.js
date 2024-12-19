@@ -149,7 +149,7 @@ if(dct_code){
 	suffix2 = 'dct_code='+ dct_code
 }
 
-var urls = 'https://api.taoxiangyoushu.com'//  https://api.taoxiangyoushu.com
+var urls = 'https://api.taoxiangyoushu.com'//  'http://api.project_libraries.report'
 
 function getFormData(object) {
     // 转FromData 对象
@@ -176,6 +176,10 @@ var memberFu = {}
 var scanCodeRichInfo = {}
 
 window.onload = function (){
+	// v2版本可以走缓存
+	// if(window.sessionStorage.getItem('infoData') && $('.indexAppv2').length) {
+	// 	infoData(JSON.parse(window.sessionStorage.getItem('infoData')))
+	// }
 	$.ajax({
 		type: 'post',
 		url: urls + "/api/project/info?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME +(suffix?'&'+suffix:'') + (suffix2?'&'+suffix2:''),
@@ -184,110 +188,11 @@ window.onload = function (){
 		},
 		success: function success(result) {
 			if(result.code == '200') {
-				var data = result.data
-				// var info = data.project[0].goods_info[0]
-				// selling_price = info.selling_price
-
-				var seller_info = data.seller_info
-				threeMsg = data.project[0].threeMsg
-				$(".customerBox .customer-title").text(seller_info.kf_title || '联系客服')
-				$(".customerBox .customer-qr").attr('src', seller_info.kf_qr || '')
-				$('.customerBox .qqText .s1').text(seller_info.qq || '')
-				$('.customerBox .telephone .s1').text(seller_info.phone || '')
-				$('.customerBox .mailbox .s1').text(seller_info.email || '')
-				$('.customerBox .wxText .s1').text(seller_info.wx || '')
-				if(seller_info.qq) $('.customerBox  .qqText').show();
-				if(seller_info.phone) $('.customerBox  .telephone').show();
-				if(seller_info.email) $('.customerBox  .mailbox').show();
-				if(seller_info.wx) $('.customerBox  .wxText').show();
-				if(seller_info.kf_qr){
-					$(".customerBox .customerCode").show()
-				}else{
-					$(".customerBox .customerCode").hide()
-				}
-				if(seller_info.qq || seller_info.phone || seller_info.email || seller_info.wx){
-					$(".customerBox .customerWay").show()
-				}else{
-					$(".customerBox .customerWay").hide()
-				}
-				if(seller_info.kf_qr && (seller_info.qq || seller_info.phone || seller_info.email || seller_info.wx)){
-					$(".customerBox .segmentation-line").show()
-				}else{
-					$(".customerBox .segmentation-line").hide()
-				}
-				if(!seller_info.qq && !seller_info.phone && !seller_info.email && !seller_info.wx && !seller_info.kf_qr){
-					$(".noCustomer").show()
-				}else{
-					$(".noCustomer").hide()
-				}
-				scanCodeRichInfo = data.pay_config
-				// $('#price').text('￥' + selling_price + '/千字')
-				// 重组数据
-				typefun(data.project[0].goods_info)
-				setArguments(data.project[0].goods_info)
-				isclick = true
-				// if($('.pointOut').length) {
-				// 	showOrder(data.project[0].pay_way)
-				// }
-
-				if($('#payHtml').length) {
-					payWay(data.project[0].pay_way , data.project[0].goods_info, data.pay_config)
-				}
-				if($('.indexApp').length) {
-					dropDownType(result.data.project[0] && result.data.project[0].goods_info)
-				}
-				payWayInfo = data.project[0].pay_way
-
-
-				memberFu = new member ({
-					ele	 : '#memberCarrier', // 插入节点
-					urls : urls, // 接口域名
-					whether: data.project[0].link_config, // 网站配置信息
-					USER_TOKEN: USER_TOKEN,
-					JANE_NAME: JANE_NAME,
-					success_info: function(e){ // 获取用户成功回调
-						if($('.queryApp').length) {
-							query(e)
-						}
-						if(e.is_distributor	&& e.is_bind_phone) {
-							$('#distribution').attr('href' , './fx/index.html')
-						}
-					},
-					complete_info: function(e) { // 获取用户执行完回调
-						if($('.queryApp').length) {
-							startQuerying()
-						}
-					},
-					exitLogin: function(e) {
-						$('#distribution').attr('href' , './fx/init.html')
-					}
-				});
-				if (typeof jsbridge !== "undefined"){
-					window.jsbridge && (null == window ? void 0 : null === (e = window.jsbridge) || void 0 === e ? void 0 : e.getLaunchOptions) && window.jsbridge.getLaunchOptions().then(e=>{
-						let t = e.query.data;
-						if (t) {
-							var query_short_name = (JSON.parse(t)).short_name || false;
-							defaultType(query_short_name) // 默认选中版本
-						}
-					})
-				}else{
-					defaultType(getQueryVariable('short_name')) // 默认选中版本
-				}
-
-				if(data.domain_config && data.domain_config.distribution_status) {
-					$('.distributionEntrance').show()
-				}
-
-				if(data.project[0].act_list.length > 0) {
-					$('.nav-activity').show()
-					if($('.welfare-entrance')[0]){
-						$('.welfare-entrance').css('display', 'inline-block')
-					}
-				}
+				infoData(result)
+				window.sessionStorage.setItem('infoData' , JSON.stringify(result))
 			}else{
 				cocoMessage.error(result.codeMsg, 2000);
 			}
-
 			// pay的二维码需要后端支付类型,
 			// 本意是在index存储后, pay判断是否存在数据,
 			// 存在数据就可以减少二维码的刷新时间, 不必等待info的接口完成后刷新二维码
@@ -299,6 +204,112 @@ window.onload = function (){
 			// sessionStorage.setItem("pay_way", JSON.stringify(data.project[0].pay_way));
 		}
 	});
+}
+function infoData(result) {
+	var data= result.data
+	// var info = data.project[0].goods_info[0]
+	// selling_price = info.selling_price
+
+	var seller_info = data.seller_info
+	threeMsg = data.project[0].threeMsg
+	$(".customerBox .customer-title").text(seller_info.kf_title || '联系客服')
+	$(".customerBox .customer-qr").attr('src', seller_info.kf_qr || '')
+	$('.customerBox .qqText .s1').text(seller_info.qq || '')
+	$('.customerBox .telephone .s1').text(seller_info.phone || '')
+	$('.customerBox .mailbox .s1').text(seller_info.email || '')
+	$('.customerBox .wxText .s1').text(seller_info.wx || '')
+	if(seller_info.qq) $('.customerBox  .qqText').show();
+	if(seller_info.phone) $('.customerBox  .telephone').show();
+	if(seller_info.email) $('.customerBox  .mailbox').show();
+	if(seller_info.wx) $('.customerBox  .wxText').show();
+	if(seller_info.kf_qr){
+		$(".customerBox .customerCode").show()
+	}else{
+		$(".customerBox .customerCode").hide()
+	}
+	if(seller_info.qq || seller_info.phone || seller_info.email || seller_info.wx){
+		$(".customerBox .customerWay").show()
+	}else{
+		$(".customerBox .customerWay").hide()
+	}
+	if(seller_info.kf_qr && (seller_info.qq || seller_info.phone || seller_info.email || seller_info.wx)){
+		$(".customerBox .segmentation-line").show()
+	}else{
+		$(".customerBox .segmentation-line").hide()
+	}
+	if(!seller_info.qq && !seller_info.phone && !seller_info.email && !seller_info.wx && !seller_info.kf_qr){
+		$(".noCustomer").show()
+	}else{
+		$(".noCustomer").hide()
+	}
+	scanCodeRichInfo = data.pay_config
+	// $('#price').text('￥' + selling_price + '/千字')
+	// 重组数据
+	typefun(data.project[0].goods_info)
+	setArguments(data.project[0].goods_info)
+	isclick = true
+	// if($('.pointOut').length) {
+	// 	showOrder(data.project[0].pay_way)
+	// }
+
+	if($('#payHtml').length) {
+		payWay(data.project[0].pay_way , data.project[0].goods_info, data.pay_config)
+	}
+	if($('.indexApp').length) {
+		dropDownType(result.data.project[0] && result.data.project[0].goods_info , result.data.project[0])
+	}
+	payWayInfo = data.project[0].pay_way
+
+
+	memberFu = new member ({
+		ele	 : '#memberCarrier', // 插入节点
+		urls : urls, // 接口域名
+		whether: data.project[0].link_config, // 网站配置信息
+		USER_TOKEN: USER_TOKEN,
+		JANE_NAME: JANE_NAME,
+		success_info: function(e){ // 获取用户成功回调
+			if($('.queryApp').length) {
+				query(e)
+			}
+			if(e.is_distributor	&& e.is_bind_phone) {
+				$('#distribution').attr('href' , './fx/index.html')
+			}
+		},
+		complete_info: function(e) { // 获取用户执行完回调
+			if($('.queryApp').length) {
+				startQuerying()
+			}
+		},
+		exitLogin: function(e) {
+			$('#distribution').attr('href' , './fx/init.html')
+		}
+	});
+	if (typeof jsbridge !== "undefined"){
+		window.jsbridge && (null == window ? void 0 : null === (e = window.jsbridge) || void 0 === e ? void 0 : e.getLaunchOptions) && window.jsbridge.getLaunchOptions().then(e=>{
+			let t = e.query.data;
+			if (t) {
+				var query_short_name = (JSON.parse(t)).short_name || false;
+				defaultType(query_short_name) // 默认选中版本
+			}
+		})
+	}else{
+		defaultType(getQueryVariable('short_name')) // 默认选中版本
+	}
+
+	if(data.domain_config && data.domain_config.distribution_status) {
+		$('.distributionEntrance').show()
+	}
+
+	if(data.project[0].act_list.length > 0) {
+		$('.nav-activity').show()
+		if($('.welfare-entrance')[0]){
+			$('.welfare-entrance').css('display', 'inline-block')
+		}
+	}
+	if(data.project[0].link_config){
+		$('.nav-activity').css('position', 'absolute')
+		$('.nav-activity').css('right', '122px')
+	}
 }
 
 var typeData = {}
@@ -468,11 +479,12 @@ if(getQueryVariable('editionType')) {
 		editionType("bylw")
 	}
 }else {
-	if($('#App').hasClass('indexApp') && window.sessionStorage.getItem('editionKey')=='zjcaigc') {
-		editionType("bylw")
-	} else {
-		editionType(window.sessionStorage.getItem('editionKey') || "bylw")
-	}
+	// if($('#App').hasClass('indexApp') && window.sessionStorage.getItem('editionKey')=='zjcaigc') {
+	// 	editionType("bylw")
+	// } else {
+	// 	editionType(window.sessionStorage.getItem('editionKey') || "bylw")
+	// }
+	editionType(window.sessionStorage.getItem('editionKey') || "bylw")
 	// editionType("bylw") // 关闭专业版, 打开这一行
 }
 

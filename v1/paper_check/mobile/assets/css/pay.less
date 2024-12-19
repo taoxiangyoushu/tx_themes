@@ -120,7 +120,7 @@
         justify-content: center;
         div {
             width: 100%;
-            padding-left: 2.38rem;
+            padding-left: 2rem;
             color: #999999;
             font-size: 1.14rem;
         }
@@ -138,9 +138,18 @@
         color: #333333;
         font-size: 1.43rem;
         font-weight: bold;
+        .symbol{
+            font-size: 1.43rem;
+        }
         span {
             color: #5868ff;
             font-size: 2.4rem;
+        }
+        .Discountamount{
+            font-weight: 400;
+            font-size: 1rem;
+            color: #D81E06;
+            display: none;
         }
     }
 }
@@ -553,4 +562,38 @@
     top: 0;
     z-index: 999;
     display: none;
+}
+
+.Deduction{
+    background-color: #ffffff;
+    box-shadow: 0px 0px 1.67rem 0px rgba(135, 135, 135, 0.19);
+    border-radius: 0.95rem;
+    width: 90%;
+    margin: auto;
+    padding: 1.9rem;
+    margin-top: 1.43rem;
+    position: relative;
+    display: none;
+    .PayName img {
+        width: 2.1rem;
+        height: 2.1rem;
+        margin-right: 1.1rem;
+
+    }
+    .PayName {
+        display: flex;
+        align-items: center;
+        color: #D81E06;
+        .Discount_style{
+            position: relative;
+            top: .0625rem;
+        }
+    }
+    .noselectImg {
+        position: absolute;
+        width: 1.24rem;
+        height: 1.24rem;
+        right: 1.9rem;
+        top: 2.3rem;
+    }
 }

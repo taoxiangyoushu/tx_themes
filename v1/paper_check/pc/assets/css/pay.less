@@ -1,25 +1,31 @@
 html {
     height: 100%;
+
     body {
         height: 100%;
+
         .pay_page {
             min-height: 100%;
         }
     }
 }
+
 .pay_page {
     background-image: url("../img/bj.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     min-width: 1200px;
 }
+
 .head {
     height: 60px;
     //line-height: 60px;
     margin-bottom: 16px;
+
     .logo {
         margin-top: 18px;
         position: relative;
+
         a {
             display: inline-block;
             width: 100%;
@@ -29,36 +35,45 @@ html {
             top: 0;
         }
     }
+
     .nav {
         &>div {
             display: inline-block;
             margin-left: 30px;
         }
+
         .upload-h {
             color: #333333;
             font-size: 14px;
             margin-top: 29px;
+
             &:hover {
                 color: #705bfd;
             }
+
             a {
                 color: inherit;
+
                 &:hover {
                     text-decoration: none;
                 }
             }
         }
+
         .report-h {
             text-align: center;
             font-size: 14px;
             cursor: pointer;
             border-radius: 4px;
             margin-top: 29px;
+
             &:hover {
                 color: #705bfd;
             }
+
             a {
                 color: inherit;
+
                 &:hover {
                     text-decoration: none;
                 }
@@ -70,23 +85,28 @@ html {
 .content-block {
     padding: 0 15px;
 }
+
 .block-left {
     width: 300px;
+
     .operation-process {
         background: linear-gradient(180deg, #fcfcff, #f2f3ff);
         border: 1px solid #e4e9fb;
         border-radius: 10px;
         padding: 20px 24px 30px;
+
         .name {
             color: #231815;
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 20px;
         }
+
         .operation {
             position: relative;
             padding-left: 44px;
             margin-bottom: 36px;
+
             .sequence {
                 position: absolute;
                 left: 0;
@@ -100,6 +120,7 @@ html {
                 line-height: 24px;
                 background: linear-gradient(180deg, #e4dcff, #f0edff);
                 border-radius: 50%;
+
                 &.sequence-line {
                     &:after {
                         content: '';
@@ -111,44 +132,53 @@ html {
                     }
                 }
             }
+
             .p1 {
                 font-size: 14px;
                 font-weight: bold;
                 color: #333333;
                 margin-bottom: 2px;
             }
+
             .p2 {
                 color: #666666;
                 font-size: 12px;
             }
         }
     }
+
     .common-problem {
         background: linear-gradient(0deg, #fcfcff, #f2f3ff);
         border: 1px solid #e4e9fb;
         border-radius: 10px;
         padding: 20px 24px 30px;
         margin-top: 16px;
+
         .name {
             color: #231815;
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 20px;
         }
+
         .p-cont {
             background: #fff;
             padding: 20px;
             border-radius: 10px;
+
             .problem-item {
                 margin-top: 14px;
+
                 .problem-text {
                     color: #222222;
                     font-size: 14px;
                     font-weight: bold;
                     margin-bottom: 12px;
+
                     img {
                         margin-top: -2px;
                     }
+
                     span {
                         display: inline-block;
                         width: 17px;
@@ -162,11 +192,13 @@ html {
                         border-bottom-left-radius: 0;
                     }
                 }
+
                 .answer {
                     font-size: 12px;
                     color: #999999;
                     line-height: 1.8;
                     text-align: justify;
+
                     span {
                         color: #7d55fc;
                     }
@@ -175,23 +207,29 @@ html {
         }
     }
 }
+
 .block-right {
     margin-left: 18px;
     width: calc(100% - 300px - 18px);
+
     .r-content {
         background: #ffffff;
         padding: 22px 30px 20px 30px;
         border-radius: 10px;
+
         .back {
             color: #222222;
+
             a {
                 color: inherit;
+
                 &:hover {
                     text-decoration: none;
                     color: #7d55fc;
                 }
             }
         }
+
         .r-title {
             color: #222222;
             font-size: 24px;
@@ -201,6 +239,7 @@ html {
             margin-bottom: 50px;
             position: relative;
             z-index: 4;
+
             &:after {
                 content: '';
                 position: absolute;
@@ -213,15 +252,18 @@ html {
                 z-index: -1;
             }
         }
+
         .block-information {
             max-width: 810px;
             margin: 0 auto;
+
             .name {
                 color: #222222;
                 font-size: 16px;
                 position: relative;
                 padding-left: 18px;
                 line-height: 1;
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -232,64 +274,83 @@ html {
                     top: 0;
                 }
             }
+
             .information-box {
                 width: 810px;
                 background: #f9f7ff;
                 padding: 24px 20px;
                 border-radius: 10px;
                 margin-top: 20px;
+
                 .info {
                     font-size: 0;
+
                     p {
                         color: #999999;
                         font-size: 14px;
                         display: inline-block;
                         width: 50%;
                         margin-bottom: 30px;
+
                         &>span {
                             color: #222222;
                             margin-left: 10px;
                         }
+
                         &.orderId {
                             //text-align: right;
                         }
+
                         .title-t {
                             max-width: 250px;
                             overflow: hidden;
                             text-overflow: ellipsis;
                             white-space: nowrap;
                         }
+
                         .wordNum-t {
                             margin-top: 2px;
                         }
+
                         .time {
                             margin-bottom: 50px;
                         }
-                        &.title, &.system, &.wordNum {
+
+                        &.title,
+                        &.system,
+                        &.wordNum {
                             padding-right: 26px
                         }
-                        &.billing, &.price, &.orderId {
+
+                        &.billing,
+                        &.price,
+                        &.orderId {
                             padding-left: 26px
                         }
+
                         .price-t.f-r {
                             color: #ff1b1b;
                             font-weight: bold;
                             font-size: 18px;
                             margin-top: -2px;
                         }
+
                         .copyID {
                             color: #7d55fc;
                             text-decoration: underline;
                             cursor: pointer;
                         }
+
                         #copyIDInput {
                             position: absolute;
                             opacity: 0;
                             z-index: -1;
                         }
                     }
+
                     &:first-child {
                         position: relative;
+
                         &:after {
                             content: '';
                             position: absolute;
@@ -303,15 +364,18 @@ html {
                 }
             }
         }
+
         .block-coupon {
             max-width: 810px;
             margin: 22px auto 0;
+            position: relative;
             .name {
                 color: #222222;
                 font-size: 16px;
                 position: relative;
                 padding-left: 18px;
                 line-height: 1;
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -322,8 +386,10 @@ html {
                     top: 0;
                 }
             }
+
             &>div {
                 margin-top: 14px;
+
                 .form-control {
                     display: inline-block;
                     width: 30%;
@@ -331,10 +397,12 @@ html {
                     border-color: #e9e7e7;
                     border-radius: 6px;
                     padding-right: 30px;
+
                     &:focus {
                         box-shadow: 0 0 6px 0 #e3daff;
                     }
                 }
+
                 .eliminateCoupon {
                     width: 16px;
                     height: 16px;
@@ -346,11 +414,13 @@ html {
                     margin-top: -2px;
                     cursor: pointer;
                     display: none;
+
                     &:hover {
                         background-image: url("../img/delete3.png");
                         background-repeat: no-repeat;
                     }
                 }
+
                 .use_now {
                     display: inline-block;
                     height: 34px;
@@ -364,26 +434,28 @@ html {
                     cursor: not-allowed;
                     pointer-events: none;
                     font-size: 14px;
+
                     &.can {
                         background: #7d55fc;
                         cursor: pointer;
                         pointer-events: auto;
                     }
                 }
+
                 .welfare-entrance {
-                    //display: inline-block;
+                    // display: inline-block;
                     display: none;
                     height: 34px;
-                    width: 76px;
+                    width: 100px;
                     border-radius: 6px;
                     margin-left: 12px;
-                    background: linear-gradient(90deg, #FFA85A, #F53F3F);
-                    color: #ffffff;
+                    background: linear-gradient(180deg, #FFEFE8 3%, #FFE6EF 100%);
+                    color: #E20000;
                     font-size: 14px;
-                    text-align: center;
                     line-height: 34px;
                     cursor: pointer;
                     transition: all .3s;
+
                     a {
                         color: inherit;
                         text-decoration: none;
@@ -391,35 +463,63 @@ html {
                         width: 100%;
                         height: 100%;
                     }
+
                     &:hover {
-                        box-shadow: 0 0 11px 0px #ffaba0;
+                        background: linear-gradient( 180deg, #FFE5DB 3%, #FFD9F6 100%);
                     }
+                    img{
+                        margin-left: 7px;
+                        position: relative;
+                        top: -3px;
+                    }
+
                 }
+
                 .claim-coupons {
                     display: none;
                 }
+
                 .errorTip {
                     display: none;
-                    margin-left: 10px;
+                    margin-left: 20px;
                     color: #d81e06;
                     font-size: 12px;
+                    position: absolute;
+                    position: absolute;
+                    top: 1px;
+                    left: 66px;
                     img {
                         vertical-align: sub;
                         margin-right: 6px;
+                        position: relative;
+                        top: -1px;
                     }
+                }
+                .errorTip1{
+                    display: none;
+                    margin-left: 20px;
+                    color: #d81e06;
+                    font-size: 12px;
+                    position: absolute;
+                    position: absolute;
+                    top: 1px;
+                    left: 66px;
                 }
             }
         }
+
         .block-pay {
             max-width: 810px;
             min-height: 334px;
             margin: 30px auto 0;
+
             .name {
                 color: #222222;
                 font-size: 16px;
                 position: relative;
                 padding-left: 18px;
                 line-height: 1;
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -430,13 +530,15 @@ html {
                     top: 0;
                 }
             }
+
             .pay-box {
                 .payType {
                     color: #545454;
                     font-size: 14px;
                     margin-right: 14px;
-                    user-select:none;
+                    user-select: none;
                     margin-top: 30px;
+
                     &>div {
                         background-color: #f5f5f5;
                         border-radius: 4px;
@@ -448,17 +550,20 @@ html {
                         margin-bottom: 30px;
                         margin-right: 20px;
                     }
+
                     img {
                         vertical-align: middle;
                         position: relative;
                         top: -1px;
                     }
+
                     span {
                         width: 80px;
                         display: inline-block;
                         text-align: left;
                         margin-left: 10px;
                     }
+
                     .select {
                         line-height: 48px;
                         background: url(../img/select.png) no-repeat;
@@ -467,15 +572,18 @@ html {
                         background-color: #fff;
                     }
                 }
+
                 .tbPay {
                     display: none;
                     padding-left: 20px;
                     padding-bottom: 24px;
+
                     .Options {
                         margin-bottom: 16px;
                         border-bottom: 2px solid #f7f7f7;
                         height: 36px;
                         width: 412px;
+
                         &>div {
                             float: left;
                             width: 100px;
@@ -488,39 +596,48 @@ html {
                             z-index: 10;
                             cursor: pointer;
                         }
+
                         #XHS {
                             margin-right: 20px;
                             display: none;
                         }
+
                         #TB {
                             padding-left: 6px;
                             display: none;
                         }
+
                         #XHS.Select {
                             border-bottom-color: #fd2442;
                         }
+
                         #TB.Select {
                             border-bottom-color: #fc8848;
                         }
                     }
+
                     .main {
                         width: 480px;
                     }
+
                     &.errInput {
                         border-color: #ff2525;
                     }
+
                     .tb-head {
                         height: 46px;
                         line-height: 46px;
                         padding: 0 25px;
                         font-size: 16px;
                         border-bottom: 1px solid #cfcececc;
+
                         .tb-tips {
                             color: #979797;
                             font-size: 12px;
                             font-weight: normal;
                             margin-left: 10px;
                         }
+
                         .tb-buy {
                             width: 120px;
                             height: 30px;
@@ -533,6 +650,7 @@ html {
                             font-size: 12px;
                             vertical-align: text-bottom;
                             position: relative;
+
                             a {
                                 display: inline-block;
                                 width: 100%;
@@ -541,44 +659,53 @@ html {
                                 top: 0;
                                 left: 0;
                             }
+
                             img {
                                 vertical-align: text-bottom;
                             }
                         }
                     }
+
                     .tb-content {
                         .tb-idBox {
                             position: relative;
+
                             label {
                                 color: #979797;
                                 font-size: 12px;
                                 font-weight: normal;
                                 margin-right: 14px;
                             }
+
                             .tb-oid {
                                 width: 70%;
                                 display: inline-block;
                                 margin-right: 10px;
                                 margin-top: 10px;
+
                                 &.noMarginTop {
                                     margin-top: 0;
                                 }
+
                                 &.errInput {
                                     border-color: red;
                                 }
                             }
+
                             .tb-tips {
                                 color: #979797;
                                 font-size: 12px;
                                 font-weight: normal;
                             }
                         }
+
                         .errTip {
                             color: #e91616;
                             font-size: 12px;
                             margin-top: 14px;
                             display: none;
                         }
+
                         .tb-payOrder {
                             background: linear-gradient(45deg, #a284ff, #7d55fc);
                             width: 90px;
@@ -592,20 +719,24 @@ html {
                             margin-top: 16px;
                         }
                     }
+
                     .tipsDiv {
                         position: absolute;
                         top: 20px;
                         cursor: pointer;
+
                         img {
                             width: 14px;
                             height: 14px;
                             margin-top: -6px;
                         }
+
                         &:hover {
                             div {
                                 display: block;
                             }
                         }
+
                         div {
                             position: absolute;
                             left: 24px;
@@ -616,14 +747,17 @@ html {
                             font-size: 12px;
                         }
                     }
+
                     .tipsDiv2 {
                         position: absolute;
                         top: 10px;
+
                         img {
                             width: 14px;
                             height: 14px;
                             margin-top: -6px;
                         }
+
                         div {
                             position: absolute;
                             left: 20px;
@@ -634,11 +768,13 @@ html {
                         }
                     }
                 }
+
                 .code {
                     display: inline-block;
                     vertical-align: top;
                     padding-bottom: 40px;
                     display: none;
+
                     .tips {
                         position: absolute;
                         width: 100%;
@@ -647,6 +783,7 @@ html {
                         color: #333333;
                         font-size: 12px;
                     }
+
                     .codeER {
                         background: url(../img/codeERbg.png) no-repeat;
                         width: 169px;
@@ -654,15 +791,18 @@ html {
                         padding: 18px;
                         position: relative;
                     }
+
                     .load {
                         position: absolute;
                         left: 18px;
                         top: 18px;
+
                         img {
                             width: 135px;
                             height: 135px;
                         }
                     }
+
                     .mask {
                         backdrop-filter: blur(2px);
                         position: absolute;
@@ -675,48 +815,66 @@ html {
                         display: none;
                         text-align: center;
                         cursor: pointer;
+
                         p {
                             line-height: 30px;
                             font-size: 18px;
                             color: #fff;
                         }
                     }
+
                     .tipsBox {
-                        color: #4c4c4c!important;
+                        color: #4c4c4c !important;
                         margin-top: 20px;
                         display: none;
+
                         img {
                             margin-right: 4px;
                             margin-top: -3px;
                             display: none;
                         }
+
                         span {
                             margin-left: 4px;
-                            &.scanCodeRichWxText,&.scanCodeRichAlipayText {
+
+                            &.scanCodeRichWxText,
+                            &.scanCodeRichAlipayText {
                                 margin-left: 0;
                             }
                         }
+
                         .typeTips {
                             font-size: 14px;
                         }
                     }
                 }
+
                 .titlesRight {
                     padding-left: 30px;
+
                     .amount {
                         color: #545454;
                         font-size: 14px;
+
                         span {
                             font-weight: bold;
                             font-size: 36px;
                             color: #7d55fc;
                         }
+
                         b {
                             color: #7d55fc;
                             font-size: 18px;
                             margin-left: 16px;
                         }
+                        .Discountamount{
+                            font-weight: 400;
+                            font-size: 12px;
+                            color: #D81E06;
+                            display: none;
+                        }
                     }
+
                     .payTypes {
                         // padding: 0 6px;
                         height: 30px;
@@ -724,38 +882,46 @@ html {
                         line-height: 30px;
                         color: #333333;
                         font-size: 12px;
+
                         // text-align: center;
                         img {
                             width: 20px;
                             height: 20px;
                         }
                     }
+
                     &.payTypeClass {
                         padding-top: 6px;
+
                         .payTypes {
                             margin-top: 14px;
                         }
+
                         .auxiliary {
                             margin-top: 18px;
                         }
                     }
                 }
+
                 .auxiliary {
                     color: #999999;
                     font-size: 12px;
                     margin-top: 10px;
-                    user-select:none;
+                    user-select: none;
                     background-color: #f8f8f8;
                     display: inline-block;
                     padding: 8px 10px;
+
                     .time {
                         color: #ff5400;
                     }
+
                     .next {
                         color: #7d55fc;
                         cursor: pointer;
-                        text-decoration:underline
+                        text-decoration: underline
                     }
+
                     &>.next:hover {
                         color: #511bfb;
                     }
@@ -777,21 +943,25 @@ html {
     margin-left: -201px;
     border-radius: 12px;
     display: none;
+
     #copyInput {
         position: absolute;
         opacity: 0;
         z-index: -1;
     }
+
     .pop_top {
         height: 46px;
         border-bottom: 1px solid #dddddd;
         padding: 0 22px;
+
         .pop_title {
             float: left;
             font-size: 18px;
             color: #252525;
             line-height: 46px;
         }
+
         img {
             width: 14px;
             vertical-align: middle;
@@ -800,6 +970,7 @@ html {
             cursor: pointer;
         }
     }
+
     .pop_cont {
         .p1 {
             color: #7d56fc;
@@ -808,20 +979,24 @@ html {
             text-align: center;
             margin-bottom: 14px;
         }
+
         .back_block {
             width: 320px;
             height: 60px;
             background: #f0f6ff;
             margin: 0 auto;
             padding: 12px 0;
+
             .p2 {
                 color: #333333;
                 font-size: 12px;
                 text-align: center;
                 margin-bottom: 4px;
+
                 .orderId_pop {
                     margin-left: 4px;
                 }
+
                 span.copy_pop {
                     color: #7d56fc;
                     text-decoration: underline;
@@ -829,6 +1004,7 @@ html {
                     cursor: pointer;
                 }
             }
+
             .p3 {
                 color: #5d5d5d;
                 text-align: center;
@@ -836,9 +1012,11 @@ html {
             }
         }
     }
+
     .pop_bottom {
         height: 66px;
         padding: 16px 136px 0;
+
         .cancel_btn {
             width: 60px;
             height: 34px;
@@ -850,14 +1028,17 @@ html {
             line-height: 34px;
             float: left;
             cursor: pointer;
+
             &:hover {
                 background: #e5e5e5
             }
+
             &:active {
                 background: #d3d3d3
             }
 
         }
+
         .determine_btn {
             width: 60px;
             height: 34px;
@@ -870,15 +1051,18 @@ html {
             line-height: 34px;
             margin-left: 10px;
             cursor: pointer;
+
             &:hover {
                 background: #6640ee
             }
+
             &:active {
                 background: #5d2ff5
             }
         }
     }
 }
+
 .mask_body {
     position: fixed;
     background: #000;
@@ -895,8 +1079,95 @@ html {
     .hasLogin {
         margin: 17px 0 !important;
     }
+
     .loginButton {
         margin: 22px 0 !important;
         display: none !important;
     }
+}
+
+.Coupon_exceeds {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    display: none;
+
+    .couponbox {
+        width: 340px;
+        height: 156px;
+        background: #FFFFFF;
+        border-radius: 10px 10px 10px 10px;
+        position: fixed;
+        top: 38%;
+        left: 42%;
+        padding: 16px;
+    }
+
+    .head_coupon {
+        float: right;
+        &:hover{
+            .Coupon_closure{
+                display: none;
+            }
+            .Coupon_closure1{
+                display: inline;
+            }
+        }
+    }
+
+    .body_coupon {
+        text-align: center;
+        font-size: 16px;
+        color: #3D3D3D;
+        margin-top: 38px;
+
+        img {
+            position: relative;
+            top: -2px;
+            left: -1px;
+        }
+    }
+
+    .bottom_coupon {
+        text-align: center;
+        margin-top: 18px;
+        span {
+            display: inline-block;
+            width: 68px;
+            height: 32px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 4px 4px 4px 4px;
+            margin-right: 12px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    }
+    .Coupon_cancellation{
+        color: #606266;
+        background: #FFFFFF;
+        border: 1px solid #DCDFE6;
+        &:hover{
+            background: #F4F1FF;
+            border: 1px solid #CEBEFF;
+            color: #7D55FC;
+        }
+    }
+    .Coupon_confirmation{
+        color: #FFFFFF;
+        background: #7D55FC;
+        border: 1px solid #7D55FC;
+        &:hover{
+            background: #6D3FFD;
+            border: 1px solid #6D3FFD;
+        }
+    }
+    .Coupon_closure1{
+        display: none;
+    }
+
 }

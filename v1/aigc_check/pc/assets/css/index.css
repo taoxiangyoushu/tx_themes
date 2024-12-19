@@ -145,6 +145,7 @@
   padding: 14px;
   border: 1px solid #e1e8ef;
   border-radius: 10px;
+  position: relative;
 }
 .leftDiv .ContentMain .submit-form .form-group .rower .content-box .text-box textarea#content-text {
   width: 100%;
@@ -159,6 +160,19 @@
 }
 .leftDiv .ContentMain .submit-form .form-group .rower .content-box .text-box.error {
   border-color: #f56c6c;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .text-box .Paste_Tips {
+  display: inline-block;
+  font-size: 12px;
+  color: #999999;
+  vertical-align: middle;
+  line-height: normal;
+  position: absolute;
+  top: 15px;
+  left: 14px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .text-box .Paste_Tips span {
+  color: #FF2C1E;
 }
 .leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box {
   width: 100%;
@@ -187,18 +201,38 @@
 .leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block .p1 {
   font-size: 14px;
   color: #9099b3;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block .p1 .redText {
   color: #ff001e;
 }
 .leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block .p1 .blueText {
-  color: #0d81fc;
+  color: #108DF9;
 }
 .leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block .p2 {
-  color: #b7bccb;
+  color: #666666;
   font-size: 12px;
   margin-top: 4px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block .p3 {
+  color: #FF001E;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block .Upload_paper {
+  margin: auto;
+  width: 110px;
+  height: 36px;
+  background: #108DF9;
+  border-radius: 18px 18px 18px 18px;
+  text-align: center;
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 36px;
+}
+.leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .upload-block .Upload_paper img {
+  position: relative;
+  top: -1px;
 }
 .leftDiv .ContentMain .submit-form .form-group .rower .content-box .file-box .file-block {
   margin-top: 80px;
@@ -279,18 +313,18 @@
   color: #f56c6c;
 }
 .nav-activity {
-  width: 80px;
+  width: 100px;
   height: 32px;
-  background: linear-gradient(90deg, #FFA85A, #F53F3F);
-  color: #ffffff;
+  background: linear-gradient(180deg, #FFEFE8 3%, #FFE6EF 100%);
+  color: #E20000;
   font-size: 14px;
-  border-radius: 30px;
-  text-align: center;
+  border-radius: 4px;
   line-height: 32px;
   cursor: pointer;
   margin-top: 18px;
   position: relative;
   float: right;
+  margin-left: 36px;
   display: none;
 }
 .nav-activity a {
@@ -309,6 +343,10 @@
   text-decoration: none;
 }
 .nav-activity:hover {
-  box-shadow: 0 0 11px 0px #ffaba0;
+  background: linear-gradient(180deg, #FFE5DB 3%, #FFD9F6 100%);
 }
-/*# sourceMappingURL=index.css.map */
+.nav-activity img {
+  margin-left: 7px;
+  position: relative;
+  top: -3px;
+}

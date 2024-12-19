@@ -40,12 +40,22 @@
     <link rel="shortcut icon" href="../mobile/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0002">
-    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0002">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0002">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0005">
+    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0005">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0005">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'aigc_check'
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
 </head>
 <body>
@@ -76,7 +86,15 @@
         </div>
         <div class="info couponBox">
             <input id="coupon" onKeyUp="value=value.replace(/[\W]/g,'')" type="text" placeholder="请输入优惠券码">
+            <img class="eliminateCoupon" src="../mobile/assets/img/delete4.png" alt="">
             <span class="use_now">兑  换</span>
+        </div>
+        <div class="Deduction">
+            <div class="PayName">
+                <img src="../mobile/assets/img/coupon_icon.png" alt="">
+                <span class="Discount_style">抵扣￥<span id="After_discounts">10.00</span></span>
+            </div>
+            <img class="noselectImg" src="../mobile/assets/img/select.png" alt="">
         </div>
         <p class="activityTip">已自动填写活动优惠券码，请点击兑换使用</p>
         <!-- 优惠券广告位-->
@@ -128,7 +146,9 @@
         <p>请在30分钟内完成支付，如未支付完成该订单将自动取消</p>
         <div class="payBox">
             <div class="amount">
-                <div class="total">合计 <span>￥<span id="amountText"></span></span></div>
+                <div class="total">合计 <span class="symbol">￥<span id="amountText"></span></span>
+                    <span class="Discountamount">(优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>)</span>
+                </div>
                 <div>计费方式：<span id="priceTetx"></span></div>
             </div>
             <div class="payBotton">
@@ -238,12 +258,12 @@
 <script src="../mobile/assets/js/jquery.min.js"></script>
 <script src="../mobile/assets/js/bootstrap.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0002"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0005"></script>
 <script src="../mobile/assets/js/rotograph.js"></script>
 <script src="../mobile/assets/js/message.js"></script>
-<script src="../mobile/assets/js/ap.js?v=m24.0002"></script>
+<script src="../mobile/assets/js/ap.js?v=m24.0005"></script>
 <script src="../mobile/assets/js/Drag.js"></script>
-<script src="../mobile/assets/js/orderInfo.js?v=m24.0002"></script>
+<script src="../mobile/assets/js/orderInfo.js?v=m24.0005"></script>
 <script>
     toast({
         msg: '正在计算价格...',
@@ -687,41 +707,69 @@
         // replaceParamVal('goods' , goodsTo||'' , 0)
         replaceParamVal('payId' , pay_id , 0)
     }
-    function payStatus() { // 轮询
-        payId = getQueryVariable('order_sn') || ''
-        if(payId) {
-            $.ajax({
-                type: "get",
-                url: urls + '/apirs/order/is_pay?pay_id=' + payId,
-                xhrFields: {
-                    withCredentials: true
-                },
-                success: function (res) {
-                    clearTimeout(Timeout);
-                    if (!res.data) {
-                        Timeout = setTimeout(function () {
-                            payStatus();
-                        }, 1000);
-                    }else {
-                        window.location.href = "./pay_result.html?oid=" + payId + "&price= "+$('#amountText').text()+"" + "&payType="+ payType + "" ;
-                    }
-                },
-                error: function () {
-                    toast({
-                        msg: "请求失败!请检查网络",
-                        type: 'error',
-                        time: 2000
-                    })
-                },
-            });
-        }else {
-            clearTimeout(Timeout);
-            Timeout = setTimeout(function () {
-                payStatus();
-            }, 1000);
-        }
+    // function payStatus() { // 轮询
+    //     payId = getQueryVariable('order_sn') || ''
+    //     if(payId) {
+    //         $.ajax({
+    //             type: "get",
+    //             url: urls + '/apirs/order/is_pay?pay_id=' + payId,
+    //             xhrFields: {
+    //                 withCredentials: true
+    //             },
+    //             success: function (res) {
+    //                 clearTimeout(Timeout);
+    //                 if (!res.data) {
+    //                     Timeout = setTimeout(function () {
+    //                         payStatus();
+    //                     }, 1000);
+    //                 }else {
+    //                     window.location.href = "./pay_result.html?oid=" + payId + "&price= "+$('#amountText').text()+"" + "&payType="+ payType + "" ;
+    //                 }
+    //             },
+    //             error: function () {
+    //                 toast({
+    //                     msg: "请求失败!请检查网络",
+    //                     type: 'error',
+    //                     time: 2000
+    //                 })
+    //             },
+    //         });
+    //     }else {
+    //         clearTimeout(Timeout);
+    //         Timeout = setTimeout(function () {
+    //             payStatus();
+    //         }, 1000);
+    //     }
+    // }
+    // payStatus()
+
+    function payStatus(id) { // 轮询
+        $.ajax({
+            type: "get",
+            url: urls + '/apirs/order/is_pay?pay_id=' + id,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                clearTimeout(Timeout);
+                if (!res.data) {
+                    Timeout = setTimeout(function () {
+                        payStatus(id);
+                    }, 1000);
+                }else {
+                    window.location.href = "./pay_result.html?oid=" + id + "&price= "+$('#amountText').text()+"" + "&payType="+ payType + "" ;
+                }
+            },
+            error: function () {
+                toast({
+                    msg: "请求失败!请检查网络",
+                    type: 'error',
+                    time: 2000
+                })
+            },
+        });
     }
-    payStatus()
+   payStatus(order_sn)
 
     var contentTypeIs = true
 
@@ -825,12 +873,18 @@
     $("#coupon").on('input',function (){
         if($(this).val().length > 0){
             $(".use_now").addClass('active')
+            $(".eliminateCoupon").show()
         }else{
             $(".use_now").removeClass('active')
+            $(".eliminateCoupon").hide()
         }
         $(".activityTip").hide()
     })
 
+    $(".eliminateCoupon").on('click', function (){
+        $("#coupon").val('')
+        $("#coupon").trigger('input')
+    })
     function couponsPay(){
         var formData2 = getFormData({
             order_sn: order_sn,
@@ -937,11 +991,18 @@
                     $('#dateTime').text(res.data.created)
                     $('#orderIdText').text(res.data.order_sn)
                     $(".oid_pop").text(res.data.order_sn)
-                    // payStatus(order_sn)
+                    payStatus(order_sn)
                     if(Number(res.data.order_amount) == 0) {
                         $(".mask").show();
                         $(".coupons_pop").show()
                     }else{
+                        if(res.data.coupon_money>0){
+                            $('.Deduction').show()
+                            $('.couponBox').hide()
+                            $('.Discountamount').show()
+                            $('#After_discounts').text(res.data.coupon_money)
+                            $('#Discount_amount').text(res.data.coupon_money)
+                        }
                         $('#amountText2').text(res.data.order_amount)
                         $('#amountText').text(res.data.order_amount)
                     }
@@ -971,6 +1032,58 @@
         $(".aigc-page").css('display','flex')
         $(".mask").show()
         e.stopPropagation();
+    })
+
+
+    $('.Deduction').on('click',function(){
+        $('.Deduction').hide()
+        $('.couponBox').show()
+        $('.Discountamount').hide()
+        $('#coupon').val('')
+        $('.use_now').removeClass('active')
+        $('.eliminateCoupon').hide()
+
+        var formData = getFormData({
+            order_sn: order_sn,
+            goods: goods().toString(),
+            code: $("#coupon").val()
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/variation/order',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                if (res.code == 200) {
+                    order_sn = res.data.order_sn
+                    $('#amountText').text(res.data.order_amount)
+                    $('#dateTime').text(res.data.created)
+                    $('#orderIdText').text(res.data.order_sn)
+                    $(".oid_pop").text(res.data.order_sn)
+                    payStatus(order_sn)
+                }else{
+                    $(".errTip_p").text(res.codeMsg)
+                    $(".errTipBox").show();
+                    $(".mask").show();
+                }
+                contentTypeIs=true
+                canClick = true
+            },
+            error: function () {
+                toastNone()
+                toast({
+                    msg: "请求失败!请检查网络",
+                    type: 'error',
+                    time: 2000
+                })
+                contentTypeIs=true
+                canClick = true
+            },
+        })
     })
 </script>
 </body>

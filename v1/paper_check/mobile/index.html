@@ -47,12 +47,22 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/select2.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0005">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0005">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0005">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0007">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0007">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0007">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
 </head>
 <body>
@@ -317,7 +327,7 @@
 <script src="../mobile/assets/js/select2.min.js"></script>
 <script src="../mobile/assets/js/typed.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0005"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0007"></script>
 <script>
     var uploadType = 'content'
     var minWords = ''
@@ -445,7 +455,11 @@
         var introduceDom = ''
         $(".introduce-region").html('')
         for(var i=0; i<sequenceArr.length; i++){
-            introduceDom += '<div class="card-content" data-name="'+ sequenceArr[i] +'">\n' +
+            var specialHeight = ''
+            if(sequenceArr[i] == 'turnitin'){
+                specialHeight = ' mHeight'
+            }
+            introduceDom += '<div class="card-content'+ specialHeight +'" data-name="'+ sequenceArr[i] +'">\n' +
                 '                <div class="block1">\n' +
                 '                    <img src="../mobile/assets/img/logo-'+ sequenceArr[i] +'.png?v=2" alt="">\n' +
                 '                </div>\n' +

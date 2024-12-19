@@ -29,26 +29,28 @@
     background-position: right;
   }
 }
-.foot {
-  background: #edf7ff;
+#app .foot {
+  background: transparent;
   text-align: center;
-  padding: 2px 0 8px;
+  padding: 36px 0 2px 0;
+  color: #b7b7b7;
+  font-size: 14px;
 }
-.foot .gongan {
+#app .foot .gongan {
   width: 16px;
   margin-top: -4px;
   margin-right: 4px;
 }
-.foot a {
+#app .foot a {
   text-decoration: none;
-  color: #8f8f8f;
-  font-size: 12px;
+  color: #b7b7b7;
+  font-size: 14px;
 }
-.foot a.beian {
+#app .foot a.beian {
   margin-left: 20px;
 }
-.foot a:hover {
-  color: #337ab7;
+#app .foot a:hover {
+  color: #2170d6;
 }
 .uploadTy_label .uploadTy_text {
   color: #5B5B5B;
@@ -229,7 +231,7 @@
   vertical-align: middle;
   font-size: 12px;
   text-align: center;
-  line-height: 30px;
+  line-height: 28px;
   color: #2C90FF;
   border: 1px solid #E0E3E9;
   border-radius: 4px;
@@ -431,11 +433,119 @@
   z-index: 100;
   position: absolute;
   right: 0;
+  top: 46px;
   box-shadow: 0 0 8px 0 #e6eaef;
   border-radius: 4px;
   border: 1px solid #E4E7ED;
   padding: 10px;
   display: none;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock:before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 362px;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-bottom: 8px solid currentColor;
+  color: #ffffff;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 360px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom: 10px solid currentColor;
+  color: #e4e7ed;
+  z-index: -1;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.cnki:before {
+  left: 372px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.cnki:after {
+  left: 370px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.wanfang:before {
+  left: 298px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.wanfang:after {
+  left: 296px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.weipu:before {
+  left: 320px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.weipu:after {
+  left: 318px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.zaojiance:before {
+  left: 309px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.zaojiance:after {
+  left: 307px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.checkpass:before {
+  left: 323px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.checkpass:after {
+  left: 321px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.mastercheck:before {
+  left: 323px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.mastercheck:after {
+  left: 321px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.paperpass:before {
+  left: 287px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.paperpass:after {
+  left: 285px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.yuanwenjian:before {
+  left: 329px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.yuanwenjian:after {
+  left: 327px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.cnkiaigc:before {
+  left: 320px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.cnkiaigc:after {
+  left: 318px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.masteraigc:before {
+  left: 286px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.masteraigc:after {
+  left: 284px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.wanfangaigc:before {
+  left: 288px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.wanfangaigc:after {
+  left: 286px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.weipuaigc:before {
+  left: 220px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.weipuaigc:after {
+  left: 218px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.gzdaigc:before {
+  left: 279px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.gzdaigc:after {
+  left: 277px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.paperpassaigc:before {
+  left: 286px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.paperpassaigc:after {
+  left: 284px;
 }
 .form-upload .zipFile_block .zipFile_upload {
   display: flex;
@@ -596,6 +706,9 @@
   color: #666666;
   display: none;
 }
+.form-upload .zipFile_block .zipFile_upload .upload_tips .platform_utl::placeholder {
+  color: #999999;
+}
 .form-upload .zipFile_block .zipFile_upload .upload_tips .fileType_text {
   margin-top: 30px;
 }
@@ -613,7 +726,7 @@
   vertical-align: middle;
   font-size: 12px;
   text-align: center;
-  line-height: 30px;
+  line-height: 28px;
   color: #2C90FF;
   border: 1px solid #E0E3E9;
   border-radius: 4px;
@@ -622,7 +735,7 @@
 .form-upload .zipFile_block .zipFile_upload .upload_tips .format_size .size_block {
   width: 130px;
   height: 30px;
-  line-height: 24px;
+  line-height: 28px;
   color: #acacac;
   font-size: 22px;
   font-weight: 700;
@@ -630,6 +743,7 @@
   border-radius: 4px;
   margin-left: 30px;
   position: relative;
+  font-size: 0;
 }
 .form-upload .zipFile_block .zipFile_upload .upload_tips .format_size .size_block:before {
   content: '';
@@ -643,7 +757,7 @@
   font-size: 22px;
   display: inline-block;
   vertical-align: middle;
-  line-height: 22px;
+  line-height: 21px;
 }
 .form-upload .zipFile_block .zipFile_upload .upload_tips .format_size .size_block .size_text {
   width: 50px;
@@ -655,7 +769,7 @@
   vertical-align: middle;
   background: #f6f6f6;
   font-weight: 400;
-  margin-left: 4px;
+  margin: 0 4px 0 5px;
   border-radius: 4px;
   text-align: center;
 }
@@ -674,8 +788,8 @@
   width: 100%;
   background: #F6FBFF;
   border-radius: 10px;
-  padding: 26px 20px;
-  min-height: 327px;
+  padding: 26px 20px 20px;
+  min-height: 304px;
 }
 .attention-list.s-height {
   min-height: 299px;
@@ -706,8 +820,9 @@
   background-image: url('../img/img2.png');
   background-repeat: no-repeat;
   background-position: right bottom;
-  min-height: 188px;
+  min-height: 214px;
   padding: 20px;
+  border-radius: 10px;
 }
 .attention-list ul li {
   color: #666666;

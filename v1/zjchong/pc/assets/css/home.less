@@ -220,7 +220,7 @@ body {
                     //min-height: 720px;
                 }
                 &.zip_height {
-                    min-height: 698px;
+                    min-height: 700px;
                 }
                 .r-bar-tab{
                     position: relative;
@@ -285,7 +285,7 @@ body {
                 }
                 .r-bar-ctn{
                     padding: 24px 0;
-                    min-height: 634px;
+                    min-height: 610px;
                     >div{
                         padding: 0 10px;
                     }
@@ -843,7 +843,7 @@ body {
         }
     }
     .seize {
-        height: 10px;
+        //height: 10px;
     }
     .copy-right{
         text-align: center;
@@ -2231,8 +2231,9 @@ body {
             background-color: #2170d6;
             color: #fff;
         }
-        background: url('../img/check_max.png') no-repeat;
+        background-image: url(../img/check_max.png);
         background-position: 100.5% -1px;
+        background-repeat: no-repeat;
         border-color: #2170d6;
         box-shadow: 0 0 8px 0 rgba(122, 179, 253, .84);
     }
@@ -2286,13 +2287,13 @@ body {
 }
 
 .nav-activity {
-    width: 80px;
-    height: 32px;
-    background: linear-gradient(90deg, #FFA85A, #F53F3F);
-    color: #ffffff;
+    width: 100px;
+    height: 30px;
+    background: linear-gradient(180deg, #FFEFE8 3%, #FFE6EF 100%);
+    color: #E20000;
     font-size: 14px;
     border-radius: 4px;
-    text-align: center;
+    // text-align: center;
     line-height: 30px;
     cursor: pointer;
     margin-top: 16px;
@@ -2316,6 +2317,11 @@ body {
         }
     }
     &:hover {
-        box-shadow: 0 0 11px 0px #ffaba0;
+        background: linear-gradient( 180deg, #FFE5DB 3%, #FFD9F6 100%);
+    }
+    img{
+        margin-left: 7px;
+        position: relative;
+        top: -3px;
     }
 }

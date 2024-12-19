@@ -41,10 +41,20 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
     <link rel="stylesheet" href="../mobile/assets/css/common.css">
-    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0004">
+    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0007">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
 </head>
 <body>
@@ -77,6 +87,13 @@
             <input id="coupon" onKeyUp="value=value.replace(/[\W]/g,'')" type="text" placeholder="请输入优惠券码">
             <img class="eliminateCoupon" src="../mobile/assets/img/delete4.png" alt="">
             <span class="use_now">兑  换</span>
+        </div>
+        <div class="Deduction">
+            <div class="PayName">
+                <img src="../mobile/assets/img/coupon_icon.png" alt="">
+                <span class="Discount_style">抵扣￥<span id="After_discounts">10.00</span></span>
+            </div>
+            <img class="noselectImg" src="../mobile/assets/img/select.png" alt="">
         </div>
         <!-- 优惠券广告位-->
         <div class="claim-coupons">
@@ -127,7 +144,9 @@
         <p>请在30分钟内完成支付，如未支付完成该订单将自动取消</p>
         <div class="payBox">
             <div class="amount">
-                <div class="total">合计 <span>￥<span id="amountText"></span></span></div>
+                <div class="total">合计 <span class="symbol">￥<span id="amountText"></span></span>
+                    <span class="Discountamount">(优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>)</span>
+                </div>
                 <div>计费方式：<span id="priceTetx"></span></div>
                 <div class="">注意：<span class="unitPrice-tip"></span></div>
             </div>
@@ -238,10 +257,10 @@
 <script src="../mobile/assets/js/jquery.min.js"></script>
 <script src="../mobile/assets/js/bootstrap.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0004"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0007"></script>
 <script src="../mobile/assets/js/message.js"></script>
-<script src="../mobile/assets/js/ap.js?v=m24.0004"></script>
-<script src="../mobile/assets/js/orderInfo.js?v=m24.0004"></script>
+<script src="../mobile/assets/js/ap.js?v=m24.0007"></script>
+<script src="../mobile/assets/js/orderInfo.js?v=m24.0007"></script>
 <script>
     toast({
         msg: '正在计算价格...',
@@ -928,14 +947,22 @@
                 toastNone()
                 if (res.code == 200) {
                     order_sn = res.data.order_sn
+
                     $('#dateTime').text(res.data.created)
                     $('#orderIdText').text(res.data.order_sn)
                     $(".oid_pop").text(res.data.order_sn)
-                    // payStatus(order_sn)
+                    payStatus(order_sn)
                     if(Number(res.data.order_amount) == 0) {
                         $(".mask").show();
                         $(".coupons_pop").show()
                     }else{
+                        if(res.data.coupon_money>0){
+                            $('.couponBox').hide()
+                            $('.Deduction').show()
+                            $('.Discountamount').show()
+                            $('#Discount_amount').text(res.data.coupon_money)
+                            $('#After_discounts').text(res.data.coupon_money)
+                        }
                         $('#amountText2').text(res.data.order_amount)
                         $('#amountText').text(res.data.order_amount)
                     }
@@ -965,6 +992,57 @@
         $(".aigc-page").css('display','flex')
         $(".mask").show()
         e.stopPropagation();
+    })
+
+    $('.Deduction').on('click',function(){
+        $('.Deduction').hide()
+        $('.couponBox').show()
+        $('.Discountamount').hide()
+        $('#coupon').val('')
+        $('.use_now').removeClass('active')
+        $('.eliminateCoupon').hide()
+
+        var formData = getFormData({
+            order_sn: order_sn,
+            goods: goods().toString(),
+            code: $("#coupon").val()
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/variation/order',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                if (res.code == 200) {
+                    order_sn = res.data.order_sn
+                    $('#amountText').text(res.data.order_amount)
+                    $('#dateTime').text(res.data.created)
+                    $('#orderIdText').text(res.data.order_sn)
+                    $(".oid_pop").text(res.data.order_sn)
+                    payStatus(order_sn)
+                }else{
+                    $(".errTip_p").text(res.codeMsg)
+                    $(".errTipBox").show();
+                    $(".mask").show();
+                }
+                contentTypeIs=true
+                canClick = true
+            },
+            error: function () {
+                toastNone()
+                toast({
+                    msg: "请求失败!请检查网络",
+                    type: 'error',
+                    time: 2000
+                })
+                contentTypeIs=true
+                canClick = true
+            },
+        })
     })
 </script>
 </body>

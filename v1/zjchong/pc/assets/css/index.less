@@ -46,24 +46,28 @@
     0% {background-position: right}
 }
 
-.foot {
-    background: #edf7ff;
-    text-align: center;
-    padding: 2px 0 8px;
-    .gongan {
-        width: 16px;
-        margin-top: -4px;
-        margin-right: 4px;
-    }
-    a {
-        text-decoration: none;
-        color: #8f8f8f;
-        font-size: 12px;
-        &.beian {
-            margin-left: 20px;
+#app {
+    .foot {
+        background: transparent;
+        text-align: center;
+        padding: 36px 0 2px 0;
+        color: #b7b7b7;
+        font-size: 14px;
+        .gongan {
+            width: 16px;
+            margin-top: -4px;
+            margin-right: 4px;
         }
-        &:hover {
-            color: #337ab7;
+        a {
+            text-decoration: none;
+            color: #b7b7b7;
+            font-size: 14px;
+            &.beian {
+                margin-left: 20px;
+            }
+            &:hover {
+                color: #2170d6;
+            }
         }
     }
 }
@@ -246,7 +250,7 @@
                         vertical-align: middle;
                         font-size: 12px;
                         text-align: center;
-                        line-height: 30px;
+                        line-height: 28px;
                         color: #2C90FF;
                         border:1px solid #E0E3E9;
                         border-radius: 4px;
@@ -450,11 +454,147 @@
                 z-index: 100;
                 position: absolute;
                 right: 0;
+                top: 46px;
                 box-shadow: 0 0 8px 0 #e6eaef;
                 border-radius: 4px;
                 border: 1px solid #E4E7ED;
                 padding: 10px;
                 display: none;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    bottom: 100%;
+                    left: 362px;
+                    width: 0;
+                    height: 0;
+                    border: 8px solid transparent;
+                    border-bottom: 8px solid currentColor;
+                    color: #ffffff;
+                }
+                &:after{
+                    content: "";
+                    position: absolute;
+                    bottom: 100%;
+                    left: 360px;
+                    width: 0;
+                    height: 0;
+                    border: 10px solid transparent;
+                    border-bottom: 10px solid currentColor;
+                    color: #e4e7ed;
+                    z-index: -1;
+                }
+                &.cnki {
+                    &:before {
+                        left: 372px;
+                    }
+                    &:after {
+                        left: 370px;
+                    }
+                }
+                &.wanfang {
+                    &:before {
+                        left: 298px;
+                    }
+                    &:after {
+                        left: 296px;
+                    }
+                }
+                &.weipu {
+                    &:before {
+                        left: 320px;
+                    }
+                    &:after {
+                        left: 318px;
+                    }
+                }
+                &.zaojiance {
+                    &:before {
+                        left: 309px;
+                    }
+                    &:after {
+                        left: 307px;
+                    }
+                }
+                &.checkpass {
+                    &:before {
+                        left: 323px;
+                    }
+                    &:after {
+                        left: 321px;
+                    }
+                }
+                &.mastercheck {
+                    &:before {
+                        left: 323px;
+                    }
+                    &:after {
+                        left: 321px;
+                    }
+                }
+                &.paperpass {
+                    &:before {
+                        left: 287px;
+                    }
+                    &:after {
+                        left: 285px;
+                    }
+                }
+                &.yuanwenjian {
+                    &:before {
+                        left: 329px;
+                    }
+                    &:after {
+                        left: 327px;
+                    }
+                }
+                &.cnkiaigc {
+                    &:before {
+                        left: 320px;
+                    }
+                    &:after {
+                        left: 318px;
+                    }
+                }
+                &.masteraigc {
+                    &:before {
+                        left: 286px;
+                    }
+                    &:after {
+                        left: 284px;
+                    }
+                }
+                &.wanfangaigc {
+                    &:before {
+                        left: 288px;
+                    }
+                    &:after {
+                        left: 286px;
+                    }
+                }
+                &.weipuaigc {
+                    &:before {
+                        left: 220px;
+                    }
+                    &:after {
+                        left: 218px;
+                    }
+                }
+                &.gzdaigc {
+                    &:before {
+                        left: 279px;
+                    }
+                    &:after {
+                        left: 277px;
+                    }
+                }
+                &.paperpassaigc {
+                    &:before {
+                        left: 286px;
+                    }
+                    &:after {
+                        left: 284px;
+                    }
+                }
                 &>div {
                     //border: 1px dashed #c3c3c3;
                     img {
@@ -621,6 +761,9 @@
                     padding-left: 10px;
                     color: #666666;
                     display: none;
+                    &::placeholder {
+                        color: #999999;
+                    }
                 }
                 .fileType_text {
                     margin-top: 30px;
@@ -637,7 +780,7 @@
                             vertical-align: middle;
                             font-size: 12px;
                             text-align: center;
-                            line-height: 30px;
+                            line-height: 28px;
                             color: #2C90FF;
                             border:1px solid #E0E3E9;
                             border-radius: 4px;
@@ -647,7 +790,7 @@
                     .size_block {
                         width: 130px;
                         height: 30px;
-                        line-height: 24px;
+                        line-height: 28px;
                         color: #acacac;
                         font-size: 22px;
                         font-weight: 700;
@@ -655,6 +798,7 @@
                         border-radius: 4px;
                         margin-left: 30px;
                         position: relative;
+                        font-size: 0;
                         &:before {
                             content: '';
                             position: absolute;
@@ -667,7 +811,7 @@
                             font-size: 22px;
                             display: inline-block;
                             vertical-align: middle;
-                            line-height: 22px;
+                            line-height: 21px;
                         }
                         .size_text {
                             width: 50px;
@@ -679,7 +823,7 @@
                             vertical-align: middle;
                             background: #f6f6f6;
                             font-weight: 400;
-                            margin-left: 4px;
+                            margin: 0 4px 0 5px;
                             border-radius: 4px;
                             text-align: center;
                             img {
@@ -705,8 +849,8 @@
     width: 100%;
     background: #F6FBFF;
     border-radius: 10px;
-    padding: 26px 20px;
-    min-height: 327px;
+    padding: 26px 20px 20px;
+    min-height: 304px;
     &.s-height {
         min-height: 299px;
     }
@@ -736,8 +880,9 @@
         background-image: url('../img/img2.png');
         background-repeat: no-repeat;
         background-position: right bottom;
-        min-height: 188px;
+        min-height: 214px;
         padding: 20px;
+        border-radius: 10px;
         li{
             color: #666666;
             line-height: 36px;

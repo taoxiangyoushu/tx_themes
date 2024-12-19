@@ -80,7 +80,6 @@ window.onload = function (){
         success: function success(result) {
             if(result.code == '200') {
                 var data = result.data
-
                 var seller_info = data.seller_info
                 threeMsg = data.project[0].threeMsg
                 $(".customerBox .customer-title").text(seller_info.kf_title || '联系客服')
@@ -149,34 +148,11 @@ window.onload = function (){
 						}
                     },
                     complete_info: function(e) { // 获取用户执行完回调
-                        if(e.username || (e && $('#App').data('key')!='payApp')) {
-                            if(data.project[0].act_list.length > 0){
-                                $('.Sample').css('margin-right' , '30px')
-                                $('.nav-activity').css('margin-right' , '100px')
-                            }else{
-                                $('.Sample').css('margin-right' , '108px')
-                            }
-                        }else {
-                            if(data.project[0].act_list.length > 0){
-                                $('.Sample').css('margin-right' , '30px')
-                            }else{
-                                $('.Sample').css('margin-right' , '0px')
-                            }
-                        }
                         if($('#App').data('key') == 'queryApp') {
                             startQuerying()
                         }
                     },
                     exitLogin: function(e){ // 退出回调
-                        if($('#App').data('key')=='payApp') {
-                            $('.Sample').css('margin-right' , '0')
-                        }else {
-                            if(data.project[0].act_list.length > 0){
-                                $('.Sample').css('margin-right' , '30px')
-                            }else{
-                                $('.Sample').css('margin-right' , '108px')
-                            }
-                        }
 						$('#distribution').attr('href' , './fx/init.html')
                     }
                 });
@@ -193,6 +169,15 @@ window.onload = function (){
                 cocoMessage.error(result.codeMsg, 2000);
             }
 
+             // is_must_login_enable , is_must_phone_login_enable 一项为true, 出现登录按钮
+             if (data.project[0].link_config.is_must_login_enable ||data.project[0].link_config.is_must_phone_login_enable) {
+               if ( $("#App").data("key") == "payApp" &&!$(".hasLogin").is(":visible")&&$('.loginButton').is(":visible")) {
+                 $(".topNav").css("padding-right", "0");
+               } 
+               else {
+                 $(".topNav").css("padding-right", "98px");
+               }
+             }
 
             // pay的二维码需要后端支付类型,
             // 本意是在index存储后, pay判断是否存在数据,

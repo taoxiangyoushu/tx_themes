@@ -292,6 +292,9 @@ body {
   width: 840px;
   padding: 44px 24px;
 }
+.content .taskDetails .fulfils_block .fulfil_details.minHeight {
+  padding: 64px 24px;
+}
 .content .taskDetails .fulfils_block .fulfil_details .f_d_img {
   width: 112px;
   height: 112px;
@@ -331,6 +334,12 @@ body {
   display: none;
 }
 .content .taskDetails .fulfils_block .fulfil_details .f_d_text.f_gzh .tag {
+  margin: 0 6px;
+}
+.content .taskDetails .fulfils_block .fulfil_details .f_d_text.f_hf .tag {
+  margin: 0 6px;
+}
+.content .taskDetails .fulfils_block .fulfil_details .f_d_text.f_hf .keyWord {
   margin: 0 6px;
 }
 .content .taskDetails .fulfils_block .fulfil_details .f_d_text.f_zh .q_url {

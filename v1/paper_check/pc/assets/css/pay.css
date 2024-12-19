@@ -303,6 +303,7 @@ html body .pay_page {
 .block-right .r-content .block-coupon {
   max-width: 810px;
   margin: 22px auto 0;
+  position: relative;
 }
 .block-right .r-content .block-coupon .name {
   color: #222222;
@@ -372,13 +373,12 @@ html body .pay_page {
 .block-right .r-content .block-coupon > div .welfare-entrance {
   display: none;
   height: 34px;
-  width: 76px;
+  width: 100px;
   border-radius: 6px;
   margin-left: 12px;
-  background: linear-gradient(90deg, #FFA85A, #F53F3F);
-  color: #ffffff;
+  background: linear-gradient(180deg, #FFEFE8 3%, #FFE6EF 100%);
+  color: #E20000;
   font-size: 14px;
-  text-align: center;
   line-height: 34px;
   cursor: pointer;
   transition: all 0.3s;
@@ -391,20 +391,39 @@ html body .pay_page {
   height: 100%;
 }
 .block-right .r-content .block-coupon > div .welfare-entrance:hover {
-  box-shadow: 0 0 11px 0px #ffaba0;
+  background: linear-gradient(180deg, #FFE5DB 3%, #FFD9F6 100%);
+}
+.block-right .r-content .block-coupon > div .welfare-entrance img {
+  margin-left: 7px;
+  position: relative;
+  top: -3px;
 }
 .block-right .r-content .block-coupon > div .claim-coupons {
   display: none;
 }
 .block-right .r-content .block-coupon > div .errorTip {
   display: none;
-  margin-left: 10px;
+  margin-left: 20px;
   color: #d81e06;
   font-size: 12px;
+  position: absolute;
+  top: 1px;
+  left: 66px;
 }
 .block-right .r-content .block-coupon > div .errorTip img {
   vertical-align: sub;
   margin-right: 6px;
+  position: relative;
+  top: -1px;
+}
+.block-right .r-content .block-coupon > div .errorTip1 {
+  display: none;
+  margin-left: 20px;
+  color: #d81e06;
+  font-size: 12px;
+  position: absolute;
+  top: 1px;
+  left: 66px;
 }
 .block-right .r-content .block-pay {
   max-width: 810px;
@@ -711,6 +730,12 @@ html body .pay_page {
   font-size: 18px;
   margin-left: 16px;
 }
+.block-right .r-content .block-pay .pay-box .titlesRight .amount .Discountamount {
+  font-weight: 400;
+  font-size: 12px;
+  color: #D81E06;
+  display: none;
+}
 .block-right .r-content .block-pay .pay-box .titlesRight .payTypes {
   height: 30px;
   line-height: 30px;
@@ -879,4 +904,80 @@ html body .pay_page {
   margin: 22px 0 !important;
   display: none !important;
 }
-/*# sourceMappingURL=pay.css.map */
+.Coupon_exceeds {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  display: none;
+}
+.Coupon_exceeds .couponbox {
+  width: 340px;
+  height: 156px;
+  background: #FFFFFF;
+  border-radius: 10px 10px 10px 10px;
+  position: fixed;
+  top: 38%;
+  left: 42%;
+  padding: 16px;
+}
+.Coupon_exceeds .head_coupon {
+  float: right;
+}
+.Coupon_exceeds .head_coupon:hover .Coupon_closure {
+  display: none;
+}
+.Coupon_exceeds .head_coupon:hover .Coupon_closure1 {
+  display: inline;
+}
+.Coupon_exceeds .body_coupon {
+  text-align: center;
+  font-size: 16px;
+  color: #3D3D3D;
+  margin-top: 38px;
+}
+.Coupon_exceeds .body_coupon img {
+  position: relative;
+  top: -2px;
+  left: -1px;
+}
+.Coupon_exceeds .bottom_coupon {
+  text-align: center;
+  margin-top: 18px;
+}
+.Coupon_exceeds .bottom_coupon span {
+  display: inline-block;
+  width: 68px;
+  height: 32px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 4px 4px 4px 4px;
+  margin-right: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.Coupon_exceeds .Coupon_cancellation {
+  color: #606266;
+  background: #FFFFFF;
+  border: 1px solid #DCDFE6;
+}
+.Coupon_exceeds .Coupon_cancellation:hover {
+  background: #F4F1FF;
+  border: 1px solid #CEBEFF;
+  color: #7D55FC;
+}
+.Coupon_exceeds .Coupon_confirmation {
+  color: #FFFFFF;
+  background: #7D55FC;
+  border: 1px solid #7D55FC;
+}
+.Coupon_exceeds .Coupon_confirmation:hover {
+  background: #6D3FFD;
+  border: 1px solid #6D3FFD;
+}
+.Coupon_exceeds .Coupon_closure1 {
+  display: none;
+}

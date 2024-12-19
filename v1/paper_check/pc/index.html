@@ -11,12 +11,22 @@
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../pc/assets/css/select2.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0022">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0022">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0027">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0027">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
 </head>
 <body>
@@ -28,12 +38,13 @@
                    <img src="../pc/assets/img/logo.png" alt="">
                </div>
                <div class="f-r" id="memberCarrier">
+                    <div class="nav-activity">
+                        <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
+                    </div>
                     <div class="nav-download">
                         <a href="./query.html">下载报告</a>
                     </div>
-                   <div class="nav-activity">
-                       <a href="./hd/index.html" target="_blank">福利活动</a>
-                   </div>
+
                </div>
            </div>
         </div>
@@ -306,9 +317,9 @@
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/select2.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0022"></script>
+<script src="../pc/assets/js/common.js?v=p24.0027"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0022"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0027"></script>
 <script>
     $('#date').datetimepicker({minView: 2, language: "zh-CN"});
     var typed = new Typed('.switch-text', {
@@ -658,6 +669,14 @@
 
     $('.upload-type .toCheck .SubmissionMode').on('click', function (event){
         event.stopPropagation()
+    })
+
+    $("#textareaText").on('focus', function (){
+        $(".InputBox").addClass('identity_border');
+    })
+
+    $("#textareaText").on('blur', function (){
+        $(".InputBox").removeClass('identity_border');
     })
 
     $("#textareaText").on('input', function (){

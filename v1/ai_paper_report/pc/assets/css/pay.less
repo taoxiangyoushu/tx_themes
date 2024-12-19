@@ -203,6 +203,12 @@ a {
                 font-size: 18px;
                 margin-left: 16px;
             }
+            .Discountamount{
+                font-weight: 400;
+                font-size: 12px;
+                color: #D81E06;
+                display: none;
+            }
         }
         .payTypes {
             // padding: 0 6px;
@@ -436,6 +442,7 @@ a {
 }
 .coupon_box {
     margin-top: 24px;
+    position: relative;
     .card {
         margin-top: 15px;
         .form-control {
@@ -482,16 +489,15 @@ a {
             }
         }
         .welfare-entrance {
-            //display: inline-block;
+            // display: inline-block;
             display: none;
             height: 34px;
-            width: 74px;
+            width: 100px;
             border-radius: 6px;
             margin-left: 12px;
-            background: linear-gradient(90deg, #FFA85A, #F53F3F);
-            color: #ffffff;
+            background: linear-gradient(180deg, #FFEFE8 3%, #FFE6EF 100%);
+            color: #E20000;
             font-size: 14px;
-            text-align: center;
             line-height: 34px;
             cursor: pointer;
             transition: all .3s;
@@ -503,7 +509,12 @@ a {
                 height: 100%;
             }
             &:hover {
-                box-shadow: 0 0 11px 0px #ffaba0;
+                background: linear-gradient( 180deg, #FFE5DB 3%, #FFD9F6 100%);
+            }
+            img{
+                margin-left: 7px;
+                position: relative;
+                top: -3px;
             }
         }
         .claim-coupons {
@@ -514,10 +525,24 @@ a {
             margin-left: 10px;
             color: #d81e06;
             font-size: 12px;
+            position: absolute;
+            top: 4px;
+            left: 85px;
             img {
                 vertical-align: sub;
                 margin-right: 6px;
+                position: relative;
+                top: -1px;
             }
+        }
+        .errorTip1{
+            display: none;
+            margin-left: 20px;
+            color: #d81e06;
+            font-size: 12px;
+            position: absolute;
+            top: 4px;
+            left: 85px;
         }
         .activityTip {
             display: none;
@@ -1174,4 +1199,89 @@ input#tbTid,input#tbTid-2 {
 
 .loginButton {
     display: none !important;
+}
+.Coupon_exceeds {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    display: none;
+
+    .couponbox {
+        width: 340px;
+        height: 156px;
+        background: #FFFFFF;
+        border-radius: 10px 10px 10px 10px;
+        position: fixed;
+        top: 38%;
+        left: 42%;
+        padding: 16px;
+    }
+
+    .head_coupon {
+        float: right;
+        &:hover{
+            .Coupon_closure{
+                display: none;
+            }
+            .Coupon_closure1{
+                display: inline;
+            }
+        }
+    }
+
+    .body_coupon {
+        text-align: center;
+        font-size: 16px;
+        color: #3D3D3D;
+        margin-top: 38px;
+
+        img {
+            position: relative;
+            top: -2px;
+            left: -1px;
+        }
+    }
+
+    .bottom_coupon {
+        text-align: center;
+        margin-top: 18px;
+        span {
+            display: inline-block;
+            width: 68px;
+            height: 32px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 4px 4px 4px 4px;
+            margin-right: 12px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    }
+    .Coupon_cancellation{
+        color: #606266;
+        background: #FFFFFF;
+        border: 1px solid #DCDFE6;
+        &:hover{
+            background: #F0F7FF;
+            border: 1px solid #98C5FF;
+            color: #167CFF;
+        }
+    }
+    .Coupon_confirmation{
+        color: #FFFFFF;
+        background: #167CFF;
+        border: 1px solid #167CFF;
+        &:hover{
+            background: #006FFF;
+            border: 1px solid #006FFF;
+        }
+    }
+    .Coupon_closure1{
+        display: none;
+    }
+
 }

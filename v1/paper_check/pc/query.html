@@ -9,13 +9,23 @@
     <meta name="keywords" content="" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0022">
-    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0022">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0027">
+    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0027">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
 </head>
 <body>
@@ -26,6 +36,9 @@
             <a href="./index.html"></a>
         </div>
         <div class="nav f-r" id="memberCarrier">
+            <div class="nav-activity">
+                <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
+            </div>
             <div class="upload-h">
                 <a href="./index.html">提交论文</a>
             </div>
@@ -33,9 +46,7 @@
                 <a href="">下载报告</a>
                 <li></li>
             </div>
-            <div class="nav-activity">
-                <a href="./hd/index.html" target="_blank">福利活动</a>
-            </div>
+
         </div>
     </div>
     <div class="content-block">
@@ -224,9 +235,9 @@
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=ts1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0022"></script>
+<script src="../pc/assets/js/common.js?v=p24.0027"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0022"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0027"></script>
 <script>
     function startQuerying(){
         if(getQueryVariable('oid') && !memberFu.isLogin) {
@@ -310,9 +321,11 @@
                         text += "<th class=\"titles\" title=\""+ resData.place_order_data.title.value +"\">"+ resData.place_order_data.title.value +"</th>";
                         text += "<th class=\"titles\" title=\""+ SystemName +"\">"+ SystemName +"</th>";
                         var status = resData.order_status_human
-                        var styleClass = resData.order_status==60? 'complete':'not'
+                        var styleClass = resData.order_status==60? 'complete': [resData.order_status==61? 'failure':'not']
                         text += "<th>"+ resData.created +"</th>";
-                        text += "<th class=\"titles "+styleClass+"\"><span>"+ status +"</span></th>";
+                        text += "<th class=\"titles "+styleClass+"\">";
+                        text += "   <span>"+ status +"<div class=\"error_msg\">"+ resData.error_msg +"</div></span>";
+                        text += "</th>";
                         text += "<th class=\"download\">";
                         if(!resData.isBind && threeMsg.wx && !resData.end_product){
                             text += '<div class="scanFollow">\n' +

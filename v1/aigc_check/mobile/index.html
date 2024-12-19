@@ -45,14 +45,23 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0003">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0003">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0003">
-    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0003">
-    <link rel="stylesheet" href="../mobile/assets/css/Discounts.css?v=m24.0003">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0005">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0005">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0005">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0005">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'aigc_check'
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
     <!-- head_script -->
 </head>
@@ -94,16 +103,17 @@
 
                     <div class="Thesis">
                         <div class="InputBox">
-                            <textarea name="textareaName" id="textareaText" maxlength="300000"
-                                      placeholder="内容字数 200~30万字，提交内容建议去除封面，目录，仅提交正文。"></textarea>
+                            <textarea name="textareaName" id="textareaText" maxlength="300000"></textarea>
+							<span class="Paste_Tips">内容字数 200~30万字，提交内容建议去除封面、目录，<span>仅提交中文正文内容</span></span>
                         </div>
                         <div class="UploadBox">
                             <input name="docUpload" id="ThesisInput" type="file" single ref="docUpload" file-upload=""
                                    accept=".doc,.docx,.txt,text/plain">
                             <div class="Not">
-                                <img src="../mobile/assets/img/uploadfiles.png" alt="上传">
-                                <p>点击此处上传<span>AIGC</span>待检测文档</p>
-                                <span>文档支持txt、doc(x)，文件大小不得超过10M</span>
+                                <!-- <img src="../mobile/assets/img/uploadfiles.png" alt="上传"> -->
+                                 <div class="Upload_paper"><img src="../mobile/assets/img/Upload_paper.png" alt="">上传论文</div>
+                                 <span>支持txt、doc(x)文件格式，文档大小不超过10M </span>
+                                 <p><span>注：当前仅支持检测中文文本内容</span></p>
                             </div>
                             <div class="Complete">
                                 <div class="CompleteBox">
@@ -307,84 +317,19 @@
     <img src="../mobile/assets/img/kfwx.png" alt="客服">
 </div>
     <div class="fiexBox">
-        <div class="Activity">
-            <img src="../mobile/assets/img/xc2.gif" alt="">
-        </div>
     </div>
-<div id="filing-information" class="ForTheRecord">Copyright © 2022-2024 淘项有术</div>
+<div id="filing-information" class="ForTheRecord"></div>
 
 <!-- 优惠卷活动 -->
 <div class="mask_body"></div>
-<div class="Discounts_box">
-    <div class="CircleBG">
-        <div class="box-Content">
-            <div class="ContentText">
-                <div class="Contenthader">
-                    AI检测新认证用户专享
-                    <div class="but_close">
-                        <img src="../mobile/assets/img/but_close.png" alt="关闭">
-                    </div>
-                </div>
-                <img src="../mobile/assets/img/Discounts.png" alt="">
-                <div class="ButtonDiv">
-                    <a href="#" target="_blank" rel="noopener noreferrer">立即领取</a>
-                </div>
-                <p class="DiscountsTips">每个认证用户仅限领取一次,15天有效期</p>
-
-                <div class="Prompt">
-                    <div>
-                        <img src="../mobile/assets/img/task.png" alt="">
-                        <p>点击领取</p>
-                        <p>完成任务</p>
-                    </div>
-                    <img src="../mobile/assets/img/arrowyh.png" alt="">
-                    <div>
-                        <img src="../mobile/assets/img/certificate.png" alt="">
-                        <p>填写手机号</p>
-                        <p>获取优惠券</p>
-                    </div>
-                    <img src="../mobile/assets/img/arrowyh.png" alt="">
-                    <div>
-                        <img src="../mobile/assets/img/pay.png" alt="">
-                        <p>支付输入</p>
-                        <p>券码兑换</p>
-                    </div>
-                </div>
-                <div class="GuaranteeTheBottom">
-                    <div class="phoneNumber">
-                        <img src="../mobile/assets/img/ico_phone.png" alt="">
-                        <input
-                            placeholder="请输入注册手机号"
-                            id="Cell-phoneNumber"
-                            onkeyup="this.value=this.value.replace(/^(0+)|[^\d]+/g,'') "
-                            onafterpaste="this.value=this.value.replace(/^(0+)|[^\d]+/g,'') "
-                            autocomplete="off" maxlength="11"
-                            type="text">
-                    </div>
-                    <div class="GetCode">
-                        <input id="copyInput2" type="text">
-                        <div class="Not">
-                            <img src="../mobile/assets/img/icon_left.png" alt="">
-                            <span class="text1">获取优惠券</span>
-                            <span class="text2">优惠券码：<span class="CouponCode"></span> <span class="CopyCode">复制</span></span>
-                            <img src="../mobile/assets/img/icon_right.png" alt="">
-                        </div>
-                    </div>
-                    <p class="Rules">支付时填写券码兑换，<span>请妥善保存优惠券码</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <script src="../mobile/assets/js/jquery.min.js"></script>
 <script src="../mobile/assets/js/bootstrap.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
 <script src="../mobile/assets/js/common.js?v=1.1"></script>
 <script src="../mobile/assets/js/bootstrap-select.js"></script>
 <script src="../mobile/assets/js/bootstrapValidator.min.js"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.0003"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0005"></script>
 <script src="../mobile/assets/js/message.js"></script>
-<script src="../mobile/assets/js/Discounts.js?v=m24.0003"></script>
 <script src="../mobile/assets/js/Drag.js"></script>
 <script>
     var order_openid = ''
@@ -753,6 +698,14 @@
         $('.problemBox>div').removeClass('Select')
         $('.'+$(this).attr('contentkey')).addClass('Select')
     })
+    $('#textareaText').on('input',function(){
+        if($(this).val().length > 0){
+		    $('.Paste_Tips').hide()
+		}
+		else{
+		    $('.Paste_Tips').show()
+		}
+	})
 </script>
 </body>
 </html>

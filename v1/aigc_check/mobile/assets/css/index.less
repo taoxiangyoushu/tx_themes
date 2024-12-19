@@ -1014,6 +1014,7 @@ body {
         width: 100%;
         height: 100%;
         padding: 0 1rem 1rem 1rem;
+        position: relative;
         #textareaText {
             width: 100%;
             height: 100%;
@@ -1022,13 +1023,27 @@ body {
             resize: none;
             font-size: 1.2rem;
         }
+        .Paste_Tips{
+            display: inline-block;
+            font-size: 1.2rem;
+            color: #999999;
+            vertical-align: middle;
+            line-height: normal;
+            position: absolute;
+            top: 0rem;
+            left: 4%;
+            width: 92%;
+            span{
+                color: #FF2C1E;
+            }
+        }
     }
     .UploadBox {
         display: none;
         justify-content: center;
         align-items: center;
         height: 100%;
-        padding-top: 2rem;
+        padding-top: 3.5rem;
         #ThesisInput {
             opacity: 0;
             position: absolute;
@@ -1045,8 +1060,9 @@ body {
             color: #666;
             //margin-top: -2rem;
             span {
-                color: #999999;
+                color: #666666;
                 font-size: 1rem;
+                margin-bottom: 0.2rem;
             }
             p {
                 margin-bottom: .4rem;
@@ -1054,9 +1070,26 @@ body {
                     color: #ff001e;
                 }
             }
-            img {
-                margin-bottom: 1.3rem;
-                width: 5rem;
+            // img {
+            //     margin-bottom: 1.3rem;
+            //     width: 5rem;
+            // }
+            .Upload_paper{
+                margin: auto;
+                width: 10.5rem;
+                height: 3.5rem;
+                background: #108DF9;
+                border-radius: 1.875rem;
+                text-align: center;
+                font-size: 1.25rem;
+                color: #FFFFFF;
+                margin-bottom: 1rem;
+                line-height: 3.625rem;
+                img{
+                    position: relative;
+                    top: -0.1875rem;
+                    width: 1.5rem;
+                }
             }
         }
         .Complete {

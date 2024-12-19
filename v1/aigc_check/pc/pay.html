@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0020">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0020">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.00244">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.00244">
     <!-- <link rel="stylesheet" href="../assets/css/styles.css" /> -->
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!--[if lt IE 9]>
@@ -20,7 +20,17 @@
     <![endif]-->
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
-        var JANE_NAME = 'aigc_check';
+        var JANE_NAME = 'aigc_check'
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
 </head>
 
@@ -101,9 +111,10 @@
                         <span class="use_now">兑换</span>
                         <!-- 福利活动入口 -->
                         <div class="welfare-entrance">
-                            <a href="./hd/index.html" target="_blank">福利活动</a>
+                            <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
                         </div>
                         <span class="errorTip"><img src="../pc/assets/img/err_tip.png" alt=""><span></span></span>
+                        <span class="errorTip1">优惠券已抵扣￥<span id="After_discounts"></span></span>
                         <span class="activityTip"></span>
                     </div>
                 </div>
@@ -146,7 +157,9 @@
                             <div class="pull-left titlesRight payTypeClass">
                                 <div class="payTypes">单价: <span class="UnitPrice">暂无</span> </div>
 
-                                <div class="amount">应付金额 <span><b>￥</b><span class="orderAmount">00.00</span></span></div>
+                                <div class="amount">应付金额 <span><b>￥</b><span class="orderAmount">00.00</span></span>
+                                    <span class="Discountamount">（优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>）</span>
+                                </div>
 
                                 <p class="auxiliary">剩余支付时间 <span class="time"><span class="payTime">--</span>秒</span>，<span class="next">已支付下一步</span></p>
 
@@ -362,6 +375,23 @@
         <div class="determine_btn">确定</div>
     </div>
 </div>
+<!-- 超出优惠券额度弹窗 -->
+<!-- <div class="Coupon_exceeds">
+    <div class="couponbox">
+        <div class="head_coupon Coupon_con">
+            <img src="../pc/assets/img/icon_close.png" alt="" class="Coupon_closure">
+            <img src="../pc/assets/img/icon_close_pre.png" alt="" class="Coupon_closure1">
+        </div>
+        <div class="body_coupon">
+            <img src="../pc/assets/img/icon_warn.png" alt="">
+            超出优惠券额度，需支付额外费用
+        </div>
+        <div class="bottom_coupon">
+            <span class="Coupon_cancellation Coupon_con">取消</span>
+            <span class="Coupon_confirmation Coupon_con">确定</span>
+        </div>
+    </div>
+</div> -->
 </body>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
 <script src="../pc/assets/js/jquery.min.js"></script>
@@ -369,9 +399,9 @@
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0020"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0020"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0020"></script>
+<script src="../pc/assets/js/common.js?v=p24.00244"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.00244"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.00244"></script>
 <script>
     var qrcode = new QRCode(document.getElementById("qrcode"), {
         width: 135,
@@ -817,6 +847,48 @@
         }else{
             $(".use_now").removeClass('can')
             $(".eliminateCoupon").hide()
+            $('.use_now').text('兑换')
+            $('.errorTip1').hide()
+            $('.Discountamount').hide()
+
+        var formData = getFormData({
+            order_sn: order_sn || getQueryVariable('order_sn'),
+            code: $("#coupon").val()
+        })
+
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/variation/order',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                canClick = true
+                closeMsg()
+                if (res.code == 200) {
+                    order_sn = res.data.order_sn
+                    payOrder('',res.data.order_amount)
+                    $('.orderId_pop').text(res.data.order_sn)
+                    $('.order-oid').text(res.data.order_sn)
+                    $('.orderAmount').text(res.data.order_amount)
+                }else {
+                    // cocoMessage.error(res.codeMsg, 2000);
+                    $(".errorTip span").text(res.codeMsg)
+                    $(".errorTip").show();
+                    $(".activityTip").hide()
+                    closeMsg()
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                contentTypeIs = true
+                closeMsg()
+                canClick = true
+            },
+        });
         }
     })
 
@@ -865,7 +937,6 @@
                     order_sn = res.data.order_sn
                     $('.orderId_pop').text(res.data.order_sn)
                     $('.order-oid').text(res.data.order_sn)
-                    console.log(res.data.order_sn)
                     if(Number(res.data.order_amount) == 0) {
                         $(".coupon_pop").show();
                         $(".mask_body").show();
@@ -875,9 +946,18 @@
                             return;
                         }
                         payOrder('',res.data.order_amount)
+                        if(res.data.coupon_money>0){
+                         $('.use_now').text('已兑换')
+                         $('.use_now').removeClass('can')
+                         $('.errorTip1').show()
+                         $('.Discountamount').show()
+                         $('#After_discounts').text(res.data.coupon_money)
+                         $('#Discount_amount').text(res.data.coupon_money)
+                        }
                     }
                 }else {
                     // cocoMessage.error(res.codeMsg, 2000);
+                    $('.errorTip1').hide()
                     $(".errorTip span").text(res.codeMsg)
                     $(".errorTip").show();
                     $(".activityTip").hide()
@@ -956,6 +1036,11 @@
     })
     $(".determine_btn").on('click',function (){
         couponsPay()
+
     })
+    $('.Coupon_con').on('click',function(){
+        $('.Coupon_exceeds').hide()
+    })
+
 </script>
 </html>

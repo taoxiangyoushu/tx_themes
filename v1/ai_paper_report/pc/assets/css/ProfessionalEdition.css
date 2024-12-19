@@ -139,10 +139,14 @@
   font-weight: bold;
   background-color: #7579db;
 }
+.ProfessionalEdition .EnglishLiteratureBox input[type=checkbox] {
+  margin-right: 0;
+}
 .ProfessionalEdition .EnglishLiteratureBox input[type=checkbox]:checked::after {
   width: 16px;
   height: 16px;
   line-height: 17px;
+  margin-left: 2px;
 }
 .ProfessionalEdition input[type=checkbox].inputCheck {
   margin-right: 3px;
@@ -249,16 +253,19 @@
 .ProfessionalEdition .BACK-mini {
   display: block;
 }
+.ProfessionalEdition .proposal .uploadBox {
+  color: #7579DB;
+}
 .NEW-mini {
   position: absolute;
   right: -8px;
-  top: -12px;
+  top: -14px;
 }
 .BACK-mini {
   display: none;
   position: absolute;
   right: -8px;
-  top: -12px;
+  top: -14px;
 }
 .step1 {
   margin-top: 60px;

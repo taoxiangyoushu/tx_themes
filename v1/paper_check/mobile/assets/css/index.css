@@ -658,6 +658,9 @@
   border-right: 1px solid #ede6e6;
   font-size: 1.2rem;
 }
+.system-contrast-pop .bottom .card-content.mHeight {
+  min-height: 24rem;
+}
 .system-contrast-pop .bottom .card-content .block1,
 .system-contrast-pop .bottom .card-content .block2,
 .system-contrast-pop .bottom .card-content .block3 {
@@ -714,6 +717,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: justify;
 }
 .system-contrast-pop .bottom .block-c {
   text-align: center !important;
