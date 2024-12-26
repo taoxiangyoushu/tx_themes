@@ -250,14 +250,13 @@ body {
 }
 .nodata .toHome {
   width: 12rem;
-  height: 4.43rem;
+  padding: 1rem;
   font-size: 1.8rem;
   font-weight: bold;
   color: #fff;
   background-image: linear-gradient(90deg, #7b5af8 0%, #c26bfd 100%);
   border-radius: 0.6rem;
   text-align: center;
-  line-height: 4.43rem;
   margin: 0 auto;
   margin-top: 2.5rem;
   box-shadow: 0rem 0rem 1rem 0rem #c0a5ff;
@@ -1053,4 +1052,3 @@ body {
   opacity: 0;
   z-index: -1;
 }
-/*# sourceMappingURL=query.css.map */

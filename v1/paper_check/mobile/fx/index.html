@@ -44,7 +44,7 @@
         <link rel="stylesheet" href="../../mobile/fx/assets/css/bootstrap-select.min.css">
         <link rel="stylesheet" href="../../mobile/fx/assets/css/base.css">
         <link rel="stylesheet" href="../../mobile/fx/assets/css/common.css">
-        <link rel="stylesheet" href="../../mobile/fx/assets/css/index.css">
+        <link rel="stylesheet" href="../../mobile/fx/assets/css/index.css?v=fx1.0">
         <link rel="stylesheet" href="../../mobile/fx/assets/css/fxCommon.css">
         <link rel="stylesheet" href="../../mobile/fx/assets/css/withdraw.css">
 
@@ -201,7 +201,9 @@
             </div>
             <div class="core">
                 <div class="GetLinkBox">
-                    <div class="orderId_pop"></div>
+                    <div class="orderId_pop">
+                        <input readonly="readonly" id="orderId_pop_id" type="text">
+                    </div>
                     <div class="copy_pop">
                         复制链接
                     </div>
@@ -236,7 +238,7 @@
                 </div>
                 <div class="introduce">
                     <div class="ButtonBox">
-                        <div class="DownloadPoster1 copy_pop">
+                        <div class="DownloadPoster1 copy_pop3" data-poster="">
                             复制海报链接
                         </div>
                         <div class="DownloadPoster" id="btn">
@@ -283,7 +285,7 @@
 <script src="../../mobile/fx/assets/js/common.js?v=p24.0031"></script>
 <script src="../../mobile/fx/assets/js/withdrawa.js?v=1.0"></script>
 <script src="../../mobile/fx/assets/js/complaints.js"></script>
-<script src="../../mobile/fx/assets/js/configured.js?v=fx1.4"></script>
+<script src="../../mobile/fx/assets/js/configured.js?v=fx1.6"></script>
 <script>
     function infoSuccess(data){
         $('#posterImg').attr('src' , urls + "/api/client/distribution/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=0&_session_type=user&domain="+window.location.origin)
@@ -324,7 +326,8 @@
                     $('.described').show()
                     $('#distribution_config #ratio').text(ref.distribution_config.ratio)
                     ref.distribution_config.type && $('#distribution_config #type').text("（" + ref.distribution_config.type + '）')
-                    $('.orderId_pop').text(urls + "/api/client/distribution/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=0&_session_type=user&domain="+window.location.origin)
+                    $('.orderId_pop #orderId_pop_id').val(window.location.protocol + '//' + ref.share_link)
+                    $('.DownloadPoster1').data('poster' , urls + "/api/client/distribution/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=0&_session_type=user&domain="+window.location.origin)
                     if(ref.kf_info) {
                         $('#name , #phone , #wx , #qq' ).show().children('.infoText').removeClass('loadEffect')
                         if(ref.kf_info.name) {

@@ -8,8 +8,8 @@
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/reset.css">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0033">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0033">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0042">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0042">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -81,18 +81,24 @@
                                     <p>优惠券</p>
                                 </div>
                                 <div class="row-cont">
-                                    <div class="coupon"><input id="coupon" type="text" placeholder="若有优惠券请填写兑换码">
-                                        <div class="eliminateCoupon"></div>
-                                        <button type="button" class="btn btn-exchange use_now">兑换</button><!---->
+                                    <div class="coupon">
+                                        <div class="Exchange_hidden">
+                                            <input id="coupon" type="text" placeholder="若有优惠券请填写兑换码">
+                                            <div class="eliminateCoupon"></div>
+                                            <button type="button" class="btn btn-exchange use_now"><img src="../pc/assets/img/loading1.gif" alt="" class="Exchange_loading">兑换</button>
+                                        </div>
+                                        <div class="errorTip1">
+                                            <span class="Coupondisabled">优惠券可抵扣￥<span id="After_discounts"></span></span>
+                                            <img src="../pc/assets/img/select_icon.png" alt="" class="Picture_event">
+                                            <img src="../pc/assets/img/n_select.png" alt="" class="Picture_event1">
+                                        </div>
                                         <!-- 福利活动入口 -->
                                         <div class="welfare-entrance">
                                             <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
                                         </div>
-                                        <div class="change-res-tip errorTip"><img
-                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB6ElEQVQ4T5WTPWgUURSFz5n1NyjYWNhYZTPzVo1iRLAI+5aAQS2sQrCwDBKb7V3QXYg2VrYWloLIapegIjPbKAQFF3F3MhvU0srCRhLWOfKSTDKuq5Dp3nn3fvfeuecRA9/XSXNsvaBpkuclXNy6fgVxmSPrzeLS6o98CrODS1wr6AbJOaR6B49tpvwIYj+gCQEnBBz3qGoxjF9keduAnjVvBFyQeNlvdZYGO3PnpBxcA/lYUMOP4rrTNgCJNTUAC2NRdxs4DJBpiTXyqHOjYfyen6f88f4vry3pnt+Kays22CBnFbKkvJ5YUwUwf+jwyFkmNrgPcXys1Z12wS6Q4J18m8O0pGya8LwmE2u+iXzkh51b+WoZZHPOP4GbhUp1Qnsc4LuAeT/qPsnPnVV1Wr6bLKZXLs2ImHWAjoDG/wCE6sUobuQLxOXSjLcFCEW+HTaCS0wBuhEGIb1KcFviPvYq5qZSXN31T7TBU7DwnL3J0aMq7P0i6YFbY9cG1gPssDWmQGSiOHJrJDB7YO3IVGakBQC13RhJ9M744af2jpUr5qGEORFX/LC7OMyJK+XSJVKLf1l5ZzXBXZFVSK8BxoA+EF5fnk4h1WmQPv/1mDLIqjUnU+E6SSNqAsJPEi8lLfNg/9ngc/4NbesOnBYa/SkAAAAASUVORK5CYII=">
+                                        <div class="change-res-tip errorTip"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB6ElEQVQ4T5WTPWgUURSFz5n1NyjYWNhYZTPzVo1iRLAI+5aAQS2sQrCwDBKb7V3QXYg2VrYWloLIapegIjPbKAQFF3F3MhvU0srCRhLWOfKSTDKuq5Dp3nn3fvfeuecRA9/XSXNsvaBpkuclXNy6fgVxmSPrzeLS6o98CrODS1wr6AbJOaR6B49tpvwIYj+gCQEnBBz3qGoxjF9keduAnjVvBFyQeNlvdZYGO3PnpBxcA/lYUMOP4rrTNgCJNTUAC2NRdxs4DJBpiTXyqHOjYfyen6f88f4vry3pnt+Kays22CBnFbKkvJ5YUwUwf+jwyFkmNrgPcXys1Z12wS6Q4J18m8O0pGya8LwmE2u+iXzkh51b+WoZZHPOP4GbhUp1Qnsc4LuAeT/qPsnPnVV1Wr6bLKZXLs2ImHWAjoDG/wCE6sUobuQLxOXSjLcFCEW+HTaCS0wBuhEGIb1KcFviPvYq5qZSXN31T7TBU7DwnL3J0aMq7P0i6YFbY9cG1gPssDWmQGSiOHJrJDB7YO3IVGakBQC13RhJ9M744af2jpUr5qGEORFX/LC7OMyJK+XSJVKLf1l5ZzXBXZFVSK8BxoA+EF5fnk4h1WmQPv/1mDLIqjUnU+E6SSNqAsJPEi8lLfNg/9ngc/4NbesOnBYa/SkAAAAASUVORK5CYII=">
                                             <span></span>
                                         </div>
-                                        <span class="errorTip1">优惠券已抵扣￥<span id="After_discounts"></span></span>
                                         <span class="activityTip"></span>
                                     </div>
                                 </div>
@@ -206,6 +212,7 @@
                                                     </div>
                                                     <div class="errTip"></div>
                                                     <div class="tb-payOrder">立即使用</div>
+                                                    <p class="Three_party">订单金额<span>￥</span><span id="Total_amount">0.00 </span><span>（不满千字按千字计算）</span></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -557,11 +564,11 @@
 <script src="../pc/assets/js/jquery.min.js"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0033"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0033"></script>
+<script src="../pc/assets/js/common.js?v=p24.0042"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0042"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
 
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0033"></script><script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0042"></script><script>
     var uploadType = 'content'
     var qrcode = new QRCode(document.getElementById("qrcode"), {
         width: 135,
@@ -726,7 +733,7 @@
                 closeMsg()
                 return
             }
-            payOrder(pay_type)
+            payOrder(pay_type,orderInfoData.order_amount)
         }
         if(window.localStorage.getItem('CouponUltimate')){
             $('#coupon').val(window.localStorage.getItem('CouponUltimate'))
@@ -734,6 +741,7 @@
             $(".activityTip").text('已自动填写活动优惠券码，请点击兑换使用')
             $(".activityTip").show();
         }
+        Readjust()
     }
 
     function payOrder(payType,price) {
@@ -749,7 +757,7 @@
         if(pay_type == 'scanCodeRich'){
             if(orderInfoData.pay_wap_url) {
                 $(".code").show()
-                $(".orderAmount").text(price?price:orderInfoData.order_amount)
+                $(".orderAmount").text(price)
                 qrcode.makeCode(orderInfoData.pay_wap_url + '/pay/waporder/' + (order_sn?order_sn:getQueryVariable('order_sn')) + '?source=' + source);
                 $('.load').hide()
                 time = 600
@@ -765,7 +773,7 @@
             }else {
                 // 避免订单信息接口太慢, 导致pay_wap_url拿不到
                 setTimeout(function() {
-                    payOrder(payType,price)
+                    payOrder(payType,orderInfoData.order_amount)
                 }, 1000)
             }
 
@@ -837,6 +845,11 @@
                     thirdpartyPayOrder()
                     return;
                 }
+                else{
+                    $('.Coupondisabled').removeClass('Coupon_dis')
+                    $('.Picture_event1').hide()
+                    $('.Picture_event').show()
+                }
                 $(".tbPay").hide();
                 $(".code").show();
                 payOrder()
@@ -858,7 +871,9 @@
         $(".code.pull-left").hide();
         contentTypeIs = true;
         $(".tbPay").show();
-
+        $('.Coupondisabled').addClass('Coupon_dis')
+        $('.Picture_event1').show()
+        $('.Picture_event').hide()
         if(pay_way_public.taobao) $('#TB').show()
         if(pay_way_public.redBook) $('#XHS').show()
 
@@ -1035,48 +1050,11 @@
         }else{
             $(".use_now").removeClass('can')
             $(".eliminateCoupon").hide()
-            $('.use_now').text('兑换')
+            // $('.use_now').text('兑换')
             $('.errorTip1').hide()
             $('.Discountamount').hide()
-
-        var formData = getFormData({
-            order_sn: order_sn || getQueryVariable('order_sn'),
-            code: $("#coupon").val()
-        })
-
-        $.ajax({
-            type: 'post',
-            url: urls + '/api/client/order/variation/order',
-            data: formData,
-            contentType: false,
-            processData: false,
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function (res) {
-                canClick = true
-                closeMsg()
-                if (res.code == 200) {
-                    order_sn = res.data.order_sn
-                    payOrder('',res.data.order_amount)
-                    $(".oid").text(res.data.order_sn)
-                    $('.order-oid').text(res.data.order_sn)
-                    $('.orderAmount').text(res.data.order_amount)
-                }else {
-                    // cocoMessage.error(res.codeMsg, 2000);
-                    $(".errorTip span").text(res.codeMsg)
-                    $(".errorTip").css('display','inline-block');
-                    $(".activityTip").hide()
-                    closeMsg()
-                }
-            },
-            error: function () {
-                cocoMessage.error("请求失败!请检查网络", 2000);
-                contentTypeIs = true
-                closeMsg()
-                canClick = true
-            },
-        });
+            // Readjust()
+        
         }
     })
 
@@ -1102,7 +1080,9 @@
             return
         }
         canClick = false
-        closeMsg = cocoMessage.loading('正在兑换优惠券...');
+        // closeMsg = cocoMessage.loading('正在兑换优惠券...');
+        $('.Exchange_loading').show()
+        $('.use_now').removeClass('can')
 
         var formData = getFormData({
             order_sn: order_sn || getQueryVariable('order_sn'),
@@ -1120,10 +1100,12 @@
             },
             success: function (res) {
                 canClick = true
-                closeMsg()
+                    closeMsg()
                 if (res.code == 200) {
                     $('.orderId_pop').text(res.data.order_sn)
                     $('.order-oid').text(res.data.order_sn)
+                    $('.Exchange_loading').hide()
+
                     if(Number(res.data.order_amount) == 0) {
                         $(".coupon_pop").show();
                         $(".mask_body").show();
@@ -1136,7 +1118,8 @@
                         order_sn = res.data.order_sn
                         payOrder('',res.data.order_amount)
                         if(res.data.coupon_money>0){
-                            $('.use_now').text('已兑换')
+                            $('.Exchange_hidden').hide()
+                            // $('.use_now').text('已兑换')
                             $('.use_now').removeClass('can')
                             $('.errorTip1').show()
                             $('.Discountamount').show()
@@ -1151,6 +1134,8 @@
                     $(".errorTip span").text(res.codeMsg)
                     $(".errorTip").css('display','inline-block');
                     $(".activityTip").hide()
+                    $('.Exchange_loading').hide()
+
                     closeMsg()
                 }
             },
@@ -1239,6 +1224,7 @@
         $(".mask_body").hide();
     })
     $(".cancel_btn").on('click',function (){
+        $('.use_now').addClass('can')
         $(".coupon_pop").hide();
         $(".mask_body").hide();
     })
@@ -1248,6 +1234,59 @@
     $('.Coupon_con').on('click',function(){
         $('.Coupon_exceeds').hide()
     })
+
+    $('.Picture_event').on('click',function(){
+        $('.Exchange_hidden').show()
+        $('.errorTip1').hide()
+        $("#coupon").val('')
+        // $('.use_now').text('兑换')
+        $('.eliminateCoupon').hide()
+        $('.Discountamount').hide()
+        Readjust()
+    })
+
+
+function Readjust(){
+    var formData = getFormData({
+            order_sn: order_sn || getQueryVariable('order_sn'),
+            code: $("#coupon").val()
+        })
+
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/variation/order',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                canClick = true
+                closeMsg()
+                if (res.code == 200) {
+                    order_sn = res.data.order_sn
+                    payOrder('',res.data.order_amount)
+                    $(".oid").text(res.data.order_sn)
+                    $('.order-oid').text(res.data.order_sn)
+                    $('.orderAmount').text(res.data.order_amount)
+                    $('#Total_amount').text(res.data.order_money)
+                }else {
+                    // cocoMessage.error(res.codeMsg, 2000);
+                    $(".errorTip span").text(res.codeMsg)
+                    $(".errorTip").css('display','inline-block');
+                    $(".activityTip").hide()
+                    closeMsg()
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                contentTypeIs = true
+                closeMsg()
+                canClick = true
+            },
+        });
+    }
 </script>
 </body>
 </html>

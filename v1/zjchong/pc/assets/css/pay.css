@@ -187,7 +187,7 @@
   cursor: pointer;
 }
 .order-cont .order-msg .row-cont .coupon input {
-  width: 22%;
+  width: 242px;
   height: 34px;
   padding-left: 20px;
   border: 1px solid #dedede;
@@ -237,6 +237,13 @@
   pointer-events: none;
   cursor: default;
 }
+.order-cont .order-msg .row-cont .coupon .use_now .Exchange_loading {
+  display: none;
+  width: 14px;
+  position: relative;
+  top: -1px;
+  left: -2px;
+}
 .order-cont .order-msg .row-cont .coupon .use_now.can {
   background: #2170d6;
   pointer-events: auto;
@@ -284,20 +291,44 @@
 .order-cont .order-msg .row-cont .coupon .change-res-tip img {
   margin-top: -2px;
 }
-.order-cont .order-msg .row-cont .coupon .errorTip1 {
-  display: none;
-  margin-left: 10px;
-  color: #d81e06;
-  font-size: 12px;
-  position: absolute;
-  top: 25px;
-  left: 85px;
-}
 .order-cont .order-msg .row-cont .coupon .activityTip {
   display: none;
   margin-left: 10px;
   color: #d81e06;
   font-size: 12px;
+}
+.order-cont .order-msg .row-cont .coupon .Exchange_hidden {
+  display: inline-block;
+}
+.order-cont .order-msg .row-cont .coupon .errorTip1 {
+  display: inline-block;
+  display: none;
+  width: 342px;
+  height: 34px;
+  line-height: 34px;
+  background: #F5FBFF;
+  border-radius: 6px 6px 6px 6px;
+  border: 1px solid #BDE3FF;
+  font-size: 12px;
+  color: #333333;
+  padding-left: 10px;
+  margin-right: 4px;
+  float: left;
+}
+.order-cont .order-msg .row-cont .coupon .errorTip1 .Picture_event {
+  float: right;
+  margin-top: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.order-cont .order-msg .row-cont .coupon .errorTip1 .Picture_event1 {
+  float: right;
+  display: none;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+.order-cont .order-msg .row-cont .coupon .errorTip1 .Coupondisabled.Coupon_dis {
+  text-decoration: line-through;
 }
 .order-cont .order-msg .row-cont .payment .pay-label li {
   display: inline-block;
@@ -595,6 +626,27 @@
   text-align: center;
   cursor: pointer;
   margin-top: 16px;
+  display: inline-block;
+}
+.order-cont .clearfix2 .tbPay .tb-content .Three_party {
+  display: inline-block;
+  font-size: 14px;
+  color: #545454;
+  margin-left: 10px;
+}
+.order-cont .clearfix2 .tbPay .tb-content .Three_party span:nth-child(1) {
+  font-size: 12px;
+  color: #218CFD;
+  margin-left: 6px;
+}
+.order-cont .clearfix2 .tbPay .tb-content .Three_party span:nth-child(2) {
+  font-size: 16px;
+  color: #218CFD;
+  font-weight: bold;
+}
+.order-cont .clearfix2 .tbPay .tb-content .Three_party span:nth-child(3) {
+  font-size: 12px;
+  color: #999999;
 }
 .order-cont .backHome {
   width: 170px;
@@ -1031,4 +1083,7 @@
 }
 .Coupon_exceeds .Coupon_closure1 {
   display: none;
+}
+.coupon {
+  height: 34px;
 }

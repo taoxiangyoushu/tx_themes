@@ -35,8 +35,7 @@
 }
 .customer-wx {
   position: fixed;
-  width: 5rem;
-  height: 5rem;
+  padding: 1rem;
   background-color: #ffffff;
   box-shadow: 0rem 0rem 2rem 0rem rgba(0, 0, 0, 0.09);
   border-radius: 50%;
@@ -44,7 +43,6 @@
   top: 70%;
   z-index: 100;
   text-align: center;
-  line-height: 5rem;
 }
 .customer-wx img {
   width: 3rem;
@@ -147,4 +145,3 @@
   bottom: 0;
   right: 0;
 }
-/*# sourceMappingURL=kefu.css.map */

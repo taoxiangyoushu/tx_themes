@@ -12,8 +12,8 @@
 	<link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.00244">
-	<link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.00244">
+	<link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.00255">
+	<link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.00255">
 	<!-- <link rel="stylesheet" href="../assets/css/styles.css" /> -->
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!--[if lt IE 9]>
@@ -87,7 +87,7 @@
 						<div class="form-group">
 							<label for="title" class="control-label">题目</label>
 							<div class="rower">
-								<input type="text" maxlength="60" id="title" name="title" placeholder="请正确填写论文题目，且字数不超过60字符，不可输入符号或数字" class="form-control">
+								<input type="text" maxlength="60" id="title" name="title" autocomplete="off" placeholder="请正确填写论文题目，且字数不超过60字符，不可输入符号或数字" class="form-control">
 								<span class="title-num">
 								<span class="titleNumber">0</span>/60
 							</span>
@@ -99,7 +99,7 @@
 						<div class="form-group">
 							<label for="author" class="control-label">作者</label>
 							<div class="rower">
-								<input type="text" maxlength="15" id="author" name="title" placeholder="请正确填写作者信息，且字数不超过15字符，不可输入符号或数字" class="form-control">
+								<input type="text" maxlength="15" id="author" name="title" autocomplete="off" placeholder="请正确填写作者信息，且字数不超过15字符，不可输入符号或数字" class="form-control">
 								<span class="author-num">
 								<span class="authorNumber">0</span>/15
 							</span>
@@ -124,7 +124,7 @@
 							<div class="rower content-block">
 								<div class="content-box">
 									<div class="text-box">
-										<textarea id="content-text"></textarea>
+										<textarea id="content-text" autocomplete="off"></textarea>
 										<span class="Paste_Tips">内容字数 200~30万字，提交内容建议去除封面、目录，<span>仅提交中文正文内容</span></span>
 									</div>
 									<div class="file-box">
@@ -300,8 +300,8 @@
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="../pc/assets/js/bootstrap.min.js"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.00244"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.00244"></script>
+<script src="../pc/assets/js/common.js?v=p24.00255"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.00255"></script>
 <script>
 	$("#title").on('input', function (){
 		$(".titleNumber").text($(this).val().length)
@@ -491,12 +491,10 @@
 	}
 	$('#content-text').on('input',function(){
         if($(this).val().length > 0){
-		$('.Paste_Tips').hide()
-		
+			$('.Paste_Tips').hide()
 		}
 		else{
-		$('.Paste_Tips').show()
-
+			$('.Paste_Tips').show()
 		}
 	})
 </script>

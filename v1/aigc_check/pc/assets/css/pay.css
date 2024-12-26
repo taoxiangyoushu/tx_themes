@@ -116,6 +116,8 @@
 }
 .payBox .coupon-block .card {
   font-size: 0;
+  margin-top: 20px;
+  height: 34px;
 }
 .payBox .coupon-block .card input#coupon {
   width: 243px;
@@ -123,7 +125,6 @@
   box-shadow: none;
   border: 1px solid #e1e8ef;
   border-radius: 4px;
-  margin-top: 20px;
   margin-right: 10px;
   padding-right: 30px;
   display: inline-block;
@@ -159,6 +160,13 @@
   border-radius: 4px;
   cursor: not-allowed;
   pointer-events: none;
+}
+.payBox .coupon-block .card .use_now .Exchange_loading {
+  display: none;
+  width: 14px;
+  position: relative;
+  top: -1px;
+  left: -2px;
 }
 .payBox .coupon-block .card .use_now.can {
   background: #006fff;
@@ -208,20 +216,43 @@
   position: relative;
   top: -1px;
 }
-.payBox .coupon-block .card .errorTip1 {
-  display: none;
-  margin-left: 10px;
-  color: #d81e06;
-  font-size: 12px;
-  position: absolute;
-  top: 4px;
-  left: 85px;
-}
 .payBox .coupon-block .card .activityTip {
   display: none;
   margin-left: 20px;
   color: #d81e06;
   font-size: 12px;
+}
+.payBox .coupon-block .card .Exchange_hidden {
+  display: inline-block;
+}
+.payBox .coupon-block .card .errorTip1 {
+  display: inline-block;
+  display: none;
+  width: 344px;
+  height: 34px;
+  background: #F5FBFF;
+  border-radius: 6px 6px 6px 6px;
+  border: 1px solid #BDE3FF;
+  line-height: 34px;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #333333;
+  float: left;
+}
+.payBox .coupon-block .card .errorTip1 .Picture_event {
+  float: right;
+  margin-top: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.payBox .coupon-block .card .errorTip1 .Picture_event1 {
+  float: right;
+  display: none;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+.payBox .coupon-block .card .errorTip1 .Coupondisabled.Coupon_dis {
+  text-decoration: line-through;
 }
 .payBox .pay-block {
   margin-top: 30px;
@@ -370,6 +401,27 @@
   text-align: center;
   cursor: pointer;
   margin-top: 16px;
+  display: inline-block;
+}
+.payBox .pay-block .clearfix2 .tbPay .tb-content .Three_party {
+  display: inline-block;
+  font-size: 14px;
+  color: #545454;
+  margin-left: 10px;
+}
+.payBox .pay-block .clearfix2 .tbPay .tb-content .Three_party span:nth-child(1) {
+  font-size: 12px;
+  color: #218CFD;
+  margin-left: 6px;
+}
+.payBox .pay-block .clearfix2 .tbPay .tb-content .Three_party span:nth-child(2) {
+  font-size: 16px;
+  color: #218CFD;
+  font-weight: bold;
+}
+.payBox .pay-block .clearfix2 .tbPay .tb-content .Three_party span:nth-child(3) {
+  font-size: 12px;
+  color: #999999;
 }
 .payBox .pay-block .payType {
   width: 170px;

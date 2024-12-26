@@ -146,6 +146,9 @@ window.onload = function (){
 						if(e.is_distributor	&& e.is_bind_phone) {
 							$('#distribution').attr('href' , './fx/index.html')
 						}
+                        if((e.username)&&($("#App").data("key") == "payApp")){
+                            $(".topNav").css("padding-right", "98px");
+                        }
                     },
                     complete_info: function(e) { // 获取用户执行完回调
                         if($('#App').data('key') == 'queryApp') {
@@ -171,7 +174,7 @@ window.onload = function (){
 
              // is_must_login_enable , is_must_phone_login_enable 一项为true, 出现登录按钮
              if (data.project[0].link_config.is_must_login_enable ||data.project[0].link_config.is_must_phone_login_enable) {
-               if ( $("#App").data("key") == "payApp" &&!$(".hasLogin").is(":visible")&&$('.loginButton').is(":visible")) {
+               if ( $("#App").data("key") == "payApp" &&!$(".hasLogin").is(":visible")&&!$('.loginButton').is(":visible")) {
                  $(".topNav").css("padding-right", "0");
                } 
                else {

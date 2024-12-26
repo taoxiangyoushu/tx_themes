@@ -38,11 +38,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>AI大师写作 - 确认订单</title>
     <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.00018">
-    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.00018">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.00018">
-    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.00018">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.00018">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.00021">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.00021">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.00021">
+    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.00021">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.00021">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz'
@@ -85,7 +85,7 @@
         <div class="info appreciationInfo appreciation">
             <h3>增值服务</h3>
             <div class="appreciationUL">
-                <div class="appreciationLI hasIntroduce" goodsid-key="" data-janename="zjcaigczz">
+                <div class="appreciationLI hasIntroduce" goodsid-key="" data-janename="zjcaigczz" data-janename1="qkzjcaigczz">
                     <div>
                         <div>
                             <i></i>
@@ -154,9 +154,11 @@
         <div class="Deduction">
             <div class="PayName">
                 <img src="../mobile/assets/img/coupon_icon.png" alt="">
-                <span class="Discount_style">抵扣￥<span id="After_discounts">10.00</span></span>
+                <span class="Discount_style">可抵扣￥<span id="After_discounts">10.00</span></span>
             </div>
-            <img class="noselectImg" src="../mobile/assets/img/select.png" alt="">
+            <div class="isSelect">
+                <img class="img" src="../mobile/assets/img/select.png" alt="">
+            </div>
         </div>
 
         <p class="activityTip">已自动填写活动优惠券码，请点击兑换使用</p>
@@ -185,14 +187,18 @@
                 <img src="../mobile/assets/img/taobao.png" alt="">
                 淘宝支付
             </div>
-            <img class="noselectImg" src="../mobile/assets/img/noselect.png" alt="">
+            <div class="isSelect">
+                <img class="img" src="../mobile/assets/img/noselect.png" alt="">
+            </div>
         </div>
         <div class="dsf-Pay redBook_pay" data-type="redBook" data-toggle="modal" data-target="#CustomModal">
             <div class="PayName">
                 <img src="../mobile/assets/img/xhs.png" alt="">
                 小红书支付
             </div>
-            <img class="noselectImg" src="../mobile/assets/img/noselect.png" alt="">
+            <div class="isSelect">
+                <img class="img" src="../mobile/assets/img/noselect.png" alt="">
+            </div>
         </div>
         <div class="case realTime">
             <img src="../mobile/assets/img/horn.png" alt="">
@@ -209,8 +215,8 @@
         <p>请在30分钟内完成支付，如未支付完成该订单将自动取消</p>
         <div class="payBox">
             <div class="amount">
-                <div class="total">合计 <span class="symbol">￥<span id="amountText"></span></span>
-                    <span class="Discountamount">(优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>)</span>
+                <div class="total">合计 <span class="symbol">￥<span id="amountText" class="partyamount"></span><span id="amountText1" class="partyamount1"></span></span>
+                    <span class="Discountamount">(优惠￥<span class="Discountamount" id="Discount_amount"></span>)</span>
                 </div>
                 <div>计费方式：<span id="priceTetx"></span></div>
             </div>
@@ -334,15 +340,15 @@
     </div>
 </div>
 <div id="customerOnline"></div>
-<script src="../mobile/assets/js/jquery.min.js?v=m24.00018"></script>
-<script src="../mobile/assets/js/bootstrap.min.js?v=m24.00018"></script>
-<script src="../mobile/assets/js/clipboard.min.js?v=m24.00018"></script>
-<script src="../mobile/assets/js/common.js?v=m24.00018"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.00018"></script>
-<script src="../mobile/assets/js/message.js?v=m24.00018"></script>
-<script src="../mobile/assets/js/ap.js?v=m24.00018"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.00018"></script>
-<script src="../mobile/assets/js/orderInfo.js?v=m24.00018"></script>
-<script src="../mobile/assets/js/pay.js?v=m24.00018"></script>
+<script src="../mobile/assets/js/jquery.min.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/bootstrap.min.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/clipboard.min.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/common.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/message.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/ap.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/orderInfo.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/pay.js?v=m24.00021"></script>
 </body>
 </html>

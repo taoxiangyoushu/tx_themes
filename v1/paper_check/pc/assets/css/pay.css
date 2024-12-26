@@ -323,10 +323,11 @@ html body .pay_page {
 }
 .block-right .r-content .block-coupon > div {
   margin-top: 14px;
+  height: 34px;
 }
 .block-right .r-content .block-coupon > div .form-control {
   display: inline-block;
-  width: 30%;
+  width: 216px;
   box-shadow: none;
   border-color: #e9e7e7;
   border-radius: 6px;
@@ -354,7 +355,7 @@ html body .pay_page {
 .block-right .r-content .block-coupon > div .use_now {
   display: inline-block;
   height: 34px;
-  width: 76px;
+  width: 86px;
   color: #fff;
   background: #7d55fc82;
   text-align: center;
@@ -364,6 +365,14 @@ html body .pay_page {
   cursor: not-allowed;
   pointer-events: none;
   font-size: 14px;
+}
+.block-right .r-content .block-coupon > div .use_now .Exchange_loading {
+  display: none;
+  width: 14px;
+  position: relative;
+  top: -1px;
+  left: -1px;
+  margin-right: 2px;
 }
 .block-right .r-content .block-coupon > div .use_now.can {
   background: #7d55fc;
@@ -416,14 +425,37 @@ html body .pay_page {
   position: relative;
   top: -1px;
 }
-.block-right .r-content .block-coupon > div .errorTip1 {
+.block-right .r-content .block-coupon .Exchange_hidden {
+  display: inline-block;
+}
+.block-right .r-content .block-coupon .errorTip1 {
+  display: inline-block;
   display: none;
-  margin-left: 20px;
-  color: #d81e06;
+  width: 322px;
+  height: 34px;
+  background: #FBF9FF;
+  border-radius: 6px 6px 6px 6px;
+  border: 1px solid #7D55FC;
+  line-height: 34px;
   font-size: 12px;
-  position: absolute;
-  top: 1px;
-  left: 66px;
+  color: #333333;
+  padding-left: 10px;
+  float: left;
+}
+.block-right .r-content .block-coupon .errorTip1 .Picture_event {
+  float: right;
+  margin-top: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.block-right .r-content .block-coupon .errorTip1 .Picture_event1 {
+  float: right;
+  display: none;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+.block-right .r-content .block-coupon .errorTip1 .Coupondisabled.Coupon_dis {
+  text-decoration: line-through;
 }
 .block-right .r-content .block-pay {
   max-width: 810px;
@@ -605,6 +637,27 @@ html body .pay_page {
   text-align: center;
   cursor: pointer;
   margin-top: 16px;
+  display: inline-block;
+}
+.block-right .r-content .block-pay .pay-box .tbPay .tb-content .Three_party {
+  display: inline-block;
+  font-size: 14px;
+  color: #545454;
+  margin-left: 10px;
+}
+.block-right .r-content .block-pay .pay-box .tbPay .tb-content .Three_party span:nth-child(1) {
+  font-size: 12px;
+  color: #7d55fc;
+  margin-left: 6px;
+}
+.block-right .r-content .block-pay .pay-box .tbPay .tb-content .Three_party span:nth-child(2) {
+  font-size: 16px;
+  color: #7d55fc;
+  font-weight: bold;
+}
+.block-right .r-content .block-pay .pay-box .tbPay .tb-content .Three_party span:nth-child(3) {
+  font-size: 12px;
+  color: #999999;
 }
 .block-right .r-content .block-pay .pay-box .tbPay .tipsDiv {
   position: absolute;

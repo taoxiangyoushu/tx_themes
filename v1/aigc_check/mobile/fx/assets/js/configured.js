@@ -143,7 +143,25 @@
 
     // 复制链接
     $(".copy_pop").on('click',function (){
-        var text = $(".orderId_pop").text()
+        var text = $(".orderId_pop #orderId_pop_id").val()
+        $("#copyInput").val(text)
+        $("#copyInput").select()
+        try {
+            var state = document.execCommand("copy");
+        } catch (err) {
+            var state = false;
+        }
+        if (state) {
+            cocoMessage.success(1000, "复制成功", function() {
+            });
+        } else {
+            cocoMessage.error(1000, "复制失败", function() {
+            });
+        }
+    })
+    // 复制海报
+    $(".copy_pop3").on('click',function (){
+        var text = $(".DownloadPoster1").data('poster')
         $("#copyInput").val(text)
         $("#copyInput").select()
         try {

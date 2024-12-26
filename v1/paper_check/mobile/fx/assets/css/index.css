@@ -560,3 +560,15 @@ html {
   font-size: 1.4rem;
   color: #333;
 }
+.linkBox .orderId_pop {
+  line-height: normal;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+#orderId_pop_id {
+  border: 0 !important;
+  width: 100%;
+  vertical-align: middle;
+  height: 100%;
+  outline: 0 !important;
+}

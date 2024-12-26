@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI大师写作 - 确认订单</title>
     <link rel="shortcut icon" href="../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css?v=p24.0063">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0063">
-    <link rel="stylesheet" href="../pc/assets/css/editor.css?v=p24.0063">
-    <link rel="stylesheet" href="../pc/assets/css/ProfessionalEdition.css?v=p24.0063">
-    <link rel="stylesheet" href="../pc/assets/css/OutlineEditingKTBG.css?v=p24.0063">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0063">
-    <link rel="stylesheet" href="../pc/assets/css/leftCss.css?v=p24.0063">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/editor.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/ProfessionalEdition.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/OutlineEditingKTBG.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/leftCss.css?v=p24.0072">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz';
@@ -988,7 +988,7 @@
                     增值服务</div>
                 <div class="appreciationUL">
                     <div class="appreciation-block-i">
-                        <div class="appreciationLI zjcaigczz" goodsid-key="" data-janename="zjcaigczz">
+                        <div class="appreciationLI zjcaigczz" goodsid-key="" data-janename="zjcaigczz" data-janename1="qkzjcaigczz">
                             <img src="../pc/assets/img/new-icon.png" class="icon-new" alt="">
                             <div class="logo-services">
                                 <img class="s-logo" src="../pc/assets/img/logo-zjc.png" alt="">
@@ -1055,9 +1055,16 @@
                     优惠券</div>
                 <div class="form-group form-group_s card">
                     <div>
-                        <input autocomplete="off" class="form-control" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="30" name="coupon" type="text" placeholder="请输入优惠券码" id="coupon"/>
-                        <div class="eliminateCoupon"></div>
-                        <span class="use_now">兑换</span>
+                        <div class="Exchange_hidden">
+                            <input autocomplete="off" class="form-control" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="30" name="coupon" type="text" placeholder="请输入优惠券码" id="coupon"/>
+                            <div class="eliminateCoupon"></div>
+                            <span class="use_now"><img src="../pc/assets/img/loading1.gif" alt="" class="Exchange_loading">兑换</span>
+                        </div>
+                        <div class="errorTip1">
+                            <span class="Coupondisabled">优惠券可抵扣￥<span id="After_discounts"></span></span>
+                            <img src="../pc/assets/img/select_icon.png" alt="" class="Picture_event">
+                            <img src="../pc/assets/img/n_select.png" alt="" class="Picture_event1">
+                        </div>
                         <!-- 优惠券广告位-->
                         <div class="claim-coupons">
                             <img src="../pc/assets/img/youhuiquan.png" alt="">
@@ -1068,7 +1075,6 @@
                             <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
                         </div>
                         <span class="errorTip"><img src="../pc/assets/img/err_tip.png" alt=""><span></span></span>
-                        <span class="errorTip1">优惠券已抵扣￥<span id="After_discounts"></span></span>
                         <span class="activityTip"></span>
                     </div>
                 </div>
@@ -1182,6 +1188,7 @@
                                 </div>
                                 <div class="errTip"></div>
                                 <div class="tb-payOrder">立即使用</div>
+                                <p class="Three_party">订单金额<span>￥</span><span id="Total_amount">0.00 </span><span>（不满千字按千字计算）</span></p>
                             </div>
                         </div>
                     </div>
@@ -1194,7 +1201,7 @@
     <div class="editBox">
         <div class="editHader">
             <span>确认提纲</span>
-            <img class="delete" src="../pc/assets/img/delete.png" alt="关闭">
+            <img class="delete" src="../pc/assets/img/delete2x.png" alt="关闭">
         </div>
         <div class="editMain">
             <div class="recommend preview">
@@ -1206,6 +1213,9 @@
                     <p>正在获取数据...</p>
                 </div>
             </div>
+        </div>
+        <div class="editBottom">
+            <div id="outlineReplication">复制提纲</div>
         </div>
     </div>
 </div>
@@ -1280,16 +1290,16 @@
 </div> -->
 
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
-<script src="../pc/assets/js/jquery.min.js?v=p24.0063"></script>
-<script src="../pc/assets/js/bootstrap.min.js?v=p24.0063"></script>
-<script src="../pc/assets/js/qrcode.min.js?v=p24.0063"></script>
-<script src="../pc/assets/js/coco-message.js?v=p24.0063"></script>
-<script src="../pc/assets/js/common.js?v=p24.0063"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0063"></script>
-<script src="../pc/assets/js/editor.js?v=p24.0063"></script>
-<script src="../pc/assets/js/ProfessionalEdition.js?v=p24.0063"></script>
-<script src="../pc/assets/js/outlineEditingKTBG.js?v=p24.0063"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0063"></script>
-<script src="../pc/assets/js/pay.js?v=p24.0063"></script>
+<script src="../pc/assets/js/jquery.min.js?v=p24.0072"></script>
+<script src="../pc/assets/js/bootstrap.min.js?v=p24.0072"></script>
+<script src="../pc/assets/js/qrcode.min.js?v=p24.0072"></script>
+<script src="../pc/assets/js/coco-message.js?v=p24.0072"></script>
+<script src="../pc/assets/js/common.js?v=p24.0072"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0072"></script>
+<script src="../pc/assets/js/editor.js?v=p24.0072"></script>
+<script src="../pc/assets/js/ProfessionalEdition.js?v=p24.0072"></script>
+<script src="../pc/assets/js/outlineEditingKTBG.js?v=p24.0072"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0072"></script>
+<script src="../pc/assets/js/pay.js?v=p24.0072"></script>
 </body>
 </html>

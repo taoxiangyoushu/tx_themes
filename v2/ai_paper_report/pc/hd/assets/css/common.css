@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.clearfix:before {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.f-l {
+  float: left;
+}
+.f-r {
+  float: right;
+}
+.noMarginRight {
+  margin-right: 0 !important;
+}
+.noMarginBottom {
+  margin-bottom: 0 !important;
+}
+p {
+  margin: 0;
+  line-height: normal;
+}
+#floatingBox .complainBox {
+  top: calc(60% - 52px);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 0 4px 0px #d9d9d9;
+}
+#memberCarrier .loginBox {
+  position: static !important;
+  float: right;
+  max-width: 66px;
+  margin-left: 30px;
+}
+#memberCarrier .hasLogin {
+  line-height: normal;
+  margin: 9px 0 9px 0;
+}
+#memberCarrier .loginButton {
+  width: 74px !important;
+  height: 32px !important;
+  line-height: 31px !important;
+  margin: 14px 0 14px 0;
+  background: #FCFBFE !important;
+  border: 1px solid #FF535F !important;
+  color: #FF535F !important;
+}
+#memberCarrier .loginButton:hover {
+  background: #FFE9EB !important;
+  border: 1px solid #FF535F !important;
+}
+#memberCarrier .nav-download {
+  float: left;
+}
+#memberCarrier .FloatingWindow {
+  margin-top: 61px !important;
+  margin-left: -144px;
+  line-height: normal;
+}
+#memberCarrier .nav-activity {
+  float: left;
+}
+.distributionEntrance {
+  cursor: pointer;
+  display: none;
+}
+.fiexBox {
+  position: fixed;
+  top: 60%;
+  z-index: 1000;
+  right: 0;
+  max-width: 100px;
+}
+.fiexBox .fiexBoxP {
+  float: right;
+}
+.fiexBox .navBtn.WX {
+  float: right;
+}
+.fiexBox .Activity {
+  cursor: pointer;
+  display: none;
+}
+/*侧边*/
+.fiexBox {
+  position: fixed;
+  top: 60%;
+  z-index: 1000;
+  right: 0;
+  max-width: 100px;
+}
+.navBtn {
+  background: #fff;
+  padding: 9px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 6px 0px 0px 6px;
+  width: 58px;
+  height: 58px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0px 0px 4px 0px #d3d3d3;
+}
+.quanwei:hover,
+.waiwen:hover,
+.dinggao:hover,
+.qita:hover {
+  color: #fff;
+}
+.navBtn.QQ,
+.navBtn.WX {
+  position: relative;
+  padding: 15px;
+  box-shadow: 0px 0px 9px 1px rgba(255, 44, 44, 0.1);
+}
+.navBtn.QQ .wxHover,
+.navBtn.WX .wxHover {
+  display: none;
+}
+.navBtn.QQ:hover .qq,
+.navBtn.QQ:hover:after {
+  display: block;
+}
+.navBtn.WX:hover .wxKF,
+.navBtn.WX:hover:after {
+  display: block;
+}
+.navBtn.WX:hover {
+  background: linear-gradient(120deg, #FF4C2E, #FFB39C);
+  box-shadow: 0px 0px 9px 1px rgba(255, 44, 44, 0.1);
+}
+.navBtn.WX:hover .wxHover {
+  display: block;
+}
+.navBtn.WX:hover .wxDefault {
+  display: none;
+}
+.navBtn.QQ:after,
+.navBtn.WX:after {
+  content: '';
+  position: absolute;
+  left: -14px;
+  width: 14px;
+  height: 54px;
+  top: 4px;
+}
+.qq {
+  background: #fff;
+  position: absolute;
+  left: -274px;
+  width: 260px;
+  height: 54px;
+  line-height: 54px;
+  color: #333333;
+  font-size: 14px;
+  top: 4px;
+  box-shadow: 0px 0px 4px 0px #e1dfdf;
+  display: none;
+}
+.wxKF {
+  position: absolute;
+  left: -228px;
+  bottom: 0;
+  display: none;
+}
+.wxKF .customerBox {
+  width: 218px;
+  background-image: linear-gradient(180deg, #FFDBD8 0%, white 60%);
+  box-shadow: 0 0 5px 0px #d7d7d7;
+  border-radius: 12px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.wxKF .customerBox .head_kf {
+  height: 48px;
+  line-height: 48px;
+  color: #303133;
+  font-size: 14px;
+  border-bottom: 1px solid #ffffff;
+  background: transparent !important;
+  text-align: left;
+}
+.wxKF .customerBox .head_kf .customer-title {
+  width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+}
+.wxKF .customerBox .head_kf img {
+  vertical-align: middle;
+  margin-top: -1px;
+  margin-left: 20px;
+  margin-right: 4px;
+}
+.wxKF .customerBox .customerCode {
+  text-align: center;
+  padding: 20px 0 16px 0;
+  line-height: normal;
+  position: relative;
+  display: none;
+}
+.wxKF .customerBox .customerCode img {
+  width: 150px;
+  height: 150px;
+}
+.wxKF .customerBox .segmentation-line {
+  width: 168px;
+  height: 1px;
+  background: #e7e7e7;
+  margin: 0 auto;
+}
+.wxKF .customerBox .customerWay {
+  padding-left: 20px;
+  padding-top: 16px;
+  padding-bottom: 20px;
+  text-align: left;
+}
+.wxKF .customerBox .customerWay p {
+  line-height: 2;
+  color: #666666;
+  font-size: 12px;
+  margin: 0;
+  display: none;
+}
+.wxKF .customerBox .customerWay p .s0 {
+  width: 30px;
+  display: inline-block;
+  font-size: 12px;
+}
+.wxKF .customerBox .customerWay p .s1 {
+  color: #333333;
+  margin-left: 4px;
+  font-size: 12px;
+}
+.wxKF .customerBox .noCustomer {
+  line-height: 2;
+  margin: 0;
+  font-size: 14px;
+  color: #303133;
+  padding: 15px 20px;
+  display: none;
+}
+.wxKF .customerBox .customBg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.wx-c span {
+  color: #666;
+}
+.wx-c > p {
+  display: none;
+}
+.navBtn.WX {
+  padding: 12px 10px;
+}
+/*# sourceMappingURL=common.css.map */

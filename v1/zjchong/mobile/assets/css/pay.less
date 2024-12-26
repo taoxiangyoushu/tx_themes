@@ -140,6 +140,9 @@
         font-weight: bold;
         .symbol{
             font-size: 1.43rem;
+            .partyamount1{
+                display: none;
+            }
         }
         span {
             color: #0073ff;
@@ -193,8 +196,7 @@
         background: #006fff82;
         color: #fff;
         display: inline-block;
-        height: 4.4rem;
-        line-height: 4.4rem;
+        padding: 1rem;
         border-top-right-radius: 0.95rem;
         border-bottom-right-radius: 0.95rem;
         width: 24%;
@@ -599,11 +601,22 @@
             top: .0625rem;
         }
     }
-    .noselectImg {
+    .isSelect{
         position: absolute;
-        width: 1.24rem;
-        height: 1.24rem;
         right: 1.9rem;
-        top: 2.3rem;
+        top: 2rem;
+        img{
+            width: 1.24rem;
+            height: 1.24rem;
+        }
+    }
+}
+
+.dsf-Pay{
+    .isSelect {
+        img {
+            width: 1.24rem;
+            height: 1.24rem;
+        }
     }
 }

@@ -9,9 +9,9 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0033">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0033">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0033">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0042">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0042">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0042">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -42,7 +42,7 @@
             <div class="logo-box pull-left">
                 <h1 class="hide">早降重 智能降重 </h1>
                 <a href="./index.html" title="早降重官网">
-                    <img src="../pc/assets/img/logo.svg" alt="logo"/>
+                    <img src="../pc/assets/img/logo.png" alt="logo"/>
                 </a>
                 <div class="txter">
                     <p>第六代人工智能神经网络降重模型</p>
@@ -137,7 +137,7 @@
                                 </div>
                                 <div class="content_block form_block">
                                     <div class="border_box">
-                                        <textarea class="form-control" name="text_content" id="textContent" placeholder="内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。"></textarea>
+                                        <textarea class="form-control" autocomplete="off" name="text_content" id="textContent" placeholder="内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。"></textarea>
                                         <span class="counter">
                                         当前已输入<i class="impl">0</i>字符</span><br/>
                                         </span>
@@ -377,7 +377,7 @@
                             </form>
                             <div class="submit-row">
                                 <div class="rower">
-                                    <button type="button" class="btn btn-submit">
+                                    <button type="button" class="btn btn-submit prohibitBtn">
                                         <span>开始<span class="Text-jc">降重</span></span>
                                     </button>
                                     <span class="priceTips" style="float:right;">计费方式：
@@ -720,9 +720,9 @@
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="../pc/assets/js/jszip.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0033"></script>
+<script src="../pc/assets/js/common.js?v=p24.0042"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0033"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0042"></script>
 <script>
     var uploadType = 'content';
     var domain = '303';
@@ -1221,6 +1221,10 @@
     var throttling = true
     var closeMsg = ''
     $(".btn-submit").click(function (){
+        //
+        if($(this).hasClass('prohibitBtn')){
+            return
+        }
 		// is强制登录拦截
 		if(memberFu.interceptLogin && memberFu.interceptLogin()) return false;
 
@@ -1511,6 +1515,7 @@
                 $('.upload_block .upload_btn span').text('重新上传')
                 $('.upload_block .upload_fileInfo .upCheck').show()
                 $('.upload_block .upload_fileInfo .deleteFile').show()
+                $(".btn.btn-submit.prohibitBtn").removeClass('prohibitBtn')
             },300)
         }else{
             $(this).css('zIndex', '10')
@@ -1523,6 +1528,7 @@
             $('.upload_block .upload_fileInfo .upLose').hide()
             $('.upload_block .upload_fileInfo .deleteFile').hide()
             $('.upload_block .upload_fileInfo').hide()
+            $(".btn.btn-submit").addClass('prohibitBtn')
         }
     })
 
@@ -1545,6 +1551,7 @@
                 $('.zipFile_block .upload_btn span').text('重新上传')
                 $('.zipFile_block .upload_fileInfo .upCheck').show()
                 $('.zipFile_block .upload_fileInfo .deleteFile').show()
+                $(".btn.btn-submit.prohibitBtn").removeClass('prohibitBtn')
             },300)
         }else{
             $(this).css('zIndex', '10')
@@ -1556,6 +1563,7 @@
             $('.zipFile_block .upload_fileInfo .upLose').hide()
             $('.zipFile_block .upload_fileInfo .deleteFile').hide()
             $('.zipFile_block .upload_fileInfo').hide()
+            $(".btn.btn-submit").addClass('prohibitBtn')
         }
     })
 
@@ -1582,6 +1590,11 @@
 
     $("#textContent").on('input',function (){
         $(".content_block .counter .impl").text($("#textContent").val().length)
+        if($("#textContent").val().length >= 200) {
+            $(".btn.btn-submit.prohibitBtn").removeClass('prohibitBtn')
+        }else{
+            $(".btn.btn-submit").addClass('prohibitBtn')
+        }
     })
 </script>
 </body>

@@ -9,8 +9,8 @@
     <meta name="keywords" content="" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0027">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0027">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0037">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0037">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -124,15 +124,21 @@
                 <div class="block-coupon">
                     <p class="name">优惠券</p>
                     <div>
-                        <input autocomplete="off" class="form-control" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="30" name="coupon" type="text" placeholder="请输入优惠券兑换码" id="coupon"/>
-                        <div class="eliminateCoupon"></div>
-                        <span class="use_now">立即使用</span>
+                        <div class="Exchange_hidden">
+                            <input autocomplete="off" class="form-control" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="30" name="coupon" type="text" placeholder="请输入优惠券兑换码" id="coupon"/>
+                            <div class="eliminateCoupon"></div>
+                            <span class="use_now"><img src="../pc/assets/img/loading1.gif" alt="" class="Exchange_loading">立即使用</span>
+                        </div>
+                        <div class="errorTip1">
+                            <span class="Coupondisabled">优惠券可抵扣￥<span id="After_discounts"></span></span>
+                            <img src="../pc/assets/img/select_icon.png" alt="" class="Picture_event">
+                            <img src="../pc/assets/img/n_select.png" alt="" class="Picture_event1">
+                        </div>
                         <!-- 福利活动入口 -->
                         <div class="welfare-entrance">
                             <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
                         </div>
                         <span class="errorTip"><img src="../pc/assets/img/err_tip.png" alt=""><span></span></span>
-                        <span class="errorTip1">优惠券已抵扣￥<span id="After_discounts"></span></span>
                     </div>
                 </div>
                 <div class="block-pay">
@@ -241,6 +247,7 @@
                                         </div>
                                         <div class="errTip"></div>
                                         <div class="tb-payOrder">立即使用</div>
+                                        <p class="Three_party">订单金额<span>￥</span><span id="Total_amount">0.00 </span><span>（不满千字按千字计算）</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -293,10 +300,10 @@
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0027"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0027"></script>
+<script src="../pc/assets/js/common.js?v=p24.0037"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0037"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0027"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0037"></script>
 <script>
     var qrcode = new QRCode(document.getElementById("qrcode"), {
         width: 135,
@@ -448,8 +455,9 @@
                 closeMsg()
                 return
             }
-            payOrder(pay_type)
+            payOrder(pay_type,orderInfoData.order_amount)
         }
+        Readjust()
     }
 
     function payOrder(payType,price) {
@@ -465,7 +473,7 @@
         if(pay_type == 'scanCodeRich'){
             if(orderInfoData.pay_wap_url) {
                 $(".code").show()
-                $(".orderAmount").text(price?price:orderInfoData.order_amount)
+                $(".orderAmount").text(price)
                 qrcode.makeCode(orderInfoData.pay_wap_url + '/pay/waporder/' + (order_sn?order_sn:getQueryVariable('commitId')) + '?source=' + source);
                 $('.load').hide()
                 time = 600
@@ -481,7 +489,7 @@
             }else {
                 // 避免订单信息接口太慢, 导致pay_wap_url拿不到
                 setTimeout(function() {
-                    payOrder(payType,price)
+                    payOrder(payType,orderInfoData.order_amount)
                 }, 1000)
             }
 
@@ -553,6 +561,11 @@
                     thirdpartyPayOrder()
                     return;
                 }
+                else{
+                    $('.Coupondisabled').removeClass('Coupon_dis')
+                    $('.Picture_event1').hide()
+                    $('.Picture_event').show()
+                }
                 $(".tbPay").hide();
                 $(".code").show();
                 payOrder()
@@ -574,6 +587,9 @@
         $(".code").hide();
         contentTypeIs = true;
         $(".tbPay").show();
+        $('.Coupondisabled').addClass('Coupon_dis')
+        $('.Picture_event1').show()
+        $('.Picture_event').hide()
 
         if(pay_way_public.taobao) $('#TB').show()
         if(pay_way_public.redBook) $('#XHS').show()
@@ -748,50 +764,14 @@
         if($(this).val().length > 0){
             $(".use_now").addClass('can')
             $(".eliminateCoupon").css('display','inline-block')
-            $('.use_now').text('立即使用')
+            // $('.use_now').text('立即使用')
         }else{
             $(".use_now").removeClass('can')
             $(".eliminateCoupon").hide()
-            $('.use_now').text('立即使用')
+            // $('.use_now').text('立即使用')
             $('.errorTip1').hide()
             $('.Discountamount').hide()
-        var formData = getFormData({
-            order_sn: order_sn || getQueryVariable('commitId'),
-            code: $("#coupon").val()
-        })
-
-        $.ajax({
-            type: 'post',
-            url: urls + '/api/client/order/variation/order',
-            data: formData,
-            contentType: false,
-            processData: false,
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function (res) {
-                canClick = true
-                closeMsg()
-                if (res.code == 200) {
-                    order_sn = res.data.order_sn
-                    payOrder('',res.data.order_amount)
-                    $('.orderId-t').text(res.data.order_sn)
-                    $('.time-t').text(res.data.created)
-                    $('.orderAmount').text(res.data.order_amount)
-                }else {
-                    // cocoMessage.error(res.codeMsg, 2000);
-                    $(".errorTip span").text(res.codeMsg)
-                    $(".errorTip").css('display','inline-block');
-                    closeMsg()
-                }
-            },
-            error: function () {
-                cocoMessage.error("请求失败!请检查网络", 2000);
-                contentTypeIs = true
-                closeMsg()
-                canClick = true
-            },
-        });
+            // Readjust()
         }
     })
 
@@ -815,7 +795,9 @@
             return
         }
         canClick = false
-        closeMsg = cocoMessage.loading('正在兑换优惠券...');
+        // closeMsg = cocoMessage.loading('正在兑换优惠券...');
+        $('.Exchange_loading').show()
+        $('.use_now').removeClass('can')        
 
         var formData = getFormData({
             order_sn: order_sn || getQueryVariable('commitId'),
@@ -838,9 +820,11 @@
                     order_sn = res.data.order_sn
                     $('.orderId-t').text(res.data.order_sn)
                     $('.time-t').text(res.data.created)
+                    $('.Exchange_loading').hide()
                     if(Number(res.data.order_amount) == 0) {
                         $(".coupon_pop").show();
                         $(".mask_body").show();
+                        $('.orderId_pop').text(res.data.order_sn)
                     }else{
                         if(noPayWay){
                             cocoMessage.error("此优惠券不满足免单条件！", 2000);
@@ -850,8 +834,9 @@
                         order_sn = res.data.order_sn
                         payOrder('',res.data.order_amount)
                         if(res.data.coupon_money>0){
-                            $('.use_now').text('已使用')
+                            // $('.use_now').text('已使用')
                             $('.use_now').removeClass('can')
+                            $('.Exchange_hidden').hide()
                             $('.errorTip1').show()
                             $('.Discountamount').show()
                             $('#Discount_amount').text(res.data.coupon_money)
@@ -864,6 +849,7 @@
                     $('.errorTip1').hide()
                     $(".errorTip span").text(res.codeMsg)
                     $(".errorTip").css('display','inline-block');
+                    $('.Exchange_loading').hide()
                     closeMsg()
                 }
             },
@@ -970,6 +956,7 @@
         $(".mask_body").hide();
     })
     $(".cancel_btn").on('click',function (){
+        $('.use_now').addClass('can')
         $(".coupon_pop").hide();
         $(".mask_body").hide();
     })
@@ -979,6 +966,59 @@
     $('.Coupon_con').on('click',function(){
         $('.Coupon_exceeds').hide()
     })
+
+    
+    $('.Picture_event').on('click',function(){
+        $('.Exchange_hidden').show()
+        $('.errorTip1').hide()
+        $("#coupon").val('')
+        // $('.use_now').text('兑换')
+        $('.eliminateCoupon').hide()
+        $('.Discountamount').hide()
+        Readjust()
+    })
+
+
+function Readjust(){
+    var formData = getFormData({
+            order_sn: order_sn || getQueryVariable('commitId'),
+            code: $("#coupon").val()
+        })
+
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/variation/order',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                canClick = true
+                closeMsg()
+                if (res.code == 200) {
+                    order_sn = res.data.order_sn
+                    payOrder('',res.data.order_amount)
+                    $('#Total_amount').text(res.data.order_money)
+                    $('.orderId-t').text(res.data.order_sn)
+                    $('.time-t').text(res.data.created)
+                    $('.orderAmount').text(res.data.order_amount)
+                }else {
+                    // cocoMessage.error(res.codeMsg, 2000);
+                    $(".errorTip span").text(res.codeMsg)
+                    $(".errorTip").css('display','inline-block');
+                    closeMsg()
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                contentTypeIs = true
+                closeMsg()
+                canClick = true
+            },
+        });
+    }
 </script>
 </body>
 </html>

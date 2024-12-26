@@ -819,6 +819,7 @@ body {
 }
 .submit-cont .form-upload {
   background: #ffffff;
+  border-radius: 10px;
 }
 .submit-cont .form-upload .form-group {
   margin: 0 0 20px;
@@ -1277,6 +1278,10 @@ body {
 }
 .submit-cont .btn-submit:focus {
   outline: none;
+}
+.submit-cont .btn-submit.prohibitBtn {
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 .submit-cont .counter {
   float: right;
@@ -2200,3 +2205,4 @@ body {
   position: relative;
   top: -3px;
 }
+/*# sourceMappingURL=home.css.map */

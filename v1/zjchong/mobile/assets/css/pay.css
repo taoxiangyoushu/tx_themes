@@ -137,6 +137,9 @@
 .payBox div.total .symbol {
   font-size: 1.43rem;
 }
+.payBox div.total .symbol .partyamount1 {
+  display: none;
+}
 .payBox div.total span {
   color: #0073ff;
   font-size: 2.4rem;
@@ -185,8 +188,7 @@
   background: #006fff82;
   color: #fff;
   display: inline-block;
-  height: 4.4rem;
-  line-height: 4.4rem;
+  padding: 1rem;
   border-top-right-radius: 0.95rem;
   border-bottom-right-radius: 0.95rem;
   width: 24%;
@@ -561,10 +563,16 @@
   position: relative;
   top: 0.0625rem;
 }
-.Deduction .noselectImg {
+.Deduction .isSelect {
   position: absolute;
+  right: 1.9rem;
+  top: 2rem;
+}
+.Deduction .isSelect img {
   width: 1.24rem;
   height: 1.24rem;
-  right: 1.9rem;
-  top: 2.3rem;
+}
+.dsf-Pay .isSelect img {
+  width: 1.24rem;
+  height: 1.24rem;
 }

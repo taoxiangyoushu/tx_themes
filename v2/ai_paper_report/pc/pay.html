@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI大师写作 - 确认订单</title>
+    <link rel="shortcut icon" href="../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css?v=p24.0067">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0067">
+    <link rel="stylesheet" href="../pc/assets/css/editor.css?v=p24.0067">
+    <link rel="stylesheet" href="../pc/assets/css/ProfessionalEdition.css?v=p24.0067">
+    <link rel="stylesheet" href="../pc/assets/css/OutlineEditingKTBG.css?v=p24.0067">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0067">
+    <link rel="stylesheet" href="../pc/assets/css/leftCss.css?v=p24.0067">
+    <!-- v2版本独立css -->
+    <link rel="stylesheet" href="../pc/assets/css/commonv2.css?v=p24.0067">
+    <link rel="stylesheet" href="../pc/assets/css/pay_v2.css?v=p24.0067">
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        var JANE_NAME = 'dsxz';
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<div class="payApp clearfix indexAppv2 indexApp menuCanSelect" id="App">
+    <div class="boxLeft">
+        <div class="commodityType">
+            <div class="loginBox">
+                <img class="logov2" src="../pc/assets/img/logov2.png" alt="">
+                <img class="logo_zyb_v2" src="../pc/assets/img/logo_zyb_v2.png" alt="">
+                <a class="queryResults" href="./query.html">
+                    <img class="search_r_icon" src="../pc/assets/img/search_r_icon.svg" alt="">
+                    <img class="search_r_zy_icon" src="../pc/assets/img/search_r_zy_icon.svg" alt="">
+                    <img class="selected_icon" src="../pc/assets/img/jsbsearch_icon.svg" alt="">
+                    查询结果
+                </a>
+            </div>
+            <div class="spType">
+                <ul class="ul1">
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                </ul>
+                <ul style="display: none;" class="ul2">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="rightCont" id="payHtml">
+        <div class="container">
+
+            <p class="getBack">< 返回提交页</p>
+            <div class="main" id="memberCarrier">
+                <h3 class="h3Text">确认订单 <i></i></h3>
+                <div class="ontentText titles">
+                    <p class="text">
+                        <img class="collateImg collateImg1" src="../pc/assets/img/ddImg.png?v1" alt="">
+                        <img class="collateImg collateImg2" src="../pc/assets/img/ddImg2.png" alt="">
+                        核对订单</p>
+                </div>
+                <div class="table clearfix">
+                    <div class="col-md-12 haders">
+                        <div class="col-md-6 orderTime">
+                            下单时间  <span id="dateTime"></span>
+                        </div>
+                        <div class="col-md-6 orderId">
+                            订单编号  <span id="orderIdText">**********</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 line line1 line3">
+                        <div class="leftText">
+                            论文标题:
+                        </div>
+                        <div class="rightText rightText1 typeTagBox">
+                            <span class="title-blockBox">
+                                <span id="orderTitle">* *</span>
+                                <span class="typeTag" style="display: none;"></span>
+                                <span class="typeTagKTBG" style="display: none;"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 line line1 PaperType" id="PaperType" style="display: none;">
+                        <div class="leftText">
+                            论文类型:
+                        </div>
+                        <div class="rightText rightText1 PaperTypeName">
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 line line1 NumberWordsBox">
+                        <div class="leftText">
+                            字数:
+                        </div>
+                        <div class="rightText rightText1">
+                            <span id="NumberWords">0</span>
+                            <span>字</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 line line1 Preview">
+                        <div class="leftText">
+                            提纲:
+                        </div>
+                        <div class="rightText rightText1">
+                            <span class="PreviewClick">预览</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 line line1 noPayWay">
+                        <div class="leftText">
+                            单价:
+                        </div>
+                        <div class="rightText rightText1">
+                            <span id="UnitPrice2">暂无</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 line line1 noPayWay">
+                        <div class="leftText">
+                            订单金额:
+                        </div>
+                        <div class="rightText rightText1 orderAmountBox2">
+                            ￥<span id="orderAmount2"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="appreciation">
+                    <div class="text">
+                        <img class="zzImg zzImg1" src="../pc/assets/img/zzImg.png?v1" alt="">
+                        <img class="zzImg zzImg2" src="../pc/assets/img/zzImg2.png" alt="">
+                        增值服务</div>
+                    <div class="appreciationUL">
+                        <div class="appreciation-block-i">
+                            <div class="appreciationLI zjcaigczz" goodsid-key="" data-janename="zjcaigczz" data-janename1="qkzjcaigczz">
+                                <img src="../pc/assets/img/new-icon.png" class="icon-new" alt="">
+                                <div class="logo-services">
+                                    <img class="s-logo" src="../pc/assets/img/logo-zjc.png" alt="">
+                                    <span> <img src="../pc/assets/img/wenhao-t.png" alt="">  样例 </span>
+                                    <img class="s-example" src="../pc/assets/img/aigc-e.png" alt="">
+                                </div>
+                                <span class="price"></span><span class="explain">降低“AIGC检测系统”的AI疑似率</span>
+                                <i></i>
+                            </div>
+                            <div class="appreciationLI szsjzz" goodsid-key="" data-janename="szsjzz" data-janename1="qkszsjzz">
+                                <div class="el-top">
+                                    <p class="good_name"></p>
+                                    <span class="must_read">
+                                        <img src="../pc/assets/img/wenhao.png" alt="">
+                                        购前必读
+                                        <div class="szsj_tips_block">
+                                            <p class="title_tips">什么是实证数据</p>
+                                            <p class="explain_tips">实证数据是指从<span class="blue1">研究报告、财务报表、新闻报道以及权威机构</span>等渠道获取的各类真实数据，例如“国内生产总值（GDP）”、“贸易量”、“人口统计数据”等。<span class="blue1">这些数据可用于支持和证实论文中的观点。</span></p>
+                                            <p class="title_tips">什么专业适用</p>
+                                            <p class="explain_tips">1. <span class="blue2">“经济学”、“文学”、“法学”</span>等<span class="blue3">文科</span>专业，推荐使用实证数据来增强论文的说服力。</p>
+                                            <p class="explain_tips">2. <span class="blue2">“工程学”、“计算机科学”</span>等<span class="blue3">理工科</span>专业在决定是否使用实证数据时需要谨慎，因为这些领域的研究更侧重于<span class="blue2">理论和技术层面的探讨，会被认为不需要实证数据。</span></p>
+                                            <p class="title_tips"><span class="red1">重要提示</span></p>
+                                            <p class="explain_tips">1. 在采用实证数据时，我们会运用专业的评估模型来决定文章是否真正需要这些数据。<span class="red2">模型评估结果可能是整篇文章无需实证数据，那么将不会有实证数据出现在论文中。</span></p>
+                                            <p class="explain_tips noMarginBottom">2. <span class="red2">支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款。</span> </p>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="price"></span>
+                                    <span class="explain">
+                                        仅适用于文科专业，理工科慎选
+                                    </span>
+                                    <i></i>
+                                </div>
+                                <img src="../pc/assets/img/new-icon.png" class="icon-new" alt="">
+                            </div>
+                        </div>
+                       <div class="appreciation-block-i">
+                           <div class="appreciationLI" goodsid-key="" data-janename="ktbg">
+                               <span class="good_name"></span>
+                               <span class="currentPrice">  </span>
+                               <span class="originalPrice">  </span>
+                               <i></i>
+                           </div>
+                           <div class="appreciationLI" goodsid-key="" data-janename="rws">
+                               <span class="good_name"></span>
+                               <span class="currentPrice">  </span>
+                               <span class="originalPrice">  </span>
+                               <i></i>
+                           </div>
+                           <div class="appreciationLI" goodsid-key="" data-janename="dbppt">
+                               <span class="good_name"></span>
+                               <span class="currentPrice">  </span>
+                               <span class="originalPrice">  </span>
+                               <i></i>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="coupon_box">
+                    <div class="text">
+                        <img class="zzImg yhqImg1" src="../pc/assets/img/yhqImg.png" alt="">
+                        <img class="zzImg yhqImg2" src="../pc/assets/img/yhqImg2.png" alt="">
+                        优惠券</div>
+                    <div class="form-group form-group_s card">
+                        <div>
+                            <div class="Exchange_hidden">
+                                <input autocomplete="off" class="form-control" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="30" name="coupon" type="text" placeholder="请输入优惠券码" id="coupon"/>
+                                <div class="eliminateCoupon"></div>
+                                <span class="use_now"><img src="../pc/assets/img/loading1.gif" alt="" class="Exchange_loading">兑换</span>
+                            </div>
+                            <div class="errorTip1">
+                                <span class="Coupondisabled">优惠券可抵扣￥<span id="After_discounts"></span></span>
+                                <img src="../pc/assets/img/select_icon.png" alt="" class="Picture_event">
+                                <img src="../pc/assets/img/n_select.png" alt="" class="Picture_event1">
+                            </div>
+                            <!-- 优惠券广告位-->
+                            <div class="claim-coupons">
+                                <img src="../pc/assets/img/youhuiquan.png" alt="">
+                                领取优惠券
+                            </div>
+                            <!-- 福利活动入口 -->
+                            <div class="welfare-entrance">
+                                <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
+                            </div>
+                            <span class="errorTip"><img src="../pc/assets/img/err_tip.png" alt=""><span></span></span>
+                            <span class="activityTip"></span>
+                        </div>
+                    </div>
+                    <div class="no_pay_text">该商家未开通扫码支付，此页面仅支持优惠券兑换</div>
+                </div>
+                <div class="titles pay_Box_y">
+                    <div class="text">
+                        <img class="zfImg zfImg1" src="../pc/assets/img/zfImg.png?v1" alt="">
+                        <img class="zfImg zfImg2" src="../pc/assets/img/zfImg2.png" alt="">
+                        订单支付</div>
+                    <div class="clearfix2">
+                        <div class="payType pull-left">
+                            <div id="alipay" data-type="alipayScan" style="display: none;">
+                                <img src="../pc/assets/img/Alipay.png" alt="">
+                                <span>支付宝支付</span>
+                            </div>
+                            <div id="wx" data-type="wxScan" style="display: none;">
+                                <img src="../pc/assets/img/wx.png" alt="">
+                                <span>微信支付</span>
+                            </div>
+                            <div id="scanCodeRich" data-type="scanCodeRich" style="display: none;">
+                                <img src="../pc/assets/img/scanpay.png" alt="">
+                                <span>扫码支付</span>
+                            </div>
+                            <div id="thirdparty" data-type="thirdparty" style="display: none;">
+                                <img src="../pc/assets/img/dsf.png" alt="">
+                                <span>第三方支付</span>
+                            </div>
+                        </div>
+                        <div class="code pull-left">
+                            <div class="pull-left codeER">
+                                <div id="qrcode"></div>
+                                <div class="load">
+                                    <img src="../pc/assets/img/loding.gif" alt="">
+                                </div>
+                                <div class="mask">
+                                    <img src="../pc/assets/img/expired.png" alt="">
+                                    <p>点击刷新</p>
+                                </div>
+                                <p class="tips">提示：扫码支付,请勿刷新页面</p>
+                            </div>
+                            <div class="pull-left titlesRight payTypeClass">
+                                <div class="payTypes">单价: <span class="UnitPrice">暂无</span> </div>
+
+                                <div class="amount">应付金额 <span><b>￥</b><span class="orderAmount">00.00</span></span>
+                                    <span class="Discountamount">（优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>）</span>
+                                </div>
+
+                                <p class="auxiliary">剩余支付时间 <span class="time"><span class="payTime">120</span>秒</span>，<span class="next">已支付下一步</span></p>
+
+                                <div class="tipsBox">
+                                    <div class="typeTips">
+                                        <img class="scanCodeRichWx" src="../pc/assets/img/wx.png" alt="">
+                                        <img class="scanCodeRichAlipay" src="../pc/assets/img/Alipay.png" alt="">
+    <!--                                    <img src="../pc/assets/img/ysf.png" alt="">-->
+                                         <span>使用<span class="scanCodeRichWxText"></span><span class="scanCodeRichAlipayText"></span>扫码支付 </span>
+    <!--                                    <span>使用微信扫码支付 </span>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tbPay pull-left">
+                            <div class="Options">
+                                <div id="XHS" class="zdyType" data-type="redBook">
+                                    <img src="../pc/assets/img/xhs.png" alt="">
+                                    小红书订单
+                                </div>
+                                <div id="TB" class="zdyType" data-type="taobao">
+                                    <img src="../pc/assets/img/tb.png" alt="">
+                                    淘宝订单
+                                </div>
+                            </div>
+
+                            <div class="main">
+                                <div class="tb-content">
+                                    <div class="tb-idBox">
+                                        <label>订单编号：</label>
+                                        <input
+                                            autocomplete="off" maxlength="30" name="NumberWords"
+                                            type="text"
+                                            placeholder="填写淘宝订单编号(必填)"
+                                            id="tbTid"
+                                            class="form-control tb-oid noMarginTop" />
+
+                                        <span class="tipsDiv2">
+                                            <img src="../pc/assets/img/tipsText.png" alt="">
+                                            <div>
+                                                不满一件, 按一件计算
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="tb-idBox">
+                                        <label>备用订单：</label>
+                                        <!-- onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "
+                                        onkeyup="this.value=this.value.replace(/[^\d]/g,'') "
+                                         -->
+                                        <input
+                                            autocomplete="off" maxlength="60" name="NumberWords"
+                                            type="text"
+                                            placeholder="数额不足时填写，会合并数额"
+                                            id="tbTid-2"
+                                            class="form-control tb-oid" />
+                                            <span class="tipsDiv">
+                                                <img src="../pc/assets/img/tipsText2.png" alt="">
+                                                <div>
+                                                    多个备用订单
+                                                    <br>
+                                                    请用英文逗号分隔
+                                                </div>
+                                            </span>
+                                    </div>
+                                    <div class="errTip"></div>
+                                    <div class="tb-payOrder">立即使用</div>
+                                    <p class="Three_party">订单金额<span>￥</span><span id="Total_amount">0.00 </span><span>（不满千字按千字计算）</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="EditPopup EditPopupPay">
+    <div class="editBox">
+        <div class="editHader">
+            <span>确认提纲</span>
+            <img class="delete" src="../pc/assets/img/delete2x.png" alt="关闭">
+        </div>
+        <div class="editMain">
+            <div class="recommend preview">
+                <div id="editor2" class="editorBox" contenteditable="true" placeholder="">
+                </div>
+                <div id="ktbgseniorBox" class="previewContent"></div>
+                <div class="loging">
+                    <img src="../pc/assets/img/loging.gif" alt="正在加载">
+                    <p>正在获取数据...</p>
+                </div>
+            </div>
+        </div>
+        <div class="editBottom">
+            <div id="outlineReplication">复制提纲</div>
+        </div>
+    </div>
+</div>
+<div class="fiexBox">
+    <div class="navBtn WX">
+        <img class="wx2" src="../pc/assets/img/wxico.png" alt="wx-logo">
+        <div class="wxKF">
+            <div class="customerBox">
+                <div class="head">
+                    <img src="../pc/assets/img/kf.png" alt="">
+                    <span class="customer-title"></span>
+                </div>
+                <div class="customerCode">
+                    <img class="customer-qr" src="" alt="">
+                </div>
+                <div class="segmentation-line"></div>
+                <div class="customerWay">
+                    <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+                    <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+                    <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+                    <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+                </div>
+                <p class="noCustomer">商家未设置客服</p>
+                <img class="customBg" src="../pc/assets/img/bg1.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jump-prompt">
+    <img class="close" src="../pc/assets/img/close.png" alt="">
+    <p class="p1">跳转页面会导致已填写信息丢失</p>
+    <p>是否继续跳转？</p>
+    <button class="cancel">否</button>
+    <button class="confirm">是</button>
+</div>
+<div class="mask_body"></div>
+<div class="coupon_pop">
+    <input  id="copyInput" type="text">
+    <div class="pop_top">
+        <div class="pop_title">支付提醒</div>
+        <img class="close_pop" src="../pc/assets/img/delete.png" alt="">
+    </div>
+    <div class="pop_cont">
+        <p class="p1">是否使用免费券支付?</p>
+        <div class="back_block">
+            <p class="p2">订单编号: <span class="orderId_pop"></span> <span class="copy_pop">复制</span> </p>
+            <p class="p3">订单编号是查询和下载报告的唯一标识，请妥善保存。</p>
+        </div>
+    </div>
+    <div class="pop_bottom">
+        <div class="cancel_btn">取消</div>
+        <div class="determine_btn">确定</div>
+    </div>
+</div>
+<div id="customerOnline"></div>
+<!-- 超出优惠券额度弹窗 -->
+<!-- <div class="Coupon_exceeds">
+    <div class="couponbox">
+        <div class="head_coupon Coupon_con">
+            <img src="../pc/assets/img/icon_close.png" alt="" class="Coupon_closure">
+            <img src="../pc/assets/img/icon_close_pre.png" alt="" class="Coupon_closure1">
+        </div>
+        <div class="body_coupon">
+            <img src="../pc/assets/img/icon_warn.png" alt="">
+            超出优惠券额度，需支付额外费用
+        </div>
+        <div class="bottom_coupon">
+            <span class="Coupon_cancellation Coupon_con">取消</span>
+            <span class="Coupon_confirmation Coupon_con">确定</span>
+        </div>
+    </div>
+</div> -->
+
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../pc/assets/js/jquery.min.js?v=p24.0067"></script>
+<script src="../pc/assets/js/bootstrap.min.js?v=p24.0067"></script>
+<script src="../pc/assets/js/qrcode.min.js?v=p24.0067"></script>
+<script src="../pc/assets/js/coco-message.js?v=p24.0067"></script>
+<script src="../pc/assets/js/common.js?v=p24.0067"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0067"></script>
+<script src="../pc/assets/js/editor.js?v=p24.0067"></script>
+<script src="../pc/assets/js/ProfessionalEdition.js?v=p24.0067"></script>
+<script src="../pc/assets/js/outlineEditingKTBG.js?v=p24.0067"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0067"></script>
+<script src="../pc/assets/js/pay.js?v=p24.0067"></script>
+<script>
+    function dropDownType(e) {
+    var selectObjV2 = $(".spType .ul1");
+    selectObjV2.html('')
+    for (let i=0; i<e.length; i++) {
+        if(!['ktbgsenior' , 'bylwjigou' , 'bylwsenior' , 'wxzs2' , 'szsjzz' , 'qkszsjzz', 'qklwsenior'].includes(e[i].short_name)) {
+            var optionValue = e[i].goods_id;
+            var optionText =  e[i].type;
+            var html = ''
+            html += '<li class="typeLi '+e[i].short_name+'" data-briefName="'+e[i].short_name+'" data-goodsid='+optionValue+'>'
+            html += '   <img class="'+e[i].short_name+'_css" src="../pc/assets/img/'+e[i].short_name+'_icon.svg" alt="">'
+            html += '   <span>'+optionText+'</span>'
+            html += '</li>'
+            selectObjV2.append(html);
+        }
+    }
+    var selectObj2V2 = $(".spType .ul2");
+    for (let i=0; i<e.length; i++) {
+        if(['bylwsenior' , 'ktbgsenior', 'qklwsenior'].includes(e[i].short_name)) {
+            var optionValue = e[i].goods_id;
+            var optionText =  e[i].type;
+
+            var html = ''
+            html += '<li class="typeLi '+e[i].short_name+'" data-briefName="'+e[i].short_name+'" data-goodsid='+optionValue+'>'
+            html += '   <img src="../pc/assets/img/'+e[i].short_name+'_icon.svg" alt="">'
+            html += '   <span>'+optionText+'</span>'
+            html += '</li>'
+            selectObj2V2.append(html);
+        }
+    }
+    setTimeout(function (){
+        window.setHeight()
+    }, 0)
+}
+// 极速版左侧切换
+$(document).on('click','.ul1 .typeLi',function (){
+    editionType($(this).attr('data-briefName') , $(this).attr('data-goodsid'))
+})
+// 专业版左侧切换
+$(document).on('click','.ul2 .typeLi',function (){
+    editionType($(this).attr('data-briefName'), $(this).attr('data-goodsid'))
+})
+function editionType(edition , goodsid) {
+	window.sessionStorage.setItem('editionKey' , edition)
+	window.sessionStorage.setItem('queryGoodsid' , goodsid)
+	location.href = './index.html'
+}
+</script>
+</body>
+</html>

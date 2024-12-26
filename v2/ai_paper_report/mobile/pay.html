@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 为移动设备添加 viewport；-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 指定请求和响应遵循的缓存机制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>AI大师写作 - 确认订单</title>
+    <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.00021">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.00021">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.00021">
+    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.00021">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.00021">
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        var JANE_NAME = 'dsxz'
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<div class="payApp">
+    <div class="payAppBox">
+        <div class="info">
+            <h3>订单信息</h3>
+            <div class="infoMain">
+                <div class="infoLeft">标题</div>
+                <div class="infoRight" id="title">正在获取</div>
+                <div class="infoLeft">类型</div>
+                <div class="infoRight" id="typeTag">正在获取</div>
+                <div class="infoLeft NumberWordsBox">字数</div>
+                <div class="infoRight NumberWordsBox" id="NumberWords">正在获取</div>
+                <div class="infoLeft noPayWay Subject" style="display: none;">科目</div>
+                <div class="infoRight noPayWay Subject" id="PaperTypeName" style="display: none;"></div>
+                <div class="infoLeft">下单时间</div>
+                <div class="infoRight" id="dateTime">正在获取</div>
+                <div class="infoLeft">订单编号</div>
+                <div class="infoRight" id="orderIdText">正在获取</div>
+                <div class="infoLeft noPayWay">单价</div>
+                <div class="infoRight noPayWay" id="priceTetx2"></div>
+                <div class="infoLeft noPayWay">订单金额</div>
+                <div class="infoRight noPayWay amountTextBox2">￥<span id="amountText2"></span></div>
+            </div>
+        </div>
+        <div class="info appreciationInfo appreciation">
+            <h3>增值服务</h3>
+            <div class="appreciationUL">
+                <div class="appreciationLI hasIntroduce" goodsid-key="" data-janename="zjcaigczz" data-janename1="qkzjcaigczz">
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <div>
+                            <span class="good_name"></span>
+                            <img class="zjc-wh" src="../mobile/assets/img/wenhao-t.png" alt="">
+                        </div>
+                    </div>
+                    <div class="priceBox">
+                        <span class="price"></span>
+                    </div>
+                    <div class="introduce" style="width: 100%;">降低“AIGC检测系统”的AI疑似率</div>
+                </div>
+                <div class="appreciationLI hasIntroduce" goodsid-key="" data-janename="szsjzz" data-janename1="qkszsjzz">
+                    <div>
+                        <i></i>
+                        <span class="good_name"></span>
+                        <span class="szsj_notice">
+                             <img src="../mobile/assets/img/wenhao.png" alt="">
+                            购买须知
+                        </span>
+                    </div>
+                    <div class="priceBox">
+                        <span class="price"></span>
+                    </div>
+                    <div class="introduce szsj" style="width: 100%;">仅适用于文科专业，理工科慎选</div>
+                </div>
+                <div class="appreciationLI" goodsid-key="" data-janename="rws">
+                    <div>
+                        <i></i>
+                        <span class="good_name"></span>
+                    </div>
+                    <div class="priceBox">
+                        <span class="original-price"></span>
+                        <span class="current-price"></span>
+                    </div>
+                </div>
+                <div class="appreciationLI" goodsid-key="" data-janename="ktbg">
+                    <div>
+                        <i></i>
+                        <span class="good_name"></span>
+                    </div>
+                    <div class="priceBox">
+                        <span class="original-price"></span>
+                        <span class="current-price"></span>
+                    </div>
+                </div>
+                <div class="appreciationLI" goodsid-key="" data-janename="dbppt">
+                    <div>
+                        <i></i>
+                        <span class="good_name"></span>
+                    </div>
+                    <div class="priceBox">
+                        <span class="original-price"></span>
+                        <span class="current-price"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info couponBox">
+            <input id="coupon" onKeyUp="value=value.replace(/[\W]/g,'')" type="text" placeholder="请输入优惠券码">
+            <img class="eliminateCoupon" src="../mobile/assets/img/delete4.png" alt="">
+            <span class="use_now">兑  换</span>
+        </div>
+        <div class="Deduction">
+            <div class="PayName">
+                <img src="../mobile/assets/img/coupon_icon.png" alt="">
+                <span class="Discount_style">可抵扣￥<span id="After_discounts">10.00</span></span>
+            </div>
+            <div class="isSelect">
+                <img class="img" src="../mobile/assets/img/select.png" alt="">
+            </div>
+        </div>
+
+        <p class="activityTip">已自动填写活动优惠券码，请点击兑换使用</p>
+        <!-- 优惠券广告位-->
+        <div class="claim-coupons">
+            <img src="../mobile/assets/img/youhuiquan.png" alt="">
+            领取优惠券
+        </div>
+        <div class="no_pay_text">该商家未开通扫码支付，此页面仅支持优惠券兑换</div>
+        <div class="payType">
+            <div class="payTypeBox" id="ali-pay" data-payType="alipayWap">
+                <div class="tapTypeImg"><img src="../mobile/assets/img/zfb.png" alt=""> <span>支付宝支付</span> </div>
+                <div class="isSelect isSelect1">
+                    <img class="img" src="../mobile/assets/img/noselect.png" alt="">
+                </div>
+            </div>
+            <div class="payTypeBox" id="wx-pay" data-payType="wxWap">
+                <div class="tapTypeImg"><img src="../mobile/assets/img/wx.png" alt=""> <span>微信支付</span> </div>
+                <div class="isSelect isSelect2">
+                    <img class="img" src="../mobile/assets/img/noselect.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="dsf-Pay taobao_pay" data-type="taobao" data-toggle="modal" data-target="#CustomModal">
+            <div class="PayName">
+                <img src="../mobile/assets/img/taobao.png" alt="">
+                淘宝支付
+            </div>
+            <div class="isSelect">
+                <img class="img" src="../mobile/assets/img/noselect.png" alt="">
+            </div>
+        </div>
+        <div class="dsf-Pay redBook_pay" data-type="redBook" data-toggle="modal" data-target="#CustomModal">
+            <div class="PayName">
+                <img src="../mobile/assets/img/xhs.png" alt="">
+                小红书支付
+            </div>
+            <div class="isSelect">
+                <img class="img" src="../mobile/assets/img/noselect.png" alt="">
+            </div>
+        </div>
+        <div class="case realTime">
+            <img src="../mobile/assets/img/horn.png" alt="">
+            <div class="t_news">
+                <ul class="news_li">
+
+                </ul>
+                <ul class="swap"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottomBox">
+        <p>请在30分钟内完成支付，如未支付完成该订单将自动取消</p>
+        <div class="payBox">
+            <div class="amount">
+                <div class="total">合计 <span class="symbol">￥<span id="amountText" class="partyamount"></span><span id="amountText1" class="partyamount1"></span></span>
+                    <span class="Discountamount">(优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>)</span>
+                </div>
+                <div>计费方式：<span id="priceTetx"></span></div>
+            </div>
+            <div class="payBotton">
+                立即支付
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dashi_wx_box text_a_c">
+    <div class="customerBox">
+        <i class="close-wx"></i>
+        <div class="head">
+            <img src="../mobile/assets/img/kf.png" alt="">
+            <span class="customer-title"></span>
+        </div>
+        <div class="customerCode">
+            <img class="customer-qr" src="" alt="">
+        </div>
+        <div class="segmentation-line"></div>
+        <div class="customerWay">
+            <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+            <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+            <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+            <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+        </div>
+        <p class="noCustomer">商家未设置客服</p>
+        <img class="customBg" src="../mobile/assets/img/bg1.png" alt="">
+    </div>
+</div>
+<div class="mask"></div>
+<div class="aigc-page">
+    <img src="../mobile/assets/img/aigc-e.png" alt="">
+    <img class="close-aigc" src="../mobile/assets/img/delete.png" alt="">
+</div>
+<div class="szsj-tips-block">
+    <div class="head">
+        <img class="closeTips" src="../mobile/assets/img/close-generate.png" alt="">
+    </div>
+    <div class="szsj_content">
+        <p class="title_tips"><span class="red1">重要提示</span></p>
+        <p class="explain_tips">1. 在采用实证数据时，我们会运用专业的评估模型来决定文章是否真正需要这些数据。<span class="red2">模型评估结果可能是整篇文章无需实证数据，那么将不会有实证数据出现在论文中。</span></p>
+        <p class="explain_tips">2. <span class="red2">支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款。</span> </p>
+        <p class="title_tips">什么是实证数据</p>
+        <p class="explain_tips">实证数据是指从<span class="blue1">研究报告、财务报表、新闻报道以及权威机构</span>等渠道获取的各类真实数据，例如“国内生产总值（GDP）”、“贸易量”、“人口统计数据”等。<span class="blue1">这些数据可用于支持和证实论文中的观点。</span></p>
+        <p class="title_tips">什么专业适用</p>
+        <p class="explain_tips">1. <span class="blue2">“经济学”、“文学”、“法学”</span>等<span class="blue3">文科</span>专业，推荐使用实证数据来增强论文的说服力。</p>
+        <p class="explain_tips noMarginBottom">2. <span class="blue2">“工程学”、“计算机科学”</span>等<span class="blue3">理工科</span>专业在决定是否使用实证数据时需要谨慎，因为这些领域的研究更侧重于<span class="blue2">理论和技术层面的探讨，会被认为不需要实证数据。</span></p>
+    </div>
+</div>
+<div class="errTipBox">
+    <div class="e_tittle">提示：</div>
+    <p class="errTip_p"></p>
+    <div class="y_e">确   定</div>
+</div>
+<div class="customer-wx" id="customer-wx1">
+    <img src="../mobile/assets/img/kfwx.png" alt="客服">
+</div>
+<div class="coupons_pop">
+    <input  id="copyInput" type="text">
+    <p class="title">是否使用免费券支付?</p>
+    <p class="p2">订单编号: <span class="oid_pop"></span> <span class="copy_pop">复制</span></p>
+    <p class="p3">订单编号是查询和下载报告的唯一标识，请妥善保存。</p>
+    <div class="bottom">
+        <div class="cancel_btn">取消</div>
+        <div class="determine_btn">确定</div>
+    </div>
+</div>
+<!-- 多码支付其他浏览器支付,提示弹窗 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body">
+<!--               <img src="../mobile/assets/img/cloneImg.png" alt=""> -->
+                <div class="contentBox">
+                    <p class="tips1">因数据安全问题暂不支持手机浏览器</p>
+                    <p class="tips2">请复制链接至微信或电脑端打开</p>
+                    <div class="linkUrl"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn_clone" data-dismiss="modal">复制链接</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 淘宝支付弹窗 -->
+<div class="modal fade" id="CustomModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="payClose" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel1"><span id="typeName">淘宝</span>订单支付</h4>
+            </div>
+            <div class="modal-body">
+<!--                <img src="../mobile/assets/img/cloneImg.png" alt="">-->
+                <div class="contentBox taobaoPay">
+                    <div class="taobao-input1">
+                        <span>输入订单</span>
+                        <input type="text" id="taobao-tid" placeholder="请输入您的淘宝订单编号">
+                    </div>
+                    <div class="taobao-input2">
+                        <span>备用订单</span>
+                        <input type="text" id="taobao-tid-1" placeholder="数额不足时填写，会合并数额">
+                    </div>
+                    <div class="taobao-payBtn">立即支付</div>
+<!--                        <div class="taobao-buyBtn">-->
+<!--                            <img src="{{ asset('projects/aipr/mobile/assets/img/taobaoBuy.png') }}" alt="">-->
+<!--                            淘宝购买-->
+<!--                        </div>-->
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="customerOnline"></div>
+<script src="../mobile/assets/js/jquery.min.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/bootstrap.min.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/clipboard.min.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/common.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/message.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/ap.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/orderInfo.js?v=m24.00021"></script>
+<script src="../mobile/assets/js/pay.js?v=m24.00021"></script>
+</body>
+</html>

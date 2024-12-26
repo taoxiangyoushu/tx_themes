@@ -143,7 +143,9 @@ function query(e) {
                                 text += "<div class='DownloadSeparately titles "+ btnNC +"' data-id=\""+resData.order_sn+"\"><span>下载</span></div>";
                             }else if(resData.end_product) {
                                 var download_dom = "<a class='complete "+ btnNC +"' href=\""+resData.end_product+"\" target=\"_blank\"><span class=\"allowText\">下载结果</span></a> ";
-                                //lx_post_handle
+                                if (window.hasOwnProperty('download_post_handle')){
+                                    download_dom = window.download_post_handle(download_dom)
+                                }
                                 text += download_dom
                             }else {
                                 text += "<div class=\"nots\"><span>生成中</span></div> ";
@@ -518,6 +520,9 @@ function createOrder(form_data) {
                 }
                 if(payWayInfo.default == 'scanCodeRich'){
                     payType = 'scanCodeRich'
+                }
+                if(payWayInfo.default == 'kLenovoAiMiniPay'){
+                    payType = 'kLenovoAiMiniPay'
                 }
                 payUrl = data.data.pay_wap_url
                 payOrder()

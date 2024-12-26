@@ -1,0 +1,1013 @@
+.wxzsBox {
+  display: none;
+}
+.wxzs .step1 .stepType {
+  line-height: 58px;
+}
+.wxzs .NormalBox {
+  display: none;
+}
+.wxzs .step2 > img {
+  top: 0;
+}
+.wxzs .wxzsBox {
+  display: block;
+}
+.wxzs .step1 .steptop {
+  width: auto;
+  padding: 0 13px;
+}
+.wxzs .stepMain {
+  padding-left: 74px;
+}
+.wxzs .VersionTips {
+  color: #999;
+}
+.wxzs .VersionTips b {
+  font-weight: bold;
+  font-size: 12px;
+}
+.wxzs .VersionTips b span {
+  color: #0072ff;
+}
+.wxzs .Referenc {
+  height: 222px;
+  background: url('../img/p1.png') no-repeat;
+  background-size: 100% 100%;
+  margin-top: 2px;
+  margin-bottom: 28px;
+  position: relative;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.wxzs .topType {
+  overflow: hidden;
+}
+.wxzs .topType div {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  width: 68px;
+  height: 22px;
+  border-radius: 4px;
+  float: left;
+  text-align: center;
+  line-height: 22px;
+}
+.wxzs .topType .type1 {
+  background-image: linear-gradient(90deg, #ffba00 0%, #ff9e04 100%);
+  margin-left: 26px;
+  margin-top: 24px;
+}
+.wxzs .topType .type2 {
+  background-image: linear-gradient(-90deg, #0071ff 0%, #0090ff 100%);
+  margin-top: 24px;
+  margin-left: 64px;
+}
+.wxzs .IntroductionBottom {
+  overflow: hidden;
+}
+.wxzs .IntroductionBottom div {
+  float: left;
+  font-size: 12px;
+}
+.wxzs .IntroductionBottom .Introduction1 {
+  color: #ff6000;
+  position: absolute;
+  right: 55.7%;
+  bottom: 12px;
+  line-height: 24px;
+}
+.wxzs .IntroductionBottom .Introduction2 {
+  color: #0072ff;
+  position: absolute;
+  right: 6%;
+  bottom: 12px;
+  line-height: 24px;
+}
+.wxzs .Referenc2 {
+  height: 170px;
+  background-color: #ffffff;
+  box-shadow: inset 0px 0px 35px 0px rgba(0, 109, 255, 0.19);
+  border-radius: 10px;
+  border: solid 1px rgba(181, 223, 255, 0.8);
+}
+.wxzs .Referenc2 .Referenc2Top {
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin: 18px 0 0 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed #bdbfc2;
+}
+.wxzs .Referenc2 .Referenc2Top::after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 33px;
+  background-color: #0073ff;
+  border-radius: 2px;
+  position: absolute;
+  left: -14px;
+  top: 2px;
+}
+.wxzs .Referenc2 .Rp1 {
+  color: #0073ff;
+  font-size: 14px;
+}
+.wxzs .Referenc2 .Rp2 {
+  color: #333333;
+}
+.wxzs .StepsCard {
+  width: 80px;
+  height: 52px;
+  color: #666666;
+  font-size: 12px;
+  line-height: 18px;
+  padding-top: 8px;
+  background: url('../img/min-k.png') no-repeat;
+  position: relative;
+  text-align: center;
+  float: left;
+}
+.wxzs .StepsCard .SerialNumber {
+  width: 18px;
+  height: 18px;
+  background-color: #ffffff;
+  border: solid 1px #0071fe;
+  line-height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  left: -7px;
+  top: -7px;
+  color: #0071fe;
+}
+.wxzs .StepsBox {
+  padding-left: 18px;
+  padding-top: 20px;
+}
+.wxzs .arrow2 {
+  float: left;
+  margin-left: 8px;
+  margin-top: 22px;
+  margin-right: 8px;
+}
+.ktbgBox {
+  display: none;
+}
+.ktbg .step1 .stepType {
+  line-height: 58px;
+}
+.ktbg .NormalBox {
+  display: none;
+}
+.ktbg .stepMain > p {
+  margin-bottom: 8px;
+}
+.ktbg .ktbgBox {
+  display: block;
+}
+.ktbg .step2 > img {
+  top: -2px;
+  height: 400px;
+}
+.ktbg .stepMain {
+  padding-left: 60px;
+}
+.ktbg .step1 .steptop {
+  padding: 0 13px;
+}
+.ktbg .Referenc {
+  overflow: hidden;
+  margin-top: 14px;
+  position: relative;
+  min-height: 326px;
+}
+.ktbg .Referenc .TopImg1 {
+  margin-top: 34px;
+  position: absolute;
+}
+.ktbg .Referenc .TopImg2 {
+  margin-left: -102px;
+  height: 300px;
+  position: absolute;
+  right: 0;
+}
+.ktbg .Label {
+  width: 56px;
+  height: 20px;
+  line-height: 20px;
+  display: inline-block;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 10px;
+  background: url(../img/Label.png) no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+  margin-top: -1px;
+  padding-left: 6px;
+}
+.ktbg .Referenc2 p {
+  font-size: 12px;
+  color: #222;
+}
+.ktbg .CardContent {
+  padding-top: 6px;
+  overflow: hidden;
+}
+.ktbg .CardContent div,
+.ktbg .CardContent img {
+  float: left;
+  position: relative;
+}
+.ktbg .CardContent div span,
+.ktbg .CardContent img span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 75px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+}
+.ktbg .CardContent .ExcessiveImg {
+  margin-top: 60px;
+  margin-left: -4px;
+}
+.rwsBox {
+  display: none;
+}
+.rws .step1 .stepType {
+  line-height: 58px;
+}
+.rws .NormalBox {
+  display: none;
+}
+.rws .rwsBox {
+  display: block;
+}
+.rws .step1 .steptop {
+  width: auto;
+  padding: 0 13px;
+}
+.rws .step2 img {
+  top: -2px;
+}
+.rws .stepMain {
+  padding-left: 74px;
+}
+.rws .Referenc {
+  overflow: hidden;
+  position: relative;
+  min-height: 320px;
+  padding-top: 2px;
+}
+.rws .Referenc .rwsBoxImg1 {
+  margin-top: 4px;
+  position: absolute;
+  top: 22px;
+}
+.rws .Referenc .rwsBoxImg2 {
+  margin-left: -154px;
+  position: absolute;
+  right: 0;
+}
+.rws .Referenc2 {
+  overflow: hidden;
+  margin-top: 24px;
+  position: relative;
+  min-height: 136px;
+}
+.rws .NotRecommended {
+  position: absolute;
+  width: 114px;
+  height: 90px;
+  background-color: #ffffff;
+  box-shadow: inset 0px 0px 35px 0px rgba(88, 88, 88, 0.19);
+  border-radius: 10px;
+  border: solid 1px #e4e4e4;
+  padding: 11px;
+  margin-top: 16px;
+}
+.rws .NotRecommended .NotRecommendedTop {
+  border-bottom: 1px dashed #e4e4e4;
+  padding-bottom: 10px;
+  padding-left: 6px;
+  color: #868686;
+  font-weight: bold;
+  font-size: 12px;
+}
+.rws .NotRecommended .NotRecommendedTop img {
+  vertical-align: middle;
+  margin-top: -2px;
+}
+.rws .NotRecommended .NotRecommendedBottom {
+  padding-top: 14px;
+  padding-left: 6px;
+  color: #999999;
+  font-size: 14px;
+}
+.rws .Recommended {
+  position: absolute;
+  right: 0;
+  width: 220px;
+  height: 122px;
+  margin-left: -18px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 18px 2px rgba(144, 170, 255, 0.19), inset 0px 0px 35px 0px rgba(255, 234, 0, 0.19);
+  border-style: solid;
+  border-width: 1px;
+  border-image-source: linear-gradient(0deg, #ffba00 0%, #ff9e04 100%);
+  border: 1px solid #ffba00;
+  border-radius: 10px;
+  padding: 12px;
+}
+.rws .Recommended .RecommendedTop {
+  color: #333333;
+  font-size: 14px;
+  padding-bottom: 8px;
+  text-align: center;
+  padding-right: 22px;
+  border-bottom: 1px dashed #eae2d6;
+}
+.rws .Recommended .RecommendedTop img {
+  margin-top: -3px;
+}
+.rws .Recommended .RecommendedBottom {
+  text-align: center;
+  color: #666666;
+  font-size: 14px;
+  line-height: 24px;
+  padding-top: 14px;
+}
+.rws .Recommended .RecommendedBottom span {
+  color: #ff6c00;
+}
+.kclwBox {
+  display: none;
+}
+.kclw .step1 .stepType {
+  line-height: 58px;
+}
+.kclw .NormalBox {
+  display: none;
+}
+.kclw .kclwBox {
+  display: block;
+}
+.kclw .step1 .steptop {
+  width: auto;
+  padding: 0 13px;
+}
+.kclw .stepMain {
+  padding-left: 74px;
+}
+.kclw .step2 > img {
+  top: 2px;
+}
+.kclw .Referenc {
+  height: 320px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: solid 1px #c8e3ff;
+  padding: 20px 30px;
+  box-shadow: inset 0px 0px 35px 0px rgba(0, 109, 255, 0.19);
+  font-size: 12px;
+  margin-bottom: 22px;
+}
+.kclw .Referenc p {
+  margin-bottom: 6px;
+  line-height: 17.5px;
+}
+.kclw .Referenc p span {
+  color: #006cff;
+}
+.kclw .Referenc .indent {
+  text-indent: 1.5em;
+}
+.kclw .Referenc .NumberOfWords {
+  float: right;
+  padding: 6px 15px;
+  border-radius: 15px;
+  border: solid 1px #4091ff;
+  color: #006cff;
+  line-height: initial;
+  background-color: #fff;
+  margin-top: 10px;
+}
+.kclw .Referenc .Omit {
+  color: #464646;
+  font-weight: bold;
+  line-height: 26px;
+}
+.kclw .Referenc2 {
+  height: 155px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: solid 1px #c8e3ff;
+  box-shadow: inset 0px 0px 35px 0px rgba(0, 109, 255, 0.19);
+  padding: 16px 26px;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+}
+.kclw .Referenc2 .Correct {
+  overflow: hidden;
+}
+.kclw .Referenc2 .Correct div {
+  float: left;
+  width: 50%;
+  margin-top: 10px;
+}
+.kclw .Referenc2 .Correct div img {
+  margin-top: -2px;
+}
+.kclw .Referenc2 .Correct > div:nth-child(2n) {
+  padding-left: 20px;
+}
+.qklwBox {
+  display: none;
+}
+.qklw .step1 .stepType {
+  line-height: 58px;
+}
+.qklw .boxLeft {
+  height: 960px !important;
+}
+.qklw .NormalBox {
+  display: none;
+}
+.qklw .qklwBox {
+  display: block;
+}
+.qklw .step1 .steptop {
+  width: auto;
+  padding: 0 13px;
+}
+.qklw .step2 > img {
+  top: 0;
+}
+.qklw .Referenc {
+  height: 290px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: solid 1px #c8e3ff;
+  padding: 20px 30px;
+  box-shadow: inset 0px 0px 35px 0px rgba(0, 109, 255, 0.19);
+  font-size: 12px;
+  margin-bottom: 22px;
+  position: relative;
+  margin-bottom: 44px;
+}
+.qklw .Referenc p {
+  margin-bottom: 4px;
+  line-height: 18px;
+}
+.qklw .Referenc p span {
+  color: #006cff;
+}
+.qklw .Referenc .indent {
+  text-indent: 1.5em;
+}
+.qklw .Referenc .characteristic {
+  margin-bottom: 10px;
+}
+.qklw .Referenc .characteristicCard {
+  background: #fff;
+  border: solid 1px #1e7cff;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  padding-top: 10px;
+}
+.qklw .Referenc .characteristicCard p {
+  margin-bottom: 2px;
+}
+.qklw .Referenc2 {
+  position: relative;
+}
+.qklw .Referenc2 .Referenc2Left {
+  position: absolute;
+  width: 167px;
+  height: 168px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: solid 1px #c8e3ff;
+  box-shadow: inset 0px 0px 35px 0px rgba(0, 109, 255, 0.19);
+  padding: 20px 0 0 30px;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+.qklw .Referenc2 .Referenc2Left .icon2 {
+  margin-left: -2px;
+}
+.qklw .Referenc2 .Referenc2Left p {
+  margin-bottom: 16px;
+  color: #202020;
+  font-size: 14px;
+}
+.qklw .Referenc2 .Referenc2Left p img {
+  margin-right: 6px;
+}
+.qklw .Referenc2 .Referenc2Right {
+  position: absolute;
+  right: 0;
+  width: 168px;
+  height: 198px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: solid 1px #c8e3ff;
+  margin-left: -20px;
+  padding: 20px 0 0 30px;
+}
+.qklw .Referenc2 .Referenc2Right p {
+  color: #006cff;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.qklw .Referenc2 .Referenc2Right p img {
+  margin-top: -3px;
+}
+.dybgBox {
+  display: none;
+}
+.dybg .step1 .stepType {
+  line-height: 58px;
+}
+.dybg .NormalBox {
+  display: none;
+}
+.dybg .dybgBox {
+  display: block;
+}
+.dybg .step2 > img {
+  top: -2px;
+}
+.dybg .step1 .steptop {
+  width: auto;
+  padding: 0 13px;
+}
+.dybg .Referenc {
+  background: url('../img/dybgImg1.png') no-repeat;
+  height: 210px;
+  background-size: 100% 100%;
+  margin-left: -10px;
+  margin-right: -8px;
+  margin-bottom: 38px;
+}
+.dybg .Referenc .ReferencContent {
+  line-height: 24px;
+  float: right;
+  width: 164px;
+  font-size: 12px;
+  color: #666666;
+  padding-top: 22px;
+}
+.dybg .Referenc .ReferencContent b {
+  color: #333333;
+  font-size: 12.72px;
+}
+.dybg .stepMain > p {
+  font-size: 18px;
+}
+.dybg .stepMain > p .ai {
+  font-size: 18px;
+}
+.dybg .stepMain .VersionTips {
+  color: #999;
+  font-size: 12px;
+}
+.dybg .stepMain .VersionTips span {
+  color: #0072ff;
+  font-weight: bold;
+}
+.dybg .Referenc2 {
+  background-image: linear-gradient(0deg, #f2f7ff 0%, #dbf2ff 100%);
+  box-shadow: 0px 0px 9.4px 0.6px rgba(125, 140, 166, 0.19);
+}
+.dybg .Referenc2 .Referenc2card {
+  height: 145px;
+  background: url('../img/adv.png') no-repeat;
+  background-position: 100% 100%;
+  border-radius: 10px;
+  border: solid 1px #ffffff;
+}
+.dybg .Referenc2 .Referenc2card img {
+  margin: -4px 6px 0 18px;
+}
+.dybg .Referenc2 .Referenc2card {
+  padding: 7.5px;
+  overflow: hidden;
+}
+.dybg .Referenc2 .Referenc2card > div {
+  width: 50%;
+  float: left;
+  padding: 7.5px;
+}
+.dybg .Referenc2 .Referenc2card > div > div {
+  background-color: #fff;
+  height: 50px;
+  box-shadow: 0px 0px 9.4px 0.6px rgba(186, 222, 255, 0.19);
+  border-radius: 10px;
+  color: #333333;
+  font-size: 14px;
+  line-height: 50px;
+}
+.zjcaigcBox {
+  display: none;
+}
+.zjcaigc .step1 .stepType {
+  line-height: 58px;
+}
+.zjcaigc .advancedBox,
+.zjcaigc .NormalBox {
+  display: none;
+}
+.zjcaigc .zjcaigcBox {
+  display: block;
+}
+.zjcaigc .steptop {
+  width: 235px;
+}
+.zjcaigc .step12 {
+  margin-top: 0;
+}
+.zjcaigc .step1 {
+  max-width: 374px;
+}
+.zjcaigc .step2 {
+  margin-top: 24px;
+  max-width: 374px;
+}
+.zjcaigc .stepMain {
+  padding-left: 54px;
+}
+.zjcaigc .stepMainTop {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 54px;
+}
+.zjcaigc .stepMainBottom .tipsTo {
+  font-size: 14px;
+  color: #999999;
+  margin: 0;
+}
+.zjcaigc .stepMainBottom .color1 {
+  color: #fd6813;
+}
+.zjcaigc .stepMainBottom .color2 {
+  color: #e30213;
+}
+.zjcaigc .stepMainBottom .color3 {
+  color: #9ac844;
+}
+.zjcaigc .stepMainBottom .ExcessiveX {
+  width: 24px;
+  margin-top: -4px;
+}
+.zjcaigc .Tradition {
+  width: 150px;
+  height: 136px;
+  background-color: #ffffff;
+  box-shadow: inset 0px 0px 35px 0px rgba(73, 73, 73, 0.19);
+  border-radius: 10px;
+  border: solid 1px #f0f0f0;
+  float: left;
+  margin-top: 17px;
+  padding: 20px 18px;
+}
+.zjcaigc .Tradition .TraditionBox {
+  width: 100px;
+  text-align: center;
+}
+.zjcaigc .Tradition .TraditionTop {
+  color: #333333;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px dashed #b3b3b3;
+  padding-bottom: 11px;
+  margin-bottom: 11px;
+}
+.zjcaigc .Tradition .TraditionBottom {
+  color: #999999;
+  font-size: 14px;
+  line-height: 18px;
+}
+.zjcaigc .vsBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 42px;
+  height: 42px;
+  background-color: #006eff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 42px;
+  margin-top: -30px;
+  margin-left: -52px;
+}
+.zjcaigc .Now {
+  width: 189px;
+  height: 170px;
+  background-color: #ffffff;
+  box-shadow: inset 0px 0px 35px 0px rgba(0, 109, 255, 0.19);
+  border-radius: 10px;
+  border: solid 1px #b5dfff;
+  float: left;
+  margin-left: -22px;
+}
+.zjcaigc .Now .TraditionBox {
+  padding: 20px 40px;
+  text-align: center;
+}
+.zjcaigc .Now .TraditionTop {
+  color: #fa4e33;
+  font-weight: bold;
+  font-size: 18px;
+  border-bottom: 1px dashed #b3b3b3;
+  padding-bottom: 11px;
+  margin-bottom: 11px;
+}
+.zjcaigc .Now .TraditionTop img {
+  margin-top: -4px;
+}
+.zjcaigc .Now .TraditionBottom {
+  color: #333333;
+  font-size: 16px;
+}
+.zjcaigc .aigc_p {
+  margin-bottom: 6px;
+}
+.zjcaigc .CaseImg {
+  text-align: center;
+  margin-top: 22px;
+  position: relative;
+  overflow: hidden;
+}
+.zjcaigc .CaseImg .Tradition2,
+.zjcaigc .CaseImg .Now2 {
+  height: 180px;
+  position: relative;
+}
+.zjcaigc .CaseImg .Tradition2 .topTips,
+.zjcaigc .CaseImg .Now2 .topTips {
+  width: 91px;
+  height: 30px;
+  background-blend-mode: normal,
+                    normal;
+  border-radius: 10px 0px 10px 0px;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.zjcaigc .CaseImg .Tradition2 img,
+.zjcaigc .CaseImg .Now2 img {
+  width: 144px;
+  height: 100%;
+}
+.zjcaigc .CaseImg .Tradition2 {
+  float: left;
+}
+.zjcaigc .CaseImg .Tradition2 .topTips {
+  background-image: linear-gradient(90deg, #f9473b 1%, #fe6f0b 100%), linear-gradient(#ee3b86, #ee3b86);
+}
+.zjcaigc .CaseImg .Excessive {
+  width: 42px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -21px;
+  margin-top: -8px;
+  z-index: 10;
+}
+.zjcaigc .CaseImg .Now2 {
+  float: right;
+}
+.zjcaigc .CaseImg .Now2 .topTips {
+  background-image: linear-gradient(90deg, #739c27 0%, #bff063 100%), linear-gradient(#ee3b86, #ee3b86);
+}
+.zjcaigc .aigcTips {
+  display: none;
+}
+.sxbgBox {
+  display: none;
+}
+.sxbg .advancedBox,
+.sxbg .NormalBox {
+  display: none;
+}
+.sxbg .sxbgBox {
+  display: block;
+}
+.sxbg .sxbgBox .step1 .stepType {
+  line-height: 58px;
+}
+.sxbg .sxbgBox .step1 .steptop {
+  width: auto;
+  padding: 0 13px;
+}
+.sxbg .sxbgBox .Referenc {
+  position: relative;
+}
+.sxbg .sxbgBox .Content {
+  background: url('../img/ContentSXBG.png') no-repeat;
+  width: 218px;
+  height: 238px;
+  position: absolute;
+  right: -17px;
+  top: 20px;
+}
+.sxbg .sxbgBox .ContentBox {
+  padding: 20px;
+}
+.sxbg .sxbgBox .ContentHader {
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  padding: 8px 0;
+}
+.sxbg .sxbgBox .ContentHader img {
+  vertical-align: middle;
+  margin-top: -2px;
+}
+.sxbg .sxbgBox .White {
+  width: 164px;
+  height: 159px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 12px;
+  color: #333333;
+  line-height: 26px;
+  padding: 14px;
+}
+.sxbg .sxbgBox .SpecialHint {
+  color: #ff6b00;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  right: 17px;
+  bottom: 30px;
+  border: 1px solid #ffb27a;
+  border-right: 0;
+  text-align: center;
+  padding: 4px 10px;
+  line-height: normal;
+  border-radius: 13px 0 0 13px;
+  background-color: #fff3e1;
+}
+.sxbg .sxbgBox .Title2 {
+  margin-top: 52px;
+}
+.sxbg .sxbgBox .Referenc2 .card {
+  width: 158px;
+  height: 70px;
+  background-color: #ffffff;
+  box-shadow: inset 0px 0px 35px 0px rgba(0, 109, 255, 0.19);
+  border-radius: 10px;
+  border: solid 1px #a0d6ff;
+  padding: 16px 18px;
+  margin-top: 8px;
+}
+.sxbg .sxbgBox .Referenc2 .textBox {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 12px;
+}
+.sxbg .sxbgBox .Referenc2 .textBox .p1 {
+  color: #333333;
+  font-size: 14px;
+  font-weight: bold;
+}
+.sxbg .sxbgBox .Referenc2 .textBox .p2 {
+  font-size: 12px;
+  color: #666666;
+}
+.lwdbpptBox {
+  display: none;
+}
+.lwdbppt .advancedBox,
+.lwdbppt .NormalBox {
+  display: none;
+}
+.lwdbppt .lwdbpptBox {
+  display: block;
+}
+.lwdbppt .lwdbpptBox .step1 .stepType {
+  line-height: 58px;
+}
+.lwdbppt .lwdbpptBox .step1 .steptop {
+  width: auto;
+  padding: 0 13px;
+}
+.lwdbppt .lwdbpptBox .stepMain {
+  position: relative;
+}
+.lwdbppt .lwdbpptBox .Referenc {
+  background: url('../img/max-k.png') no-repeat;
+  width: 100%;
+  height: 232px;
+  background-position: -16px;
+  position: relative;
+  margin-top: -14px;
+}
+.lwdbppt .lwdbpptBox .TemplateStyle {
+  width: 200px;
+  height: 120px;
+  background-color: #ffffff;
+  box-shadow: inset 0px 0px 35px 0px rgba(255, 119, 122, 0.19);
+  border: 1px solid #ff9599;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 10px 20px;
+}
+.lwdbppt .lwdbpptBox .TemplateStyle::before {
+  content: ' ';
+  position: absolute;
+  left: 8px;
+  top: -8px;
+  background-color: #ffd6d7;
+  width: 184px;
+  height: 4px;
+  border-radius: 2px;
+}
+.lwdbppt .lwdbpptBox .top1 {
+  text-align: right;
+}
+.lwdbppt .lwdbpptBox .top2 {
+  color: #ff5560;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+}
+.lwdbppt .lwdbpptBox .top2 span {
+  color: #222;
+}
+.lwdbppt .lwdbpptBox .top2::before {
+  content: ' ';
+  background-color: #ff777a;
+  border-radius: 1px;
+  width: 40px;
+  height: 2px;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+}
+.lwdbppt .lwdbpptBox .top3 {
+  width: 160px;
+  height: 26px;
+  background-color: #ff777a;
+  border-radius: 3px;
+  opacity: 0.1;
+  margin-top: 16px;
+}
+.lwdbppt .lwdbpptBox .bottomTips {
+  color: #fff;
+  width: 70px;
+  height: 20px;
+  background-color: #ff6c76;
+  border-radius: 9px 0px 9px 0px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+}
+.lwdbppt .lwdbpptBox .Image {
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  margin-top: -30px;
+}
+.lwdbppt .lwdbpptBox .Title2 {
+  margin-top: 36px;
+}
+.lwdbppt .lwdbpptBox .Referenc2 .textBox {
+  display: inline-block;
+  color: #333333;
+  font-size: 14px;
+}
+.lwdbppt .lwdbpptBox .Referenc2 .card {
+  width: 158px;
+  background-color: #ffffff;
+  height: 68px;
+  box-shadow: inset 0px 0px 35px 0px rgba(0, 109, 255, 0.19);
+  border-radius: 10px;
+  border: solid 1px #b5dfff;
+  margin-top: 8px;
+}

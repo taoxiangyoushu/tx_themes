@@ -40,9 +40,9 @@
     <link rel="shortcut icon" href="../mobile/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0005">
-    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0005">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0005">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0009">
+    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0009">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0009">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'aigc_check'
@@ -92,9 +92,11 @@
         <div class="Deduction">
             <div class="PayName">
                 <img src="../mobile/assets/img/coupon_icon.png" alt="">
-                <span class="Discount_style">抵扣￥<span id="After_discounts">10.00</span></span>
+                <span class="Discount_style">可抵扣￥<span id="After_discounts"></span></span>
             </div>
-            <img class="noselectImg" src="../mobile/assets/img/select.png" alt="">
+            <div class="isSelect">
+                <img class="img" src="../mobile/assets/img/select.png" alt="">
+            </div>
         </div>
         <p class="activityTip">已自动填写活动优惠券码，请点击兑换使用</p>
         <!-- 优惠券广告位-->
@@ -122,14 +124,18 @@
                 <img src="../mobile/assets/img/xhs.png" alt="">
                 小红书支付
             </div>
-            <img class="noselectImg" src="../mobile/assets/img/noselect.png" alt="">
+            <div class="isSelect">
+                <img class="img" src="../mobile/assets/img/noselect.png" alt="">
+            </div>
         </div>
         <div class="dsf-Pay taobao_pay" data-type="taobao" data-toggle="modal" data-target="#CustomModal">
             <div class="PayName">
                 <img src="../mobile/assets/img/taobao.png" alt="">
                 淘宝支付
             </div>
-            <img class="noselectImg" src="../mobile/assets/img/noselect.png" alt="">
+            <div class="isSelect">
+                <img class="img" src="../mobile/assets/img/noselect.png" alt="">
+            </div>
         </div>
         <div class="case realTime">
             <img src="../mobile/assets/img/horn.png" alt="">
@@ -146,7 +152,7 @@
         <p>请在30分钟内完成支付，如未支付完成该订单将自动取消</p>
         <div class="payBox">
             <div class="amount">
-                <div class="total">合计 <span class="symbol">￥<span id="amountText"></span></span>
+                <div class="total">合计 <span class="symbol">￥<span id="amountText" class="partyamount"></span><span id="amountText1" class="partyamount1"></span></span>
                     <span class="Discountamount">(优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>)</span>
                 </div>
                 <div>计费方式：<span id="priceTetx"></span></div>
@@ -258,12 +264,12 @@
 <script src="../mobile/assets/js/jquery.min.js"></script>
 <script src="../mobile/assets/js/bootstrap.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0005"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0009"></script>
 <script src="../mobile/assets/js/rotograph.js"></script>
 <script src="../mobile/assets/js/message.js"></script>
-<script src="../mobile/assets/js/ap.js?v=m24.0005"></script>
+<script src="../mobile/assets/js/ap.js?v=m24.0009"></script>
 <script src="../mobile/assets/js/Drag.js"></script>
-<script src="../mobile/assets/js/orderInfo.js?v=m24.0005"></script>
+<script src="../mobile/assets/js/orderInfo.js?v=m24.0009"></script>
 <script>
     toast({
         msg: '正在计算价格...',
@@ -283,6 +289,7 @@
     var noPayWay = false
     var openid = ''
     var orderInfoData = {}
+    Readjust()
     // 控制支付方式选中
     function typeSelect(type, use) {
         if(type == 'wxPublicNum' || type == 'wxWap') {
@@ -629,6 +636,15 @@
                 placeholder: '请填写淘宝订单编号'
             }
         }
+        $('.dsf-Pay .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
+        $(this).children().children('.img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/select.png')
+        $('.payTypeBox .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
+        if($('#coupon').val()!=''){
+            $('.Deduction .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
+        }
+        $('.partyamount').hide()
+        $('.partyamount1').show()
+        $('.Discountamount').hide()
         $('#typeName').text(dsfData[$(this).attr('data-type')].name)
         $('#taobao-tid').attr('placeholder' , dsfData[$(this).attr('data-type')].placeholder)
         zdyPayType = $(this).attr('data-type')
@@ -637,6 +653,14 @@
     $('#CustomModal').on('hidden.bs.modal', function (e) {
         $("#taobao-tid").val('')
         $('#taobao-tid-1').val('')
+        $('.partyamount').show()
+        $('.partyamount1').hide()
+        if($('#coupon').val()!=''){
+            $('.Discountamount').show()
+            $('.Deduction .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/select.png')
+        }
+        typeSelect(payType,true)
+        $('.dsf-Pay .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
     })
     // 自定义订单支付
     let TbPaying = false
@@ -1042,7 +1066,11 @@
         $('#coupon').val('')
         $('.use_now').removeClass('active')
         $('.eliminateCoupon').hide()
+        Readjust()
+        
+    })
 
+    function Readjust(){
         var formData = getFormData({
             order_sn: order_sn,
             goods: goods().toString(),
@@ -1064,6 +1092,7 @@
                     $('#dateTime').text(res.data.created)
                     $('#orderIdText').text(res.data.order_sn)
                     $(".oid_pop").text(res.data.order_sn)
+                    $('#amountText1').text(res.data.order_money)
                     payStatus(order_sn)
                 }else{
                     $(".errTip_p").text(res.codeMsg)
@@ -1084,7 +1113,7 @@
                 canClick = true
             },
         })
-    })
+    }
 </script>
 </body>
 </html>

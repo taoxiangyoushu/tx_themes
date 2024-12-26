@@ -216,6 +216,9 @@ window.onload = function (){
 				if(data.domain_config && data.domain_config.distribution_status) {
 					$('.distributionEntrance').show()
 				}
+
+				var sw = getQueryVariable('short_name') || getQueryVariable('sw')
+				defaultType(sw) // 默认选中版本
 			}else{
 				toast(result.codeMsg)
 			}
@@ -224,6 +227,7 @@ window.onload = function (){
 }
 
 var typeData = {}
+var short_name_data = {}
 var WordCount_data = {
 	bylw: [5000 , 10000 , 30000 , 50000],
 	qklw: [3000 , 8000 , 10000 , 20000],
@@ -248,6 +252,9 @@ function typefun(goods_info) {
 			unit_type: goods_info[i].unit_type,
 			unit_count: goods_info[i].unit_count,
 			name: goods_info[i].name
+		}
+		short_name_data[goods_info[i].short_name] = {
+			goods_id: goods_info[i].goods_id
 		}
 	}
 }
@@ -323,14 +330,26 @@ $('.Image_enlargement1').click(function(){
 })
 
 
-    $('#myLink').click(function(e){
-        e.preventDefault(); // 阻止默认行为
-        var url = $(this).data('url'); // 获取data-url属性值
-        var param = $(this).data('param'); // 获取data-param属性值
-        
-        // 构建带参数的URL
-        var fullUrl = url + '?type=' + encodeURIComponent(param);
-        
-        // 在新窗口中打开URL
-        window.open(fullUrl, '_blank');
-    });
+$('#myLink').click(function(e){
+	e.preventDefault(); // 阻止默认行为
+	var url = $(this).data('url'); // 获取data-url属性值
+	var param = $(this).data('param'); // 获取data-param属性值
+	
+	// 构建带参数的URL
+	var fullUrl = url + '?type=' + encodeURIComponent(param);
+	
+	// 在新窗口中打开URL
+	window.open(fullUrl, '_blank');
+});
+
+// 默认选择版本
+function defaultType(type) {
+	if(type && $('.index_app').length && short_name_data[type]) {
+		setTimeout(function() {
+			$("#type_s").val(short_name_data[type].goods_id)
+			$("#type_s").selectpicker('refresh');
+			editionType(type , false)
+			changeType($('#type_s'))
+		}, 0)
+	}
+}

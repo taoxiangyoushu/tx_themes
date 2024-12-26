@@ -1,0 +1,25 @@
+.coupon_box .card .claim-coupons {
+  width: 120px;
+  height: 34px;
+  background: #fa2c28;
+  display: inline-block !important;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  line-height: 34px;
+  margin-left: 6px;
+  text-align: center;
+  text-decoration: none;
+}
+.coupon_box .card .claim-coupons:hover {
+  background: #df1e1a;
+  box-shadow: 0 0 6px 0px #f75e5b;
+}
+.coupon_box .card .claim-coupons img {
+  vertical-align: middle;
+  margin-top: -5px;
+  margin-right: 2px;
+}
+/*# sourceMappingURL=promotion.css.map */

@@ -293,7 +293,8 @@ function infoData(result) {
 			}
 		})
 	}else{
-		defaultType(getQueryVariable('short_name')) // 默认选中版本
+		var sw = getQueryVariable('short_name') || getQueryVariable('sw')
+		defaultType(sw) // 默认选中版本
 	}
 
 	if(data.domain_config && data.domain_config.distribution_status) {
@@ -439,7 +440,7 @@ function editionType(edition , is) {
 
 // 默认选择版本
 function defaultType(type) {
-	if(type) {
+	if(type && $('#App').hasClass('indexApp') && short_name_data[type]) {
 		setTimeout(function() {
 			$("#type_s").val(short_name_data[type].goods_id)
 			$("#type_s").selectpicker('refresh');

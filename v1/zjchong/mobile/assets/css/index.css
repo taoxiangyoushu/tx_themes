@@ -50,28 +50,32 @@
   margin-top: 1.5rem;
 }
 .home .ver_info .ver_item {
-  width: 46.5%;
+  width: 46%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.1rem;
   box-sizing: border-box;
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   color: #fff;
   position: relative;
 }
+.home .ver_info .ver_item .btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .home .ver_info .ver_item .recommend {
   position: absolute;
-  right: -4px;
-  top: -12px;
-  width: 3.2rem;
-  height: 2.5rem;
+  right: -8px;
+  top: -8px;
+  height: 2.2rem;
 }
 .home .ver_info .ver_item .ver_title {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: bold;
-  margin-bottom: 0.1rem;
-  line-height: normal;
+  margin-bottom: 0.4rem;
+  line-height: 1;
 }
 .home .ver_info .ver_item .circle {
   background: #fff;
@@ -87,6 +91,7 @@
 }
 .home .ver_info .ver_item .ver_price {
   font-size: 1.2rem;
+  line-height: 1;
 }
 .home .ver_info .ver_item.only {
   width: 100%;
@@ -94,19 +99,65 @@
   padding: 1rem 3rem;
 }
 .home .ver_info .jcb {
-  background: linear-gradient(90deg, #4bd5cd, #30c7f3);
+  background: linear-gradient(90deg, #93E6E0, #83DDF8);
 }
 .home .ver_info .jcb.active {
-  border: 0.1rem solid #0c9eb1;
+  background: linear-gradient(90deg, #00BDCA, #0066FF);
+  transform: scale(1.05) translate(1rem, 0);
+  box-shadow: 0 0 1.4rem 0 #186ef261;
+}
+.home .ver_info .jcb.active .btn-content {
+  background: linear-gradient(90deg, #2EE7CF, #009DFF);
+}
+.home .ver_info .jcb.active .btn-content .active_i {
+  display: inline;
+}
+.home .ver_info .jcb.active .btn-content .ordinary_i {
+  display: none;
+}
+.home .ver_info .jcb .active_i {
+  display: none;
+}
+.home .ver_info .jcb .ordinary_i {
+  display: inline;
+}
+.home .ver_info .jcb .btn-content {
+  background: linear-gradient(90deg, #93E6E0, #83DDF8);
+  padding: 0.8rem 0.8rem 1rem 0.8rem;
+  border-radius: 0.7rem;
+  width: 100%;
 }
 .home .ver_info .jcb .circle {
   background: linear-gradient(180deg, #fafefe, #c8f1f2);
 }
 .home .ver_info .gjb {
-  background: linear-gradient(90deg, #3dcdfe, #5150f5);
+  background: linear-gradient(90deg, #9ADFFF, #A7BEFF);
 }
 .home .ver_info .gjb.active {
-  border: 0.1rem solid #186ef2;
+  background: linear-gradient(90deg, #186EF2, #1823F2);
+  transform: scale(1.05) translate(1rem, 0);
+  box-shadow: 0 0 1.4rem 0 #186ef261;
+}
+.home .ver_info .gjb.active .btn-content {
+  background: linear-gradient(90deg, #3DCFFE, #514EF5);
+}
+.home .ver_info .gjb.active .btn-content .active_i {
+  display: inline;
+}
+.home .ver_info .gjb.active .btn-content .ordinary_i {
+  display: none;
+}
+.home .ver_info .gjb .active_i {
+  display: none;
+}
+.home .ver_info .gjb .ordinary_i {
+  display: inline;
+}
+.home .ver_info .gjb .btn-content {
+  background: linear-gradient(90deg, #9ADFFF, #A7BEFF);
+  padding: 0.8rem 0.8rem 1rem 0.8rem;
+  border-radius: 0.7rem;
+  width: 100%;
 }
 .home .ver_info .gjb .circle {
   background: linear-gradient(180deg, #fafefe, #d4dbfd);
@@ -631,6 +682,9 @@
 .home .main-tab-bar .btn-sub.btn-jc {
   width: 100%;
   background: #2081ED;
+}
+.home .main-tab-bar .btn-sub.btn-jc.prohibitBtn {
+  opacity: 0.65;
 }
 .home .table-form textarea {
   resize: none;

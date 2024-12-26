@@ -1,5 +1,11 @@
 $('#basic').on('hidden.bs.select', function(e) {
     var tmpSelected = $('#basic').val();
+    var nodes = $('.specialityBox .filter-option.pull-left')
+    if(nodes.text() == '请选择您的论文专业') {
+        nodes.removeClass('selected')
+    }else {
+        nodes.addClass('selected')
+    }
     if (tmpSelected != null) {
         $('#roleid').val(tmpSelected);
     } else {
@@ -113,10 +119,16 @@ $(".version-item").on('click',function (){
 })
 
 $('#type_s').change(function() {
+    changeType($(this))
+})
+function changeType(this_ , this_val) {
+    var val = this_.val() || this_val
     var permit_name = ['rws' , 'ktbg' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt']
-    if(permit_name.includes(typeData[$(this).val()].short_name)) {
+    var this_short_name = typeData[val].short_name
+    
+    if(permit_name.includes(this_short_name)) {
         $('.NumberIsShow').hide()
-        if(typeData[$(this).val()].short_name == 'wxzs' && $(".version-wxzs2").attr('data-goodsid')){
+        if(this_short_name == 'wxzs' && $(".version-wxzs2").attr('data-goodsid')){
             $(".version-wxzs").show()
         }else{
             $(".version-wxzs").hide()
@@ -124,62 +136,65 @@ $('#type_s').change(function() {
         }
     }else {
         // 重置字数
-        var NumberWords = typeData[$(this).val()].WordCount
+        var NumberWords = typeData[val].WordCount
         var FruitBoxHrml = ''
         for(let i=0; i< NumberWords.length; i++) {
             FruitBoxHrml+= "<input name='Fruit' type='radio' value='"+NumberWords[i]+"' id='"+NumberWords[i]+"'/><label class='"+NumberWords[i]+" labelTitle' for='"+NumberWords[i]+"'>"+NumberWords[i]+"字</label>"
         }
         $('.FruitBox').html(FruitBoxHrml)
         // 修改字数
-        Radius = typeData[$(this).val()].Radius
+        Radius = typeData[val].Radius
         $('#NumberWords').attr('placeholder' , Radius[0]+'-'+Radius[1]+'字内,不满千字按千字计算')
         $('.NumberIsShow').show()
         $(".version-wxzs").hide()
     }
     var short_name_arr = ['rws' , 'ktbg' , 'qklw' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt' , 'sxbg']
-    if(short_name_arr.includes(typeData[$(this).val()].short_name)){
-        if(typeData[$(this).val()].short_name !== 'dybg'){
+    if(short_name_arr.includes(this_short_name)){
+        if(this_short_name !== 'dybg'){
             $(".educationBox").hide() // 学历
         }
-        if(typeData[$(this).val()].short_name !== 'lwdbppt'){
+        if(this_short_name !== 'lwdbppt'){
             $(".specialityBox").hide() // 专业
         }
         $(".keywordBox").hide() // 关键词
     }else{
-        if(parameterSet[typeData[$(this).val()].short_name].submit_attribute.value.education.value){
+        if(parameterSet[this_short_name].submit_attribute.value.education.value){
             $(".educationBox").show()
         }
-        if(parameterSet[typeData[$(this).val()].short_name].submit_attribute.value.keyword.value){
+        if(parameterSet[this_short_name].submit_attribute.value.keyword.value){
             $(".keywordBox").show()
         }
-        if(parameterSet[typeData[$(this).val()].short_name].submit_attribute.value.major.value){
+        if(parameterSet[this_short_name].submit_attribute.value.major.value){
             $(".specialityBox").show()
         }
     }
 
-    if(typeData[$(this).val()].short_name !== 'bylw' && typeData[$(this).val()].short_name !== 'qklw') {   //图表
+    if(this_short_name !== 'bylw' && this_short_name !== 'qklw') {   //图表
         $('.genIT').hide()
         $(".addParameters").hide()
     }else{
         $('.genIT').show()
         $(".addParameters").show()
     }
-    if(typeData[$(this).val()].short_name == 'kclw'){    // 课程论文
+    if(this_short_name == 'kclw'){    // 课程论文
         $('.EducationalAltitude').show()
     }else {
         $('.EducationalAltitude').hide()
     }
 
-    if(typeData[$(this).val()].short_name == 'bylw'){
+    if(['bylw'].includes(this_short_name)){
         $(".proposalBox  , .tabDiv").show();
     }else{
         $(".proposalBox  , .tabDiv").hide();
     }
+    if(['ktbg' , 'qklw'].includes(this_short_name)) {
+        $(".tabDiv").show();
+    }
 
-    if(typeData[$(this).val()].short_name == 'dybg'){
+    if(this_short_name == 'dybg'){
         $(".educationBox").show() // 学历
     }
-    var shortName = typeData[$(this).val()].short_name
+    var shortName = this_short_name
     if(shortName == 'zjcaigc') {
         editionType(shortName)
         $('.jiangAIGCContent , .jiangAIGCType').show()
@@ -191,19 +206,19 @@ $('#type_s').change(function() {
         editionType(shortName == 'bylw'? 'Normal':shortName)
         $('.jiangAIGCContent , .jiangAIGCType').hide()
     }
-    if(typeData[$(this).val()].short_name !== 'bylw' && typeData[$(this).val()].short_name !== 'ktbg' && typeData[$(this).val()].short_name !== 'kclw' && typeData[$(this).val()].short_name !== 'qklw'){    //参考文献
+    if(this_short_name !== 'bylw' && this_short_name !== 'ktbg' && this_short_name !== 'kclw' && this_short_name !== 'qklw'){    //参考文献
         $(".EnglishReferenceShow").hide()
         $(".EnglishReferenceTip").hide()
     }else {
         $(".EnglishReferenceShow").show()
         $(".EnglishReferenceTip").show()
-        if(typeData[$(this).val()].short_name == 'bylw' || typeData[$(this).val()].short_name == 'qklw') {
+        if(this_short_name == 'bylw' || this_short_name == 'qklw') {
             $('.EnglishReference-check').attr('checked', false)
             $(".inputBox-en").hide()
         }
     }
 
-    if(typeData[$(this).val()].short_name == 'lwdbppt'){
+    if(this_short_name == 'lwdbppt'){
         $(".specialityBox").show() // 专业
         $('.jiangAIGCContent').show()
         file_path = ''
@@ -212,14 +227,15 @@ $('#type_s').change(function() {
         }
     }
 
-    if(typeData[$(this).val()].short_name == 'sxbg') { // 实践报告
+    if(this_short_name == 'sxbg') { // 实践报告
         $(".specialityBoxsxbg").show()
     }else {
         $(".specialityBoxsxbg").hide()
     }
     // 清空报错提示
     $("#ContainerTo").data('bootstrapValidator').resetForm();
-})
+}
+
 
 $("#ContainerTo").bootstrapValidator({
     excluded: [':disabled',':hidden'], //[':disabled', ':hidden', ':not(:visible)'] //设置隐藏组件可验证
@@ -533,7 +549,7 @@ function unifiedCreate(form_data, hasKtbg){
             withCredentials: true
         },
         success: function(data) {
-            toastNone()
+            // toastNone()
             if (data.code == 200) {
                 throttling = true
                 if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器
@@ -562,7 +578,7 @@ function unifiedCreate(form_data, hasKtbg){
             }
         },
         error: function(err) {
-            toastNone()
+            // toastNone()
             throttling = true
             // error_dl(err)
         }

@@ -21,11 +21,11 @@ var orderInfoData = {}
 // 控制支付方式选中
 function typeSelect(type,use) {
     if(type == 'wxPublicNum' || type == 'wxWap') {
-        $('.isSelect2>.img').attr('src','../mobile/assets/img/select.png')
-        $('.isSelect1>.img').attr('src','../mobile/assets/img/noselect.png')
+        $('.isSelect2>.img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/select.png')
+        $('.isSelect1>.img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
     }else if(type == 'alipayWap') {
-        $('.isSelect1>.img').attr('src','../mobile/assets/img/select.png')
-        $('.isSelect2>.img').attr('src','../mobile/assets/img/noselect.png')
+        $('.isSelect1>.img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/select.png')
+        $('.isSelect2>.img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
     }
     if(!use){
         payType = type
@@ -166,8 +166,8 @@ function llqType(pay_way) {
 }
 
 $('.payTypeBox').click(function() {
-    $('.payTypeBox .img').attr('src','../mobile/assets/img/noselect.png')
-    $(this).children().children('.img').attr('src','../mobile/assets/img/select.png')
+    $('.payTypeBox .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
+    $(this).children().children('.img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/select.png')
     payType = $(this).attr('data-payType')
 
     // 除开微信浏览器的时候, 选中微信支付就弹窗提示复制链接, 否则正常提交
@@ -463,14 +463,33 @@ $('.dsf-Pay').click(function() {
             placeholder: '请填写淘宝订单编号'
         }
     }
+    $('.dsf-Pay .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
+    $(this).children().children('.img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/select.png')
+    $('.payTypeBox .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
+    if($('#coupon').val()!=''){
+        $('.Deduction .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
+    }
+    $('.partyamount').hide()
+    $('.partyamount1').show()
+    $('.Discountamount').hide()
     $('#typeName').text(dsfData[$(this).attr('data-type')].name)
     $('#taobao-tid').attr('placeholder' , dsfData[$(this).attr('data-type')].placeholder)
     zdyPayType = $(this).attr('data-type')
+
 })
 
 $('#CustomModal').on('hidden.bs.modal', function (e) {
     $("#taobao-tid").val('')
     $('#taobao-tid-1').val('')
+    $('.partyamount').show()
+    $('.partyamount1').hide()
+    if($('#coupon').val()!=''){
+        $('.Discountamount').show()
+        $('.Deduction .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/select.png')
+    }
+    typeSelect(payType,true)
+    $('.dsf-Pay .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
+
 })
 // 自定义订单支付
 let TbPaying = false
@@ -706,6 +725,7 @@ function variationOrder() {
                 $('#amountText2').text(res.data.order_amount)
                 $('#dateTime').text(res.data.created)
                 $('#orderIdText').text(res.data.order_sn)
+                $('#amountText1').text(res.data.order_money)
                 payStatus(order_sn)
             }
             contentTypeIs=true
@@ -1011,4 +1031,5 @@ $(".szsj_notice").click(function (e){
 $(".closeTips").click(function (){
     $(".mask").hide()
     $(".szsj-tips-block").hide()
+   
 })

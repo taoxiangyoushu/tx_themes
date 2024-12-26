@@ -405,6 +405,27 @@ a {
                 text-align: center;
                 cursor: pointer;
                 margin-top: 16px;
+                display: inline-block;
+            }
+            .Three_party{
+                display: inline-block;
+                font-size: 14px;
+                color: #545454;
+                margin-left: 10px;
+                span:nth-child(1){
+                    font-size: 12px;
+                    color: #218CFD;
+                    margin-left: 6px;
+                }
+                span:nth-child(2){
+                    font-size: 16px;
+                    color: #218CFD;
+                    font-weight: bold;
+                }
+                span:nth-child(3){
+                    font-size: 12px;
+                    color: #999999;
+                }
             }
         }
     }
@@ -445,9 +466,10 @@ a {
     position: relative;
     .card {
         margin-top: 15px;
+        height: 34px;
         .form-control {
             display: inline-block;
-            width: 30%;
+            width: 216px;
             box-shadow: none;
             border-color: #e9e7e7;
             border-radius: 6px;
@@ -482,6 +504,13 @@ a {
             cursor: not-allowed;
             pointer-events: none;
             font-size: 14px;
+            .Exchange_loading{
+                width: 14px;
+                display: none;
+                position: relative;
+                top: -1px;
+                left: -2px;
+            }
             &.can {
                 background: #006fff;
                 cursor: pointer;
@@ -535,20 +564,46 @@ a {
                 top: -1px;
             }
         }
-        .errorTip1{
-            display: none;
-            margin-left: 20px;
-            color: #d81e06;
-            font-size: 12px;
-            position: absolute;
-            top: 4px;
-            left: 85px;
-        }
+       
         .activityTip {
             display: none;
             margin-left: 10px;
             color: #d81e06;
             font-size: 12px;
+        }
+        .Exchange_hidden{
+            display: inline-block;
+        }
+        .errorTip1{
+            display: inline-block;
+            display: none;
+            width: 292px;
+            height: 34px;
+            background: #F5FBFF;
+            border-radius: 6px 6px 6px 6px;
+            border: 1px solid #BDE3FF;
+            line-height: 34px;
+            padding-left: 10px;
+            font-size: 12px;
+            color: #333333;
+            float: left;
+            .Picture_event{
+                float: right;
+                margin-top: 8px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            .Picture_event1{
+                float: right;
+                margin-top: 8px;
+                margin-right: 10px;
+                display: none;
+            }
+            .Coupondisabled{
+                &.Coupon_dis{
+                    text-decoration: line-through;
+                }
+            }
         }
     }
     .no_pay_text {
@@ -1076,12 +1131,12 @@ a {
         height: 717px;
     }
     .editHader {
-        padding: 26px 29px 0px 29px;
+        padding: 20px 29px 10px 29px;
         border:0;
-        padding-bottom: 0;
         font-size: 18px;
         color: #272e38;
         font-weight: bold;
+        line-height: normal;
     }
     .recommend {
         width: 100%;
@@ -1284,4 +1339,39 @@ input#tbTid,input#tbTid-2 {
         display: none;
     }
 
+}
+.EditPopup.EditPopupPay {
+    .recommend {
+        padding-right: 10px;
+        padding-left: 0;
+    }
+    .editBox {
+        height: 88vh;
+        max-height: 710px;
+    }
+
+    .editBottom {
+        text-align: right;
+        padding: 14px 27px;
+        #outlineReplication {
+            display: inline-block;
+            color: #fff;
+            cursor: pointer;
+            width: 80px;
+            height: 32px;
+            background: #7371D6;
+            border-radius: 4px 4px 4px 4px;
+            text-align: center;
+            line-height: 32px;
+        }
+    }
+    .preview .aidashi:hover {
+        background-color: transparent;
+    }
+    .editMain {
+        height: calc(100% - 114px); 
+        > div {
+            height: calc(100% - 8px);
+        }
+    }
 }

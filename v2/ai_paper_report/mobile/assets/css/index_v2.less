@@ -1,0 +1,564 @@
+body {
+    background: #E7F2FD;
+}
+
+.logo {
+    margin-top: 2rem;
+    margin-bottom: 1.8rem;
+    img {
+        max-width: 100%;
+        width: auto;
+    }
+    p {
+        font-size: 1.2rem;
+        color: #8989A7;
+    }
+}
+// .form .card.NumberIsShow {
+//     margin-top: 2rem;
+// }
+.index_app {
+    padding: 0 1rem 1rem .6rem;
+}
+
+.describedImg {
+    img {
+        width: 100%;
+    }
+}
+.proposalBox .upload-block {
+    font-size: 1.2rem;
+}
+.FruitBox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1.2rem;
+    label {
+        line-height: normal;
+        margin-right: 0;
+        font-size: 1rem;
+    }
+}
+.tabDiv {
+    &>div {
+        width: 50%;
+        height: 100%;
+        line-height: 5.8rem;
+    }
+}
+.form {
+    margin-top: 1.2rem;
+    width: 100%;
+    background-color: #F7FBFF;
+    padding-bottom: 5.9rem;
+    font-size: 1.2rem;
+    box-shadow: 0px 4px 10px 0px #E3ECF1;
+    .Conditions {
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        border: 0;
+        background-color: transparent;
+        .inputBox {
+            width: 100%;
+        }
+        .surrounded {
+            border: 1px solid #DCDFE6 !important;
+            border-radius: .5rem;
+            background-color: #fff;
+            width: 100%;
+            display: flex;
+        }
+    }
+    .ContainerTo {
+        padding: 0 1.2rem;
+        // margin-top: 1.5rem;
+        padding-top: .8rem;
+    }
+    .label_s {
+        width: 100%;
+        text-align: left;
+        line-height: 4rem;
+        margin-bottom: 0;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #3F4654;
+        padding-left: .9rem;
+        position: relative;
+        &::after {
+            display: inline-block;
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 1.4rem;
+            width: .3rem;
+            height: 1.2rem;
+            background: #DEDEDE;
+            border-radius: 0rem .1rem .1rem 0rem;
+        }
+        span {
+            color: #E71515;
+        }
+    }
+    .card {
+        width: 100%;
+        margin-bottom: .8rem;
+    }
+    .proposal-check {
+        position: relative;
+        top: 0px;
+    }
+    .version-wxzs {
+        p {
+            margin-bottom: 0;
+        }
+    }
+    .version-wxzs-box {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        .version-item {
+            width: 100%;
+            margin-right: 0;
+            background-color: #fff;
+            overflow: hidden;
+            border-radius: .5rem;
+            height: auto;
+            padding: 1.2rem 1rem;
+            .v-top {
+                font-size: 1.2rem;
+                line-height: normal;
+                .v-sample {
+                    width: auto;
+                    display: inline-block;
+                    text-align: right;
+                    color: #999999;
+                    height: auto;
+                    line-height: normal;
+                    font-size: 1.2rem;
+                }
+                .v-title {
+                    border: 0;
+                }
+                img {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    vertical-align:middle;
+                    margin-top: -.25rem;
+                }
+            } 
+            &.active {
+                border: 1px solid #017FF5;
+                box-shadow:none;
+                box-sizing: border-box;
+                .v-bottom {
+                    color: #006CFF;
+                }
+                .v-title {
+                    color: #006CFF;
+                    font-weight: bold;
+                }
+            }
+        }
+        .v-bottom {
+            background-color: #F6FAFD;
+            border: 1px solid #F4F4F4;
+            line-height: normal;
+            padding: .8rem 1rem;
+            text-align: left;
+            color: #565455;
+            p {
+                margin-bottom: 0;
+            }
+        }
+        .v-checked {
+            top: auto;
+            bottom: 0;
+            width: 1.8rem;
+        }
+        .noMarginRight {
+            margin-top: 1.2rem;
+        }
+        .sampleBox {
+            width: 50%;
+            text-align: right;
+        }
+    }
+    .divBox {
+        padding: 1rem;
+        .AIGCContentTop {
+            background: none;
+            height: auto;
+            margin-bottom: .6rem;
+            margin-top: .3rem;
+            .Select::before {
+                bottom: 0;
+                width: 3rem;
+                left: calc(50% - .5rem);
+            }
+            .AIGCContentType {
+                line-height: normal;
+                padding-bottom: .9rem;
+            }
+        }
+        .UploadBox {
+            padding-top: 2rem;
+        }
+        #textareaText {
+            background-color: transparent;
+            padding-top: 1rem;
+        }
+    }
+    .Thesis {
+        background-color: #F6FAFD;
+    }
+}
+.btn {
+    padding: 1.2rem 0;
+}
+.form-control {
+    height: auto;
+    padding: 0 .8rem;
+    min-height: 4rem;
+}
+.has-feedback .form-control, button.btn-default, .btn-default {
+    height: auto;
+    line-height: normal;
+    min-height: auto;
+}
+.has-feedback input.form-control {
+    padding: 1.2rem .8rem;
+}
+.proposalBox .upload-block .proposal-check {
+    margin-left: 0;
+}
+.filter-option {
+    line-height: normal;
+}
+.specialityBox .filter-option, .specialityBoxsxbg .filter-option {
+    font-size: 12px;
+    line-height: 2rem;
+    color: #c5c5c5 !important;
+}
+.specialityBox .filter-option.pull-left.selected {
+    font-size: 14px;
+    line-height: 2rem;
+    color: #333 !important;
+}
+input[type=checkbox], input[type=radio] {
+    margin-top: 0;
+}
+input[type=radio] {
+    margin-top: 0;
+}
+.contenteditable_s span {
+    margin-left: 0;
+    margin-right: 1.2rem;
+    font-size: 1.2rem;
+    line-height: normal;
+    .education {
+        margin-right: .6rem;
+    }
+}
+.bootstrap-select>.dropdown-toggle {
+    padding-left: 0.8rem;
+    line-height: normal;
+}
+.genIT {
+    .sample {
+        font-weight: 400;
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: #999999;
+        img {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-top: -2px;
+        }
+    }
+    &> span {
+        background-color: transparent;
+        padding: 0;
+        font-size: 1.2rem;
+        color: #374151;
+        input {
+            display: inline-block;
+            vertical-align: text-top;
+            margin-right: .3rem;
+        }
+    }
+}
+.samplePop, .zsbgPop, .zslwPop {
+    left: 0;
+    top: 15%;
+}
+.EnglishReferenceShow {
+    .wenhao-t {
+        position: relative;
+        top: -1px;
+        left: .3rem;
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+    .wenhaoBox {
+        position: relative;
+        .wenhaoTips {
+            background-color: #303133;
+            color: #fff;
+            border-radius: .5rem;
+            padding: .5rem 1rem;
+            line-height: 1.5rem;
+            position: absolute;
+            top: -4.6rem;
+            left: -2rem;
+            width: 19rem;
+            text-align: left;
+            font-size: 1rem;
+            display: none;
+            font-weight: 400;
+            &:after {
+                position: absolute;
+                border-left: .8rem solid transparent;
+                border-right: .8rem solid transparent;
+                border-top: .8rem solid #303133;
+                border-bottom: 0;
+                content: " ";
+                display: block;
+                width: 0;
+                height: 0;
+                left: 2rem;
+                bottom: -.4rem;
+            }
+        }
+    }
+}
+.EnglishReferenceShow .EnglishReference-block{
+    justify-content: flex-start;
+    width: 100%;
+    .EnglishReference {
+        height: 3rem;
+        display: flex;
+        align-items: center;
+    }
+    .EnglishReference-check {
+        margin-left: 0;
+        width: 1.2rem;
+        height: 1.2rem;
+        position: relative;
+    }
+    .EnglishReference-text  {
+        font-size: 1.2rem;
+        color: #374151;
+        line-height: normal;
+    }
+    .inputBox-en {
+        width: auto;
+        margin-left: .8rem;
+        height: 3rem;
+        font-size: 1.2rem;
+        color: #374151;
+        background-color: transparent;
+        .countDiv {
+            background-color: #f5f7fa;
+            display: inline-block;
+            border: 1px solid #DCDFE6;
+            border-radius: 2px;
+            font-size: 0;
+            height: 3rem;
+            color: #909399;
+            input {
+                border: 0;
+                border-radius: 0;
+                border-left: 1px solid #DCDFE6;
+                border-right: 1px solid #DCDFE6;
+                width: 3.6rem;
+                background: #FFFFFF;
+                height: calc(3rem - 2px);
+                color: #374151;
+            }
+        }
+    }
+}
+.agreement.card {
+    border-top: 1px solid #E2E2E2;
+    padding-top: 1.1rem;
+    margin-top: 1.8rem;
+    font-size: 1rem;
+    color: #999999;
+    line-height: 1.8rem;
+    input[type=checkbox].inputCheck {
+        top: 1.4rem;
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+    .checkbox {
+        padding-left: 1.8rem;
+    }
+}
+.form .tipsInfo {
+    width: 100%;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    .tipsTitle {
+        font-size: 1.2rem;
+    }
+}
+.groupSubmit {
+    position: fixed;
+    bottom: 0;
+    left: 8.9rem;
+    width: calc(100% - 8.3rem - 0.6rem - 1rem);
+    background-color: #fff;
+    margin: 0;
+    padding: 1rem 0;
+    box-shadow: 0px -4px 4px 0px rgba(201,213,225,0.25);
+    max-width: 788px;
+    z-index: 998;
+}
+.fixed-problem , .customer-wx {
+    left: auto;
+    right: 0;
+}
+.profession {
+    span {
+        display: inline-block;
+        background-color: #FF4949;
+        color: #fff;
+        padding: 0.2rem 0.5rem 0.05rem;
+        line-height: normal;
+        font-size: 1rem;
+        font-weight: 300;
+        border-radius: 0.8rem 0.8rem 0.8rem 0rem;
+        position: absolute;
+        bottom: 1.2rem;
+        right: -3.1rem;
+        width: 3rem;
+    }
+}
+input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 1px solid #D1D5DB;
+}
+.genImg , .genTab , .genFormula , .genCode {
+    margin-right: 1.6rem;
+    line-height: normal;
+    input {
+        vertical-align:text-top;
+    }
+}
+.contenteditable_s {
+    .FamilyCategory {
+        margin-right: .6rem;
+        margin-top: .1rem;
+    }
+    line-height: normal;
+}
+.form .groupSubmit button {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1rem;
+    &.ViewsSample {
+        width: 8.8rem;
+        margin-right: .7rem;
+        border-radius: .6rem;
+        background-color: #FFB12B;
+    }
+    &.generate {
+        width: calc(100% - 13rem);
+    }
+}
+.promotion {
+    text-align: center;
+    &>div {
+        display: inline-block;
+        border-radius: .4rem .4rem .4rem .4rem;
+        width: 6.4rem;
+        height: 2.4rem;
+        cursor: pointer;
+        margin-top: .85rem;
+        img {
+            width: 100%;
+        }
+    }
+}
+.proposalBox .proposal-file {
+    line-height: normal;
+    width: 100%;
+    .delete-file {
+        margin-top: -1rem;
+        padding: 0;
+        width: 1.2rem;
+    }
+}
+
+.foot {
+    line-height: 1.7rem;
+    height: auto;
+    padding-top: 0.7rem;
+    font-size: 1rem;
+    .gongan {
+        width: 1rem;
+    }
+    a.beian {
+        // display: block;
+        margin-left: .4rem;
+    }
+}
+.tabDiv {
+    height: auto;
+    padding: 1.2rem 0;
+    div {
+        line-height: normal;
+    }
+}
+.upload-block {
+    line-height: normal;
+}
+
+.education {
+    width: 1.2rem;
+}
+.contenteditable_s .toCheck.selected {
+    color: #0075ff;
+}
+.andInterval {
+    margin-top: .4rem;
+}
+.proposalBox .proposal-file .file-name {
+    max-width: 80%;
+    width: auto;
+}
+.delete-file {
+    margin-left: 1rem;
+}
+.FruitBox label {
+    background-color: #EFF3F7;
+}
+
+// input[type=checkbox] {
+//     width: 1.2rem;
+//     height: 1.2rem;
+//     position: relative;
+//     border-radius: 0;
+// }
+// input[type=checkbox]::after {
+//     position: absolute;
+//     top: 0;
+//     color: #000;
+//     width: 1.2rem;
+//     height: 1.2rem;
+//     display: inline-block;
+//     visibility: visible;
+//     padding-left: 0;
+//     text-align: center;
+//     content: ' ';
+//     border-radius: 0;
+// }
+
+input[type=checkbox] {
+    margin-top: .14rem;
+}
