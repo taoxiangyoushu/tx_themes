@@ -6,14 +6,15 @@
     <meta name="description" content="AI大师写作是一个提供撰写论文的全面指导,包括图表、表格、公式等方面的建议。" />
     <meta name="keywords" content="AI大师写作，论文范文生成，毕业论文" />
     <link rel="shortcut icon" href="../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/loading.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/alert.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/ProfessionalEdition.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/problem.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/leftCss.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css?v=p24.0083">
+    <link rel="stylesheet" href="../pc/assets/css/loading.css?v=p24.0083">
+    <link rel="stylesheet" href="../pc/assets/css/alert.css?v=p24.0083">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0083">
+    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0083">
+    <link rel="stylesheet" href="../pc/assets/css/ProfessionalEdition.css?v=p24.0083">
+    <link rel="stylesheet" href="../pc/assets/css/problem.css?v=p24.0083">
+    <link rel="stylesheet" href="../pc/assets/css/leftCss.css?v=p24.0083">
+    <link rel="stylesheet" href="../pc/assets/css/commonv1.css?v=p24.0083">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz';
@@ -30,8 +31,8 @@
     </script>
 </head>
 <body>
-<div class="queryApp clearfix" id="App">
-    <div class="col-md-4 boxLeft">
+<div class="queryApp clearfix" id="App" data-key="query">
+    <div class="col-xs-4 boxLeft">
         <div class="logo">
             <div class="NormalLogo">
                 <img src="../pc/assets/img/logo.png" alt="AI大师写作">
@@ -908,11 +909,72 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-8 rightCont" id="memberCarrier">
-        <div class="nav-activity">
-            <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
+
+        <!-- 检测aigc -->
+        <div class="xzaigccheckBox">
+            <div class="step1">
+                <div class="steptop">
+                    用AI语言模型检测AIGC
+                </div>
+                <div class="stepType">
+                    快速检测论文AIGC疑似率
+                </div>
+            </div>
+            <div class="step">
+                <img src="../pc/assets/img/arrow-down.png" alt="">
+            </div>
+            <div class="step2">
+                <img src="../pc/assets/img/step_caigc.png" alt="">
+                <div class="stepMain">
+                    <p><span class="ai">AIGC</span>查重报告<a class="example Sample_window myLink7" href="./demo.html?type=xzaigccheck" target="_blank" data-url="demo.html" data-param="bylw">样例</a></p>
+                    <div class="Referenc">
+                        <p>AIGC查重可以区分<span class="yellow_css">人工编写</span>的内容<span class="red_css">AI模型生成</span>和的文本</p>
+                        <div class="imgBox">
+                            <img src="../pc/assets/img/aigc1.png" alt="">
+                            <img src="../pc/assets/img/arrow_aigc.png" alt="">
+                            <img src="../pc/assets/img/aigcbg.png" alt="">
+                        </div>
+                    </div>
+                    <p class="Title2"><span class="ai">AIGC</span>查重优势</p>
+                    <div class="Referenc2 row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <img src="../pc/assets/img/gx_icon.png" alt="">
+                                <span>高效检测</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <img src="../pc/assets/img/lxdy_icon.png" alt="">
+                                <span>类型多样</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <img src="../pc/assets/img/ccff.png" alt="">
+                                <span>层次丰富</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <img src="../pc/assets/img/aqkk.png" alt="">
+                                <span>安全可靠</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="col-xs-8 rightCont" >
+        <div class="headBox">
+            <div class="rightFloat" id="memberCarrier">
+                <div class="nav-activity">
+                    <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
+                </div>
+            </div>
+        </div>
+
         <div class="content container">
             <a href="./" class="Breadcrumb">< 返回提交页</a>
             <p class="subtitle"><span>查询结果</span></p>
@@ -1378,18 +1440,19 @@
 
 
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
-<script src="../pc/assets/js/jquery.min.js?v=p24.0072"></script>
-<script src="../pc/assets/js/bootstrap.min.js?v=p24.0072"></script>
-<script src="../pc/assets/js/bootstrapValidator.min.js?v=p24.0072"></script>
-<script src="../pc/assets/js/coco-message.js?v=p24.0072"></script>
-<script src="../pc/assets/js/alert.min.js?v=p24.0072"></script>
-<script src="../pc/assets/js/common.js?v=p24.0072"></script>
-<script src="../pc/assets/js/ProfessionalEdition.js?v=p24.0072"></script>
-<script src="../pc/assets/js/qrcode.min.js?v=p24.0072"></script>
-<script src="../pc/assets/js/order_result.js?v=p24.0072"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=p24.0072"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0072"></script>
-<script src="../pc/assets/js/query.js?v=p24.0072"></script>
+<script src="../pc/assets/js/jquery.min.js?v=p24.0083"></script>
+<script src="../pc/assets/js/bootstrap.min.js?v=p24.0083"></script>
+<script src="../pc/assets/js/bootstrapValidator.min.js?v=p24.0083"></script>
+<script src="../pc/assets/js/coco-message.js?v=p24.0083"></script>
+<script src="../pc/assets/js/alert.min.js?v=p24.0083"></script>
+<script src="../pc/assets/js/common.js?v=p24.0083"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.6"></script>
+<script src="../pc/assets/js/ProfessionalEdition.js?v=p24.0083"></script>
+<script src="../pc/assets/js/qrcode.min.js?v=p24.0083"></script>
+<script src="../pc/assets/js/order_result.js?v=p24.0083"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=p24.0083"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0083"></script>
+<script src="../pc/assets/js/query.js?v=p24.0083"></script>
 </body>
 <script>
     window.download_post_handle = function (download_dom){

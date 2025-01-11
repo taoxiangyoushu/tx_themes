@@ -8,19 +8,19 @@
     <meta name="description" content="AI大师写作是一个提供撰写论文的全面指导,包括图表、表格、公式等方面的建议。" />
     <meta name="keywords" content="AI大师写作，论文范文生成，毕业论文" />
     <link rel="shortcut icon" href="../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css?v=p24.0067">
-    <link rel="stylesheet" href="../pc/assets/css/bootstrap-select.min.css?v=p24.0067">
-    <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css?v=p24.0067">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0067">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0067">
-    <link rel="stylesheet" href="../pc/assets/css/ProfessionalEdition.css?v=p24.0067">
-    <link rel="stylesheet" href="../pc/assets/css/OutlineEditingKTBG.css?v=p24.0067">
-    <link rel="stylesheet" href="../pc/assets/css/editor.css?v=p24.0067">
-    <link rel="stylesheet" href="../pc/assets/css/problem.css?v=p24.0067">
-    <link rel="stylesheet" href="../pc/assets/css/leftCss.css?v=p24.0067">
-    <link rel="stylesheet" href="https://api.taoxiangyoushu.com/html/v1/utils/css/smartTopic.css?v=p24.0067">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css?v=p24.0085">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap-select.min.css?v=p24.0085">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css?v=p24.0085">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0085">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0085">
+    <link rel="stylesheet" href="../pc/assets/css/ProfessionalEdition.css?v=p24.0085">
+    <link rel="stylesheet" href="../pc/assets/css/OutlineEditingKTBG.css?v=p24.0085">
+    <link rel="stylesheet" href="../pc/assets/css/editor.css?v=p24.0085">
+    <link rel="stylesheet" href="../pc/assets/css/problem.css?v=p24.0085">
+    <link rel="stylesheet" href="../pc/assets/css/leftCss.css?v=p24.0085">
+    <link rel="stylesheet" href="https://api.taoxiangyoushu.com/html/v1/utils/css/smartTopic.css?v=p24.0085">
     <!-- v2版本独立css -->
-    <link rel="stylesheet" href="../pc/assets/css/commonv2.css?v=p24.0067">
+    <link rel="stylesheet" href="../pc/assets/css/commonv2.css?v=p24.0085">
     <!-- head_script -->
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
@@ -39,7 +39,7 @@
 </head>
 <body>
 <div class="indexApp clearfix indexAppv2 menuCanSelect" id="App">
-    <div class="col-xs-4 boxLeft">
+    <div class="boxLeft">
         <div class="commodityType">
             <div class="loginBox">
                 <img class="logov2" src="../pc/assets/img/logov2.png" alt="">
@@ -113,7 +113,7 @@
                                 <p>重复率<30%</p>
                             </div>
 
-                            <p class="longText">收集超过300W篇数据，支持DOC格式</p>
+                            <p class="longText longTextTs">收集超过300W篇数据，支持DOC格式</p>
                             <div class="stepCard stepCard2">
                                 <div>
                                     <img src="../pc/assets/img/literature.png" alt="">
@@ -123,7 +123,7 @@
                                     <img src="../pc/assets/img/literature.png" alt="">
                                     <span>山东中行财富管理业务竞争战略...</span>
                                 </div>
-                                <p class="yc">...</p>
+                                <p class="yc">... ...</p>
 
                                 <div class="characteristic">
                                     <div class="pull-left characteristicCard">
@@ -147,9 +147,13 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-8 rightCont" id="memberCarrier">
-        <div class="nav-activity">
-            <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
+    <div class="rightCont">
+        <div class="headBox">
+            <div class="rightFloat" id="memberCarrier">
+                <div class="nav-activity">
+                    <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
+                </div>
+            </div>
         </div>
         <div class="main mainContainer">
             <div class="haderTetx">
@@ -265,6 +269,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="periodical-err">请选择期刊类型</div>
                 </div>
 
                 <div class="form-group form-group_s short card col-xs-6 gen_params">
@@ -346,6 +351,7 @@
                             <div class="l-numB" data-num="40-"> 40篇以上 </div>
                         </div>
                     </div>
+                    <div class="literatureNum-err">请选择文献数量</div>
                 </div>
 
                 <div class="form-group form-group_s short card col-md-6 figure NumberIsShow">
@@ -410,7 +416,7 @@
                 </div>
 
                 <div class="form-group form-group_s short card col-md-6 version-wxzs">
-                    <label class="label_s">选择版本: </label>
+                    <label class="label_s"><span class="required">*</span>选择版本: </label>
                     <div class="contenteditable_s">
                         <div class="version-wxzs-box">
                             <div class="version-item version-wxzs1">
@@ -449,6 +455,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="version-wxzs-err">请选择版本</div>
                 </div>
 
                 <div class="form-group form-group_s short card col-md-6 supplement">
@@ -516,7 +523,16 @@
                         <span id="LiteratureType_err">请输入自定义文献篇数</span>
                     </div>
                 </div>
-
+                <div class="form-group form-group_s short card col-md-6 xzaigccheck_conditions authorBox">
+                    <div>
+                        <label class="label_s"><span class="required">*</span>作者: </label>
+                        <div class="rower contenteditable_s">
+                            <input class="form-control" type="text" maxlength="15" id="author" name="title" autocomplete="off" placeholder="请正确填写作者信息，且字数不超过15字符，不可输入符号或数字" class="form-control">
+                            <span class="author-num quantity"><span class="authorNumber">0</span>/<span class="MaximumNumber">15</span> </span>
+                        </div>
+                        <span id="title_err"></span>
+                    </div>
+                </div>
                 <div class="form-group form-group_s short card col-md-6 jiangAIGCType">
                     <label class="label_s"><span class="required">*</span>论文类型: </label>
                     <div class="contenteditable_s">
@@ -543,7 +559,7 @@
                                 <div class="Not">
                                     <img src="../pc/assets/img/Upload.png" alt="上传">
                                     <p>点击或拖拽文件到此处上传</p>
-                                    <span>文档支持txt、doc(x)，文件大小不得超过15M</span>
+                                    <span>文档支持txt、doc(x)，文件大小不得超过<span class="filSize">15</span>M</span>
                                     <p class="redText">暂不支持英语等非中文论文，非中文论文请勿提交!</p>
                                 </div>
                                 <div class="Complete">
@@ -626,11 +642,27 @@
                 <p>4.系统暂只支持中文写作。</p>
             </div>
             <div class="aigcTips">
-                <p>1、系统仅支持中文，暂不支持英语等非中文，非中文请勿提交！</p>
-                <p>2、仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
-                <p>3、支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款。</p>
-                <p>4、暂不支持图片、表格、公式、代码降重</p>
-                <p>5、下载的内容仅用于参考，不作为毕业、发表使用</p>
+                <div class="zjc_aigc_tips">
+                    <p>1、系统仅支持中文，暂不支持英语等非中文，非中文请勿提交！</p>
+                    <p>2、仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
+                    <p>3、支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款。</p>
+                    <p>4、暂不支持图片、表格、公式、代码降重</p>
+                    <p>5、下载的内容仅用于参考，不作为毕业、发表使用</p>
+                </div>
+                <div class="jian_aigc_tips">
+                    <p>1. 检测范围：包括但不限于
+                        <img src="../pc/assets/img/gpt3.png" style="margin-left: 4px;" alt=""><span>ChatGPT-3.5</span><img
+                                src="../pc/assets/img/gpt4.png" alt=""><span>ChatGPT-4.0</span> <img
+                                src="../pc/assets/img/gemini.png" alt=""><span>Gemini</span> <img
+                                src="../pc/assets/img/claude.png" style="margin-top: -1px;" alt=""><span>Claude</span>
+                        <img src="../pc/assets/img/wyyx.png" style="margin-top: -1px;" alt=""><span>文心一言</span>
+                        <img src="../pc/assets/img/tyqw.png" alt=""><span>通义千问</span> <img
+                                src="../pc/assets/img/zpai.png" alt=""><span>智谱AI</span></p>
+                    <p>2. 系统在检测时会分析论文的上下文关系， 所以请您提交论文正文内容，如果是非正文的检测将不能保证检测的准确性</p>
+                    <p>3. 非正文部分(如标题、公式、图表、参考文献等)建议删除</p>
+                    <p>4. 此系统一旦提交，开始检测后，就会产生成本，不接受退款，多谢理解</p>
+                    <p class="redText">5. 请勿上传目录和封面，否则会检测失败！</p>
+                </div>
             </div>
         </div>
         <div id="filing-information"></div>
@@ -1106,23 +1138,24 @@
 
 
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
-<script src="../pc/assets/js/jquery.min.js?v=p24.0067"></script>
-<script src="../pc/assets/js/bootstrap.min.js?v=p24.0067"></script>
-<script src="../pc/assets/js/qrcode.min.js?v=p24.0067"></script>
-<script src="../pc/assets/js/coco-message.js?v=p24.0067"></script>
-<script src="../pc/assets/js/common.js?v=p24.0067"></script>
-<script src="../pc/assets/js/outlineEditingKTBG.js?v=p24.0067"></script>
-<script src="../pc/assets/js/ProfessionalEdition.js?v=p24.0067"></script>
+<script src="../pc/assets/js/jquery.min.js?v=p24.0085"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.2"></script>
+<script src="../pc/assets/js/bootstrap.min.js?v=p24.0085"></script>
+<script src="../pc/assets/js/qrcode.min.js?v=p24.0085"></script>
+<script src="../pc/assets/js/coco-message.js?v=p24.0085"></script>
+<script src="../pc/assets/js/common.js?v=p24.0085"></script>
+<script src="../pc/assets/js/outlineEditingKTBG.js?v=p24.0085"></script>
+<script src="../pc/assets/js/ProfessionalEdition.js?v=p24.0085"></script>
 <!-- 提纲编辑逻辑代码 -->
-<script src="../pc/assets/js/editor.js?v=p24.0067"></script>
-<script src="../pc/assets/js/bootstrap-select.js?v=p24.0067"></script>
-<script src="../pc/assets/js/bootstrapValidator.min.js?v=p24.0067"></script>
-<script src="../pc/assets/js/jquery.ui.widget.min.js?v=p24.0067"></script>
-<script src="../pc/assets/js/jquery.manifest.js?v=p24.0067"></script>
+<script src="../pc/assets/js/editor.js?v=p24.0085"></script>
+<script src="../pc/assets/js/bootstrap-select.js?v=p24.0085"></script>
+<script src="../pc/assets/js/bootstrapValidator.min.js?v=p24.0085"></script>
+<script src="../pc/assets/js/jquery.ui.widget.min.js?v=p24.0085"></script>
+<script src="../pc/assets/js/jquery.manifest.js?v=p24.0085"></script>
 <!-- 活动js -->
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0067"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/smartTopic.js?v=p24.0067"></script>
-<script src="../pc/assets/js/index.js?v=p24.0067"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0085"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/smartTopic.js?v=p24.0085"></script>
+<script src="../pc/assets/js/index.js?v=p24.0085"></script>
 </body>
 <script>
     var aiTopicFu = null;
@@ -1137,20 +1170,23 @@
         lwdbppt: 'dbppt',
         kclw: 'kclw',
         dybg: 'dybg',
-        zjcaigc: 'aigc',
+        zjcaigc: 'jaigcl',
         bylwsenior: 'bylw',
         ktbgsenior: 'ktbg',
-        qklwsenior: 'qklw'
+        qklwsenior: 'qklw',
+        xzaigccheck: 'aigccc'
     }
     function initial() {
         var text = ''
-        var sw = getQueryVariable('short_name') || getQueryVariable('sw')
-        var short_name = sw
-        if(short_name && short_name != 'bylw') {
-            text+= '<a class="example Sample_window myLink '+short_name+'Box" href="./demo.html?type='+short_name+'" target="_blank" data-url="demo.html" data-param="bylw">样例</a>'
-            text+='<img class="img_js '+short_name+'Box" src="../pc/assets/img/'+short_name+'_js.png" alt="">'
-            $('.describedImg').append(text)
-            $('.commodityTypeNameSvg').append('<img class="'+short_name+'Text" src="../pc/assets/img/'+short_name+'.svg" alt="">')
+		var sw = keyConversion[getQueryVariable('short_name') || getQueryVariable('sw')] // 取值改成后端key
+		var sw2 = getQueryVariable('short_name') || getQueryVariable('sw') // 取值直接用于直接传给demo
+        if(sw) {
+            if(sw2 && sw2 != 'bylw') {
+                text+= '<a class="example Sample_window myLink '+sw+'Box" href="./demo.html?type='+sw2+'" target="_blank" data-url="demo.html" data-param="bylw">样例</a>'
+                text+='<img class="img_js '+sw+'Box" src="../pc/assets/img/'+sw+'_js.png" alt="">'
+                $('.describedImg').append(text)
+                $('.commodityTypeNameSvg').append('<img class="'+sw+'Text" src="../pc/assets/img/'+sw+'.svg" alt="">')
+            }
         }
     }
     initial()
@@ -1213,6 +1249,24 @@
                     }
                 }
             }
+            if(window.localStorage.getItem('project_order')){  // 支付页返回按钮 选择下单商品
+                if(!(['bylwsenior' , 'ktbgsenior' , 'qklwsenior'].includes(window.localStorage.getItem('projectName_order')))){
+                    if(window.localStorage.getItem('projectName_order') == 'wxzs2'){
+                        for(var key in typeData) {
+                            if(typeData[key].short_name == 'wxzs'){
+                                $("#type_s").val(key)
+                                selectObj.selectpicker('refresh');
+                                changeType($("#type_s"))
+                            }
+                        }
+                    }else{
+                        $("#type_s").val(window.localStorage.getItem('project_order'))
+                        selectObj.selectpicker('refresh');
+                        changeType($("#type_s"))
+                    }
+                    window.localStorage.removeItem('project_order')
+                }
+            }
         }, 0)
 
 
@@ -1254,6 +1308,14 @@
                     if(parameterSet['bylwsenior'].submit_attribute.value.reference_content.value) {
                         $(".supplement").show()
                     }
+                }
+            }
+            if(window.localStorage.getItem('project_order')){  // 支付页返回按钮 选择下单商品
+                if(['bylwsenior' , 'ktbgsenior' , 'qklwsenior'].includes(window.localStorage.getItem('projectName_order'))){
+                    $("#type_s2").val(window.localStorage.getItem('project_order'))
+                    window.localStorage.removeItem('project_order')
+                    selectObj2.selectpicker('refresh');
+                    changeType($("#type_s2"))
                 }
             }
             $(".form-loading").hide()

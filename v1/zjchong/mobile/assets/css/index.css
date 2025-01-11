@@ -358,7 +358,7 @@
   padding-top: 1rem;
 }
 .home .main-tab-bar .submitContent .form_block .files_upload .upload_tips .p2 .format {
-  width: 4.5rem;
+  padding: 0 0.63rem;
   height: 2.4rem;
   line-height: 2.4rem;
   text-align: center;

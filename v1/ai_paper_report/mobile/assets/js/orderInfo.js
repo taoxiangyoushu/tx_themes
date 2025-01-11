@@ -14,7 +14,7 @@
                 $("#dateTime").text(orderInfoData.created) // 时间
                 $('#title').text(orderInfoData.place_order_data.title && orderInfoData.place_order_data.title.value) // 标题
                 $('#NumberWords').text((orderInfoData.place_order_data.word_num && orderInfoData.place_order_data.word_num.value)  + '字') // 字数
-                
+                $('#amountText1').text(orderInfoData.order_amount)
                 if(orderInfoData.place_order_data.paper_type && orderInfoData.place_order_data.paper_type.value && orderInfoData.short_name == 'zjcaigc') { // 论文类型
                     $('.Subject').show()
                     $('#PaperTypeName').text(orderInfoData.place_order_data.paper_type.value)

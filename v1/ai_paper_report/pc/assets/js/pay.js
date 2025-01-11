@@ -142,6 +142,56 @@ $(".tb-payOrder").click(function (){
         return
     }
     var closeMsgTb = cocoMessage.loading("订单支付中", 2000);
+    
+    // 判断是否存在优惠券, 存在的话重新生成订单
+    if($('.errorTip1').is(':visible')) {
+        // 清空优惠券
+        $('.Exchange_hidden').show()
+        $('.errorTip1').hide()
+        $('.eliminateCoupon').click()
+        var goods = []
+        for(var i = 0; i< $('.appreciationLI').length; i++) {
+            if($('.appreciationLI').eq(i).hasClass('selected')) {
+                goods.push($('.appreciationLI').eq(i).attr('goodsId-key'))
+            }
+        }
+        var formData = getFormData({
+            order_sn: order_sn,
+            goods: goods.toString()
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/variation/order',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                closeMsg()
+                if (res.code == 200) {
+                    $('.orderAmount').text( res.data.order_amount || '0.00')
+                    $("#orderAmount2").text(res.data.order_amount)
+                    $('#dateTime').text(res.data.created)
+                    $('#orderIdText').text(res.data.order_sn)
+                    order_sn = res.data.order_sn
+                    thirdParty(closeMsgTb)
+                }else {
+                    closeMsg()
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+                contentTypeIs = true
+                closeMsg()
+            },
+        });
+    }else {
+        thirdParty(closeMsgTb)
+    }
+})
+function thirdParty(closeMsgTb) {
     let formData = getFormData({
         order_sn: order_sn,
         pay_type: $('.zdyType.Select').attr('data-type'),
@@ -182,7 +232,7 @@ $(".tb-payOrder").click(function (){
             closeMsgTb()
         }
     })
-})
+}
 
 // 切换到第三方支付
 function thirdpartyPayOrder() {
@@ -467,12 +517,21 @@ $('.clearfix2>.payType>div').click(function () {
             pay_type = $(this).attr('data-type')
             if(pay_type == 'thirdparty'){
                 thirdpartyPayOrder()
+                $('#coupon').attr('disabled' , true)
+                $('.use_now').addClass('disabledCss')
                 return;
             }
             else{
                 $('.Coupondisabled').removeClass('Coupon_dis')
                 $('.Picture_event1').hide()
-                $('.Picture_event').show()
+                if(window.sessionStorage.getItem('editionKey') == 'bylwsenior'){
+                    $('.Picture_event3').show()
+                }
+                else{
+                    $('.Picture_event2').show()
+                }
+                $('#coupon').attr('disabled' , false)
+                $('.use_now').removeClass('disabledCss')
             }
             $(".tbPay").hide();
             $(".code").show();
@@ -528,7 +587,14 @@ $(".appreciationUL").on('click','.appreciationLI',function(){
                 $('.orderAmount').text( res.data.order_amount || '0.00')
                 $("#orderAmount2").text(res.data.order_amount)
                 $('#dateTime').text(res.data.created)
-                payOrder()
+                $("#Total_amount").text(res.data.order_money)
+                if(pay_type!='thirdparty') {
+                    payOrder()
+                }else {
+                    closeMsg()
+                    contentTypeIs = true
+                    $('#orderIdText').text(order_sn)
+                }
                 clearTimeout(Timeout);
             }else {
                 cocoMessage.error("增值服务选择失败!", 2000);
@@ -780,6 +846,10 @@ $(".determine_btn").on('click',function (){
     couponsPay()
 })
 $('.getBack').click(function() {
+    if(typeData[getQueryVariable('contentType')]){
+        window.localStorage.setItem('projectName_order', typeData[getQueryVariable('contentType')].short_name)
+        window.localStorage.setItem('project_order', getQueryVariable('contentType'))
+    }
     if( ['bylwsenior' , 'ktbgsenior' , 'qklwsenior'].includes(window.sessionStorage.getItem('editionKey'))){
         $(".jump-prompt").fadeIn()
         $(".mask_body").fadeIn()
@@ -893,38 +963,38 @@ function Readjust(){
         order_sn: order_sn,
         goods: goods.toString(),
     })
-        $.ajax({
-            type: 'post',
-            url: urls + '/api/client/order/variation/order',
-            data: formData,
-            contentType: false,
-            processData: false,
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function (res) {
-                if (res.code == 200) {
-                    order_sn = res.data.order_sn
-                    $('.orderAmount').text( res.data.order_amount || '0.00')
-                    $("#orderAmount2").text(res.data.order_amount)
-                    $('#dateTime').text(res.data.created)
-                    payOrder()
-                    clearTimeout(Timeout);
+    $.ajax({
+        type: 'post',
+        url: urls + '/api/client/order/variation/order',
+        data: formData,
+        contentType: false,
+        processData: false,
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (res) {
+            if (res.code == 200) {
+                order_sn = res.data.order_sn
+                $('.orderAmount').text( res.data.order_amount || '0.00')
+                $("#orderAmount2").text(res.data.order_amount)
+                $('#dateTime').text(res.data.created)
+                payOrder()
+                clearTimeout(Timeout);
+            }else {
+                cocoMessage.error("请求失败!", 2000);
+                if($(this).hasClass('selected')) {
+                    $(this).removeClass('selected')
                 }else {
-                    cocoMessage.error("增值服务选择失败!", 2000);
-                    if($(this).hasClass('selected')) {
-                        $(this).removeClass('selected')
-                    }else {
-                        $(this).addClass('selected')
-                    }
-                    contentTypeIs = true
-                    closeMsg()
+                    $(this).addClass('selected')
                 }
-            },
-            error: function () {
-                cocoMessage.error("请求失败!请检查网络", 2000);
                 contentTypeIs = true
                 closeMsg()
-            },
-        });
+            }
+        },
+        error: function () {
+            cocoMessage.error("请求失败!请检查网络", 2000);
+            contentTypeIs = true
+            closeMsg()
+        },
+    });
 }

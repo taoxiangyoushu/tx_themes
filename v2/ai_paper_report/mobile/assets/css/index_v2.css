@@ -56,6 +56,27 @@ body {
 .form .Conditions .inputBox {
   width: 100%;
 }
+.form .Conditions .inputBox #contenteditable {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.form .Conditions .inputBox .recommend_title {
+  vertical-align: middle;
+  color: #0072FF;
+  background: #E4F0FF;
+  border-radius: 0.4rem;
+  line-height: normal;
+  padding: 0.8rem 0.6rem;
+  width: 8.6rem;
+}
+.form .Conditions .inputBox .recommend_title img {
+  vertical-align: middle;
+  width: 1.9rem;
+  margin-top: -0.4rem;
+}
 .form .Conditions .surrounded {
   border: 1px solid #DCDFE6 !important;
   border-radius: 0.5rem;
@@ -532,4 +553,16 @@ input[type="checkbox"] {
 }
 input[type=checkbox] {
   margin-top: 0.14rem;
+}
+.optimize {
+  display: none;
+}
+#App.bylw .form #contenteditable {
+  width: 100%;
+}
+#App.bylw #titleID .optimize {
+  display: inline-block;
+}
+#App.bylw #titleID #contenteditable {
+  width: calc(100% - 8.6rem - 0.8rem);
 }

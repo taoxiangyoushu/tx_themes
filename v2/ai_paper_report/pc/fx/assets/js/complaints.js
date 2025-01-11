@@ -101,7 +101,7 @@ $('.submitApplication').click(function() {
     if (bootstrapValidator.isValid() && fid.length) {
         var voucher = ''
         for(var i=0; i<fid.length; i++) {
-            voucher+=fid[i].path + (fid.length-1==i? '':',')
+            voucher+=fid[i].relative_path + (fid.length-1==i? '':',')
         }
         var formData = getFormData({
             real_name: $('#real_name').val(),

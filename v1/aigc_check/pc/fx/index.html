@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>分销中心</title>
         <link rel="shortcut icon" href="../../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
-        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap.min.css?v=p24.0045">
-        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrapValidator.min.css?v=p24.0045">
-        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-datetimepicker.min.css?v=p24.0045">
-        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-select.min.css?v=p24.0015">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap.min.css?v=pfx24.0046">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrapValidator.min.css?v=pfx24.0046">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-datetimepicker.min.css?v=pfx24.0046">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-select.min.css?v=pfx24.0046">
         <link rel="stylesheet" href="../../pc/fx/assets/css/common.css">
-        <link rel="stylesheet" href="../../pc/fx/assets/css/index.css?v=fx1.0">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/index.css?v=pfx24.0046">
         <link rel="stylesheet" href="../../pc/fx/assets/css/withdraw.css">
         
         <!-- head_script -->
@@ -194,9 +194,9 @@
                                     <div class="search" id="withdrawalSearch">
                                         搜索
                                     </div>
-                                    <!-- <div class="derived" id="withdrawalderived">
+                                    <div class="derived" id="withdrawalderived">
                                         导出
-                                    </div> -->
+                                    </div>
                                 </div>
                                 <table class="table table-hover">
                                     <thead class="theads">
@@ -205,7 +205,7 @@
                                             <th class="th" width="120" style="text-align:center;">提现方式</th>
                                             <th class="th" width="120" style="text-align:center;">申请金额</th>
                                             <th class="th" width="120" style="text-align:center;">申请时间</th>
-                                            <!-- <th class="th" width="100" style="text-align:center;">完成时间</th> -->
+                                            <th class="th" width="100" style="text-align:center;">更新时间</th>
                                             <th class="th" width="100" style="text-align:center;">状态</th>
                                             <th class="th" width="100" style="text-align:center;">操作</th>
                                         </tr>
@@ -589,22 +589,23 @@
     <input id="copyInput" type="text">
 </body>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
-<script src="../../pc/fx/assets/js/jquery.min.js?v=p24.0045"></script>
-<script src="../../pc/fx/assets/js/bootstrap.min.js?v=p24.0045"></script>
-<script src="../../pc/fx/assets/js/bootstrapValidator.min.js?v=p24.0045"></script>
-<script src="../../pc/fx/assets/js/qrcode.min.js?v=p24.0045"></script>
-<script src="../../pc/fx/assets/js/coco-message.js?v=p24.0045"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0045"></script>
+<script src="../../pc/fx/assets/js/jquery.min.js?v=pfx24.0046"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.6"></script>
+<script src="../../pc/fx/assets/js/bootstrap.min.js?v=pfx24.0046"></script>
+<script src="../../pc/fx/assets/js/bootstrapValidator.min.js?v=pfx24.0046"></script>
+<script src="../../pc/fx/assets/js/qrcode.min.js?v=pfx24.0046"></script>
+<script src="../../pc/fx/assets/js/coco-message.js?v=pfx24.0046"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pfx24.0046"></script>
 <script src="../../pc/fx/assets/js/jqPaginator.min.js?v=1.0"></script>
 <script src="../../pc/fx/assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="../../pc/fx/assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
-<script src="../../pc/fx/assets/js/bootstrap-select.js?v=p24.0015"></script>
+<script src="../../pc/fx/assets/js/bootstrap-select.js?v=pfx24.0046"></script>
 <script src="../../pc/fx/assets/js/html2canvas.min.js"></script>
-<script src="../../pc/fx/assets/js/common.js?v=p24.0045"></script>
+<script src="../../pc/fx/assets/js/common.js?v=pfx24.0046"></script>
 <script src="../../pc/fx/assets/js/myPage.js?v=1.0"></script>
 <script src="../../pc/fx/assets/js/withdrawa.js?v=1.0"></script>
 <script src="../../pc/fx/assets/js/complaints.js"></script>
-<script src="../../pc/fx/assets/js/configured.js?v=p24.0045"></script>
+<script src="../../pc/fx/assets/js/configured.js?v=pfx24.0046"></script>
 <script>
     function infoSuccess(data){
         if(data.project[0].jane_name == 'dsxz') {
@@ -888,7 +889,7 @@
             text += "	<td>" + data[i].withdrawal_mode_human + "</td>";
             text += "	<td>" + data[i].withdrawal_amount + "</td>";
             text += "	<td>" + data[i].created + "</td>";
-            // text += "	<td>" + data[i].update + "</td>"
+            text += "	<td>" + data[i].update + "</td>"
             text += "	<td><div class=\"status_human\"><span class=\""+statusClass+"\">" + data[i].status_human + "</span>"+ imgTips +"</div></td>";
                 text += "	<td>";
                 text += "       <span class=\"detailsTrigger\" data-index=\""+i+"\">详情</span>";
@@ -953,7 +954,7 @@
             create_date: ($('#date3').val() && $('#date4').val())? ($('#date3').val() + '|' + $('#date4').val()):'',
             status: $('#typeStatus').val(),
         }
-        let url = "/api/client/distribution/withdrawal_list/export/to_excel?"+'user_token='+USER_TOKEN+'&jane_name='+JANE_NAME;
+        let url = "/api/client/distribution/withdrawal_list/export/to_excel?"+'user_token='+USER_TOKEN+'&jane_name='+JANE_NAME+"&_session_type=user&domain="+window.location.origin;
         if (this.formData) {
             let form=this.formData
             let queryArr = [];

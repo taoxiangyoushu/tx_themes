@@ -156,7 +156,7 @@ $("#exampleInputFile").on('change',function (e){
             data: formdata,
             success: function (res){
                 if(res.code == 200){
-                    fid = res.data.path
+                    fid = res.data.relative_path
                 }else{
                     if(res.codeMsg){
                         cocoMessage.error(res.codeMsg, 2000);

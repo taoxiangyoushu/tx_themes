@@ -1,11 +1,9 @@
 .getBack {
-    width: 100%;
-    // max-width: 1170px;
     cursor: pointer;
     margin: auto;
     color: #222222;
     font-size: 14px;
-    margin-top: 64px;
+    display: inline-block;
     &>span {
         cursor: pointer;
     }
@@ -14,7 +12,7 @@
     }
 }
 #payHtml {
-    padding: 0 65px;
+    padding: 36px 65px 60px;
 }
 a {
     color: #222222;
@@ -483,7 +481,7 @@ a {
             margin-left: -28px;
             margin-right: 8px;
             vertical-align: middle;
-            margin-top: -2px;
+            margin-top: -4px;
             cursor: pointer;
             display: none;
             &:hover {
@@ -515,6 +513,11 @@ a {
                 background: #006fff;
                 cursor: pointer;
                 pointer-events: auto;
+            }
+            &.disabledCss {
+                cursor: not-allowed;
+                pointer-events: none;
+                background: #006fff82;
             }
         }
         .welfare-entrance {
@@ -564,7 +567,7 @@ a {
                 top: -1px;
             }
         }
-        
+
         .activityTip {
             display: none;
             margin-left: 10px;
@@ -597,6 +600,9 @@ a {
                 float: right;
                 margin-top: 8px;
                 margin-right: 10px;
+                display: none;
+            }
+            .Picture_event3{
                 display: none;
             }
             .Coupondisabled{
@@ -1116,11 +1122,6 @@ a {
         }
     }
 }
-@media (max-width: 1440px) {
-    .getBack {
-        margin-top: 30px;
-    }
-}
 .PreviewClick {
     cursor: pointer;
     color: #1296db;
@@ -1369,7 +1370,7 @@ input#tbTid,input#tbTid-2 {
         background-color: transparent;
     }
     .editMain {
-        height: calc(100% - 114px); 
+        height: calc(100% - 114px);
         > div {
             height: calc(100% - 8px);
         }

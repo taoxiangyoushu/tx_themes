@@ -15,6 +15,7 @@
                 $('#orderTitle').text(orderInfoData.place_order_data.title && orderInfoData.place_order_data.title.value) // 标题
                 $('#NumberWords').text(orderInfoData.place_order_data.word_num && orderInfoData.place_order_data.word_num.value) // 字数
                 $("#orderAmount2").text(orderInfoData.order_amount) // 订单信息金额
+                $('#Total_amount').text(orderInfoData.order_amount)
                 $(".orderAmount").text(orderInfoData.order_amount) // 二维码右侧默认金额
                 $('.typeTag').text(orderInfoData.goods_name).show()
                 if( orderInfoData.goods_short_name == 'ktbgsenior') {

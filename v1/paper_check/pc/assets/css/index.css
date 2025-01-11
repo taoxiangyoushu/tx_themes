@@ -23,8 +23,9 @@
   height: 100%;
   margin: 0 auto;
 }
-.head .logo img {
-  margin-top: 11px;
+.head .logo {
+  height: 60px;
+  line-height: 60px;
 }
 .head .nav-download {
   width: 80px;
@@ -118,7 +119,7 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
   margin: 0 14px;
-  width: 288px;
+  min-width: 292px;
   display: inline-block;
 }
 .banner .introduce .typed-cursor {
@@ -768,3 +769,4 @@
 .QRCodeDL {
   line-height: normal !important;
 }
+/*# sourceMappingURL=index.css.map */

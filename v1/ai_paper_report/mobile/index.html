@@ -41,15 +41,15 @@
     <meta name="description" content="AI大师写作是一个提供撰写论文的全面指导,包括图表、表格、公式等方面的建议。" />
     <meta name="keywords" content="AI大师写作，论文范文生成，毕业论文" />
     <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/leftCss.css?v=m24.00021">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/leftCss.css?v=m24.0026">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz'
@@ -353,6 +353,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-group form-group_s short card Conditions xzaigccheck_conditions authorBox">
+                    <label class="label_s"><span class="required">*</span>作者: </label>
+                    <div class="rower inputBox">
+                        <input type="text" maxlength="15" id="author" name="title" autocomplete="off" placeholder="请正确填写作者姓名(15字内)" class="form-control">
+                    </div>
+                    <span id="title_err"></span>
+                </div>
                 <div class="jiangAIGCType">
                     <div class="form-group form-group_s short card card4 Conditions">
                         <label class="label_s">科目:</label>
@@ -381,7 +388,7 @@
                                 <div class="Not">
                                     <img src="../mobile/assets/img/Upload.png" alt="上传">
                                     <p>点击此处上传</p>
-                                    <span>文档支持txt、doc(x)，文件大小不得超过15M</span>
+                                    <span>文档支持txt、doc(x)，文件大小不得超过<span class="filSize">15</span>M</span>
                                     <p class="redText">暂不支持英语等非中文论文，非中文论文请勿提交!</p>
                                 </div>
                                 <div class="Complete">
@@ -450,11 +457,27 @@
                         <p>5.系统暂只支持中文写作。</p>
                     </div>
                     <div class="aigcTips">
-                        <p>1、系统仅支持中文，暂不支持英语等非中文，非中文请勿提交！</p>
-                        <p>2、仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
-                        <p>3、支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款。</p>
-                        <p>4、暂不支持图片、表格、公式、代码降重</p>
-                        <p>5、下载的内容仅用于参考，不作为毕业、发表使用</p>
+                        <div class="zjc_aigc_tips">
+                            <p>1、系统仅支持中文，暂不支持英语等非中文，非中文请勿提交！</p>
+                            <p>2、仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
+                            <p>3、支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款。</p>
+                            <p>4、暂不支持图片、表格、公式、代码降重</p>
+                            <p>5、下载的内容仅用于参考，不作为毕业、发表使用</p>
+                        </div>
+                        <div class="jian_aigc_tips">
+                            <p>1. 检测范围：包括但不限于
+                                <img src="../mobile/assets/img/gpt3.png" style="margin-left: 4px;" alt=""><span>ChatGPT-3.5</span><img
+                                        src="../mobile/assets/img/gpt4.png" alt=""><span>ChatGPT-4.0</span> <img
+                                        src="../mobile/assets/img/gemini.png" alt=""><span>Gemini</span> <img
+                                        src="../mobile/assets/img/claude.png" style="margin-top: -1px;" alt=""><span>Claude</span>
+                                <img src="../mobile/assets/img/wyyx.png" style="margin-top: -1px;" alt=""><span>文心一言</span>
+                                <img src="../mobile/assets/img/tyqw.png" alt=""><span>通义千问</span> <img
+                                        src="../mobile/assets/img/zpai.png" alt=""><span>智谱AI</span></p>
+                            <p>2. 系统在检测时会分析论文的上下文关系， 所以请您提交论文正文内容，如果是非正文的检测将不能保证检测的准确性</p>
+                            <p>3. 非正文部分(如标题、公式、图表、参考文献等)建议删除</p>
+                            <p>4. 此系统一旦提交，开始检测后，就会产生成本，不接受退款，多谢理解</p>
+                            <p class="redText">5. 请勿上传目录和封面，否则会检测失败！</p>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -486,7 +509,7 @@
             <div class="step2">
                 <img src="../mobile/assets/img/step123.png" alt="">
                 <div class="stepMain">
-                    <p>AI原创范文<a class="example Sample_window myLink" href="../pc/demo.html?type=bylw" target="_blank" data-url="demo.html" data-param="bylw">样例</a></p>
+                    <p>AI原创范文<a class="example Sample_window myLink" href="/demo.html?type=bylw" target="_blank" data-url="demo.html" data-param="bylw">样例</a></p>
                     <div class="stepCard">
                         <div class="col-md-12">
                             标题：<span class="economy">经济管理与财富发展</span>
@@ -535,7 +558,7 @@
                 </div>
             </div>
         </div>
-        <div class="aigcTips">
+        <div class="zjcaigcBox">
             <div class="step1">
                 <div class="steptop">
                     对比语言模型和思维逻辑
@@ -551,7 +574,7 @@
             <div class="step2">
                 <img src="../mobile/assets/img/step12.png" alt="">
                 <div class="stepMain">
-                    <p>赋能AI生成文章<a class="example myLink6" href="../pc/demo.html?type=aigc" target="_blank" rel="noopener noreferrer">样例</a></p>
+                    <p>赋能AI生成文章<a class="example myLink6" href="/demo.html?type=jaigcl" target="_blank" rel="noopener noreferrer">样例</a></p>
                     <div class="stepMainTop">
                         <div class="Tradition">
                             <div class="TraditionBox">
@@ -622,7 +645,7 @@
             <div class="step2">
                 <img src="../mobile/assets/img/step12wxzs.png" alt="">
                 <div class="stepMain">
-                    <p>AI生成文献综述<a class="example myLink4" href="../pc/demo.html?type=wxzs" target="_blank" rel="noopener noreferrer" data-param="wxzs">样例</a></p>
+                    <p>AI生成文献综述<a class="example myLink4" href="/demo.html?type=wxzs" target="_blank" rel="noopener noreferrer" data-param="wxzs">样例</a></p>
                     <div class="VersionTips">
                         <b style="display: inline-block;">根据<span>研究目的、专业背景和学术需求</span>选择以下综述：</b>
                     </div>
@@ -711,7 +734,7 @@
             <div class="step2">
                 <img src="../mobile/assets/img/step12wxzs.png" alt="">
                 <div class="stepMain">
-                    <p>AI原创报告范本<a class="example myLink1" href="../pc/demo.html?type=ktbg" target="_blank" rel="noopener noreferrer" data-param="ktbg">样例</a></p>
+                    <p>AI原创报告范本<a class="example myLink1" href="/demo.html?type=ktbg" target="_blank" rel="noopener noreferrer" data-param="ktbg">样例</a></p>
                     <div class="Referenc">
                         <img src="../mobile/assets/img/bg2.png" alt="">
                     </div>
@@ -748,7 +771,7 @@
             <div class="step2">
                 <img src="../mobile/assets/img/step12rws.png" alt="">
                 <div class="stepMain">
-                    <p>AI生成任务书范文<a class="example myLink2" href="../pc/demo.html?type=rws" target="_blank" rel="noopener noreferrer" data-param="rws">样例</a></p>
+                    <p>AI生成任务书范文<a class="example myLink2" href="/demo.html?type=rws" target="_blank" rel="noopener noreferrer" data-param="rws">样例</a></p>
                     <div class="Referenc">
                         <img class="imgmb" src="../mobile/assets/img/mb.png" alt="">
                         <img class="imgrws" src="../mobile/assets/img/rws.png" alt="">
@@ -793,7 +816,7 @@
             <div class="step2">
                 <img src="../mobile/assets/img/step12qklw.png" alt="">
                 <div class="stepMain">
-                    <p>AI原创范文<a class="example myLink3" href="../pc/demo.html?type=qklw" target="_blank" rel="noopener noreferrer" data-param="qklw">样例</a></p>
+                    <p>AI原创范文<a class="example myLink3" href="/demo.html?type=qklw" target="_blank" rel="noopener noreferrer" data-param="qklw">样例</a></p>
                     <div class="Referenc">
                         <p class="Title"><b>标题：</b>跨国公司对发展中国家经济的影响</p>
                         <p class="color1"><b>摘要：</b>本文旨在探讨跨国公司对发展中国家经济的影响，并通过理论...</p>
@@ -881,7 +904,7 @@
             <div class="step2">
                 <img src="../mobile/assets/img/step12wxbg.png" alt="">
                 <div class="stepMain">
-                    <p>AI生成实践报告范文<a class="example Sample_window myLink5" href="../pc/demo.html?type=sjbg" target="_blank" data-url="demo.html" data-param="sjbg">样例</a></p>
+                    <p>AI生成实践报告范文<a class="example Sample_window myLink5" href="/demo.html?type=sjbg" target="_blank" data-url="demo.html" data-param="sjbg">样例</a></p>
                     <div class="Referenc">
                         <div class="leftBox">
                             <img src="../mobile/assets/img/p1sxbg.png" alt="">
@@ -960,7 +983,7 @@
             <div class="step2">
                 <img src="../mobile/assets/img/step12ppt.png" alt="">
                 <div class="stepMain">
-                    <p>AI生成答辩PPT模板<a class="example myLink7" href="../pc/demo.html?type=dbppt" target="_blank" data-url="demo.html" data-param="bylw">样例</a></p>
+                    <p>AI生成答辩PPT模板<a class="example myLink7" href="/demo.html?type=dbppt" target="_blank" data-url="demo.html" data-param="bylw">样例</a></p>
                     <div class="Referenc">
                         <div class="leftBox">
                             <img src="../mobile/assets/img/max-k.png" alt="">
@@ -1030,7 +1053,7 @@
             <div class="step2">
                 <img src="../mobile/assets/img/step12kclw.png" alt="">
                 <div class="stepMain">
-                    <p>AI原创范文<a class="example myLink9" href="../pc/demo.html?type=kclw" target="_blank" data-url="demo.html" data-param="kclw">样例</a></p>
+                    <p>AI原创范文<a class="example myLink9" href="/demo.html?type=kclw" target="_blank" data-url="demo.html" data-param="kclw">样例</a></p>
                     <div class="Referenc">
                         <p class="Title"><b>标题：</b>大学生消费水平结构分析</p>
                         <p class="color1"><b>摘要：</b>本文旨在通过对大学生的消费结构及消
@@ -1092,7 +1115,7 @@
             <div class="step2">
                 <img src="../mobile/assets/img/step12dybg.png" alt="">
                 <div class="stepMain">
-                    <p>AI生成调研报告范文<a class="example myLink8" href="../pc/demo.html?type=dybg" target="_blank" data-url="demo.html" data-param="dybg">样例</a></p>
+                    <p>AI生成调研报告范文<a class="example myLink8" href="/demo.html?type=dybg" target="_blank" data-url="demo.html" data-param="dybg">样例</a></p>
                     <div class="Referenc">
                         <p class="Description">每篇范文<span>大约1.5万字左右</span>，参考文献不计入</p>
                         <div class="mainBox">
@@ -1121,6 +1144,52 @@
                         <div class="bottomDiv">
                             <img src="../mobile/assets/img/dybg4.png" alt="">
                             <span>持续升级</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xzaigccheckBox">
+            <div class="step1">
+                <div class="steptop">
+                    <span>用AI语言模型检测AIGC</span>
+                </div>
+                <div class="stepType">
+                    快速检测论文AIGC疑似率
+                </div>
+            </div>
+            <div class="step">
+                <img src="../mobile/assets/img/arrow-down.png" alt="">
+            </div>
+            <div class="step2">
+                <img src="../mobile/assets/img/step12dybg.png" alt="">
+                <div class="stepMain">
+                    <p>AIGC查重报告<a class="example myLink8" href="/demo.html?type=aigccc" target="_blank" data-url="demo.html" data-param="dybg">样例</a></p>
+                    <div class="Referenc">
+                        <p class="Description"> AIGC查重可以区分<span class="yellow_css">人工编写</span>的内容和<span class="reds_css">AI模型生成</span>的文本</p>
+                        <div class="imgBox">
+                            <img class="aigc1" src="../mobile/assets/img/aigc1.png" alt="">
+                            <img class="arrow_aigc" src="../mobile/assets/img/arrow_aigc.png" alt="">
+                            <img class="aigcbg" src="../mobile/assets/img/aigcbg.png" alt="">
+                        </div>
+                    </div>
+                    <p>AIGC查重优势</p>
+                    <div class="Referenc1">
+                        <div>
+                            <img src="../mobile/assets/img/gx_icon.png" alt="">
+                            <span>高效检测</span>
+                        </div>
+                        <div>
+                            <img src="../mobile/assets/img/lxdy_icon.png" alt="">
+                            <span>类型多样</span>
+                        </div>
+                        <div class="bottomDiv">
+                            <img src="../mobile/assets/img/ccff.png" alt="">
+                            <span>层次丰富</span>
+                        </div>
+                        <div class="bottomDiv">
+                            <img src="../mobile/assets/img/aqkk.png" alt="">
+                            <span>安全可靠</span>
                         </div>
                     </div>
                 </div>
@@ -1395,16 +1464,16 @@
 
 
 
-<script src="../mobile/assets/js/jquery.min.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/bootstrap.min.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/clipboard.min.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/common.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/bootstrap-select.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/bootstrapValidator.min.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/message.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/index.js?v=p24.0051"></script>
+<script src="../mobile/assets/js/jquery.min.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/bootstrap.min.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/clipboard.min.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/bootstrap-select.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/bootstrapValidator.min.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/message.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/index.js?v=m24.0026"></script>
 <script>
 // 生成图片和表格
 $(".genImg").on('click',function (){

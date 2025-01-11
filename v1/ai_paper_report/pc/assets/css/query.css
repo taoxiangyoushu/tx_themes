@@ -26,7 +26,6 @@ header {
   padding: 10px;
 }
 .content {
-  margin-top: 85px;
   width: auto;
 }
 .content .Breadcrumb {
@@ -189,15 +188,12 @@ tbody th {
 }
 .DownloadSeparately {
   display: inline;
-}
-.DownloadSeparately span {
   border-radius: 8px;
   color: #fff;
   width: 70px;
   display: inline-block;
   text-align: center;
   line-height: 30px;
-  margin-left: 10px;
   background-image: linear-gradient(90deg, #006aff 0%, #0094ff 100%);
   white-space: nowrap;
   cursor: pointer;
@@ -470,22 +466,15 @@ a {
   outline: 0;
   text-decoration: none;
 }
+.queryApp .download {
+  padding: 5px 0;
+}
+.queryApp .download > div {
+  margin: 5px 5px;
+}
 @media (max-width: 1400px) {
   .content .searchParameters input.orderId {
-    width: 220px;
-  }
-}
-@media (max-width: 1200px) {
-  .content .searchParameters input.orderId {
-    width: 170px;
-  }
-  .content .searchParameters input.orderId {
-    margin-left: 10px;
-  }
-}
-@media (max-width: 1100px) {
-  .orderId-name {
-    display: none;
+    width: 230px;
   }
 }
 @media (max-width: 1418px) {
@@ -512,9 +501,6 @@ a {
   .download .delete-btn,
   .download .complete {
     margin: 0px 10px 10px 10px;
-  }
-  .content .resultBox .orderInformation.table tbody tr th {
-    padding-bottom: 0;
   }
   .download .scanFollow {
     margin-bottom: 10px;

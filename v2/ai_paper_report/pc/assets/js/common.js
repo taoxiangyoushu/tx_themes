@@ -175,6 +175,21 @@ var payWayInfo= {}
 var memberFu = {}
 var scanCodeRichInfo = {}
 
+// 默认选中后端key转前端key
+var keyConversion = {
+	bylw: 'bylw',
+	wxzs: 'wxzs',
+	ktbg: 'ktbg',
+	rws : 'rws',
+	qklw: 'qklw',
+	sjbg: 'sxbg',
+	dbppt: 'lwdbppt',
+	kclw: 'kclw',
+	dybg: 'dybg',
+	aigccc: 'xzaigccheck',
+	jaigcl: 'zjcaigc'
+}
+
 window.onload = function (){
 	// v2版本可以走缓存
 	// if(window.sessionStorage.getItem('infoData') && $('.indexAppv2').length) {
@@ -293,8 +308,8 @@ function infoData(result) {
 			}
 		})
 	}else{
-		var sw = getQueryVariable('short_name') || getQueryVariable('sw')
-		defaultType(sw) // 默认选中版本
+		var sw = keyConversion[getQueryVariable('short_name') || getQueryVariable('sw')]
+		if(sw) defaultType(sw) // 默认选中版本
 	}
 
 	if(data.domain_config && data.domain_config.distribution_status) {
@@ -393,7 +408,7 @@ $('.Toggle2').click(function () {
 });
 
 function editionType(edition , is) {
-	$('#App').removeClass('bylw ktbgsenior bylwsenior wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt qklwsenior')
+	$('#App').removeClass('bylw ktbgsenior bylwsenior wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt qklwsenior xzaigccheck')
 	$('#App').addClass(edition)
 	window.sessionStorage.setItem('editionKey' , edition)
 	if(edition == "bylw") { // 毕业论文极速版
@@ -417,7 +432,11 @@ function editionType(edition , is) {
 		$('#App').addClass('ProfessionalEdition')
 		$('#outline').text('下一步，选提纲')
 	}else {
-		if(edition == 'zjcaigc') {
+		if(edition == 'xzaigccheck') {
+			$('.Universal').hide()
+			$('#generate').text('提交检测')
+			$('.aigcTips').show()
+		}else if(edition == 'zjcaigc') {
 			$('.Universal').hide()
 			$('.aigcTips').show()
 			$('#generate').text('开始降AIGC率')
@@ -483,6 +502,7 @@ if(getQueryVariable('editionType')) {
 	// if($('#App').hasClass('indexApp') && window.sessionStorage.getItem('editionKey')=='zjcaigc') {
 	// 	editionType("bylw")
 	// } else {
+	// 	editionType(window.sessionStorage.getItem('editionKey') || "bylw")
 	// }
 	editionType(window.sessionStorage.getItem('editionKey') || "bylw")
 	// editionType("bylw") // 关闭专业版, 打开这一行

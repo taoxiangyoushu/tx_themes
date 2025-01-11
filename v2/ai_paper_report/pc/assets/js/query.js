@@ -42,6 +42,7 @@ $('.searchBtn').click(function() {
         $(".guide").html("输入订单号/优惠券查询结果")
         $('.tbody').hide()
         $('.noData').show()
+        $('.resultBox').addClass('initTipsShow')
     }else {
         query(true)
     }
@@ -140,7 +141,7 @@ function query(e) {
                     }else{
                         if(resData.order_status != '97') {
                             if(res.data[i].isPartDownload) {
-                                text += "<div class='DownloadSeparately titles "+ btnNC +"' data-id=\""+resData.order_sn+"\"><span>下载</span></div>";
+                                text += "<div class='DownloadSeparately "+ btnNC +"' data-id=\""+resData.order_sn+"\"><span>下载</span></div>";
                             }else if(resData.end_product) {
                                 var download_dom = "<a class='complete "+ btnNC +"' href=\""+resData.end_product+"\" target=\"_blank\"><span class=\"allowText\">下载结果</span></a> ";
                                 if (window.hasOwnProperty('download_post_handle')){
@@ -204,6 +205,7 @@ function query(e) {
                     $(".guide").html("非常抱歉，没有找到订单记录")
                 }
                 clearTimeout(timers);
+                $('.resultBox').addClass('initTipsShow')
                 // $('.deleteS').hide()
             }
             $('.loadLine').hide()
@@ -216,6 +218,7 @@ function query(e) {
             $('.deleteS').hide()
             $('.loadLine').hide()
             clearTimeout(timers);
+            $('.resultBox').addClass('initTipsShow')
         },
     });
 }
@@ -224,6 +227,7 @@ $('.deleteS').click(function() {
     $('.deleteS').hide()
     $('.tbody').hide()
     $('.noData').show()
+    $('.resultBox').addClass('initTipsShow')
 })
 function deleteS(clearInput) {
     // 请求没有数据,判断是查询的本地id且查询的id和本地id一致, 就删除本地id(该id未支付)

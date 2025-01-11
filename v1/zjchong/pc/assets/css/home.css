@@ -7,7 +7,7 @@
   vertical-align: middle;
 }
 body {
-  min-width: 1670px;
+  min-width: 1270px;
 }
 .beforeInit {
   position: fixed;
@@ -195,9 +195,6 @@ body {
   background-color: #fff;
   padding: 0 30px;
   border-radius: 10px;
-}
-.app .app-body .intro-bar .intro-tab.zip_height {
-  min-height: 700px;
 }
 .app .app-body .intro-bar .intro-tab .r-bar-tab {
   position: relative;

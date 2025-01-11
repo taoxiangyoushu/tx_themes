@@ -41,17 +41,18 @@
     <meta name="description" content="AI大师写作是一个提供撰写论文的全面指导,包括图表、表格、公式等方面的建议。" />
     <meta name="keywords" content="AI大师写作，论文范文生成，毕业论文" />
     <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/commonv2.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/leftCss.css?v=m24.00021">
-    <link rel="stylesheet" href="../mobile/assets/css/index_v2.css?v=m24.00039">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/commonv2.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/leftCss.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/index_v2.css?v=m24.0027">
+    <link rel="stylesheet" href="https://api.taoxiangyoushu.com/html/v1/utils/css/smartTopic.css?v=p24.0069">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz'
@@ -142,8 +143,12 @@
                 <div class="form-group form-group_s card card3 Conditions Universal">
                     <label class="label_s">论文标题 <span>*</span></label>
                     <div class="surrounded">
-                        <div class="inputBox">
+                        <div class="inputBox isOptimize">
                             <input autocomplete="off" maxlength="50" name="contenteditable" type="text" placeholder="输入完整的标题(5-50字内)" id="contenteditable" class="form-control" />
+                            <div class="recommend_title optimize" id="recommend_title">
+                                <img src="../mobile/assets/img/prettify_m.svg" alt="">
+                                <span class="recommend_title_text">推荐标题</span>
+                            </div>
                         </div>
                     </div>
                     <span id="contenteditable_err"></span>
@@ -374,6 +379,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-group form-group_s short card Conditions xzaigccheck_conditions authorBox">
+                    <label class="label_s">作者 <span>*</span></label>
+                    <div class="surrounded">
+                        <div class="rower inputBox">
+                            <input type="text" maxlength="15" id="author" name="title" autocomplete="off" placeholder="请正确填写作者姓名(15字内)" class="form-control">
+                        </div>
+                    </div>
+                    <span id="title_err"></span>
+                </div>
                 <div class="jiangAIGCType">
                     <div class="form-group form-group_s short card card4 Conditions">
                         <label class="label_s">选择科目</label>
@@ -401,7 +415,7 @@
                                 <input name="docUpload" id="ThesisInput" type="file" single ref="docUpload" file-upload="" accept=".doc,.docx,.txt,text/plain">
                                 <div class="Not">
                                     <img src="../mobile/assets/img/Upload.png" alt="上传">
-                                    <span>文档支持txt、doc(x)，文件大小不得超过15M</span>
+                                    <span>文档支持txt、doc(x)，文件大小不得超过<span class="filSize">15</span>M</span>
                                     <p class="redText">暂不支持英语等非中文论文，非中文论文请勿提交!</p>
                                 </div>
                                 <div class="Complete">
@@ -454,11 +468,27 @@
                         <p>5.系统暂只支持中文写作。</p>
                     </div>
                     <div class="aigcTips">
-                        <p>1.系统仅支持中文，暂不支持英语等非中文，非中文请勿提交！</p>
-                        <p>2.仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
-                        <p>3.支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款。</p>
-                        <p>4.暂不支持图片、表格、公式、代码降重</p>
-                        <p>5.下载的内容仅用于参考，不作为毕业、发表使用</p>
+                        <div class="zjc_aigc_tips">
+                            <p>1、系统仅支持中文，暂不支持英语等非中文，非中文请勿提交！</p>
+                            <p>2、仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
+                            <p>3、支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款。</p>
+                            <p>4、暂不支持图片、表格、公式、代码降重</p>
+                            <p>5、下载的内容仅用于参考，不作为毕业、发表使用</p>
+                        </div>
+                        <div class="jian_aigc_tips">
+                            <p>1. 检测范围：包括但不限于
+                                <img src="../mobile/assets/img/gpt3.png" style="margin-left: 4px;" alt=""><span>ChatGPT-3.5</span><img
+                                        src="../mobile/assets/img/gpt4.png" alt=""><span>ChatGPT-4.0</span> <img
+                                        src="../mobile/assets/img/gemini.png" alt=""><span>Gemini</span> <img
+                                        src="../mobile/assets/img/claude.png" style="margin-top: -1px;" alt=""><span>Claude</span>
+                                <img src="../mobile/assets/img/wyyx.png" style="margin-top: -1px;" alt=""><span>文心一言</span>
+                                <img src="../mobile/assets/img/tyqw.png" alt=""><span>通义千问</span> <img
+                                        src="../mobile/assets/img/zpai.png" alt=""><span>智谱AI</span></p>
+                            <p>2. 系统在检测时会分析论文的上下文关系， 所以请您提交论文正文内容，如果是非正文的检测将不能保证检测的准确性</p>
+                            <p>3. 非正文部分(如标题、公式、图表、参考文献等)建议删除</p>
+                            <p>4. 此系统一旦提交，开始检测后，就会产生成本，不接受退款，多谢理解</p>
+                            <p class="redText">5. 请勿上传目录和封面，否则会检测失败！</p>
+                        </div>
                     </div>
                     <div id="filing-information"></div>
                 </div>
@@ -740,20 +770,22 @@
 
 
 
-<script src="../mobile/assets/js/jquery.min.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/bootstrap.min.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/clipboard.min.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/common.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/bootstrap-select.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/bootstrapValidator.min.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/message.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.00021"></script>
-<script src="../mobile/assets/js/index.js?v=p24.0052"></script>
+<script src="../mobile/assets/js/jquery.min.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/bootstrap.min.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/clipboard.min.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/bootstrap-select.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/bootstrapValidator.min.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/message.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/index.js?v=m24.0027"></script>
+<!-- 推荐标题 -->
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/smartTopic.js?v=p24.0069"></script>
 
 <script>
 var order_openid = ''
-function dropDownType(e) {
+function dropDownType(e, project) {
     var selectObj = $("#type_s");;
     var selectObjV2 = $(".spType .ul1");
     selectObjV2.html('')
@@ -810,6 +842,18 @@ function dropDownType(e) {
     }
     insertedImg([{short_name: 'bylw'}])
     ktbgGenerate()
+    if(project.open_re_title) {
+        $('.isOptimize').attr('id' , 'titleID')
+        aiTopicFu = new aiTopic ({
+            ele	 : '#App', // 插入节点
+            urls : urls, // 接口域名
+            USER_TOKEN: USER_TOKEN,
+            JANE_NAME: JANE_NAME,
+            inputID: '#contenteditable', // 对应的input节点
+            TriggerButton: '#recommend_title', // 触发推荐节点class名称
+            isMobile: true,
+        });
+    }
 }
 
 // 极速版左侧切换
@@ -898,8 +942,28 @@ $(document).on("click", function(e) {
 });
 $('.ViewsSample').click(function() {
     var type = typeData[$('#type_s').val()].short_name
-    window.open('/demo.html?type='+type)
+    var keyConversion = {
+        bylw: 'bylw',
+        wxzs: 'wxzs',
+        ktbg: 'ktbg',
+        rws : 'rws',
+        qklw: 'qklw',
+        sxbg: 'sjbg',
+        lwdbppt: 'dbppt',
+        kclw: 'kclw',
+        dybg: 'dybg',
+        xzaigccheck: 'aigccc',
+        zjcaigc: 'jaigcl'
+    }
+    window.open('/demo.html?type='+keyConversion[type])
 })
+$("#contenteditable").bind("input propertychange", function(){
+    if($(this).val()) {
+        $('#recommend_title .recommend_title_text').text('标题优化')
+    }else {
+        $('#recommend_title .recommend_title_text').text('推荐标题')
+    }
+});
 </script>
 </body>
 </html>

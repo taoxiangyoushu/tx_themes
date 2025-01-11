@@ -46,6 +46,12 @@
 .ContainerTo .major_sxbg .btn-default {
   color: #999999;
 }
+.ContainerTo .col-md-6 {
+  padding: 0;
+}
+.ContainerTo .col-xs-6 {
+  padding: 0;
+}
 .form-loading {
   padding: 15px;
   max-width: 860px;
@@ -275,7 +281,7 @@ table tbody {
   top: -3px;
 }
 .mainContainer {
-  padding: 60px 57px 0 57px;
+  padding: 0px 57px 0 57px;
 }
 .mainContainer .generate,
 .mainContainer .outline {
@@ -318,7 +324,8 @@ table tbody {
 .mainContainer .EnglishLiterature .contenteditable_s .toCheck,
 .mainContainer .education_c .contenteditable_s .toCheck,
 .mainContainer .jiangAIGCType .contenteditable_s .toCheck,
-.mainContainer .jiangAIGCContent .contenteditable_s .toCheck {
+.mainContainer .jiangAIGCContent .contenteditable_s .toCheck,
+.mainContainer .xzaigccheck_conditions .contenteditable_s .toCheck {
   font-size: 14px;
   line-height: 40px;
   cursor: pointer;
@@ -326,25 +333,30 @@ table tbody {
 .mainContainer .EnglishLiterature .contenteditable_s .toCheck span,
 .mainContainer .education_c .contenteditable_s .toCheck span,
 .mainContainer .jiangAIGCType .contenteditable_s .toCheck span,
-.mainContainer .jiangAIGCContent .contenteditable_s .toCheck span {
+.mainContainer .jiangAIGCContent .contenteditable_s .toCheck span,
+.mainContainer .xzaigccheck_conditions .contenteditable_s .toCheck span {
   margin: 0 30px 0 10px;
 }
 .mainContainer .EnglishLiterature .contenteditable_s .EnglishReference,
 .mainContainer .education_c .contenteditable_s .EnglishReference,
 .mainContainer .jiangAIGCType .contenteditable_s .EnglishReference,
 .mainContainer .jiangAIGCContent .contenteditable_s .EnglishReference,
+.mainContainer .xzaigccheck_conditions .contenteditable_s .EnglishReference,
 .mainContainer .EnglishLiterature .contenteditable_s .education_i,
 .mainContainer .education_c .contenteditable_s .education_i,
 .mainContainer .jiangAIGCType .contenteditable_s .education_i,
 .mainContainer .jiangAIGCContent .contenteditable_s .education_i,
+.mainContainer .xzaigccheck_conditions .contenteditable_s .education_i,
 .mainContainer .EnglishLiterature .contenteditable_s .FamilyCategory,
 .mainContainer .education_c .contenteditable_s .FamilyCategory,
 .mainContainer .jiangAIGCType .contenteditable_s .FamilyCategory,
 .mainContainer .jiangAIGCContent .contenteditable_s .FamilyCategory,
+.mainContainer .xzaigccheck_conditions .contenteditable_s .FamilyCategory,
 .mainContainer .EnglishLiterature .contenteditable_s .SubmissionMode,
 .mainContainer .education_c .contenteditable_s .SubmissionMode,
 .mainContainer .jiangAIGCType .contenteditable_s .SubmissionMode,
-.mainContainer .jiangAIGCContent .contenteditable_s .SubmissionMode {
+.mainContainer .jiangAIGCContent .contenteditable_s .SubmissionMode,
+.mainContainer .xzaigccheck_conditions .contenteditable_s .SubmissionMode {
   width: 20px;
   height: 16px;
   vertical-align: text-bottom;
@@ -355,7 +367,8 @@ table tbody {
 .mainContainer .EnglishLiterature .contenteditable_s .prompt-c,
 .mainContainer .education_c .contenteditable_s .prompt-c,
 .mainContainer .jiangAIGCType .contenteditable_s .prompt-c,
-.mainContainer .jiangAIGCContent .contenteditable_s .prompt-c {
+.mainContainer .jiangAIGCContent .contenteditable_s .prompt-c,
+.mainContainer .xzaigccheck_conditions .contenteditable_s .prompt-c {
   font-size: 12px;
   color: #fe2321;
   margin-left: -12px;
@@ -366,7 +379,8 @@ table tbody {
 .mainContainer .EnglishLiterature .contenteditable_s .prompt-c img,
 .mainContainer .education_c .contenteditable_s .prompt-c img,
 .mainContainer .jiangAIGCType .contenteditable_s .prompt-c img,
-.mainContainer .jiangAIGCContent .contenteditable_s .prompt-c img {
+.mainContainer .jiangAIGCContent .contenteditable_s .prompt-c img,
+.mainContainer .xzaigccheck_conditions .contenteditable_s .prompt-c img {
   vertical-align: middle;
   margin-top: -4px;
   margin-right: 4px;
@@ -545,7 +559,6 @@ li a {
 #LiteratureType_err {
   position: absolute;
   bottom: -20px;
-  width: 100%;
 }
 #keyword_err {
   left: 134px;
@@ -640,7 +653,8 @@ input[type="number"] {
 }
 #basic_err,
 #NumberWords_err,
-#basic2_err {
+#basic2_err,
+#title_err {
   left: 137px;
   bottom: -16px;
   position: absolute;
@@ -776,6 +790,7 @@ label {
   vertical-align: bottom;
   display: inline-block;
   opacity: 0;
+  margin-top: 0.5px;
 }
 .proposal .fileBlock {
   font-size: 14px;
@@ -928,6 +943,14 @@ label {
 .version-wxzs {
   display: none;
 }
+.version-wxzs .version-wxzs-err {
+  color: #a94442;
+  font-size: 12px;
+  position: absolute;
+  bottom: -20px;
+  left: 135px;
+  display: none;
+}
 .version-wxzs-box .version-item {
   width: 200px;
   height: 102px;
@@ -1066,6 +1089,7 @@ label {
 }
 .selectPeriodical {
   display: none;
+  position: relative;
 }
 .selectPeriodical .periodicalTypeCard {
   padding-right: 6px;
@@ -1117,8 +1141,17 @@ label {
   font-size: 12px;
   color: #999999;
 }
+.selectPeriodical .periodical-err {
+  position: absolute;
+  color: #a94442;
+  font-size: 12px;
+  bottom: -24px;
+  left: 135px;
+  display: none;
+}
 .literatureNum {
   display: none;
+  position: relative;
 }
 .literatureNum .literatureNumCard {
   line-height: 40px;
@@ -1141,6 +1174,14 @@ label {
 .literatureNum .literatureNumCard .l-numB.select {
   background: #F2F5FF;
   color: #7579DB;
+}
+.literatureNum .literatureNum-err {
+  position: absolute;
+  color: #a94442;
+  font-size: 12px;
+  bottom: -16px;
+  left: 135px;
+  display: none;
 }
 @media (max-width: 1250px) {
   .main.mainContainer {
@@ -1246,6 +1287,9 @@ label {
   width: 60px;
   display: inline-block;
   margin-right: 20px !important;
+}
+.authorBox {
+  margin-bottom: 6px;
 }
 .Thesis {
   height: 195px;
@@ -1388,7 +1432,8 @@ label {
 .Thesis .DocumentWord {
   display: none;
 }
-#App.zjcaigc .groupSubmit {
+#App.zjcaigc .groupSubmit,
+#App.xzaigccheck .groupSubmit {
   padding-left: 106px;
 }
 .aigcTips {
@@ -1509,5 +1554,73 @@ label {
   left: 0;
   width: 100%;
   border-bottom: 1px solid #8387DF;
+}
+p.word-prompt {
+  display: inline-block;
+  font-size: 12px;
+  color: #b7bccb;
+  vertical-align: middle;
+  line-height: normal;
+  float: right;
+  margin-top: 12px;
+}
+p.word-prompt .text-num {
+  color: #ff001e;
+  margin: 0 4px;
+}
+.rower {
+  display: inline-block;
+  position: relative;
+  width: calc(100% - 120px);
+  height: 38px;
+  vertical-align: middle;
+}
+.rower .title-num,
+.rower .author-num {
+  position: absolute;
+  font-size: 14px;
+  color: #aaa;
+  right: 12px;
+  top: 8.5px;
+}
+.rower.content-block {
+  height: 100%;
+  margin-top: 4px;
+  width: 100%;
+}
+.way-content {
+  display: inline-block;
+  font-size: 14px;
+  color: #5e6582;
+  vertical-align: middle;
+}
+.xzaigccheck_conditions {
+  display: none;
+}
+.has-feedback .form-control {
+  padding-right: 58.5px;
+}
+.zjc_aigc_tips,
+.jian_aigc_tips {
+  display: none;
+}
+#App.zjcaigc .zjc_aigc_tips {
+  display: block;
+}
+#App.xzaigccheck .jian_aigc_tips {
+  display: block;
+  font-size: 12px;
+}
+#App.xzaigccheck .jian_aigc_tips p {
+  color: #9099b3;
+  font-weight: 400;
+}
+#App.xzaigccheck .jian_aigc_tips .redText {
+  color: #f56c6c;
+}
+#App.xzaigccheck .jian_aigc_tips img {
+  margin-top: -4px;
+  margin-right: 4px;
+  margin-left: 10px;
 }
 /*# sourceMappingURL=index.css.map */

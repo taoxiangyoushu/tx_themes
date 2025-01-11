@@ -21,17 +21,21 @@ html {
 }
 .indexAppv2 {
     overflow: hidden;
-    min-width: 1100px;
+    min-width: 1280px;
     .boxLeft {
         padding-top: 0;
         padding: 0;
-        max-width: 638px;
+        width: 552px;
         background-image: none;
         height: 100vh !important;
+        float: left;
     }
     .rightCont {
+        float: right;
         height: 100vh !important;
         overflow: auto;
+        width: calc(100% - 552px);
+        padding: 20px 28px;
         &::-webkit-scrollbar {
             width: 5px;
             background: #eee;
@@ -57,7 +61,7 @@ html {
         right: -350px;
     }
     .main {
-        max-width: 1180px;
+        max-width: none;
     }
     &.payApp {
         .main {
@@ -67,13 +71,15 @@ html {
     .mainContainer {
         padding: 0;
         .haderTetx {
-            margin-top: 80px;
-            max-width: 1180px;
+            margin-top: 0;
+            max-width: none;
+            margin-bottom: 30px;
+            font-size: 14px;
         }
         h3 , .ContainerTo , .form-loading{
             max-width: none;
-            margin: auto 40px 20px;
             width: auto;
+            padding: 0;
             .Toggle2 {
                 margin-top: 6px;
             }
@@ -90,6 +96,9 @@ html {
             right: 0;
         }
     }
+    // .case {
+    //     max-width: none;
+    // }
     .submittedH3 {
         text-align: center;
         margin-bottom: 20px;
@@ -113,11 +122,10 @@ html {
     }
     .commodityType {
         padding-top: 24px;
-        width: 30%;
+        width: 184px;
         float: left;
         background: #F8FCFF;
         box-shadow: 0px 4px 10px 0px rgba(188,210,226,0.5);
-        min-width: 127px;
         height: 100%;
         &::-webkit-scrollbar {
             display: none; /* Chrome Safari */
@@ -129,10 +137,10 @@ html {
     }
     .headType {
         float: right;
-        width: 70%;
+        width: 368px;
         background: url('../img/lftbgV1.png') no-repeat;
         background-size: 100% 100%;
-        padding-top: 64px;
+        padding-top: 7.5vh;
         text-align: center;
         height: 100%;
         &::-webkit-scrollbar {
@@ -146,7 +154,7 @@ html {
             vertical-align: bottom;
         }
         .version {
-            margin-top: 6px;
+            margin-top: 2px;
             margin-left: 8px;
             vertical-align: middle;
         }
@@ -155,7 +163,7 @@ html {
             color: #A7A8B7;
             line-height: 17px;
             letter-spacing: 7px;
-            margin-top: 4px;
+            margin-top: 10px;
         }
     }
 
@@ -211,9 +219,8 @@ html {
         }
     }
     .described {
-        padding: 0 4.2%;
+        padding: 0 20px;
         padding-top: 36px;
-        max-width: 400px;
         margin: auto;
         img {
             width: 100%;
@@ -221,112 +228,100 @@ html {
         }
         .NormalBox {
             text-align: left;
+            padding-bottom: 20px;
             img {
                 width: auto;
             }
             .Sample_window {
                 display: inline-block;
-                top: 58px;
-                right: 36px;
+                top: 56px;
+                right: 35px;
             }
             .stepMain {
-                padding-left: 46px;
+                padding-left: 46px !important;
             }
         }
     }
 }
-.stepMain .longText{
-    margin-top: 25px;
+.describedImg {
+    margin-bottom: 20px;
+    position: relative;
 }
+.stepMain {
+    padding-top: 4px;
+    .longText{
+        margin-top: 26px;
+        font-size: 16px;
+    }
+    .longTextTs {
+        margin-top: 24px;
+    }
+    &> p {
+        font-size: 16px;
+        color: #222;
+        margin-bottom: 14px;
+    }
+    .ai {
+        font-size: 16px;
+    }
+    .reportCheck{
+        padding-left: 18px;
+        margin-bottom: 24px;
+        width: 160px;
+        height: 40px;
+        line-height: 40px;
+    }
+    .stepCard2 , .stepCard p {
+        font-size: 12px;
+    }
+    .stepCard p {
+        line-height: 20px;
+    }
+    .stepCard .yc {
+        margin-top: 3px;
+        color: #3D3D3D;
+    }
+    .stepCard.stepCard2 {
+        padding: 18px 0 0 30px;
+        height: 122px;
+        span {
+            color: #152741;
+        }
+    }
+    .characteristicCard {
+        width: 46px;
+        height: 46px;
+        background-size: 100% 100%;
+        padding-top: 4px;
+    }
+}
+
 .step {
-    margin: 9px 0 16px 0;
+    margin: 5px 0 16px 0;
 }
 .stepCard img {
     margin-right: 6px !important;
 }
 .step1 {
-    margin-top: 22px;
+    margin-top: 20px;
     .stepType{
-        height: 48px;
-        line-height: 48px;
+        height: 44px;
+        line-height: 44px;
         font-weight: 400;
-
     }
 }
 .stepMain .stepCard{
     max-width: 309px;
+    padding: 16px 16px;
+    height: 158px;
 }
 .step1 .steptop{
     position: absolute;
-    top: -22px;
+    top: -20px;
     background: linear-gradient( 270deg, #0096FF 0%, #006CFF 100%);
-}
-@media (max-width: 1550px) {
-    .stepMain .stepCard p {
-        font-size: 12px;
-    }
-    .stepMain .stepCard2 {
-        font-size: 12px;
-    }
-    .stepMain > p {
-        font-size: 16px;
-    }
-    .stepMain .ai {
-        font-size: 18px;
-    }
-    .stepCard.clearfix {
-        .contents {
-            line-height: 22px;
-        }
-    }
-    .step2>img {
-        width: 34.5px !important;
-    }
-    .indexAppv2 .described .NormalBox .Sample_window {
-        top: 8.9%;
-    }
-}
-@media (max-width: 1420px) {
-    .stepMain > p {
-        font-size: 14px;
-    }
-    .stepCard.clearfix {
-        .contents {
-            line-height: 20px;
-        }
-    }
-    .step2>img {
-        width: 34px !important;
-    }
-    .stepMain .stepCard {
-        padding: 15px 0;
-    }
-    .stepMain .stepCard2 {
-        padding: 22px 10px;
-    }
-    .stepMain .ai {
-        font-size: 16px;
-    }
-    .indexAppv2 .described .NormalBox .Sample_window {
-        top: 8.9%;
-    }
-}
-@media (max-width: 1350px) {
-    .indexAppv2 {
-        .boxLeft {
-            width: 436px;
-        }
-        .rightCont {
-            width: calc(100% - 437px);
-        }
-    }
-}
-@media (max-width: 1142px) {
-    .indexAppv2 {
-        .haderTetx {
-            font-size: 13px;
-        }
-    }
+    width: 124px;
+    height: 28px;
+    line-height: 28px;
 }
 @keyframes fadeInOut {
     0% {opacity: 0;}
@@ -375,8 +370,8 @@ html {
 }
 .commodityTypeNameSvg {
     display: inline-block;
-    min-width: 144px;
-    min-height: 52px;
+    min-width: 120px;
+    min-height: 30px;
     vertical-align:middle;
     img {
         display: none;
@@ -408,7 +403,8 @@ html {
     &.lwdbppt .typeLi.lwdbppt,
     &.kclw .typeLi.kclw,
     &.dybg .typeLi.dybg,
-    &.zjcaigc .typeLi.zjcaigc {
+    &.zjcaigc .typeLi.zjcaigc,
+    &.xzaigccheck .typeLi.xzaigccheck {
         border-radius: 10px;
         color: #006CFF;
         font-weight: bold;
@@ -521,9 +517,7 @@ html {
 // }
 .queryApp , .payApp {
     &.indexAppv2 .boxLeft {
-        width: 10%;
-        max-width: 191px;
-        min-width: 131px;
+        width: 184px;
         float: left;
         .commodityType {
             width: 100%;
@@ -531,7 +525,7 @@ html {
     }
     &.indexAppv2 .rightCont {
         float: left;
-        width: 90%;
+        width: calc(100% - 184px);
         .container {
             max-width: 1400px;
         }
@@ -541,20 +535,7 @@ html {
     }
     #payHtml {
         padding: 0;
-    }
-    &.payApp {
-        &.indexAppv2 .rightCont {
-            .container {
-                max-width: 1596px;
-            }
-        }
-    }
-}
-@media (max-width: 1310px) {
-    .queryApp , .payApp {
-        &.indexAppv2 .rightCont {
-            width: calc(100% - 132px);
-        }
+        padding-top: 20px;
     }
 }
 .described {
@@ -569,58 +550,6 @@ html {
 //     vertical-align:middle !important;
 //     margin-top: -2px !important;
 // }
-.Sample_window {
-    &.wxzsBox {
-        right: 9%;
-        top: 8.6%;
-    }
-    &.ktbgBox {
-        right: 9%;
-        top: 8.2%;
-    }
-    &.rwsBox {
-        right: 9%;
-        top: 8.2%;
-    }
-    &.qklwBox {
-        right: 9%;
-        top: 7.4%;
-    }
-    &.sxbgBox {
-        right: 9%;
-        top: 9.2%;
-    }
-    &.lwdbpptBox {
-        right: 9%;
-        top: 9.1%;
-    }
-    &.kclwBox {
-        right: 9%;
-        top: 8%;
-    }
-    &.dybgBox {
-        right: 9%;
-        top: 9%;
-    }
-    &.zjcaigcBox {
-        right: 9%;
-        top: 8.9%;
-    }
-    &.bylwseniorBox {
-        right: 9%;
-        top: 6.7%;
-    }
-    &.ktbgseniorBox {
-        width: auto;
-        right: 9%;
-        top: 6.5%;
-    }
-    &.qklwseniorBox {
-        width: auto;
-        right: 9%;
-        top: 7.2%;
-    }
-}
 
 .foot {
     bottom: auto;
@@ -666,7 +595,8 @@ html {
 .zjcaigc .zjcaigcText,
 .bylwsenior .bylwText,
 .ktbgsenior .ktbgText,
-.qklwsenior .qklwText {
+.qklwsenior .qklwText,
+.xzaigccheck .xzaigccheckText {
     display: inline-block;
 }
 .AltitudeCardBox {
@@ -701,91 +631,104 @@ html {
 .indexAppv2 .mainContainer h3 .Toggle2 {
     margin-right: 22px;
 }
-.nav-activity {
-    margin-top: 2px;
-    position: absolute;
-    top: 23px;
-}
 
-@media (max-width: 1600px) {
-    .Sample_window {
-        &.wxzsBox {
-            top: 9%;
-        }
-        &.ktbgBox {
-            top: 8.5%;
-        }
-        &.rwsBox {
-            top: 8.5%;
-        }
-        &.qklwBox {
-            top: 7.7%;
-        }
-        &.sxbgBox {
-            top: 9.5%;
-        }
-        &.lwdbpptBox {
-            top: 9.5%;
-        }
-        &.kclwBox {
-            top: 8.3%;
-        }
-        &.dybgBox {
-            top: 9.3%;
-        }
-        &.zjcaigcBox {
-            top: 9.3%;
-        }
-        &.bylwseniorBox {
-            top: 7%;
-        }
-        &.ktbgseniorBox {
-            top: 6.7%;
-        }
-        &.qklwseniorBox {
-            top: 7.5%;
+.indexApp {
+    .headBox {
+        max-width: none;
+    }
+    .rightCont {
+        overflow: auto;
+    }
+}
+.queryApp , .payApp {
+    .headBox {
+        max-width: 1700px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .main .h3Text {
+        margin-top: 10px !important;
+    }
+    .rightCont {
+        overflow: auto;
+    }
+}
+.headBox {
+    margin: auto;
+    // overflow: hidden;
+    &:after{
+        content: "";
+        display: block;
+        height: 0;
+        clear:both;
+        visibility: hidden;
+    }
+    .nav-activity {
+        margin-top: 0;
+        position: static !important;
+        float: left;
+        height: 32px;
+        line-height: 32px;
+        margin-bottom: 20px;
+        a {
+            position: static;
         }
     }
-
+    .rightFloat {
+        float: right;
+        display: flex;
+        align-items: center;
+    }
+    .loginBox {
+        position: relative !important;
+        margin-left: 20px;
+        float: right;
+        top: 0 !important;
+        left: 0 !important;
+        margin-bottom: 20px;
+        line-height: 30px !important;
+        .FloatingWindow {
+            position: absolute;
+            left: -145px;
+            top: 10px;
+            z-index: 1000;
+            &::after {
+                display: inline-block;
+                content: '';
+                height: 20px;
+                width: 100%;
+                position: absolute;
+                top: -20px;
+            }
+        }
+    }
+    .Breadcrumb , .getBack {
+        line-height: 42px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
 }
-@media (max-width: 1350px) {
-    .Sample_window {
-        &.wxzsBox {
-            top: 10.1%;
-        }
-        &.ktbgBox {
-            top: 9.5%;
-        }
-        &.rwsBox {
-            top: 9.5%;
-        }
-        &.qklwBox {
-            top: 8.6%;
-        }
-        &.sxbgBox {
-            top: 10.6%;
-        }
-        &.lwdbpptBox {
-            top: 10.7%;
-        }
-        &.kclwBox {
-            top: 9.2%;
-        }
-        &.dybgBox {
-            top: 10.5%;
-        }
-        &.zjcaigcBox {
-            top: 10.4%;
-        }
-        &.bylwseniorBox {
-            top: 7.8%;
-        }
-        &.ktbgseniorBox {
-            top: 7.5%;
-        }
-        &.qklwseniorBox {
-            top: 8.5%;
-        }
+
+.queryApp , .payApp {
+    .headBox {
+        max-width: 1700px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .main .h3Text {
+        margin-top: 0 !important;
+    }
+    // .nav-activity , .loginBox {
+    //     margin-bottom: 0;
+    // }
+}
+.Sample_window {
+    &.example {
+        right: 4.6%;
+        top: 20px;
+    }
+    &.ktbgseniorBox , &.qklwseniorBox {
+        width: auto;
     }
 }
 .optimize {
@@ -839,12 +782,37 @@ html {
 #basic_err, #NumberWords_err, #basic2_err {
     width: auto;
 }
-
-.stepMain .reportCheck{
-    padding-left: 28px;
+.mainContainer .EnglishLiterature .contenteditable_s .toCheck .enLiterature {
+    margin-right: 16px;
+    margin-left: 8px;
+}
+.version-wxzs-box .version-item .v-top .v-sample .sampleImg {
+    left: -240px;
+    max-width: calc(100vw - 600px);
+    height: auto;
+    padding: 12px;
+    img {
+        max-width: 100%;
+    }
+}
+.version-wxzs-box .version-item .v-top .v-sample .sampleImg.sample-zslw {
+    left: -454px;
+}
+.tipsInfo {
+    max-width: none;
+}
+.placeholder-btnBlock {
+    margin-bottom: 20px;
 }
 
-.hasLogin{
-    position: relative;
-    top: -5px;
+
+
+
+
+@media (max-width: 1440px) {
+    .indexAppv2 {
+        .rightCont {
+            padding: 20px;
+        }
+    }
 }

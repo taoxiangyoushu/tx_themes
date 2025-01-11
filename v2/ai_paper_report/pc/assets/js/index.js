@@ -1,6 +1,7 @@
 var ktbgProfessional = []; // 开题报告专业版数据(后端用)
 var previewData = []; // 开题报告专业版数据(前端用)
 var Radius = [5000 , 50000]
+var title_record = {}  // 各商品已填写标题
 $('#keyword').manifest();
 
 var configs = {
@@ -21,7 +22,24 @@ $('#type_s , #type_s2').change(function() {
 })
 function changeType(this_ , this_val) {
     var val = this_.val() || this_val
-    var permit_name = ['rws' , 'ktbg' ,'ktbgsenior' , 'wxzs' , 'kclw' , 'zjcaigc' , 'dybg', 'lwdbppt']
+    $(".version-wxzs .version-wxzs-err").hide()
+    $(".selectPeriodical .periodical-err").hide();
+    $(".literatureNum .literatureNum-err").hide();
+    // 标题处理
+    if(typeData[val].short_name == 'xzaigccheck' || typeData[val].short_name == 'zjcaigc'){
+        if(title_record[val]){
+            $("#contenteditable4").val(title_record[val])
+        }else{
+            $("#contenteditable4").val('')
+        }
+    }else{
+        if(title_record[val]){
+            $("#contenteditable").val(title_record[val])
+        }else{
+            $("#contenteditable").val('')
+        }
+    }
+    var permit_name = ['rws' , 'ktbg' ,'ktbgsenior' , 'wxzs' , 'kclw' , 'zjcaigc' , 'dybg', 'lwdbppt' , 'xzaigccheck']
     var this_short_name = typeData[val].short_name
     if(permit_name.includes(this_short_name)) {
         $('.NumberIsShow').hide()
@@ -156,7 +174,7 @@ function changeType(this_ , this_val) {
         $(".major_sxbg").hide()
     }
 
-    if(this_short_name == 'zjcaigc') { // 减aigc特殊处理
+    if(this_short_name == 'zjcaigc') { // 降aigc特殊处理
         editionType(this_short_name)
         file_path = ''
         if($("#ThesisInput").val()){
@@ -166,6 +184,18 @@ function changeType(this_ , this_val) {
     }else {
         editionType(this_short_name)
         $('.jiangAIGCContent , .jiangAIGCType').hide()
+    }
+
+    if(this_short_name == 'xzaigccheck') { // aigc检测
+        file_path = ''
+        if($("#ThesisInput").val()){
+            $(".deleteFileThesis").click()
+        }
+        $('.xzaigccheck_conditions , .jiangAIGCContent').show()
+        $('.filSize').text(10)
+    }else {
+        $('.xzaigccheck_conditions').hide()
+        $('.filSize').text(15)
     }
 
     if(this_short_name == 'lwdbppt') {
@@ -268,11 +298,13 @@ $('#NumberWords').keyup(function() {
 $(".periodicalType").on('click', function (){
     $(".periodicalType").removeClass('select')
     $(this).addClass('select')
+    $(".selectPeriodical .periodical-err").hide();
 })
 
 $(".l-numB").on('click', function (){
     $(".l-numB").removeClass('select')
     $(this).addClass('select')
+    $(".literatureNum .literatureNum-err").hide();
 })
 
 
@@ -297,6 +329,21 @@ $("#ContainerTo").bootstrapValidator({
             validators: {
                 notEmpty: {
                     message: '专业不能为空'
+                }
+            }
+        },
+        title: {
+            container: "#title_err",
+            validators: {
+                callback: {
+                    message: '作者不能为空且最多15个字',
+                    callback: function (value, validator, $field) {
+                        if(value.length>=1 && value.length<=15) {
+                            return true
+                        }else {
+                            return false
+                        }
+                    }
                 }
             }
         },
@@ -366,7 +413,7 @@ $("#ContainerTo").bootstrapValidator({
                     message: '文档不能为空'
                 }
             }
-        }
+        },
     }
 });
 var throttling = true;
@@ -389,6 +436,11 @@ $('.generate').click(function() {
         return;
     }
     if(!$('.inputCheck').prop("checked")) return cocoMessage.error('请确认知晓并同意 "生成的论文范文仅用于参考,不作为毕业、发表使用" 条款!', 3000)
+    if(typeData[$('#type_s').val()].short_name == 'wxzs' && $(".version-wxzs2").attr('data-goodsid')) {
+        if(!$(".version-item.active").attr('data-goodsid')){
+            $(".version-wxzs .version-wxzs-err").show()
+        }
+    }
     var bootstrapValidator = $("#ContainerTo").data("bootstrapValidator").validate();
     if (bootstrapValidator.isValid()) {
         if(!throttling) return
@@ -433,7 +485,7 @@ $('.generate').click(function() {
         }
         if(typeData[$('#type_s').val()].short_name == 'wxzs' && $(".version-wxzs2").attr('data-goodsid')) {
             if(!$(".version-item.active").attr('data-goodsid')){
-                cocoMessage.error('请选择版本', 3000)
+                $(".version-wxzs .version-wxzs-err").show()
                 throttling = true
                 return;
             }else{
@@ -495,7 +547,8 @@ $('.generate').click(function() {
             }
         }
 
-        if(typeData[$('#type_s').val()].short_name != 'rws' && typeData[$('#type_s').val()].short_name != 'ktbg' && typeData[$('#type_s').val()].short_name != 'wxzs' && typeData[$('#type_s').val()].short_name != 'zjcaigc' && typeData[$('#type_s').val()].short_name != 'dybg' && typeData[$('#type_s').val()].short_name != 'lwdbppt') {
+        var noNumberWords = ['rws' , 'ktbg' , 'wxzs' , 'zjcaigc' , 'dybg' , 'lwdbppt' , 'xzaigccheck']
+        if(noNumberWords.indexOf(typeData[$('#type_s').val()].short_name) == -1) {
             formData['data[word_num][label]'] = '生成字数'
             if(typeData[$('#type_s').val()].short_name == 'kclw') {
                 formData['data[word_num][value]'] = $(".EducationalAltitude .cardSelect").attr('data-key');
@@ -563,6 +616,21 @@ $('.generate').click(function() {
         }else {
             formData['data[title][value]'] = $('#contenteditable').val()
         }
+
+        // 查aigc
+        if(typeData[$('#type_s').val()].short_name == 'xzaigccheck') {            
+            formData['data[author][label]'] = '论文作者'
+            formData['data[author][value]'] = $('#author').val()
+            formData['upload_type'] = $("input[name='upload_type']:checked").val();
+            if($("input[name='upload_type']:checked").val() == 1) {
+                formData['content'] = $('#textareaText').val();
+            }else {
+                formData['data[file_path][label]'] = '文件地址';
+                formData['data[file_path][value]'] = file_path;
+            }
+            formData['data[title][value]'] = $('#contenteditable4').val()
+        }
+
         // 实践报告
         if(typeData[$('#type_s').val()].short_name == 'sxbg' && SPECIALITY[$("#basic2").val()]!='其他（自动识别）') {
             formData['data[paper_type][label]'] = '论文类型';
@@ -675,12 +743,19 @@ function unifiedCreate(form_data, goods_id , outline) {
 
 $("#contenteditable").bind("input propertychange", function(){
     $('.numberS').text($(this).val().length)
+    if($("#App").hasClass('bylwsenior') || $("#App").hasClass('ktbgsenior') || $("#App").hasClass('qklwsenior')){
+        title_record[$("#type_s2").val()] = $(this).val()
+    }else{
+        title_record[$("#type_s").val()] = $(this).val()
+    }
 });
 $("#contenteditable4").bind("input propertychange", function(){
     $('.numberS2').text($(this).val().length)
+    title_record[$("#type_s").val()] = $(this).val()
 });
 $("#contenteditable3").bind("input propertychange", function(){
     $('#editQuantity .numberS').text($(this).val().length)
+    title_record[$("#type_s").val()] = $(this).val()
 });
 
 $('#basic').on('hidden.bs.select', function(e) {
@@ -741,6 +816,7 @@ $(".p-item").on('click',function (){
 
 $(".version-item").on('click',function (){
     $(".version-item").removeClass('active')
+    $(".version-wxzs .version-wxzs-err").hide()
     $(this).addClass('active')
 })
 
@@ -829,6 +905,7 @@ $("#uploadFile-ktbg").on('change',function (){
                     $(".fileName").addClass('hasError')
                     $(".file-uploading").hide();
                     $(".file-uploadErr").show();
+                    $('.deleteFile').click();
                 }
             }
         })

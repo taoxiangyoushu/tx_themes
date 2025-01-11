@@ -9,9 +9,9 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0042">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0042">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0042">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0044">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0044">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0044">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -92,7 +92,7 @@
                                     <div class="upload_file">
                                         <input type="file"
                                                class="file_upload" id="docUpload"
-                                               accept=".doc,.docx,.txt,text/plain">
+                                               accept=".doc,.docx,.txt,text/plain,.pdf">
 
                                         <div class="upload_btn">
                                             <img class="upload-icon" src="../pc/assets/img/icon_uploading.png" alt="">
@@ -115,6 +115,7 @@
                                                 <div class="format_item">DOC</div>
                                                 <div class="format_item">DOCX</div>
                                                 <div class="format_item">TXT</div>
+                                                <div class="format_item">PDF</div>
                                             </div>
                                             <div class="size_block">
                                                 <span class="size_text">
@@ -717,12 +718,13 @@
 </div>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
 <script src="../pc/assets/js/jquery.min.js"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.6"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="../pc/assets/js/jszip.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0042"></script>
+<script src="../pc/assets/js/common.js?v=p24.0044"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0042"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0044"></script>
 <script>
     var uploadType = 'content';
     var domain = '303';
@@ -733,6 +735,8 @@
         $(this).addClass('Select')
         if($(this).data('type') == 'aigclwjc'){
             jc_type = 'aigclwjc'
+            $(".form-upload").addClass('aigc-from')
+            $(".form-upload").removeClass('lwjc-from')
             $(".cjwt-jc").hide()
             $(".cjwt-aigc").show()
             $(".intro-tab").addClass('aigc_height')
@@ -747,6 +751,8 @@
             $("#text_content").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交！')
         }else if($(this).data('type') == 'lwjc'){
             jc_type = 'lwjc'
+            $(".form-upload").addClass('lwjc-from')
+            $(".form-upload").removeClass('aigc-from')
             $(".cjwt-jc").show()
             $(".cjwt-aigc").hide()
             $(".intro-tab").removeClass('aigc_height')
@@ -1442,6 +1448,7 @@
             $(".upload_block .deleteFile").click()
             $(".zipFile_block .deleteFile").click()
         }
+        $(".attention-list").removeClass('s-height')
         $(".uploadTy_btn").removeClass('active')
         $(this).addClass('active')
         uploadType = $(this).attr('data-type')
@@ -1454,6 +1461,7 @@
             $(".upload_block").show()
         }
         if(uploadType == 'zips') {
+            $(".attention-list").addClass('s-height')
             $(".intro-tab").addClass('zip_height')
             $(".zipFile_block").show()
             $(".report_type").hide()

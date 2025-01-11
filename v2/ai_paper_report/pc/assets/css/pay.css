@@ -1,10 +1,9 @@
 .getBack {
-  width: 100%;
   cursor: pointer;
   margin: auto;
   color: #222222;
   font-size: 14px;
-  margin-top: 64px;
+  display: inline-block;
 }
 .getBack > span {
   cursor: pointer;
@@ -13,7 +12,7 @@
   color: #0091ff;
 }
 #payHtml {
-  padding: 0 65px;
+  padding: 36px 65px 60px;
 }
 a {
   color: #222222;
@@ -462,7 +461,7 @@ a {
   margin-left: -28px;
   margin-right: 8px;
   vertical-align: middle;
-  margin-top: -2px;
+  margin-top: -4px;
   cursor: pointer;
   display: none;
 }
@@ -495,6 +494,11 @@ a {
   background: #006fff;
   cursor: pointer;
   pointer-events: auto;
+}
+.coupon_box .card .use_now.disabledCss {
+  cursor: not-allowed;
+  pointer-events: none;
+  background: #006fff82;
 }
 .coupon_box .card .welfare-entrance {
   display: none;
@@ -575,6 +579,9 @@ a {
   float: right;
   margin-top: 8px;
   margin-right: 10px;
+  display: none;
+}
+.coupon_box .card .errorTip1 .Picture_event3 {
   display: none;
 }
 .coupon_box .card .errorTip1 .Coupondisabled.Coupon_dis {
@@ -1066,11 +1073,6 @@ a {
 }
 .coupon_pop .pop_bottom .determine_btn:active {
   background: #0458c9;
-}
-@media (max-width: 1440px) {
-  .getBack {
-    margin-top: 30px;
-  }
 }
 .PreviewClick {
   cursor: pointer;

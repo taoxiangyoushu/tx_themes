@@ -530,3 +530,20 @@ body {
 #bg .spacing_box {
   margin-top: -5px !important;
 }
+.aigc_jc {
+  width: 100% !important;
+}
+.xzaigccheckbox .Image_Introduction {
+  box-shadow: none;
+  position: relative;
+  margin: 0;
+  margin-top: 0 !important;
+  display: inline-block;
+}
+.xzaigccheckbox .aigc_jc_content {
+  padding: 0 7px;
+  box-sizing: border-box;
+}
+.xzaigccheckbox #Content_sliding {
+  padding-top: 18px;
+}

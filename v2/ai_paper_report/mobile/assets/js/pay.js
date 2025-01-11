@@ -264,11 +264,13 @@ function payWay(goods_info , pay_way) {
             toastNone()
             $('#amountText').text(getQueryVariable('order_amount'))
             $('#amountText2').text(getQueryVariable('order_amount'))
+            $('#amountText1').text(getQueryVariable('order_amount'))
         }
     }else {
         toastNone()
         $('#amountText').text(getQueryVariable('order_amount'))
         $('#amountText2').text(getQueryVariable('order_amount'))
+        $('#amountText1').text(getQueryVariable('order_amount'))
     }
 
     if(!pay_way.alipay && !pay_way.wx && !pay_way.scanCodeRich && !pay_way.taobao&&!pay_way.kLenovoAiMiniPay){
@@ -509,6 +511,56 @@ $(".taobao-payBtn").click(function (){
         type: 'loading',
         time: 20000
     })
+
+    // 判断是否存在优惠券, 存在的话重新生成订单
+    if($('.Deduction').is(':visible')) {
+        // 清空优惠券
+        $('.info.couponBox').show()
+        $('.Deduction').hide()
+        $('.eliminateCoupon').click()
+        var formData = getFormData({
+            order_sn: order_sn,
+            goods: goods().toString()
+        })
+        
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/variation/order',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                if (res.code == 200) {
+                    order_sn = res.data.order_sn
+                    $('#amountText').text(res.data.order_amount)
+                    $('#amountText2').text(res.data.order_amount)
+                    $('#dateTime').text(res.data.created)
+                    $('#orderIdText').text(res.data.order_sn)
+                    $('#amountText1').text(res.data.order_money)
+                    payStatus(order_sn)
+                    thirdParty()
+                    toastNone()
+                }else {
+                    toastNone()
+                }
+            },
+            error: function () {
+                toastNone()
+                toast({
+                    msg: "请求失败!请检查网络",
+                    type: 'error',
+                    time: 2000
+                })
+            },
+        });
+    }else {
+        thirdParty()
+    }
+})
+function thirdParty() {
     TbPaying = true
     let formData = getFormData({
         order_sn: order_sn,
@@ -550,7 +602,7 @@ $(".taobao-payBtn").click(function (){
 
         }
     })
-})
+}
 function editUrl(pay_id) {
     // 修改url参数保留数据,防止返回这个页面数据发生变化
     replaceParamVal('commitId' , order_sn , 0)
@@ -631,6 +683,7 @@ $(".appreciationUL").on('click','.appreciationLI',function(){
                 $('#amountText2').text(res.data.order_amount)
                 $('#dateTime').text(res.data.created)
                 $('#orderIdText').text(res.data.order_sn)
+                $('#amountText1').text(res.data.order_money)
                 payStatus(order_sn)
                 toastNone()
             }else {
@@ -921,6 +974,7 @@ $(".use_now").on('click',function (){
             setTimeout(function () {
                 toastNone()
             }, 2000);
+            toastNone()
             if (res.code == 200) {
                 order_sn = res.data.order_sn
                 // $('#amountText2').text(res.data.order_amount)
@@ -992,6 +1046,7 @@ $('.Deduction').on('click',function(){
                 $('#amountText').text(res.data.order_amount)
                 $('#dateTime').text(res.data.created)
                 $('#orderIdText').text(res.data.order_sn)
+                $('#amountText1').text(res.data.order_money)
                 $(".oid_pop").text(res.data.order_sn)
                 payStatus(order_sn)
             }else{

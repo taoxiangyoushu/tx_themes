@@ -6,7 +6,7 @@ var systemInfo = {
 	},
 	weipu: {
 		comparisonLibrary: '中文科技期刊论文全文数据库、博士/硕士学位论文全文数据库、外文特色文献数据全库、中文主要报纸全文数据库、中国主要会议论文特色数据库、高校论文联合比对库、中国专利特色数据库、维普优先出版论文全文数据库、互联网数据资源/互联网文档资源、港澳台文献资源、图书资源、高校自建资源库、个人自建资源、库年鉴资源、古籍文献资源、IPUB原创作品',
-		Language: '中文/英文/小语种',
+		Language: '中文、英文、小语种',
 		timeConsuming: '10-30分钟',
 	},
 	paperPass: {
@@ -16,7 +16,7 @@ var systemInfo = {
 	},
 	checkPass: {
 		comparisonLibrary: '论文检测系统基于强大的精准检测算法以及稳定快速的检测云服务器',
-		Language: '中文/英文',
+		Language: '中文、英文',
 		timeConsuming: '2-20分钟',
 	},
 	zaojiance: {
@@ -26,7 +26,7 @@ var systemInfo = {
 	},
 	turnitin: {
 		comparisonLibrary: '国际版 适合人群：非英国地区学校外语论文检测，留学生等国际论文,UK版 适合人群：在英国留学的学生使用，英国大学的论文请选择UK版',
-		Language: '中文/英文/小语种（AI率检测仅支持英文，其它语言无法检测，也无法出AI率报告）',
+		Language: '中文、英文、小语种（AI率检测仅支持英文，其它语言无法检测，也无法出AI率报告）',
 		timeConsuming: '10-30分钟',
 	},
 	ithenticate: {

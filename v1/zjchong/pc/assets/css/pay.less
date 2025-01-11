@@ -1,4 +1,8 @@
 .order-cont {
+    height: 100%;
+    .heightBox {
+        height: 100%;
+    }
     .dialog-scan {
         .dialoger {
             width: 364px;
@@ -49,7 +53,7 @@
         border-radius: 10px;
         position: relative;
         &.payBox {
-            min-height: 534px;
+            height: calc(100% - 209.9px - 18px - 137.09px - 18px);
         }
         .row-label {
             margin-bottom: 18px;
@@ -1132,4 +1136,22 @@
 }
 .coupon{
     height: 34px;
+}
+
+@media screen and(max-width: 1420px) {
+    .order-cont {
+        .order-msg {
+            .row-cont {
+                .msg-list {
+                    li {
+                        &>div.special {
+                            .tit {
+                                width: 46%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

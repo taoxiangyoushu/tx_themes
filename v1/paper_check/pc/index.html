@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../pc/assets/css/select2.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0037">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0037">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0039">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0039">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
@@ -312,14 +312,15 @@
 </div>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
 <script src="../pc/assets/js/jquery.min.js"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.6"></script>
 <script src="../pc/assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="../pc/assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/select2.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0037"></script>
+<script src="../pc/assets/js/common.js?v=p24.0039"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0037"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0039"></script>
 <script>
     $('#date').datetimepicker({minView: 2, language: "zh-CN"});
     var typed = new Typed('.switch-text', {
@@ -506,12 +507,15 @@
             if($(this).attr('data-name')=='paperPass' || $(this).attr('data-name')=='zaojiance') {
                 noNum = '，不可输入符号或数字'
             }
+            if($(this).attr('data-name')=='grammarly' || $(this).attr('data-name')=='ithenticate'){
+                prohibitEn = '仅支持英文，非英文论文请勿提交!'
+            }
             $("#title").attr('maxlength', typeData[$(this).attr('data-name')][0].data.title_maxlength)
             $("#title").attr('placeholder','必填，最大字符'+ typeData[$(this).attr('data-name')][0].data.title_maxlength +'字'+noNum)
             $("#author").attr('maxlength', typeData[$(this).attr('data-name')][0].data.author_maxlength)
             $("#author").attr('placeholder','必填，最大字符'+ typeData[$(this).attr('data-name')][0].data.author_maxlength +'字'+noNum)
             $("#textareaText").attr('maxlength', typeData[$(this).attr('data-name')][0].data.max_words)
-            if($(this).attr('data-name')=='dashichachong' || $(this).attr('data-name')=='weipu' || $(this).attr('data-name')=='ithenticate' || $(this).attr('data-name')=='turnitin' || $(this).attr('data-name')=='checkPass' ){
+            if($(this).attr('data-name')=='dashichachong' || $(this).attr('data-name')=='weipu' || $(this).attr('data-name')=='turnitin' || $(this).attr('data-name')=='checkPass' || $(this).attr('data-name')=='paperyy' ){
                 $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。')
             }else{
                 $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。' + prohibitEn)

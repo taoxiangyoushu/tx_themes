@@ -66,7 +66,8 @@ html .ContainerTo {
 #App.lwdbppt .typeLi.lwdbppt,
 #App.kclw .typeLi.kclw,
 #App.dybg .typeLi.dybg,
-#App.zjcaigc .typeLi.zjcaigc {
+#App.zjcaigc .typeLi.zjcaigc,
+#App.xzaigccheck .typeLi.xzaigccheck {
   color: #0C55F5;
   background-color: #FFFFFF;
   font-weight: 600;
@@ -81,7 +82,8 @@ html .ContainerTo {
 #App.lwdbppt .typeLi.lwdbppt::after,
 #App.kclw .typeLi.kclw::after,
 #App.dybg .typeLi.dybg::after,
-#App.zjcaigc .typeLi.zjcaigc::after {
+#App.zjcaigc .typeLi.zjcaigc::after,
+#App.xzaigccheck .typeLi.xzaigccheck::after {
   display: inline-block;
   position: absolute;
   content: '';
@@ -104,7 +106,8 @@ html .ContainerTo {
 #App.lwdbppt .lwdbpptBox,
 #App.kclw .kclwBox,
 #App.dybg .dybgBox,
-#App.zjcaigc .zjcaigcBox {
+#App.zjcaigc .zjcaigcBox,
+#App.xzaigccheck .xzaigccheckBox {
   display: block;
 }
 .loadEffect {

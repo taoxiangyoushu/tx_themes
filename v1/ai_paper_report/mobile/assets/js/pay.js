@@ -475,7 +475,6 @@ $('.dsf-Pay').click(function() {
     $('#typeName').text(dsfData[$(this).attr('data-type')].name)
     $('#taobao-tid').attr('placeholder' , dsfData[$(this).attr('data-type')].placeholder)
     zdyPayType = $(this).attr('data-type')
-
 })
 
 $('#CustomModal').on('hidden.bs.modal', function (e) {
@@ -489,7 +488,6 @@ $('#CustomModal').on('hidden.bs.modal', function (e) {
     }
     typeSelect(payType,true)
     $('.dsf-Pay .img').attr('src','https://api.taoxiangyoushu.com/html/v1/utils/img/noselect.png')
-
 })
 // 自定义订单支付
 let TbPaying = false
@@ -511,6 +509,56 @@ $(".taobao-payBtn").click(function (){
         type: 'loading',
         time: 20000
     })
+
+    // 判断是否存在优惠券, 存在的话重新生成订单
+    if($('.Deduction').is(':visible')) {
+        // 清空优惠券
+        $('.info.couponBox').show()
+        $('.Deduction').hide()
+        $('.eliminateCoupon').click()
+        var formData = getFormData({
+            order_sn: order_sn,
+            goods: goods().toString()
+        })
+        
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/variation/order',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                if (res.code == 200) {
+                    order_sn = res.data.order_sn
+                    $('#amountText').text(res.data.order_amount)
+                    $('#amountText2').text(res.data.order_amount)
+                    $('#dateTime').text(res.data.created)
+                    $('#orderIdText').text(res.data.order_sn)
+                    $('#amountText1').text(res.data.order_money)
+                    payStatus(order_sn)
+                    thirdParty()
+                    toastNone()
+                }else {
+                    toastNone()
+                }
+            },
+            error: function () {
+                toastNone()
+                toast({
+                    msg: "请求失败!请检查网络",
+                    type: 'error',
+                    time: 2000
+                })
+            },
+        });
+    }else {
+        thirdParty()
+    }
+})
+function thirdParty() {
     TbPaying = true
     let formData = getFormData({
         order_sn: order_sn,
@@ -552,7 +600,7 @@ $(".taobao-payBtn").click(function (){
 
         }
     })
-})
+}
 function editUrl(pay_id) {
     // 修改url参数保留数据,防止返回这个页面数据发生变化
     replaceParamVal('commitId' , order_sn , 0)
@@ -633,6 +681,7 @@ $(".appreciationUL").on('click','.appreciationLI',function(){
                 $('#amountText2').text(res.data.order_amount)
                 $('#dateTime').text(res.data.created)
                 $('#orderIdText').text(res.data.order_sn)
+                $('#amountText1').text(res.data.order_money)
                 payStatus(order_sn)
                 toastNone()
             }else {
@@ -920,6 +969,9 @@ $(".use_now").on('click',function (){
             withCredentials: true
         },
         success: function (res) {
+            setTimeout(function () {
+                toastNone()
+            }, 2000);
             toastNone()
             if (res.code == 200) {
                 order_sn = res.data.order_sn
@@ -992,6 +1044,7 @@ $('.Deduction').on('click',function(){
                 $('#amountText').text(res.data.order_amount)
                 $('#dateTime').text(res.data.created)
                 $('#orderIdText').text(res.data.order_sn)
+                $('#amountText1').text(res.data.order_money)
                 $(".oid_pop").text(res.data.order_sn)
                 payStatus(order_sn)
             }else{
@@ -1031,5 +1084,4 @@ $(".szsj_notice").click(function (e){
 $(".closeTips").click(function (){
     $(".mask").hide()
     $(".szsj-tips-block").hide()
-   
 })

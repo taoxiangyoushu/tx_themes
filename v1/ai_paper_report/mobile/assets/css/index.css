@@ -527,7 +527,8 @@ button.btn-default,
 #keyword_err,
 #basic_err,
 #basic2_err,
-#contenteditable2_err {
+#contenteditable2_err,
+#title_err {
   position: absolute;
   bottom: -2rem;
 }
@@ -1401,4 +1402,32 @@ button.btn-default,
 .EnglishReferenceTip img {
   vertical-align: middle;
   margin-top: -0.3rem;
+}
+.zjc_aigc_tips,
+.jian_aigc_tips {
+  display: none;
+}
+#App.zjcaigc .zjc_aigc_tips {
+  display: block;
+}
+#App.xzaigccheck .jian_aigc_tips {
+  display: block;
+  font-size: 12px;
+}
+#App.xzaigccheck .jian_aigc_tips p {
+  color: #9099b3;
+  font-weight: 400;
+}
+#App.xzaigccheck .jian_aigc_tips p img {
+  width: 1.2rem;
+  margin-right: 0.4rem;
+  margin-top: -0.4rem;
+}
+#App.xzaigccheck .jian_aigc_tips .redText {
+  color: #f56c6c;
+}
+#App.xzaigccheck .jian_aigc_tips img {
+  margin-top: -4px;
+  margin-right: 4px;
+  margin-left: 10px;
 }

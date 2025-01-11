@@ -9,7 +9,7 @@ $('#basic').on('hidden.bs.select', function(e) {
     if (tmpSelected != null) {
         $('#roleid').val(tmpSelected);
     } else {
-        $('#roleid').val(""); 
+        $('#roleid').val("");
     }
     $('#ContainerTo').data('bootstrapValidator').updateStatus('roleid', 'NOT_VALIDATED').validateField('roleid');
 });
@@ -36,6 +36,7 @@ var configs = {
     "T":"工业技术",
     "H":"护理学"
 }
+var title_record = {}  // 各商品已填写标题
 function dropDown() {
     var selectObj = $("#basic");
     selectObj.find("option:not(:first)").remove();
@@ -111,6 +112,10 @@ $('#NumberWords').keyup(function() {
 
 $("#contenteditable").bind("input propertychange", function(){
     $('.numberS').text($(this).val().length)
+    title_record[$("#type_s").val()] = $(this).val()
+});
+$("#contenteditable2").bind("input propertychange", function(){
+    title_record[$("#type_s").val()] = $(this).val()
 });
 
 $(".version-item").on('click',function (){
@@ -123,8 +128,23 @@ $('#type_s').change(function() {
 })
 function changeType(this_ , this_val) {
     var val = this_.val() || this_val
-    var permit_name = ['rws' , 'ktbg' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt']
+    var permit_name = ['rws' , 'ktbg' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt' , 'xzaigccheck']
     var this_short_name = typeData[val].short_name
+
+    // 标题处理
+    if(typeData[val].short_name == 'xzaigccheck' || typeData[val].short_name == 'zjcaigc'){
+        if(title_record[val]){
+            $("#contenteditable2").val(title_record[val])
+        }else{
+            $("#contenteditable2").val('')
+        }
+    }else{
+        if(title_record[val]){
+            $("#contenteditable").val(title_record[val])
+        }else{
+            $("#contenteditable").val('')
+        }
+    }
     
     if(permit_name.includes(this_short_name)) {
         $('.NumberIsShow').hide()
@@ -148,7 +168,7 @@ function changeType(this_ , this_val) {
         $('.NumberIsShow').show()
         $(".version-wxzs").hide()
     }
-    var short_name_arr = ['rws' , 'ktbg' , 'qklw' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt' , 'sxbg']
+    var short_name_arr = ['rws' , 'ktbg' , 'qklw' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt' , 'sxbg' , 'xzaigccheck']
     if(short_name_arr.includes(this_short_name)){
         if(this_short_name !== 'dybg'){
             $(".educationBox").hide() // 学历
@@ -191,7 +211,7 @@ function changeType(this_ , this_val) {
         $(".tabDiv").show();
     }
 
-    if(this_short_name == 'dybg'){
+    if(this_short_name == 'dybg' || this_short_name == 'ktbg'||this_short_name=='rws'){
         $(".educationBox").show() // 学历
     }
     var shortName = this_short_name
@@ -206,6 +226,19 @@ function changeType(this_ , this_val) {
         editionType(shortName == 'bylw'? 'Normal':shortName)
         $('.jiangAIGCContent , .jiangAIGCType').hide()
     }
+
+    if(this_short_name == 'xzaigccheck') { // aigc查重
+        file_path = ''
+        if($("#ThesisInput").val()){
+            $(".deleteFileThesis").click()
+        }
+        $('.xzaigccheck_conditions , .jiangAIGCContent').show()
+        $('.filSize').text(10)
+    }else {
+        $('.xzaigccheck_conditions').hide()
+        $('.filSize').text(15)
+    }
+
     if(this_short_name !== 'bylw' && this_short_name !== 'ktbg' && this_short_name !== 'kclw' && this_short_name !== 'qklw'){    //参考文献
         $(".EnglishReferenceShow").hide()
         $(".EnglishReferenceTip").hide()
@@ -258,6 +291,21 @@ $("#ContainerTo").bootstrapValidator({
             validators: {
                 notEmpty: {
                     message: '专业不能为空'
+                }
+            }
+        },
+        title: {
+            container: "#title_err",
+            validators: {
+                callback: {
+                    message: '作者不能为空且最多15个字',
+                    callback: function (value, validator, $field) {
+                        if(value.length>=1 && value.length<=15) {
+                            return true
+                        }else {
+                            return false
+                        }
+                    }
                 }
             }
         },
@@ -472,7 +520,8 @@ $('.generate').click(function() {
                 formData['data[references_en_num][value]'] = 0
             }
         }
-        if(typeData[$('#type_s').val()].short_name != 'rws' && typeData[$('#type_s').val()].short_name != 'ktbg' && typeData[$('#type_s').val()].short_name !== 'wxzs' && typeData[$('#type_s').val()].short_name !== 'zjcaigc' && typeData[$('#type_s').val()].short_name !== 'dybg' && typeData[$('#type_s').val()].short_name !== 'lwdbppt') {
+        var noNumberWords = ['rws' , 'ktbg' , 'wxzs' , 'zjcaigc' , 'dybg' , 'lwdbppt' , 'xzaigccheck']
+        if(noNumberWords.indexOf(typeData[$('#type_s').val()].short_name) == -1) {
             formData['data[word_num][label]'] = '生成字数'
             if(typeData[$('#type_s').val()].short_name == 'kclw') {
                 formData['data[word_num][value]'] = NumberWords2
@@ -522,6 +571,21 @@ $('.generate').click(function() {
             formData['data[title][value]'] = $('#contenteditable').val()
         }
 
+        // 查aigc
+        if(typeData[$('#type_s').val()].short_name == 'xzaigccheck'){
+            formData['data[author][label]'] = '论文作者'
+            formData['data[author][value]'] = $('#author').val()
+
+            formData['upload_type'] = $('.AIGCContentType.Select').attr('id-key');
+            if($('.AIGCContentType.Select').attr('id-key') == 1) {
+                formData['content'] = $('#textareaText').val();
+            }else {
+                formData['data[file_path][label]'] = '文件地址';
+                formData['data[file_path][value]'] = file_path;
+            }
+            formData['data[title][value]'] = $('#contenteditable2').val()
+        }
+
         if(typeData[$('#type_s').val()].short_name == 'lwdbppt'){
             formData['data[file_path][label]'] = '文件地址';
             formData['data[file_path][value]'] = file_path;
@@ -531,6 +595,11 @@ $('.generate').click(function() {
         if(typeData[$('#type_s').val()].short_name == 'sxbg' && SPECIALITY[$("#basic2").val()]!='其他（自动识别）') {
             formData['data[paper_type][label]'] = '论文类型';
             formData['data[paper_type][value]'] = SPECIALITY[$("#basic2").val()]
+        }
+        // 开题报告(极速版)
+        if(typeData[$('#type_s').val()].short_name == 'ktbg' || typeData[$('#type_s').val()].short_name == 'rws'){
+            formData['data[education][label]'] = '学历'
+            formData['data[education][value]'] = education;
         }
         var form_data = getFormData(formData)
         throttling = false
@@ -771,6 +840,7 @@ $("#uploadFile").on('change',function (){
                     }
                     $("#proposal_err").text('文件上传失败，请重试')
                     $("#proposal_err").show();
+                    $('.delete-file').click();
                 }
             }
         })

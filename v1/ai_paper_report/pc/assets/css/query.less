@@ -32,7 +32,7 @@ header {
 }
 
 .content {
-    margin-top: 85px;
+    // margin-top: 85px;
     width: auto;
     .Breadcrumb {
         color: #222222;
@@ -223,18 +223,15 @@ tbody th {
 
 .DownloadSeparately {
     display: inline;
-    span {
-        border-radius: 8px;
-        color: #fff;
-        width: 70px;
-        display: inline-block;
-        text-align: center;
-        line-height: 30px;
-        margin-left: 10px;
-        background-image: linear-gradient(90deg, #006aff 0%, #0094ff 100%);
-        white-space: nowrap;
-        cursor: pointer;
-    }
+    border-radius: 8px;
+    color: #fff;
+    width: 70px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    background-image: linear-gradient(90deg, #006aff 0%, #0094ff 100%);
+    white-space: nowrap;
+    cursor: pointer;
 }
 
 .titles.not {
@@ -531,37 +528,15 @@ a:focus , a{
     outline: 0;
     text-decoration:none;
 }
-
-
+.queryApp .download {
+    padding: 5px 0;
+    &>div {
+        margin: 5px 5px;
+    }
+}
 @media (max-width: 1400px) {
-    // .content .resultBox .orderInformation.table thead tr th:last-child {
-    //     padding-right: 20px;
-    // }
-    // .content .resultBox .orderInformation.table tbody tr th:last-child {
-    //     padding-right: 10px;
-    // }
     .content .searchParameters input.orderId {
-        width: 220px;
-    }
-}
-@media (max-width: 1200px) {
-    // .content .resultBox .orderInformation.table thead tr th:last-child {
-    //     padding-right: 20px;
-    // }
-    // .content .resultBox .orderInformation.table tbody tr th:last-child {
-    //     padding-right: 10px;
-    // }
-    .content .searchParameters input.orderId {
-        width: 170px;
-    }
-    .content .searchParameters input.orderId{
-        margin-left: 10px;
-    }
-}
-
-@media (max-width: 1100px) {
-    .orderId-name {
-        display: none;
+        width: 230px;
     }
 }
 @media (max-width: 1418px) {
@@ -570,24 +545,6 @@ a:focus , a{
     }
     .download .scanFollow .tipsText {
         margin-left: 35px;
-    }
-}
-@media (max-width: 1564px) {
-    th.download {
-        //a, .nots {
-        //    margin-bottom: 10px;
-        //    //margin-right: 0;
-        //}
-        //a.againOrder {
-        //    margin-bottom: 0;
-        //}
-    }
-}
-@media (max-width: 1522px) {
-    th.download {
-        a, .nots {
-            //margin-right: 0;
-        }
     }
 }
 @media (min-width: 1720px) {
@@ -603,9 +560,6 @@ a:focus , a{
     .download .DownloadSeparately span, .download .aigc-btn, .download .dbppt-btn, .download .generate-btn,  .download .delete-btn, .download .complete{
         margin: 0px 10px 10px 10px;
     }
-    .content .resultBox .orderInformation.table tbody tr th {
-        padding-bottom: 0;
-    }
     .download {
         .scanFollow {
             margin-bottom: 10px;
@@ -614,9 +568,6 @@ a:focus , a{
 }
 
 @media (max-width: 1890px) {
-    .download .DownloadSeparately.btnN4 span, .download .aigc-btn.btnN4, .download .dbppt-btn.btnN4, .download .generate-btn,  .download .delete-btn.btnN4, .download .complete.btnN4{
-        // margin: 0px 0px 10px 0px;
-    }
     .download {
         .scanFollow {
             margin-bottom: 10px;

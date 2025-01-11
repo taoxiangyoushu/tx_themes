@@ -7,7 +7,8 @@
 .dybg .NormalBox,
 .zjcaigc .NormalBox,
 .sxbg .NormalBox,
-.lwdbppt .NormalBox {
+.lwdbppt .NormalBox,
+.xzaigccheck .NormalBox {
   display: none;
 }
 .bylwsenior .step2 .stepMain,
@@ -19,44 +20,111 @@
 .dybg .step2 .stepMain,
 .zjcaigc .step2 .stepMain,
 .sxbg .step2 .stepMain,
-.lwdbppt .step2 .stepMain {
+.lwdbppt .step2 .stepMain,
+.xzaigccheck .step2 .stepMain {
   width: calc(100% - 3.6rem);
 }
 .zjcaigc .step2 .stepMain {
   width: 85%;
 }
-.aigcTips .steptop {
+.xzaigccheckBox {
+  display: none;
+}
+.xzaigccheck .xzaigccheckBox {
+  display: block;
+}
+.xzaigccheck .xzaigccheckBox .Description {
+  color: #999;
+  font-size: 1.1rem;
+  margin-top: 1.9rem;
+  margin-bottom: 0.7rem;
+}
+.xzaigccheck .xzaigccheckBox .yellow_css {
+  color: #FD6813;
+}
+.xzaigccheck .xzaigccheckBox .reds_css {
+  color: #E30213;
+}
+.xzaigccheck .xzaigccheckBox .Referenc {
+  margin-bottom: 3.2rem;
+}
+.xzaigccheck .xzaigccheckBox .Referenc1 {
+  display: flex;
+  flex-wrap: wrap;
+  background: #F0F8FF;
+  box-shadow: inset 0rem 0.35rem 2.8rem 0rem rgba(0, 109, 255, 0.2);
+  border-radius: 0.95rem 0.95rem 0.95rem 0.95rem;
+  border: 0.1rem solid #B5DFFF;
+  padding: 1.1rem 0.9rem;
+  margin-top: 1.3rem;
+}
+.xzaigccheck .xzaigccheckBox .Referenc1 > div {
+  width: 44%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 0.75rem 0.75rem 0.75rem 0.75rem;
+  margin: 0.75rem 3%;
+  padding: 1.2rem 0;
+}
+.xzaigccheck .xzaigccheckBox .Referenc1 img {
+  width: 1.5rem;
+  margin-top: -0.3rem;
+}
+.xzaigccheck .xzaigccheckBox .imgBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.xzaigccheck .xzaigccheckBox .imgBox .aigc1 {
+  width: 38.2%;
+  max-width: 208px;
+}
+.xzaigccheck .xzaigccheckBox .imgBox .arrow_aigc {
+  width: 5%;
+  max-width: 1.6rem;
+}
+.xzaigccheck .xzaigccheckBox .imgBox .aigcbg {
+  width: 54.2%;
+  max-width: 14.8rem;
+}
+.zjcaigcBox {
+  display: none;
+}
+.zjcaigc .zjcaigcBox {
+  display: block;
+}
+.zjcaigc .zjcaigcBox .steptop {
   width: 54%;
 }
-.aigcTips .stepType {
+.zjcaigc .zjcaigcBox .stepType {
   font-size: 1.61rem;
   color: #222222;
 }
-.aigcTips .steptop {
+.zjcaigc .zjcaigcBox .steptop {
   font-size: 1.39rem;
   color: #ffffff;
 }
-.aigcTips .stepMain {
+.zjcaigc .zjcaigcBox .stepMain {
   margin-top: 0.3rem;
   margin-left: 1.18rem;
 }
-.aigcTips .stepMain p {
+.zjcaigc .zjcaigcBox .stepMain p {
   font-size: 1.6rem;
   color: #333;
   background-size: 85%;
   background-position: 0 90%;
 }
-.aigcTips .step2 > img {
+.zjcaigc .zjcaigcBox .step2 > img {
   height: auto;
   width: 3.56rem !important;
 }
-.aigcTips .stepMainTop {
+.zjcaigc .zjcaigcBox .stepMainTop {
   display: flex;
   position: relative;
   margin-top: 2.4rem;
   margin-bottom: 3rem;
 }
-.aigcTips .stepMainTop .Tradition {
+.zjcaigc .zjcaigcBox .stepMainTop .Tradition {
   width: 11.82rem;
   height: 10.68rem;
   background-color: #ffffff;
@@ -69,13 +137,13 @@
   text-align: center;
   margin-top: 1.5rem;
 }
-.aigcTips .stepMainTop .Tradition .TraditionTop {
+.zjcaigc .zjcaigcBox .stepMainTop .Tradition .TraditionTop {
   color: #333333;
   padding-bottom: 0.8rem;
   margin-bottom: 0.8rem;
   border-bottom: 1px dashed #333333;
 }
-.aigcTips .stepMainTop .vsBox {
+.zjcaigc .zjcaigcBox .stepMainTop .vsBox {
   width: 3.32rem;
   height: 3.32rem;
   background-color: #006eff;
@@ -91,7 +159,7 @@
   margin-left: -5.4rem;
   margin-top: -1.7rem;
 }
-.aigcTips .stepMainTop .Now {
+.zjcaigc .zjcaigcBox .stepMainTop .Now {
   width: 14.86rem;
   height: 13.36rem;
   background-color: #ffffff;
@@ -104,7 +172,7 @@
   font-size: 1.36rem;
   margin-left: -1.8rem;
 }
-.aigcTips .stepMainTop .Now .TraditionTop {
+.zjcaigc .zjcaigcBox .stepMainTop .Now .TraditionTop {
   color: #333333;
   border-bottom: 1px dashed #333333;
   padding-bottom: 1rem;
@@ -116,36 +184,36 @@
   align-items: center;
   justify-content: center;
 }
-.aigcTips .stepMainTop .Now .Fire {
+.zjcaigc .zjcaigcBox .stepMainTop .Now .Fire {
   width: 1.23rem;
   height: 1.55rem;
   margin-right: 0.5rem;
   margin-top: -2px;
 }
-.aigcTips .stepMainBottom img {
+.zjcaigc .zjcaigcBox .stepMainBottom img {
   float: none;
 }
-.aigcTips .stepMainBottom .tipsTo {
+.zjcaigc .zjcaigcBox .stepMainBottom .tipsTo {
   color: #999999;
   font-size: 1.22rem;
   margin-top: 0.2rem;
 }
-.aigcTips .stepMainBottom .tipsTo .color1 {
+.zjcaigc .zjcaigcBox .stepMainBottom .tipsTo .color1 {
   color: #fd6813;
 }
-.aigcTips .stepMainBottom .tipsTo .color2 {
+.zjcaigc .zjcaigcBox .stepMainBottom .tipsTo .color2 {
   color: #e30213;
   font-size: 1.2rem;
 }
-.aigcTips .stepMainBottom .tipsTo .color3 {
+.zjcaigc .zjcaigcBox .stepMainBottom .tipsTo .color3 {
   color: #9ac844;
   font-size: 1.2rem;
 }
-.aigcTips .stepMainBottom .tipsTo img {
+.zjcaigc .zjcaigcBox .stepMainBottom .tipsTo img {
   height: 0.73rem;
   margin-top: -0.2rem;
 }
-.aigcTips .stepMainBottom .CaseImg {
+.zjcaigc .zjcaigcBox .stepMainBottom .CaseImg {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -153,32 +221,32 @@
   position: relative;
   margin-top: 1.7rem;
 }
-.aigcTips .stepMainBottom .CaseImg .Excessive {
+.zjcaigc .zjcaigcBox .stepMainBottom .CaseImg .Excessive {
   position: absolute;
   left: 50%;
   z-index: 100;
   margin-left: -3.3rem;
   width: 3.56rem;
 }
-.aigcTips .stepMainBottom .CaseImg div > img {
+.zjcaigc .zjcaigcBox .stepMainBottom .CaseImg div > img {
   width: 11.18rem;
   height: 14.23rem;
 }
-.aigcTips .stepMainBottom .CaseImg .Tradition2,
-.aigcTips .stepMainBottom .CaseImg .Now2 {
+.zjcaigc .zjcaigcBox .stepMainBottom .CaseImg .Tradition2,
+.zjcaigc .zjcaigcBox .stepMainBottom .CaseImg .Now2 {
   position: relative;
 }
-.aigcTips .stepMainBottom .CaseImg .Tradition2 .topTips {
+.zjcaigc .zjcaigcBox .stepMainBottom .CaseImg .Tradition2 .topTips {
   background-image: linear-gradient(90deg, #f9473b 1%, #fe6f0b 100%), linear-gradient(#ee3b86, #ee3b86);
 }
-.aigcTips .stepMainBottom .CaseImg .Now2 .topTips {
+.zjcaigc .zjcaigcBox .stepMainBottom .CaseImg .Now2 .topTips {
   background-image: linear-gradient(90deg, #739c27 0%, #bff063 100%), linear-gradient(#ee3b86, #ee3b86);
 }
-.aigcTips .stepMainBottom .CaseImg .topTips {
+.zjcaigc .zjcaigcBox .stepMainBottom .CaseImg .topTips {
   width: 7.18rem;
   height: 2.41rem;
   background-blend-mode: normal,
-                    normal;
+                        normal;
   border-radius: 0.45rem 0rem 0.45rem 0rem;
   color: #ffffff;
   text-align: center;

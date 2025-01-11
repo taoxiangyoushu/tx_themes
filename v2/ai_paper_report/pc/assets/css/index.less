@@ -48,6 +48,12 @@
             color: #999999;
         }
     }
+    .col-md-6 {
+        padding: 0;
+    }
+    .col-xs-6 {
+        padding: 0;
+    }
 }
 .form-loading {
     padding: 15px;
@@ -272,7 +278,7 @@ table tbody {
     }
 }
 .mainContainer {
-    padding: 60px 57px 0 57px;
+    padding: 0px 57px 0 57px;
     .generate , .outline{
         display: inline-block;
         width: 140px;
@@ -319,7 +325,7 @@ table tbody {
         outline: 0;
         box-shadow: 0px 0px 15px 0px rgba(186, 218, 255, 0.29);
     }
-    .EnglishLiterature , .education_c , .jiangAIGCType , .jiangAIGCContent{
+    .EnglishLiterature , .education_c , .jiangAIGCType , .jiangAIGCContent , .xzaigccheck_conditions {
         .contenteditable_s {
             .toCheck {
                 font-size: 14px;
@@ -499,10 +505,15 @@ li {
     .news_li a,.swap a{ color:#333333;}
     .swap{top:30px;}
 }
-#basic_err , #expect_err , #contenteditable_err, #keyword_err , #contenteditable4_err , #LiteratureType_err {
+#basic_err , 
+#expect_err , 
+#contenteditable_err, 
+#keyword_err , 
+#contenteditable4_err , 
+#LiteratureType_err {
     position: absolute;
     bottom: -20px;
-    width: 100%;
+    // width: 100%;
 }
 
 #keyword_err {
@@ -600,7 +611,10 @@ input[type="number"]{
     color: #666;
     font-weight: 400;
 }
-#basic_err , #NumberWords_err , #basic2_err {
+#basic_err , 
+#NumberWords_err , 
+#basic2_err ,
+#title_err{
     left: 137px;
     bottom: -16px;
     position: absolute;
@@ -739,6 +753,7 @@ label {
                 vertical-align: bottom;
                 display: inline-block;
                 opacity: 0;
+                margin-top: 0.5px;
             }
         }
     }
@@ -897,6 +912,14 @@ label {
 
 .version-wxzs {
     display: none;
+    .version-wxzs-err {
+        color: #a94442;
+        font-size: 12px;
+        position: absolute;
+        bottom: -20px;
+        left: 135px;
+        display: none;
+    }
 }
 .version-wxzs-box {
     .version-item {
@@ -1047,6 +1070,7 @@ label {
 
 .selectPeriodical {
     display: none;
+    position: relative;
     .periodicalTypeCard {
         padding-right: 6px;
         padding-left: 6px;
@@ -1098,9 +1122,18 @@ label {
             color: #999999;
         }
     }
+    .periodical-err {
+        position: absolute;
+        color: #a94442;
+        font-size: 12px;
+        bottom: -24px;
+        left: 135px;
+        display: none;
+    }
 }
 .literatureNum {
     display: none;
+    position: relative;
     .literatureNumCard {
         line-height: 40px;
         font-size: 0;
@@ -1122,6 +1155,14 @@ label {
                 color: #7579DB;
             }
         }
+    }
+    .literatureNum-err {
+        position: absolute;
+        color: #a94442;
+        font-size: 12px;
+        bottom: -16px;
+        left: 135px;
+        display: none;
     }
 }
 @media (max-width: 1250px) {
@@ -1225,7 +1266,7 @@ label {
     color: red;
 }
 
-.jiangAIGCContent , .jiangAIGCType {
+.jiangAIGCContent , .jiangAIGCType{
     display: none;
     margin-bottom: 6px;
     .toCheck span {
@@ -1233,6 +1274,9 @@ label {
         display: inline-block;
         margin-right: 20px !important;
     }
+}
+.authorBox {
+    margin-bottom: 6px;
 }
 .Thesis {
     //width: 525px;
@@ -1372,7 +1416,7 @@ label {
         display: none;
     }
 }
-#App.zjcaigc {
+#App.zjcaigc , #App.xzaigccheck{
     .groupSubmit {
         padding-left: 106px;
     }
@@ -1507,5 +1551,77 @@ label {
         left: 0;
         width: 100%;
         border-bottom: 1px solid #8387DF;
+    }
+}
+
+
+p.word-prompt {
+    display: inline-block;
+    font-size: 12px;
+    color: #b7bccb;
+    vertical-align: middle;
+    line-height: normal;
+    float: right;
+    margin-top: 12px;
+    .text-num {
+        color: #ff001e;
+        margin: 0 4px;
+    }
+}
+.rower {
+    display: inline-block;
+    position: relative;
+    width: calc(100% - 120px);
+    height: 38px;
+    vertical-align: middle;
+    .title-num,.author-num {
+        position: absolute;
+        font-size: 14px;
+        color: #aaa;
+        right: 12px;
+        top: 8.5px;
+    }
+    &.content-block {
+        height: 100%;
+        margin-top: 4px;
+        width: 100%;
+    }
+}
+
+.way-content {
+    display: inline-block;
+    font-size: 14px;
+    color: #5e6582;
+    vertical-align: middle;
+}
+.xzaigccheck_conditions {
+    display: none;
+}
+.has-feedback .form-control {
+    padding-right: 58.5px;
+}
+
+.zjc_aigc_tips , .jian_aigc_tips {
+    display: none;
+}
+#App {
+    &.zjcaigc .zjc_aigc_tips {
+        display: block;
+    }
+    &.xzaigccheck .jian_aigc_tips {
+        display: block;
+        font-size: 12px;
+        p {
+            color: #9099b3;
+            font-weight: 400;
+        }
+        .redText {
+            color: #f56c6c;
+        }
+        img {
+            margin-top: -4px;
+            margin-right: 4px;
+            margin-left: 10px;
+        }
     }
 }

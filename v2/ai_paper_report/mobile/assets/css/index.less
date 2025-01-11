@@ -520,7 +520,7 @@ body {
         width: 5.6rem;
     }
 }
-#contenteditable_err , #NumberWords_err,  #keyword_err, #basic_err, #basic2_err , #contenteditable2_err {
+#contenteditable_err , #NumberWords_err,  #keyword_err, #basic_err, #basic2_err , #contenteditable2_err , #title_err {
     position: absolute;
     bottom: -2rem;
 }
@@ -1451,5 +1451,41 @@ body {
     img {
         vertical-align: middle;
         margin-top: -0.3rem;
+    }
+}
+
+
+.zjc_aigc_tips , .jian_aigc_tips {
+    display: none;
+}
+#App {
+    &.zjcaigc .zjc_aigc_tips {
+        display: block;
+    }
+    &.xzaigccheck .jian_aigc_tips {
+        display: block;
+        font-size: 12px;
+        p {
+            color: #9099b3;
+            font-weight: 400;
+            img {
+                width: 1.2rem;
+                margin-right: 0.4rem;
+                margin-top: -0.4rem;
+            }
+        }
+        .redText {
+            color: #f56c6c;
+        }
+        img {
+            margin-top: -4px;
+            margin-right: 4px;
+            margin-left: 10px;
+        }
+    }
+    &.xzaigccheck {
+        .jiangAIGCContent {
+            margin-top: 2.2rem;
+        }
     }
 }

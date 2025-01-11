@@ -1,5 +1,9 @@
 .order-cont {
+  height: 100%;
   position: relative;
+}
+.order-cont .heightBox {
+  height: 100%;
 }
 .order-cont .dialog-scan .dialoger {
   width: 364px;
@@ -49,7 +53,7 @@
   position: relative;
 }
 .order-cont .order-msg.payBox {
-  min-height: 534px;
+  height: calc(100% - 209.9px - 18px - 137.09px - 18px);
 }
 .order-cont .order-msg .row-label {
   margin-bottom: 18px;
@@ -1087,3 +1091,9 @@
 .coupon {
   height: 34px;
 }
+@media screen and (max-width: 1420px) {
+  .order-cont .order-msg .row-cont .msg-list li > div.special .tit {
+    width: 46%;
+  }
+}
+/*# sourceMappingURL=pay.css.map */

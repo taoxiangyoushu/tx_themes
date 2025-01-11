@@ -253,6 +253,16 @@
 .ProfessionalEdition .proposal .uploadBox {
   color: #7579DB;
 }
+.ProfessionalEdition .coupon_box .card .errorTip1 {
+  background: #eae9ff;
+  border: 1px solid #7578da;
+}
+.ProfessionalEdition .coupon_box .card .errorTip1 .Picture_event2 {
+  display: none;
+}
+.ProfessionalEdition .coupon_box .card .errorTip1 .Picture_event3 {
+  display: block;
+}
 .NEW-mini {
   position: absolute;
   right: -8px;
@@ -959,4 +969,3 @@
   top: 4px;
   margin-right: 4px;
 }
-/*# sourceMappingURL=ProfessionalEdition.css.map */

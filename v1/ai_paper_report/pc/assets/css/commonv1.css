@@ -1,0 +1,55 @@
+#App {
+  min-width: 1280px;
+}
+.headBox {
+  padding-top: 18px;
+  margin: auto;
+  height: 60px;
+  padding-right: 20px;
+}
+.headBox .nav-activity {
+  margin-top: 0;
+  position: static !important;
+  float: left;
+  height: 32px;
+  line-height: 32px;
+}
+.headBox .nav-activity a {
+  position: static;
+}
+.headBox .rightFloat {
+  float: right;
+  display: flex;
+  align-items: center;
+  height: 42px;
+}
+.headBox .loginBox {
+  position: relative !important;
+  margin-left: 20px;
+  float: right;
+  top: 0 !important;
+  left: 0 !important;
+}
+.headBox .loginBox .FloatingWindow {
+  position: absolute;
+  left: -145px;
+}
+.headBox .loginBox .FloatingWindow::after {
+  display: inline-block;
+  content: '';
+  height: 20px;
+  width: 100%;
+  position: absolute;
+  top: -20px;
+}
+@media (max-width: 1890px) {
+  .queryApp .content.container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 1380px) {
+  .payApp #payHtml {
+    padding: 36px 30px 60px;
+  }
+}

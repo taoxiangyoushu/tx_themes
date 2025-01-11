@@ -121,6 +121,7 @@ if(dct_code){
 }
 
 var urls = 'https://api.taoxiangyoushu.com'//http://api.project_libraries.report
+
 function getFormData(object) {
     // 转FromData 对象
     var formData = new FormData();
@@ -143,6 +144,19 @@ var payWay_Info = {}
 var parameterSet = {}
 var threeMsg= {}
 var pay_config = {}
+var keyConversion = {
+	bylw: 'bylw',
+	wxzs: 'wxzs',
+	ktbg: 'ktbg',
+	rws : 'rws',
+	qklw: 'qklw',
+	sjbg: 'sxbg',
+	dbppt: 'lwdbppt',
+	kclw: 'kclw',
+	dybg: 'dybg',
+	aigccc: 'xzaigccheck',
+	jaigcl: 'zjcaigc'
+}
 
 window.onload = function (){
 	$.ajax({
@@ -207,7 +221,7 @@ window.onload = function (){
 				}
 
 				if($('.index_app').length) {
-					dropDownType(result.data.project[0] && result.data.project[0].goods_info)
+					dropDownType(result.data.project[0] && result.data.project[0].goods_info, data.project[0])
 				}
 				if($('.payApp').length) {
 					payWay(data.project[0].goods_info , data.project[0].pay_way )
@@ -217,8 +231,8 @@ window.onload = function (){
 					$('.distributionEntrance').show()
 				}
 
-				var sw = getQueryVariable('short_name') || getQueryVariable('sw')
-				defaultType(sw) // 默认选中版本
+				var sw = keyConversion[getQueryVariable('short_name') || getQueryVariable('sw')]
+				if(sw) defaultType(sw) // 默认选中版本
 			}else{
 				toast(result.codeMsg)
 			}
@@ -266,7 +280,8 @@ function setArguments(info) {
 }
 
 function editionType(edition) {
-	$('#App').removeClass('bylw bylwsenior wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt')
+	// 注意bylw
+	$('#App').removeClass('bylw bylwsenior wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt xzaigccheck')
 	if(edition == "Normal") {
 		$('#App').removeClass('ProfessionalEdition')
 		$('#App').removeClass('zjcaigc')
@@ -275,7 +290,11 @@ function editionType(edition) {
 		$('.aigcTips').hide()
 		$('#App').addClass('bylw')
 	}else {
-		if(edition == "zjcaigc"){
+		if(edition == 'xzaigccheck') {
+			$('.Universal').hide()
+			$('#generate').text('提交检测')
+			$('.aigcTips').show()
+		}else if(edition == "zjcaigc"){
 			$('#generate').text('开始降AIGC率')
 			$('.Universal').hide()
 			$('.aigcTips').show()

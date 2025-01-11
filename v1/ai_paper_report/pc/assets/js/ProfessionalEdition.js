@@ -23,6 +23,14 @@ $('#outline').click(function() {
             }
         }
     }
+    if(typeData[$('#type_s2').val()].short_name == 'qklwsenior') {
+        if(!$(".periodicalType.select")[0]){
+            $(".selectPeriodical .periodical-err").show();
+        }
+        if(!$(".l-numB.select")[0]){
+            $(".literatureNum .literatureNum-err").show();
+        }
+    }
     if (bootstrapValidator.isValid()) {
         if( typeData[$("#type_s2").val()].short_name=='ktbgsenior' ){
             EditingKTBG()
@@ -30,11 +38,11 @@ $('#outline').click(function() {
         }
         if(typeData[$('#type_s2').val()].short_name == 'qklwsenior') {
             if(!$(".periodicalType.select")[0]){
-                cocoMessage.error("请选择期刊类型", 2000);
+                $(".selectPeriodical .periodical-err").show();
                 return ;
             }
             if(!$(".l-numB.select")[0]){
-                cocoMessage.error("请选择文献数量", 2000);
+                $(".literatureNum .literatureNum-err").show();
                 return ;
             }
         }

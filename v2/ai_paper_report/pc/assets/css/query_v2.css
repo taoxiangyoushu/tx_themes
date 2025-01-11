@@ -4,17 +4,18 @@
 .content {
   margin-top: 20px;
 }
-.rightCont {
+.subtitle {
   position: relative;
 }
-.rightCont .Breadcrumb {
+.subtitle .Breadcrumb {
   position: absolute;
   color: #222222;
-  top: 25px;
-  left: 50px;
+  top: 0;
+  left: 0;
   cursor: pointer;
+  font-weight: 400;
 }
-.rightCont .Breadcrumb:hover {
+.subtitle .Breadcrumb:hover {
   color: #0091ff;
 }
 .content .subtitle {
@@ -38,7 +39,7 @@
   width: 70%;
   margin: auto;
   line-height: 50px;
-  margin-top: 64px;
+  margin-top: 8px;
 }
 .collectionBox span {
   color: #0084FF;
@@ -185,7 +186,8 @@
 }
 .content .searchParameters .orderId-name,
 .ProfessionalEdition.queryApp .content .searchParameters .orderId-name {
-  float: none;
+  float: left;
+  line-height: 44px;
 }
 .content .searchParameters input.orderId,
 .ProfessionalEdition.queryApp .content .searchParameters input.orderId {
@@ -245,3 +247,8 @@
     display: inline-block;
   }
 }
+.content.container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+/*# sourceMappingURL=query_v2.css.map */

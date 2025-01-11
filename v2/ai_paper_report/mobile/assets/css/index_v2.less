@@ -62,6 +62,27 @@ body {
         background-color: transparent;
         .inputBox {
             width: 100%;
+            #contenteditable {
+                display: inline-block;
+                vertical-align: middle;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .recommend_title {
+                vertical-align: middle;
+                color: #0072FF;
+                background: #E4F0FF;
+                border-radius: 0.4rem;
+                line-height: normal;
+                padding: 0.8rem 0.6rem;
+                width: 8.6rem;
+                img {
+                    vertical-align: middle;
+                    width: 1.9rem;
+                    margin-top: -0.4rem;
+                }
+            }
         }
         .surrounded {
             border: 1px solid #DCDFE6 !important;
@@ -561,4 +582,20 @@ input[type="checkbox"] {
 
 input[type=checkbox] {
     margin-top: .14rem;
+}
+.optimize {
+    display: none;
+}
+#App.bylw {
+    .form  #contenteditable {
+        width: 100%;
+    }
+    #titleID {
+        .optimize {
+            display: inline-block;
+        }
+        #contenteditable {
+            width: calc(100% - 8.6rem - 0.8rem);
+        }
+    }
 }

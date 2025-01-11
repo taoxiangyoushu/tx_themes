@@ -1,4 +1,4 @@
-.bylwsenior, .wxzs ,.ktbg, .rws, .qklw, .kclw, .dybg, .zjcaigc, .sxbg, .lwdbppt {
+.bylwsenior, .wxzs ,.ktbg, .rws, .qklw, .kclw, .dybg, .zjcaigc, .sxbg, .lwdbppt , .xzaigccheck{
     .NormalBox {
         display: none;
     }
@@ -11,186 +11,262 @@
         width: 85%;
     }
 }
-.aigcTips {
-    .steptop {
-        width: 54%;
+// aigc查重
+.xzaigccheckBox {
+    display: none;
+}
+.xzaigccheck {
+    .xzaigccheckBox {
+        display: block;
     }
-    .stepType {
-        font-size: 1.61rem;
-        color: #222222;
-    }
-    .steptop {
-        font-size: 1.39rem;
-        color: #ffffff;
-    }
-    .stepMain {
-        margin-top: .3rem;
-        margin-left: 1.18rem;
-    }
-    .stepMain p {
-        font-size: 1.6rem;
-        color: #333;
-        background-size: 85%;
-        background-position: 0 90%;
-    }
-    .step2 > img {
-        height: auto;
-        width: 3.56rem !important;
-    }
-    .stepMainTop {
-        display: flex;
-        position: relative;
-        margin-top: 2.4rem;
-        margin-bottom: 3rem;
-        .Tradition {
-            width: 11.82rem;
-            height: 10.68rem;
-            background-color: #ffffff;
-            box-shadow: inset 0rem 0rem 1.59rem 0rem
-                rgba(73, 73, 73, 0.19);
-            border-radius: 0.45rem;
-            border: solid 0.05rem #f0f0f0;
-            padding: 1.5rem 2.7rem 1.5rem 1.5rem;
-            color: #999999;
-            font-size: 1.09rem;
-            text-align: center;
-            margin-top: 1.5rem;
-            .TraditionTop {
-                color: #333333;
-                padding-bottom: .8rem;
-                margin-bottom: .8rem;
-                border-bottom: 1px dashed #333333;
-            }
+    .xzaigccheckBox {
+        .Description {
+            color: #999;
+            font-size: 1.1rem;
+            margin-top: 1.9rem;
+            margin-bottom: .7rem;
         }
-        .vsBox {
-            width: 3.32rem;
-            height: 3.32rem;
-            background-color: #006eff;
-            border-radius: 50%;
-            text-align: center;
-            color: #fff;
-            line-height: 3.32rem;
-            font-size: 1.41rem;
-            font-weight: bold;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-left: -5.4rem;
-            margin-top: -1.7rem;
+        .yellow_css {
+            color: #FD6813;
         }
-        .Now {
-            width: 14.86rem;
-            height: 13.36rem;
-            background-color: #ffffff;
-            box-shadow: inset 0rem 0rem 1.59rem 0rem
-                rgba(0, 109, 255, 0.19);
-            border-radius: 0.45rem;
-            border: solid 0.05rem #b5dfff;
-            padding: 1.4rem 2.55rem;
-            text-align: center;
-            color: #333333;
-            font-size: 1.36rem;
-            margin-left: -1.8rem;
-            .TraditionTop {
-                color: #333333;
-                border-bottom: 1px dashed #333333;
-                padding-bottom: 1rem;
-                margin-bottom: 1rem;
-                color: #fa4e33;
-                font-size: 1.4rem;
-                font-weight: bold;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .Fire {
-                width: 1.23rem;
-                height: 1.55rem;
-                margin-right: .5rem;
-                margin-top: -2px;
-            }
+        .reds_css {
+            color: #E30213;
         }
-    }
-    .stepMainBottom {
-        img {
-            float: none;
-        }
-        .tipsTo {
-            color: #999999;
-            font-size: 1.22rem;
-            margin-top: .2rem;
-            .color1 {
-                color: #fd6813;
-            }
-            .color2 {
-                color: #e30213;
-                font-size: 1.2rem;
-            }
-            .color3 {
-                color: #9ac844;
-                font-size: 1.2rem;
+        .Referenc {
+            margin-bottom: 3.2rem;
+        } 
+        .Referenc1 {
+            display: flex;
+            flex-wrap: wrap;
+            background: #F0F8FF;
+            box-shadow: inset 0rem .35rem 2.8rem 0rem rgba(0,109,255,0.2);
+            border-radius: .95rem .95rem .95rem .95rem;
+            border: .1rem solid #B5DFFF;
+            padding: 1.1rem .9rem;
+            margin-top: 1.3rem;
+            &>div {
+                width: 44%;
+                text-align: center;
+                background: rgba(255,255,255,0.6);
+                border-radius: .75rem .75rem .75rem .75rem;
+                margin: .75rem 3%;
+                padding: 1.2rem 0;
             }
             img {
-                height: 0.73rem;
-                margin-top: -.2rem;
+                width: 1.5rem;
+                margin-top: -.3rem;
             }
         }
-        .CaseImg {
+        .imgBox {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding-right: 3rem;
+            justify-content: space-between;
+            .aigc1 {
+                width: 38.2%;
+                max-width: 208px;
+            }
+            .arrow_aigc {
+                width: 5%;
+                max-width: 1.6rem;
+            }
+            .aigcbg {
+                width: 54.2%;
+                max-width: 14.8rem;
+            }
+            
+        }
+    }
+}
+// 早降重降aigc
+.zjcaigcBox {
+    display: none;
+}
+.zjcaigc{
+    .zjcaigcBox {
+        display: block;
+    }
+    .zjcaigcBox {
+        .steptop {
+            width: 54%;
+        }
+        .stepType {
+            font-size: 1.61rem;
+            color: #222222;
+        }
+        .steptop {
+            font-size: 1.39rem;
+            color: #ffffff;
+        }
+        .stepMain {
+            margin-top: .3rem;
+            margin-left: 1.18rem;
+        }
+        .stepMain p {
+            font-size: 1.6rem;
+            color: #333;
+            background-size: 85%;
+            background-position: 0 90%;
+        }
+        .step2 > img {
+            height: auto;
+            width: 3.56rem !important;
+        }
+        .stepMainTop {
+            display: flex;
             position: relative;
-            margin-top: 1.7rem;
-            .Excessive {
+            margin-top: 2.4rem;
+            margin-bottom: 3rem;
+            .Tradition {
+                width: 11.82rem;
+                height: 10.68rem;
+                background-color: #ffffff;
+                box-shadow: inset 0rem 0rem 1.59rem 0rem
+                    rgba(73, 73, 73, 0.19);
+                border-radius: 0.45rem;
+                border: solid 0.05rem #f0f0f0;
+                padding: 1.5rem 2.7rem 1.5rem 1.5rem;
+                color: #999999;
+                font-size: 1.09rem;
+                text-align: center;
+                margin-top: 1.5rem;
+                .TraditionTop {
+                    color: #333333;
+                    padding-bottom: .8rem;
+                    margin-bottom: .8rem;
+                    border-bottom: 1px dashed #333333;
+                }
+            }
+            .vsBox {
+                width: 3.32rem;
+                height: 3.32rem;
+                background-color: #006eff;
+                border-radius: 50%;
+                text-align: center;
+                color: #fff;
+                line-height: 3.32rem;
+                font-size: 1.41rem;
+                font-weight: bold;
                 position: absolute;
+                top: 50%;
                 left: 50%;
-                z-index: 100;
-                margin-left: -3.3rem;
-                width: 3.56rem;
+                margin-left: -5.4rem;
+                margin-top: -1.7rem;
             }
-            div>img {
-                width: 11.18rem;
-                height: 14.23rem;
+            .Now {
+                width: 14.86rem;
+                height: 13.36rem;
+                background-color: #ffffff;
+                box-shadow: inset 0rem 0rem 1.59rem 0rem
+                    rgba(0, 109, 255, 0.19);
+                border-radius: 0.45rem;
+                border: solid 0.05rem #b5dfff;
+                padding: 1.4rem 2.55rem;
+                text-align: center;
+                color: #333333;
+                font-size: 1.36rem;
+                margin-left: -1.8rem;
+                .TraditionTop {
+                    color: #333333;
+                    border-bottom: 1px dashed #333333;
+                    padding-bottom: 1rem;
+                    margin-bottom: 1rem;
+                    color: #fa4e33;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .Fire {
+                    width: 1.23rem;
+                    height: 1.55rem;
+                    margin-right: .5rem;
+                    margin-top: -2px;
+                }
             }
-
-            .Tradition2 , .Now2 {
+        }
+        .stepMainBottom {
+            img {
+                float: none;
+            }
+            .tipsTo {
+                color: #999999;
+                font-size: 1.22rem;
+                margin-top: .2rem;
+                .color1 {
+                    color: #fd6813;
+                }
+                .color2 {
+                    color: #e30213;
+                    font-size: 1.2rem;
+                }
+                .color3 {
+                    color: #9ac844;
+                    font-size: 1.2rem;
+                }
+                img {
+                    height: 0.73rem;
+                    margin-top: -.2rem;
+                }
+            }
+            .CaseImg {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-right: 3rem;
                 position: relative;
-            }
-            .Tradition2 .topTips{
-                background-image: linear-gradient(90deg,
-                    #f9473b 1%,
-                    #fe6f0b 100%),
+                margin-top: 1.7rem;
+                .Excessive {
+                    position: absolute;
+                    left: 50%;
+                    z-index: 100;
+                    margin-left: -3.3rem;
+                    width: 3.56rem;
+                }
+                div>img {
+                    width: 11.18rem;
+                    height: 14.23rem;
+                }
+
+                .Tradition2 , .Now2 {
+                    position: relative;
+                }
+                .Tradition2 .topTips{
+                    background-image: linear-gradient(90deg,
+                        #f9473b 1%,
+                        #fe6f0b 100%),
+                    linear-gradient(
+                        #ee3b86,
+                        #ee3b86);
+                }
+
+                .Now2 .topTips{
+                    background-image: linear-gradient(90deg,
+                    #739c27 0%,
+                    #bff063 100%),
                 linear-gradient(
                     #ee3b86,
                     #ee3b86);
-            }
-
-            .Now2 .topTips{
-                background-image: linear-gradient(90deg,
-                #739c27 0%,
-                #bff063 100%),
-            linear-gradient(
-                #ee3b86,
-                #ee3b86);
-            }
-            .topTips {
-                width: 7.18rem;
-                height: 2.41rem;
-                background-blend-mode: normal,
-                    normal;
-                border-radius: 0.45rem 0rem 0.45rem 0rem;
-                color: #ffffff;
-                text-align: center;
-                line-height: 2.41rem;
-                position: absolute;
-                left: 0;
-                top: 0;
-                z-index: 100;
+                }
+                .topTips {
+                    width: 7.18rem;
+                    height: 2.41rem;
+                    background-blend-mode: normal,
+                        normal;
+                    border-radius: 0.45rem 0rem 0.45rem 0rem;
+                    color: #ffffff;
+                    text-align: center;
+                    line-height: 2.41rem;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: 100;
+                }
             }
         }
     }
 }
+
 .example {
     float: right;
 }
@@ -218,8 +294,8 @@
         height: 20.11rem;
         width: calc(100% - 1.6rem);
         background-image: linear-gradient(0deg, 
-		#f6f8fb 0%, 
-		#f4f4fa 100%);
+        #f6f8fb 0%, 
+        #f4f4fa 100%);
         box-shadow: 0rem 0rem 0.47rem 0.03rem 
             rgba(125, 140, 166, 0.19);
         border-radius: 0.5rem;
@@ -362,7 +438,6 @@
         }
     }
 }
-
 // 开题报告
 .ktbgBox {
     display: none;
