@@ -88,7 +88,9 @@ function query(e) {
             withCredentials: true
         },
         data: getFormData({
-            pay_id: $('#searchID').val()
+            pay_id: $('#searchID').val(),
+            'wx_param[appid]': threeMsg.wx,
+            'wx_param[openId]': order_openid,
         }),
         success: function (res) {
             var text = "";
@@ -318,7 +320,9 @@ function setTimer() {
             withCredentials: true
         },
         data: getFormData({
-            pay_id: $('#searchID').val()
+            pay_id: $('#searchID').val(),
+            'wx_param[appid]': threeMsg.wx,
+            'wx_param[openId]': order_openid,
         }),
         success: function (res) {
             if(res.data.length) {

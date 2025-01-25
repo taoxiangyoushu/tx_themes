@@ -7,10 +7,10 @@
     <title>福利中心</title>
     <link rel="shortcut icon" href="../../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../../pc/hd/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../pc/hd/assets/css/common.css?v=pa24.0033">
-    <link rel="stylesheet" href="../../pc/hd/assets/css/index.css?v=pa24.0033">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/common.css?v=pa24.0034">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/index.css?v=pa24.0034">
     <link rel="stylesheet" href="../../pc/hd/assets/css/bootstrapValidator.min.css">
-    <link rel="stylesheet" href="../../pc/hd/assets/css/activity.css?v=pa24.0033">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/activity.css?v=pa24.0034">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
@@ -266,11 +266,11 @@
         <div class="poster">
             <div class="spare_box spare1 adopt_box" id="adopt_img">
                 <img src="" alt="">
-                <div id="qrcode"></div>
+<!--                <div id="qrcode"></div>-->
             </div>
             <div class="spare_box spare2">
                 <img src="" alt="">
-                <div id="qrcode2"></div>
+<!--                <div id="qrcode2"></div>-->
             </div>
         </div>
         <div class="channel-block">
@@ -367,9 +367,9 @@
 <script src="../../pc/hd/assets/js/coco-message.js"></script>
 <script src="../../pc/hd/assets/js/qrcode.min.js"></script>
 <script src="../../pc/hd/assets/js/html2canvas.min.js"></script>
-<script src="../../pc/hd/assets/js/common.js?v=pa24.0033"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pa24.0033"></script>
-<!--<script src="../../pc/hd/assets/js/MemberSystem.js"></script>-->
+<script src="../../pc/hd/assets/js/common.js?v=pa24.0034"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pa24.0034"></script>
+<!--<script src="../../mobile/hd/assets/js/MemberSystem.js"></script>-->
 <script>
     var isBindPhone = false
     var islogin = false
@@ -384,23 +384,8 @@
     }
 
     function infoSuccess(data) {
-        if(data.project[0].jane_name == 'dsxz') {
-            $(".spare_box").addClass('dsxz')
-            $(".poster .spare1>img").attr('src','../../pc/hd/assets/img/dsxz_1.png?v1')
-            $(".poster .spare2>img").attr('src','../../pc/hd/assets/img/dsxz_2.png?v1')
-        }else if(data.project[0].jane_name == 'aigc_check') {
-            $(".spare_box").addClass('aijc')
-            $(".poster .spare1>img").attr('src','../../pc/hd/assets/img/aijc_1.png?v1')
-            $(".poster .spare2>img").attr('src','../../pc/hd/assets/img/aijc_2.png?v1')
-        }else if(data.project[0].jane_name == 'paper_platform') {
-            $(".spare_box").addClass('lwcc')
-            $(".poster .spare1>img").attr('src','../../pc/hd/assets/img/lwcc_1.png?v1')
-            $(".poster .spare2>img").attr('src','../../pc/hd/assets/img/lwcc_2.jpg?v1')
-        }else if(data.project[0].jane_name == 'zjchong') {
-            $(".spare_box").addClass('jc')
-            $(".poster .spare1>img").attr('src','../../pc/hd/assets/img/jc_1.png?v1')
-            $(".poster .spare2>img").attr('src','../../pc/hd/assets/img/jc_2.png?v1')
-        }
+        $(".poster .spare1>img").attr('src',urls + "/api/client/activity/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=1&_session_type=user&domain="+window.location.origin+"&v=1")
+        $(".poster .spare2>img").attr('src',urls + "/api/client/activity/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=1&_session_type=user&domain="+window.location.origin+"&v=2")
     }
 
     function complete_info(data , code) {
@@ -647,32 +632,8 @@
     }
 
     function createPoster(code) {
-        $("#qrcode").html("");
-        $("#qrcode2").html("");
         $(".invite_pop .copy-btn").attr('data-code',code)
         $(".link_dInput").text( window.location.origin + '/?dc='+ code )
-        var widthQr1 = ''
-        var widthQr2 = ''
-        if($("#adopt_img #qrcode")[0]) {
-            widthQr1 = 66
-        }else{
-            widthQr1 = 58
-        }
-        if($("#adopt_img #qrcode2")[0]) {
-            widthQr2 = 66
-        }else{
-            widthQr2 = 58
-        }
-        var qrcode = new QRCode(document.getElementById("qrcode"), {
-            text: window.location.origin + '/?dc=' + code,
-            width: widthQr1,
-            height: widthQr1,
-        })
-        var qrcode2 = new QRCode(document.getElementById("qrcode2"), {
-            text: window.location.origin + '/?dc=' + code,
-            width: widthQr2,
-            height: widthQr2,
-        })
     }
 
     $(".copy-btn").on('click',function (){
@@ -715,47 +676,8 @@
     $(document).ready(function(){
         // canvas生成图片
         $("#downPoster").on("click", function () {
-            var getPixelRatio = function (context) { // 获取设备的PixelRatio
-                var backingStore = context.backingStorePixelRatio ||
-                    context.webkitBackingStorePixelRatio ||
-                    context.mozBackingStorePixelRatio ||
-                    context.msBackingStorePixelRatio ||
-                    context.oBackingStorePixelRatio ||
-                    context.backingStorePixelRatio || 0.5;
-                return (window.devicePixelRatio || 0.5) / backingStore;
-            };
-            //生成的图片名称
-            var imgName = "poster.jpg";
-            var shareContent = document.getElementById("adopt_img");
-            var width = shareContent.offsetWidth;
-            var height = shareContent.offsetHeight;
-            var canvas = document.createElement("canvas");
-            var context = canvas.getContext('2d');
-            var scale = getPixelRatio(context); //将canvas的容器扩大PixelRatio倍，再将画布缩放，将图像放大PixelRatio倍。
-            canvas.width = width * scale;
-            canvas.height = height * scale;
-            canvas.style.width = width + 'px';
-            canvas.style.height = height + 'px';
-            context.scale(scale, scale);
-
-            var opts = {
-                scale: scale,
-                canvas: canvas,
-                width: width,
-                height: height,
-                dpi: 300,
-                scrollY: 0,
-                scrollX: -8,
-                logging: true,
-            };
-            html2canvas(shareContent, opts).then(function (canvas) {
-                context.imageSmoothingEnabled = false;
-                context.webkitImageSmoothingEnabled = false;
-                context.msImageSmoothingEnabled = false;
-                context.imageSmoothingEnabled = false;
-                var dataUrl = canvas.toDataURL('image/jpeg', 1.0);
-                dataURIToBlob(imgName, dataUrl, callback);
-            });
+            let version = $(".adopt_box").hasClass('spare1')?'1':'2'
+            window.open(urls + "/api/client/activity/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=1&_session_type=user&domain="+window.location.origin+"&v="+version)
         });
     })
     var dataURIToBlob =  function (imgName, dataURI, callback) {

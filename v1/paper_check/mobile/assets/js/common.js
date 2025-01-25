@@ -230,6 +230,14 @@ window.onload = function (){
 				if(data.domain_config && data.domain_config.distribution_status) {
 					$('.distributionEntrance').show()
 				}
+				if(data.project[0].act_list.length > 0) {
+					if(data.domain_config && data.domain_config.distribution_status){
+						$(".activity_block").css('top', 'calc(70% - 10.8rem)')
+					}else{
+						$(".activity_block").css('top', 'calc(70% - 5.4rem)')
+					}
+					$('.activityEntrance').show()
+				}
 			}else{
 				toast(result.codeMsg)
 			}

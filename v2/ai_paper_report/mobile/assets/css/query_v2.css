@@ -23,8 +23,8 @@ body {
 }
 .fixed-problem,
 .customer-wx {
-  left: auto;
-  right: 0;
+  left: calc(100% - 5.8rem);
+  right: auto;
 }
 .pageHeader {
   text-align: center;
@@ -101,7 +101,7 @@ body {
   display: inline-block;
   background-color: #50B674;
   height: 2px;
-  z-index: 1000;
+  z-index: 900;
 }
 .nodata .selected.wxTab {
   color: #50B674;
@@ -367,3 +367,4 @@ body {
 .swiper-pagination-bullet {
   margin: 0 0.4rem;
 }
+/*# sourceMappingURL=query_v2.css.map */

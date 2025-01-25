@@ -365,6 +365,7 @@ $('.editGenerate').click(function(e) {
                         var formData = {
                             goods_id: $("#type_s2").val(),
                             domain_record: window.location.origin,
+                            customer_invitation: dct_code,
                         }
                         formData['data[rid][label]'] = '记录ID'
                         formData['data[rid][value]'] = rid

@@ -45,10 +45,10 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0009">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0009">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0009">
-    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0009">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0016">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0016">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0016">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0016">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'aigc_check'
@@ -276,10 +276,17 @@
 <!-- 推广赚钱 -->
 <a class="distributionEntrance" id="promotion" href="./fx/init.html">
     <div class="extension">
-        <img src="../mobile/assets/img/fenxiao.png" alt="">
+        <img src="../mobile/assets/img/fenxiao.png?v1" alt="">
         <p>推广赚钱</p>
      </div>
  </a>
+<!-- 福利活动 -->
+<a class="activityEntrance" id="activity" href="./hd/index.html">
+    <div class="activity_block">
+        <img src="../mobile/assets/img/fuli.png" alt="">
+        <p>福利活动</p>
+    </div>
+</a>
 <div class="dashi_wx_box text_a_c">
     <div class="customerBox">
         <i class="close-wx"></i>
@@ -314,7 +321,8 @@
 
 <div class="mask"></div>
 <div class="customer-wx" id="customer-wx1">
-    <img src="../mobile/assets/img/kfwx.png" alt="客服">
+    <img src="../mobile/assets/img/kfwx.png?v1" alt="客服">
+    <p>联系客服</p>
 </div>
     <div class="fiexBox">
     </div>
@@ -328,19 +336,13 @@
 <script src="../mobile/assets/js/common.js?v=1.1"></script>
 <script src="../mobile/assets/js/bootstrap-select.js"></script>
 <script src="../mobile/assets/js/bootstrapValidator.min.js"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.0009"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0016"></script>
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/Drag.js"></script>
 <script>
-    var order_openid = ''
-    order_openid = getQueryVariable('openid')
 
     function setPriceInfo(){
-        if(!order_openid){
-            if(/MicroMessenger/.test(window.navigator.userAgent) && threeMsg.wx){
-                location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + threeMsg.wx + '&otherUrl=' + encodeURIComponent(window.location.href)
-            }
-        }
+
     }
 
     $("#ContainerTo").bootstrapValidator({
@@ -447,11 +449,6 @@
                 source: /MicroMessenger/.test(window.navigator.userAgent) ? 2 : 7
             }
 
-            if (order_openid) {
-                formData['wx_param[appid]'] = threeMsg.wx
-                formData['wx_param[openId]'] = order_openid
-            }
-
             if (window.localStorage.getItem('qhclickid')) {
                 formData['qhclickid'] = window.localStorage.getItem('qhclickid')
             }
@@ -520,7 +517,7 @@
                                         } else {
                                             pathName = pathName + 'pay.html'
                                         }
-                                        location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.origin + pathName + '?order_sn=' + resData.data.order_sn + '&goods=&payId=')
+                                        location.href = './pay.html?order_sn=' + resData.data.order_sn + '&getOpenId=true';
                                         return
                                     }
 

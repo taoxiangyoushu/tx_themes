@@ -447,8 +447,20 @@
                         }
                     }
                 })
-                .bind('keyup.manifest', function () {
+                .bind('keyup.manifest', function (key) {
                     self._resizeInput();
+                    // Prevent the form from submitting on enter.
+                    if (key.which == self.keys.SEMICOLON) {
+                        key.preventDefault();
+                        if (options.marcoPolo && options.required) {
+                            self._resizeInput();
+                        }
+                        // Add the input value since arbitrary values are allowed.
+                        else if ($input.val()) {
+                            self.add($input.val().slice(0, $input.val().length-1), null, true, false);
+                        }
+                        return;
+                    }
                 })
                 .bind('paste.manifest', function () {
                     // 1ms timeout ensures the input value contains the pasted value.

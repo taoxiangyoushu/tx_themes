@@ -965,7 +965,7 @@
             var html = ''
             html += '<div class="MergeBox">'
             html += '    <img class="closedDL " src="https://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
-            html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close_dl.png" alt="">'
+            html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/'+this.opt.delete_ico+'.png" alt="">'
             html += '    <div class="QRCodeBox">'
             html += '        <div class="whiteboard">'
             html += '            <div class="Switchlogin">'
@@ -1347,7 +1347,7 @@
             var html = ''
             html += '<div class="SMSodeBox" id="bindingMobile">'
             html += '    <img class="closedDL" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
-            html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close_dl.png" alt="">'
+            html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/'+this.opt.delete_ico+'.png" alt="">'
             html += '    <div class="whiteboard">'
             html += '        <div class="Switchlogin">'
             html += '           <div class="WeChat_verification"></div>'
@@ -1594,7 +1594,7 @@
             var html = ''
             html += '<div class="SMSodeBox" id="bindingMobile">'
             html += '    <img class="closedDL" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close.png" alt="">'
-            html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/close_dl.png" alt="">'
+            html += '    <img class="closedDL closehover" src="https://api.taoxiangyoushu.com/html/v1/utils/img/'+this.opt.delete_ico+'.png" alt="">'
             html += '    <div class="whiteboard">'
             html += '        <div class="Switchlogin">'
             html += '           <div class="WeChat_verification"></div>'
@@ -1855,8 +1855,12 @@
             var _this=this
             if(this.opt.whether&&this.opt.whether.is_must_login_enable&&this.opt.whether.is_must_phone_login_enable){
                 if(this.opt.is_activity){
-                    this.MergeBox.show()
-                    _this.QRCodeStatus()
+                    if(this.opt.is_mobileActivity) {
+                        this.SMSodeBox2.show()
+                    }else{
+                        this.MergeBox.show()
+                        _this.QRCodeStatus()
+                    }
                 }else{
                     this.QRCodeBox.show()
                     this.SMSodeBox.show()
@@ -1865,7 +1869,11 @@
             }
             else if(this.opt.whether&&this.opt.whether.is_must_login_enable){
                 if(this.opt.is_activity){
-                    this.MergeBox.show()
+                    if(this.opt.is_mobileActivity) {
+                        this.SMSodeBox2.show()
+                    }else{
+                        this.MergeBox.show()
+                    }
                 }else {
                     this.QRCodeBox.show()
                 }
@@ -1875,7 +1883,11 @@
                 $('.PromptText').hide()
             }
             else if(this.opt.whether&&this.opt.whether.is_must_phone_login_enable){
-                this.SMSodeBox.show()
+                if(this.opt.is_activity && this.opt.is_mobileActivity){
+                    this.SMSodeBox2.show()
+                }else{
+                    this.SMSodeBox.show()
+                }
                 $('.WeChat_verification').hide()
                 $('.PromptText').hide()
             }else{
@@ -2291,7 +2303,7 @@
                         if(res.code=='200'){
                             _this.closeslogin2();
                             _this.opt.bindingSuccessful()
-                            _this.userUserInfo()
+                            _this.userUserInfo(true)
                         }
                         else {
                             cocoMessage.error(res.codeMsg, 2000);
@@ -2456,7 +2468,7 @@
                     success:function(res){
                         if(res.code=='200'){
                             _this.closeslogin2();
-                            _this.userUserInfo()
+                            _this.userUserInfo(true)
                         }
                         else {
                             cocoMessage.error(res.codeMsg, 2000);
@@ -2546,5 +2558,5 @@
             })
         }
     }
-	window.member = member;
+    window.member = member;
 })(window, document)

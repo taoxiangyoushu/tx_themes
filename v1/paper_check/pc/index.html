@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../pc/assets/css/select2.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0039">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0039">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0040">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0040">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
@@ -44,7 +44,6 @@
                     <div class="nav-download">
                         <a href="./query.html">下载报告</a>
                     </div>
-
                </div>
            </div>
         </div>
@@ -312,15 +311,15 @@
 </div>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
 <script src="../pc/assets/js/jquery.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.6"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
 <script src="../pc/assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="../pc/assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/select2.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0039"></script>
+<script src="../pc/assets/js/common.js?v=p24.0040"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0039"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0040"></script>
 <script>
     $('#date').datetimepicker({minView: 2, language: "zh-CN"});
     var typed = new Typed('.switch-text', {
@@ -401,6 +400,9 @@
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "wanfanggl") {
                         versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">通用版</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "wanfangaigc") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">AIGC检测</div>'
                     }
                 }
                 $(".check-version-block").empty().append(versionDom)

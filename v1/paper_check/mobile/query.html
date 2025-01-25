@@ -44,8 +44,8 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
     <link rel="stylesheet" href="../mobile/assets/css/alert.css">
-    <link rel="stylesheet" href="../mobile/assets/css/query.css?v=m24.0012">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0012">
+    <link rel="stylesheet" href="../mobile/assets/css/query.css?v=m24.0020">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0020">
     <link rel="stylesheet" href="../mobile/assets/css/complain.css">
     <link rel="stylesheet" href="../mobile/assets/css/problem.css">
     <script>
@@ -88,6 +88,7 @@
 <div class="mask mask-fixed"></div>
 <div class="customer-wx">
     <img src="../mobile/assets/img//kfwx.png" alt="客服">
+    <p>联系客服</p>
 </div>
 <div class="orderTipsPop">
     <div class="maskHader">
@@ -180,11 +181,12 @@
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/alert.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0012"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0020"></script>
 <script src="../mobile/assets/js/bootstrapValidator.min.js"></script>
 <script src="../mobile/assets/js/order_result.js"></script>
 <script src="https://api.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=ts1.0"></script>
 <script>
+    var order_openid = ''
 
     if(/MicroMessenger/.test(window.navigator.userAgent)) {
         $(".down_pop").addClass('wxBro')
@@ -226,6 +228,15 @@
     // }
 
     function startQuerying(){
+        order_openid = getQueryVariable('openid')
+        if(!order_openid){
+            if(/MicroMessenger/.test(window.navigator.userAgent) && threeMsg.wx){
+                location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + threeMsg.wx + '&otherUrl=' + encodeURIComponent(window.location.href)
+            }
+        }else{
+            // wxParamLogin()
+        }
+
         if(getQueryVariable('oid')) {
             $('#searchID').val(getQueryVariable('oid'))
             query(true)
@@ -233,6 +244,33 @@
             $('#searchID').val(localStorage.getItem('orderId'))
             query(true)
         }
+    }
+
+    function wxParamLogin() {
+        var formData = {
+            'wx_param[appid]': threeMsg.wx,
+            'wx_param[openId]': order_openid,
+        }
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/user/wxParamLogin',
+            data: getFormData(formData),
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function(data) {
+                if (data.code == 200) {
+
+                } else {
+                    // alert(data.codeMsg)
+                }
+            },
+            error: function(err) {
+
+            }
+        });
     }
 
     // function throttle(method, context) {
@@ -301,7 +339,9 @@
                 withCredentials: true
             },
             data: getFormData({
-                pay_id: $('#searchID').val()
+                pay_id: $('#searchID').val(),
+                'wx_param[appid]': threeMsg.wx,
+                'wx_param[openId]': order_openid,
             }),
             success: function (res) {
                 var text = "";
@@ -428,7 +468,9 @@
                 withCredentials: true
             },
             data: getFormData({
-                pay_id: $('#searchID').val()
+                pay_id: $('#searchID').val(),
+                'wx_param[appid]': threeMsg.wx,
+                'wx_param[openId]': order_openid,
             }),
             success: function (res) {
                 if(res.data.length) {

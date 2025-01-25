@@ -456,12 +456,13 @@
   font-size: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
 }
 .home .main-tab-bar .submitContent .form_block .zip_block .report_type .type_item {
   width: 32%;
   height: 3rem;
+  margin-right: 2%;
   border-radius: 0.4rem;
   background: #F8F9FB;
   font-size: 1.2rem;

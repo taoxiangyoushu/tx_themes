@@ -440,8 +440,8 @@ input[type=radio] {
     z-index: 998;
 }
 .fixed-problem , .customer-wx {
-    left: auto;
-    right: 0;
+    left: calc(100% - 5.8rem);
+    right: auto;
 }
 .profession {
     span {
@@ -506,11 +506,25 @@ input[type="checkbox"] {
         }
     }
 }
+.activityE {
+    text-align: center;
+    &>div {
+        display: inline-block;
+        border-radius: .4rem .4rem .4rem .4rem;
+        width: 6.4rem;
+        height: 2.4rem;
+        cursor: pointer;
+        margin-top: .85rem;
+        img {
+            width: 100%;
+        }
+    }
+}
 .proposalBox .proposal-file {
     line-height: normal;
     width: 100%;
     .delete-file {
-        margin-top: -1rem;
+        margin-top: -.5rem;
         padding: 0;
         width: 1.2rem;
     }

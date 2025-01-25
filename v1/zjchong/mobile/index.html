@@ -45,9 +45,9 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0016">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0016">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0016">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0024">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0024">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0024">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'zjchong'
@@ -142,6 +142,7 @@
                             <div class="type_item" data-type="weipuAIGC">维P AIGC</div>
                             <div class="type_item" data-type="masterAIGC">Master AIGC</div>
                             <div class="type_item" data-type="gzdAIGC">格Z达 AIGC</div>
+                            <div class="type_item" data-type="dyAIGC">D雅 AIGC</div>
                             <div class="type_item" data-type="paperPassAIGC">PP AIGC</div>
                             <div class="type_item" data-type="otherAIGC">其它</div>
                         </div>
@@ -162,7 +163,7 @@
                             <div>
                                 <p class="p1 upload_tips_txt" data-type="all">系统支持各大查重报告<br/>未识别的报告请反馈给客服处理</p>
                                 <p class="p1 upload_tips_txt" data-type="cnki">上传文件名为<span>“xxx(全文标明引文).pdf“</span><br/>或完整的查重报告压缩包</p>
-                                <p class="p1 upload_tips_txt" data-type="wanfang">上传文件名为<span>“xxx(原文标注报告).pdf”</span>文件</p>
+                                <p class="p1 upload_tips_txt" data-type="wanfang">上传文件名为<span>“xxx(原文标注报告).pdf“</span><br/>或完整的查重报告压缩包</p>
                                 <p class="p1 upload_tips_txt" data-type="weipu">支持上传pdf报告或完整zip报告<br/>需包含文件<span>“xxx_原文对照报告.pdf”</span></p>
                                 <p class="p1 upload_tips_txt" data-type="zaojiance">zip压缩包内需包含<span>“详细报告.html”</span>文件</p>
                                 <p class="p1 upload_tips_txt" data-type="checkPass">zip压缩包内需包含<span>“xxx--详细报告.html”</span>文件</p>
@@ -505,7 +506,7 @@
         <div class="example_item" data-type="wanfang" >
             <P class="subtitle">【万F查重报告】上传示例</P>
             <p class="reportTip">上传文件名为<span>“xxx(原文标注报告).pdf”</span>文件</p>
-            <p class="reportTip">以便系统解析降重内容</p>
+            <p class="reportTip">或完整的查重报告压缩包，以便系统解析降重内容</p>
             <div class="exam-img">
                 <img src="../mobile/assets/img/ex-wf.png" alt="">
             </div>
@@ -606,6 +607,14 @@
                 <img src="../mobile/assets/img/ex-gzdAIGC.png" alt="">
             </div>
         </div>
+        <div class="example_item" data-type="dyAIGC" >
+            <P class="subtitle">【D雅-AIGC报告】上传示例</P>
+            <p class="reportTip">仅支持上传pdf文件，文件名<span>“xxx_检测结果报告.pdf”</span></p>
+            <p class="reportTip">以便系统解析降AIGC内容</p>
+            <div class="exam-img">
+                <img src="../mobile/assets/img/ex-dyAIGC.png" alt="">
+            </div>
+        </div>
     </div>
 
 </div>
@@ -634,7 +643,8 @@
 </div>
 <div class="mask-fixed"></div>
 <div class="customer-wx" id="customer-wx1">
-    <img src="../mobile/assets/img/kfwx.png" alt="客服">
+    <img src="../mobile/assets/img/kfwx.png?v1" alt="客服">
+    <p>联系客服</p>
 </div>
 <div class="fiexBox">
 </div>
@@ -643,11 +653,17 @@
 <!-- 推广赚钱 -->
 <a class="distributionEntrance" id="promotion" href="./fx/init.html">
     <div class="extension">
-        <img src="../mobile/assets/img/fenxiao.png" alt="">
+        <img src="../mobile/assets/img/fenxiao.png?v1" alt="">
         <p>推广赚钱</p>
      </div>
  </a>
-
+<!-- 福利活动 -->
+<a class="activityEntrance" id="activity" href="./hd/index.html">
+    <div class="activity_block">
+        <img src="../mobile/assets/img/fuli.png" alt="">
+        <p>福利活动</p>
+    </div>
+</a>
 <!--<div class="customer-wx">-->
 <!--    <img src="../mobile/assets/img/kfwx.png" alt="客服">-->
 <!--</div>-->
@@ -659,20 +675,14 @@
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/jszip.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0016"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.0016"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0024"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0024"></script>
 <script>
 
     // 价格
     var price_lwjc = ''
     var price_aigc = ''
     function setPriceInfo() {
-        order_openid = getQueryVariable('openid')
-        if(!order_openid){
-            if(/MicroMessenger/.test(window.navigator.userAgent) && threeMsg.wx){
-                location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + threeMsg.wx + '&otherUrl=' + encodeURIComponent(window.location.href)
-            }
-        }
         var htmlDom = ''
         for(var i=0; i<typeData.length; i++) {
             if(typeData[i].short_name == 'lwjc'){
@@ -1117,7 +1127,6 @@
     }
 
 
-    var order_openid = ''
     let throttling = true;
 
     if (getQueryVariable('qhclickid')) {
@@ -1154,10 +1163,6 @@
                 frontNotifyUrl: window.location.origin + pathName + '?oid=#outTradeNo#',
                 domain_record: window.location.origin, // 本地测试需要替换写死, 上线前切记恢复自动获取
                 source: /MicroMessenger/.test(window.navigator.userAgent) ? 2 : 7
-            }
-            if (order_openid) {
-                formData['wx_param[appid]'] = threeMsg.wx
-                formData['wx_param[openId]'] = order_openid
             }
 
             if (window.localStorage.getItem('qhclickid')) {
@@ -1246,7 +1251,7 @@
                                         } else {
                                             pathName = pathName + 'pay.html'
                                         }
-                                        location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.origin + pathName + '?commitId=' + resData.data.order_sn + '&goods=&payId=' + '&jcType=' + $(".ver_info .ver_item.active").data('type'))
+                                        location.href = './pay.html?commitId=' + resData.data.order_sn + '&goods=&payId=' + '&jcType=' + $(".ver_info .ver_item.active").data('type') + '&getOpenId=true';
                                         return
                                     }
                                     location.href = './pay.html?commitId=' + resData.data.order_sn + '&goods=&payId=' + '&jcType=' + $(".ver_info .ver_item.active").data('type')
@@ -1312,10 +1317,6 @@
                 frontNotifyUrl: window.location.origin + pathName + '?oid=#outTradeNo#',
                 domain_record: window.location.origin, // 本地测试需要替换写死, 上线前切记恢复自动获取
                 source: /MicroMessenger/.test(window.navigator.userAgent) ? 2 : 7
-            }
-            if (order_openid) {
-                formData['wx_param[appid]'] = threeMsg.wx
-                formData['wx_param[openId]'] = order_openid
             }
 
             if (window.localStorage.getItem('qhclickid')) {
@@ -1530,8 +1531,8 @@
             fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
         },
         wanfang: {
-            zipType: [ 'pdf'],
-            fileAccept: '.pdf'
+            zipType: ['zip', 'pdf'],
+            fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
         },
         zaojiance: {
             zipType: ['zip'],
@@ -1576,6 +1577,10 @@
         masterAIGC: {
             zipType: ['zip'],
             fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+        },
+        dyAIGC: {
+            zipType: ['pdf'],
+            fileAccept: '.pdf'
         },
         paperPassAIGC: {
             zipType: ['zip'],

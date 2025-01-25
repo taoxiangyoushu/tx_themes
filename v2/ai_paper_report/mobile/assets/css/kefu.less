@@ -35,22 +35,30 @@
   .step img {
     width: 2rem;
   }
-  .customer-wx {
-    position: fixed;
-    padding: 1rem;
-    background-color: #ffffff;
-    box-shadow: 0rem 0rem 2rem 0rem
-      rgba(0, 0, 0, 0.09);
-    border-radius: 50%;
-    left: 0%;
-    top: calc(75% - 6.25rem);
-    z-index:120;
-    text-align: center;
-    img {
-      width: 3rem;
-      height: 3rem;
-    }
+.customer-wx {
+  position: fixed;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 2rem 0rem
+  rgba(0, 0, 0, 0.09);
+  border-radius: 0.8rem;
+  left: calc(100% - 5.8rem);
+  top: calc(75% - 5.4rem);
+  z-index:120;
+  text-align: center;
+  padding: 0.5rem 0.6rem 0.4rem;
+  transition: all .3s;
+  display: none;
+  img {
+    //width: 3rem;
+    height: 2.4rem;
+    margin-bottom: 0.2rem;
   }
+  p {
+    font-size: 0.8rem;
+    color: #666666;
+    margin-bottom: 0;
+  }
+}
   .mask {
     background: #000;
     opacity: .7;

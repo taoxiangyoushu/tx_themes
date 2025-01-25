@@ -39,6 +39,17 @@ var systemInfo = {
 		reportSample: '',
 		applyUser: '',
 	},
+	wanfangaigc: {
+		name: '万方AIGC检测',
+		aigcIntroduce: 'AIGC（Artificial Intelligence Generated Content），即人工智能生成内容。AIGC检测仅检测文章内AI生成文本内容，可快速、精准地识别文本内容是否由AI模型生成，并提供包含疑似AI生成可能性百分比、疑似AI生成片段等内容的AIGC检测报告。',
+		comparisonLibrary: '',
+		detectionAlgorithm: '',
+		Language: '中文、英文',
+		detectionScope: '包括但不限于 ChatGPT、文心一言、谷歌 Bard、通义千问、必应 ChatGpt、ChatSonic 和其他 AI 写作助手生成的中文或英文文本',
+		timeConsuming: '10-30分钟',
+		reportSample: '',
+		applyUser: '',
+	},
 	cqvip: {
 		name: '维普本科',
 		comparisonLibrary: '中文科技期刊论文全文数据库、博士/硕士学位论文全文数据库、外文特色文献数据全库、中文主要报纸全文数据库、中国主要会议论文特色数据库、高校论文联合比对库、中国专利特色数据库、维普优先出版论文全文数据库、互联网数据资源/互联网文档资源、港澳台文献资源、图书资源、高校自建资源库、个人自建资源、库年鉴资源、古籍文献资源、IPUB原创作品',

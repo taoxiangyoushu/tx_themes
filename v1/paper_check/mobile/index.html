@@ -47,9 +47,9 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/select2.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0012">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0012">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0012">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0020">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0020">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0020">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
@@ -72,9 +72,12 @@
             <div class="logo">
                 <img src="../mobile/assets/img/logo.png" alt="">
             </div>
-            <div class="nav-btn">
-                <a href="./query.html">下载报告</a>
-            </div>
+            <div class="f-r" id="memberCarrier">
+                <div class="nav-btn">
+                    <a href="./query.html">下载报告</a>
+                </div>
+           </div>
+            
         </div>
         <div class="banner">
             <p class="p1">备受关注的</p>
@@ -305,15 +308,23 @@
 </div>
 <div class="mask-fixed"></div>
 <div class="customer-wx">
-    <img src="../mobile/assets/img/kfwx.png" alt="客服">
+    <img src="../mobile/assets/img/kfwx.png?v1" alt="客服">
+    <p>联系客服</p>
 </div>
  <!-- 推广赚钱 -->
  <a class="distributionEntrance" id="promotion" href="./fx/init.html">
     <div class="extension">
-        <img src="../mobile/assets/img/fenxiao.png" alt="">
+        <img src="../mobile/assets/img/fenxiao2.png" alt="">
         <p>推广赚钱</p>
      </div>
  </a>
+<!-- 福利活动 -->
+<a class="activityEntrance" id="activity" href="./hd/index.html">
+    <div class="activity_block">
+        <img src="../mobile/assets/img/fuli.png" alt="">
+        <p>福利活动</p>
+    </div>
+</a>
 <!--<div class="customer-wx">-->
 <!--    <img src="../mobile/../mobile/assets/img/kfwx.png" alt="客服">-->
 <!--</div>-->
@@ -327,12 +338,11 @@
 <script src="../mobile/assets/js/select2.min.js"></script>
 <script src="../mobile/assets/js/typed.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0012"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0020"></script>
 <script>
     var uploadType = 'content'
     var minWords = ''
     var maxWords = ''
-    var order_openid = ''
     $('#date').datetimepicker({minView: 2, language: "zh-CN"});
     $('#date').on('hide',function(e) {    // 日期选择隐藏后重新验证
         $('#ContainerTo').data('bootstrapValidator')
@@ -484,13 +494,6 @@
             $(".system-contrast").hide()
         }
 
-        order_openid = getQueryVariable('openid')
-        if(!order_openid){
-            if(/MicroMessenger/.test(window.navigator.userAgent) && threeMsg.wx){
-                location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + threeMsg.wx + '&otherUrl=' + encodeURIComponent(window.location.href)
-            }
-        }
-
         setClassStyle()
     }
 
@@ -548,6 +551,9 @@
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "wanfanggl") {
                         selectObj.append(new Option('通用版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "wanfangaigc") {
+                        selectObj.append(new Option('AIGC检测（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                 }
             }
@@ -1005,10 +1011,6 @@
             'data[author][label]':'论文作者',
             'data[author][value]': info.author
         }
-        if(order_openid){
-            formData['wx_param[appid]'] = threeMsg.wx
-            formData['wx_param[openId]'] = order_openid
-        }
 
         $.ajax({
             type: 'post',
@@ -1031,7 +1033,7 @@
                         }else{
                             pathName = pathName + 'pay.html'
                         }
-                        location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.origin + pathName +'?commitId=' + data.data.order_sn + '&goodsid='+ formData.goods_id)
+                        location.href = './pay.html?commitId=' + data.data.order_sn + '&goodsid='+ formData.goods_id + '&getOpenId=true';
                         return
                     }
                     location.href = './pay.html?commitId=' + data.data.order_sn + '&goodsid='+ formData.goods_id;

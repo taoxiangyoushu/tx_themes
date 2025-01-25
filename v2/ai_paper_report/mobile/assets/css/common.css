@@ -210,25 +210,96 @@ ul {
 }
 .extension {
   position: fixed;
-  width: 5rem;
-  height: 5rem;
   background-color: #ffffff;
-  box-shadow: 0px 0px 19px 1px rgba(255, 166, 166, 0.3);
-  border-radius: 50%;
-  left: 0%;
-  top: calc(75% - 12.6rem);
+  box-shadow: 0rem 0rem 2rem 0rem rgba(0, 0, 0, 0.09);
+  border-radius: 0.8rem;
+  left: calc(100% - 5.8rem);
+  top: calc(75% - 10.8rem);
   z-index: 120;
   text-align: center;
-  font-size: 0.875rem;
-  padding-top: 0.9375rem;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.6rem 0.4rem;
   color: #666666;
+  transition: all 0.3s;
 }
 .extension img {
-  width: 1.875rem;
-  margin-bottom: 0.25rem;
+  height: 2.4rem;
   position: relative;
-  left: 0.125rem;
+  margin-bottom: 0.2rem;
+}
+.activity_block {
+  position: fixed;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 2rem 0rem rgba(0, 0, 0, 0.09);
+  border-radius: 0.8rem;
+  left: calc(100% - 5.8rem);
+  top: calc(75% - 16.2rem);
+  z-index: 120;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.6rem 0.4rem;
+  transition: all 0.3s;
+  color: #666666;
+}
+.activity_block img {
+  height: 2.4rem;
+  position: relative;
+  margin-bottom: 0.2rem;
+}
+.more-Fbtn-h {
+  width: 4.4rem;
+  height: 4.624rem;
+  position: fixed;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 2rem 0rem rgba(0, 0, 0, 0.09);
+  border-radius: 1rem;
+  left: calc(100% - 5.8rem);
+  top: calc(75%);
+  z-index: 120;
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 0.5rem 0.6rem;
+  color: #666666;
+  display: none;
+}
+.more-Fbtn-h img {
+  width: 1.4rem;
+  height: 1rem;
+  margin-top: -0.6rem;
+}
+.more-Fbtn-h p {
+  line-height: normal;
+  margin-top: 0.35rem;
+}
+.more-Fbtn-s {
+  width: 4.4rem;
+  height: 4.624rem;
+  position: fixed;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 2rem 0rem rgba(0, 0, 0, 0.09);
+  border-radius: 1rem;
+  left: calc(100% - 5.8rem);
+  top: calc(75%);
+  z-index: 120;
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 0.5rem 0.6rem;
+  color: #666666;
+  display: none;
+}
+.more-Fbtn-s img {
+  width: 1.4rem;
+  height: 1rem;
+  margin-top: -0.6rem;
+}
+.more-Fbtn-s p {
+  line-height: normal;
+  margin-top: 0.35rem;
 }
 #promotion {
   display: none;
 }
+#activity {
+  display: none;
+}
+/*# sourceMappingURL=common.css.map */

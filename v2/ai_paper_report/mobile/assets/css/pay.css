@@ -253,6 +253,7 @@
 .appreciationUL .appreciationLI > div img {
   margin-left: 0.5rem;
   margin-top: -0.3rem;
+  width: 1.2rem;
 }
 .appreciationUL .appreciationLI > div .original-price {
   line-height: normal;
@@ -553,7 +554,7 @@
   width: 90%;
   top: 15%;
   left: 5%;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 3rem 1rem 2rem 2rem;
   border-radius: 10px;
   display: none;
 }
@@ -598,6 +599,7 @@
 .szsj-tips-block .szsj_content {
   max-height: 44rem;
   overflow-y: scroll;
+  padding-right: 1rem;
 }
 .Deduction {
   background-color: #ffffff;

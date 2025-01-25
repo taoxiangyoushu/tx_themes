@@ -114,9 +114,8 @@ p {
 }
 .a-content .getCoupons-block .gc-c-block .level-block .level-item {
   vertical-align: top;
-  margin-right: 124px;
   position: relative;
-  width: 88px;
+  width: 20%;
   display: none;
 }
 .a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox {
@@ -127,6 +126,7 @@ p {
   border-radius: 10px;
   box-shadow: 0 0 8px 1px #ffe1e3;
   position: relative;
+  margin: auto;
 }
 .a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .coupon-name {
   height: 20px;
@@ -144,9 +144,10 @@ p {
 }
 .a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .coupon-name .zk {
   color: #fff;
-  width: 44px;
+  width: 37px;
   display: inline-block;
-  text-align: center;
+  position: relative;
+  left: -2px;
 }
 .a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .coupon-name .qm {
   color: #FF6F65;
@@ -218,7 +219,7 @@ p {
   height: 2px;
   background: linear-gradient(90deg, #FF7964, #FF3240);
   top: 43px;
-  left: -124px;
+  left: -59px;
 }
 .a-content .getCoupons-block .gc-c-block .level-block .level-item:last-child {
   margin-right: 0;
@@ -984,4 +985,3 @@ p {
     transform: scale(1.2, 1);
   }
 }
-/*# sourceMappingURL=activity.css.map */

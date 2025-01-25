@@ -228,9 +228,35 @@ window.onload = function (){
 				}
 				
 				if(data.domain_config && data.domain_config.distribution_status) {
+					if(data.project[0].act_list.length > 0) {
+						if($('.index_app').length) {
+							$(".extension").css('top', 'calc(75% - 5.4rem)')
+							$(".customer-wx").css({'top':'75%','box-shadow':'none'})
+							$(".fixed-problem").css({'top':'75%','box-shadow':'none'})
+							$(".more-Fbtn-s").show()
+						}
+					}else{
+
+					}
 					$('.distributionEntrance').show()
 				}
 
+				if(data.project[0].act_list.length > 0) {
+					if(data.domain_config && data.domain_config.distribution_status){
+						if($('.index_app').length) {
+							$(".activity_block").css('top', 'calc(75% - 10.8rem)')
+							$(".customer-wx").css({'top':'75%','box-shadow':'none'})
+							$(".fixed-problem").css({'top':'75%','box-shadow':'none'})
+							$(".more-Fbtn-s").show()
+						}
+					}else{
+						$(".activity_block").css('top', 'calc(75% - 10.8rem)')
+					}
+					$('.activityEntrance').show()
+				}
+
+				$(".customer-wx").css({'display':'block'})
+				$(".fixed-problem").css({'display':'block'})
 				var sw = keyConversion[getQueryVariable('short_name') || getQueryVariable('sw')]
 				if(sw) defaultType(sw) // 默认选中版本
 			}else{

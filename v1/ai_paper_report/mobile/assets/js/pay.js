@@ -1,3 +1,11 @@
+// 微信浏览器并且有微信支付
+function refreshPageWx() {
+    if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器 且 有微信支付
+        if(getQueryVariable('getOpenId') == 'true'){
+            location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.href.replace('getOpenId=true','getOpenId=false'))
+        }
+    }
+}
 
 toast({
     msg: '正在计算价格...',
@@ -200,6 +208,7 @@ $('#orderIdText').text(order_sn)
 if(!order_sn) location.href='./index.html'
 
 function payWay(goods_info , pay_way) {
+    refreshPageWx()
     if(getQueryVariable('contentType')){
         var typeData2 = typeData[getQueryVariable('contentType')] // 拿到当前版本的info参数
        if(typeData2){

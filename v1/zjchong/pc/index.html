@@ -9,9 +9,9 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0044">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0044">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0044">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0047">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0047">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0047">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -161,7 +161,7 @@
                                         </div>
                                     </div>
                                     <div class="zip_description" data-type="wanfang">
-                                        上传文件名为<span class="exampleFile_name">“xxx(原文标注报告).pdf”</span>以便系统解析降重内容，示例：
+                                        上传文件名为<span class="exampleFile_name">“xxx(原文标注报告).pdf”</span>或完整的查重报告压缩包，以便系统解析降重内容，示例：
                                         <span class="example_file">
                                             <img src="../pc/assets/img/icon_pdf.png" alt="">
                                             xxx(原文标注报告).pdf
@@ -317,6 +317,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="zip_description" data-type="dyAIGC">
+                                        仅支持上传pdf文件，文件名<span class="exampleFile_name">“xxx_检测结果报告.pdf”</span>，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_pdf.png" alt="">
+                                             xxx_检测结果报告.pdf
+                                        </span>
+                                        <div class="file_exampleBlock gzdaigc">
+                                            <div>
+                                                <img src="../pc/assets/img/aigc_dy_img.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="zipFile_upload">
                                         <div class="upload_file">
@@ -354,6 +366,7 @@
                                                 <div class="report_type_item" data-brand="weipuAIGC">维P AIGC</div>
                                                 <div class="report_type_item" data-brand="masterAIGC">Master AIGC</div>
                                                 <div class="report_type_item noMarginRight" data-brand="gzdAIGC">格Z达 AIGC</div>
+                                                <div class="report_type_item" data-brand="dyAIGC">D雅 AIGC</div>
                                                 <div class="report_type_item" data-brand="paperPassAIGC">PP AIGC</div>
                                                 <div class="report_type_item" data-brand="otherAIGC">其它</div>
                                             </div>
@@ -718,13 +731,13 @@
 </div>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
 <script src="../pc/assets/js/jquery.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.6"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js"></script>
 <script src="../pc/assets/js/jszip.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0044"></script>
+<script src="../pc/assets/js/common.js?v=p24.0047"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0044"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0047"></script>
 <script>
     var uploadType = 'content';
     var domain = '303';
@@ -1382,8 +1395,8 @@
                 fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
             },
             wanfang: {
-                zipType: [ 'pdf'],
-                fileAccept: '.pdf'
+                zipType: ['zip', 'pdf'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
             },
             zaojiance: {
                 zipType: ['zip'],
@@ -1428,6 +1441,10 @@
             masterAIGC: {
                 zipType: ['zip'],
                 fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+            },
+            dyAIGC: {
+                zipType: ['pdf'],
+                fileAccept: '.pdf'
             },
             paperPassAIGC: {
                 zipType: ['zip'],

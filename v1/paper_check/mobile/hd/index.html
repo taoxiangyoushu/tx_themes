@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 为移动设备添加 viewport；-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 指定请求和响应遵循的缓存机制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="24小时自助检测，可以快速准确地检测出毕业论文、博士、硕士论文、期刊论文中的不当引用、过度引用、论文抄袭、伪造、篡改等学术不端行为"/>
+    <meta name="keywords" content="检测重复率,论文查重,论文检测,毕业论文抄袭查重检测"/>
+    <title>福利中心</title>
+    <link rel="shortcut icon" href="../../mobile/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/common.css?v=ma24.0041">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/index.css?v=ma24.0041">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/activity.css?v=ma24.0041">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/fxCommon.css?v=ma24.0041">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/kefu.css?v=ma24.0041">
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        var JANE_NAME = 'paper_platform';
+    </script>
+</head>
+<body>
+<div class="home_page clearfix" id="App">
+    <div class="head headDiv">
+        <div class="head-content">
+            <div class="logo f-l">
+                <img src="../../mobile/hd/assets/img/logo.png" alt="">
+            </div>
+            <div class="f-r" id="memberCarrier">
+<!--                <div class="nav-activity">-->
+<!--                    <a href="./query.html">免费券大放送</a>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+    <div class="a-content">
+        <div id="loader">
+            <div id="shadow"></div>
+            <div id="box"></div>
+        </div>
+        <!-- <div class="back_bav">
+            <a href="/"><  返回提交页</a>
+        </div> -->
+       <div class="a-content-c">
+           <div class="dynamic-block">
+               <img src="../../mobile/hd/assets/img/lihua.png" alt="">
+               <div class="dynamic-banner">
+                   <ul class="dynamic-b-b">
+
+                   </ul>
+               </div>
+           </div>
+           <div class="getCoupons-block">
+               <div class="gc-h-block "><img src="../../mobile/hd/assets/img/txt.png" alt=""></div>
+               <div class="gc-c-block">
+                   <div class="level-block">
+                        <span class="Back_line1"></span>
+                        <span class="Back_line2"></span>
+                       <div class="level-item locking" data-num="0">
+                           <div class="level-iconBox">
+                               <img src="" alt="">
+                               <p class="coupon-name"><span class="zk"></span><span class="qm"></span></p>
+                               <div class="l-i-mask"></div>
+                               <div class="lock"><img src="../../mobile/hd/assets/img/lock.png" alt=""></div>
+                           </div>
+                           <p class="coupon-aa"><span class="coupon-nn"></span><span class="coupon-cc"> x1</span></p>
+                           <div class="receive">
+                               <div class="r-c">领取</div>
+                               <div class="r-c-n">邀请</div>
+                           </div>
+                       </div>
+                       <div class="level-item locking" data-num="1">
+                           <div class="level-iconBox">
+                               <img src="" alt="">
+                               <p class="coupon-name"><span class="zk"></span><span class="qm"></span></p>
+                               <div class="l-i-mask"></div>
+                               <div class="lock"><img src="../../mobile/hd/assets/img/lock.png" alt=""></div>
+                           </div>
+                           <p class="coupon-aa"><span class="coupon-nn"></span><span class="coupon-cc"> x1</span></p>
+                           <div class="receive">
+                               <div class="r-c">领取</div>
+                               <div class="r-c-n">邀请</div>
+                           </div>
+                       </div>
+                       <div class="level-item locking" data-num="2">
+                           <div class="level-iconBox">
+                               <img src="" alt="">
+                               <p class="coupon-name"><span class="zk"></span><span class="qm"></span></p>
+                               <div class="l-i-mask"></div>
+                               <div class="lock"><img src="../../mobile/hd/assets/img/lock.png" alt=""></div>
+                           </div>
+                           <p class="coupon-aa"><span class="coupon-nn"></span><span class="coupon-cc"> x1</span></p>
+                           <div class="receive">
+                               <div class="r-c">领取</div>
+                               <div class="r-c-n">邀请</div>
+                           </div>
+                       </div>
+                       <div class="level-item locking" data-num="3">
+                           <div class="level-iconBox">
+                               <img src="" alt="">
+                               <p class="coupon-name"><span class="zk"></span><span class="qm"></span></p>
+                               <div class="l-i-mask"></div>
+                               <div class="lock"><img src="../../mobile/hd/assets/img/lock.png" alt=""></div>
+                           </div>
+                           <p class="coupon-aa"><span class="coupon-nn"></span><span class="coupon-cc"> x1</span></p>
+                           <div class="receive">
+                               <div class="r-c">领取</div>
+                               <div class="r-c-n">邀请</div>
+                           </div>
+                       </div>
+                       <div class="level-item locking" data-num="4">
+                           <div class="level-iconBox">
+                               <img src="" alt="">
+                               <p class="coupon-name"><span class="zk"></span><span class="qm"></span></p>
+                               <div class="l-i-mask"></div>
+                               <div class="lock"><img src="../../mobile/hd/assets/img/lock.png" alt=""></div>
+                           </div>
+                           <p class="coupon-aa"><span class="coupon-nn"></span><span class="coupon-cc"> x1</span></p>
+                           <div class="receive">
+                               <div class="r-c">领取</div>
+                               <div class="r-c-n">邀请</div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="invitation-btn">立即邀请</div>
+                   <p class="p1">新用户活跃后，您和好友均可获益</p>
+               </div>
+               <div class="gc-c-block-loding">
+                   <img src="../../mobile/hd/assets/img/loading.png" alt="">
+               </div>
+           </div>
+           <div class="coupons-entrance" id="coupons-entrance">
+                <p class="Par_rules">参与活动免费领券</p>
+               <div class="coupons-entrance-loading">
+                   <div class="coupons-entrance-lc">
+                       <img src="../../mobile/hd/assets/img/loading.png" alt="">
+                   </div>
+               </div>
+               <div class="entrance-item" data-type="activity_gzh">
+                   <div class="entrance-item-c">
+                       <div class="entrance-item-ct">
+                           <p class="p2 couponName"></p>
+                           <p class="p3"><span class="goodsName"></span> <span class="discount"></span></p>
+                       </div>
+                       <div class="entrance-item-cb">
+                           <div class="take_time">
+                                <p class="p4"><img src="../../mobile/hd/assets/img/wechat-m.png" alt="">关注微信公众号</p>
+                                <p class="p5">活动预计耗时：3秒</p>
+                           </div>
+                           <div class="entrance-btn">
+                               <div class="e-b-c">立即参与</div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="entrance-item" data-type="activity_hf">
+                   <div class="entrance-item-c">
+                       <div class="entrance-item-ct">
+                           <p class="p2 couponName"></p>
+                           <p class="p3"><span class="goodsName"></span> <span class="discount"></span></p>
+                       </div>
+                       <div class="entrance-item-cb">
+                            <div class="take_time">
+                                <p class="p4"><img src="../../mobile/hd/assets/img/wechat-m.png" alt="">微信公众号回复</p>
+                                <p class="p5">活动预计耗时：3秒</p>
+                            </div>
+                           <div class="entrance-btn">
+                               <div class="e-b-c">立即参与</div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="entrance-item" data-type="activity_xhs">
+                   <div class="entrance-item-c">
+                       <div class="entrance-item-ct">
+                           <p class="p2 couponName"></p>
+                           <p class="p3"><span class="goodsName"></span> <span class="discount"></span></p>
+                       </div>
+                       <div class="entrance-item-cb">
+                           <div class="take_time">
+                                <p class="p4"><img src="../../mobile/hd/assets/img/redbook-m.png" alt="">分享到小红书</p>
+                                <p class="p5">活动预计耗时：3秒</p>
+                           </div>
+                           <div class="entrance-btn">
+                               <div class="e-b-c">立即参与</div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="entrance-item" data-type="activity_dy">
+                   <div class="entrance-item-c">
+                       <div class="entrance-item-ct">
+                           <p class="p2 couponName"></p>
+                           <p class="p3"><span class="goodsName"></span> <span class="discount"></span></p>
+                       </div>
+                       <div class="entrance-item-cb">
+                           <div class="take_time">
+                                <p class="p4"><img src="../../mobile/hd/assets/img/douyin-m.png" alt="">分享到抖音</p>
+                                <p class="p5">活动预计耗时：3秒</p>
+                           </div>
+                           <div class="entrance-btn">
+                               <div class="e-b-c">立即参与</div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="entrance-item" data-type="activity_bz">
+                   <div class="entrance-item-c">
+                       <div class="entrance-item-ct">
+                           <p class="p2 couponName"></p>
+                           <p class="p3"><span class="goodsName"></span> <span class="discount"></span></p>
+                       </div>
+                       <div class="entrance-item-cb">
+                           <div class="take_time">
+                                <p class="p4"><img src="../../mobile/hd/assets/img/Bilibili-m.png" alt="">分享到B站</p>
+                                <p class="p5">活动预计耗时：3秒</p>
+                           </div>
+                           <div class="entrance-btn">
+                               <div class="e-b-c">立即参与</div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="entrance-item" data-type="activity_zh">
+                   <div class="entrance-item-c">
+                       <div class="entrance-item-ct">
+                           <p class="p2 couponName"></p>
+                           <p class="p3"><span class="goodsName"></span> <span class="discount"></span></p>
+                       </div>
+                       <div class="entrance-item-cb">
+                           <div class="take_time">
+                                <p class="p4"><img src="../../mobile/hd/assets/img/zhihu-m.png" alt="">分享到知乎</p>
+                                <p class="p5">活动预计耗时：3秒</p>
+                           </div>
+                           <div class="entrance-btn">
+                               <div class="e-b-c">立即参与</div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="entrance-item moreBox">
+                   <div class="entrance-item-c">
+                       <img src="../../mobile/hd/assets/img/shinshop.png" alt="">
+                       <p class="more-t">更多优惠券敬请期待</p>
+                       <ul class="more-spot">
+                           <li></li>
+                           <li></li>
+                           <li></li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+           <div class="recruit_block">
+               <div class="left">
+                   <div class="fen-ico">
+                       <img src="../../mobile/hd/assets/img/fenxiao.png" alt="">
+                   </div>
+                   <div class="text">
+                       <p class="p1">招募推广员</p>
+                       <p class="p2">成为“专属”推广员，轻松赚得佣金，不收取任何额外费用</p>
+                   </div>
+               </div>
+               <div class="right">
+                   <div class="recruit_btn">
+                       <div class="recruit_c">
+                           <a href="../fx/init.html" target="_blank">了解一下</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+<div class="mask_content"></div>
+<div class="invite_pop">
+    <img class="closePop" src="../../mobile/hd/assets/img/delete3.png" alt="">
+    <div class="pop_title">立即邀请</div>
+    <div class="pop_content">
+        <div class="swiper-button-prev"></div>
+        <div class="poster swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="spare_box spare1 adopt_box" id="adopt_img">
+                        <img src="" alt="">
+<!--                        <div id="qrcode"></div>-->
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="spare_box spare2">
+                        <img src="" alt="">
+<!--                        <div id="qrcode2"></div>-->
+                    </div>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <div class="btn-block">
+        <div class="copy-btn">复制链接</div>
+        <div class="download-btn" id="downPoster">下载海报</div>
+    </div>
+    <input type="text" id="copyInput">
+</div>
+<div class="coupon_pop">
+    <img class="closePop" src="../../mobile/hd/assets/img/delete3.png" alt="">
+    <p class="p_title">您已获得1张<span></span></p>
+    <div class="coupon_performance">
+        <div class="c-t">
+            <p class="c_type_p"></p>
+            <p class="c_name_p"><span class="c_name_p1"></span><span class="c_name_p2"></span></p>
+        </div>
+        <div class="c-b"></div>
+    </div>
+    <p class="p1">您的券码：<span class="c-code"></span><span class="copyT">复制</span></p>
+    <p class="p2">核销地址：<a href="" target="_blank"><span class="link_text"></span></a></p>
+    <input type="text" id="copyInput2">
+    <div class="btn_block">
+        <span class="btn_1">我知道了</span>
+        <span class="btn_2">
+            <a href="" target="_blank">去使用</a>
+        </span>
+    </div>
+</div>
+<div class="fiexBox">
+    <div>
+        <div class="navBtn WX" id="serviceBtn">
+            <img class="wx2 wxDefault" src="../../mobile/hd/assets/img/AIkf_ico.png?v1" alt="wx-logo">
+            <img class="wx2 wxHover" src="../../mobile/hd/assets/img/AIkf_ico2.png" alt="wx-logo">
+            <p>联系客服</p>
+            <div class="wxKF">
+                <div class="customerBox">
+                    <div class="head_kf">
+                        <img src="../../mobile/hd/assets/img/kf.png" alt="">
+                        <span class="customer-title"></span>
+                    </div>
+                    <div class="customerCode">
+                        <img class="customer-qr" src="" alt="">
+                    </div>
+                    <div class="segmentation-line"></div>
+                    <div class="customerWay">
+                        <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+                        <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+                        <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+                        <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+                    </div>
+                    <p class="noCustomer">商家未设置客服</p>
+                    <img class="customBg" src="../../mobile/hd/assets/img/bg1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dashi_wx_box text_a_c">
+    <div class="customerBox">
+        <i class="close-wx"></i>
+        <div class="head">
+            <img src="../../mobile/hd/assets/img/kf.png?v1" alt="">
+            <span class="customer-title"></span>
+        </div>
+        <div class="customerCode">
+            <img class="customer-qr" src="" alt="">
+        </div>
+        <div class="segmentation-line"></div>
+        <div class="customerWay">
+            <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+            <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+            <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+            <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+        </div>
+        <p class="noCustomer">商家未设置客服</p>
+        <img class="customBg" src="../mobile/assets/img/bg1.png" alt="">
+    </div>
+</div>
+<script src="../../mobile/hd/assets/js/jquery.min.js"></script>
+<script src="../../mobile/hd/assets/js/bootstrapValidator.min.js"></script>
+<script src="../../mobile/hd/assets/js/coco-message.js"></script>
+<script src="../../mobile/hd/assets/js/qrcode.min.js"></script>
+<script src="../../mobile/hd/assets/js/Drag.js"></script>
+<script src="../../mobile/hd/assets/js/swiper-bundle.min.js"></script>
+<script src="../../mobile/hd/assets/js/html2canvas.min.js"></script>
+<script src="../../mobile/hd/assets/js/common.js?v=ma24.0041"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=ma24.0041"></script>
+<!--<script src="../../mobile/hd/assets/js/MemberSystem.js"></script>-->
+<script>
+    var isBindPhone = false
+    var islogin = false
+    var activityInfo = []
+    var couponsInfo = []
+    var inviteCode = ''
+    var coupon_ico = {
+        chachong: '../../mobile/hd/assets/img/chachong.png',
+        jiance: '../../mobile/hd/assets/img/jiance.png',
+        jiangchong: '../../mobile/hd/assets/img/jiangchong.png',
+        xiezuo: '../../mobile/hd/assets/img/xiezuo.png',
+    }
+
+    var mySwiper = new Swiper ('.swiper', {
+        direction: 'horizontal', // 垂直切换选项
+        loop: false, // 循环模式选项
+
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    })
+
+    function infoSuccess(data) {
+        $(".poster .spare1>img").attr('src',urls + "/api/client/activity/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=1&_session_type=user&domain="+window.location.origin+"&v=1")
+        $(".poster .spare2>img").attr('src',urls + "/api/client/activity/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=1&_session_type=user&domain="+window.location.origin+"&v=2")
+    }
+
+    function complete_info(data , code) {
+        memberFu.opt.is_activity = true
+        memberFu.opt.is_mobileActivity = true
+        memberFu.opt.delete_ico = 'close_yd'
+        memberFu.phone_loginbox()
+        getActivityInfo()
+    }
+
+    function success_info(e) {
+        if(e) {
+            islogin = true
+            inviteCode = e.code
+        }
+        if(e.is_bind_phone) { // 已绑定手机号
+            isBindPhone = true
+        }else if(e.hasOwnProperty('is_bind_phone') && !e.is_bind_phone) { // 登录 且 未绑定手机号
+            memberFu.opt.bindingText = '绑定手机号'
+            memberFu.opt.bindingButton = '立即绑定'
+            memberFu.opt.loginTips = '未注册手机号验证后自动登录'
+            setTimeout(function (){
+                memberFu.bind_phone_activity()
+                memberFu.openBinding()
+            },50)
+        }
+    }
+
+    $(".invitation-btn").on('click', function (){
+        if(!islogin) {
+            if(!memberFu.opt.whether.is_must_login_enable) {
+                memberFu.openBinding()
+            }else{
+                memberFu.openLogin()
+            }
+            return
+        }
+        $(".mask_content").show()
+        $(".invite_pop").show()
+        getExtensionCode(true)
+        countClick('activity_tg')
+    })
+
+    $(".r-c-n").on('click', function (){
+        if(!islogin) {
+            if(!memberFu.opt.whether.is_must_login_enable) {
+                memberFu.openBinding()
+            }else{
+                memberFu.openLogin()
+            }
+            return
+        }
+        if(islogin && !isBindPhone) {
+            memberFu.bind_phone_activity()
+            memberFu.openBinding()
+            return
+        }
+        $(".mask_content").show()
+        $(".invite_pop").show()
+        getExtensionCode(true)
+        countClick('activity_tg')
+    })
+
+    $(".entrance-item-cb .entrance-btn").on('click', function (){
+        if(!islogin) {
+            if(!memberFu.opt.whether.is_must_login_enable) {
+                memberFu.openBinding()
+            }else{
+                memberFu.openLogin()
+            }
+            return
+        }
+        if(islogin && !isBindPhone) {
+            memberFu.bind_phone_activity()
+            memberFu.openBinding()
+            return
+        }
+        getExtensionCode()
+        countClick($(this).parents('.entrance-item').attr('data-type'))
+        window.location.href = './detail.html?type=' + $(this).parents('.entrance-item').attr('data-type')
+    })
+
+    function distributionJoin_spread() {
+
+    }
+
+    function getActivityInfo() {
+        $.ajax({
+            type: 'post',
+            url: urls + "/api/client/activity/list?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME + '',
+            xhrFields: {
+                withCredentials: true
+            },
+
+            success: function success(res) {
+                $(".coupons-entrance-loading").hide()
+                if(res.code == '200') {
+                    var typeArr = []
+                    for(var i=0;i<res.data.length;i++){
+                        typeArr.push(res.data[i].type)
+                       for(var j=0;j<$('.entrance-item').length;j++){
+                           if($($('.entrance-item')[j]).attr('data-type') == res.data[i].type){
+                               if(res.data[i].enable){
+                                   $($('.entrance-item')[j]).show()
+                                   $($('.entrance-item')[j]).css('display', 'inline-block')
+                                   $($('.entrance-item')[j]).find('.couponName').text(res.data[i].award[0].type_sec)
+                                   $($('.entrance-item')[j]).find('.goodsName').text(res.data[i].award[0].goods_name)
+                                   $($('.entrance-item')[j]).find('.discount').text(res.data[i].award[0].discount)
+                               }
+                           }
+                       }
+                       if(res.data[i].type == 'activity_tg'){
+                           activityType.push('邀请好友')
+                           receiveCoupon();
+                           activityInfo = res.data[i].award
+                           if(res.data[i].award.length==4){
+                                $('.level-item').css('width','34%')
+                                $('.Back_line1').css('width','50%')
+                                $('.Back_line2').css('width','50%')
+                           }
+                           if(res.data[i].award.length==5){
+                                $('.Back_line2').css('width','50%')
+                           }
+                           if(res.data[i].award.length==2){
+                                $('.Back_line1').css('width','50%')
+                                $('.Back_line1').css('top','22%')
+                                $('.Back_line2').css('display','none')
+                           }
+                           if(res.data[i].award.length==3){
+                                $('.Back_line2').css('display','none')
+                                $('.Back_line1').css('top','22%')
+                           }
+                           if(res.data[i].award.length == 1){
+                            $('.Back_line1').css('display','none')
+                            $('.Back_line2').css('display','none')
+                           }
+                           if(res.data[i].award.length == 0){
+                               $(".getCoupons-block").hide()
+                           }
+                           for(var s=0;s<res.data[i].award.length;s++) {
+                               $($(".level-item")[s]).find('.coupon-name .zk').text(res.data[i].award[s].discount)
+                               if(res.data[i].award[s].type_sec == 'AIGC检测券'){
+                                   $($(".level-item")[s]).find('.coupon-name .qm').text('检测券')
+                               }else{
+                                   $($(".level-item")[s]).find('.coupon-name .qm').text(res.data[i].award[s].type_sec)
+                               }
+                               $($(".level-item")[s]).find('.coupon-nn').text(res.data[i].award[s].goods_name)
+                               if(res.data[i].award[s].type_sec == 'AIGC检测券') {
+                                   $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.jiance)
+                               }else if(res.data[i].award[s].type_sec == '查重券') {
+                                   $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.chachong)
+                               }else if(res.data[i].award[s].type_sec == '降重券') {
+                                   $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.jiangchong)
+                               }else if(res.data[i].award[s].type_sec == '写作券') {
+                                   $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.xiezuo)
+                               }
+                               $($(".level-item")[s]).show()
+                               $($(".level-item")[s]).css('display', 'inline-block')
+                           }
+                       }
+                        if(res.data[i].type != 'activity_tg') {
+                            activityType.push(res.data[i].type_des)
+                            $(".coupons-entrance").show()
+                        }
+                    }
+                    createMessage()
+                    if(!typeArr.includes('activity_tg')){
+                        $(".getCoupons-block").hide()
+                        $("#loader").hide()
+                        $(".a-content-c").show()
+                    }
+                    $(".entrance-item").removeClass('noMarginRight')
+                    for(var e=0;e<$(".entrance-item:visible").length;e++) {
+                        if( (e+1)%3==0) {
+                            $($(".entrance-item:visible")[e]).addClass('noMarginRight')
+                        }
+                    }
+                }else{
+                    activityType = ['关注微信公众号', '微信公众号回复', '分享到B站', '分享到知乎', '分享到小红书', '分享到抖音', '邀请好友']
+                    createMessage()
+                    cocoMessage.error(res.codeMsg, 2000);
+                }
+            }
+        });
+    }
+
+
+    var activityType = []
+    function createMessage() {
+        for(var i=0; i<20; i++){
+            var text = ''
+            text += '<li class="dynamic-item">恭喜用户 *******'+Math.floor(Math.random()*10)+Math.floor(Math.random()*10)+Math.floor(Math.random()*10)+Math.floor(Math.random()*10)+'  通过'+ activityType[getRandomInt(0,activityType.length-1)] +'活动领取了优惠券</li>'
+            $(".dynamic-b-b").append(text)
+            rollingMessages()
+        }
+    }
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return  Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function b(){	// 首页新闻滚动
+        t = parseInt(x.css('top'));
+        x.animate({top: t - 30 + 'px'},'slow');	//50为每个li的高度
+        if(Math.abs(t) == h-30-30){
+            setTimeout(function (){
+                x.css('top','0');
+                setTimeout(b,3000)
+            },3000)
+            return
+        }
+        setTimeout(b,3000);//滚动间隔时间 现在是3秒
+    }
+
+    // $(document).ready(function (){
+    // })
+
+    function rollingMessages(){
+        x = $('.dynamic-b-b');
+        y = $('.dynamic-banner');
+        h = $('.dynamic-b-b li').length * 30; //50为每个li的高度
+        setTimeout(b,3000);//滚动间隔时间 现在是3秒
+    }
+
+    $(".invite_pop .closePop").on('click', function (){
+        $(".mask_content").hide()
+        $(".invite_pop").hide()
+    })
+
+    $(".coupon_pop .closePop").on('click', function (){
+        $(".mask_content").hide()
+        $(".coupon_pop").hide()
+    })
+
+    function getExtensionCode(isPoster){
+        if(inviteCode){
+            if(isPoster){
+                createPoster(inviteCode)
+            }
+        }else{
+            $.ajax({
+                type: 'post',
+                url: urls + "/api/client/activity/join_spread?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+                processData: false,
+                contentType: false,
+                xhrFields: {
+                    withCredentials: true
+                },
+                data: getFormData({'_session_type':'user'}),
+                success: function success(res) {
+                    if(res.code == '200') {
+                        inviteCode = res.data.code
+                        if(isPoster){
+                            createPoster(inviteCode)
+                        }
+                    }else{
+                        cocoMessage.error(res.codeMsg, 2000);
+                    }
+                }
+            });
+        }
+    }
+
+    function createPoster(code) {
+        $(".invite_pop .copy-btn").attr('data-code',code)
+        $(".link_dInput").text( window.location.origin + '/?dc='+ code )
+    }
+
+    $(".copy-btn").on('click',function (){
+        var text = window.location.origin + '/?dc='+ $(this).attr('data-code')
+        $("#copyInput").val(text)
+        $("#copyInput").select()
+        $("#copyInput").blur()
+        try {
+            var state = document.execCommand("copy");
+        } catch (err) {
+            var state = false;
+        }
+        if (state) {
+            cocoMessage.success(1000, "复制成功", function() {
+            });
+        } else {
+            cocoMessage.error(1000, "复制失败", function() {
+            });
+        }
+    })
+
+    $(".copyT").on('click',function (){
+        var text = $('.coupon_pop .c-code').text()
+        $("#copyInput2").val(text)
+        $("#copyInput2").select()
+        $("#copyInput2").blur()
+        try {
+            var state = document.execCommand("copy");
+        } catch (err) {
+            var state = false;
+        }
+        if (state) {
+            cocoMessage.success(1000, "复制成功", function() {
+            });
+        } else {
+            cocoMessage.error(1000, "复制失败", function() {
+            });
+        }
+    })
+
+    // 保存海报
+    $(document).ready(function() {
+        $("#downPoster").on("click", function () {
+            if (/MicroMessenger/.test(window.navigator.userAgent)) {  // 微信浏览器
+                cocoMessage.success( 2000, "长按海报图片, 可保存海报");
+            }else {
+                let version = mySwiper.activeIndex==0?'1':'2'
+                window.open(urls + "/api/client/activity/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=1&_session_type=user&domain="+window.location.origin+"&v="+version)
+            }
+        })
+    })
+    var dataURIToBlob =  function (imgName, dataURI, callback) {
+        var binStr = atob(dataURI.split(',')[1]),
+            len = binStr.length,
+            arr = new Uint8Array(len);
+
+        for (var i = 0; i < len; i++) {
+            arr[i] = binStr.charCodeAt(i);
+        }
+
+        callback(imgName, new Blob([arr]));
+    }
+    var callback = function (imgName, blob) {
+        var triggerDownload = $("<a>").attr("href", URL.createObjectURL(blob)).attr("download", imgName).appendTo("body").on("click", function () {
+            if (navigator.msSaveBlob) {
+                return navigator.msSaveBlob(blob, imgName);
+            }
+        });
+        triggerDownload[0].click();
+        triggerDownload.remove();
+    };
+
+    $(".spare_box").click(function () {
+        $(".spare_box").removeClass('adopt_box')
+        $(".spare_box").attr('id','')
+        $(this).addClass('adopt_box')
+        $(this).attr('id', 'adopt_img')
+    })
+
+    function receiveCoupon() {
+        $.ajax({
+            type: 'get',
+            url: urls + "/api/client/activity/getCoupons?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME + '&activity_type=activity_tg&_session_type=user&applicant=',
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function success(res) {
+                $(".gc-c-block").show()
+                $(".gc-c-block-loding").hide()
+                $("#loader").hide()
+                $(".a-content-c").show()
+                $(".entrance-item").removeClass('noMarginRight')
+                for(var e=0;e<$(".entrance-item:visible").length;e++) {
+                    if( (e+1)%3==0) {
+                        $($(".entrance-item:visible")[e]).addClass('noMarginRight')
+                    }
+                }
+                $($(".level-item:visible")[$(".level-item:visible").length-1]).addClass('noMarginRight')
+                if(res.code == '200') {
+                    couponsInfo = res.data
+                    for(var i=0;i<res.data.length;i++){
+                        $($('.level-item')[i]).removeClass('locking')
+                        $($(".level-item")[i]).find('.coupon-name .zk').text(res.data[i].coupon_discount)
+                        if(res.data[i].coupon_type == 'AIGC检测券'){
+                            $($(".level-item")[i]).find('.coupon-name .qm').text('检测券')
+                        }else{
+                            $($(".level-item")[i]).find('.coupon-name .qm').text(res.data[i].coupon_type)
+                        }
+                        $($(".level-item")[i]).find('.coupon-nn').text(res.data[i].coupon_goods_name)
+                        if(res.data[i].coupon_type == 'AIGC检测券') {
+                            $($(".level-item")[i]).find('.level-iconBox>img').attr('src', coupon_ico.jiance)
+                        }else if(res.data[i].coupon_type == '查重券') {
+                            $($(".level-item")[i]).find('.level-iconBox>img').attr('src', coupon_ico.chachong)
+                        }else if(res.data[i].coupon_type == '降重券') {
+                            $($(".level-item")[i]).find('.level-iconBox>img').attr('src', coupon_ico.jiangchong)
+                        }else if(res.data[i].coupon_typ == '写作券') {
+                            $($(".level-item")[i]).find('.level-iconBox>img').attr('src', coupon_ico.xiezuo)
+                        }
+                    }
+                    $(".level-item").removeClass('invitation')
+                    $($(".level-item")[res.data.length]).addClass('invitation')
+                }else{
+                    $($(".level-item")[0]).addClass('invitation')
+                }
+            },
+            error: function (err){
+
+            }
+        });
+    }
+
+    $(".level-item .r-c").click(function (){
+        var index = $(this).parents('.level-item').attr('data-num')
+        $(".coupon_pop .p_title>span").text(couponsInfo[index].coupon_type)
+        $(".coupon_pop .c_type_p").text(couponsInfo[index].coupon_type)
+        $(".coupon_pop .c_name_p .c_name_p1").text(couponsInfo[index].coupon_goods_name)
+        $(".coupon_pop .c_name_p .c_name_p2").text(couponsInfo[index].coupon_discount)
+        $(".coupon_pop .c-code").text(couponsInfo[index].coupon_code)
+        if(couponsInfo[index].coupon_expired){
+            var dataArr = couponsInfo[index].coupon_expired.split('-')
+            $(".coupon_pop .c-b").text('有效期至 '+dataArr[0]+'年'+dataArr[1]+'月'+dataArr[2]+'日')
+        }else{
+            $(".coupon_pop .c-b").text('长期有效')
+        }
+        if(couponsInfo[index].coupon_use_domain){
+            $(".coupon_pop .link_text").text(window.location.protocol +'//'+couponsInfo[index].coupon_use_domain)
+            $(".coupon_pop .btn_block .btn_2 a").attr('href', window.location.protocol +'//'+couponsInfo[index].coupon_use_domain)
+            $(".coupon_pop .p2 a").attr('href', window.location.protocol +'//'+couponsInfo[index].coupon_use_domain)
+        }else{
+            $(".coupon_pop .link_text").text(window.location.origin)
+            $(".coupon_pop .btn_block .btn_2 a").attr('href', window.location.origin)
+            $(".coupon_pop .p2 a").attr('href', window.location.origin)
+        }
+
+        $(".mask_content").show()
+        $(".coupon_pop").show()
+    })
+
+    $(".btn_block .btn_1").click(function (){
+        $(".mask_content").hide()
+        $(".coupon_pop").hide()
+    })
+
+    function countClick(activityType) {    // 活动点击  数据统计
+        $.ajax({
+            type: 'post',
+            url: urls + "/api/client/activity/view_activity?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME + '',
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: getFormData({'activity_type':activityType}),
+            success: function success(res) {
+
+            },
+            error: function (err) {
+
+            }
+        });
+    }
+</script>
+</body>
+</html>

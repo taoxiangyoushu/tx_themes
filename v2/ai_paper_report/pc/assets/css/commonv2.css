@@ -166,10 +166,10 @@ html .ContainerTo {
   letter-spacing: 7px;
   margin-top: 10px;
 }
-.indexAppv2 .loginBox {
+.indexAppv2 .LeftLoginBox {
   text-align: center;
 }
-.indexAppv2 .loginBox > img {
+.indexAppv2 .LeftLoginBox > img {
   max-width: 94px;
 }
 .indexAppv2 .selected_icon {
@@ -393,6 +393,7 @@ html .ContainerTo {
 .main h3 {
   padding: 0;
   font-size: 16px;
+  margin-bottom: 16px;
 }
 .main h3::before {
   width: 4px;
@@ -770,6 +771,33 @@ html .ContainerTo {
 }
 .placeholder-btnBlock {
   margin-bottom: 20px;
+}
+#contenteditable4,
+#contenteditable {
+  height: 46px;
+}
+#keyword {
+  height: 36px;
+}
+.keywordBox .contenteditable_s .keywordP {
+  height: 38px;
+  line-height: 38px;
+}
+.quantity {
+  top: 13px;
+}
+.bylw #titleID .optimize,
+.bylwsenior #titleID .optimize {
+  top: 7px;
+  height: 32px;
+  line-height: 32px;
+  right: 7px;
+}
+.has-feedback .form-control {
+  padding-right: 32px;
+}
+.mf_container ol#mf_keyword_list .mf_item {
+  margin-top: 4px;
 }
 @media (max-width: 1440px) {
   .indexAppv2 .rightCont {

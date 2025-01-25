@@ -431,8 +431,8 @@ input[type=radio] {
 }
 .fixed-problem,
 .customer-wx {
-  left: auto;
-  right: 0;
+  left: calc(100% - 5.8rem);
+  right: auto;
 }
 .profession span {
   display: inline-block;
@@ -501,12 +501,26 @@ input[type="checkbox"] {
 .promotion > div img {
   width: 100%;
 }
+.activityE {
+  text-align: center;
+}
+.activityE > div {
+  display: inline-block;
+  border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+  width: 6.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  margin-top: 0.85rem;
+}
+.activityE > div img {
+  width: 100%;
+}
 .proposalBox .proposal-file {
   line-height: normal;
   width: 100%;
 }
 .proposalBox .proposal-file .delete-file {
-  margin-top: -1rem;
+  margin-top: -0.5rem;
   padding: 0;
   width: 1.2rem;
 }
@@ -566,3 +580,4 @@ input[type=checkbox] {
 #App.bylw #titleID #contenteditable {
   width: calc(100% - 8.6rem - 0.8rem);
 }
+/*# sourceMappingURL=index_v2.css.map */

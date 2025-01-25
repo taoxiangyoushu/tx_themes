@@ -41,11 +41,11 @@ $route = [
     ],
     '/hd/index.html'=>[
         'pc'=>__DIR__ . '/pc/hd/index.html',
-        'mobile'=>__DIR__ . '/pc/hd/index.html'
+        'mobile'=>__DIR__ . '/mobile/hd/index.html'
     ],
     '/hd/detail.html'=>[
         'pc'=>__DIR__ . '/pc/hd/detail.html',
-        'mobile'=>__DIR__ . '/pc/hd/detail.html'
+        'mobile'=>__DIR__ . '/mobile/hd/detail.html'
     ],
 ];
 $m = new Mobile_Detect();

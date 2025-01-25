@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>成为分销商</title>
 	<link rel="shortcut icon" href="../../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap.min.css?v=pfx24.0046">
-    <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrapValidator.min.css?v=pfx24.0046">
+    <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap.min.css?v=pfx24.0047">
+    <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrapValidator.min.css?v=pfx24.0047">
     <link rel="stylesheet" href="../../pc/fx/assets/css/common.css">
-    <link rel="stylesheet" href="../../pc/fx/assets/css/init.css">
+    <link rel="stylesheet" href="../../pc/fx/assets/css/init.css?v=pfx24.0047">
     <!-- head_script -->
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
@@ -107,6 +107,9 @@
                             <b>关于佣金提现</b>
                             <p>分销中心 —— 申请提现 —— 审核与打款</p>
                         </div>
+                        <div class="distributionCenter">
+                            分销中心
+                        </div>
                         <div class="joinNow loadEffect">
                             立即加入
                         </div>
@@ -130,18 +133,18 @@
 </body>
 
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
-<script src="../../pc/fx/assets/js/jquery.min.js?v=pfx24.0046"></script>
-<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.6"></script>
-<script src="../../pc/fx/assets/js/bootstrap.min.js?v=pfx24.0046"></script>
-<script src="../../pc/fx/assets/js/bootstrapValidator.min.js?v=pfx24.0046"></script>
+<script src="../../pc/fx/assets/js/jquery.min.js?v=pfx24.0047"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
+<script src="../../pc/fx/assets/js/bootstrap.min.js?v=pfx24.0047"></script>
+<script src="../../pc/fx/assets/js/bootstrapValidator.min.js?v=pfx24.0047"></script>
 
-<script src="../../pc/fx/assets/js/qrcode.min.js?v=pfx24.0046"></script>
-<script src="../../pc/fx/assets/js/coco-message.js?v=pfx24.0046"></script>
+<script src="../../pc/fx/assets/js/qrcode.min.js?v=pfx24.0047"></script>
+<script src="../../pc/fx/assets/js/coco-message.js?v=pfx24.0047"></script>
 
-<script src="../../pc/fx/assets/js/common.js?v=pfx24.0046"></script>
-<script src="../../pc/fx/assets/js/rolling.js?v=pfx24.0046"></script>
+<script src="../../pc/fx/assets/js/common.js?v=pfx24.0047"></script>
+<script src="../../pc/fx/assets/js/rolling.js?v=pfx24.0047"></script>
 
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pfx24.0046"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pfx24.0047"></script>
 <script>
     function infoSuccess(data) {
         $('.exclusiveProportion').text(data.domain_config.distribution_ratio)
@@ -151,12 +154,31 @@
     
     var isJoinNow = false
     var join_spread = false
+    var prompt_text = '登录成功!正在跳转...'
     $('.joinNow').click(function() {
         if(isJoinNow) {
             if(join_spread) {
+                prompt_text = '加入分销成功!正在跳转...'
                 distributionJoin_spread()
             }else {
+                prompt_text = '登录成功!正在跳转...'
                 memberFu.openBinding()
+                memberFu.opt.bindingSuccessful = function (){
+                    if(distributionJoin_spread) distributionJoin_spread()
+                }
+            }
+        }
+    })
+    $('.distributionCenter').click(function() {
+        if(isJoinNow) {
+            if(join_spread) {
+                cocoMessage.error('需加入分销后才可进入分销中心', 2000);
+            }else {
+                memberFu.openBinding()
+                memberFu.opt.bindingSuccessful = function (){
+                    cocoMessage.success('登录成功!', 2000);
+                    memberFu.userUserInfo()
+                }
             }
         }
     })
@@ -188,7 +210,7 @@
             },
             success: function(data) {
                 if (data.code == 200) {
-                    cocoMessage.success('登录成功!正在跳转...', 2000);
+                    cocoMessage.success(prompt_text, 2000);
                     setTimeout(function() {
                         location.href = './index.html'
                     }, 500)

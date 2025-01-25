@@ -1,0 +1,149 @@
+.dashi_wx_box.text_a_c {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  border-radius: 0.36rem;
+  width: 74%;
+  top: 30%;
+  padding: 1.8rem;
+  box-sizing: border-box;
+  left: 13%;
+}
+.dashi_wx_box.text_a_c .close-wx {
+  background: url(../img/delete3.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 1.3rem;
+  height: 1.3rem;
+  right: 2rem;
+  top: 1.6rem;
+}
+.kfTitle {
+  color: #333333;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.kf_main {
+  margin-top: 1.4rem;
+  color: #666666;
+}
+.kf_main > p {
+  display: none;
+}
+.step img {
+  width: 2rem;
+}
+.customer-wx {
+  position: fixed;
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 2rem 0rem rgba(0, 0, 0, 0.09);
+  border-radius: 50%;
+  left: 0%;
+  top: 70%;
+  z-index: 100;
+  text-align: center;
+}
+.customer-wx img {
+  width: 3rem;
+  height: 3rem;
+}
+.mask-fixed {
+  background: #000;
+  opacity: 0.7;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  display: none;
+}
+.customerBox {
+  min-width: 218px;
+  width: 100%;
+  background-image: linear-gradient(180deg, #FFDBD8 0%, white 60%);
+  border-radius: 12px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.customerBox .head {
+  height: 4.8rem;
+  line-height: 4.8rem;
+  color: #303133;
+  font-size: 1.6rem;
+  border-bottom: 1px solid #ffffff;
+  background: transparent !important;
+  text-align: left;
+}
+.customerBox .head .customer-title {
+  width: 14rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+}
+.customerBox .head img {
+  vertical-align: middle;
+  margin-top: -1px;
+  margin-left: 20px;
+  margin-right: 4px;
+  width: 2rem;
+}
+.customerBox .customerCode {
+  text-align: center;
+  padding: 2rem 0 1.6rem 0;
+  line-height: normal;
+  position: relative;
+  display: none;
+}
+.customerBox .customerCode img {
+  width: 15rem;
+  height: 15rem;
+}
+.customerBox .segmentation-line {
+  width: 16.8rem;
+  height: 1px;
+  background: #e7e7e7;
+  margin: 0 auto;
+}
+.customerBox .customerWay {
+  padding-left: 20px;
+  padding-top: 16px;
+  padding-bottom: 20px;
+  text-align: left;
+}
+.customerBox .customerWay p {
+  line-height: 2;
+  color: #666666;
+  font-size: 1.4rem;
+  margin: 0;
+  display: none;
+}
+.customerBox .customerWay p .s0 {
+  width: 3.4rem;
+  display: inline-block;
+  font-size: 1.4rem;
+}
+.customerBox .customerWay p .s1 {
+  color: #333333;
+  margin-left: 4px;
+  font-size: 1.4rem;
+}
+.customerBox .noCustomer {
+  line-height: 2;
+  margin: 0;
+  font-size: 1.4rem;
+  color: #303133;
+  padding: 15px 20px;
+  display: none;
+}
+.customerBox .customBg {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+/*# sourceMappingURL=kefu.css.map */

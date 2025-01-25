@@ -112,6 +112,7 @@ window.onload = function (){
 					is_activity: true,
 					success_info: function(e){ // 获取用户成功回调
 						if(success_info) success_info(e)
+						infoSuccess()
 					},
 					complete_info: function(e , code) { // 获取用户执行完回调
 						if(complete_info) complete_info(e , code)

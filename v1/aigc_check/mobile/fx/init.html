@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="../../mobile/fx/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../../mobile/fx/assets/css/common.css">
     <link rel="stylesheet" href="../../mobile/fx/assets/css/fxCommon.css">
-    <link rel="stylesheet" href="../../mobile/fx/assets/css/init.css?v=fx1.0">
+    <link rel="stylesheet" href="../../mobile/fx/assets/css/init.css?v=fx1.1">
     <!-- head_script -->
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
@@ -139,6 +139,7 @@
                         </div>
                         <!-- 立即加入 -->
                         <div class="Join_now joinNow loadEffect">立即加入</div>
+                        <div class="distributionCenter">分销中心</div>
                     </div>
 
                 </div>
@@ -205,7 +206,7 @@
 <script src="../../mobile/fx/assets/js/qrcode.min.js"></script>
 <script src="../../mobile/fx/assets/js/coco-message.js"></script>
 
-<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.6"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
 <script src="../../mobile/fx/assets/js/common.js"></script>
 <script src="../../mobile/fx/assets/js/rolling.js"></script>
 
@@ -219,15 +220,34 @@
 
     var isJoinNow = false
     var join_spread = false
+    var prompt_text = '登录成功!正在跳转...'
     $('.joinNow').click(function() {
         if(isJoinNow) {
             if(join_spread) {
+                prompt_text = '加入分销成功!正在跳转...'
                 distributionJoin_spread()
             }else {
+                prompt_text = '登录成功!正在跳转...'
                 memberFu.openBinding()
+                memberFu.opt.bindingSuccessful = function (){
+                    if(distributionJoin_spread) distributionJoin_spread()
+                }
             }
         }
     })
+     $('.distributionCenter').click(function() {
+         if(isJoinNow) {
+             if(join_spread) {
+                 cocoMessage.error('需加入分销后才可进入分销中心', 2000);
+             }else {
+                 memberFu.openBinding()
+                 memberFu.opt.bindingSuccessful = function (){
+                     cocoMessage.success('登录成功!', 2000);
+                     memberFu.userUserInfo()
+                 }
+             }
+         }
+     })
     function success_info(e) {
         if(e.is_bind_phone && e.is_distributor) { // 已绑定手机号且已是分销商
 			location.href = './index.html'
@@ -256,7 +276,7 @@
             },
             success: function(data) {
                 if (data.code == 200) {
-                    cocoMessage.success('登录成功!正在跳转...', 2000);
+                    cocoMessage.success(prompt_text, 2000);
                     setTimeout(function() {
                         location.href = './index.html'
                     }, 500)

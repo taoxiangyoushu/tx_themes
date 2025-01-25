@@ -35,9 +35,9 @@ oDiv.addEventListener("touchend", () => {
     }else {
         div.style.transition = 'all 0.3s'
         if ( parseInt(div.style.left)> (document.documentElement.clientWidth / 2)) {
-            div.style.left = document.documentElement.clientWidth -50+'px';
+            div.style.left = document.documentElement.clientWidth - 58 +'px';
         } else {
-            div.style.left = 0+'px'
+            div.style.left = 5+'px'
         }
         // 控制其超出屏幕回到原始位置
          if ( parseInt(div.style.top)<0) {

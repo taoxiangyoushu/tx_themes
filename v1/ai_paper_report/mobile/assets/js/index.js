@@ -217,14 +217,14 @@ function changeType(this_ , this_val) {
     var shortName = this_short_name
     if(shortName == 'zjcaigc') {
         editionType(shortName)
-        $('.jiangAIGCContent , .jiangAIGCType').show()
+        $('.jiangAIGCContent').show()
         file_path = ''
         if($("#ThesisInput").val()){
             $(".deleteFileThesis").click()
         }
     }else {
         editionType(shortName == 'bylw'? 'Normal':shortName)
-        $('.jiangAIGCContent , .jiangAIGCType').hide()
+        $('.jiangAIGCContent').hide()
     }
 
     if(this_short_name == 'xzaigccheck') { // aigc查重
@@ -457,15 +457,11 @@ $('.generate').click(function() {
             goods_id: $("#type_s").val(),
             frontNotifyUrl: window.location.origin+ pathName + '?oid=#outTradeNo#',
             domain_record: window.location.origin, // 本地测试需要替换写死, 上线前切记恢复自动获取
-            source: /MicroMessenger/.test(window.navigator.userAgent)? 2:7
+            source: /MicroMessenger/.test(window.navigator.userAgent)? 2:7,
+            customer_invitation: dct_code,
         }
         if(typeData[$('#type_s').val()].short_name == 'wxzs' && wxzsID){
             formData.goods_id = wxzsID
-        }
-
-        if(order_openid){
-            formData['wx_param[appid]'] = threeMsg.wx
-            formData['wx_param[openId]'] = order_openid
         }
 
         if((typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'lwdbppt' || typeData[$('#type_s').val()].short_name == 'sxbg') && $("#basic").val() && $("#basic").val() !== 'A'){
@@ -558,8 +554,8 @@ $('.generate').click(function() {
         // 降aigc
         if(typeData[$('#type_s').val()].short_name == 'zjcaigc') {
             formData['data[title][value]'] = $('#contenteditable2').val()
-            formData['data[paper_type][label]'] = '论文类型';
-            formData['data[paper_type][value]'] = $("input[name='FamilyCategory']:checked").val();
+            // formData['data[paper_type][label]'] = '论文类型';
+            // formData['data[paper_type][value]'] = $("input[name='FamilyCategory']:checked").val();
             formData['upload_type'] = $('.AIGCContentType.Select').attr('id-key');
             if($('.AIGCContentType.Select').attr('id-key') == 1) {
                 formData['content'] = $('#textareaText').val();
@@ -622,13 +618,7 @@ function unifiedCreate(form_data, hasKtbg){
             if (data.code == 200) {
                 throttling = true
                 if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器
-                    let pathName = window.location.pathname
-                    if(window.location.pathname.indexOf('index.html')!==-1){
-                        pathName = pathName.replace('index.html','pay.html')
-                    }else{
-                        pathName = pathName + 'pay.html'
-                    }
-                    location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.origin + pathName +'?commitId=' + data.data.order_sn + '&order_amount=' + data.data.order_amount + '&contentType=' + form_data.get('goods_id') + '&goods=&payId='+ '&zxktbg=' + hasKtbg)
+                    location.href = './pay.html?commitId=' + data.data.order_sn + '&order_amount=' + data.data.order_amount+ '&contentType=' + form_data.get('goods_id') + '&goods=&payId=' + '&zxktbg=' + hasKtbg + '&getOpenId=true';
                     return
                 }
                 // 降aigc的使用后端返回的文字，其他使用自己输入的文字数
@@ -1081,7 +1071,8 @@ function upload_lwdbppt() {
                     goods_id: $("#type_s").val(),
                     frontNotifyUrl: window.location.origin+ pathName + '?oid=#outTradeNo#',
                     domain_record: window.location.origin, // 本地测试需要替换写死, 上线前切记恢复自动获取
-                    source: /MicroMessenger/.test(window.navigator.userAgent)? 2:7
+                    source: /MicroMessenger/.test(window.navigator.userAgent)? 2:7,
+                    customer_invitation: dct_code,
                 }
                 if($("#basic").val() && $("#basic").val() !== 'A'){
                     if($(".specialityBox").is(':visible')){
@@ -1122,3 +1113,26 @@ function upload_lwdbppt() {
         }
     })
 }
+
+if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){  // ios css处理
+    $(".more-Fbtn-s p").css('margin-top', '0.2rem')
+    $(".more-Fbtn-h p").css('margin-top', '0.2rem')
+}
+
+$(".more-Fbtn-s").on('click', function (){
+    $(".more-Fbtn-s").hide()
+    $(".more-Fbtn-h").show()
+    $(".activity_block").css('top', 'calc(75% - 21.6rem)')
+    $(".extension").css('top', 'calc(75% - 16.2rem)')
+    $(".fixed-problem").css({'top':'calc(75% - 5.4rem)', 'box-shadow':'0rem 0rem 2rem 0rem rgba(0, 0, 0, 0.09)'})
+    $(".customer-wx").css({'top':'calc(75% - 10.8rem)', 'box-shadow':'0rem 0rem 2rem 0rem rgba(0, 0, 0, 0.09)'})
+})
+
+$(".more-Fbtn-h").on('click', function (){
+    $(".more-Fbtn-h").hide()
+    $(".more-Fbtn-s").show()
+    $(".activity_block").css('top', 'calc(75% - 10.8rem)')
+    $(".extension").css('top', 'calc(75% - 5.4rem)')
+    $(".fixed-problem").css({'top':'75%','box-shadow':'none'})
+    $(".customer-wx").css({'top':'75%','box-shadow':'none'})
+})

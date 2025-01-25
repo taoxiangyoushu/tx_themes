@@ -180,10 +180,10 @@ function changeType(this_ , this_val) {
         if($("#ThesisInput").val()){
             $(".deleteFileThesis").click()
         }
-        $('.jiangAIGCContent , .jiangAIGCType').show()
+        $('.jiangAIGCContent').show()
     }else {
         editionType(this_short_name)
-        $('.jiangAIGCContent , .jiangAIGCType').hide()
+        $('.jiangAIGCContent').hide()
     }
 
     if(this_short_name == 'xzaigccheck') { // aigc查重
@@ -481,7 +481,8 @@ $('.generate').click(function() {
         var formData = {
             goods_id: $("#type_s").val(),
             domain_record: window.location.origin,
-            source: 1
+            source: 1,
+            customer_invitation: dct_code,
         }
         if(typeData[$('#type_s').val()].short_name == 'wxzs' && $(".version-wxzs2").attr('data-goodsid')) {
             if(!$(".version-item.active").attr('data-goodsid')){
@@ -603,8 +604,8 @@ $('.generate').click(function() {
         formData['data[title][label]'] = '论文标题'
         // 降aigc
         if(typeData[$('#type_s').val()].short_name == 'zjcaigc') {
-            formData['data[paper_type][label]'] = '论文类型';
-            formData['data[paper_type][value]'] = $("input[name='paper_type']:checked").val();
+            // formData['data[paper_type][label]'] = '论文类型';
+            // formData['data[paper_type][value]'] = $("input[name='paper_type']:checked").val();
             formData['upload_type'] = $("input[name='upload_type']:checked").val();
             if($("input[name='upload_type']:checked").val() == 1) {
                 formData['content'] = $('#textareaText').val();
@@ -1148,7 +1149,8 @@ function upload_lwdbppt() {
                 var formData = {
                     goods_id: $("#type_s").val(),
                     domain_record: window.location.origin,
-                    source: 1
+                    source: 1,
+                    customer_invitation: dct_code,
                 }
                 formData['data[title][label]'] = '论文标题'
                 formData['data[title][value]'] = $('#contenteditable').val()

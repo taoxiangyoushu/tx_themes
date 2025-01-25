@@ -9,10 +9,11 @@
   div.setAttributeNode(divattr);
   var flag = 0; //标记是拖曳还是点击
   var oDiv = document.getElementById("float_info");
-  oDiv.style.display = "block"; // 显示元素
+  // oDiv.style.display = "block"; // 显示元素
   oDiv.addEventListener("touchstart", () => {
     flag = 0;
     oDiv.style.transition = "none";
+    oDiv.style.display = "block"; // 显示元素
   });
 
   // 在拖拽的过程中，按钮应该跟随鼠标的移动而移动。
@@ -35,9 +36,9 @@ oDiv.addEventListener("touchend", () => {
     }else {
         div.style.transition = 'all 0.3s'
         if ( parseInt(div.style.left)> (document.documentElement.clientWidth / 2)) {
-            div.style.left = document.documentElement.clientWidth -50+'px';
+            div.style.left = document.documentElement.clientWidth - 58 +'px';
         } else {
-            div.style.left = 0+'px'
+            div.style.left = 5+'px'
         }
         // 控制其超出屏幕回到原始位置
          if ( parseInt(div.style.top)<0) {

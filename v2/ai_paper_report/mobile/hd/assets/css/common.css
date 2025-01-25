@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.clearfix:before {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.f-l {
+  float: left;
+}
+.f-r {
+  float: right;
+}
+.noMarginRight {
+  margin-right: 0 !important;
+}
+.noMarginBottom {
+  margin-bottom: 0 !important;
+}
+p {
+  margin: 0;
+  line-height: normal;
+}
+#floatingBox .complainBox {
+  top: calc(60% - 3.25rem);
+  border-top-left-radius: 0.625rem;
+  border-bottom-left-radius: 0.625rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 0 0.25rem 0rem #d9d9d9;
+}
+#memberCarrier .loginButton {
+  width: 5.625rem !important;
+  line-height: normal !important;
+  height: auto !important;
+  padding: 0.3rem 0;
+  margin: 1.45rem 0;
+  background: #FCFBFE !important;
+  border: 1px solid #FF535F !important;
+  color: #FF535F !important;
+}
+#memberCarrier .loginButton:hover {
+  background: #FFE9EB !important;
+  border: 1px solid #FF535F !important;
+}
+#memberCarrier .nav-download {
+  float: left;
+}
+#memberCarrier .FloatingWindow {
+  margin-top: 4.8125rem !important;
+  margin-left: -9rem;
+  line-height: normal;
+}
+#memberCarrier .nav-activity {
+  float: left;
+}
+.distributionEntrance {
+  cursor: pointer;
+  display: none;
+}
+.fiexBox {
+  position: fixed;
+  top: 60%;
+  z-index: 10;
+  left: 0.5rem;
+  max-width: 6.25rem;
+}
+.fiexBox .fiexBoxP {
+  float: right;
+}
+.fiexBox .navBtn.WX {
+  float: right;
+}
+.fiexBox .Activity {
+  cursor: pointer;
+  display: none;
+}
+/*侧边*/
+.navBtn {
+  background: #fff;
+  padding: 0.6rem 0.9rem;
+  box-sizing: border-box;
+  font-size: 0.875rem;
+  border-radius: 1rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0rem 0rem 0.25rem 0rem #d3d3d3;
+}
+.navBtn .wx2 {
+  width: 3rem;
+  height: 3rem;
+}
+.navBtn p {
+  font-size: 0.875rem;
+  color: #666666;
+  line-height: inherit;
+}
+.quanwei:hover,
+.waiwen:hover,
+.dinggao:hover,
+.qita:hover {
+  color: #fff;
+}
+.navBtn.QQ,
+.navBtn.WX {
+  position: fixed;
+  box-shadow: 0rem 0rem 0.5625rem 0.0625rem rgba(255, 44, 44, 0.1);
+}
+.navBtn.QQ .wxHover,
+.navBtn.WX .wxHover {
+  display: none;
+}
+.navBtn.QQ:hover .qq,
+.navBtn.QQ:hover:after {
+  display: block;
+}
+.navBtn.QQ:after,
+.navBtn.WX:after {
+  content: '';
+  position: absolute;
+  left: -0.875rem;
+  width: 0.875rem;
+  height: 3.375rem;
+  top: 0.25rem;
+}
+.qq {
+  background: #fff;
+  position: absolute;
+  left: -17.125rem;
+  width: 16.25rem;
+  height: 3.375rem;
+  line-height: 3.375rem;
+  color: #333333;
+  font-size: 0.875rem;
+  top: 0.25rem;
+  box-shadow: 0rem 0rem 0.25rem 0rem #e1dfdf;
+  display: none;
+}
+.wxKF {
+  position: absolute;
+  left: 5.25rem;
+  bottom: 0;
+  display: none;
+}
+.wxKF .customerBox {
+  width: 13.625rem;
+  background-image: linear-gradient(180deg, #FFDBD8 0%, white 60%);
+  box-shadow: 0 0 0.3125rem 0rem #d7d7d7;
+  border-radius: 0.75rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.wxKF .customerBox .head_kf {
+  height: 3rem;
+  line-height: 3rem;
+  color: #303133;
+  font-size: 0.875rem;
+  border-bottom: 0.0625rem solid #ffffff;
+  background: transparent !important;
+  text-align: left;
+}
+.wxKF .customerBox .head_kf .customer-title {
+  width: 8.125rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+}
+.wxKF .customerBox .head_kf img {
+  vertical-align: middle;
+  margin-top: -0.0625rem;
+  margin-left: 1.25rem;
+  margin-right: 0.25rem;
+}
+.wxKF .customerBox .customerCode {
+  text-align: center;
+  padding: 1.25rem 0 1rem 0;
+  line-height: normal;
+  position: relative;
+  display: none;
+}
+.wxKF .customerBox .customerCode img {
+  width: 9.375rem;
+  height: 9.375rem;
+}
+.wxKF .customerBox .segmentation-line {
+  width: 10.5rem;
+  height: 0.0625rem;
+  background: #e7e7e7;
+  margin: 0 auto;
+}
+.wxKF .customerBox .customerWay {
+  padding-left: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1.25rem;
+  text-align: left;
+}
+.wxKF .customerBox .customerWay p {
+  line-height: 2;
+  color: #666666;
+  font-size: 0.75rem;
+  margin: 0;
+  display: none;
+}
+.wxKF .customerBox .customerWay p .s0 {
+  width: 1.875rem;
+  display: inline-block;
+  font-size: 0.75rem;
+}
+.wxKF .customerBox .customerWay p .s1 {
+  color: #333333;
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+}
+.wxKF .customerBox .noCustomer {
+  line-height: 2;
+  margin: 0;
+  font-size: 0.875rem;
+  color: #303133;
+  padding: 0.9375rem 1.25rem;
+  display: none;
+}
+.wxKF .customerBox .customBg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.wx-c span {
+  color: #666;
+}
+.wx-c > p {
+  display: none;
+}
+/*# sourceMappingURL=common.css.map */

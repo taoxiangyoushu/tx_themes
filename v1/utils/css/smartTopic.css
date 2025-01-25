@@ -6,7 +6,7 @@
 .smartTopic {
   display: none;
   position: absolute;
-  top: 38px;
+  top: 50px;
   left: 0;
   width: 100%;
   background: #FFFFFF;
@@ -121,6 +121,9 @@
   top: 1.4px;
   left: 0;
 }
+.loading_block {
+  color: #B2B6BA;
+}
 .smartLoading {
   width: 100%;
   height: 80px;
@@ -160,6 +163,9 @@
 .loadingImg {
   animation: rotate 1.3s linear infinite;
 }
+.hasStatus .has {
+  color: #0075ff;
+}
 .hasStatus .has .loadingImg {
   display: inline-block;
 }
@@ -169,8 +175,14 @@
 .hasStatus .not .unfinishImg {
   display: inline-block;
 }
+.beBeingStatus .has {
+  color: #333;
+}
 .beBeingStatus .has .finishImg {
   display: inline-block;
+}
+.beBeingStatus .beBeing {
+  color: #0075ff;
 }
 .beBeingStatus .beBeing .loadingImg {
   display: inline-block;
@@ -178,11 +190,20 @@
 .beBeingStatus .not .unfinishImg {
   display: inline-block;
 }
+.notStatus .has {
+  color: #333;
+}
 .notStatus .has .finishImg {
   display: inline-block;
 }
+.notStatus .beBeing {
+  color: #333;
+}
 .notStatus .beBeing .finishImg {
   display: inline-block;
+}
+.notStatus .not {
+  color: #333;
 }
 .notStatus .not .finishImg {
   display: inline-block;
@@ -271,14 +292,26 @@
   vertical-align: middle;
   margin-top: -0.2rem;
 }
+.recommendTitle_block .loading_block .p_step.p_step1 .r_step1 {
+  color: #333;
+}
 .recommendTitle_block .loading_block .p_step.p_step1 .r_step1 .loading_i {
   display: inline-block;
+}
+.recommendTitle_block .loading_block .p_step.p_step1 .r_step2 {
+  color: #0075ff;
+}
+.recommendTitle_block .loading_block .p_step.p_step2 .r_step1 {
+  color: #333;
 }
 .recommendTitle_block .loading_block .p_step.p_step2 .r_step1 .loading_i {
   display: none;
 }
 .recommendTitle_block .loading_block .p_step.p_step2 .r_step1 .complete_i {
   display: inline-block;
+}
+.recommendTitle_block .loading_block .p_step.p_step2 .r_step2 {
+  color: #0075ff;
 }
 .recommendTitle_block .loading_block .p_step.p_step2 .r_step2 .loading_i {
   display: inline-block;
@@ -294,6 +327,9 @@
 }
 .recommendTitle_block .loading_block .p_step.p_step3 .r_step1 .complete_i {
   display: inline-block;
+}
+.recommendTitle_block .loading_block .p_step.p_step3 .r_step2 {
+  color: #333;
 }
 .recommendTitle_block .loading_block .p_step.p_step3 .r_step2 .loading_i {
   display: none;
@@ -480,4 +516,3 @@
   width: 2.9rem;
   margin-top: -0.1rem;
 }
-/*# sourceMappingURL=smartTopic.css.map */

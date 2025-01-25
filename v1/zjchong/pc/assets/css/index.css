@@ -32,7 +32,7 @@
 #app .foot {
   background: transparent;
   text-align: center;
-  padding: 36px 0 2px 0;
+  padding: 36px 0 10px 0px;
   color: #b7b7b7;
   font-size: 14px;
 }
@@ -51,6 +51,9 @@
 }
 #app .foot a:hover {
   color: #2170d6;
+}
+#filing-information {
+  margin-top: 20px;
 }
 .uploadTy_label .uploadTy_text {
   color: #5B5B5B;
@@ -746,6 +749,7 @@
   margin-left: 30px;
   position: relative;
   font-size: 0;
+  margin-top: 10px;
 }
 .form-upload .zipFile_block .zipFile_upload .upload_tips .format_size .size_block:before {
   content: '';
