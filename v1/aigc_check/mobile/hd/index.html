@@ -43,15 +43,16 @@
     <link rel="shortcut icon" href="../../mobile/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../../mobile/hd/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../mobile/hd/assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="../../mobile/hd/assets/css/common.css?v=ma24.0041">
-    <link rel="stylesheet" href="../../mobile/hd/assets/css/index.css?v=ma24.0041">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/common.css?v=ma24.0046">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/index.css?v=ma24.0046">
     <link rel="stylesheet" href="../../mobile/hd/assets/css/bootstrapValidator.min.css">
-    <link rel="stylesheet" href="../../mobile/hd/assets/css/activity.css?v=ma24.0041">
-    <link rel="stylesheet" href="../../mobile/hd/assets/css/fxCommon.css?v=ma24.0041">
-    <link rel="stylesheet" href="../../mobile/hd/assets/css/kefu.css?v=ma24.0041">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/activity.css?v=ma24.0046">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/fxCommon.css?v=ma24.0046">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/kefu.css?v=ma24.0046">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'aigc_check';
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
     </script>
 </head>
 <body>
@@ -91,66 +92,71 @@
                    <div class="level-block">
                         <span class="Back_line1"></span>
                         <span class="Back_line2"></span>
-                       <div class="level-item locking" data-num="0">
+                       <div class="level-item locking Lines_Lines" data-num="0">
                            <div class="level-iconBox">
                                <img src="" alt="">
                                <p class="coupon-name"><span class="zk"></span><span class="qm"></span></p>
                                <div class="l-i-mask"></div>
                                <div class="lock"><img src="../../mobile/hd/assets/img/lock.png" alt=""></div>
+                               <span class="Serial_Number">1</span>
                            </div>
-                           <p class="coupon-aa"><span class="coupon-nn"></span><span class="coupon-cc"> x1</span></p>
+                           <p class="coupon-aa"><span class="coupon-nn"></span></p>
                            <div class="receive">
                                <div class="r-c">领取</div>
                                <div class="r-c-n">邀请</div>
                            </div>
                        </div>
-                       <div class="level-item locking" data-num="1">
+                       <div class="level-item locking Lines_Lines" data-num="1">
                            <div class="level-iconBox">
                                <img src="" alt="">
                                <p class="coupon-name"><span class="zk"></span><span class="qm"></span></p>
                                <div class="l-i-mask"></div>
                                <div class="lock"><img src="../../mobile/hd/assets/img/lock.png" alt=""></div>
+                               <span class="Serial_Number">2</span>
                            </div>
-                           <p class="coupon-aa"><span class="coupon-nn"></span><span class="coupon-cc"> x1</span></p>
+                           <p class="coupon-aa"><span class="coupon-nn"></span></p>
                            <div class="receive">
                                <div class="r-c">领取</div>
                                <div class="r-c-n">邀请</div>
                            </div>
                        </div>
-                       <div class="level-item locking" data-num="2">
+                       <div class="level-item locking Lines_Lines" data-num="2">
                            <div class="level-iconBox">
                                <img src="" alt="">
                                <p class="coupon-name"><span class="zk"></span><span class="qm"></span></p>
                                <div class="l-i-mask"></div>
                                <div class="lock"><img src="../../mobile/hd/assets/img/lock.png" alt=""></div>
+                               <span class="Serial_Number">3</span>
                            </div>
-                           <p class="coupon-aa"><span class="coupon-nn"></span><span class="coupon-cc"> x1</span></p>
+                           <p class="coupon-aa"><span class="coupon-nn"></span></p>
                            <div class="receive">
                                <div class="r-c">领取</div>
                                <div class="r-c-n">邀请</div>
                            </div>
                        </div>
-                       <div class="level-item locking" data-num="3">
+                       <div class="level-item locking Lines_Lines" data-num="3">
                            <div class="level-iconBox">
                                <img src="" alt="">
                                <p class="coupon-name"><span class="zk"></span><span class="qm"></span></p>
                                <div class="l-i-mask"></div>
                                <div class="lock"><img src="../../mobile/hd/assets/img/lock.png" alt=""></div>
+                               <span class="Serial_Number">4</span>
                            </div>
-                           <p class="coupon-aa"><span class="coupon-nn"></span><span class="coupon-cc"> x1</span></p>
+                           <p class="coupon-aa"><span class="coupon-nn"></span></p>
                            <div class="receive">
                                <div class="r-c">领取</div>
                                <div class="r-c-n">邀请</div>
                            </div>
                        </div>
-                       <div class="level-item locking" data-num="4">
+                       <div class="level-item locking Lines_Lines" data-num="4">
                            <div class="level-iconBox">
                                <img src="" alt="">
                                <p class="coupon-name"><span class="zk"></span><span class="qm"></span></p>
                                <div class="l-i-mask"></div>
                                <div class="lock"><img src="../../mobile/hd/assets/img/lock.png" alt=""></div>
+                               <span class="Serial_Number">5</span>
                            </div>
-                           <p class="coupon-aa"><span class="coupon-nn"></span><span class="coupon-cc"> x1</span></p>
+                           <p class="coupon-aa"><span class="coupon-nn"></span></p>
                            <div class="receive">
                                <div class="r-c">领取</div>
                                <div class="r-c-n">邀请</div>
@@ -410,15 +416,16 @@
 </div>
 <script src="../../mobile/hd/assets/js/jquery.min.js"></script>
 <script src="../../mobile/hd/assets/js/bootstrapValidator.min.js"></script>
-<script src="../../mobile/hd/assets/js/coco-message.js"></script>
+<script src="../../mobile/hd/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../../mobile/hd/assets/js/qrcode.min.js"></script>
 <script src="../../mobile/hd/assets/js/Drag.js"></script>
 <script src="../../mobile/hd/assets/js/swiper-bundle.min.js"></script>
 <script src="../../mobile/hd/assets/js/html2canvas.min.js"></script>
-<script src="../../mobile/hd/assets/js/common.js?v=ma24.0041"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=ma24.0041"></script>
+<script src="../../mobile/hd/assets/js/common.js?v=ma24.0046"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=ma24.0046"></script>
 <!--<script src="../../mobile/hd/assets/js/MemberSystem.js"></script>-->
 <script>
+
     var isBindPhone = false
     var islogin = false
     var activityInfo = []
@@ -562,29 +569,14 @@
                            }
                        }
                        if(res.data[i].type == 'activity_tg'){
-                           activityType.push('邀请好友')
-                           receiveCoupon();
-                           activityInfo = res.data[i].award
-                           if(res.data[i].award.length==4){
-                                $('.level-item').css('width','34%')
-                                $('.Back_line1').css('width','50%')
-                                $('.Back_line2').css('width','50%')
-                           }
-                           if(res.data[i].award.length==5){
-                                $('.Back_line2').css('width','50%')
-                           }
-                           if(res.data[i].award.length==2){
-                                $('.Back_line1').css('width','50%')
-                                $('.Back_line1').css('top','22%')
-                                $('.Back_line2').css('display','none')
-                           }
+                            var lastItem= res.data[i].award.length-1
+                            var elements = $('.level-item');
+                            elements.eq(lastItem).removeClass('Lines_Lines');
+                            activityType.push('邀请好友')
+                            receiveCoupon();
+                            activityInfo = res.data[i].award
                            if(res.data[i].award.length==3){
-                                $('.Back_line2').css('display','none')
-                                $('.Back_line1').css('top','22%')
-                           }
-                           if(res.data[i].award.length == 1){
-                            $('.Back_line1').css('display','none')
-                            $('.Back_line2').css('display','none')
+                                $('.level-item').css('width','32%')
                            }
                            if(res.data[i].award.length == 0){
                                $(".getCoupons-block").hide()
@@ -596,7 +588,7 @@
                                }else{
                                    $($(".level-item")[s]).find('.coupon-name .qm').text(res.data[i].award[s].type_sec)
                                }
-                               $($(".level-item")[s]).find('.coupon-nn').text(res.data[i].award[s].goods_name)
+                               $($(".level-item")[s]).find('.coupon-nn').text(res.data[i].award[s].goods_name+' x1')
                                if(res.data[i].award[s].type_sec == 'AIGC检测券') {
                                    $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.jiance)
                                }else if(res.data[i].award[s].type_sec == '查重券') {
@@ -826,7 +818,7 @@
                         }else{
                             $($(".level-item")[i]).find('.coupon-name .qm').text(res.data[i].coupon_type)
                         }
-                        $($(".level-item")[i]).find('.coupon-nn').text(res.data[i].coupon_goods_name)
+                        $($(".level-item")[i]).find('.coupon-nn').text(res.data[i].coupon_goods_name+' x1')
                         if(res.data[i].coupon_type == 'AIGC检测券') {
                             $($(".level-item")[i]).find('.level-iconBox>img').attr('src', coupon_ico.jiance)
                         }else if(res.data[i].coupon_type == '查重券') {
@@ -899,6 +891,13 @@
             }
         });
     }
+    document.querySelectorAll('.level-block').forEach(el => {
+        el.style.overflow = 'scroll'; // 或者 'auto'，根据需要设置
+        el.style.msOverflowStyle = 'none'; // IE和Edge
+        el.addEventListener('scroll', function() {
+            this.classList.add('hide-scrollbar'); // 添加一个类来应用隐藏样式
+        });
+    });
 </script>
 </body>
 </html>

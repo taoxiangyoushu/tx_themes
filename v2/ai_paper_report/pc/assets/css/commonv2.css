@@ -77,21 +77,8 @@ html .ContainerTo {
   width: auto;
   padding: 0;
 }
-.indexAppv2 .mainContainer h3 .Toggle2,
-.indexAppv2 .mainContainer .ContainerTo .Toggle2,
-.indexAppv2 .mainContainer .form-loading .Toggle2 {
-  margin-top: 6px;
-}
 .indexAppv2 .mainContainer h3 {
   font-weight: 400;
-}
-.indexAppv2 .mainContainer .NEW-mini {
-  top: -12px;
-  right: 0;
-}
-.indexAppv2 .mainContainer .BACK-mini {
-  top: -12px;
-  right: 0;
 }
 .indexAppv2 .submittedH3 {
   text-align: center;
@@ -393,7 +380,7 @@ html .ContainerTo {
 .main h3 {
   padding: 0;
   font-size: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 .main h3::before {
   width: 4px;
@@ -600,9 +587,6 @@ html .ContainerTo {
     max-width: 200px;
   }
 }
-.indexAppv2 .mainContainer h3 .Toggle2 {
-  margin-right: 22px;
-}
 .indexApp .headBox {
   max-width: none;
 }
@@ -750,6 +734,13 @@ html .ContainerTo {
 #basic2_err {
   width: auto;
 }
+#App .version-wxzs-err,
+#basic_err,
+#NumberWords_err,
+#basic2_err,
+#title_err {
+  left: 120px;
+}
 .mainContainer .EnglishLiterature .contenteditable_s .toCheck .enLiterature {
   margin-right: 16px;
   margin-left: 8px;
@@ -803,4 +794,13 @@ html .ContainerTo {
   .indexAppv2 .rightCont {
     padding: 20px;
   }
+}
+.main h3 .Toggle2 {
+  top: 0;
+}
+.ContainerTo .col-md-6 {
+  padding: 0;
+}
+.ContainerTo .col-xs-6 {
+  padding: 0;
 }

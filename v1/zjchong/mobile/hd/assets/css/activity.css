@@ -118,46 +118,56 @@ p {
   border: 1px solid #FF5A6B;
   position: relative;
   top: -1.25rem;
+  overflow: hidden;
 }
 .a-content .getCoupons-block .gc-c-block .level-block {
-  font-size: 0;
+  padding: 0rem 0.875rem;
+  white-space: nowrap;
   text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
-.a-content .getCoupons-block .gc-c-block .level-block .Back_line1 {
-  display: inline-block;
-  width: 80%;
-  height: 1px;
-  background: #F2E0DF;
-  position: absolute;
-  top: 14%;
+.a-content .getCoupons-block .gc-c-block .level-block .Lines_Lines .level-iconBox {
+  position: relative;
 }
-.a-content .getCoupons-block .gc-c-block .level-block .Back_line2 {
-  display: inline-block;
-  width: 80%;
-  height: 1px;
-  background: #F2E0DF;
+.a-content .getCoupons-block .gc-c-block .level-block .Lines_Lines .level-iconBox::before {
+  content: "";
   position: absolute;
-  top: 51%;
+  bottom: 50%;
+  left: 7.5rem;
+  width: 100%;
+  height: 1px;
+  background-color: #F6DFDF;
 }
 .a-content .getCoupons-block .gc-c-block .level-block .level-item {
   vertical-align: top;
   position: relative;
-  width: 33%;
+  width: 38%;
   margin-top: 2rem;
   display: none;
+  text-align: center;
 }
 .a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox {
   width: 7.5rem;
   height: 7.5rem;
-  border: 1px solid #fff;
+  border: 0.0625rem solid #fff;
   background: #fff5f4;
   border-radius: 0.625rem;
   box-shadow: 0 0 0.5rem 0.0625rem #ffe1e3;
   position: relative;
   margin: auto;
+}
+.a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .Serial_Number {
+  position: absolute;
+  width: 1.75rem;
+  height: 1.75rem;
+  left: 0rem;
+  top: 0rem;
+  background: #FFDEDB;
+  border-radius: 0.625rem 0rem 0.625rem 0rem;
+  border: 0.0625rem solid #FFFAF9;
+  color: #FF9C9C;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.75rem;
 }
 .a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox img {
   width: 100%;
@@ -207,19 +217,17 @@ p {
 }
 .a-content .getCoupons-block .gc-c-block .level-block .level-item .coupon-nn {
   display: inline-block;
-  max-width: 66%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  max-width: 80%;
+  white-space: pre-line;
 }
 .a-content .getCoupons-block .gc-c-block .level-block .level-item .coupon-aa {
   display: inline-block;
   color: #4C1623;
-  font-size: 1.25rem;
-  margin-top: 1rem;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
   text-align: center;
-  white-space: nowrap;
   width: 100%;
+  height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1098,4 +1106,29 @@ p {
   width: 2rem;
   border-radius: 1rem;
 }
-/*# sourceMappingURL=activity.css.map */
+.level-block {
+  overflow: auto;
+  /* 或 scroll */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+.level-block::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+.level-block {
+  scrollbar-width: none;
+  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+.hide-scrollbar {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}

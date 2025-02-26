@@ -230,6 +230,16 @@ var systemInfo = {
 		timeConsuming: '10-30分钟',
 		reportSample: '',
 		applyUser: '',
+	},
+	daya: {
+		name: '大雅相似度检测系统',
+		comparisonLibrary: '拥有图书、期刊、论文、报纸、网络全文等丰富的对比资源库，有图书检测优势，保证书刊并重检测，为论文查重提供多一层保障。',
+		detectionAlgorithm: '先进的多重动态指纹对比技术。大雅查重系统拥有多种文本比较算法，包括索引比较、哈希比较、模糊搜索比较、语义比较等，实现了多种文本比较技术，可以有效提高查重准确率。',
+		Language: '中文、英文',
+		detectionScope: '',
+		timeConsuming: '10-30分钟',
+		reportSample: '',
+		applyUser: '',
 	}
 }
 
@@ -370,7 +380,7 @@ window.onload = function (){
 
 				memberFu = new member ({
 					ele	 : '#memberCarrier', // 插入节点
-					urls : urls, // 接口域名
+					urls : LOGIN_API_URL, // 接口域名
 					whether: data.project[0].link_config, // 网站配置信息
 					USER_TOKEN: USER_TOKEN,
 					JANE_NAME: JANE_NAME,

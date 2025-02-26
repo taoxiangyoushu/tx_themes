@@ -1,5 +1,5 @@
 
-var urls = 'https://api.taoxiangyoushu.com'//  https://api.taoxiangyoushu.com
+var urls = LOGIN_API_URL//  https://api.taoxiangyoushu.com
 // var urls = 'http://api.project_libraries.report'
 // 封装url参数获取
 function getQueryVariable(variable){
@@ -67,7 +67,6 @@ window.onload = function (){
 			if(result.code == '200') {
 				var data = result.data
 				threeMsg = data.project[0].threeMsg
-
 				memberFu = new member ({
 					ele	 : '#memberCarrier', // 插入节点
 					urls : urls, // 接口域名

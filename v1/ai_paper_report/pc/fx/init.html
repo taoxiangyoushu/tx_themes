@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>成为分销商</title>
     <link rel="shortcut icon" href="../../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap.min.css?v=pfx24.0047">
-    <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrapValidator.min.css?v=pfx24.0047">
+    <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap.min.css?v=pfx24.0048">
+    <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrapValidator.min.css?v=pfx24.0048">
     <link rel="stylesheet" href="../../pc/fx/assets/css/common.css">
-    <link rel="stylesheet" href="../../pc/fx/assets/css/init.css?v=pfx24.0047">
+    <link rel="stylesheet" href="../../pc/fx/assets/css/init.css?v=pfx24.0048">
     <!-- head_script -->
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
         var JANE_NAME = 'dsxz';
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
     </script>
 </head>
 <body>
@@ -31,7 +32,7 @@
                         <div class="carousel realTime">
                             <div class="t_news">
                                 <ul class="news_li">
-                
+
                                 </ul>
                                 <ul class="swap"></ul>
                             </div>
@@ -60,7 +61,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <div class="flowBox">
                             <img src="../../pc/fx/assets/img/step.png" alt="">
                             <ul>
@@ -127,31 +128,31 @@
             </div>
         </div>
         <!-- <div class="lowermost">
-            Copyright © 2024 
+            Copyright © 2024
         </div> -->
     </div>
 </body>
 
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
-<script src="../../pc/fx/assets/js/jquery.min.js?v=pfx24.0047"></script>
-<script src="../../pc/fx/assets/js/bootstrap.min.js?v=pfx24.0047"></script>
-<script src="../../pc/fx/assets/js/bootstrapValidator.min.js?v=pfx24.0047"></script>
+<script src="../../pc/fx/assets/js/jquery.min.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/bootstrap.min.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/bootstrapValidator.min.js?v=pfx24.0048"></script>
 
-<script src="../../pc/fx/assets/js/qrcode.min.js?v=pfx24.0047"></script>
-<script src="../../pc/fx/assets/js/coco-message.js?v=pfx24.0047"></script>
+<script src="../../pc/fx/assets/js/qrcode.min.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/coco-message.js?v=cm1.0"></script>
 
 <script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
-<script src="../../pc/fx/assets/js/common.js?v=pfx24.0047"></script>
-<script src="../../pc/fx/assets/js/rolling.js?v=pfx24.0047"></script>
+<script src="../../pc/fx/assets/js/common.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/rolling.js?v=pfx24.0048"></script>
 
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pfx24.0047"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pfx24.0048"></script>
 <script>
     function infoSuccess(data) {
         $('.exclusiveProportion').text(data.domain_config.distribution_ratio)
         $('.proportionType').text(data.domain_config.distribution_type_human)
         $('.Getinfo').removeClass('loadEffect')
     }
-    
+
     var isJoinNow = false
     var join_spread = false
     var prompt_text = '登录成功!正在跳转...'

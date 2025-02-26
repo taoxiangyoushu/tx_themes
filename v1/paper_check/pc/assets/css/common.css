@@ -10,6 +10,13 @@
   clear: both;
   visibility: hidden;
 }
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer;
+  -webkit-appearance: none;
+}
 .f-l {
   float: left;
 }
@@ -251,4 +258,3 @@ p {
   cursor: pointer;
   display: none;
 }
-/*# sourceMappingURL=common.css.map */

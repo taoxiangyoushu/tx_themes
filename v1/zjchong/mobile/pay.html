@@ -40,11 +40,12 @@
     <link rel="shortcut icon" href="../mobile/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0024">
-    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0024">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0025">
+    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0025">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'zjchong'
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
     </script>
     <!--百度统计代码-->
     <script>
@@ -207,23 +208,33 @@
     </div>
 </div>
 <!-- 多码支付其他浏览器支付,提示弹窗 -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade payTipModal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel"></h4>
+                <img src="../mobile/assets/img/bz.png" alt="">
             </div>
             <div class="modal-body">
 <!--               <img src="../mobile/assets/img/cloneImg.png" alt=""> -->
-                <div class="contentBox">
-                    <p class="tips1">因数据安全问题暂不支持手机浏览器</p>
-                    <p class="tips2">请复制链接至微信或电脑端打开</p>
+                <div class="contentBox scan_pop">
+<!--                    <p class="tips1">因数据安全问题暂不支持手机浏览器</p>-->
+<!--                    <p class="tips2">请复制链接至微信或电脑端打开</p>-->
+                    <p class="tips1">为保障账户安全，请选择下单方式</p>
                     <div class="linkUrl"></div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn_clone" data-dismiss="modal">复制链接</button>
+                <button type="button" class="btn_transferPay" data-dismiss="modal">
+                    <span class="btn_text">扫码支付</span>
+                    <span class="p_tips1"></span>
+                    <span class="recommend_tag">推荐</span>
+                </button>
+                <button type="button" class="btn_clone" data-dismiss="modal">
+                    <span class="btn_text">复制链接</span>
+                    <span class="p_tips1"></span>
+                </button>
             </div>
         </div>
     </div>
@@ -263,12 +274,14 @@
 <script src="../mobile/assets/js/jquery.min.js"></script>
 <script src="../mobile/assets/js/bootstrap.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0024"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0025"></script>
 <script src="../mobile/assets/js/message.js"></script>
-<script src="../mobile/assets/js/ap.js?v=m24.0024"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.0024"></script>
-<script src="../mobile/assets/js/orderInfo.js?v=m24.0024"></script>
+<script src="../mobile/assets/js/ap.js?v=m24.0025"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0025"></script>
+<script src="../mobile/assets/js/orderInfo.js?v=m24.0025"></script>
 <script>
+    var orderInfoData = {}
     // 微信浏览器并且有微信支付
     function refreshPageWx() {
         if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器 且 有微信支付
@@ -295,7 +308,35 @@
     var isTips = true
     var noPayWay = false
     var openid = ''
-    var orderInfoData = {}
+    var is_wxApplet = false
+
+    //判断是否微信小程序内
+    function isWx() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return new Promise(resolve => {
+                wx.miniProgram.getEnv(function(res) {
+                    if (res.miniprogram) {
+                        resolve("mini-wx");
+                    } else {
+                        resolve("wx");
+                    }
+                });
+            });
+        } else {
+            return new Promise(resolve => {
+                resolve("no-wx");
+            });
+        }
+    }
+    isWx().then(type => {
+        if (type == "wx") {
+        }
+        if( type == 'mini-wx') {
+            is_wxApplet = true
+        }
+    });
+
     Readjust()
     // 控制支付方式选中
     function typeSelect(type,use) {
@@ -332,23 +373,45 @@
                 $('.payType').show()
                 typeSelect('alipayWap',true)
                 $('#ali-pay').attr('data-paytype', 'scanCodeRich')
+                if(!pay_way.wx_jsapi){
+                    $('#wx-pay').hide()
+                }
                 if (/MicroMessenger/.test(window.navigator.userAgent)) {  // 微信浏览器
                     $('#wx-pay').attr('data-payType','wxPublicNum')
+                    if(!getQueryVariable('openid')){
+                        $('#wx-pay').hide()
+                    }
                 }
             }
             if (/MicroMessenger/.test(window.navigator.userAgent)) {  // 微信浏览器
                 source = 2
                 if (!pay_config.scanCodeRichWx.enabled) {  // 扫码付不支持微信支付
-                    $(".modal-body .tips2").text('请复制链接至电脑端打开')
+                    $(".btn_transferPay").attr('data-single', 'zfb')
+                    $(".btn_transferPay").attr('data-type', 'scanCodeRich')
+                    $(".btn_transferPay .p_tips1").text('(支付宝扫码支付)')
+                    $(".btn_clone .p_tips1").text('(电脑端打开)')
+                    // $(".modal-body .tips2").text('请复制链接至电脑端打开')
                     $('.payBotton').attr('data-toggle' , "modal").attr("data-target" , "#myModal")
                     isTips = true
                     $('.linkUrl').text(window.location.href)
                     return
                 }
             }
-            if(!(/MicroMessenger/.test(window.navigator.userAgent)) && !(/AlipayClient/.test(window.navigator.userAgent))) {
+            if(!(/MicroMessenger/.test(window.navigator.userAgent)) && !(/AlipayClient/.test(window.navigator.userAgent)) && !is_wxApplet ) {
+                $(".btn_transferPay").attr('data-type', 'scanCodeRich')
+                $(".btn_transferPay .p_tips1").text('(微信或支付宝扫码支付)')
+                $(".btn_clone .p_tips1").text('(微信或电脑端打开)')
                 if (!pay_config.scanCodeRichWx.enabled) {  // 扫码付不支持微信支付
-                    $(".modal-body .tips2").text('请复制链接至电脑端打开')
+                    // $(".modal-body .tips2").text('请复制链接至电脑端打开')
+                    $(".btn_transferPay").attr('data-single', 'zfb')
+                    $(".btn_transferPay .p_tips1").text('(支付宝扫码支付)')
+                    $(".btn_clone .p_tips1").text('(电脑端打开)')
+                }
+                if (!pay_config.scanCodeRichAlipay.enabled) {  // 扫码付不支持支付宝支付
+                    // $(".modal-body .tips2").text('请复制链接至电脑端打开')
+                    $(".btn_transferPay").attr('data-single', 'wx')
+                    $(".btn_transferPay .p_tips1").text('(微信扫码支付)')
+                    $(".btn_clone .p_tips1").text('(微信或电脑端打开)')
                 }
                 $('.payBotton').attr('data-toggle' , "modal").attr("data-target" , "#myModal")
                 isTips = true
@@ -356,7 +419,7 @@
                 return
             }
         }else {
-            if (/MicroMessenger/.test(window.navigator.userAgent)) {    // 微信浏览器
+            if (/MicroMessenger/.test(window.navigator.userAgent) && !is_wxApplet) {    // 微信浏览器
                 typeSelect('wxPublicNum')
                 $('#wx-pay').attr('data-payType','wxPublicNum')
                 source = 2
@@ -368,7 +431,12 @@
                     openid = getQueryVariable('openid')
                 }
                 if(pay_way.wx){
-                    typeSelect('wxPublicNum')
+                    if(getQueryVariable('openid')){
+                        typeSelect('wxPublicNum')
+                    }else{
+                        $('#wx-pay').hide()
+                        typeSelect('alipayWap')
+                    }
                 }else {
                     $('#wx-pay').hide()
                     typeSelect('alipayWap')
@@ -379,8 +447,13 @@
                     typeSelect('alipayWap')
                 }else if(pay_way.wx) {
                     typeSelect('wxWap')
-                    $('.payBotton').attr('data-toggle' , "modal").attr("data-target" , "#myModal")
-                    isTips = true
+                    $(".btn_transferPay").attr('data-type', 'wxScan')
+                    $(".btn_transferPay .p_tips1").text('(微信扫码支付)')
+                    $(".btn_clone .p_tips1").text('(微信或电脑端打开)')
+                    if( !is_wxApplet ){
+                        $('.payBotton').attr('data-toggle' , "modal").attr("data-target" , "#myModal")
+                        isTips = true
+                    }
                     $('.linkUrl').text(window.location.href)
                 }
             }
@@ -427,7 +500,13 @@
             if(payType == 'wxWap' || payType == 'scanCodeRich') {
                 if(payType == 'wxWap'){
                     $(".modal-body .tips2").text('请复制链接至微信或电脑端打开')
+                    if( is_wxApplet ){
+                        return
+                    }
                 }
+                $(".btn_transferPay").attr('data-type', 'wxScan')
+                $(".btn_transferPay .p_tips1").text('(微信扫码支付)')
+                $(".btn_clone .p_tips1").text('(微信或电脑端打开)')
                 $('.payBotton').attr('data-toggle' , "modal").attr("data-target" , "#myModal")
                 isTips = true
                 $('.linkUrl').text(window.location.href)
@@ -484,11 +563,19 @@
         if(payType == 'scanCodeRich') {
             if(orderInfoData.pay_wap_url) {
                 editUrl(order_sn)
+                if( is_wxApplet ){
+                    window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=scanCodeRich'
+                    return
+                }
                 window.location.href = orderInfoData.pay_wap_url + '/pay/waporder/' + order_sn + '?source=' + source
             }else {
                 return toast({msg: '请刷新页面重试'})
             }
         }else if(payType == 'wxPublicNum'){
+            if( is_wxApplet ){
+                window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=wxScan'
+                return
+            }
             var formData = getFormData({
                 order_sn: order_sn,
                 pay_type: payType,
@@ -559,6 +646,16 @@
                 }
             })
         }else{
+            if( is_wxApplet ){
+                if(payType == 'alipayWap'){
+                    window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=alipayScan'
+                    return
+                }
+                if(payType == 'wxWap'){
+                    window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=wxScan'
+                    return
+                }
+            }
             var formData = getFormData({
                 order_sn: order_sn,
                 pay_type: payType,
@@ -792,6 +889,15 @@
             return $('.linkUrl').text();
         },
     });
+
+    //中转支付页
+    $(".btn_transferPay").on('click', function (){
+        if($(".btn_transferPay").attr('data-single')){
+            window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=' + $(this).attr('data-type') + '&single=' + $(".btn_transferPay").attr('data-single')
+            return
+        }
+        window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=' + $(this).attr('data-type')
+    })
 
     //复制成功响应
     clipboard.on('success', function (e) {

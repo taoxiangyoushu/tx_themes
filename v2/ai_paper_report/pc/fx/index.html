@@ -6,20 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>分销中心</title>
         <link rel="shortcut icon" href="../../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
-        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap.min.css?v=pfx24.0047">
-        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrapValidator.min.css?v=pfx24.0047">
-        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-datetimepicker.min.css?v=pfx24.0047">
-        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-select.min.css?v=pfx24.0047">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap.min.css?v=pfx24.0048">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrapValidator.min.css?v=pfx24.0048">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-datetimepicker.min.css?v=pfx24.0048">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-select.min.css?v=pfx24.0048">
         <link rel="stylesheet" href="../../pc/fx/assets/css/common.css">
         <link rel="stylesheet" href="../../pc/fx/assets/css/index.css">
         <link rel="stylesheet" href="../../pc/fx/assets/css/withdraw.css">
-        
+
         <!-- head_script -->
         <script>
             var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
             var JANE_NAME = 'dsxz';
+            var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
         </script>
-    </head>	
+    </head>
 <body>
     <div class="distributionCenterApp">
         <div class="content">
@@ -220,7 +221,7 @@
                                 </table>
                             </div>
                         </div>
-                        
+
                         <div class="paging paging2">
                             <span style="display: none;" class="PageCountDiv">共<span class="PageCountText"></span>条</span>
                             <ul class="pagination" id="pagination"></ul>
@@ -565,23 +566,23 @@
     <input id="copyInput" type="text">
 </body>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
-<script src="../../pc/fx/assets/js/jquery.min.js?v=pfx24.0047"></script>
+<script src="../../pc/fx/assets/js/jquery.min.js?v=pfx24.0048"></script>
 <script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
-<script src="../../pc/fx/assets/js/bootstrap.min.js?v=pfx24.0047"></script>
-<script src="../../pc/fx/assets/js/bootstrapValidator.min.js?v=pfx24.0047"></script>
-<script src="../../pc/fx/assets/js/qrcode.min.js?v=pfx24.0047"></script>
-<script src="../../pc/fx/assets/js/coco-message.js?v=pfx24.0047"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pfx24.0047"></script>
+<script src="../../pc/fx/assets/js/bootstrap.min.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/bootstrapValidator.min.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/qrcode.min.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/coco-message.js?v=cm1.0"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pfx24.0048"></script>
 <script src="../../pc/fx/assets/js/jqPaginator.min.js?v=1.0"></script>
 <script src="../../pc/fx/assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="../../pc/fx/assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
-<script src="../../pc/fx/assets/js/bootstrap-select.js?v=pfx24.0047"></script>
+<script src="../../pc/fx/assets/js/bootstrap-select.js?v=pfx24.0048"></script>
 <script src="../../pc/fx/assets/js/html2canvas.min.js"></script>
-<script src="../../pc/fx/assets/js/common.js?v=pfx24.0047"></script>
+<script src="../../pc/fx/assets/js/common.js?v=pfx24.0048"></script>
 <script src="../../pc/fx/assets/js/myPage.js?v=1.0"></script>
 <script src="../../pc/fx/assets/js/withdrawa.js?v=1.0"></script>
 <script src="../../pc/fx/assets/js/complaints.js"></script>
-<script src="../../pc/fx/assets/js/configured.js?v=pfx24.0047"></script>
+<script src="../../pc/fx/assets/js/configured.js?v=pfx24.0048"></script>
 <script>
     function infoSuccess(data){
         if(data.project[0].jane_name == 'dsxz') {
@@ -647,7 +648,7 @@
         if(!e.is_bind_phone) {
             // memberFu.openBinding()
         }else if(e.is_distributor) {
-            getQuery()  
+            getQuery()
             userInfo()
         }
     }
@@ -725,7 +726,7 @@
         var form_data = {
             create_date: ($('#date1').val() && $('#date2').val())? ($('#date1').val() + '|' + $('#date2').val()):'',
             type: $('#basic2').val()
-        }  
+        }
         $.ajax({
             type: 'post',
             url: urls + '/api/client/distribution/order_list?page=' + below + '&limit=' + limit + '&user_token='+USER_TOKEN+'&jane_name='+JANE_NAME,
@@ -914,7 +915,7 @@
         $(this).children('.tool_tip').show()
         var widthCss = ($(this).children('.tool_tip').width()/2)  - 4
         $(this).children('.tool_tip').css('left' , '-'+widthCss+'px')
-        
+
     })
     $(document).on('mouseleave','.remark',function(){
         $(this).children('.tool_tip').hide()

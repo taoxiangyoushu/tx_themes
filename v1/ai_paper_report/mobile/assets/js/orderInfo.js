@@ -26,7 +26,7 @@
                 toast({msg: '订单已支付'})
                 window.location.href = "./query.html?oid=" + (getQueryVariable('order_sn') || getQueryVariable('commitId'));
             }else {
-                closeMsg()
+                // closeMsg()
                 cocoMessage.error(result.codeMsg, 2000)
             }
         }

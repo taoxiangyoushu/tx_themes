@@ -45,13 +45,14 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0016">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0016">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0016">
-    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0016">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0019">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0019">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0019">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0019">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'aigc_check'
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
     </script>
     <!--百度统计代码-->
     <script>
@@ -164,13 +165,20 @@
                 <p class="tipsTitle"><img class="warning" src="../mobile/assets/img/warning.png" alt=""> 注意事项: </p>
                 <div class="Universal">
                     <p>1. 检测范围：包括但不限于
-                        <img src="../mobile/assets/img/gpt3.png" style="margin-left: 4px;" alt=""><span>ChatGPT-3.5</span><img
-                                src="../mobile/assets/img/gpt4.png" alt=""><span>ChatGPT-4.0</span> <img
-                                src="../mobile/assets/img/gemini.png" alt=""><span>Gemini</span> <img
-                                src="../mobile/assets/img/claude.png" style="margin-top: -1px;" alt=""><span>Claude</span>
+                        <img src="../mobile/assets/img/gpt3.png" style="margin-left: 4px;" alt=""><span>ChatGPT-3.5</span>
+                        <img src="../mobile/assets/img/gpt4.png" alt=""><span>ChatGPT-4.0</span>
+                        <img src="../mobile/assets/img/gemini.png" alt=""><span>Gemini</span>
+                        <img src="../mobile/assets/img/claude.png" style="margin-top: -1px;" alt=""><span>Claude</span>
                         <img src="../mobile/assets/img/wyyx.png" style="margin-top: -1px;" alt=""><span>文心一言</span>
-                        <img src="../mobile/assets/img/tyqw.png" alt=""><span>通义千问</span> <img
-                                src="../mobile/assets/img/zpai.png" alt=""><span>智谱AI</span></p>
+                        <img src="../mobile/assets/img/tyqw.png" alt=""><span>通义千问</span>
+                        <img src="../mobile/assets/img/zpai.png" alt=""><span>智谱AI</span>
+                        <img src="../mobile/assets/img/BAICHUAN.png" alt=""><span>百川智能</span>
+                        <img src="../mobile/assets/img/zhinao.png" alt=""><span>360智脑</span>
+                        <img src="../mobile/assets/img/XFXH.png" alt=""><span>讯飞星火</span>
+                        <img src="../mobile/assets/img/DOUBAO.png" alt=""><span>豆包</span>
+                        <img src="../mobile/assets/img/KIMI.png" alt=""><span>Kimi</span>
+                        <img src="../mobile/assets/img/DS.png" alt=""><span>Deepseek</span>
+                    </p>
                     <p>2. 系统在检测时会分析论文的上下文关系， 所以请您提交论文正文内容，如果是非正文的检测将不能保证检测的准确性</p>
                     <p>3. 非正文部分(如标题、公式、图表、参考文献等)建议删除</p>
                     <p>4. 此系统一旦提交，开始检测后，就会产生成本，不接受退款，多谢理解</p>
@@ -336,7 +344,7 @@
 <script src="../mobile/assets/js/common.js?v=1.1"></script>
 <script src="../mobile/assets/js/bootstrap-select.js"></script>
 <script src="../mobile/assets/js/bootstrapValidator.min.js"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.0016"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0019"></script>
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/Drag.js"></script>
 <script>

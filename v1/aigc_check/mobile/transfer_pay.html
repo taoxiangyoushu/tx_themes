@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 为移动设备添加 viewport；-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 指定请求和响应遵循的缓存机制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Master AI率检测 - 支付订单</title>
+    <link rel="shortcut icon" href="../mobile/assets/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0020">
+    <link rel="stylesheet" href="../mobile/assets/css/transferPay.css?v=m24.0020">
+</head>
+<body>
+<div class="orderInfo_app">
+    <div class="content">
+        <p class="p1">实付金额</p>
+        <p class="amount">￥ <span class="price"></span></p>
+        <p class="time">
+            <img src="../mobile/assets/img/remain_time.png" alt="">
+            <span class="time_text"></span>
+        </p>
+        <div class="line"></div>
+        <div class="pay_type">
+            <img class="wx_pay" src="../mobile/assets/img/wechar_qr_title.png" alt="">
+            <img class="ali_pay" src="../mobile/assets/img/zfb_qr_title.png" alt="">
+            <img class="scanCodeRich" src="../mobile/assets/img/wechat_zfb.png" alt="">
+        </div>
+        <div class="arrow_ico">
+            <img src="../mobile/assets/img/arrow_down_icon.png?v1" alt="">
+        </div>
+        <div class="code_block">
+            <img class="loading" src="../mobile/assets/img/loading2.gif" alt="">
+            <div id="qrcode" class="qr_code" style="display: none;"></div>
+            <div id="myqrcode"></div>
+        </div>
+        <div class="tips">
+            <img src="../mobile/assets/img/save.png?v1" alt="">
+        </div>
+        <div class="confirm_btn">
+            <img src="../mobile/assets/img/payment_btn.png?v1" alt="">
+        </div>
+    </div>
+</div>
+<script src="../mobile/assets/js/jquery.min.js?v=m24.0020"></script>
+<script src="../mobile/assets/js/message.js?v=m24.0020"></script>
+<script src="../mobile/assets/js/coco-message.js?v=m24.0020"></script>
+<script src="../mobile/assets/js/clipboard.min.js?v=m24.0042"></script>
+<script src="../mobile/assets/js/qrcode.min.js"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0020"></script>
+<script>
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width: 204,
+        height: 204,
+    });
+
+    var hideQRCode = document.getElementById("qrcode")
+    var myQRCode = document.getElementById("myqrcode")
+    var image = new Image()
+
+    if(getQueryVariable('payType') == 'scanCodeRich'){
+        $(".pay_type .scanCodeRich").show()
+        if(getQueryVariable('single') == 'zfb'){
+            $(".pay_type .scanCodeRich").hide()
+            $(".pay_type .ali_pay").show()
+        }
+        if(getQueryVariable('single') == 'wx'){
+            $(".pay_type .scanCodeRich").hide()
+            $(".pay_type .wx_pay").show()
+        }
+        $(".code_block .loading").hide()
+        qrcode.makeCode(decodeURIComponent(getQueryVariable('pay_url')) + '/pay/waporder/'+getQueryVariable('order_sn') + '?source=3');
+        // 获取canvas元素转成 img
+        image.src = hideQRCode.firstChild.toDataURL("image/png");
+        myQRCode.appendChild(image); // 放到页面
+    }else if(getQueryVariable('payType') == 'alipayScan'){
+        payOrder()
+        $(".pay_type .ali_pay").show()
+    }else if(getQueryVariable('payType') == 'wxScan'){
+        payOrder()
+        $(".pay_type .wx_pay").show()
+    }
+
+    function payOrder() {
+        var formData = getFormData({
+            order_sn: getQueryVariable('order_sn'),
+            pay_type: getQueryVariable('payType'),
+            source: '3',
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/pay/payOrder',
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: formData,
+            success: function(data) {
+                if(data.code == 200) {
+                    $(".code_block .loading").hide()
+                    qrcode.makeCode(data.data.qrlink);
+                    // 获取canvas元素转成 img
+                    image.src = hideQRCode.firstChild.toDataURL("image/png");
+                    myQRCode.appendChild(image); // 放到页面
+                }else if(data.code == 3001) {
+                    cocoMessage.success('订单已支付', 2000)
+                    window.location.href = "./query.html?oid=" + getQueryVariable('order_sn') ;
+                }else if(data.code == -1 && data.codeMsg == '不支持的该支付方式'){
+
+                }else {
+                    cocoMessage.error(data.codeMsg, 2000);
+                }
+            },
+            error: function(err) {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+            }
+        });
+    }
+
+    $(".price").text(getQueryVariable('amount'))
+
+    window.onload = function (){
+        countdown()
+    }
+
+    var time = 600
+    var timer = null
+    function countdown() {
+        if(time > 0) {
+            time --
+            var m = ((time/60)+'').slice(0,((time/60)+'').indexOf('.')!=-1?((time/60)+'').indexOf('.'):'1' )
+            var s = (time%60)>=10?(time%60):'0'+(time%60)
+            $(".time_text").text( m + ':' + s )
+            timer = setTimeout(function (){
+                countdown()
+            },1000)
+        }else{
+            clearTimeout(timer)
+            window.history.go(-1)
+        }
+    }
+
+    var isTrue = false
+    $(".confirm_btn img").on('click', function (){
+        if(isTrue) return
+        isTrue = true
+        setTimeout(() => {
+            isTrue = false
+        },3000)
+        var form_data = getFormData({
+            pay_id: getQueryVariable('order_sn')
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/pay/verifyOrder',
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: form_data,
+            success: function (res) {
+                if (res.code == 3001) {
+                    cocoMessage.destroyAll();
+                    cocoMessage.success('订单已支付', 2000)
+                    window.location.href = "./query.html?oid=" + getQueryVariable('order_sn');
+                }else {
+                    cocoMessage.destroyAll();
+                    cocoMessage.error("订单未支付", 2000);
+                }
+            },
+            error: function () {
+                cocoMessage.error("请求失败!请检查网络", 2000);
+            },
+        });
+    })
+</script>
+</body>
+</html>

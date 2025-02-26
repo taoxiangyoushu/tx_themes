@@ -59,14 +59,41 @@
 
 ###  🔨 部署前必读
 
-注：搜索所有HTML文件，替换以下**USER_TOKEN**值为自己的值
+#### 一、替换USER_TOKEN
 
-获取自己的值：淘项有术后台-->开放平台-->API开放-->前端开放
+1.获取自己的USER_TOKEN值：淘项有术后台-->开放平台-->API开放-->前端开放
+
+2.搜索所有HTML文件，替换以下**USER_TOKEN**值为自己的USER_TOKEN值
 
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
         var JANE_NAME = 'dsxz';
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';  //用户登录接口
     </script>
+
+#### 二、解决登录跨域（非必）
+
+举例：
+
+    AI大师写作：https://www.yourdomain.com
+    原登录接口：https://api.taoxiangyoushu.com
+
+问题：
+
+    yourdomain.com与taoxiangyoushu.com域名不相同，存在跨域问题，用户无法登录。
+
+解决方案：
+
+    1.反向代理：将https://api.yourdomain.com（建议使用https），反向代理到https://api.taoxiangyoushu.com
+    
+    2.替换链接: 搜索所有HTML文件，替换以下**LOGIN_API_URL**值为https://api.yourdomain.com
+
+        //原平台接口API域名
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
+    
+        //替换如下
+        var LOGIN_API_URL = 'https://api.yourdomain.com';
+
 ---
 
 ### 🚨 更新说明

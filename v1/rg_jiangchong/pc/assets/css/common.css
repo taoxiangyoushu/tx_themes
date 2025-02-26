@@ -94,6 +94,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+body {
+  min-width: 1330px;
+}
 .realTime {
   text-align: center;
   padding: 10px 0;

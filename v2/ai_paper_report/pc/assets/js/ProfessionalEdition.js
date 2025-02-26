@@ -130,6 +130,8 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this) {
         // 自写开题报告
         if($(".proposal-check").is(':checked') && fid){
             formData.fid = fid
+        }else if(ktbg_generate){
+            formData['order_sn'] = ktbg_generate
         }
     }
 
@@ -372,11 +374,15 @@ $('.editGenerate').click(function(e) {
                         formData['data[outline_type][label]'] = '提纲类型'
                         formData['data[outline_type][value]'] = editKey=='editor'? '自写提纲': [$('.tabOption.Select').data('key') == 'Referenc'? '推荐提纲':'实时提纲']
                         // 自写开题报告
-                        if($(".proposal-check").is(':checked') && fid && typeData[$("#type_s2").val()].short_name=='bylwsenior'){
-                            formData['data[gen_ktbg][label]'] = '开题报告';
-                            formData['data[gen_ktbg][value]'] = $(".proposal-check").is(':checked')?1:0;
-                            formData['data[fid][label]'] = '文件标识';
-                            formData['data[fid][value]'] = fid;
+                        if($(".proposal-check").is(':checked') && typeData[$("#type_s2").val()].short_name=='bylwsenior'){
+                            if(fid) {
+                                formData['data[gen_ktbg][label]'] = '开题报告';
+                                formData['data[gen_ktbg][value]'] = $(".proposal-check").is(':checked')?1:0;
+                                formData['data[fid][label]'] = '文件标识';
+                                formData['data[fid][value]'] = fid;
+                            }else if(ktbg_generate) {
+                                formData['order_sn'] = ktbg_generate
+                            }
                         }
                         unifiedCreate(getFormData(formData) , $("#type_s2").val() , outline)
                     }else {

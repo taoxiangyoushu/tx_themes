@@ -174,8 +174,6 @@ var threeMsg = {}
 var payWayInfo= {}
 var memberFu = {}
 var scanCodeRichInfo = {}
-
-// 默认选中后端key转前端key
 var keyConversion = {
 	bylw: 'bylw',
 	wxzs: 'wxzs',
@@ -275,10 +273,9 @@ function infoData(result) {
 	}
 	payWayInfo = data.project[0].pay_way
 
-
 	memberFu = new member ({
 		ele	 : '#memberCarrier', // 插入节点
-		urls : urls, // 接口域名
+		urls : LOGIN_API_URL, // 接口域名
 		whether: data.project[0].link_config, // 网站配置信息
 		USER_TOKEN: USER_TOKEN,
 		JANE_NAME: JANE_NAME,
@@ -383,7 +380,12 @@ $(function (){
 				$(".boxLeft").css('height', '982px')
 				return
 			}
-			$(".boxLeft").css('height',$('.rightCont').height())
+			var additional = {
+				index: 0,
+				pay: 120,
+				query: 0
+			}
+			$(".boxLeft").css('height',$('.rightCont').height() + (additional[$('#App').data('key')] || 0))
 		}else{
 			$(".boxLeft").css('height','auto')
 		}
@@ -398,6 +400,7 @@ $(function (){
 
 $('.Toggle2').click(function () {
 	if(!isclick) return;
+	deleteFileFU('Toggle') // 专业极速版切换
 	$('.VersionSwitchingLoding').show()
 	var this_ = $(this)
 	setTimeout(function() {

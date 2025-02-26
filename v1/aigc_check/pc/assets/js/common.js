@@ -135,7 +135,7 @@ window.onload = function (){
 				// 功能测试,权限限制
                 memberFu = new member ({
                     ele	 : '#memberCarrier', // 插入节点
-                    urls : urls, // 接口域名
+                    urls : LOGIN_API_URL, // 接口域名
                     whether: data.project[0].link_config, // 网站配置信息
 					USER_TOKEN: USER_TOKEN,
 					JANE_NAME: JANE_NAME,

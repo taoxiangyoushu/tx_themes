@@ -16,7 +16,7 @@
   background-repeat: no-repeat;
   background-position: right bottom;
   margin-top: 20px;
-  padding: 30px 40px 105px 40px;
+  padding: 30px 40px 82px 40px;
   border-radius: 10px;
   position: relative;
 }
@@ -303,14 +303,31 @@
 .leftDiv .ContentMain .submit-form .note .p2 img {
   vertical-align: middle;
   margin-top: -3px;
-  margin-left: 12px;
   margin-right: 5px;
+  margin-left: 4px;
 }
 .leftDiv .ContentMain .submit-form .note .p2 span {
   color: #616161;
+  margin-right: 8px;
 }
 .leftDiv .ContentMain .submit-form .note .p2.redText {
   color: #f56c6c;
+}
+.leftDiv .ContentMain .submit-form .note .p3 {
+  margin-bottom: 2px;
+}
+.leftDiv .ContentMain .submit-form .note .p3 .detection {
+  display: inline-block;
+  width: calc(100% - 154px);
+  margin-right: 0px;
+  line-height: 24px;
+  position: relative;
+  top: -3px;
+}
+.leftDiv .ContentMain .submit-form .note .p3 .detection_range {
+  float: left;
+  margin-right: 0px;
+  color: #9099b3;
 }
 .nav-activity {
   width: 100px;
@@ -350,3 +367,4 @@
   position: relative;
   top: -3px;
 }
+/*# sourceMappingURL=index.css.map */

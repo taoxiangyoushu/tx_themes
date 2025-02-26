@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../pc/assets/css/select2.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0040">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0040">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0042">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0042">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
     </script>
     <!--百度统计代码-->
     <script>
@@ -314,12 +315,12 @@
 <script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
 <script src="../pc/assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="../pc/assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
-<script src="../pc/assets/js/coco-message.js"></script>
+<script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/select2.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0040"></script>
+<script src="../pc/assets/js/common.js?v=p24.0042"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0040"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0042"></script>
 <script>
     $('#date').datetimepicker({minView: 2, language: "zh-CN"});
     var typed = new Typed('.switch-text', {
@@ -517,7 +518,7 @@
             $("#author").attr('maxlength', typeData[$(this).attr('data-name')][0].data.author_maxlength)
             $("#author").attr('placeholder','必填，最大字符'+ typeData[$(this).attr('data-name')][0].data.author_maxlength +'字'+noNum)
             $("#textareaText").attr('maxlength', typeData[$(this).attr('data-name')][0].data.max_words)
-            if($(this).attr('data-name')=='dashichachong' || $(this).attr('data-name')=='weipu' || $(this).attr('data-name')=='turnitin' || $(this).attr('data-name')=='checkPass' || $(this).attr('data-name')=='paperyy' ){
+            if($(this).attr('data-name')=='dashichachong' || $(this).attr('data-name')=='weipu' || $(this).attr('data-name')=='turnitin' || $(this).attr('data-name')=='checkPass' || $(this).attr('data-name')=='paperyy' || $(this).attr('data-name')=='daya' ){
                 $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。')
             }else{
                 $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。' + prohibitEn)
@@ -805,19 +806,20 @@
     }
 
     function setClassStyle(){
+        var noBottomNo = ''
+        var all = $(".system-item:visible").length
+        if( all%4 == 0){
+            noBottomNo =  Math.floor(all/4) - 1
+        }else{
+            noBottomNo = Math.floor(all/4)
+        }
         for(var i=0; i<$(".system-item:visible").length; i++){
             if( (i+1) % 4 == 0 ) {
                 $($(".system-item:visible")[i]).addClass('noMarginRight')
             }
-            if( $(".system-item:visible").length > 4 && $(".system-item:visible").length < 8 ) {
-                if( (i+1) > 4 ) {
-                    $($(".system-item:visible")[i]).addClass('noMarginBottom')
-                }
-            }
-            if( $(".system-item:visible").length > 8 ) {
-                if( (i+1) > 8 ) {
-                    $($(".system-item:visible")[i]).addClass('noMarginBottom')
-                }
+
+            if( (i+1) > noBottomNo*4) {
+                $($(".system-item:visible")[i]).addClass('noMarginBottom')
             }
         }
     }

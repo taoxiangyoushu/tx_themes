@@ -86,6 +86,9 @@ body {
   font-size: 1.4rem;
   padding: 0;
 }
+.form .tipsInfo .tipsTitle img {
+  width: 1rem;
+}
 .form .tipsInfo p {
   color: #999999;
   margin-bottom: 0.5rem;

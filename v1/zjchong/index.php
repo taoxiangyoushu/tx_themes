@@ -24,6 +24,9 @@ $route = [
     '/pay_tmp.html'=>[
         'mobile'=>__DIR__ . '/mobile/pay_tmp.html'
     ],
+    '/transfer_pay.html'=>[
+        'mobile'=>__DIR__ . '/mobile/transfer_pay.html'
+    ],
     '/demo.html'=>[
         'pc'=>__DIR__ . '/pc/demo.html',
         'mobile'=>__DIR__ . '/pc/demo.html'

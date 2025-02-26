@@ -1,5 +1,5 @@
 
- var urls = 'https://api.taoxiangyoushu.com'//  https://api.taoxiangyoushu.com
+ var urls = LOGIN_API_URL//  https://api.taoxiangyoushu.com
 //var urls = 'http://api.project_libraries.report'
 // 封装url参数获取
 function getQueryVariable(variable){
@@ -143,7 +143,7 @@ window.onload = function (){
 						location.href = './index.html'
 					}
 				});
-				infoSuccess(data)
+				// infoSuccess(data)
 			}else{
 				cocoMessage.error(result.codeMsg, 2000);
 			}

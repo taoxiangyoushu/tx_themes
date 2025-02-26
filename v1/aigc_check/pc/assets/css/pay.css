@@ -443,7 +443,7 @@
 .payBox .pay-block .payType img {
   vertical-align: middle;
   position: relative;
-  top: -1px;
+  top: 0px;
 }
 .payBox .pay-block .payType span {
   width: 80px;
@@ -839,3 +839,4 @@
 .Coupon_exceeds .Coupon_closure1 {
   display: none;
 }
+/*# sourceMappingURL=pay.css.map */

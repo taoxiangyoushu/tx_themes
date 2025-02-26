@@ -141,11 +141,12 @@
 .report-box {
   background: #fff;
   padding: 30px;
-  min-height: 886px;
+  min-height: 888px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   position: relative;
   padding-bottom: 50px;
+  margin-bottom: 20px;
 }
 .report-box .orderInformation {
   border: none;
@@ -763,3 +764,4 @@
   position: relative;
   top: -3px;
 }
+/*# sourceMappingURL=query.css.map */

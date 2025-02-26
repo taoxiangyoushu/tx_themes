@@ -850,7 +850,19 @@ $(".substance").on('click',function (){
 //自写开题报告
 var fid = ''
 $(".proposal-text").on('click',function (){
-    $(this).find('input').click()
+    $('.openingReport , .mask_body').show()
+    $('.proposal-check').prop('checked', true).change();
+})
+$('.close_pop').click(function() {
+    $('.openingReport , .mask_body').hide()
+    $('.proposal-check').prop('checked', false).change();
+})
+$('.determine_package').click(function() {
+    $('.uploadBox').click()
+})
+$('.switchingZYB').click(function() {
+    $(".Toggle2").click()
+    $('.openingReport , .mask_body').hide()
 })
 
 $(".proposal-check").on('click',function (event){
@@ -881,6 +893,7 @@ $("#uploadFile-ktbg").on('change',function (){
         $(".file-uploading").show();
         $(".proposal-err").hide()
         $(".fileName").text($(this)[0].files[0].name);
+        $('.determine_package').addClass('loading')
         var formdata = new FormData()
         formdata.append('file', $("#uploadFile-ktbg")[0].files[0])
         $.ajax({
@@ -893,10 +906,13 @@ $("#uploadFile-ktbg").on('change',function (){
             },
             data: formdata,
             success: function (res){
+                $('.determine_package').removeClass('loading')
                 if(res.code == 200){
                     $(".file-uploading").hide();
                     $(".file-uploadSuc").css('display','inline-block');
                     fid = res.data.fid
+                    $('.proposal-check').prop('checked', true);
+                    $('.openingReport , .mask_body').hide()
                 }else{
                     if(res.codeMsg){
                         cocoMessage.error(res.codeMsg, 3000);
@@ -911,6 +927,7 @@ $("#uploadFile-ktbg").on('change',function (){
             }
         })
     }else{
+        $('.determine_package').removeClass('loading')
         $(".uploadBlock").show();
         $(".fileBlock").hide();
         $(".fileName").text('');
@@ -918,16 +935,23 @@ $("#uploadFile-ktbg").on('change',function (){
 })
 
 $(".deleteFile").on('click',function (){
-    $("#uploadFile-ktbg").val('')
-    $(".file-uploading").hide();
-    $(".file-uploadErr").hide();
-    $(".file-uploadSuc").hide();
-    $(".fileBlock").removeClass('active')
-    $(".fileName").removeClass('hasError');
-    $("#uploadFile-ktbg").trigger('change');
-    fid = '';
-    ktbg_generate = false;
+    deleteFileFU()
 })
+function deleteFileFU(type) {
+    if(type == 'Toggle' && ktbg_generate) return
+    setTimeout(function() {
+        $("#uploadFile-ktbg").val('')
+        $(".file-uploading").hide();
+        $(".file-uploadErr").hide();
+        $(".file-uploadSuc").hide();
+        $(".fileBlock").removeClass('active')
+        $(".fileName").removeClass('hasError');
+        $("#uploadFile-ktbg").trigger('change');
+        fid = '';
+        ktbg_generate = false;
+        $('.proposal-check').prop('checked', false);
+    },0)
+}
 
 // 开题报告生成论文
 var ktbg_generate = false
@@ -943,7 +967,7 @@ function ktbgGenerate() {
             }
         }
         if($(".Toggle2").attr('edition-key') == 'bylw'){
-            $(".Toggle2").click()
+            // $(".Toggle2").click()
             if($('#type_s').val() !== bylw){
                 setTimeout(function (){
                     $('#type_s').val(bylw)

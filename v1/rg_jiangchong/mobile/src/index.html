@@ -45,8 +45,8 @@
     <link rel="stylesheet" href="../../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../../mobile/assets/css/swipeslider.css">
-    <link rel="stylesheet" href="../../mobile/assets/css/common.css?v=17.7">
-    <link rel="stylesheet" href="../../mobile/assets/css/index/index.css?v=17.7">
+    <link rel="stylesheet" href="../../mobile/assets/css/common.css?v=17.9">
+    <link rel="stylesheet" href="../../mobile/assets/css/index/index.css?v=17.9">
     <script>
         var JANE_NAME = 'rg_jiangchong'
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
@@ -435,44 +435,112 @@
 			</div>
 			<div class="SubmitContainer">
 				<div class="main clearfix" id="systemContent">
-					<p class="mainHader">填写以下表单，工作人员收到后，会与您取得联系。</p>
-					<form id="formSubmit" data="jiangchong" class="clearfix">
-						<div class="clearfix">
-							<div class="group form-group col-md-5 col-lg-5 col-sm-12 col-xs-12">
-								<label><span>*</span> 姓名：</label>
-								<input placeholder="请输入您的姓名" maxlength="20" type="text" class="form-control name_s" name="name" />
-								<span id="name_err"></span>
-							</div>
-						</div>
-						<div class="group form-group col-md-5 col-lg-5 col-sm-12 col-xs-12">
-							<label><span>*</span> 手机号码：</label>
-							<input placeholder="请输入您的手机号" type="text" class="form-control phoneInput" name="phone" />
-							<span id="phone_err"></span>
-						</div>
-						<div class="group form-group col-md-5 col-lg-5 col-sm-12 col-xs-12">
-							<label><span>*</span> 验证码：</label>
-							<div class="Verification clearfix">
-								<input placeholder="请输入您的验证码" type="text" class="form-control VerificationCode_s" name="phone_code" />
-								<div data="place_order" class="btn btn-primary VerificationCode">发送验证码</div>
-							</div>
-							<span id="phone_code_err"></span>
-						</div>
-						<div class="form-group form-groupRightNo col-md-12 col-lg-12 col-sm-12 col-xs-12">
-							<label>降重要求：</label>
-                            <div>
-                                <textarea
-                                    name="requirements"
-                                    rows="8"
-                                    cols="30"
-                                    class="requirements"
-                                    placeholder="请填写降重要求，最多不超过200字符"
-                                ></textarea>
+                    <div class="step1">
+                        <form id="formInfo" data="jc" class="clearfix">
+                            <p class="Filloutform">填写表单</p>
+                            <div class="group form-group">
+                                <label>论文类型<span>*</span> </label>
+                                <div class="version inputBox" id="versionSetp1">
+                                    <div class="options liberalArts selected" data-key="1" data-text="文科版" data-status="文科">
+                                        <div>
+                                            <input type="checkbox" name="arts"  class="subject" checked>文科
+                                        </div>
+                                    </div>
+                                    <div class="options science" data-key="1.3" data-text="理科版" data-status="理科">
+                                        <div>
+                                            <input type="checkbox" name="science" class="subject">理科
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-						</div>
-						<div class="button_s form-group col-xs-12">
-							<button class="btn btn-primary tj button-css">提交</button>
-						</div>
-					</form>
+                            <div class="group form-group">
+                                <label>论文总字数<span>*</span> </label>
+                                <div class="inputBox">
+                                    <input placeholder="请输入论文字数" maxlength="6" type="text" class="form-control number_s" name="number" />
+                                    <span id="number_err"></span>
+                                </div>
+                            </div>
+                            <div class="group form-group">
+                                <label>原重复率<span>*</span></label>
+                                <div class="inputBox">
+                                    <input placeholder="请输入原重复率" maxlength="6" type="text" class="form-control repetition_s" name="repetition" />
+                                    <span class="percentSign percentSign1">%</span>
+                                    <span id="repetition_err"></span>
+                                </div>
+                            </div>
+                            <div class="group form-group">
+                                <label>期望重复率<span>*</span></label>
+                                <div class="inputBox">
+                                    <input placeholder="请输入期望重复率" maxlength="6" type="text" class="form-control desired_s" name="desired" />
+                                    <span class="percentSign percentSign2">%</span>
+                                    <span id="desired_err"></span>
+                                </div>
+                            </div>
+                            <div class="timeBox">
+                                <div class="labels">交稿时间</div>
+                                <div class="contenteditable_s">
+                                    <span class="toCheck checked"><input class="time_i" type="radio" name="timeType" value="1" checked/><span>一天</span></span>
+                                    <span class="toCheck"><input class="time_i" type="radio" name="timeType" value="2" /><span>两天</span></span>
+                                    <span class="toCheck"><input class="time_i" type="radio" name="timeType" value="3" /><span>三天</span></span>
+                                </div>
+                            </div>
+                            <div class="quotation">
+                                <div class="labels">实时报价</div>
+                                <p class="tips">原重复率需大于10%</p> 
+                                <span class="description">（价格详情需详谈）</span>
+                            </div>
+                            <div class="button_s form-group">
+                                <button class="btn submittedInfo">提交</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="step2" style="display: none;">
+                        <div class="prompt">
+                            最后一步，保持手机畅通，老师会立马与您取得联系！
+                        </div>
+                        <h4>联系方式</h4>
+                        <form id="formSubmit" data="jiangchong" class="clearfix">
+                            <div class="clearfix">
+                                <div class="group form-group">
+                                    <label>姓名<span>*</span></label>
+                                    <div class="inputBox">
+                                        <input placeholder="请输入您的姓名" maxlength="20" type="text" class="form-control name_s" name="name" />
+                                        <span id="name_err"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group form-group">
+                                <label>手机号码<span>*</span></label>
+                                <div class="inputBox">
+                                    <input placeholder="请输入您的手机号" type="text" class="form-control phoneInput" name="phone" />
+                                    <span id="phone_err"></span>
+                                </div>
+                            </div>
+                            <div class="group form-group">
+                                <label>验证码<span>*</span></label>
+                                <div class="Verification inputBox">
+                                    <input placeholder="请输入验证码" type="text" class="form-control VerificationCode_s" name="phone_code" />
+                                    <div data="place_order" class="btn btn-primary VerificationCode">获取验证码</div>
+                                    <span id="phone_code_err"></span>
+                                </div>
+                            </div>
+                            <div class="form-group form-groupRightNo">
+                                <div class="requirementstext">降重要求</div>
+                                <div class="requirementsMain">
+                                    <textarea
+                                        name="requirements"
+                                        rows="6"
+                                        cols="30"
+                                        class="requirements"
+                                        placeholder="填写降重要求，最多不超过200字符（选填）"
+                                    ></textarea>
+                                </div>
+                            </div>
+                            <div class="button_s form-group">
+                                <button class="btn btn-primary tj button-css">提交</button>
+                            </div>
+                        </form>
+                    </div>
 				</div>
 				<!-- tips -->
 				<div class="modal fade" id="myModal_s" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -557,6 +625,13 @@
         }
     });
 
+	$("#formInfo").bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon',
+            invalid: 'glyphicon',
+            validating: 'glyphicon'
+        }
+    });
     let act_code = ''
     let suffix = ''
 	var SYSTEM_CONFIG = ''
@@ -627,7 +702,7 @@
                     name: $('.name_s').val(),
                     phone: $('.phoneInput').val(),
                     phone_code: $('.VerificationCode_s').val(),
-					remark: $('.requirements').val(),
+					remark: detailedData(),
                     user_token: USER_TOKEN,
                     jane_name: JANE_NAME,
                     goods_id: goodsId,
@@ -707,5 +782,139 @@
         document.documentElement.scrollTop = 0;
 		document.body.scrollTop = 0;
     })
+
+    $('.options').click(function() {
+        $('.options').removeClass('selected')
+        $(this).addClass('selected')
+		judgment($('.repetition_s').val() , $('.desired_s').val() , $(".number_s").val())
+        if($(this).hasClass('liberalArts')) {
+            $('.version').attr('id' , 'versionSetp1')
+            $('input[name="arts"]').prop('checked', true);
+            $('input[name="science"]').prop('checked', false);
+        }else {
+            $('.version').attr('id' , 'versionSetp2')
+            $('input[name="arts"]').prop('checked', false);
+            $('input[name="science"]').prop('checked', true);
+        }
+    })
+
+	function detailedData() {
+		var text = '论文类型：'+$('.version .selected').data('status') + '； '
+		text += '论文总字数：'+$(".number_s").val() + '字； '
+		text += '论文重复率：'+$('.repetition_s').val() + '%； '
+		text += '期望查重率：'+$('.desired_s').val() + '%以下； '
+		text += '期望交稿时间：'+$("input[name='timeType']:checked").val() + '天；'
+		text += '系统报价：'+$(".quotation .tips").text() + '；'
+		text += $('.requirements').val()? ('降重要求：' + $('.requirements').val()) : ''
+		return text
+	}
+	$(".toCheck").on('click',function (event){
+		$(".toCheck").removeClass('checked')
+        $(this).addClass('checked').find(".time_i").click()
+    })
+	$(".time_i").on('click',function (event){
+        event.stopPropagation()
+    })
+	$('.submittedInfo').click(function() {
+		if(judgment($('.repetition_s').val() , $('.desired_s').val() , $(".number_s").val())) {
+			$('.step1').hide()
+			$('.step2').show()
+		}
+	})
+
+	// 提示语句赋值  a:原重复率 b:期望率 c:论文字数
+	function judgment(a , b , c) {
+		a = Number(a)
+		b = Number(b)
+		c = Number(c)
+		if(!a || a <10) {
+			$('.quotation .tips').text('原重复率需大于10%')
+		}else if(!b || b == 0) {
+			$('.quotation .tips').text('期望率需大于0%')
+		}else if(a<=b) {
+			$('.quotation .tips').text('期望率必须低于重复率')
+		}else if(b>50) {
+			$('.quotation .tips').text('期望率不能大于50')
+		}else if(c<=0){
+			$('.quotation .tips').text('论文字数不能为空')
+		}else {
+			calculatedAmount(a , b , c)
+			return true
+		}
+		return false
+	}
+	function calculatedAmount(R , E , T) {
+		function c(T) {
+			return 0.0001 * T;
+		}
+		// 时间系数
+		var timeKey = {
+			'1': 1,
+			'2': 0.8,
+			'3': 0.7,
+		}
+		function calculateAmount(T, R, E) {
+			if (R < 0 || R > 100) {
+				throw new Error("重复率应在0到100之间，期望率应大于0");
+			}
+			var key = (R - E)
+			var I = T<=1000? 15 : 15.2
+			var time_key = timeKey[$("input[name='timeType']:checked").val()] // 时间key值
+			var version_key = $('.version .selected').data('key') // 版本key值
+
+			var amount = key*(c(T)*I) * time_key * version_key;
+			var amount2 = (key*(c(T)*20.9)<150? 150 : key*(c(T)*20.9)) * time_key * version_key;
+			
+            // 打85折
+			amount = (amount * 0.85)>1? (amount * 0.85) : amount
+			amount2 = amount2*0.85>150? (amount2*0.85) : amount2
+            return [Math.ceil(amount), Math.ceil(amount2)];
+		}
+		
+		const amountRange = calculateAmount(T, R, E);
+		$('.quotation .tips').html(amountRange[0]+' <span>-</span> '+amountRange[1]+'元')
+	}
+	// 输入框限制
+	$(".number_s").on("input", function() {
+        this.value = this.value.replace(/[^0-9]/g, '');
+		judgment($('.repetition_s').val() , $('.desired_s').val() , $(".number_s").val())
+    });
+	$(".repetition_s , .desired_s").on("input", function() {
+		verification($(this))
+		judgment($('.repetition_s').val() , $('.desired_s').val() , $(".number_s").val())
+    });
+	$(".time_i").on('change',function (event){
+		judgment($('.repetition_s').val() , $('.desired_s').val() , $(".number_s").val())
+    })
+
+	// 百分比限制
+	function verification(this_) {
+		this_.val(this_.val().replace(/[^\d.]/g,''))
+		var val = this_.val()
+		// 第一位是.换成0.
+		if(val.length == 1 && this_.val() == '.') {
+			this_.val('0.')
+		}
+		// 长度为2, 第一位是0, 第二位不是., 则删除0
+		if(val.length == 2 && val.substr(0, 1) == 0 && val.substr(1, 1)!='.') {
+			this_.val(val.substr(1, 1))
+		}
+		let index = val.indexOf('.')
+		if(index==-1) { // 不存在小数点
+			if(val.length>2) {
+				this_.val(val.substr(0, 3)>100? 100:val.substr(0, 3))
+			}
+		}else { // 小数点存在
+			if(val.length>5 || val.length>index+3){
+				this_.val(val.substr(0, val.length-1))
+			}
+		}
+		// 只允许出现一个小数点, 且100不1允许小数点
+		if(val.substr(val.length-1, val.length) == '.') {
+			if(val.substr(0, val.length-1).indexOf('.') !=-1 || val>=100) {
+				this_.val(val.substr(0, val.length-1))
+			}
+		}
+	}
 </script>
 </html>

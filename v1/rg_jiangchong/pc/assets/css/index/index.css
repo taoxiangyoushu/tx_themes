@@ -357,22 +357,19 @@ body {
   border: solid 1px #eee;
   margin: auto;
 }
-.main .mainHader {
-  line-height: 65px;
-  font-size: 18px;
-  color: #222;
-  padding-left: 46px;
-  border-bottom: 1px solid #dcdcdc;
-  font-weight: bold;
-}
 .main #formSubmit {
-  padding: 27px 46px;
+  margin-top: 18px;
 }
 .main button.btn-primary {
-  width: 120px;
-  height: 47px;
-  background-color: #145fbc;
-  border-radius: 10px;
+  background: #005AFF;
+  border-radius: 4px 4px 4px 4px;
+  width: 110px;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+  padding: 0px;
+  line-height: 40px;
+  margin-top: 6px;
 }
 .main .button_s {
   text-align: center;
@@ -381,7 +378,7 @@ body {
   display: block;
   width: 100%;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 4px;
   border: solid 1px #ccc;
   background-color: #fff !important;
 }
@@ -396,9 +393,6 @@ body {
   float: left;
 }
 .Verification div.btn-primary {
-  width: 26%;
-  float: left;
-  margin-left: 2%;
   height: auto;
   color: #333 !important;
   border-color: #ccc !important;
@@ -426,7 +420,7 @@ body {
 }
 .group,
 .form-group {
-  padding: 0 20px 0 0;
+  margin-bottom: 24px;
 }
 label {
   font-size: 16px;
@@ -438,25 +432,52 @@ label span {
 .form-control,
 .btn-group > .btn:first-child,
 .Verification div.btn-primary {
-  height: 47px;
+  height: 42px;
+}
+.Verification {
+  position: relative;
+  width: calc(100% - 102px);
+  display: inline-block;
+  max-width: 300px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.Verification .form-control {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 .VerificationCode {
   padding: 0;
-  line-height: 47px;
-}
-.tj:hover {
-  box-shadow: 2px 2px 10px #06C;
+  line-height: 40px;
+  height: 40px !important;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+  border-radius: 0 4px 4px 0;
+  border-top: 0;
+  border-bottom: 0;
+  margin-top: 1px;
+  margin-right: 1px;
+  border-right: 0;
 }
 .dropdown-menu.inner {
   max-height: 200px !important;
 }
-.form-control:focus,
-.remark:focus,
-.main .requirements:focus {
-  border-color: #3f83ff;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(63, 131, 255, 0.1), 0 0 8px rgba(162, 204, 238, 0.6);
-  box-shadow: 0px 0px 7px 3px rgba(63, 131, 255, 0.1);
+.form-control:focus.number_s,
+.remark:focus.number_s,
+.main .requirements:focus.number_s {
+  border: 2px solid #005AFF;
+}
+.form-control:focus.repetition_s,
+.remark:focus.repetition_s,
+.main .requirements:focus.repetition_s {
+  border: 2px solid #FD6743;
+}
+.form-control:focus.desired_s,
+.remark:focus.desired_s,
+.main .requirements:focus.desired_s {
+  border: 2px solid #17BD46;
 }
 .submit_S {
   padding-top: 20px;
@@ -464,12 +485,22 @@ label span {
   border-top: 1px solid #dcdcdc;
   margin-top: 30px;
 }
+.CodeBox label {
+  position: relative;
+  top: 3px;
+}
 .form-groupRightNo {
   padding-right: 0;
   position: relative;
 }
 .form-groupRightNo textarea {
   resize: none;
+}
+.form-groupRightNo label {
+  margin-top: 10px;
+}
+.form-groupRightNo label span {
+  opacity: 0;
 }
 .form-groupRightNo .wordsNum {
   position: absolute;
@@ -493,7 +524,7 @@ label span {
   text-align: center;
 }
 .button_s {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .RollingBox {
   background-color: #ffffff;
@@ -525,4 +556,193 @@ label span {
 }
 .problemBox {
   padding-bottom: 46px;
+}
+.formData {
+  overflow: hidden;
+  padding: 40px;
+  text-align: center;
+}
+.formData .formLeft {
+  float: left;
+  text-align: left;
+  width: calc(100% - 700px);
+}
+.formData .formLeft > div {
+  width: 392px;
+  min-height: 223px;
+  background: #F7F7F7;
+  border-radius: 12px 12px 12px 12px;
+  padding: 28px;
+  border: 1px solid #F7F7F7;
+  cursor: pointer;
+}
+.formData .formLeft .labels {
+  font-weight: 700;
+  font-size: 20px;
+  color: #3D3D3D;
+  padding: 20px 0;
+  margin: 0;
+}
+.formData .formLeft .described {
+  font-size: 16px;
+  color: #3D3D3D;
+  list-style: 30px;
+}
+.formData .formLeft .selected {
+  background: #F1F8FF;
+  border: 1px solid #8AC4FF;
+  background-image: url('../../img/selectedBG.png');
+  background-repeat: no-repeat;
+  background-position: 82% 0;
+}
+.formData .formLeft .science {
+  margin-top: 28px;
+}
+.formData .quotation {
+  min-width: 400px;
+  margin: auto;
+  color: #3D3D3D;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 10px;
+}
+.formData .quotation .tips {
+  color: #F5522C;
+  font-weight: 700;
+}
+.formData .quotation .tips span {
+  position: relative;
+  top: -2px;
+}
+.formData .quotation .description {
+  color: #999;
+}
+.formData .formRight {
+  float: right;
+  width: 700px;
+  background: #F7FBFF;
+  border-radius: 12px 12px 12px 12px;
+  min-height: 474px;
+}
+.formData .formRight .form-group {
+  text-align: center;
+}
+.formData .formRight .version {
+  font-size: 28px;
+  color: #182B43;
+  text-align: center;
+  margin-top: 28px;
+  margin-bottom: 22px;
+}
+.formData .formRight label {
+  width: 120px;
+  display: inline-block;
+  text-align: left;
+}
+.formData .formRight .form-control,
+.formData .formRight .contenteditable_s,
+.formData .formRight .requirements {
+  width: calc(100% - 120px);
+  display: inline-block;
+  max-width: 248px;
+  text-align: left;
+}
+.formData .formRight .group {
+  height: auto;
+}
+.formData .formRight .toCheck {
+  cursor: pointer;
+  background: #FFFFFF;
+  border-radius: 4px 4px 4px 4px;
+  border: 1px solid #CCCCCC;
+  font-size: 16px;
+  color: #686868;
+  display: inline-block;
+  margin-right: 12.5px;
+  width: 72px;
+  height: 42px;
+  text-align: center;
+  line-height: 42px;
+}
+.formData .formRight .toCheck:last-child {
+  margin-right: 0;
+}
+.formData .formRight .toCheck .time_i {
+  display: none;
+}
+.formData .formRight .toCheck.checked {
+  background: #EEF5FF;
+  border: 1px solid #005AFF;
+  color: #005AFF;
+}
+.formData .formRight .step2 {
+  display: none;
+}
+.formData .formRight .step2 label {
+  width: 102px;
+}
+.formData .formRight .step2 .form-control,
+.formData .formRight .step2 .contenteditable_s,
+.formData .formRight .step2 .requirements {
+  width: calc(100% - 102px);
+  max-width: 300px;
+}
+.formData .formRight .step2 .requirements {
+  vertical-align: top;
+}
+.formData .submittedInfo {
+  background: #005AFF;
+  border-radius: 4px 4px 4px 4px;
+  width: 110px;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+  padding: 0px;
+  line-height: 40px;
+}
+.formData .step2Head h4 {
+  padding: 0;
+  margin: 0;
+  font-size: 28px;
+  color: #182B43;
+  margin-top: 30px;
+  margin-bottom: 6px;
+}
+.formData .step2Head span {
+  font-size: 14px;
+  color: #808080;
+}
+.form-group label {
+  position: relative;
+}
+.form-group label .units {
+  position: absolute;
+  left: 380px;
+  min-width: 54px;
+  font-size: 14px;
+}
+.form-group label .units1 {
+  color: #FD6743;
+}
+.form-group label .units2 {
+  color: #17BD46;
+}
+#name_err,
+#phone_err,
+#phone_code_err {
+  position: absolute;
+  left: 256px;
+  bottom: -20px;
+}
+.number_s {
+  border-color: #005AFF !important;
+  padding-right: 12px !important;
+}
+.repetition_s {
+  border-color: #FD6743 !important;
+  padding-right: 12px !important;
+}
+.desired_s {
+  border-color: #17BD46 !important;
+  padding-right: 12px !important;
 }

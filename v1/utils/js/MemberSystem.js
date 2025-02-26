@@ -2137,7 +2137,7 @@
             data.phone = phone; //赋值给数据对象
             var formData = getFormData(data);
             $.ajax({
-              url: urls + "/api/verify_code/get_phone_validate?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME,
+              url: this.opt.urls + "/api/verify_code/get_phone_validate?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME,
               type: "post",
               processData: false,
               contentType: false,
@@ -2219,7 +2219,7 @@
                 }
                 var form_data = getFormData(formData)
                 $.ajax({
-                    url: urls + "/api/client/user/bind_phone?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME,
+                    url: this.opt.urls + "/api/client/user/bind_phone?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME,
                     type:'post',
                     processData: false,
                     contentType: false,
@@ -2291,7 +2291,7 @@
                 }
                 var form_data = getFormData(formData)
                 $.ajax({
-                    url: urls + "/api/client/user/bind_user_phone?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME,
+                    url: this.opt.urls + "/api/client/user/bind_user_phone?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME,
                     type:'post',
                     processData: false,
                     contentType: false,
@@ -2376,7 +2376,7 @@
             data.phone = phone; //赋值给数据对象
             var formData = getFormData(data);
             $.ajax({
-              url: urls + "/api/verify_code/get_phone_validate?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME+'&send_type=' + sendType,
+              url: this.opt.urls + "/api/verify_code/get_phone_validate?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME+'&send_type=' + sendType,
               type: "post",
               processData: false,
               contentType: false,
@@ -2457,7 +2457,7 @@
                 }
                 var form_data = getFormData(formData)
                 $.ajax({
-                    url: urls + "/api/client/user/phone_login?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME,
+                    url: this.opt.urls + "/api/client/user/phone_login?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME,
                     type:'post',
                     processData: false,
                     contentType: false,
@@ -2535,7 +2535,7 @@
             }
             var form_data = getFormData(formData)
             $.ajax({
-                url: urls + "/api/client/user/phone_login?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME,
+                url: this.opt.urls + "/api/client/user/phone_login?user_token="+this.opt.USER_TOKEN+'&jane_name='+this.opt.JANE_NAME,
                 type:'post',
                 processData: false,
                 contentType: false,

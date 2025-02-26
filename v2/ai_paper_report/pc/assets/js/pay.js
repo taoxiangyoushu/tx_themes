@@ -1,4 +1,5 @@
 
+var orderInfoData = {}
 var qrcode = new QRCode(document.getElementById("qrcode"), {
     width: 135,
     height: 135,
@@ -23,7 +24,6 @@ var typeAll = {
     kLenovoAiMiniPay: 'kLenovoAiMiniPay'
 }
 var source = ''
-var orderInfoData = {}
 // 先判断是不是微信端打开的
 let client_type = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 if(client_type){
@@ -834,6 +834,7 @@ function couponsPay() {
 }
 
 $(".close_pop").on('click',function (){
+    $('.use_now').addClass('can')
     $(".coupon_pop").hide();
     $(".mask_body").hide();
 })

@@ -309,6 +309,21 @@
   background-image: linear-gradient(0deg, #ffffff 0%, #c9e0ff 100%);
   border-radius: 1rem;
 }
+.payTipModal .modal-content {
+  background: #ffffff;
+}
+.payTipModal .modal-header .close {
+  margin-top: -8px;
+  margin-right: -2px;
+}
+.payTipModal .modal-header {
+  height: 7rem;
+  background: linear-gradient(180deg, #CBDCFA, #EAF1FD);
+  border-radius: 1rem 1rem 0 0;
+}
+.payTipModal .modal-header img {
+  width: 4.5rem;
+}
 .modal-header,
 .modal-footer {
   border: 0;
@@ -317,14 +332,58 @@
 .modal-footer {
   text-align: center;
 }
+.btn_transferPay {
+  border: none;
+  width: 94%;
+  padding: 0.8rem;
+  color: #fff;
+  border-radius: 0.8rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+  margin-top: 1.6rem;
+  background: linear-gradient(360deg, #3169F6 0%, #4F8FFF 100%);
+  box-shadow: inset 0px 4px 10px 0px rgba(29, 95, 234, 0.8);
+  position: relative;
+  border: 2px solid #3068f2;
+}
+.btn_transferPay span {
+  display: block;
+}
+.btn_transferPay span.btn_text {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.btn_transferPay span.p_tips1 {
+  font-size: 1.2rem;
+}
+.btn_transferPay .recommend_tag {
+  position: absolute;
+  background: linear-gradient(90deg, #FE8100 0%, #FFB001 100%);
+  font-size: 1.2rem;
+  line-height: normal;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem 0.4rem 0.4rem 0;
+  right: 0.4rem;
+  top: -1.2rem;
+}
 .btn_clone {
-  width: 90%;
-  background-image: linear-gradient(0deg, #5282fa 47%, #7aa8f2 100%);
-  border: 0;
-  color: #ffffff;
-  padding: 0.85rem 0;
-  font-size: 1.4rem;
-  border-radius: 1.5rem;
+  width: 94%;
+  padding: 0.8rem;
+  color: #5282FA;
+  border-radius: 0.8rem;
+  text-align: center;
+  background: #ffffff;
+  border: 2px solid #5282FA;
+}
+.btn_clone span {
+  display: block;
+}
+.btn_clone span.btn_text {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.btn_clone span.p_tips1 {
+  font-size: 1.2rem;
 }
 .modal-body {
   padding: 0 15px;
@@ -333,14 +392,14 @@
   width: 90%;
 }
 .linkUrl {
-  padding: 0.75rem 1.8rem;
   width: 90%;
+  height: 0;
   text-align: left;
   background: #eaf3ff;
   border-radius: 1.27rem;
-  margin: 1.65rem auto;
   color: #666666;
-  font-size: 1.2rem;
+  font-size: 0.1rem;
+  opacity: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -351,6 +410,12 @@
 }
 .contentBox {
   margin-top: 1rem;
+}
+.contentBox.scan_pop {
+  margin-top: 1.2rem;
+}
+.contentBox.scan_pop .tips1 {
+  font-size: 1.6rem;
 }
 .contentBox .tips1 {
   color: #333;
@@ -639,3 +704,4 @@
   width: 1.24rem;
   height: 1.24rem;
 }
+/*# sourceMappingURL=pay.css.map */

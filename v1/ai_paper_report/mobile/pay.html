@@ -38,14 +38,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>AI大师写作 - 确认订单</title>
     <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.0040">
-    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0040">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0040">
-    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0040">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0040">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.0045">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0045">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0045">
+    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0045">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0045">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz'
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
     </script>
     <!--百度统计代码-->
     <script>
@@ -287,23 +288,33 @@
     </div>
 </div>
 <!-- 多码支付其他浏览器支付,提示弹窗 -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade payTipModal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel"></h4>
+                <img src="../mobile/assets/img/bz.png" alt="">
             </div>
             <div class="modal-body">
 <!--               <img src="../mobile/assets/img/cloneImg.png" alt=""> -->
-                <div class="contentBox">
-                    <p class="tips1">因数据安全问题暂不支持手机浏览器</p>
-                    <p class="tips2">请复制链接至微信或电脑端打开</p>
+                <div class="contentBox scan_pop">
+<!--                    <p class="tips1">因数据安全问题暂不支持手机浏览器</p>-->
+<!--                    <p class="tips2">请复制链接至微信或电脑端打开</p>-->
+                    <p class="tips1">为保障账户安全，请选择下单方式</p>
                     <div class="linkUrl"></div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn_clone" data-dismiss="modal">复制链接</button>
+                <button type="button" class="btn_transferPay" data-dismiss="modal">
+                    <span class="btn_text">扫码支付</span>
+                    <span class="p_tips1"></span>
+                    <span class="recommend_tag">推荐</span>
+                </button>
+                <button type="button" class="btn_clone" data-dismiss="modal">
+                    <span class="btn_text">复制链接</span>
+                    <span class="p_tips1"></span>
+                </button>
             </div>
         </div>
     </div>
@@ -341,15 +352,17 @@
     </div>
 </div>
 <div id="customerOnline"></div>
-<script src="../mobile/assets/js/jquery.min.js?v=m24.0040"></script>
-<script src="../mobile/assets/js/bootstrap.min.js?v=m24.0040"></script>
-<script src="../mobile/assets/js/clipboard.min.js?v=m24.0040"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0040"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.0040"></script>
-<script src="../mobile/assets/js/message.js?v=m24.0040"></script>
-<script src="../mobile/assets/js/ap.js?v=m24.0040"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.0040"></script>
-<script src="../mobile/assets/js/orderInfo.js?v=m24.0040"></script>
-<script src="../mobile/assets/js/pay.js?v=m24.0040"></script>
+<script src="../mobile/assets/js/jquery.min.js?v=m24.0045"></script>
+<script src="../mobile/assets/js/bootstrap.min.js?v=m24.0045"></script>
+<script src="../mobile/assets/js/clipboard.min.js?v=m24.0045"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0045"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script src="../mobile/assets/js/coco-message.js"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0045"></script>
+<script src="../mobile/assets/js/message.js?v=m24.0045"></script>
+<script src="../mobile/assets/js/ap.js?v=m24.0045"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0045"></script>
+<script src="../mobile/assets/js/pay.js?v=m24.0045"></script>
+<script src="../mobile/assets/js/orderInfo.js?v=m24.0045"></script>
 </body>
 </html>

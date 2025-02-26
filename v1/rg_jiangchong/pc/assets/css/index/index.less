@@ -376,22 +376,19 @@ body {
     border: solid 1px #eee;
     margin: auto;
   }
-  .main .mainHader {
-    line-height: 65px;
-    font-size: 18px;
-    color: #222;
-    padding-left: 46px;
-    border-bottom: 1px solid #dcdcdc;
-    font-weight: bold;
-  }
   .main #formSubmit {
-    padding: 27px 46px;
+    margin-top: 18px;
   }
   .main button.btn-primary {
-    width: 120px;
-    height: 47px;
-    background-color: #145fbc;
-    border-radius: 10px;
+    background: #005AFF;
+    border-radius: 4px 4px 4px 4px;
+    width: 110px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    padding: 0px;
+    line-height: 40px;
+    margin-top: 6px;
   }
   .main .button_s {
     text-align: center;
@@ -400,7 +397,7 @@ body {
     display: block;
     width: 100%;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 4px;
     border: solid 1px #ccc;
     background-color: #fff !important;
   }
@@ -415,9 +412,6 @@ body {
     float: left;
   }
   .Verification div.btn-primary {
-    width: 26%;
-    float: left;
-    margin-left: 2%;
     height: auto;
     color: #333 !important;
     border-color: #ccc !important;
@@ -445,7 +439,7 @@ body {
   }
   .group,
   .form-group {
-    padding: 0 20px 0 0;
+    margin-bottom: 24px;
   }
   label {
     font-size: 16px;
@@ -457,25 +451,53 @@ body {
   .form-control,
   .btn-group > .btn:first-child,
   .Verification div.btn-primary {
-    height: 47px;
+    height: 42px;
+  }
+  .Verification {
+    position: relative;
+    width: calc(100% - 102px);
+    display: inline-block;
+    max-width: 300px;
+    overflow: hidden;
+    vertical-align:middle;
+    .form-control {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
   }
   .VerificationCode {
     padding: 0;
-    line-height: 47px;
+    line-height: 40px;
+    height: 40px !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    border-radius: 0 4px 4px 0;
+    border-top: 0;
+    border-bottom: 0;
+    margin-top: 1px;
+    margin-right: 1px;
+    border-right: 0;
   }
-  .tj:hover {
-    box-shadow: 2px 2px 10px #06C;
-  }
+//   .tj:hover {
+//     box-shadow: 2px 2px 10px #06C;
+//   }
   .dropdown-menu.inner {
     max-height: 200px !important;
   }
   .form-control:focus,
   .remark:focus,
   .main .requirements:focus {
-    border-color: #3f83ff;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(63, 131, 255, 0.1), 0 0 8px rgba(162, 204, 238, 0.6);
-    box-shadow: 0px 0px 7px 3px rgba(63, 131, 255, 0.1);
+    &.number_s {
+        border: 2px solid #005AFF;
+    }
+    &.repetition_s {
+        border: 2px solid #FD6743;
+    }
+    &.desired_s {
+        border: 2px solid #17BD46;
+    }
   }
   .submit_S {
     padding-top: 20px;
@@ -483,11 +505,24 @@ body {
     border-top: 1px solid #dcdcdc;
     margin-top: 30px;
   }
+
+  .CodeBox {
+    label {
+        position: relative;
+        top: 3px;
+    }
+  }
   .form-groupRightNo {
     padding-right: 0;
     position: relative;
     textarea {
       resize: none;
+    }
+    label {
+        margin-top: 10px;
+        span {
+            opacity: 0;
+        }
     }
     .wordsNum {
       position: absolute;
@@ -514,7 +549,7 @@ body {
     text-align: center;
 }
 .button_s {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .RollingBox {
 	background-color: #ffffff;
@@ -549,4 +584,193 @@ body {
 }
 .problemBox {
     padding-bottom: 46px;
+}
+
+.formData {
+    overflow: hidden;
+    padding: 40px;
+    text-align: center;
+    .formLeft {
+        float: left;
+        text-align: left;
+        width: calc(100% - 700px);
+        &>div { 
+            width: 392px;
+            min-height: 223px;
+            background: #F7F7F7;
+            border-radius: 12px 12px 12px 12px;
+            padding: 28px;
+            border: 1px solid #F7F7F7;
+            cursor: pointer;
+        }
+        .labels {
+            font-weight: 700;
+            font-size: 20px;
+            color: #3D3D3D;
+            padding: 20px 0;
+            margin: 0;
+        }
+        .described {
+            font-size: 16px;
+            color: #3D3D3D;
+            list-style: 30px;
+        }
+        .selected {
+            background: #F1F8FF; 
+            border: 1px solid #8AC4FF;
+            background-image: url('../../img/selectedBG.png');
+            background-repeat: no-repeat;
+            background-position: 82% 0;
+        }
+        .science {
+            margin-top: 28px;
+        }
+    }
+    .quotation {
+        min-width: 400px;
+        margin: auto;
+        color: #3D3D3D;
+        font-size: 16px;
+        display: inline-block;
+        margin-top: 10px;
+        .tips {
+            color: #F5522C;
+            font-weight: 700;
+            span {
+                position: relative;
+                top: -2px;
+            }
+        }
+        .description {
+            color: #999;
+        }
+    }
+    .formRight {
+        float: right;
+        width: 700px;
+        background: #F7FBFF;
+        border-radius: 12px 12px 12px 12px;
+        min-height: 474px;
+        .form-group {
+            text-align: center;
+        }
+        .version {
+            font-size: 28px;
+            color: #182B43;
+            text-align: center;
+            margin-top: 28px;
+            margin-bottom: 22px;
+        }
+        label {
+            width: 120px;
+            display: inline-block;
+            text-align: left;
+        }
+        .form-control , .contenteditable_s , .requirements {
+            width: calc(100% - 120px);
+            display: inline-block;
+            max-width: 248px;
+            text-align: left;
+        }
+        .group {
+            height: auto;
+        }
+        .toCheck {
+            cursor: pointer;
+            background: #FFFFFF;
+            border-radius: 4px 4px 4px 4px;
+            border: 1px solid #CCCCCC;
+            font-size: 16px;
+            color: #686868;
+            display: inline-block;
+            margin-right: 12.5px;
+            width: 72px;
+            height: 42px;
+            text-align: center;
+            line-height: 42px;
+            &:last-child {
+                margin-right: 0;
+            }
+            .time_i {
+                display: none;
+            }
+            &.checked {
+                background: #EEF5FF;
+                border: 1px solid #005AFF;
+                color: #005AFF;
+            }
+        }
+        
+        .step2 {
+            display: none;
+            label {
+                width: 102px;
+            }
+            .form-control , .contenteditable_s  , .requirements {
+                width: calc(100% - 102px);
+                max-width: 300px;
+            }
+            .requirements {
+                vertical-align: top;
+            }
+        }
+    }
+    .submittedInfo {
+        background: #005AFF;
+        border-radius: 4px 4px 4px 4px;
+        width: 110px;
+        height: 40px;
+        color: #fff;
+        font-size: 16px;
+        padding: 0px;
+        line-height: 40px;
+    }
+    .step2Head {
+        h4 {
+            padding: 0;
+            margin: 0;
+            font-size: 28px;
+            color: #182B43;
+            margin-top: 30px;
+            margin-bottom: 6px;
+        }
+        span {
+            font-size: 14px;
+            color: #808080;
+        }
+    }
+}
+.form-group {
+    label {
+        position: relative;
+        .units {
+            position: absolute;
+            left: 380px;
+            min-width: 54px;
+            font-size: 14px;
+        }
+        .units1 {
+            color: #FD6743;
+        }
+        .units2 {
+            color: #17BD46;
+        }
+    }
+}
+#name_err , #phone_err , #phone_code_err{
+    position: absolute;
+    left: 256px;
+    bottom: -20px;
+}
+.number_s {
+    border-color: #005AFF !important;
+    padding-right: 12px !important;
+}
+.repetition_s {
+    border-color: #FD6743 !important;
+    padding-right: 12px !important;
+}
+.desired_s {
+    border-color: #17BD46 !important;
+    padding-right: 12px !important;
 }

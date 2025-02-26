@@ -54,6 +54,11 @@ var systemInfo = {
 		Language: '中文、英文',
 		timeConsuming: '10-30分钟',
 	},
+	daya: {
+		comparisonLibrary: '拥有图书、期刊、论文、报纸、网络全文等丰富的对比资源库，有图书检测优势，保证书刊并重检测，为论文查重提供多一层保障。',
+		Language: '中文、英文',
+		timeConsuming: '10-30分钟',
+	},
 }
 // 封装url参数获取
 function getQueryVariable(variable){

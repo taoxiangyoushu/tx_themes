@@ -6,6 +6,13 @@
   display: inline-block;
   vertical-align: middle;
 }
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer;
+  -webkit-appearance: none;
+}
 body {
   min-width: 1270px;
 }
@@ -259,7 +266,7 @@ body {
 }
 .app .app-body .intro-bar .intro-tab .r-bar-ctn {
   padding: 24px 0;
-  min-height: 610px;
+  min-height: 640px;
 }
 .app .app-body .intro-bar .intro-tab .r-bar-ctn > div {
   padding: 0 10px;
@@ -2045,7 +2052,7 @@ body {
   background: #fff;
   position: absolute;
   width: 412px;
-  height: 250px;
+  height: 274px;
   right: -390px;
   top: -78px;
   color: #666666;

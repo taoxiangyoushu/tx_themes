@@ -132,7 +132,7 @@
             })
             $(document).on('click','.smartMain1 li , .smartMain2 li',function (){
                 $(_this.opt.inputID).val($(this).children('.text').text())
-                $(_this.opt.inputID).trigger('change')
+                $(_this.opt.inputID).trigger('input')
                 $('.smartTopic').hide()
             })
         },

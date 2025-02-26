@@ -45,6 +45,13 @@ em,
 var {
   font-style: normal;
 }
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer;
+  -webkit-appearance: none;
+}
 code,
 kbd,
 pre,

@@ -45,12 +45,13 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0024">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0024">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0024">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0025">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0025">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0025">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'zjchong'
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
     </script>
     <!--百度统计代码-->
     <script>
@@ -245,6 +246,9 @@
                                         <span>
                                             4、下载的内容仅用于参考，不作为毕业、发表使用。
                                         </span>
+                                        <span>
+                                           5、pdf格式不稳定，可能会出现乱码，请确认后再提交
+                                        </span>
                                     </dd>
                                 </dl>
                                 <dl>
@@ -284,6 +288,9 @@
                                         </span>
                                         <span>
                                             4、下载的内容仅用于参考，不作为毕业、发表使用。
+                                        </span>
+                                        <span>
+                                           5、pdf格式不稳定，可能会出现乱码，请确认后再提交
                                         </span>
                                     </dd>
                                 </dl>
@@ -500,7 +507,7 @@
             <p class="reportTip">上传文件名为<span>“xxx(全文标明引文).pdf”</span></p>
             <p class="reportTip">或完整的查重报告压缩包，以便系统解析降重内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-zw.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="wanfang" >
@@ -508,7 +515,7 @@
             <p class="reportTip">上传文件名为<span>“xxx(原文标注报告).pdf”</span>文件</p>
             <p class="reportTip">或完整的查重报告压缩包，以便系统解析降重内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-wf.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="weipu" >
@@ -516,7 +523,7 @@
             <p class="reportTip">支持上传pdf报告或完整zip报告</p>
             <p class="reportTip">需包含文件<span>“xxx_比对报告.html”</span>，以便系统解析降重内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-wp.png?v1" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="zaojiance" >
@@ -524,7 +531,7 @@
             <p class="reportTip">zip压缩包内需包含<span>“详细报告.html”</span>文件</p>
             <p class="reportTip">以便系统解析降重内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-zjc.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="checkPass" >
@@ -532,7 +539,7 @@
             <p class="reportTip">zip压缩包内需包含<span>“xxx--详细报告.html”</span>文件</p>
             <p class="reportTip">或完整的查重报告压缩包，以便系统解析降重内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-checkpass.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="MasterCheck" >
@@ -540,7 +547,7 @@
             <p class="reportTip">zip压缩包内需包含<span>“xxx--简明报告.html”</span>文件</p>
             <p class="reportTip">或完整的查重报告压缩包，以便系统解析降重内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-dscc.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="paperPass" >
@@ -548,7 +555,7 @@
             <p class="reportTip">仅支持上传完整zip报告，请下载PP<span>“离线网页版报告”</span>zip</p>
             <p class="reportTip">以便系统解析降重内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-pp.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="yuanwenjian" >
@@ -556,7 +563,7 @@
             <p class="reportTip">zip压缩包内需包含<span>“xxx_全文标明引文.pdf”</span>文件</p>
             <p class="reportTip">以便系统解析降重内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-ywj.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="cnkiAIGC" >
@@ -564,7 +571,7 @@
             <p class="reportTip">支持上传pdf或者完整zip报告， </p>
             <p class="reportTip">需包含文件<span>“全文报告单_xxx.pdf”,</span>，以便系统解析降AIGC内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-zwAIGC.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="wanfangAIGC" >
@@ -572,7 +579,7 @@
             <p class="reportTip">仅支持上传pdf文件，文件名<span>“xxx（AIGC检测报告）.pdf”</span></p>
             <p class="reportTip">或完整的查重报告压缩包，以便系统解析降AIGC内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-wfAIGC.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="weipuAIGC" >
@@ -580,7 +587,7 @@
             <p class="reportTip">仅支持上传html文件<span>“xxx-维普AIGC报告.html”</span></p>
             <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-wpAIGC.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="masterAIGC" >
@@ -588,7 +595,7 @@
             <p class="reportTip">仅支持上传zip，需包含文件<span>“xxx---AIGC检测报告.html”</span></p>
             <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-masterAIGC.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="paperPassAIGC" >
@@ -596,7 +603,7 @@
             <p class="reportTip">仅支持上传完整zip报告，请下载PP<span>“离线网页版报告”</span>zip</p>
             <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-ppAIGC.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="gzdAIGC" >
@@ -604,7 +611,7 @@
             <p class="reportTip">仅支持上传pdf文件，文件名<span>“xxx_AIGC检测报告.pdf”</span></p>
             <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-gzdAIGC.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="dyAIGC" >
@@ -612,7 +619,7 @@
             <p class="reportTip">仅支持上传pdf文件，文件名<span>“xxx_检测结果报告.pdf”</span></p>
             <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
-                <img src="../mobile/assets/img/ex-dyAIGC.png" alt="">
+                <img src="" alt="">
             </div>
         </div>
     </div>
@@ -675,8 +682,8 @@
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/jszip.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0024"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.0024"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0025"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0025"></script>
 <script>
 
     // 价格
@@ -753,6 +760,25 @@
         }
         $(".price_aigc_t").text(price_aigc)
         $(".price_jc_t").text(price_lwjc)
+    }
+
+    // 报告样例
+    var reportSampleData = {
+        'cnki': '../mobile/assets/img/ex-zw.png',
+        'wanfang': '../mobile/assets/img/ex-wf.png',
+        'weipu': '../mobile/assets/img/ex-wp.png?v1',
+        'zaojiance': '../mobile/assets/img/ex-zjc.png',
+        'checkPass': '../mobile/assets/img/ex-checkpass.png',
+        'MasterCheck': '../mobile/assets/img/ex-dscc.png',
+        'paperPass': '../mobile/assets/img/ex-pp.png',
+        'yuanwenjian': '../mobile/assets/img/ex-ywj.png',
+        'masterAIGC': '../mobile/assets/img/ex-masterAIGC.png',
+        'paperPassAIGC': '../mobile/assets/img/ex-ppAIGC.png',
+        'wanfangAIGC': '../mobile/assets/img/ex-wfAIGC.png',
+        'cnkiAIGC': '../mobile/assets/img/ex-zwAIGC.png',
+        'weipuAIGC': '../mobile/assets/img/ex-wpAIGC.png',
+        'gzdAIGC': '../mobile/assets/img/ex-gzdAIGC.png',
+        'dyAIGC': '../mobile/assets/img/ex-dyAIGC.png',
     }
 
     // 版本选择
@@ -1679,6 +1705,9 @@
         $(".type-pop .example_item").hide()
         for(var i=0; i<$(".type-pop .example_item").length; i++) {
             if($($(".type-pop .example_item")[i]).attr('data-type') == reportType_s) {
+                if($($(".type-pop .example_item")[i]).find('.exam-img img').attr('src') == '') {
+                    $($(".type-pop .example_item")[i]).find('.exam-img img').attr('src', reportSampleData[reportType_s])
+                }
                 $($(".type-pop .example_item")[i]).show()
             }
         }

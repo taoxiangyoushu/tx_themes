@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.00255">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.00255">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0031">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0031">
     <!-- <link rel="stylesheet" href="../assets/css/styles.css" /> -->
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!--[if lt IE 9]>
@@ -21,6 +21,7 @@
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
         var JANE_NAME = 'aigc_check'
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
     </script>
     <!--百度统计代码-->
     <script>
@@ -406,11 +407,12 @@
 <script src="../pc/assets/js/bootstrap.min.js"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
-<script src="../pc/assets/js/coco-message.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.00255"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.00255"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.00255"></script>
+<script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
+<script src="../pc/assets/js/common.js?v=p24.0031"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0031"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0031"></script>
 <script>
+    var orderInfoData = {}
     var qrcode = new QRCode(document.getElementById("qrcode"), {
         width: 135,
         height: 135,
@@ -449,7 +451,6 @@
     var isVerify = false;
     var pay_way_public = '';
     var closeMsg = cocoMessage.loading('正在获取价格...');
-    var orderInfoData = {}
 
     if(getQueryVariable('order_sn')){
         order_sn = getQueryVariable('order_sn')
@@ -1012,6 +1013,7 @@
     }
 
     $(".close_pop").on('click',function (){
+        $('.use_now').addClass('can')
         $(".coupon_pop").hide();
         $(".mask_body").hide();
     })
