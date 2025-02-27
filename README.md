@@ -41,19 +41,19 @@
 
 ### 📚 文件目录
 
-| 文件目录            | 项目          |
-|-----------------|-------------|
-| ai_paper_report | AI大师写作      |
-| aigc_check      | Master AI检测 |
-| paper_check     | 论文查重        |
-| zjchong         | 早降重         |
-| rg_jiangchong   | 人工降重        |
-| super_resume    | 超级简历        |
-| wxxz            | 文献下载        |
-| ppt_moban       | PPT模版       |
-| sci             | SCI投稿       |
-| runse           | 润色          |
-| ...             | ...         |
+| 文件目录            | 项目          | 简名（JANE_NAME） |
+|-----------------|-------------|---------------|
+| ai_paper_report | AI大师写作      | dsxz          |
+| aigc_check      | Master AI检测 | aigc_check    |
+| paper_check     | 论文查重        | paper_platform |
+| zjchong         | 早降重         | zjchong       |
+| rg_jiangchong   | 人工降重        | rg_jiangchong |
+| super_resume    | 超级简历        | super_resume  |
+| wxxz            | 文献下载        | wxxz          |
+| ppt_moban       | PPT模版       | ppt_moban     |
+| sci             | SCI投稿       | sci           |
+| runse           | 润色          | runse         |
+| ...             | ...         |               |
 
 ---
 
@@ -88,7 +88,7 @@
     
     2.替换链接: 搜索所有HTML文件，替换以下**LOGIN_API_URL**值为https://api.yourdomain.com
 
-        //原平台接口API域名
+        //原登录接口
         var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
     
         //替换如下
@@ -126,7 +126,7 @@ Master AI检测：https://www.paperaigc.com
 
 本项目包含的第三方源码和二进制文件之版权信息另行标注。
 
-版权所有Copyright © 2024 by Taoxiangyoushu (https://www.taoxiangyoushu.com)
+版权所有Copyright © 2025 by Taoxiangyoushu (https://www.taoxiangyoushu.com)
 
 All rights reserved。
 
