@@ -383,7 +383,7 @@ $('.payBotton').click(function() {
         if(orderInfoData.pay_wap_url) {
             editUrl(order_sn)
             if( is_wxApplet ){
-                window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=scanCodeRich'
+                window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=scanCodeRich&sourceT=3'
                 return
             }
             window.location.href = orderInfoData.pay_wap_url + '/pay/waporder/' + order_sn + '?source=' + source
@@ -392,7 +392,7 @@ $('.payBotton').click(function() {
         }
     }else if(payType == 'wxPublicNum'){
         if( is_wxApplet ){
-            window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=wxScan'
+            window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=wxScan&sourceT=3'
             return
         }
         var formData = getFormData({
@@ -467,11 +467,11 @@ $('.payBotton').click(function() {
     }else{
         if( is_wxApplet ){
             if(payType == 'alipayWap'){
-                window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=alipayScan'
+                window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=alipayScan&sourceT=3'
                 return
             }
             if(payType == 'wxWap'){
-                window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=wxScan'
+                window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=wxScan&sourceT=3'
                 return
             }
         }
@@ -897,10 +897,10 @@ var clipboard = new Clipboard('.btn_clone', {
 //中转支付页
 $(".btn_transferPay").on('click', function (){
     if($(".btn_transferPay").attr('data-single')){
-        window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=' + $(this).attr('data-type') + '&single=' + $(".btn_transferPay").attr('data-single')
+        window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=' + $(this).attr('data-type') + '&single=' + $(".btn_transferPay").attr('data-single')+ '&sourceT=' + source
         return
     }
-    window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=' + $(this).attr('data-type')
+    window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=' + $(this).attr('data-type') + '&sourceT=' + source
 })
 
 //复制成功响应

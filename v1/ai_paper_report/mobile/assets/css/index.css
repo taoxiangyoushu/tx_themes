@@ -580,12 +580,14 @@ button.btn-default,
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 1;
 }
 .proposalBox .upload-block .uploadText {
   color: #0082ff;
   padding: 0 1rem 0 0.3rem;
   display: none;
   white-space: nowrap;
+  line-height: 1;
 }
 .proposalBox .upload-block #uploadFile {
   display: none;
@@ -1432,3 +1434,88 @@ button.btn-default,
   margin-right: 4px;
   margin-left: 10px;
 }
+.upk_mask {
+  background: #000;
+  opacity: 0.7;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 130;
+  display: none;
+}
+.uploadKTBG_pop {
+  position: fixed;
+  background: linear-gradient(180deg, #EDF5FF 0%, #FFFFFF 30% 100%);
+  top: 50%;
+  width: 86%;
+  margin-left: 7%;
+  z-index: 131;
+  border-radius: 0.8rem;
+  padding: 2.4rem 1.6rem 1.4rem;
+  transform: translate(0, -50%);
+  display: none;
+}
+.uploadKTBG_pop .upk_close {
+  position: absolute;
+  width: 1.8rem;
+  right: 1.2rem;
+  top: 1.2rem;
+  padding: 0.2rem;
+}
+.uploadKTBG_pop .upk_close img {
+  width: 100%;
+}
+.uploadKTBG_pop .upk_head {
+  color: #3D3D3D;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+.uploadKTBG_pop .line {
+  width: 100%;
+  height: 1px;
+  background: #E2E3E5;
+}
+.uploadKTBG_pop .upk_content {
+  margin-top: 2rem;
+}
+.uploadKTBG_pop .upk_content ul li {
+  list-style: none;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: #606266;
+  margin-bottom: 0.4rem;
+  text-align: justify;
+}
+.uploadKTBG_pop .upk_content ul li span {
+  color: #2A3541;
+}
+.uploadKTBG_pop .upk_btn {
+  width: 100%;
+  background: #2F87FF;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 1.4rem 0;
+  text-align: center;
+  border-radius: 0.6rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.uploadKTBG_pop .upk_btn .upk_ico {
+  width: 1.4rem;
+  vertical-align: text-top;
+  margin-top: 0.1rem;
+}
+.uploadKTBG_pop .upk_btn .upk_ing {
+  width: 1.4rem;
+  vertical-align: text-top;
+  margin-top: 0.1rem;
+  display: none;
+}
+.uploadKTBG_pop .upk_btn.upking {
+  background: #69A8FF;
+}
+/*# sourceMappingURL=index.css.map */

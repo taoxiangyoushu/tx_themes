@@ -18,6 +18,9 @@ function toast(e){
     console.error('text 不能为空!');
     return;
   }
+  if(e.zIndex){
+    m.style.zIndex = e.zIndex;
+  }
   m.id = 'toastId'; // 设置id，一个页面有且仅有一个Toast
   // m.setAttribute('class', 'toast');   // 设置类名
   m.classList.add('toast', 'in');

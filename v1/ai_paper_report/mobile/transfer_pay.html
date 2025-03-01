@@ -98,7 +98,7 @@
             $(".pay_type .wx_pay").show()
         }
         $(".code_block .loading").hide()
-        qrcode.makeCode(decodeURIComponent(getQueryVariable('pay_url')) + '/pay/waporder/'+getQueryVariable('order_sn') + '?source=3');
+        qrcode.makeCode(decodeURIComponent(getQueryVariable('pay_url')) + '/pay/waporder/'+getQueryVariable('order_sn') + '?source='+ getQueryVariable('sourceT') );
         // 获取canvas元素转成 img
         image.src = hideQRCode.firstChild.toDataURL("image/png");
         myQRCode.appendChild(image); // 放到页面
@@ -114,7 +114,7 @@
         var formData = getFormData({
             order_sn: getQueryVariable('order_sn'),
             pay_type: getQueryVariable('payType'),
-            source: '3',
+            source: getQueryVariable('sourceT'),
         })
         $.ajax({
             type: 'post',

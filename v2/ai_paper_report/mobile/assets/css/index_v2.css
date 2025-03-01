@@ -520,7 +520,7 @@ input[type="checkbox"] {
   width: 100%;
 }
 .proposalBox .proposal-file .delete-file {
-  margin-top: -0.5rem;
+  margin-top: -0.7rem;
   padding: 0;
   width: 1.2rem;
 }
@@ -579,5 +579,95 @@ input[type=checkbox] {
 }
 #App.bylw #titleID #contenteditable {
   width: calc(100% - 8.6rem - 0.8rem);
+}
+.upk_mask {
+  background: #000;
+  opacity: 0.7;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: none;
+}
+.uploadKTBG_pop {
+  position: fixed;
+  background: #fff;
+  bottom: 0;
+  width: 100%;
+  z-index: 1001;
+  border-radius: 1rem 1rem 0 0;
+  display: none;
+}
+.uploadKTBG_pop .upk_close {
+  position: absolute;
+  width: 1.6rem;
+  right: 1.2rem;
+  top: 1.2rem;
+}
+.uploadKTBG_pop .upk_close img {
+  width: 100%;
+}
+.uploadKTBG_pop .upk_head {
+  color: #3D3D3D;
+  font-size: 1.6rem;
+  text-align: left;
+  line-height: 1;
+  padding: 1.5rem 1.6rem;
+}
+.uploadKTBG_pop .line {
+  width: 100%;
+  height: 1px;
+  background: #E2E3E5;
+}
+.uploadKTBG_pop .upk_content {
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+}
+.uploadKTBG_pop .upk_content ul {
+  background: #EFF6FF;
+  padding: 1.2rem 1rem;
+  border-radius: 0.6rem;
+}
+.uploadKTBG_pop .upk_content ul li {
+  list-style: none;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: #606266;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+.uploadKTBG_pop .upk_content ul li:last-child {
+  margin-bottom: 0;
+}
+.uploadKTBG_pop .upk_content ul li span {
+  color: #2A3541;
+}
+.uploadKTBG_pop .upk_btn {
+  width: calc(100% - 3.2rem);
+  background: #2F87FF;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 1.4rem 0;
+  text-align: center;
+  border-radius: 0.6rem;
+  margin-top: 2rem;
+  margin-left: 1.6rem;
+  margin-bottom: 4rem;
+}
+.uploadKTBG_pop .upk_btn .upk_ico {
+  width: 1.4rem;
+  vertical-align: text-top;
+  margin-top: 0.1rem;
+}
+.uploadKTBG_pop .upk_btn .upk_ing {
+  width: 1.4rem;
+  vertical-align: text-top;
+  margin-top: 0.1rem;
+  display: none;
+}
+.uploadKTBG_pop .upk_btn.upking {
+  background: #69A8FF;
 }
 /*# sourceMappingURL=index_v2.css.map */

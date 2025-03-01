@@ -1889,3 +1889,22 @@ p.word-prompt .text-num {
 .openingReport .pop_bottom .determine_package.loading .aft {
   display: inline-block;
 }
+.indexApp .proposal .fileBlock {
+  font-size: 0;
+  line-height: 40px;
+}
+.indexApp .proposal .fileBlock span {
+  font-size: 14px;
+  vertical-align: middle;
+}
+.indexApp .proposal .fileBlock .fileName {
+  overflow: visible;
+  line-height: 40px;
+}
+.indexApp .proposal .fileBlock .file-uploadSuc {
+  overflow: visible;
+  line-height: 40px;
+}
+.indexApp .proposal .fileBlock img.deleteFile {
+  margin-top: 0;
+}

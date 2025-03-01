@@ -636,7 +636,7 @@ a {
   margin-left: 10px;
   display: inline-block;
   height: 30px;
-  line-height: 30px;
+  line-height: 32px;
   color: #666666;
 }
 .appreciationUL .appreciationLI .logo-services span:hover + .s-example {
@@ -644,7 +644,7 @@ a {
 }
 .appreciationUL .appreciationLI .logo-services span img {
   vertical-align: text-top;
-  margin-top: 2.5px;
+  margin-top: 3px;
   margin-right: 2px;
 }
 .appreciationUL .appreciationLI .logo-services .s-example {
@@ -708,13 +708,13 @@ a {
   margin-left: 10px;
   position: relative;
   height: 30px;
-  line-height: 30px;
+  line-height: 32px;
   display: inline-block;
   vertical-align: top;
 }
 .appreciationUL .appreciationLI.szsjzz .must_read > img {
   vertical-align: text-top;
-  margin-top: 2.5px;
+  margin-top: 3px;
   margin-right: 2px;
 }
 .appreciationUL .appreciationLI.szsjzz .must_read .szsj_tips_block {

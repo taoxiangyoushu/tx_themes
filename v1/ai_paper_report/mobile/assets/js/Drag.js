@@ -30,9 +30,9 @@
 oDiv.addEventListener("touchend", () => {
     // 如果是点击跳转到首页
     if(flag==0){
-        that.$router.push({
-            path: "/workspaces/views/index/index",
-        });
+        // that.$router.push({
+        //     path: "/workspaces/views/index/index",
+        // });
     }else {
         div.style.transition = 'all 0.3s'
         if ( parseInt(div.style.left)> (document.documentElement.clientWidth / 2)) {

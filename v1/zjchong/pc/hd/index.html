@@ -7,10 +7,10 @@
     <title>福利中心</title>
     <link rel="shortcut icon" href="../../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../../pc/hd/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../pc/hd/assets/css/common.css?v=pa24.0036">
-    <link rel="stylesheet" href="../../pc/hd/assets/css/index.css?v=pa24.0036">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/common.css?v=pa24.0037">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/index.css?v=pa24.0037">
     <link rel="stylesheet" href="../../pc/hd/assets/css/bootstrapValidator.min.css">
-    <link rel="stylesheet" href="../../pc/hd/assets/css/activity.css?v=pa24.0036">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/activity.css?v=pa24.0037">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'zjchong';
@@ -368,8 +368,8 @@
 <script src="../../pc/hd/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../../pc/hd/assets/js/qrcode.min.js"></script>
 <script src="../../pc/hd/assets/js/html2canvas.min.js"></script>
-<script src="../../pc/hd/assets/js/common.js?v=pa24.0036"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pa24.0036"></script>
+<script src="../../pc/hd/assets/js/common.js?v=pa24.0037"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pa24.0037"></script>
 <!--<script src="../../pc/hd/assets/js/MemberSystem.js"></script>-->
 <script>
     var isBindPhone = false
@@ -385,8 +385,12 @@
     }
 
     function infoSuccess(data) {
-        $(".poster .spare1>img").attr('src',urls + "/api/client/activity/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=1&_session_type=user&domain="+window.location.origin+"&v=1")
-        $(".poster .spare2>img").attr('src',urls + "/api/client/activity/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=1&_session_type=user&domain="+window.location.origin+"&v=2")
+        if(!$(".poster .spare1>img").attr('src')){
+            $(".poster .spare1>img").attr('src',urls + "/api/client/activity/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=1&_session_type=user&domain="+window.location.origin+"&v=1")
+        }
+        if(!$(".poster .spare2>img").attr('src')){
+            $(".poster .spare2>img").attr('src',urls + "/api/client/activity/poster_download?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+"&isDownload=1&_session_type=user&domain="+window.location.origin+"&v=2")
+        }
     }
 
     function complete_info(data , code) {
@@ -402,7 +406,12 @@
     function success_info(e) {
         if(e) {
             islogin = true
-            inviteCode = e.code
+            if(e.code) {
+                inviteCode = e.code
+                infoSuccess()
+            }else{
+                getExtensionCode(true)
+            }
         }
         if(e.is_bind_phone) { // 已绑定手机号
             isBindPhone = true
@@ -635,6 +644,7 @@
     function createPoster(code) {
         $(".invite_pop .copy-btn").attr('data-code',code)
         $(".link_dInput").text( window.location.origin + '/?dc='+ code )
+        infoSuccess()
     }
 
     $(".copy-btn").on('click',function (){

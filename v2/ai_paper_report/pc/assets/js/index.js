@@ -659,6 +659,7 @@ function professionalSubmitted() { // 开题报告专业版参数
         }
         formData['data[title][label]'] = '论文标题'
         formData['data[title][value]'] = $('#contenteditable').val()
+        var ckwx = false
         if(typeData[$('#type_s2').val()].short_name == 'ktbgsenior') { // 开题报告专业版
             formData['data[education][label]'] = '学历'
             formData['data[education][value]'] = $(".selectDegree .cardSelect").data('education')
@@ -674,10 +675,21 @@ function professionalSubmitted() { // 开题报告专业版参数
                 formData['data[outlines][label]'] = '提纲'
                 for(var kt=0; kt<ktbgProfessional.length; kt++) {
                     formData['data[outlines][value]['+kt+']'] = ktbgProfessional[kt]
+
+                    // 判断是否选择了参考文献ckwx为true说明存在
+                    if(!ckwx && ktbgProfessional[kt].indexOf('参考文献')!=-1) {
+                        ckwx = true
+                    }
                 }
             }else {
                 return cocoMessage.error("请编辑自定义提纲!", 2000);
             }
+        }
+        
+        // 当参考文献未选择, 且选择了英文参考文献,自动补参考文献
+        if(!ckwx && $('#NumberEnglishReference').val()) {
+            var dataHierarchy = Number($('.aidashi.previewOutline').last().attr('data-hierarchy')) + 1;
+            formData['data[outlines][value]['+ktbgProfessional.length+']'] = dataHierarchy+'. 参考文献'
         }
         var form_data = getFormData(formData)
         unifiedCreate(form_data , $("#type_s2").val() , previewData)
@@ -949,7 +961,7 @@ function deleteFileFU(type) {
         $("#uploadFile-ktbg").trigger('change');
         fid = '';
         ktbg_generate = false;
-        $('.proposal-check').prop('checked', false);
+        $('.proposal-check').prop('checked', false).change();
     },0)
 }
 

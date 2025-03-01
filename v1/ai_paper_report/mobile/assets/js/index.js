@@ -779,11 +779,15 @@ $(".proposal-text").on('click',function (){
 $(".proposal-check").on('change', function (){
 
     if($(".proposal-check").is(':checked')){
-        $(".uploadText").css({display:'inline-block',verticalAlign:'top'})
+        // $(".uploadText").css({display:'inline-block',verticalAlign:'top'})
+        $(".upk_mask").show()
+        $(".uploadKTBG_pop").show()
         $(".EnglishReferenceShow").hide()
         $(".EnglishReferenceTip").hide()
     }else{
-        $(".uploadText").hide()
+        // $(".uploadText").hide()
+        $(".upk_mask").hide()
+        $(".uploadKTBG_pop").hide()
         $(".EnglishReferenceShow").show()
         $(".EnglishReferenceTip").show()
         $("#proposal_err").hide()
@@ -800,6 +804,10 @@ $("#uploadFile").on('change',function (){
         $(".upload-block").hide()
         $(".proposal-file").show()
         $("#proposal_err").hide();
+        $(".uploadKTBG_pop .upk_btn .upk_ico").hide()
+        $(".uploadKTBG_pop .upk_btn .upk_ing").show()
+        $(".uploadKTBG_pop .upk_btn span").text('正在上传文件')
+        $(".uploadKTBG_pop .upk_btn").addClass('upking')
         var formdata = new FormData()
         formdata.append('file',  $("#uploadFile")[0].files[0])
         $.ajax({
@@ -814,30 +822,42 @@ $("#uploadFile").on('change',function (){
             success: function (res){
                 if(res.code == 200){
                     fid = res.data.fid
+                    $(".upk_mask").hide()
+                    $(".uploadKTBG_pop").hide()
                 }else{
                     if(res.codeMsg){
                         toast({
                             msg: res.codeMsg,
                             type: 'error',
-                            time: 2000
+                            time: 2000,
+                            zIndex: 140,
                         })
                     }else{
                         toast({
                             msg: '文件上传失败，请重试',
                             type: 'error',
-                            time: 2000
+                            time: 2000,
+                            zIndex: 140,
                         })
                     }
                     $("#proposal_err").text('文件上传失败，请重试')
                     $("#proposal_err").show();
                     $('.delete-file').click();
                 }
+            },
+            complete: function (res){
+                $(".uploadKTBG_pop .upk_btn .upk_ico").show()
+                $(".uploadKTBG_pop .upk_btn .upk_ing").hide()
+                $(".uploadKTBG_pop .upk_btn span").text('上传开题报告')
+                $(".uploadKTBG_pop .upk_btn").removeClass('upking')
             }
         })
     }else{
         $(".file-name").text('')
         $(".upload-block").show()
         $(".proposal-file").hide()
+        $(".uploadKTBG_pop .upk_btn .upk_ico").show()
+        $(".uploadKTBG_pop .upk_btn .upk_ing").hide()
     }
 })
 
@@ -848,6 +868,8 @@ $(".delete-file").on('click', function (){
     $(".proposal-file").removeClass('active')
     fid = '';
     ktbg_generate = false
+    $(".proposal-check").attr('checked', false)
+    $(".proposal-check").trigger('change')
 })
 
 // 开题报告生成论文
@@ -1135,4 +1157,15 @@ $(".more-Fbtn-h").on('click', function (){
     $(".extension").css('top', 'calc(75% - 5.4rem)')
     $(".fixed-problem").css({'top':'75%','box-shadow':'none'})
     $(".customer-wx").css({'top':'75%','box-shadow':'none'})
+})
+
+$(".upk_close").on('click', function (){
+    $(".proposal-check").attr('checked', false)
+    $(".proposal-check").trigger('change')
+    $(".upk_mask").hide()
+    $(".uploadKTBG_pop").hide()
+})
+
+$(".uploadKTBG_pop .upk_btn").on('click', function (){
+    $("#uploadFile").click()
 })
