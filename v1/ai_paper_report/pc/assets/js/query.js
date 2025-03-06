@@ -158,7 +158,7 @@ function query(e) {
                                 text += "<div class='aigc-btn purchasing "+ btnNC +"' data-goodsname='zjcaigczz' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>降AIGC率</span>" +
                                     "   <div class='aigc-introduce'>" +
                                     "       <p>AIGC疑似率是有效识别文本是否部分或全部由AI模型生成，结果与论文质量无关、仅表示论文中内容片段存在Al生成可能性的概率。</p>" +
-                                    "       <p class='p2'>根据《中华人民共和国学位法(草案)》第六章第三十三条之规定，已经获得学位者，在获得该学位过程中如有人工智能代写等学术不端行为，经学位评定委员会审议决定，可由学位授予单位撤销学位证书。</p>" +
+                                    "       <p class='p2'>根据《中华人民共和国学位法(草案)》第六章第三十三条之规定，已经获得学位者，在获得该学位过程中如有人工智能写作等学术不端行为，经学位评定委员会审议决定，可由学位授予单位撤销学位证书。</p>" +
                                     "   </div> " +
                                     "</div> ";
                             }

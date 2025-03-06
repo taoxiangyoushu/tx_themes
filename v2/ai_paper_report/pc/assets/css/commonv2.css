@@ -804,3 +804,48 @@ html .ContainerTo {
 .ContainerTo .col-xs-6 {
   padding: 0;
 }
+.Toggle2 .switchingText {
+  vertical-align: middle;
+  color: #FF6A00;
+}
+.main h3 .Toggle2 {
+  float: none;
+  color: #FF6A00;
+  font-size: 0;
+  padding: 0;
+  padding-left: 26px;
+  vertical-align: top;
+  margin-top: -2px;
+  background-color: #fff;
+  border: 0;
+}
+.main h3 .Toggle2 span {
+  font-size: 14px;
+}
+.main h3 .Toggle2 img {
+  margin-left: 4px;
+  position: sticky;
+}
+.Toggle2 .switchingImg {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  background: url('../img/qzyb_nol.png') no-repeat;
+  background-size: 100% 100%;
+}
+.Toggle2:hover .switchingImg {
+  background: url('../img/qzyb_pre.png') no-repeat;
+  background-size: 100% 100%;
+}
+.bylwsenior .Toggle2 .switchingImg {
+  background: url('../img/qjsb_nol.png') no-repeat;
+  background-size: 100% 100%;
+}
+.bylwsenior .Toggle2:hover .switchingImg {
+  background: url('../img/qjsb_pre.png') no-repeat;
+  background-size: 100% 100%;
+}
+.ProfessionalEdition .BACK-mini {
+  display: inline-block;
+}

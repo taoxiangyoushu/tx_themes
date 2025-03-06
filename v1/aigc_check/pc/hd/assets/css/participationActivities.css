@@ -429,6 +429,7 @@ body {
   background: #f7f6f6;
   border: 1px dashed #e0e0e0;
   text-align: center;
+  border-radius: 4px;
 }
 .content .taskDetails .submit_block .img_block .upload_box input {
   width: 100%;
@@ -453,6 +454,7 @@ body {
 .content .taskDetails .submit_block .img_block .preview_box.preview.file-block > img {
   width: 100%;
   height: 100%;
+  border-radius: 4px;
 }
 .content .taskDetails .submit_block .img_block .preview_box.preview.file-block .delete-file {
   display: none;
@@ -478,6 +480,7 @@ body {
   position: relative;
   border: 1px solid #dedede;
   box-sizing: content-box;
+  border-radius: 4px;
   display: none;
 }
 .content .taskDetails .submit_block .statusImg_block img {
@@ -511,21 +514,23 @@ body {
   height: 13px;
 }
 .content .taskDetails .submit_block .statusImg_block .status_text_e {
-  background: #fff;
-  height: 24px;
-  width: 112px;
+  background: #ffffffe3;
+  height: 100%;
+  width: 110px;
   left: 0px;
   position: absolute;
   bottom: 0;
   text-align: center;
   color: #fe2541;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 24px;
   display: none;
 }
 .content .taskDetails .submit_block .statusImg_block .status_text_e img {
-  width: 13px;
-  height: 13px;
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 30px auto 2px;
 }
 .content .taskDetails .submit_block .statusImg_block .status_text_s {
   background: #fff;
@@ -582,16 +587,26 @@ body {
   width: 414px;
   border-radius: 4px;
   font-size: 0;
+  position: relative;
 }
 .content .taskDetails .submit_block .uploadImg_text .link_block .link_input #link {
   width: 320px;
   height: 100%;
   padding-left: 8px;
+  padding-right: 26px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   outline: none;
   font-size: 14px;
   vertical-align: middle;
+}
+.content .taskDetails .submit_block .uploadImg_text .link_block .link_input .cleanLink {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 102px;
+  transform: translateY(-50%);
+  display: none;
 }
 .content .taskDetails .submit_block .uploadImg_text .link_block .link_input .submit_link {
   display: inline-block;

@@ -465,7 +465,7 @@ body {
                     position: absolute;
                     background: #f7f6f6;
                     border: .0625rem dashed #e0e0e0;
-                    border-radius: .75rem;
+                    border-radius: .4rem;
                     text-align: center;
                     input {
                         width: 100%;
@@ -500,7 +500,7 @@ body {
                     &>img {
                         width: 100%;
                         height: 100%;
-                        border-radius: .75rem;
+                        border-radius: .4rem;
                     }
                     .delete-file {
                         display: none;
@@ -528,6 +528,7 @@ body {
                 position: relative;
                 border: 1px solid #dedede;
                 box-sizing: border-box;
+                border-radius: 0.4rem;
                 display: none;
                 img {
                     width: 100%;
@@ -560,20 +561,22 @@ body {
                     }
                 }
                 .status_text_e {
-                    background: #fff;
-                    height: 2rem;
+                    background: #ffffffe3;
+                    height: 100%;
                     width: calc(100%);
                     left: 0rem;
                     position: absolute;
                     bottom: 0;
                     text-align: center;
                     color: #fe2541;
-                    font-size: 1.125rem;
+                    font-size: 1.25rem;
                     line-height: 2rem;
                     display: none;
                     img {
-                        width: 1.125rem;
-                        height: 1.125rem;
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        display: block;
+                        margin: 3rem auto 0.2rem;
                     }
                 }
                 .status_text_s {
@@ -632,6 +635,7 @@ body {
                         width: 100%;
                         border-radius: .25rem;
                         font-size: 0;
+                        position: relative;
                         #link {
                             width: 82%;
                             height: 100%;
@@ -647,6 +651,15 @@ body {
                             &:disabled {
                                 background-color: inherit;
                             }
+                        }
+                        .cleanLink {
+                            cursor: pointer;
+                            position: absolute;
+                            top: 50%;
+                            right:22%;
+                            transform: translateY(-50%);
+                            display: none;
+                            width: 1.4rem;
                         }
                         input:-webkit-autofill,
                         input:-webkit-autofill:hover,

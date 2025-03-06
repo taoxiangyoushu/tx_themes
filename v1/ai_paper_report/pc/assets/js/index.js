@@ -94,7 +94,7 @@ function changeType(this_ , this_val) {
         $('.EducationalAltitude').hide()
     }
 
-    // 论文写作的可配置参数
+    // 写作辅助的可配置参数
     if(this_short_name == 'bylw' || this_short_name == 'bylwsenior' || this_short_name == 'qklwsenior' || this_short_name == 'kclw' || this_short_name == 'ktbg' || this_short_name == 'ktbgsenior' || this_short_name == 'qklw'){
         if(parameterSet[this_short_name] && parameterSet[this_short_name].submit_attribute) {
             if(parameterSet[this_short_name].submit_attribute.value.education && parameterSet[this_short_name].submit_attribute.value.education.value){
@@ -934,8 +934,16 @@ $("#uploadFile-ktbg").on('change',function (){
                     $(".fileName").addClass('hasError')
                     $(".file-uploading").hide();
                     $(".file-uploadErr").show();
-                    $('.deleteFile').click();
+                    // 开题报告删除失败, 保持勾选上
+                    deleteFileFU('KTfailure')
                 }
+            },
+            error: function(err) {
+                cocoMessage.error('文件上传失败，请重试', 3000);
+                $(".fileName").addClass('hasError')
+                $(".file-uploading").hide();
+                $(".file-uploadErr").show();
+                deleteFileFU('KTfailure')
             }
         })
     }else{
@@ -961,7 +969,8 @@ function deleteFileFU(type) {
         $("#uploadFile-ktbg").trigger('change');
         fid = '';
         ktbg_generate = false;
-        $('.proposal-check').prop('checked', false).change();
+        var checked = (type=='KTfailure'? true : false)
+        $('.proposal-check').prop('checked', checked).change();
     },0)
 }
 

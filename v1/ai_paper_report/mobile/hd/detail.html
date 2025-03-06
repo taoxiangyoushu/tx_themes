@@ -43,9 +43,9 @@
     <link rel="shortcut icon" href="../../mobile/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../mobile/hd/assets/css/common.css?v=pa24.003">
-    <link rel="stylesheet" href="../../mobile/hd/assets/css/participationActivities.css?v=ma24.0047">
-    <link rel="stylesheet" href="../../mobile/hd/assets/css/fxCommon.css?v=ma24.0047">
-    <link rel="stylesheet" href="../../mobile/hd/assets/css/kefu.css?v=ma24.0047">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/participationActivities.css?v=ma24.0049">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/fxCommon.css?v=ma24.0049">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/kefu.css?v=ma24.0049">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz';
@@ -180,7 +180,7 @@
                             审核中
                         </p>
                         <p class="status_text_e">
-                            <img src="../../mobile/hd/assets/img/fault.png" alt="">
+                            <img src="../../mobile/hd/assets/img/fault_1.png" alt="">
                             审核失败
                         </p>
                         <p class="status_text_s">
@@ -209,6 +209,7 @@
                             <span>链接地址：</span>
                             <div class="link_input">
                                 <input type="text" id="link" placeholder="请填写分享后的链接（链接必须为可访问地址）">
+                                <img class="cleanLink" src="../../mobile/hd/assets/img/delete.png" alt="">
                                 <span class="submit_link">提交</span>
                             </div>
                         </div>
@@ -299,9 +300,9 @@
 <script src="../../mobile/hd/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../../mobile/hd/assets/js/qrcode.min.js"></script>
 <script src="../../mobile/hd/assets/js/html2canvas.min.js"></script>
-<script src="../../mobile/hd/assets/js/common.js?v=ma24.0047"></script>
+<script src="../../mobile/hd/assets/js/common.js?v=ma24.0049"></script>
 <script src="../../mobile/hd/assets/js/Drag.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=ma24.0047"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=ma24.0049"></script>
 <script>
 
     var activityObj = {
@@ -521,10 +522,13 @@
         $(".statusImg_block .status_text_i").hide()
         $(".statusImg_block .status_text_e").hide()
         $(".statusImg_block .status_text_s").hide()
+        $(".link_input .submit_link").text('提交')
         $(".submit_block").removeClass('successBox')
         $(".img_block").show()
         $(".img_block").css('display', 'inline-block')
         $("#link").val('')
+        $(".link_input .cleanLink").hide()
+        $("#link").css('width', '80%')
         $("#link").attr('disabled', false)
         $(".submit_link").removeClass('submitN')
         $(".c_db_csBtn").text('未完成')
@@ -588,7 +592,10 @@
                             }
                             if(res.data.status == 3){
                                 $("#link").val(res.data.act_link)
+                                $(".link_input .cleanLink").show()
+                                $("#link").css('width', '72%')
                                 $(".statusImg_block .status_text_e").show()
+                                $(".link_input .submit_link").text('重新提交')
                             }
                             $(".statusImg_block").show()
                             $(".statusImg_block").css('display', 'inline-block')
@@ -811,6 +818,22 @@
             }
         });
     }
+
+    $(".cleanLink").on('click', function (){
+        $("#link").val('')
+        $(".cleanLink").hide()
+        $("#link").css('width', '80%')
+    })
+
+    $("#link").on('input', function (){
+        if($(this).val()){
+            $(".cleanLink").show()
+            $("#link").css('width', '72%')
+        }else{
+            $(".cleanLink").hide()
+            $("#link").css('width', '80%')
+        }
+    })
 </script>
 </body>
 </html>
