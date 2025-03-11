@@ -43,9 +43,9 @@
     <link rel="shortcut icon" href="../../mobile/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../mobile/hd/assets/css/common.css?v=pa24.003">
-    <link rel="stylesheet" href="../../mobile/hd/assets/css/participationActivities.css?v=ma24.0049">
-    <link rel="stylesheet" href="../../mobile/hd/assets/css/fxCommon.css?v=ma24.0049">
-    <link rel="stylesheet" href="../../mobile/hd/assets/css/kefu.css?v=ma24.0049">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/participationActivities.css?v=ma24.0050">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/fxCommon.css?v=ma24.0050">
+    <link rel="stylesheet" href="../../mobile/hd/assets/css/kefu.css?v=ma24.0050">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz';
@@ -203,6 +203,7 @@
                         <p class="img_err"></p>
                     </div>
                     <div class="uploadImg_text">
+                        <p class="p1 Audit_failed">审核失败原因：<span class="failure_reason"></span></p>
                         <p class="p2">请务必确保按照需要做的步骤进行截图，不要上传无关的图片</p>
                         <p class="p3">温馨提示：审核失败后，可重新提交审核</p>
                         <div class="link_block">
@@ -300,9 +301,9 @@
 <script src="../../mobile/hd/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../../mobile/hd/assets/js/qrcode.min.js"></script>
 <script src="../../mobile/hd/assets/js/html2canvas.min.js"></script>
-<script src="../../mobile/hd/assets/js/common.js?v=ma24.0049"></script>
+<script src="../../mobile/hd/assets/js/common.js?v=ma24.0050"></script>
 <script src="../../mobile/hd/assets/js/Drag.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=ma24.0049"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=ma24.0050"></script>
 <script>
 
     var activityObj = {
@@ -523,6 +524,7 @@
         $(".statusImg_block .status_text_e").hide()
         $(".statusImg_block .status_text_s").hide()
         $(".link_input .submit_link").text('提交')
+        $('.Audit_failed').hide()
         $(".submit_block").removeClass('successBox')
         $(".img_block").show()
         $(".img_block").css('display', 'inline-block')
@@ -595,6 +597,10 @@
                                 $(".link_input .cleanLink").show()
                                 $("#link").css('width', '72%')
                                 $(".statusImg_block .status_text_e").show()
+                                if(res.data.remark){
+                                    $('.Audit_failed').show()
+                                }
+                                $('.failure_reason').text(res.data.remark)
                                 $(".link_input .submit_link").text('重新提交')
                             }
                             $(".statusImg_block").show()

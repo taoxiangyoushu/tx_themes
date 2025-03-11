@@ -45,9 +45,9 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0025">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0025">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0025">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0026">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'zjchong'
@@ -682,8 +682,8 @@
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/jszip.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0025"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.0025"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0026"></script>
 <script>
 
     // 价格
@@ -1277,10 +1277,10 @@
                                         } else {
                                             pathName = pathName + 'pay.html'
                                         }
-                                        location.href = './pay.html?commitId=' + resData.data.order_sn + '&goods=&payId=' + '&jcType=' + $(".ver_info .ver_item.active").data('type') + '&getOpenId=true';
+                                        location.href = './pay.html?commitId=' + resData.data.order_sn + '&goods=&payId=' + '&jcType=' + $(".ver_info .ver_item.active").data('type') + '&getOpenId=true' + '&bgjc=' + uploadType_s;
                                         return
                                     }
-                                    location.href = './pay.html?commitId=' + resData.data.order_sn + '&goods=&payId=' + '&jcType=' + $(".ver_info .ver_item.active").data('type')
+                                    location.href = './pay.html?commitId=' + resData.data.order_sn + '&goods=&payId=' + '&jcType=' + $(".ver_info .ver_item.active").data('type') + '&bgjc=' + uploadType_s
                                 } else {
                                     throttling = true
                                     toast(data.codeMsg)
@@ -1425,10 +1425,10 @@
                                     } else {
                                         pathName = pathName + 'pay.html'
                                     }
-                                    location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.origin + pathName + '?commitId=' + resData.data.order_sn + '&goods=&payId=' + '&jcType=' + $(".ver_info .ver_item.active").data('type') + '&bgjc=' + 'bgjc')
+                                    location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.origin + pathName + '?commitId=' + resData.data.order_sn + '&goods=&payId=' + '&jcType=' + $(".ver_info .ver_item.active").data('type') + '&bgjc=' + uploadType_s)
                                     return
                                 }
-                                location.href = './pay.html?commitId=' + resData.data.order_sn + '&goods=&payId=' + '&jcType=' + $(".ver_info .ver_item.active").data('type') + '&bgjc=' + 'bgjc'
+                                location.href = './pay.html?commitId=' + resData.data.order_sn + '&goods=&payId=' + '&jcType=' + $(".ver_info .ver_item.active").data('type') + '&bgjc=' + uploadType_s
                             } else {
                                 throttling = true
                                 toast(resData.codeMsg)

@@ -595,7 +595,7 @@ body {
   line-height: 1.875rem;
 }
 .content .taskDetails .submit_block .uploadImg_text .p1 {
-  color: #4C1623;
+  color: #D82431;
   font-size: 1.125rem;
 }
 .content .taskDetails .submit_block .uploadImg_text .p2 {
@@ -675,6 +675,9 @@ body {
   border-bottom-right-radius: 0.1875rem;
   background: linear-gradient(-45deg, #ff314091 0%, #ff6a528c 100%);
   pointer-events: none;
+}
+.content .taskDetails .submit_block .uploadImg_text .uploadImg_text {
+  display: none;
 }
 .content .taskDetails .submit_block.hasLink .link_block {
   display: block;
@@ -943,4 +946,3 @@ body {
     transform: scale(1.2, 1);
   }
 }
-/*# sourceMappingURL=participationActivities.css.map */

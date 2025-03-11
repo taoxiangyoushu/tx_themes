@@ -7,8 +7,8 @@
     <title>活动详情</title>
     <link rel="shortcut icon" href="../../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../pc/hd/assets/css/common.css?v=pa24.0040">
-    <link rel="stylesheet" href="../../pc/hd/assets/css/participationActivities.css?v=pa24.0040">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/common.css?v=pa24.0042">
+    <link rel="stylesheet" href="../../pc/hd/assets/css/participationActivities.css?v=pa24.0042">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'aigc_check';
@@ -137,7 +137,10 @@
                         </p>
                         <p class="status_text_e">
                             <img src="../../pc/hd/assets/img/fault_1.png" alt="">
-                            审核失败
+                            <span class="Audit_failed">
+                                审核失败
+                                <span class="failure_reason"></span>
+                            </span>
                         </p>
                         <p class="status_text_s">
                             <img src="../../pc/hd/assets/img/pass.png" alt="">
@@ -233,10 +236,9 @@
 <script src="../../pc/hd/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../../pc/hd/assets/js/qrcode.min.js"></script>
 <script src="../../pc/hd/assets/js/html2canvas.min.js"></script>
-<script src="../../pc/hd/assets/js/common.js?v=pa24.0040"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pa24.0040"></script>
+<script src="../../pc/hd/assets/js/common.js?v=pa24.0042"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pa24.0042"></script>
 <script>
-
     var activityObj = {
         'activity_gzh': {
             'f_d_img': '../../pc/hd/assets/img/loading2.gif',
@@ -450,6 +452,7 @@
         $(".statusImg_block .status_text_i").hide()
         $(".statusImg_block .status_text_e").hide()
         $(".statusImg_block .status_text_s").hide()
+        $("#link").css('color', '#333')
         $(".link_input .submit_link").text('提交审核')
         $(".submit_block").removeClass('successBox')
         $(".img_block").show()
@@ -503,6 +506,7 @@
                         }
                         $(".statusImg_block .status_text_s").show()
                         $(".link_input .submit_link").text('审核完成')
+                        $("#link").css('color', '#999')
                         $(".statusImg_block").show()
                         $(".statusImg_block").css('display', 'inline-block')
                     }else{
@@ -518,12 +522,20 @@
                                 $(".c_db_csBtn").text('进行中')
                                 $(".statusImg_block .status_text_i").show()
                                 $(".link_input .submit_link").text('审核中')
+                                $("#link").css('color', '#999')
 
                             }
                             if(res.data.status == 3){
                                 $("#link").val(res.data.act_link)
                                 $(".link_input .cleanLink").show()
                                 $(".statusImg_block .status_text_e").show()
+                                $('.failure_reason').text(res.data.remark)
+                                if(res.data.remark){
+                                    $('.Audit_failed').addClass('Audit_failed1')
+                                }
+                                else{
+                                    $('.failure_reason').hide()
+                                }
                                 $(".link_input .submit_link").text('重新提交')
                             }
                             $(".statusImg_block").show()

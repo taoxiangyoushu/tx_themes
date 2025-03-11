@@ -18,10 +18,10 @@
                     $(".cjwt-aigc").show()
                     $(".jcReport").hide()
                     $(".aigcReport").show()
-                    if(getQueryVariable('fileInputType') =='zip' || getQueryVariable('fileInputType') =='pdf'  || getQueryVariable('fileInputType') =='html') {
-                        $(".file-type").text('降AIGC率-报告降重')
+                    if(getQueryVariable('fileInputType') =='zips') {
+                        $(".file-type").text('降AIGC率-报告降AI率')
                     }else{
-                        $(".file-type").text('降AIGC率-全文降重')
+                        $(".file-type").text('降AIGC率-全文降AI率')
                     }
                 }
                 if(orderInfoData.goods_short_name=='lwjc'){
@@ -29,7 +29,7 @@
                     $(".cjwt-aigc").hide()
                     $(".jcReport").show()
                     $(".aigcReport").hide()
-                    if(getQueryVariable('fileInputType') =='zip' || getQueryVariable('fileInputType') =='pdf') {
+                    if(getQueryVariable('fileInputType') =='zips') {
                         $(".file-type").text('降查重率-报告降重')
                     }else{
                         $(".file-type").text('降查重率-全文降重')

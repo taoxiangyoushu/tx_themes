@@ -16,17 +16,17 @@
                 $('#dateTime').text(orderInfoData.created)
                 $('#amountText').text(orderInfoData.order_amount)
                 if(orderInfoData.goods_short_name == 'lwjc'){
-                    if(getQueryVariable('bgjc') == 'bgjc') {
+                    if(getQueryVariable('bgjc') == 'zips') {
                         $("#typeTag").text('降查重率-报告降重')
                     }else{
                         $("#typeTag").text('降查重率-全文降重')
                     }
                 }
                 if(orderInfoData.goods_short_name == 'aigclwjc'){
-                    if(getQueryVariable('bgjc') == 'bgjc') {
-                        $("#typeTag").text('降AIGC率-报告降重')
+                    if(getQueryVariable('bgjc') == 'zips') {
+                        $("#typeTag").text('降AIGC率-报告降AI率')
                     }else{
-                        $("#typeTag").text('降AIGC率-全文降重')
+                        $("#typeTag").text('降AIGC率-全文降AI率')
                     }
                 }
             }else if(result.code == 3001) {

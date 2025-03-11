@@ -539,6 +539,17 @@ body {
                         display: block;
                         margin: 30px auto 2px;
                     }
+                    &:hover{
+                        .failure_reason{
+                            display: inline;
+                        }
+                        .Audit_failed1{
+                            text-decoration: underline;
+                        }
+                    }
+                    .Audit_failed{
+                        position: relative;
+                    }
                 }
                 .status_text_s {
                     background: #fff;
@@ -830,7 +841,6 @@ body {
     }
 }
 
-
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -889,4 +899,45 @@ body {
     50% {
         transform: scale(1.2,1);
     }
+}
+.failure_reason{
+    position: absolute;
+    z-index: 100;
+    left: 80px;
+    width: 1000px;
+    max-width: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px 12px;
+    background: #303133;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: none;
+    &::after{
+        content: '';
+        position: absolute;
+        right: 100%;
+        top: 39%;
+        width: 0;
+        height: 0;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent;
+        border-right-width: 7px;
+        border-right-color: currentColor;
+        color: #303133;
+    }
+    .Reason_failure{
+    }
+}
+.custom-tooltip-class{
+    background: #303133;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    padding: 10px; /* 内边距 */
+    max-width: 200px; /* 最大宽度 */
 }

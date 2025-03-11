@@ -9,9 +9,9 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0049">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0049">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0049">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0050">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0050">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0050">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -737,13 +737,13 @@
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../pc/assets/js/jszip.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0049"></script>
+<script src="../pc/assets/js/common.js?v=p24.0050"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0049"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0050"></script>
 <script>
     var uploadType = 'content';
     var domain = '303';
-    var fileInputType = 'file';
+    var fileInputType = 'words';
     var jc_type = 'aigclwjc'
     $(document).on('click','.typeSelect .card',function (){   // 版本切换
         $(".typeSelect .card").removeClass('Select')
@@ -834,102 +834,6 @@
                 $(".zip-i").hide()
                 $(".prompt-c").hide()
                 $(".uploadReport-des").show()
-            }
-        }
-    })
-
-    $(".brand-btn .brand-btn-item").on('click', function (){
-        $(".brand-btn .brand-btn-item").removeClass('active')
-        $(this).addClass('active')
-        domain =  $(this).data('domain')
-        fileInputType = 'zip'
-        if($(this).data('filetype') == 'cnkiAIGC'){
-            fileInputType = 'pdf'
-            $(".pdf-uploadBlock").show()
-        }
-        if($(this).data('filetype') == 'weipuAIGC'){
-            fileInputType = 'html'
-        }
-        if($('.typeUl li.active').data('type') == 'zip') {
-            $('.typeUl li.active').click()
-        }
-    })
-
-    $(".uploadType li").on('click',function (){       //  上传方式
-        $(".uploadType li").removeClass('active')
-        $(this).addClass('active')
-        $(".contentGroup").removeClass('has-error')
-        $(".prompt-CU1").hide()
-        if($(this).data('type')=='words'){
-            fileInputType = 'file'
-            $(".word-ctn").show()
-            $(".file-ctn").hide()
-            $(".zip-type").hide()
-            $(".counter").show()
-        }else if($(this).data('type')=='files'){
-            fileInputType = 'file'
-            $(".word-ctn").hide()
-            $(".file-ctn").show()
-            $(".uploadTipsBox").show()
-            $(".zip-type").hide()
-            $(".filesTips").show()
-            if($(".typeSelect .card.Select").data('type') == 'aigclwjc'){
-                $(".prompt-c-u").show()
-            }else{
-                $(".prompt-c-u").hide()
-            }
-            $(".zipsTips").hide()
-            $(".zipBack").hide()
-            $(".zip-uploadBlock").hide()
-            $(".pdf-uploadBlock").hide()
-            $(".txt-uploadBlock").show()
-            $(".counter").hide()
-        }else if($(this).data('type')=='zips'){
-            fileInputType = 'zip'
-            $(".word-ctn").hide()
-            $(".file-ctn").show()
-            $(".zip-type").show()
-            $(".uploadTipsBox").hide()
-            $(".counter").hide()
-            $(".zipBack").show()
-            if( jc_type == 'aigclwjc' ){
-                $(".uploadTipsBox").show()
-                $(".zip-type").hide()
-                $(".filesTips").hide()
-                $(".zipsTips").show()
-                $(".zipBack").hide()
-                $(".prompt-CU1").show()
-                $(".zip-Type").text($(".brand-btn .brand-btn-item.active").text()=='其它'?'AIGC报告':$(".brand-btn .brand-btn-item.active").data('reportname'))
-                filetype_lx = $(".brand-btn .brand-btn-item.active").data('filetype')
-                if($(".brand-btn .brand-btn-item.active").data('filetype') == 'cnkigr'){
-                    fileInputType = 'pdf'
-                    $(".file-nameTip").text('（全文标明引文_毕业论文.pdf）报告')
-                    $(".zip-uploadBlock").hide()
-                    $(".html-uploadBlock").hide()
-                    $(".pdf-uploadBlock").show()
-                    $(".txt-uploadBlock").hide()
-                }else if($(".brand-btn .brand-btn-item.active").data('filetype') == 'cnkiAIGC'){
-                    fileInputType = 'pdf'
-                    $(".file-nameTip").text('PDF文件')
-                    $(".zip-uploadBlock").hide()
-                    $(".pdf-uploadBlock").show()
-                    $(".html-uploadBlock").hide()
-                    $(".txt-uploadBlock").hide()
-                }else if($(".brand-btn .brand-btn-item.active").data('filetype') == 'weipuAIGC'){
-                    fileInputType = 'html'
-                    $(".file-nameTip").text('HTML文件')
-                    $(".zip-uploadBlock").hide()
-                    $(".pdf-uploadBlock").hide()
-                    $(".txt-uploadBlock").hide()
-                    $(".html-uploadBlock").show()
-                }else{
-                    fileInputType = 'zip'
-                    $(".file-nameTip").text('ZIP压缩包')
-                    $(".zip-uploadBlock").show()
-                    $(".pdf-uploadBlock").hide()
-                    $(".txt-uploadBlock").hide()
-                    $(".html-uploadBlock").hide()
-                }
             }
         }
     })
@@ -1476,11 +1380,14 @@
         $(".intro-tab").removeClass('zip_height')
         if(uploadType == 'words') {
             $(".content_block").show()
+            fileInputType = 'words'
         }
         if(uploadType == 'files') {
             $(".upload_block").show()
+            fileInputType = 'files'
         }
         if(uploadType == 'zips') {
+            fileInputType = 'zips'
             $(".attention-list").addClass('s-height')
             $(".intro-tab").addClass('zip_height')
             $(".zipFile_block").show()
