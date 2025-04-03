@@ -149,7 +149,7 @@ if(dct_code){
 	suffix2 = 'dct_code='+ dct_code
 }
 
-var urls = 'https://api.taoxiangyoushu.com'//  'http://api.project_libraries.report'
+var urls = LOGIN_API_URL //  'http://api.project_libraries.report'
 
 function getFormData(object) {
     // 转FromData 对象
@@ -281,7 +281,9 @@ function infoData(result) {
 		JANE_NAME: JANE_NAME,
 		success_info: function(e){ // 获取用户成功回调
 			if($('.queryApp').length) {
-				query(e)
+				if(!getQueryVariable('oid')) {
+					query(e)
+				}
 			}
 			if(e.is_distributor	&& e.is_bind_phone) {
 				$('#distribution').attr('href' , './fx/index.html')

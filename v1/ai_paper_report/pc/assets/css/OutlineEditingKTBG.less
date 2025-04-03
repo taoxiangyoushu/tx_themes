@@ -69,6 +69,7 @@
             display: none;
             .NumberWordsKTBG {
                 color: #333;
+                margin-left: 2px;
             }
             .NumberWordsTips {
                 display: none;
@@ -86,9 +87,10 @@
             }
             .WordsTipsDiv {
                 position: relative;
-                margin-left: 3px;
-                top: -1px;
+                margin-left: 5px;
                 cursor: pointer;
+                display: flex;
+                align-items: center;
                 &:hover {
                     .NumberWordsTips {
                         display: block;
@@ -106,8 +108,10 @@
             font-size: 14px;
             color: #fff;
             float: right;
-            margin-top: 20px;
+            position: relative;
+            top: 0px;
             cursor: pointer;
+            margin-top: 20px;
             &:hover {
                 background: #4e4cca;
             }
@@ -174,7 +178,7 @@
             width: 4px;
             height: 24px;
             border-radius: 4px;
-            border: 2px solid #7579DB;
+            background-color: #7579DB;
         }
     }
     .outline-lv2 {

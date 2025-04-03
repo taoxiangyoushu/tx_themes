@@ -9,8 +9,8 @@
     <meta name="keywords" content="" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0042">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0042">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0052">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0052">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -302,10 +302,10 @@
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0042"></script>
+<script src="../pc/assets/js/common.js?v=p24.0052"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0042"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0042"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0052"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0052"></script>
 <script>
     var orderInfoData = {}
     var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -772,6 +772,7 @@
             $(".eliminateCoupon").hide()
             // $('.use_now').text('立即使用')
             $('.errorTip1').hide()
+            $('.errorTip').hide()
             $('.Discountamount').hide()
             // Readjust()
         }
@@ -780,6 +781,7 @@
     $(".eliminateCoupon").on('click', function (){
         $("#coupon").val('')
         $("#coupon").trigger('input')
+
     })
 
     $("#coupon").on('change',function (){
@@ -799,7 +801,7 @@
         canClick = false
         // closeMsg = cocoMessage.loading('正在兑换优惠券...');
         $('.Exchange_loading').show()
-        $('.use_now').removeClass('can')        
+        $('.use_now').removeClass('can')
 
         var formData = getFormData({
             order_sn: order_sn || getQueryVariable('commitId'),
@@ -970,7 +972,7 @@
         $('.Coupon_exceeds').hide()
     })
 
-    
+
     $('.Picture_event').on('click',function(){
         $('.Exchange_hidden').show()
         $('.errorTip1').hide()

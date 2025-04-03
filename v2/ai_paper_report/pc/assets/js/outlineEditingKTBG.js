@@ -120,9 +120,14 @@
         var numberOfWords = classificationCount(data , 'dataLvl') * 650
         if(numberOfWords>0) {
             $('.NumberWordsKTBG').text(numberOfWords>maxlenght? maxlenght : numberOfWords)
-            $('.EstimatedNumberWords').css('display' , 'inline-block')
+            $('.EstimatedNumberWords').css('display' , 'flex')
+            $('.EstimatedNumberWords').css('align-items' , 'center')
+            $('.confirmedKTBGzdy').css('top','-16px')
+            $('.confirmedKTBGzdy').css('margin-top','0px')
         }else {
             $('.EstimatedNumberWords').css('display' , 'none')
+            $('.confirmedKTBGzdy').css('top','0px')
+            $('.confirmedKTBGzdy').css('margin-top','20px')
         }
         $('.previewTips').hide()
     }

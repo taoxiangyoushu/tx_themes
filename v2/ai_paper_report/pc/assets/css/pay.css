@@ -391,6 +391,9 @@ a {
   margin-top: 16px;
   display: inline-block;
 }
+.clearfix2 .tbPay .tb-content .tb-payOrder:hover {
+  background: linear-gradient(45deg, #0677ed, #2185f0);
+}
 .clearfix2 .tbPay .tb-content .Three_party {
   display: inline-block;
   font-size: 14px;
@@ -461,8 +464,9 @@ a {
   margin-left: -28px;
   margin-right: 8px;
   vertical-align: middle;
-  margin-top: -4px;
   cursor: pointer;
+  position: absolute;
+  top: 10px;
   display: none;
 }
 .coupon_box .card .eliminateCoupon:hover {
@@ -554,6 +558,7 @@ a {
 }
 .coupon_box .card .Exchange_hidden {
   display: inline-block;
+  position: relative;
 }
 .coupon_box .card .errorTip1 {
   display: inline-block;
@@ -1096,7 +1101,7 @@ a {
 }
 .tipsDiv {
   position: absolute;
-  top: 20px;
+  top: 18px;
   cursor: pointer;
 }
 .tipsDiv img {
@@ -1117,7 +1122,7 @@ a {
 }
 .tipsDiv2 {
   position: absolute;
-  top: 10px;
+  top: 8px;
 }
 .tipsDiv2 img {
   width: 14px;
@@ -1312,4 +1317,3 @@ input#tbTid-2:-ms-input-placeholder {
 .EditPopup.EditPopupPay .editMain > div {
   height: calc(100% - 8px);
 }
-/*# sourceMappingURL=pay.css.map */

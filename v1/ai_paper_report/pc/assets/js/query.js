@@ -16,17 +16,16 @@ if(client_type){
 }
 
 function startQuerying(){
-    if(!memberFu.isLogin) {
-        if(getQueryVariable('oid')) {
-            $('.orderId').val(getQueryVariable('oid'))
-            query(false)
-        }else if(localStorage.getItem('oid')) {
-            $('.orderId').val(localStorage.getItem('oid'))
-            query(false)
-        }else {
-            $('.resultBox').addClass('initTipsShow')
-        }
+    if(getQueryVariable('oid')) {
+        $('.orderId').val(getQueryVariable('oid'))
+        query(false)
+    }else if(localStorage.getItem('oid') && !memberFu.isLogin) {
+        $('.orderId').val(localStorage.getItem('oid'))
+        query(false)
+    }else if(!memberFu.isLogin){
+        $('.resultBox').addClass('initTipsShow')
     }
+
 }
 
 var isTrue;
@@ -92,6 +91,7 @@ function query(e) {
             $('.tbody').children().remove()
             var text = "";
             var automaticPolling = false;
+            
             if(res.data.length && res.data[0].jane_name==JANE_NAME) {
                 for(var i=0; i<res.data.length; i++) {
                     var payId = res.data[i].order_sn
@@ -143,7 +143,7 @@ function query(e) {
                             if(res.data[i].isPartDownload) {
                                 text += "<div class='DownloadSeparately "+ btnNC +"' data-id=\""+resData.order_sn+"\"><span>下载</span></div>";
                             }else if(resData.end_product) {
-                                var download_dom = "<a class='complete "+ btnNC +"' href=\""+resData.end_product+"\" target=\"_blank\"><span class=\"allowText\">下载结果</span></a> ";
+                                var download_dom = "<div class='Download_Results'><a class='complete "+ btnNC +"' href=\""+resData.end_product+"\" target=\"_blank\"><span class=\"allowText\">下载结果</span></a> </div>";
                                 if (window.hasOwnProperty('download_post_handle')){
                                     download_dom = window.download_post_handle(download_dom)
                                 }
@@ -153,6 +153,7 @@ function query(e) {
                             }
                         }
                         var is_supper_added_goods=true
+                        var more=''
                         if(is_supper_added_goods){
                             if(resData.end_product && resData.added_value_goods_names.indexOf('早降重-降AIGC率') == -1 && resData.goods_name.indexOf("毕业论文") !== -1 && hasAIGC && resData.son_order_goods_names.indexOf('zjcaigczz') == -1){
                                 text += "<div class='aigc-btn purchasing "+ btnNC +"' data-goodsname='zjcaigczz' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>降AIGC率</span>" +
@@ -161,17 +162,24 @@ function query(e) {
                                     "       <p class='p2'>根据《中华人民共和国学位法(草案)》第六章第三十三条之规定，已经获得学位者，在获得该学位过程中如有人工智能写作等学术不端行为，经学位评定委员会审议决定，可由学位授予单位撤销学位证书。</p>" +
                                     "   </div> " +
                                     "</div> ";
+                                more += "<div class='purchasing "+ btnNC +"' data-goodsname='zjcaigczz' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>降AIGC率</span></div>"
                             }
                             if(resData.end_product && resData.added_value_goods_names.indexOf('答辩PPT') == -1 && resData.goods_name.indexOf("毕业论文") !== -1 && hasDbppt && resData.son_order_goods_names.indexOf('dbppt') == -1){
-                                text += "<div class='dbppt-btn purchasing "+ btnNC +"' data-goodsname='dbppt' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>生成PPT</span></div> ";
+                                text += "<div class='dbppt-btn purchasing "+ btnNC +"' data-goodsname='dbppt' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>生成PPT</span></div> ";  
+                                more += "<div class='purchasing "+ btnNC +"' data-goodsname='dbppt' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>生成PPT</span></div> ";  
                             }
                             if(resData.end_product && ["ktbg" , 'ktbgsenior'].includes(resData.goods_short_name) && resData.son_order_goods_names.indexOf('bylw') == -1){
-                                text += "<div class='generate-btn' data-orderid='"+res.data[i].order_sn+"'  data-title='"+ res.data[i].place_order_data.title.value +"' data-time='"+ res.data[i].created +"'><span>生成论文</span>" + "</div> ";
+                                text += "<div class='generate-btn Paper_Box ' data-orderid='"+res.data[i].order_sn+"'  data-title='"+ res.data[i].place_order_data.title.value +"' data-time='"+ res.data[i].created +"'><span>生成论文</span>" + "</div> ";
+                                more += "<div class='Paper_Box ' data-orderid='"+res.data[i].order_sn+"'  data-title='"+ res.data[i].place_order_data.title.value +"' data-time='"+ res.data[i].created +"'><span>生成论文</span>" + "</div> ";
                             }
                         }
                         if(resData.end_product) {
-                            text += "<div class='delete-btn "+ btnNC +"' data-orderid='"+ res.data[i].order_sn +"'><span>删除订单</span></div> ";
+                            text += "<div class='delete-btn delete_method "+ btnNC +"' data-orderid='"+ res.data[i].order_sn +"'><span>删除订单</span></div> ";
+                            more += "<div class='delete_method ' data-orderid='"+ res.data[i].order_sn +"'><span>删除订单</span></div> ";
                         }
+                        text += "<div class='Operate_more'><span>更多</span>"+
+                                "<div class='Suspended_more'></div>"+
+                                "</div> "
                     }
                     text += "</th>";
                     text += "</tr>";
@@ -186,10 +194,47 @@ function query(e) {
                     setTimer(pay_Id)
                 }
                 $('.tbody').append(text)
+                $('.Suspended_more').append(more)
                 if(!memberFu.isLogin) {
                     localStorage.setItem('oid',$('.orderId').val());
                 }
                 $('.deleteS').show()
+                var childCount = $('.download div').filter(function() {
+                    return $(this).is(':visible');
+                }).length;
+                var windowWidth=''
+                var initialWidth = $(window).width();
+                var all = {
+                    v2: '1440',
+                    v1: '1810',
+                }
+                var Except_for={
+                    v2: '3',
+                    v1: '2',
+                }
+                if(initialWidth<all[$('#App').data('v')]&&childCount>Except_for[$('#App').data('v')]){
+                    $('.Operate_more').css('display','inline-block')
+                    $('.aigc-btn,.dbppt-btn,.generate-btn,.delete-btn').hide()
+                }
+                $(window).resize(function() {
+                    windowWidth = $(window).width();
+                    if(windowWidth<all[$('#App').data('v')]&&childCount>Except_for[$('#App').data('v')]){
+                        $('.Operate_more').css('display','inline-block')
+                        $('.aigc-btn,.dbppt-btn,.generate-btn,.delete-btn').hide()
+                    }
+                    else{
+                        $('.Operate_more').css('display','none')
+                        $('.aigc-btn,.dbppt-btn,.generate-btn,.delete-btn').show()
+                    }
+                });
+                $('.Operate_more').on('click',function(){
+                    for(var i=0; i<$('.Suspended_more').length; i++){
+                        if($('.Suspended_more')[i] != $(this).find('.Suspended_more')){
+                            $($('.Suspended_more')[i]).hide()
+                        }
+                    }
+                    $(this).find('.Suspended_more').toggle()
+                })
             }else {
                 deleteS(true)
                 $('.tbody').hide()
@@ -222,6 +267,7 @@ function query(e) {
         },
     });
 }
+
 $('.deleteS').click(function() {
     deleteS()
     $('.deleteS').hide()
@@ -362,7 +408,7 @@ $(".complainForm .complaint-oid").mouseleave(function (){
 })
 
 //开题报告生成论文
-$(document).on('click','.generate-btn',function (){
+$(document).on('click','.Paper_Box',function (){
     // window.location.href = './index.html?ktbg=' + $(this).data('orderid') + '&title=' + $(this).data('title')
     $(".ktbg-generate").show();
     $(".mask_body").show();
@@ -395,6 +441,7 @@ var searchOid = ''
 $(document).on('click','.purchasing',function (){
     $(".mask_body").show();
     $(".aigc-payBox").show();
+    $('.Suspended_more').hide()
     // $(".wordNumber").text($(this).data('wordnum') + '字')
     $('.load').show()
     $(".mask").hide();
@@ -821,9 +868,10 @@ function couponsPay() {
     });
 }
 
-$(document).on('click','.delete-btn',function (){
+$(document).on('click','.delete_method',function (){
     $(".mask_body").show();
     $(".delete-pop").show()
+    $('.Suspended_more').hide()
     $(".delete-pop").attr('data-orderid',$(this).attr('data-orderid'))
 })
 
@@ -861,3 +909,5 @@ $(".determine_btn").click(function (){
         },
     });
 })
+
+

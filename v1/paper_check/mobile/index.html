@@ -47,9 +47,9 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/select2.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0023">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0023">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0023">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0025">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0025">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0025">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
@@ -78,7 +78,7 @@
                     <a href="./query.html">下载报告</a>
                 </div>
            </div>
-            
+
         </div>
         <div class="banner">
             <p class="p1">备受关注的</p>
@@ -339,7 +339,7 @@
 <script src="../mobile/assets/js/select2.min.js"></script>
 <script src="../mobile/assets/js/typed.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0023"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0025"></script>
 <script>
     var uploadType = 'content'
     var minWords = ''
@@ -410,10 +410,14 @@
         var systemEl = ''
         var active = true
         for(var i=0; i<sequenceArr.length; i++) {
+            var classA = ''
+            if(sequenceArr[i] == 'daya'){
+                classA = ' daya'
+            }
             if (active) {
                 systemEl += '<div class="system-item active" data-name="'+ sequenceArr[i] +'">\n' +
-                    '            <div class="system-top">\n' +
-                    '                <img src="../mobile/assets/img/logo-'+ sequenceArr[i] +'.png?v=2" alt="" class="system-logo">\n' +
+                    '            <div class="system-top'+ classA +'">\n' +
+                    '                <img src="../mobile/assets/img/logo-'+ sequenceArr[i] +'.png?v=3" alt="" class="system-logo">\n' +
                     '            </div>\n' +
                     '            <div class="system-bottom">\n' +
                     '                <p class="system-price"></p>\n' +
@@ -422,8 +426,8 @@
                     '        </div>'
             }else{
                 systemEl += '<div class="system-item" data-name="'+ sequenceArr[i] +'">\n' +
-                    '            <div class="system-top">\n' +
-                    '                <img src="../mobile/assets/img/logo-'+ sequenceArr[i] +'.png?v=2" alt="" class="system-logo">\n' +
+                    '            <div class="system-top'+ classA +'">\n' +
+                    '                <img src="../mobile/assets/img/logo-'+ sequenceArr[i] +'.png?v=3" alt="" class="system-logo">\n' +
                     '            </div>\n' +
                     '            <div class="system-bottom">\n' +
                     '                <p class="system-price"></p>\n' +
@@ -524,7 +528,7 @@
         $(".DateBox").fadeOut()
         $(".tempSelect").fadeOut()
         $(".suitability-tips span").text(system_range[$(this).attr('data-name')])
-        if(typeData[$(this).attr('data-name')].length >= 1 && ( $(this).attr('data-name') == 'turnitin' || $(this).attr('data-name') == 'wanfang' || $(this).attr('data-name') == 'weipu' || $(this).attr('data-name') == 'yuanwenjian' )) {
+        if(typeData[$(this).attr('data-name')].length >= 1 && ( $(this).attr('data-name') == 'turnitin' || $(this).attr('data-name') == 'wanfang' || $(this).attr('data-name') == 'weipu' || $(this).attr('data-name') == 'yuanwenjian' || $(this).attr('data-name') == 'daya' )) {
             var selectObj = $("#type_s");
             selectObj.find("option:not(:first)").remove();
             if($(this).attr('data-name') == 'turnitin') {
@@ -588,6 +592,16 @@
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "ywjmd") {
                         selectObj.append(new Option('硕博版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                    }
+                }
+            }
+            if($(this).attr('data-name') == 'daya') {
+                for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
+                    if(typeData[$(this).attr('data-name')][i].short_name == "daya") {
+                        selectObj.append(new Option('相似度检测（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）',typeData[$(this).attr('data-name')][i].short_name));
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "dyai") {
+                        selectObj.append(new Option('AIGC检测（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                 }
             }

@@ -17,7 +17,7 @@
                 if(orderInfoData.unit_type == '篇'){
                     $(".wordNum-t").text('1篇')
                 }
-                $(".title-t").text(orderInfoData.place_order_data.author && orderInfoData.place_order_data.author.value)
+                $(".title-t").text(orderInfoData.place_order_data.title && orderInfoData.place_order_data.title.value)
                 $(".system-t").text(orderInfoData.goods_name)
                 $(".price-amount").text(orderInfoData.order_amount)
             }else if(result.code == 3001) {

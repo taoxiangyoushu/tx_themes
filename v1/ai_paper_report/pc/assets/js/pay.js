@@ -680,6 +680,7 @@ $("#coupon").on('input',function (){
         $(".eliminateCoupon").hide()
         $('.Discountamount').hide()
         $('.errorTip1').hide()
+        $('.errorTip').hide()
         // Readjust()
     }
 })

@@ -37,8 +37,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>AI大师写作 - 支付订单</title>
     <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0020">
-    <link rel="stylesheet" href="../mobile/assets/css/transferPay.css?v=m24.0020">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0025">
+    <link rel="stylesheet" href="../mobile/assets/css/transferPay.css?v=m24.0025">
 </head>
 <body>
 <div class="orderInfo_app">
@@ -59,9 +59,11 @@
             <img src="../mobile/assets/img/arrow_down_icon.png?v2" alt="">
         </div>
         <div class="code_block">
-            <img class="loading" src="../mobile/assets/img/loading2.gif" alt="">
-            <div id="qrcode" class="qr_code" style="display: none;"></div>
-            <div id="myqrcode"></div>
+            <div class="camouflage_border">
+                <img class="loading" src="../mobile/assets/img/loading2.gif" alt="">
+                <div id="qrcode" class="qr_code" style="display: none;"></div>
+                <div id="myqrcode"></div>
+            </div>
         </div>
         <div class="tips">
             <img src="../mobile/assets/img/lwcc_save.png" alt="">
@@ -71,16 +73,16 @@
         </div>
     </div>
 </div>
-<script src="../mobile/assets/js/jquery.min.js?v=m24.0020"></script>
-<script src="../mobile/assets/js/message.js?v=m24.0020"></script>
-<script src="../mobile/assets/js/coco-message.js?v=m24.0020"></script>
+<script src="../mobile/assets/js/jquery.min.js?v=m24.0025"></script>
+<script src="../mobile/assets/js/message.js?v=m24.0025"></script>
+<script src="../mobile/assets/js/coco-message.js?v=m24.0025"></script>
 <script src="../mobile/assets/js/clipboard.min.js?v=m24.0042"></script>
 <script src="../mobile/assets/js/qrcode.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0020"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0025"></script>
 <script>
     var qrcode = new QRCode(document.getElementById("qrcode"), {
-        width: 204,
-        height: 204,
+        width: 188,
+        height: 188,
     });
 
     var hideQRCode = document.getElementById("qrcode")

@@ -669,7 +669,7 @@ input[type="number"] {
 }
 .tipsImportance img {
   vertical-align: middle;
-  margin-top: -3px;
+  margin-top: -4px;
 }
 label {
   margin-bottom: 0;
@@ -810,7 +810,7 @@ label {
 .proposal .fileBlock .fileName {
   cursor: default;
   max-width: 400px;
-  overflow: hidden;
+  overflow: hidden !important;
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
@@ -917,7 +917,7 @@ label {
 }
 .gen_params .sample > img {
   vertical-align: middle;
-  margin-top: -3px;
+  margin-top: -4px;
 }
 .gen_params .sample:hover .sampleBox {
   display: block;
@@ -1908,3 +1908,4 @@ p.word-prompt .text-num {
 .indexApp .proposal .fileBlock img.deleteFile {
   margin-top: 0;
 }
+/*# sourceMappingURL=index.css.map */

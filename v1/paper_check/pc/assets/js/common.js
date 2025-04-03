@@ -240,6 +240,16 @@ var systemInfo = {
 		timeConsuming: '10-30分钟',
 		reportSample: '',
 		applyUser: '',
+	},
+	dyai: {
+		name: '大雅AIGC检测',
+		comparisonLibrary: 'AIGC检测是一种技术，对AIGC（Artificial Intelligence Generated Content）即人工智能生成内容，进行检测，判断内容是否是由人工智能创作的。大雅AIGC检测不仅可以精确识别AI生成的内容，还可以为用户提供简洁版和全文版的检测报告，方便查看疑似AIGC内容的比例和分布。',
+		detectionAlgorithm: '',
+		Language: '中文、英文',
+		detectionScope: '',
+		timeConsuming: '10-30分钟',
+		reportSample: '',
+		applyUser: '',
 	}
 }
 
@@ -291,7 +301,7 @@ if(getQueryVariable('iCode')) {
 		inv_code = window.localStorage.getItem('inv_code')
 	}
 }
-var urls = 'https://api.taoxiangyoushu.com'//http://api.project_libraries.report
+var urls = LOGIN_API_URL //http://api.project_libraries.report
 function getFormData(object) {
     // 转FromData 对象
     var formData = new FormData();
@@ -386,7 +396,9 @@ window.onload = function (){
 					JANE_NAME: JANE_NAME,
 					success_info: function(e){ // 获取用户成功回调
 						if($('#App').data('key') == 'queryApp') {
-							query(e)
+							if(!getQueryVariable('oid')) {
+								query(e)
+							}
 						}
 						if(e.is_distributor	&& e.is_bind_phone) {
 							$('#distribution').attr('href' , './fx/index.html')

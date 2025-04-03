@@ -45,7 +45,7 @@ if(dct_code){
 	suffix2 = 'dct_code='+ dct_code
 }
 
-var urls = 'https://api.taoxiangyoushu.com'//http://api.project_libraries.report
+var urls = LOGIN_API_URL //http://api.project_libraries.report
 
 function getFormData(object) {
     // 转FromData 对象
@@ -72,7 +72,7 @@ var memberFu = {}
 window.onload = function (){
     $.ajax({
         type: 'post',
-        url: urls + "/api/project/info?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME +(suffix?'&'+suffix:'') + (suffix2?'&'+suffix2:''),
+        url: urls + "/api/project/info?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME+(suffix?'&'+suffix:'') + (suffix2?'&'+suffix2:''),
         xhrFields: {
             withCredentials: true
         },
@@ -145,7 +145,9 @@ window.onload = function (){
 					JANE_NAME: JANE_NAME,
                     success_info: function(e){ // 获取用户成功回调
                         if($('#app').data('key') == 'queryApp') {
-							query(e)
+                            if(!getQueryVariable('oid')) {
+                                query(e)
+                            }
 						}
 						if(e.is_distributor	&& e.is_bind_phone) {
 							$('#distribution').attr('href' , './fx/index.html')

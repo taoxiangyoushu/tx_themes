@@ -268,7 +268,7 @@ tbody th {
   background: #fff;
   color: #666666;
   font-size: 12px;
-  box-shadow: 0 0 6px 0px #c0e2fc;
+  box-shadow: 0 0 6px 0px #0000001f;
   border-radius: 8px;
   padding: 16px 20px;
   z-index: 2;
@@ -494,14 +494,6 @@ a {
   }
 }
 @media (max-width: 1628px) {
-  .download .DownloadSeparately span,
-  .download .aigc-btn,
-  .download .dbppt-btn,
-  .download .generate-btn,
-  .download .delete-btn,
-  .download .complete {
-    margin: 0px 10px 10px 10px;
-  }
   .download .scanFollow {
     margin-bottom: 10px;
   }
@@ -1557,3 +1549,56 @@ table {
 .loadLine p {
   margin-top: 10px;
 }
+.Operate_more {
+  background: #F6F6F6;
+  border-radius: 6px 6px 6px 6px;
+  border: 1px solid #D5D5D5;
+  width: 70px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  color: #3D3D3D;
+  position: relative;
+  display: none;
+}
+.Suspended_more {
+  display: none;
+  width: 102px;
+  background: #FFFFFF;
+  border-radius: 4px 4px 4px 4px;
+  border: 1px solid #E4E7ED;
+  position: absolute;
+  left: -18px;
+  top: 40px;
+  padding: 8px 0px;
+  box-shadow: 0 0 6px 0px #0000001f;
+  z-index: 4;
+}
+.Suspended_more:after,
+.Suspended_more:before {
+  position: absolute;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #efefef;
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  top: -10px;
+  left: 43%;
+}
+.Suspended_more:after {
+  border-bottom: 9px solid #fff;
+  top: -8px;
+}
+.Suspended_more div {
+  line-height: 32px;
+}
+.Suspended_more div:hover {
+  background: #ECF5FF;
+  color: #409EFF;
+}
+.Download_Results {
+  display: inline-block;
+}
+/*# sourceMappingURL=query.css.map */

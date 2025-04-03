@@ -225,6 +225,22 @@
 .ProfessionalEdition.payApp .clearfix2 .payType .select {
   background: url('../img/select2.png') no-repeat;
 }
+.ProfessionalEdition.payApp .clearfix2 .tbPay .tb-content .tb-payOrder {
+  background-image: linear-gradient(90deg, #7b92eb 0%, #5f79e5 100%);
+}
+.ProfessionalEdition.payApp .clearfix2 .tbPay .tb-content .tb-payOrder:hover {
+  background-image: linear-gradient(270deg, #415ccd 0%, #6a82df 100%);
+}
+.ProfessionalEdition.payApp .clearfix2 .tbPay .tb-content .Three_party span:nth-child(1) {
+  color: #7579db;
+}
+.ProfessionalEdition.payApp .clearfix2 .tbPay .tb-content .Three_party span:nth-child(2) {
+  color: #7579db;
+}
+.ProfessionalEdition.payApp .coupon_box .card .eliminateCoupon:hover {
+  background-image: url(../img/delete5.png);
+  background-repeat: no-repeat;
+}
 .ProfessionalEdition .coupon_pop .pop_cont .p1 {
   color: #7579db;
 }

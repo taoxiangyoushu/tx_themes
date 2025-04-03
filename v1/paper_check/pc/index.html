@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../pc/assets/css/select2.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0042">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0042">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0052">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0052">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
@@ -318,9 +318,9 @@
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/select2.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0042"></script>
+<script src="../pc/assets/js/common.js?v=p24.0052"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0042"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0052"></script>
 <script>
     $('#date').datetimepicker({minView: 2, language: "zh-CN"});
     var typed = new Typed('.switch-text', {
@@ -371,7 +371,7 @@
         $(".check-system-block .system-item").removeClass('active')
         $(this).addClass('active')
         $(".date-block").fadeOut()
-        if( (typeData[$(this).attr('data-name')].length >= 1) && ($(this).attr('data-name') == 'turnitin' || $(this).attr('data-name') == 'wanfang' || $(this).attr('data-name') == 'weipu' || $(this).attr('data-name') == 'yuanwenjian') ){
+        if( (typeData[$(this).attr('data-name')].length >= 1) && ($(this).attr('data-name') == 'turnitin' || $(this).attr('data-name') == 'wanfang' || $(this).attr('data-name') == 'weipu' || $(this).attr('data-name') == 'yuanwenjian' || $(this).attr('data-name') == 'daya') ){
             if($(this).attr('data-name') == 'turnitin'){
                 var versionDom = ''
                 for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
@@ -440,6 +440,18 @@
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "ywjmd") {
                         versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">硕博版</div>'
+                    }
+                }
+                $(".check-version-block").empty().append(versionDom)
+            }
+            if($(this).attr('data-name') == 'daya') {
+                var versionDom = ''
+                for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
+                    if(typeData[$(this).attr('data-name')][i].short_name == "daya") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">相似度检测</div>'
+                    }
+                    if(typeData[$(this).attr('data-name')][i].short_name == "dyai") {
+                        versionDom += ' <div class="version-item" data-type="'+ typeData[$(this).attr('data-name')][i].short_name +'" data-id="'+ typeData[$(this).attr('data-name')][i].goods_id +'">AIGC检测</div>'
                     }
                 }
                 $(".check-version-block").empty().append(versionDom)
@@ -764,7 +776,7 @@
             if (active) {
                 systemEl += ' <div class="system-item active" data-name="'+ sequenceArr[i] +'">\n' +
                     '             <div class="system-top">\n' +
-                    '                 <img src="../pc/assets/img/logo-'+ sequenceArr[i] +'.png?v=3" alt="" class="system-logo">\n' +
+                    '                 <img src="../pc/assets/img/logo-'+ sequenceArr[i] +'.png?v=4" alt="" class="system-logo">\n' +
                     '             </div>\n' +
                     '             <div class="system-bottom">\n' +
                     '                 <p class="system-price"></p>\n' +
@@ -774,7 +786,7 @@
             }else{
                 systemEl += ' <div class="system-item " data-name="'+ sequenceArr[i] +'">\n' +
                     '             <div class="system-top">\n' +
-                    '                 <img src="../pc/assets/img/logo-'+ sequenceArr[i] +'.png?v=3" alt="" class="system-logo">\n' +
+                    '                 <img src="../pc/assets/img/logo-'+ sequenceArr[i] +'.png?v=4" alt="" class="system-logo">\n' +
                     '             </div>\n' +
                     '             <div class="system-bottom">\n' +
                     '                 <p class="system-price"></p>\n' +

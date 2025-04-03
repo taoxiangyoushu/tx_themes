@@ -164,6 +164,9 @@ body {
 .resultBox .resultItem .report-info .report-text .t-label .space2 {
   letter-spacing: 2.75rem;
 }
+.resultBox .resultItem .report-info .report-text .t-label .space3 {
+  letter-spacing: 0.7rem;
+}
 .resultBox .resultItem .report-info .report-id {
   color: #333333;
 }

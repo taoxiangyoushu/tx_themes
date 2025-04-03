@@ -172,9 +172,9 @@
                                 <p class="p1 upload_tips_txt" data-type="paperPass">仅支持上传完整zip报告<br/>请下载PP<span>“离线网页版报告”</span>zip</p>
                                 <p class="p1 upload_tips_txt" data-type="yuanwenjian">zip压缩包内需包含<span>“xxx_全文标明引文.pdf”</span>文件</p>
                                 <p class="p1 upload_tips_txt" data-type="otherAIGC">系统支持各大AIGC报告<br/>未识别的报告请反馈给客服处理</p>
-                                <p class="p1 upload_tips_txt" data-type="cnkiAIGC">支持上传pdf或者完整zip报告<br/>需包含文件<span>“全文报告单_xxx.pdf”</span></p>
+                                <p class="p1 upload_tips_txt" data-type="cnkiAIGC">支持上传pdf报告或完整zip报告<br/>需包含文件<span>“全文报告单_xxx.pdf”</span></p>
                                 <p class="p1 upload_tips_txt" data-type="wanfangAIGC">仅支持上传pdf文件，文件名<span>“xxx（AIGC检测报告）.pdf”</span></p>
-                                <p class="p1 upload_tips_txt" data-type="weipuAIGC">仅支持上传html文件<span>“xxx.html”</span></p>
+                                <p class="p1 upload_tips_txt" data-type="weipuAIGC">仅支持上传zip，需包含文件<span>“xxx_AIGC统计报告.html”</span></p>
                                 <p class="p1 upload_tips_txt" data-type="masterAIGC">仅支持上传zip，需包含文件<span>“xxx---AIGC检测报告.html”</span></p>
                                 <p class="p1 upload_tips_txt" data-type="paperPassAIGC">仅支持上传完整zip报告，请下载PP<span>“离线网页版报告”</span>zip</p>
                                 <p class="p1 upload_tips_txt" data-type="gzdAIGC">仅支持上传pdf文件，文件名<span>“xxx_AIGC检测报告.pdf”</span></p>
@@ -247,7 +247,10 @@
                                             4、下载的内容仅用于参考，不作为毕业、发表使用。
                                         </span>
                                         <span>
-                                           5、pdf格式不稳定，可能会出现乱码，请确认后再提交
+                                            5、pdf格式不稳定，可能会出现乱码，请确认后再提交
+                                        </span>
+                                        <span>
+                                            6、如有查重报告，建议使用报告上传
                                         </span>
                                     </dd>
                                 </dl>
@@ -291,6 +294,9 @@
                                         </span>
                                         <span>
                                            5、pdf格式不稳定，可能会出现乱码，请确认后再提交
+                                        </span>
+                                        <span>
+                                            6、如有AIGC检测报告，建议使用报告上传
                                         </span>
                                     </dd>
                                 </dl>
@@ -584,7 +590,7 @@
         </div>
         <div class="example_item" data-type="weipuAIGC" >
             <P class="subtitle">【维P-AIGC报告】上传示例</P>
-            <p class="reportTip">仅支持上传html文件<span>“xxx-维普AIGC报告.html”</span></p>
+            <p class="reportTip">仅支持上传zip，需包含文件<span>“xxx_AIGC统计报告.html”</span></p>
             <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
                 <img src="" alt="">
@@ -776,7 +782,7 @@
         'paperPassAIGC': '../mobile/assets/img/ex-ppAIGC.png',
         'wanfangAIGC': '../mobile/assets/img/ex-wfAIGC.png',
         'cnkiAIGC': '../mobile/assets/img/ex-zwAIGC.png',
-        'weipuAIGC': '../mobile/assets/img/ex-wpAIGC.png',
+        'weipuAIGC': '../mobile/assets/img/ex-wpAIGC.png?v=1',
         'gzdAIGC': '../mobile/assets/img/ex-gzdAIGC.png',
         'dyAIGC': '../mobile/assets/img/ex-dyAIGC.png',
     }
@@ -1225,7 +1231,7 @@
                     var fileName = $("#uploadZip")[0].files[0].name.replace(/\.[^/.]+$/,'')
                     var content = $("#uploadZip")[0].files[0];
                     var zip = new JSZip();
-                    zip.file(fileName+"-维普AIGC报告.html", content);
+                    zip.file(fileName+"_AIGC统计报告.html", content);
                     zip.generateAsync({type:"blob"})
                         .then(function (content){
                             formData_1.file = new File([content] , fileName+".zip",{
@@ -1377,7 +1383,7 @@
                 var fileName = $(".htmlInput")[0].files[0].name.replace(/\.[^/.]+$/,'')
                 var content = $(".htmlInput")[0].files[0];
                 var zip = new JSZip();
-                zip.file(fileName+"-维普AIGC报告.html", content);
+                zip.file(fileName+"_AIGC统计报告.html", content);
                 zip.generateAsync({type:"blob"})
                     .then(function (content){
                         formData_1.file = new File([content] , fileName+".zip",{
@@ -1589,8 +1595,8 @@
             fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
         },
         weipuAIGC: {
-            zipType: ['html'],
-            fileAccept: '.html'
+            zipType: ['zip'],
+            fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
         },
         gzdAIGC: {
             zipType: ['pdf'],

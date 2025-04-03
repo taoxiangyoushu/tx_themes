@@ -404,6 +404,9 @@ a {
                 cursor: pointer;
                 margin-top: 16px;
                 display: inline-block;
+                &:hover{
+                    background: linear-gradient(45deg, #0677ed, #2185f0);
+                }
             }
             .Three_party{
                 display: inline-block;
@@ -481,8 +484,9 @@ a {
             margin-left: -28px;
             margin-right: 8px;
             vertical-align: middle;
-            margin-top: -4px;
             cursor: pointer;
+            position: absolute;
+            top: 10px;
             display: none;
             &:hover {
                 background-image: url("../img/delete3.png");
@@ -576,6 +580,7 @@ a {
         }
         .Exchange_hidden{
             display: inline-block;
+            position: relative;
         }
         .errorTip1{
             display: inline-block;
@@ -1147,7 +1152,7 @@ a {
 
 .tipsDiv {
     position: absolute;
-    top: 20px;
+    top: 18px;
     cursor: pointer;
     img {
         width: 14px;
@@ -1170,7 +1175,7 @@ a {
 }
 .tipsDiv2 {
     position: absolute;
-    top: 10px;
+    top: 8px;
     img {
         width: 14px;
         height: 14px;

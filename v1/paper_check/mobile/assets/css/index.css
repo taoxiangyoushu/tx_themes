@@ -158,6 +158,9 @@
 .index_app .system-block .system-item .system-top img.weipuLogo {
   width: 60%;
 }
+.index_app .system-block .system-item .system-top.daya img {
+  width: auto;
+}
 .index_app .system-block .system-item .system-bottom {
   height: 3.1rem;
   line-height: 3rem;
