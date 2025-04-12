@@ -105,6 +105,7 @@
         cursor: pointer;
         font-size: 14px;
         color: #666666;
+        position: relative;
         img {
             vertical-align: middle;
             margin-top: -2px;
@@ -127,6 +128,19 @@
             .icon_n {
                 display: none;
             }
+        }
+        .recommend{
+            width: 36px;
+            height: 18px;
+            position: absolute;
+            top: -10px;
+            right: -20px;
+            background: #3B68E2;
+            border-radius: 9px 9px 9px 0px;
+            color: #ffffff;
+            font-size: 12px;
+            line-height: 18px;
+            display: none;
         }
     }
 }
@@ -604,6 +618,10 @@
                     }
                 }
             }
+            
+        }
+        .Other_Styles{
+            color: #1D4B88 !important;
         }
         .zipFile_upload {
             display: flex;
@@ -708,14 +726,14 @@
             .upload_tips {
                 margin-left: 2%;
                 padding-right: 20px;
-                margin-top: 16px;
+                margin-top: 10px;
                 &.centered {
                     margin-top: 30px;
                 }
                 .p1 {
                     color: #5B5B5B;
                     font-size: 14px;
-                    margin-bottom: 0;
+                    margin-bottom: 6px;
                 }
                 .report_type {
                     font-size: 0;
@@ -739,6 +757,7 @@
                         font-size: 12px;
                         cursor: pointer;
                         border: 1px solid #f8f9fb;
+                        position: relative;
                         &.active {
                             border: 1px solid #2170D6;
                             background: #EBF5FF;
@@ -747,9 +766,33 @@
                             background-position: 100% -1px;
                             color: #2170D6;
                         }
+                        &.special{
+                            border: 1px solid #2170D6;
+                            background: #EBF5FF;
+                            background-repeat: no-repeat;
+                            background-position: 100% -1px;
+                            color: #2170D6;
+                            .Report_label{
+                                background: #006FFF;
+                                color: #fff;
+                            }
+                        }
                         &.noClick {
                             pointer-events: none;
                             cursor: no-drop;
+                        }
+                        .Report_label{
+                            position: absolute;
+                            display: inline-block;
+                            top: -14px;
+                            right: -1px;
+                            background: #E0EEFE;
+                            border-radius: 6px 6px 0px 6px;
+                            height: 18px;
+                            line-height: 18px;
+                            font-size: 12px;
+                            color: #2C7AFF;
+                            padding: 0px 6px;
                         }
                     }
                 }

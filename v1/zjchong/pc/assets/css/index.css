@@ -85,6 +85,7 @@
   cursor: pointer;
   font-size: 14px;
   color: #666666;
+  position: relative;
 }
 .uploadTy_label .uploadTy_btn img {
   vertical-align: middle;
@@ -107,6 +108,19 @@
   display: inline-block;
 }
 .uploadTy_label .uploadTy_btn.active .icon_n {
+  display: none;
+}
+.uploadTy_label .uploadTy_btn .recommend {
+  width: 36px;
+  height: 18px;
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  background: #3B68E2;
+  border-radius: 9px 9px 9px 0px;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 18px;
   display: none;
 }
 .form-upload {
@@ -550,6 +564,9 @@
 .form-upload .zipFile_block .zip_description .file_exampleBlock.paperpassaigc:after {
   left: 284px;
 }
+.form-upload .zipFile_block .Other_Styles {
+  color: #1D4B88 !important;
+}
 .form-upload .zipFile_block .zipFile_upload {
   display: flex;
   align-items: start;
@@ -652,7 +669,7 @@
 .form-upload .zipFile_block .zipFile_upload .upload_tips {
   margin-left: 2%;
   padding-right: 20px;
-  margin-top: 16px;
+  margin-top: 10px;
 }
 .form-upload .zipFile_block .zipFile_upload .upload_tips.centered {
   margin-top: 30px;
@@ -660,7 +677,7 @@
 .form-upload .zipFile_block .zipFile_upload .upload_tips .p1 {
   color: #5B5B5B;
   font-size: 14px;
-  margin-bottom: 0;
+  margin-bottom: 6px;
 }
 .form-upload .zipFile_block .zipFile_upload .upload_tips .report_type {
   font-size: 0;
@@ -685,6 +702,7 @@
   font-size: 12px;
   cursor: pointer;
   border: 1px solid #f8f9fb;
+  position: relative;
 }
 .form-upload .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item.active {
   border: 1px solid #2170D6;
@@ -694,9 +712,33 @@
   background-position: 100% -1px;
   color: #2170D6;
 }
+.form-upload .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item.special {
+  border: 1px solid #2170D6;
+  background: #EBF5FF;
+  background-repeat: no-repeat;
+  background-position: 100% -1px;
+  color: #2170D6;
+}
+.form-upload .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item.special .Report_label {
+  background: #006FFF;
+  color: #fff;
+}
 .form-upload .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item.noClick {
   pointer-events: none;
   cursor: no-drop;
+}
+.form-upload .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item .Report_label {
+  position: absolute;
+  display: inline-block;
+  top: -14px;
+  right: -1px;
+  background: #E0EEFE;
+  border-radius: 6px 6px 0px 6px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 12px;
+  color: #2C7AFF;
+  padding: 0px 6px;
 }
 .form-upload .zipFile_block .zipFile_upload .upload_tips .platform_utl {
   border: 1px solid #E4E7ED;

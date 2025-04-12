@@ -302,6 +302,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                position: relative;
                 .type_item {
                     color: #5B5B5B;
                     font-size: 1.4rem;
@@ -336,6 +337,19 @@
                         &:before {
                             display: none;
                         }
+                    }
+                    .recommend{
+                        position: absolute;
+                        background: #3B68E2;
+                        border-radius: .75rem .75rem .75rem 0rem;
+                        top: -0.25rem;
+                        right: -0.75rem;
+                        color: #ffffff;
+                        font-size: 1rem;
+                        padding: 0rem .5rem 0rem .375rem;
+                        text-align: center;
+                        font-weight: 400;
+                        display: none;
                     }
                 }
             }
@@ -511,6 +525,7 @@
                             display: inline-block;
                             vertical-align: middle;
                             //margin-right: 0.8rem;
+                            position: relative;
                             margin-bottom: 0.8rem;
                             border: 1px solid transparent;
                             box-sizing: border-box;
@@ -525,6 +540,31 @@
                                 background-position: calc(100% + 1px) -1px;
                                 border: 1px solid #2170D6;
                                 color: #2170D6;
+                            }
+                            &.special{
+                                border: 1px solid #2170D6;
+                                background: #EBF5FF;
+                                background-repeat: no-repeat;
+                                background-position: 100% -1px;
+                                color: #2170D6;
+                                .Report_label{
+                                    background: #006FFF;
+                                    color: #fff;
+                                }
+                            }
+                            .Report_label{
+                                position: absolute;
+                                font-weight: 400;
+                                font-size: .875rem;
+                                color: #2C7AFF;
+                                display: inline-block;
+                                top: -1rem;
+                                right: -0.125rem;
+                                background: #E0EEFE;
+                                border-radius: 0.5rem 0.5rem 0rem 0.5rem;
+                                height: 1.6rem;
+                                line-height: 1.6rem;
+                                padding: 0rem .375rem;
                             }
                         }
                         &.aigcType {
@@ -674,6 +714,20 @@
                                 }
                             }
                         }
+                    }
+                    .copywriting{
+                        position: relative;
+                        width: calc(100% + 2rem);
+                        left: -1rem;
+                        top: -1.6rem;
+                        border-radius: 1rem 1rem 0rem 0rem;
+                        background: #E5F0FF;
+                        color: #1D4B88;
+                        font-size: 1rem;
+                        text-align: center;
+                        height: 3.5rem;
+                        line-height: 3.5rem;
+                        display: none;
                     }
                 }
                 .file_info {

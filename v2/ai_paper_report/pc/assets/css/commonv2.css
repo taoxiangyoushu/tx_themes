@@ -83,6 +83,7 @@ html .ContainerTo {
 .indexAppv2 .submittedH3 {
   text-align: center;
   margin-bottom: 20px;
+  height: 35px;
 }
 .indexAppv2 .submittedH3 .commodityTypeName {
   font-size: 24px;

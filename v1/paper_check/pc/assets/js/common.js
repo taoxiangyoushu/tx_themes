@@ -96,7 +96,7 @@ var systemInfo = {
 		comparisonLibrary: '',
 		detectionAlgorithm: '',
 		Language: '中文、英文',
-		detectionScope: '包括但不限于 ChatGPT、文心一言、谷歌 Bard、通义千问、必应 ChatGpt、ChatSonic 和其他 AI 写作助手生成的中文或英文文本',
+		detectionScope: '包括DeepSeek，ChatGPT，通义千问，文心一言，智谱，豆包，讯飞星火等。',
 		timeConsuming: '10-30分钟',
 		reportSample: '',
 		applyUser: '',

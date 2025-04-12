@@ -45,9 +45,9 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0026">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0026">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0028">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0028">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0028">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'zjchong'
@@ -84,7 +84,7 @@
                 <ul class="type_head">
                     <li class="type_item active" data-type="files">文档上传</li>
                     <li class="type_item" data-type="content">文本粘贴</li>
-                    <li class="type_item" data-type="zips">报告上传</li>
+                    <li class="type_item" data-type="zips">报告上传<span class="recommend">推荐</span></li>
                 </ul>
                 <div class="form_block">
                     <div class="files_upload">
@@ -126,6 +126,7 @@
                         </div>
                     </div>
                     <div class="zip_block">
+                        <div class="copywriting">通过上传对应的AIGC检测报告，降AI率效果更好</div>
                         <div class="report_type ccType">
                             <div class="type_item" data-type="cnki">知W 查重</div>
                             <div class="type_item" data-type="wanfang">万F 查重</div>
@@ -138,9 +139,9 @@
                             <div class="type_item" data-type="all">其它</div>
                         </div>
                         <div class="report_type aigcType">
-                            <div class="type_item" data-type="cnkiAIGC">知W AIGC</div>
-                            <div class="type_item" data-type="wanfangAIGC">万F AIGC</div>
-                            <div class="type_item" data-type="weipuAIGC">维P AIGC</div>
+                            <div class="type_item" data-type="cnkiAIGC">知W AIGC<span class="Report_label">支持V2.13</span></div>
+                            <div class="type_item" data-type="wanfangAIGC">万F AIGC<span class="Report_label">实时更新</span></div>
+                            <div class="type_item" data-type="weipuAIGC">维P AIGC<span class="Report_label">支持V2.26</span></div>
                             <div class="type_item" data-type="masterAIGC">Master AIGC</div>
                             <div class="type_item" data-type="gzdAIGC">格Z达 AIGC</div>
                             <div class="type_item" data-type="dyAIGC">D雅 AIGC</div>
@@ -171,7 +172,7 @@
                                 <p class="p1 upload_tips_txt" data-type="MasterCheck">zip压缩包内需包含<span>“xxx--简明报告.html”</span>文件</p>
                                 <p class="p1 upload_tips_txt" data-type="paperPass">仅支持上传完整zip报告<br/>请下载PP<span>“离线网页版报告”</span>zip</p>
                                 <p class="p1 upload_tips_txt" data-type="yuanwenjian">zip压缩包内需包含<span>“xxx_全文标明引文.pdf”</span>文件</p>
-                                <p class="p1 upload_tips_txt" data-type="otherAIGC">系统支持各大AIGC报告<br/>未识别的报告请反馈给客服处理</p>
+                                <!-- <p class="p1 upload_tips_txt" data-type="otherAIGC">系统支持各大AIGC报告<br/>未识别的报告请反馈给客服处理</p> -->
                                 <p class="p1 upload_tips_txt" data-type="cnkiAIGC">支持上传pdf报告或完整zip报告<br/>需包含文件<span>“全文报告单_xxx.pdf”</span></p>
                                 <p class="p1 upload_tips_txt" data-type="wanfangAIGC">仅支持上传pdf文件，文件名<span>“xxx（AIGC检测报告）.pdf”</span></p>
                                 <p class="p1 upload_tips_txt" data-type="weipuAIGC">仅支持上传zip，需包含文件<span>“xxx_AIGC统计报告.html”</span></p>
@@ -688,9 +689,16 @@
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/jszip.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0026"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0028"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0028"></script>
 <script>
+    var Weight_reduction=''
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        Weight_reduction=decodeURI(pair[1])
+    }
 
     // 价格
     var price_lwjc = ''
@@ -743,7 +751,15 @@
         $(".ver_info").css('display', 'flex')
         $(".wrapper_seat").hide()
         $(".submitContent").show()
-        $($(".ver_info .ver_item")[0]).click()
+        if(Weight_reduction=='lwjc'){
+            $($(".ver_info .ver_item")[0]).click()
+        }
+        if(Weight_reduction=='aigclwjc'){
+            $($(".ver_info .ver_item")[1]).click()
+        }
+        if(Weight_reduction=='undefined'){
+            $($(".ver_info .ver_item")[0]).click()
+        }
         $(".price-cs-lwjc").text(price_lwjc)
         $(".price-cs-aigc").text(price_aigc)
         if(typeData.length > 1) {
@@ -823,6 +839,7 @@
             $(".report-s").show()
             $(".report-a").hide()
             $(".text-jc").text('降重')
+            $('.recommend').hide()
             $(".prompt-c").hide()
             $(".prompt-c-u").hide()
             $(".zip_block .ccType").show().css('display', 'flex')
@@ -846,6 +863,7 @@
             $(".report-s").hide()
             $(".report-a").show()
             $(".text-jc").text('降AIGC')
+            $('.recommend').show()
             $(".prompt-c").show()
             $(".prompt-c-u").show()
             $(".zip_block .ccType").hide()
@@ -1595,8 +1613,8 @@
             fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
         },
         weipuAIGC: {
-            zipType: ['zip'],
-            fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+            zipType: ['zip','html'],
+            fileAccept: '.html,application/zip,application/x-zip,application/x-zip-compressed'
         },
         gzdAIGC: {
             zipType: ['pdf'],
@@ -1624,9 +1642,24 @@
         },
     };
     $(".zip_block .report_type .type_item").click(function (){
+        var type_group=$(this).attr('data-type')
+        if(type_group=='otherAIGC'){
+            $('.copywriting').show()
+        }
+        else{
+            $('.copywriting').hide()
+        }
+        if(type_group=='cnkiAIGC'||type_group=='wanfangAIGC'||type_group=='weipuAIGC'){
+            $(".zip_block .report_type .type_item").removeClass('active')
+            $(".zip_block .report_type .type_item").removeClass('special')
+            $(this).addClass('special')
+        }
+        else{
+            $(".zip_block .report_type .type_item").removeClass('active')
+            $(".zip_block .report_type .type_item").removeClass('special')
+            $(this).addClass('active')
+        }
         $(".zip_upload .file_info .deleteText").click()
-        $(".zip_block .report_type .type_item").removeClass('active')
-        $(this).addClass('active')
         reportType_s = $(this).attr('data-type')
         $(".upload_tips_txt").hide()
         $(".upload_tips_txt").removeClass('active')

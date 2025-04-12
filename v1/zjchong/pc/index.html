@@ -9,9 +9,9 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0058">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0058">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0058">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0060">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0060">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0060">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -85,6 +85,7 @@
                                 <div class="uploadTy_btn" data-type="zips">
                                     <img class="icon_a" src="../pc/assets/img/icon_report_pre.png" alt="">
                                     <img class="icon_n" src="../pc/assets/img/icon_report.png" alt="">
+                                    <span class="recommend">推荐</span>
                                     报告
                                 </div>
                             </div>
@@ -247,7 +248,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="zip_description" data-type="otherAIGC">系统支持各大AIGC检测报告，未识别的报告请反馈给客服处理</div>
+                                    <div class="zip_description Other_Styles" data-type="otherAIGC">通过上传对应的AIGC检测报告，降AI率效果更好</div>
                                     <div class="zip_description" data-type="masterAIGC">
                                         仅支持上传zip，需包含文件<span class="exampleFile_name">“xxx---AIGC检测报告.html”</span>，示例：
                                         <span class="example_file">
@@ -364,9 +365,9 @@
                                                 <div class="report_type_item" data-brand="all">其它</div>
                                             </div>
                                             <div class="report_type aigc_typeBtn">
-                                                <div class="report_type_item" data-brand="cnkiAIGC">知W AIGC</div>
-                                                <div class="report_type_item" data-brand="wanfangAIGC">万F AIGC</div>
-                                                <div class="report_type_item" data-brand="weipuAIGC">维P AIGC</div>
+                                                <div class="report_type_item" data-brand="cnkiAIGC">知W AIGC<span class="Report_label">支持V2.13</span></div>
+                                                <div class="report_type_item" data-brand="wanfangAIGC">万F AIGC<span class="Report_label">实时更新</span></div>
+                                                <div class="report_type_item" data-brand="weipuAIGC">维P AIGC<span class="Report_label">支持V2.26</span></div>
                                                 <div class="report_type_item" data-brand="masterAIGC">Master AIGC</div>
                                                 <div class="report_type_item noMarginRight" data-brand="gzdAIGC">格Z达 AIGC</div>
                                                 <div class="report_type_item" data-brand="dyAIGC">D雅 AIGC</div>
@@ -739,9 +740,9 @@
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../pc/assets/js/jszip.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0058"></script>
+<script src="../pc/assets/js/common.js?v=p24.005"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0058"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0060"></script>
 <script>
     var uploadType = 'content';
     var domain = '303';
@@ -751,6 +752,7 @@
         $(".typeSelect .card").removeClass('Select')
         $(this).addClass('Select')
         if($(this).data('type') == 'aigclwjc'){
+            $('.recommend').show()
             jc_type = 'aigclwjc'
             $(".form-upload").addClass('aigc-from')
             $(".form-upload").removeClass('lwjc-from')
@@ -767,6 +769,7 @@
             $(".system_text_aigc").show()
             $("#text_content").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交！')
         }else if($(this).data('type') == 'lwjc'){
+            $('.recommend').hide()
             jc_type = 'lwjc'
             $(".form-upload").addClass('lwjc-from')
             $(".form-upload").removeClass('aigc-from')
@@ -991,6 +994,14 @@
         $(".counter .impl").text($("#text_content").val().length)
     })
 
+    var Weight_reduction=''
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        Weight_reduction=decodeURI(pair[1])
+    }
+
     var price_lwjc = ''
     var price_aigc = ''
     function setPriceInfo() {
@@ -1055,7 +1066,15 @@
                 price_aigc = typeData[i].selling_price + '元/' + (typeData[i].unit_count/1000 == 1?'':typeData[i].unit_count/1000) + '千字'
             }
             $('#typeSelect').append(text)
-            $($("#typeSelect .card")[0]).click()
+            if(Weight_reduction=='lwjc'){
+                $($("#typeSelect .card")[0]).click()
+            }
+            if(Weight_reduction=='aigclwjc'){
+                $($("#typeSelect .card")[1]).click()
+            }
+            if(Weight_reduction=='undefined'){
+                $($("#typeSelect .card")[0]).click()
+            }
             detail_change()
             $(".loadingApp").hide()
             $("#app").show()
@@ -1336,8 +1355,8 @@
                 fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
             },
             weipuAIGC: {
-                zipType: ['zip'],
-                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+                zipType: ['zip','html'],
+                fileAccept: '.html,application/zip,application/x-zip,application/x-zip-compressed'
             },
             gzdAIGC: {
                 zipType: ['pdf'],
@@ -1400,6 +1419,7 @@
             }
             if($(".card.Select").data('type') == 'aigclwjc'){
                 $(".aigc_typeBtn").show()
+                $('.recommend').show()
                 $(".aigc_typeBtn .report_type_item[data-brand='otherAIGC']").click()
             }
         }
@@ -1424,8 +1444,17 @@
     }
 
     $(".report_type .report_type_item").click(function (){   //  报告类型选择
-        $(".report_type .report_type_item").removeClass('active')
-        $(this).addClass('active')
+        var type_group=$(this).attr('data-brand')
+        if(type_group=='cnkiAIGC'||type_group=='wanfangAIGC'||type_group=='weipuAIGC'){
+            $(".report_type .report_type_item").removeClass('active')
+            $(".report_type .report_type_item").removeClass('special')
+            $(this).addClass('special')
+        }
+        else{
+            $(".report_type .report_type_item").removeClass('active')
+            $(".report_type .report_type_item").removeClass('special')
+            $(this).addClass('active')
+        }
         $(".zip_description").hide()
         reportType_s = $(this).attr('data-brand')
         $("#docUpload2").attr('accept', reportTypeInfo[reportType_s].fileAccept)

@@ -126,6 +126,24 @@ $(".version-item").on('click',function (){
 $('#type_s').change(function() {
     changeType($(this))
 })
+
+var Typetext=''
+function Gettitle(){
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i=0;i<vars.length;i++) {
+			var pair = vars[i].split("=");
+            if(pair[0]=='sw'){
+                Typetext=decodeURI(pair[1])
+            }
+			if(pair[0]=='text'){
+				$('#contenteditable').val(decodeURI(pair[1]))
+				$('.numberS').text($('#contenteditable').val().length)
+			}
+	}
+}
+Gettitle()
+
 function changeType(this_ , this_val) {
     var val = this_.val() || this_val
     var permit_name = ['rws' , 'ktbg' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt' , 'xzaigccheck']
@@ -142,10 +160,16 @@ function changeType(this_ , this_val) {
         if(title_record[val]){
             $("#contenteditable").val(title_record[val])
         }else{
-            $("#contenteditable").val('')
+            
+            if(typeData[val].short_name==Typetext||typeData[val].short_name=='lwdbppt'||typeData[val].short_name=='sxbg'){
+                Gettitle()
+            }
+            else{
+                $("#contenteditable").val('')
+            }
         }
     }
-    
+
     if(permit_name.includes(this_short_name)) {
         $('.NumberIsShow').hide()
         if(this_short_name == 'wxzs' && $(".version-wxzs2").attr('data-goodsid')){
@@ -189,12 +213,20 @@ function changeType(this_ , this_val) {
         }
     }
 
-    if(this_short_name !== 'bylw' && this_short_name !== 'qklw') {   //图表
+    if(this_short_name !== 'bylw' && this_short_name !== 'qklw'&& this_short_name !== 'kclw') {   //图表
         $('.genIT').hide()
         $(".addParameters").hide()
     }else{
         $('.genIT').show()
         $(".addParameters").show()
+        $('.genCode').show()
+        $('.Sample_Chart').show()
+        $('.Sample_Chart1').hide()
+        if(this_short_name =='kclw'){
+            $('.genCode').hide()
+            $('.Sample_Chart1').show()
+            $('.Sample_Chart').hide()
+        }
     }
     if(this_short_name == 'kclw'){    // 课程论文
         $('.EducationalAltitude').show()
@@ -474,7 +506,7 @@ $('.generate').click(function() {
         var KEYWORD = []
         slicing($("#keyword").val(),KEYWORD)
 
-       if(typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'qklw'){
+       if(typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'qklw'||typeData[$('#type_s').val()].short_name == 'kclw'){
            if($(".keywordBox").is(':visible')){
                formData['data[keyword][label]'] = '关键词'
                formData['data[keyword][value]'] = KEYWORD.join('；')
