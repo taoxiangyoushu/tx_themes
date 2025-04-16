@@ -850,3 +850,6 @@ html .ContainerTo {
 .ProfessionalEdition .BACK-mini {
   display: inline-block;
 }
+.gen_params .sample .sampleBox {
+  left: -360px;
+}

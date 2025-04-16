@@ -693,13 +693,7 @@
 <script src="../mobile/assets/js/Drag.js?v=m24.0028"></script>
 <script>
     var Weight_reduction=''
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i=0;i<vars.length;i++) {
-        var pair = vars[i].split("=");
-        Weight_reduction=decodeURI(pair[1])
-    }
-
+    Weight_reduction=getQueryVariable('sw')
     // 价格
     var price_lwjc = ''
     var price_aigc = ''
@@ -751,15 +745,22 @@
         $(".ver_info").css('display', 'flex')
         $(".wrapper_seat").hide()
         $(".submitContent").show()
-        if(Weight_reduction=='lwjc'){
+        
+        if(getQueryVariable('sw')){
+            if(Weight_reduction=='lwjc'){
+                $($(".ver_info .ver_item")[0]).click()
+            }
+            if(Weight_reduction=='aigclwjc'){
+                $($(".ver_info .ver_item")[1]).click()
+            }
+            if(Weight_reduction=='undefined'){
+                $($(".ver_info .ver_item")[0]).click()
+            }
+        }
+        else{
             $($(".ver_info .ver_item")[0]).click()
         }
-        if(Weight_reduction=='aigclwjc'){
-            $($(".ver_info .ver_item")[1]).click()
-        }
-        if(Weight_reduction=='undefined'){
-            $($(".ver_info .ver_item")[0]).click()
-        }
+      
         $(".price-cs-lwjc").text(price_lwjc)
         $(".price-cs-aigc").text(price_aigc)
         if(typeData.length > 1) {

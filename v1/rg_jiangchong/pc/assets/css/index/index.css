@@ -635,7 +635,7 @@ label span {
   margin-bottom: 22px;
 }
 .formData .formRight label {
-  width: 120px;
+  width: 140px;
   display: inline-block;
   text-align: left;
 }
@@ -717,7 +717,8 @@ label span {
 }
 .form-group label .units {
   position: absolute;
-  left: 380px;
+  left: 400px;
+  top: 4px;
   min-width: 54px;
   font-size: 14px;
 }

@@ -45,8 +45,8 @@
     <link rel="stylesheet" href="../../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../../mobile/assets/css/swipeslider.css">
-    <link rel="stylesheet" href="../../mobile/assets/css/common.css?v=17.9">
-    <link rel="stylesheet" href="../../mobile/assets/css/index/index.css?v=17.9">
+    <link rel="stylesheet" href="../../mobile/assets/css/common.css?v=17.10">
+    <link rel="stylesheet" href="../../mobile/assets/css/index/index.css?v=17.10">
     <script>
         var JANE_NAME = 'rg_jiangchong'
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
@@ -461,17 +461,17 @@
                                 </div>
                             </div>
                             <div class="group form-group">
-                                <label>原重复率<span>*</span></label>
+                                <label>原重复/AI率<span>*</span></label>
                                 <div class="inputBox">
-                                    <input placeholder="请输入原重复率" maxlength="6" type="text" class="form-control repetition_s" name="repetition" />
+                                    <input placeholder="请输入原重复/AI率" maxlength="6" type="text" class="form-control repetition_s" name="repetition" />
                                     <span class="percentSign percentSign1">%</span>
                                     <span id="repetition_err"></span>
                                 </div>
                             </div>
                             <div class="group form-group">
-                                <label>期望重复率<span>*</span></label>
+                                <label>期望重复/AI率<span>*</span></label>
                                 <div class="inputBox">
-                                    <input placeholder="请输入期望重复率" maxlength="6" type="text" class="form-control desired_s" name="desired" />
+                                    <input placeholder="请输入期望重复/AI率" maxlength="6" type="text" class="form-control desired_s" name="desired" />
                                     <span class="percentSign percentSign2">%</span>
                                     <span id="desired_err"></span>
                                 </div>
@@ -486,7 +486,7 @@
                             </div>
                             <div class="quotation">
                                 <div class="labels">实时报价</div>
-                                <p class="tips">原重复率需大于10%</p> 
+                                <p class="tips">原重复/AI率需大于10%</p> 
                                 <span class="description">（价格详情需详谈）</span>
                             </div>
                             <div class="button_s form-group">
@@ -828,11 +828,11 @@
 		b = Number(b)
 		c = Number(c)
 		if(!a || a <10) {
-			$('.quotation .tips').text('原重复率需大于10%')
+			$('.quotation .tips').text('原重复/AI率需大于10%')
 		}else if(!b || b == 0) {
 			$('.quotation .tips').text('期望率需大于0%')
 		}else if(a<=b) {
-			$('.quotation .tips').text('期望率必须低于重复率')
+			$('.quotation .tips').text('期望率必须低于重复/AI率')
 		}else if(b>50) {
 			$('.quotation .tips').text('期望率不能大于50')
 		}else if(c<=0){

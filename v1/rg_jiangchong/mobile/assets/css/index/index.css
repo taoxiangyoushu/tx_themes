@@ -502,12 +502,14 @@
 }
 .main .form-control {
   height: 2.5rem;
+  padding-right: 0rem;
+  padding-left: 0.625rem;
 }
 #formInfo {
   padding-top: 1.125rem;
 }
 #formInfo label {
-  width: 5.5rem;
+  width: 7rem;
 }
 #formInfo .inputBox {
   width: calc(100% - 5.5rem);
@@ -584,8 +586,8 @@
 }
 #formInfo .percentSign {
   position: absolute;
-  right: 0.75rem;
-  top: 0.75rem;
+  right: 0.55rem;
+  top: 0.65rem;
   font-size: 0.88rem;
 }
 #formInfo .percentSign.percentSign1 {

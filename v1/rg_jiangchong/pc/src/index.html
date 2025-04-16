@@ -13,9 +13,9 @@
     <link rel="shortcut icon" href="../../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../pc/assets/css/bootstrapValidator.min.css">
-    <link rel="stylesheet" href="../../pc/assets/css/common.css?v=17.10">
-    <link rel="stylesheet" href="../../pc/assets/css/index/index.css?v=17.10">
-    <link rel="stylesheet" href="../../pc/assets/css/swipeslider.css?v=17.10">
+    <link rel="stylesheet" href="../../pc/assets/css/common.css?v=17.11">
+    <link rel="stylesheet" href="../../pc/assets/css/index/index.css?v=17.11">
+    <link rel="stylesheet" href="../../pc/assets/css/swipeslider.css?v=17.11">
 	<!-- <link rel="stylesheet" href="../../pc/assets/css/styles.css" /> -->
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!--[if lt IE 9]>
@@ -515,13 +515,13 @@
 						<div class="formLeft">
 							<!-- data-text: html内容文字切换, data-status作为字段传给后端 -->
 							<div class="options liberalArts selected" data-key="1" data-text="文科" data-status="文科">
-								<div class="labels">论文降重（文科）</div>
+								<div class="labels">论文降重/降AI（文科）</div>
 								<div class="described">
 									深度赋能人文社科论文创作，梳理思路、雕琢逻辑架构、增添文字感染力，辅助您打造高水准的学术佳作，提高通过率
 								</div>
 							</div>
 							<div class="options science" data-key="1.3" data-text="理科" data-status="理科">
-								<div class="labels">论文降重（理科）</div>
+								<div class="labels">论文降重/降AI（理科）</div>
 								<div class="described">
 									依托资深理科背景专家，我们专注于剖析核心要点、优化论证逻辑以及提升理论严谨性，助力您产出高水平的学术成果，提高通过率
 								</div>
@@ -530,7 +530,7 @@
 						<div class="formRight">
 							<div class="step1">
 								<div class="version">
-									论文降重（<span id="versionText">文科</span>）
+									论文降重/降AI（<span id="versionText">文科</span>）
 								</div>
 								<form id="formInfo" data="jc" class="clearfix">
 									<div class="group form-group">
@@ -539,13 +539,13 @@
 										<span id="number_err"></span>
 									</div>
 									<div class="group form-group">
-										<label><span>*</span> 论文重复率：<span class="units units1">%</span></label>
-										<input placeholder="请输入原重复率" maxlength="6" type="text" class="form-control repetition_s" name="repetition" />
+										<label><span>*</span> 论文重复/AI率：<span class="units units1">%</span></label>
+										<input placeholder="请输入原重复/AI率" maxlength="6" type="text" class="form-control repetition_s" name="repetition" />
 										<span id="repetition_err"></span>
 									</div>
 									<div class="group form-group">
-										<label><span>*</span> 期望重复率：<span class="units units2">%以内</span></label>
-										<input placeholder="请输入期望重复率" maxlength="6" type="text" class="form-control desired_s" name="desired" />
+										<label><span>*</span> 期望重复/AI率：<span class="units units2">%以内</span></label>
+										<input placeholder="请输入期望重复/AI率" maxlength="6" type="text" class="form-control desired_s" name="desired" />
 										<span id="desired_err"></span>
 									</div>
 									<div class="group form-group">
@@ -557,7 +557,7 @@
 										</div>
 									</div>
 									<div class="quotation">
-										实时报价：<span class="tips">原重复率需大于10%</span> <span class="description">（价格详情需详谈）</span>
+										实时报价：<span class="tips">原重复/AI率需大于10%</span> <span class="description">（价格详情需详谈）</span>
 									</div>
 									<div class="button_s form-group">
 										<button class="btn submittedInfo">提交</button>
@@ -873,11 +873,11 @@
 		b = Number(b)
 		c = Number(c)
 		if(!a || a <10) {
-			$('.quotation .tips').text('原重复率需大于10%')
+			$('.quotation .tips').text('原重复/AI率需大于10%')
 		}else if(!b || b == 0) {
 			$('.quotation .tips').text('期望率需大于0%')
 		}else if(a<=b) {
-			$('.quotation .tips').text('期望率必须低于重复率')
+			$('.quotation .tips').text('期望率必须低于重复/AI率')
 		}else if(b>50) {
 			$('.quotation .tips').text('期望率不能大于50')
 		}else if(c<=0){
