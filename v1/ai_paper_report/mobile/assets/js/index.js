@@ -225,6 +225,11 @@ function changeType(this_ , this_val) {
             $('.genCode').hide()
             $('.Sample_Chart1').show()
             $('.Sample_Chart').hide()
+            $('.questionnaire').hide()
+            $('.addParameters').addClass('kclw_box')
+        }else {
+            $('.addParameters').removeClass('kclw_box')
+            $('.questionnaire').show()
         }
     }
     if(this_short_name == 'kclw'){    // 课程论文
@@ -506,22 +511,26 @@ $('.generate').click(function() {
         slicing($("#keyword").val(),KEYWORD)
 
        if(typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'qklw'||typeData[$('#type_s').val()].short_name == 'kclw'){
-           if($(".keywordBox").is(':visible')){
-               formData['data[keyword][label]'] = '关键词'
-               formData['data[keyword][value]'] = KEYWORD.join('；')
-           }
-           if($(".educationBox").is(':visible')){
-               formData['data[education][label]'] = '学历'
-               formData['data[education][value]'] = education;
-           }
-           formData['data[gen_tab][label]'] = '生成表格'
-           formData['data[gen_tab][value]'] = $(".gen_tab").is(':checked')?1:0
-           formData['data[gen_img][label]'] = '生成图片'
-           formData['data[gen_img][value]'] =  $(".gen_img").is(':checked')?1:0
-           formData['data[gen_formula][label]'] = '生成公式'
-           formData['data[gen_formula][value]'] =  $(".gen_formula").is(':checked')?1:0
-           formData['data[gen_code][label]'] = '生成代码'
-           formData['data[gen_code][value]'] =  $(".gen_code").is(':checked')?1:0
+            if($(".keywordBox").is(':visible')){
+                formData['data[keyword][label]'] = '关键词'
+                formData['data[keyword][value]'] = KEYWORD.join('；')
+            }
+            if($(".educationBox").is(':visible')){
+                formData['data[education][label]'] = '学历'
+                formData['data[education][value]'] = education;
+            }
+            formData['data[gen_tab][label]'] = '生成表格'
+            formData['data[gen_tab][value]'] = $(".gen_tab").is(':checked')?1:0
+            formData['data[gen_img][label]'] = '生成图片'
+            formData['data[gen_img][value]'] =  $(".gen_img").is(':checked')?1:0
+            formData['data[gen_formula][label]'] = '生成公式'
+            formData['data[gen_formula][value]'] =  $(".gen_formula").is(':checked')?1:0
+            if(typeData[$('#type_s').val()].short_name != 'kclw') {
+                formData['data[gen_code][label]'] = '生成代码'
+                formData['data[gen_code][value]'] =  $(".gen_code").is(':checked')?1:0
+                formData['data[questionnaire][label]'] = '生成调查问卷'
+                formData['data[questionnaire][value]'] =  $(".gen_questionnaire").is(':checked')?1:0
+            }
        }
        if(typeData[$('#type_s').val()].short_name == 'bylw' && !$(".proposal-check").is(':checked')) {
             // 判断英文参考文献

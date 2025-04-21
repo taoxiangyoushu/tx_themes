@@ -644,6 +644,7 @@ button.btn-default,
 }
 .genIT .inputBox input.parameter {
   background: none;
+  padding-right: 4rem;
 }
 .genIT .inputBox span {
   display: inline-block;
@@ -652,7 +653,7 @@ button.btn-default,
   font-size: 1.2rem;
   position: absolute;
   top: 0;
-  right: 2rem;
+  right: 1rem;
 }
 .genIT .inputBox span.genImg {
   margin: 0 1.5rem 0 1rem;
@@ -677,14 +678,26 @@ button.btn-default,
   text-decoration: underline;
   margin-left: 1rem;
 }
+.addParameters .andInterval {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.addParameters .kclw_box.andInterval {
+  justify-content: flex-start;
+}
+.addParameters .kclw_box.andInterval > span {
+  margin-right: 1rem;
+}
 .addParameters > span {
   background-color: #f9f9f9;
   border-radius: 0.5rem;
-  padding: 0.6rem 1.3rem;
+  padding: 0.6rem 1.16rem;
   color: #666666;
   font-size: 1.22rem;
   font-weight: 400;
   margin-right: 0.8rem;
+  margin: 0.3rem 0;
   position: relative;
 }
 .addParameters > span:after {
@@ -766,6 +779,18 @@ button.btn-default,
 .zsbgPop .sampleBox img,
 .zslwPop .sampleBox img {
   width: 100%;
+}
+.samplePop {
+  top: 16%;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+.samplePop .sampleBox {
+  max-height: 60vh;
+  overflow: auto;
+  padding-top: 0;
+  margin-top: 44px;
+  margin-bottom: 1rem;
 }
 .tabDiv {
   background: url('../img/tabBg.png') no-repeat;

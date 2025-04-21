@@ -89,7 +89,7 @@
                 <div class="form_block">
                     <div class="files_upload">
                         <div class="file_upload">
-                            <input type="file" class="upload_files" id="uploadFiles" accept=".doc, .docx, .txt, text/plain,.pdf">
+                            <input type="file" class="upload_files" id="uploadFiles" accept=".doc, .docx, .txt, text/plain">
                             <div class="upload_btn">
                                 <img src="../mobile/assets/img/uploading.png" class="upload_logo" alt="">
                                 <img src="../mobile/assets/img/waiting.gif" class="uploading_logo" alt="">
@@ -108,7 +108,7 @@
                                 <span class="format">DOC</span>
                                 <span class="format">DOCX</span>
                                 <span class="format">TXT</span>
-                                <span class="format">PDF</span>
+                                <!-- <span class="format">PDF</span> -->
                                 <span class="size">
                                     <span class="size_tag">
                                         <img src="../mobile/assets/img/check_gs.png" alt="">
@@ -173,12 +173,13 @@
                                 <p class="p1 upload_tips_txt" data-type="paperPass">仅支持上传完整zip报告<br/>请下载PP<span>“离线网页版报告”</span>zip</p>
                                 <p class="p1 upload_tips_txt" data-type="yuanwenjian">zip压缩包内需包含<span>“xxx_全文标明引文.pdf”</span>文件</p>
                                 <!-- <p class="p1 upload_tips_txt" data-type="otherAIGC">系统支持各大AIGC报告<br/>未识别的报告请反馈给客服处理</p> -->
-                                <p class="p1 upload_tips_txt" data-type="cnkiAIGC">支持上传pdf报告或完整zip报告<br/>需包含文件<span>“全文报告单_xxx.pdf”</span></p>
-                                <p class="p1 upload_tips_txt" data-type="wanfangAIGC">仅支持上传pdf文件，文件名<span>“xxx（AIGC检测报告）.pdf”</span></p>
-                                <p class="p1 upload_tips_txt" data-type="weipuAIGC">仅支持上传zip，需包含文件<span>“xxx_AIGC统计报告.html”</span></p>
-                                <p class="p1 upload_tips_txt" data-type="masterAIGC">仅支持上传zip，需包含文件<span>“xxx---AIGC检测报告.html”</span></p>
-                                <p class="p1 upload_tips_txt" data-type="paperPassAIGC">仅支持上传完整zip报告，请下载PP<span>“离线网页版报告”</span>zip</p>
-                                <p class="p1 upload_tips_txt" data-type="gzdAIGC">仅支持上传pdf文件，文件名<span>“xxx_AIGC检测报告.pdf”</span></p>
+                                <p class="p1 upload_tips_txt" data-type="cnkiAIGC">需包含文件<span>“全文报告单_xxx.pdf”</span></p>
+                                <p class="p1 upload_tips_txt" data-type="wanfangAIGC">需包含文件<span>“xxx（AIGC检测报告）.pdf”</span></p>
+                                <p class="p1 upload_tips_txt" data-type="dyAIGC">需上传文件<span>“xxx_检测结果报告.pdf”</span></p>
+                                <p class="p1 upload_tips_txt" data-type="weipuAIGC">需包含文件<span>“xxx_AIGC统计报告.html”</span></p>
+                                <p class="p1 upload_tips_txt" data-type="masterAIGC">需包含文件<span>“xxx---AIGC检测报告.html”</span></p>
+                                <p class="p1 upload_tips_txt" data-type="paperPassAIGC">请下载PP<span>“离线网页版报告”</span>zip</p>
+                                <p class="p1 upload_tips_txt" data-type="gzdAIGC">需包含文件<span>“xxx_AIGC检测报告.pdf”</span></p>
                             </div>
                         </div>
                         <div class="upload_tips">
@@ -575,15 +576,15 @@
         </div>
         <div class="example_item" data-type="cnkiAIGC" >
             <P class="subtitle">【知W-AIGC报告】上传示例</P>
-            <p class="reportTip">支持上传pdf或者完整zip报告， </p>
-            <p class="reportTip">需包含文件<span>“全文报告单_xxx.pdf”,</span>，以便系统解析降AIGC内容</p>
+            <p class="reportTip">需包含文件<span>“全文报告单_xxx.pdf”</span> </p>
+            <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
                 <img src="" alt="">
             </div>
         </div>
         <div class="example_item" data-type="wanfangAIGC" >
             <P class="subtitle">【万F-AIGC报告】上传示例</P>
-            <p class="reportTip">仅支持上传pdf文件，文件名<span>“xxx（AIGC检测报告）.pdf”</span></p>
+            <p class="reportTip">需包含文件<span>“xxx（AIGC检测报告）.pdf”</span></p>
             <p class="reportTip">或完整的查重报告压缩包，以便系统解析降AIGC内容</p>
             <div class="exam-img">
                 <img src="" alt="">
@@ -591,7 +592,7 @@
         </div>
         <div class="example_item" data-type="weipuAIGC" >
             <P class="subtitle">【维P-AIGC报告】上传示例</P>
-            <p class="reportTip">仅支持上传zip，需包含文件<span>“xxx_AIGC统计报告.html”</span></p>
+            <p class="reportTip">需包含文件<span>“xxx_AIGC统计报告.html”</span></p>
             <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
                 <img src="" alt="">
@@ -599,7 +600,7 @@
         </div>
         <div class="example_item" data-type="masterAIGC" >
             <P class="subtitle">【Master-AIGC报告】上传示例</P>
-            <p class="reportTip">仅支持上传zip，需包含文件<span>“xxx---AIGC检测报告.html”</span></p>
+            <p class="reportTip">需包含文件<span>“xxx---AIGC检测报告.html”</span></p>
             <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
                 <img src="" alt="">
@@ -607,7 +608,7 @@
         </div>
         <div class="example_item" data-type="paperPassAIGC" >
             <P class="subtitle">【PP-AIGC报告】上传示例</P>
-            <p class="reportTip">仅支持上传完整zip报告，请下载PP<span>“离线网页版报告”</span>zip</p>
+            <p class="reportTip">请下载PP<span>“离线网页版报告”</span>zip</p>
             <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
                 <img src="" alt="">
@@ -615,7 +616,7 @@
         </div>
         <div class="example_item" data-type="gzdAIGC" >
             <P class="subtitle">【格Z达-AIGC报告】上传示例</P>
-            <p class="reportTip">仅支持上传pdf文件，文件名<span>“xxx_AIGC检测报告.pdf”</span></p>
+            <p class="reportTip">需包含文件<span>“xxx_AIGC检测报告.pdf”</span></p>
             <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
                 <img src="" alt="">
@@ -623,7 +624,7 @@
         </div>
         <div class="example_item" data-type="dyAIGC" >
             <P class="subtitle">【D雅-AIGC报告】上传示例</P>
-            <p class="reportTip">仅支持上传pdf文件，文件名<span>“xxx_检测结果报告.pdf”</span></p>
+            <p class="reportTip">需上传文件<span>“xxx_检测结果报告.pdf”</span></p>
             <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
                 <img src="" alt="">
@@ -789,7 +790,7 @@
     var reportSampleData = {
         'cnki': '../mobile/assets/img/ex-zw.png',
         'wanfang': '../mobile/assets/img/ex-wf.png',
-        'weipu': '../mobile/assets/img/ex-wp.png?v1',
+        'weipu': '../mobile/assets/img/ex-wp.png?v=2',
         'zaojiance': '../mobile/assets/img/ex-zjc.png',
         'checkPass': '../mobile/assets/img/ex-checkpass.png',
         'MasterCheck': '../mobile/assets/img/ex-dscc.png',

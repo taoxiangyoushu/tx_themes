@@ -851,5 +851,13 @@ html .ContainerTo {
   display: inline-block;
 }
 .gen_params .sample .sampleBox {
-  left: -360px;
+  left: -560px;
+}
+@media (max-width: 1340px) {
+  .gen_params .sample .sampleBox {
+    width: 680px;
+  }
+  .gen_params .sample .sampleBox img {
+    max-width: 100%;
+  }
 }

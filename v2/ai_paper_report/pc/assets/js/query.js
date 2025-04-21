@@ -148,7 +148,11 @@ function query(e) {
                                 }
                                 text += download_dom
                             }else {
-                                text += "<div class=\"nots\"><span>生成中</span></div> ";
+                                if(['zjcaigc','xzaigccheck'].includes(res.data[i].goods_short_name)){
+                                    text += "<span>--</span>"
+                                }else{
+                                    text += "<div class=\"nots\"><span>生成中</span></div> ";
+                                }
                             }
                         }
                         var is_supper_added_goods=true

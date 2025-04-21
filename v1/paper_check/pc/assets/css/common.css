@@ -258,3 +258,27 @@ p {
   cursor: pointer;
   display: none;
 }
+.foot {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #999999;
+  font-size: 12px;
+}
+.foot .gongan {
+  width: 16px;
+  margin-top: -4px;
+  margin-right: 4px;
+}
+.foot a {
+  text-decoration: none;
+  color: #8f8f8f;
+  font-size: 12px;
+}
+.foot a:hover {
+  color: #337ab7;
+}
+.foot a.beian {
+  margin-left: 20px;
+}
+/*# sourceMappingURL=common.css.map */

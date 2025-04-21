@@ -857,7 +857,10 @@ label {
     }
 }
 .gen_params {
-    span.genImg,span.genTab,span.genFormula, span.genCode{
+    span.questionnaire {
+        display: none;
+    }
+    span.genImg,span.genTab,span.genFormula, span.genCode, span.questionnaire {
         cursor: pointer;
         font-size: 14px;
         color: #666;
@@ -890,7 +893,7 @@ label {
             position: absolute;
             z-index: 10;
             top: 24px;
-            left: -400px;
+            left: -560px;
             display: none;
             background: #FFFFFF;
             padding: 10px;

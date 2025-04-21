@@ -432,9 +432,13 @@ function editionType(edition , is) {
 		if(is) changeType($('#type_s2'))
 	}else if(edition == 'ktbgsenior') { // 开题报告专业版
 		$('#App').addClass('ProfessionalEdition')
+		$('.editionText').text('极速版')
+		$('.Toggle2').attr('edition-key' , 'bylw')
 		$('#outline').text('下一步，选大纲')
 	}else if(edition == 'qklwsenior') { // 期刊论文专业版
 		$('#App').addClass('ProfessionalEdition')
+		$('.editionText').text('极速版')
+		$('.Toggle2').attr('edition-key' , 'bylw')
 		$('#outline').text('下一步，选提纲')
 	}else {
 		if(edition == 'xzaigccheck') {

@@ -289,6 +289,17 @@ input[type=radio] {
     line-height: normal;
 }
 .genIT {
+    .andInterval {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .kclw_box.andInterval {
+        justify-content: flex-start;
+        &>span {
+            margin-right: 1rem;
+        }
+    }
     .sample {
         font-weight: 400;
         text-decoration: none;
@@ -304,7 +315,9 @@ input[type=radio] {
         background-color: transparent;
         padding: 0;
         font-size: 1.2rem;
+        margin: 0.3rem 0;
         color: #374151;
+        padding: 0.6rem 1.16rem;
         input {
             display: inline-block;
             vertical-align: text-top;

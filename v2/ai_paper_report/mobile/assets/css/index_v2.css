@@ -280,6 +280,17 @@ input[type=radio] {
   padding-left: 0.8rem;
   line-height: normal;
 }
+.genIT .andInterval {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.genIT .kclw_box.andInterval {
+  justify-content: flex-start;
+}
+.genIT .kclw_box.andInterval > span {
+  margin-right: 1rem;
+}
 .genIT .sample {
   font-weight: 400;
   text-decoration: none;
@@ -295,7 +306,9 @@ input[type=radio] {
   background-color: transparent;
   padding: 0;
   font-size: 1.2rem;
+  margin: 0.3rem 0;
   color: #374151;
+  padding: 0.6rem 1.16rem;
 }
 .genIT > span input {
   display: inline-block;
@@ -670,4 +683,3 @@ input[type=checkbox] {
 .uploadKTBG_pop .upk_btn.upking {
   background: #69A8FF;
 }
-/*# sourceMappingURL=index_v2.css.map */

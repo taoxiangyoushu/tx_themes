@@ -97,8 +97,11 @@ function changeType(this_ , this_val) {
         $('.Sample_Chart1').hide()
         if(this_short_name =='kclw'){
             $('.genCode').hide()
+            $('.questionnaire').hide()
             $('.Sample_Chart1').show()
             $('.Sample_Chart').hide()
+        }else {
+            $('.questionnaire').show()
         }
     }
     if(this_short_name !== 'bylw' && this_short_name !== 'bylwsenior' && this_short_name !== 'ktbg' && this_short_name !== 'ktbgsenior' && this_short_name !== 'kclw' && this_short_name !== 'qklw' && this_short_name !== 'qklwsenior'){ // 参考文献
@@ -303,6 +306,10 @@ $(".genFormula").on('click',function (){
 })
 
 $(".genCode").on('click',function (){
+    $(this).find('input').click()
+})
+
+$(".questionnaire").on('click',function (){
     $(this).find('input').click()
 })
 
@@ -535,8 +542,12 @@ $('.generate').click(function() {
             formData['data[gen_img][value]'] =  $(".gen_img").is(':checked')?1:0
             formData['data[gen_formula][label]'] = '生成公式'
             formData['data[gen_formula][value]'] =  $(".gen_formula").is(':checked')?1:0
-            formData['data[gen_code][label]'] = '生成代码'
-            formData['data[gen_code][value]'] =  $(".gen_code").is(':checked')?1:0
+            if(typeData[$('#type_s').val()].short_name != 'kclw') {
+                formData['data[questionnaire][label]'] = '生成调查问卷'
+                formData['data[questionnaire][value]'] =  $(".gen_questionnaire").is(':checked')?1:0
+                formData['data[gen_code][label]'] = '生成代码'
+                formData['data[gen_code][value]'] =  $(".gen_code").is(':checked')?1:0
+            }
             if($(".education_c").is(':visible') && typeData[$('#type_s').val()].short_name == 'bylw'){
                 formData['data[education][label]'] = '学历'
                 formData['data[education][value]'] = $("input[name='reportType']:checked").val();

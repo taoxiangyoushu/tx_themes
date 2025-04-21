@@ -94,7 +94,7 @@
                                     <div class="upload_file">
                                         <input type="file"
                                                class="file_upload" id="docUpload"
-                                               accept=".doc,.docx,.txt,text/plain,.pdf">
+                                               accept=".doc,.docx,.txt,text/plain,">
 
                                         <div class="upload_btn">
                                             <img class="upload-icon" src="../pc/assets/img/icon_uploading.png" alt="">
@@ -117,7 +117,7 @@
                                                 <div class="format_item">DOC</div>
                                                 <div class="format_item">DOCX</div>
                                                 <div class="format_item">TXT</div>
-                                                <div class="format_item">PDF</div>
+                                                <!-- <div class="format_item">PDF</div> -->
                                             </div>
                                             <div class="size_block">
                                                 <span class="size_text">
@@ -250,7 +250,7 @@
                                     </div>
                                     <div class="zip_description Other_Styles" data-type="otherAIGC">通过上传对应的AIGC检测报告，降AI率效果更好</div>
                                     <div class="zip_description" data-type="masterAIGC">
-                                        仅支持上传zip，需包含文件<span class="exampleFile_name">“xxx---AIGC检测报告.html”</span>，示例：
+                                        需包含文件<span class="exampleFile_name">“xxx---AIGC检测报告.html”</span>，示例：
                                         <span class="example_file">
                                             <img src="../pc/assets/img/icon_zip.png" alt="">
                                             MasterAIGC检测报告_..._张三.zip
@@ -262,7 +262,7 @@
                                         </div>
                                     </div>
                                     <div class="zip_description" data-type="paperPassAIGC">
-                                        仅支持上传完整zip报告，请下载PP<span class="exampleFile_name">“离线网页版报告”</span>zip，示例：
+                                        请下载PP<span class="exampleFile_name">“离线网页版报告”</span>zip，示例：
                                         <span class="example_file">
                                             <img src="../pc/assets/img/icon_zip.png" alt="">
                                             张三_经济管理与财富发展.zip
@@ -274,7 +274,7 @@
                                         </div>
                                     </div>
                                     <div class="zip_description" data-type="wanfangAIGC">
-                                        仅支持上传pdf文件，文件名<span class="exampleFile_name">“xxx（AIGC检测报告）.pdf”</span>，示例：
+                                        需包含文件<span class="exampleFile_name">“xxx（AIGC检测报告）.pdf”</span>，示例：
                                         <span class="example_file">
                                             <img src="../pc/assets/img/icon_pdf.png" alt="">
                                             xxx（AIGC检测报告）.pdf
@@ -286,7 +286,7 @@
                                         </div>
                                     </div>
                                     <div class="zip_description" data-type="cnkiAIGC">
-                                        支持上传pdf报告或完整zip报告，需包含文件<span class="exampleFile_name">“全文报告单_xxx.pdf”</span>，示例：
+                                        需包含文件<span class="exampleFile_name">“全文报告单_xxx.pdf”</span>，示例：
                                         <span class="example_file">
                                             <img src="../pc/assets/img/icon_pdf.png" alt="">
                                             全文报告单_xxx.pdf
@@ -298,7 +298,7 @@
                                         </div>
                                     </div>
                                     <div class="zip_description" data-type="weipuAIGC">
-                                        仅支持上传zip，需包含文件<span class="exampleFile_name">“xxx_AIGC统计报告.html”</span>，示例：
+                                        需包含文件<span class="exampleFile_name">“xxx_AIGC统计报告.html”</span>，示例：
                                         <span class="example_file">
                                             <img src="../pc/assets/img/icon_zip.png" alt="">
                                             经济管理与财富发展.zip
@@ -310,7 +310,7 @@
                                         </div>
                                     </div>
                                     <div class="zip_description" data-type="gzdAIGC">
-                                        仅支持上传pdf文件，文件名<span class="exampleFile_name">“xxx_AIGC检测报告.pdf”</span>，示例：
+                                        需包含文件<span class="exampleFile_name">“xxx_AIGC检测报告.pdf”</span>，示例：
                                         <span class="example_file">
                                             <img src="../pc/assets/img/icon_pdf.png" alt="">
                                              xxx_AIGC检测报告.pdf
@@ -322,7 +322,7 @@
                                         </div>
                                     </div>
                                     <div class="zip_description" data-type="dyAIGC">
-                                        仅支持上传pdf文件，文件名<span class="exampleFile_name">“xxx_检测结果报告.pdf”</span>，示例：
+                                        需上传文件<span class="exampleFile_name">“xxx_检测结果报告.pdf”</span>，示例：
                                         <span class="example_file">
                                             <img src="../pc/assets/img/icon_pdf.png" alt="">
                                              xxx_检测结果报告.pdf
@@ -1427,7 +1427,7 @@
     var reportSampleData = {
         'cnki': '../pc/assets/img/jc_zw_img.png',
         'wanfang': '../pc/assets/img/jc_wf_img.png',
-        'weipu': '../pc/assets/img/jc_wp_img.png?v1',
+        'weipu': '../pc/assets/img/jc_wp_img.png?v=2',
         'zaojiance': '../pc/assets/img/jc_zjc_img.png',
         'checkPass': '../pc/assets/img/jc_checkpass_img.png',
         'MasterCheck': '../pc/assets/img/jc_dscc_img.png',

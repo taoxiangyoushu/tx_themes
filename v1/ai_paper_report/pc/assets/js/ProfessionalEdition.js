@@ -90,6 +90,7 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this) {
         gen_tab:  $(".gen_tab").is(':checked')?1:0,
         gen_formula: $(".gen_formula").is(':checked')?1:0,
         gen_code: $(".gen_code").is(':checked')?1:0,
+        questionnaire: $(".gen_questionnaire").is(':checked')?1:0,
         goods_id: $('#type_s2').val(),
     }
     if( typeData[$('#type_s2').val()].short_name == 'qklwsenior' ) {

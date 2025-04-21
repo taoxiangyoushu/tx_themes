@@ -647,6 +647,7 @@ body {
     .inputBox {
         input.parameter {
             background: none;
+            padding-right: 4rem;
         }
         span {
             display: inline-block;
@@ -655,7 +656,7 @@ body {
             font-size: 1.2rem;
             position: absolute;
             top: 0;
-            right: 2rem;
+            right: 1rem;
             &.genImg {
                 margin: 0 1.5rem 0 1rem;
             }
@@ -685,14 +686,23 @@ body {
 }
 
 .addParameters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &.kclw_box {
+        justify-content: flex-start;
+        &>span {
+            margin-right: 1rem;
+        }
+    }
     &>span {
         background-color: #f9f9f9;
         border-radius: 0.5rem;
-        padding: 0.6rem 1.3rem;
+        padding: 0.6rem 1.16rem;
         color: #666666;
         font-size: 1.22rem;
         font-weight: 400;
-        margin-right: 0.8rem;
+        margin: 0.3rem 0;
         position: relative;
         &:after {
             content: '';
@@ -767,6 +777,19 @@ body {
         img{
             width: 100%
         }
+    }
+}
+
+.samplePop {
+    top: 16%;
+    background-color: #fff;
+    border-radius: 1rem;
+    .sampleBox {
+        max-height: 60vh;
+        overflow: auto;
+        padding-top: 0;
+        margin-top: 44px;
+        margin-bottom: 1rem;
     }
 }
 .tabDiv {

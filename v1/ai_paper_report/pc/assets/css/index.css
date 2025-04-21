@@ -886,10 +886,14 @@ label {
 .proposal #uploadFile-ktbg {
   display: none;
 }
+.gen_params span.questionnaire {
+  display: none;
+}
 .gen_params span.genImg,
 .gen_params span.genTab,
 .gen_params span.genFormula,
-.gen_params span.genCode {
+.gen_params span.genCode,
+.gen_params span.questionnaire {
   cursor: pointer;
   font-size: 14px;
   color: #666;
@@ -899,7 +903,8 @@ label {
 .gen_params span.genImg input[type=checkbox],
 .gen_params span.genTab input[type=checkbox],
 .gen_params span.genFormula input[type=checkbox],
-.gen_params span.genCode input[type=checkbox] {
+.gen_params span.genCode input[type=checkbox],
+.gen_params span.questionnaire input[type=checkbox] {
   display: inline-block;
   border: 1px solid #eee;
   vertical-align: text-top;
@@ -926,7 +931,7 @@ label {
   position: absolute;
   z-index: 10;
   top: 24px;
-  left: -400px;
+  left: -560px;
   display: none;
   background: #FFFFFF;
   padding: 10px;
@@ -1908,4 +1913,3 @@ p.word-prompt .text-num {
 .indexApp .proposal .fileBlock img.deleteFile {
   margin-top: 0;
 }
-/*# sourceMappingURL=index.css.map */
