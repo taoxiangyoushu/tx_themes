@@ -389,7 +389,8 @@ body {
 #sxgsmx .Color_paper_contenthead,
 #fxbg .Color_paper_contenthead,
 #dmsl .Color_paper_contenthead,
-#pzssl .Color_paper_contenthead {
+#pzssl .Color_paper_contenthead,
+#wjdc .Color_paper_contenthead {
   color: #30306E;
   background-color: #F1F1FF;
 }
@@ -397,28 +398,32 @@ body {
 #sxgsmx .Color_paper_contentbody,
 #fxbg .Color_paper_contentbody,
 #dmsl .Color_paper_contentbody,
-#pzssl .Color_paper_contentbody {
+#pzssl .Color_paper_contentbody,
+#wjdc .Color_paper_contentbody {
   background-color: #FBFBFF;
 }
 #lcjg .Color_paper_contentbody li::marker,
 #sxgsmx .Color_paper_contentbody li::marker,
 #fxbg .Color_paper_contentbody li::marker,
 #dmsl .Color_paper_contentbody li::marker,
-#pzssl .Color_paper_contentbody li::marker {
+#pzssl .Color_paper_contentbody li::marker,
+#wjdc .Color_paper_contentbody li::marker {
   color: #30306E;
 }
 #lcjg .Color_paper_contentbody li span:nth-child(1),
 #sxgsmx .Color_paper_contentbody li span:nth-child(1),
 #fxbg .Color_paper_contentbody li span:nth-child(1),
 #dmsl .Color_paper_contentbody li span:nth-child(1),
-#pzssl .Color_paper_contentbody li span:nth-child(1) {
+#pzssl .Color_paper_contentbody li span:nth-child(1),
+#wjdc .Color_paper_contentbody li span:nth-child(1) {
   color: #30306E;
 }
 #lcjg .Color_paper_contentbody li span:nth-child(2),
 #sxgsmx .Color_paper_contentbody li span:nth-child(2),
 #fxbg .Color_paper_contentbody li span:nth-child(2),
 #dmsl .Color_paper_contentbody li span:nth-child(2),
-#pzssl .Color_paper_contentbody li span:nth-child(2) {
+#pzssl .Color_paper_contentbody li span:nth-child(2),
+#wjdc .Color_paper_contentbody li span:nth-child(2) {
   color: #575780;
   display: inline-block;
   vertical-align: text-top;
@@ -427,7 +432,8 @@ body {
 #sxgsmx .catalogue_content_color,
 #fxbg .catalogue_content_color,
 #dmsl .catalogue_content_color,
-#pzssl .catalogue_content_color {
+#pzssl .catalogue_content_color,
+#wjdc .catalogue_content_color {
   background-color: #F2F2FF;
   color: #5F5FFF;
 }

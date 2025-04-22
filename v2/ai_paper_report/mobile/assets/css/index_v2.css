@@ -117,6 +117,9 @@ body {
   width: 100%;
   margin-bottom: 0.8rem;
 }
+.form .card.genIT {
+  margin-bottom: 0;
+}
 .form .proposal-check {
   position: relative;
   top: 0px;
@@ -469,14 +472,17 @@ input[type="checkbox"] {
 .genImg,
 .genTab,
 .genFormula,
-.genCode {
+.genCode,
+.questionnaire {
   margin-right: 1.6rem;
+  margin-bottom: 1.2rem;
   line-height: normal;
 }
 .genImg input,
 .genTab input,
 .genFormula input,
-.genCode input {
+.genCode input,
+.questionnaire input {
   vertical-align: text-top;
 }
 .contenteditable_s {
@@ -683,3 +689,4 @@ input[type=checkbox] {
 .uploadKTBG_pop .upk_btn.upking {
   background: #69A8FF;
 }
+/*# sourceMappingURL=index_v2.css.map */
