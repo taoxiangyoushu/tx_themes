@@ -221,15 +221,29 @@ function changeType(this_ , this_val) {
         $('.genCode').show()
         $('.Sample_Chart').show()
         $('.Sample_Chart1').hide()
+        var questionnaire =  $('.questionnaire').find('span').text()
+        var genCode =  $('.genCode').find('span').text()
         if(this_short_name =='kclw'){
             $('.genCode').hide()
             $('.Sample_Chart1').show()
             $('.Sample_Chart').hide()
             $('.questionnaire').hide()
             $('.addParameters').addClass('kclw_box')
+            if($(".gen_questionnaire").is(':checked')){
+                $(".parameter").val($(".parameter").val().replace(questionnaire + '；',''))
+            }
+            if($('.gen_code').is(':checked')){
+                $(".parameter").val($(".parameter").val().replace(genCode + '；',''))
+            }
         }else {
             $('.addParameters').removeClass('kclw_box')
             $('.questionnaire').show()
+            if($(".gen_questionnaire").is(':checked')&&!$(".parameter").val().includes(questionnaire)){
+                $(".parameter").val( $(".parameter").val() + questionnaire + '；' )
+            }
+            if($('.gen_code').is(':checked')&&!$(".parameter").val().includes(genCode)){
+                $(".parameter").val( $(".parameter").val() + genCode + '；' )
+            }
         }
     }
     if(this_short_name == 'kclw'){    // 课程论文

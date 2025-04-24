@@ -9,8 +9,8 @@
     <meta name="keywords" content="" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0055">
-    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0055">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0056">
+    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0056">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -238,9 +238,9 @@
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=ts1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0055"></script>
+<script src="../pc/assets/js/common.js?v=p24.0056"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0055"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0056"></script>
 <script>
     function startQuerying(){
         if(getQueryVariable('oid')) {
@@ -325,7 +325,7 @@
                         text += "<th class=\"titles\" title=\""+ SystemName +"\">"+ SystemName +"</th>";
                         var status = resData.order_status_human
                         var styleClass = resData.order_status==60? 'complete': [resData.order_status==61? 'failure':'not']
-                        var copy_percent = resData.copy_percent?resData.copy_percent+'%':"--"
+                        var copy_percent = resData.copy_percent||resData.copy_percent==0?resData.copy_percent+'%':"--"
                         text += "<th class=\"titles\">"+ copy_percent +"</th>";
                         text += "<th>"+ resData.created +"</th>";
                         text += "<th class=\"titles "+styleClass+"\">";

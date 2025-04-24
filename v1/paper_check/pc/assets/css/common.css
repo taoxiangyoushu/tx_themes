@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
 }
 .clearfix:before {
   content: '';
@@ -281,4 +282,3 @@ p {
 .foot a.beian {
   margin-left: 20px;
 }
-/*# sourceMappingURL=common.css.map */

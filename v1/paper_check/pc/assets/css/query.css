@@ -365,7 +365,7 @@ html body .query_page {
   border-radius: 0 4px 4px 0;
   color: #fff;
   text-align: center;
-  line-height: 40px;
+  line-height: 42px;
   font-size: 16px;
   float: left;
   cursor: pointer;
@@ -819,3 +819,4 @@ a {
   line-height: 1.1;
   margin-top: 8px;
 }
+/*# sourceMappingURL=query.css.map */
