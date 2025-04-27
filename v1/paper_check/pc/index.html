@@ -334,13 +334,14 @@
     });
 
     // 封装url参数获取
-    var Weight_reduction=''
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i=0;i<vars.length;i++) {
-        var pair = vars[i].split("=");
-        Weight_reduction=decodeURI(pair[1])
-    }
+    var Weight_reduction= getQueryVariable('sw')
+    // var Weight_reduction=''
+    // var query = window.location.search.substring(1);
+    // var vars = query.split("&");
+    // for (var i=0;i<vars.length;i++) {
+    //     var pair = vars[i].split("=");
+    //     Weight_reduction=decodeURI(pair[1])
+    // }
     // 维普格式检测大学生版  模板获取
     var cqvip_getFormatTemplate = []
     function getFormaTemplate() {
