@@ -219,6 +219,16 @@
 .ProfessionalEdition.payApp .getBack > a:hover {
   color: #7579db;
 }
+.ProfessionalEdition.payApp .main .titlesRight .amount span .originalprice,
+.ProfessionalEdition.payApp .main .titlesRight .amount b .originalprice,
+.ProfessionalEdition.payApp .getBack > a:hover .originalprice {
+  color: #999999;
+}
+.ProfessionalEdition.payApp .main .titlesRight .amount span .Total_discounts,
+.ProfessionalEdition.payApp .main .titlesRight .amount b .Total_discounts,
+.ProfessionalEdition.payApp .getBack > a:hover .Total_discounts {
+  color: #DB7D25;
+}
 .ProfessionalEdition.payApp .clearfix2 .payType .select {
   background: url('../img/select2.png') no-repeat;
 }

@@ -226,7 +226,7 @@ window.onload = function (){
 				if($('.payApp').length) {
 					payWay(data.project[0].goods_info , data.project[0].pay_way )
 				}
-				
+
 				if(data.domain_config && data.domain_config.distribution_status) {
 					if(data.project[0].act_list.length > 0) {
 						if($('.index_app').length) {
@@ -291,7 +291,9 @@ function typefun(goods_info) {
 			selling_price: goods_info[i].selling_price,
 			unit_type: goods_info[i].unit_type,
 			unit_count: goods_info[i].unit_count,
-			name: goods_info[i].name
+			name: goods_info[i].name,
+            calc_price_type: goods_info[i].calc_price_type,
+            selling_price_list: goods_info[i].selling_price_list,
 		}
 		short_name_data[goods_info[i].short_name] = {
 			goods_id: goods_info[i].goods_id
@@ -380,10 +382,10 @@ $('#myLink').click(function(e){
 	e.preventDefault(); // 阻止默认行为
 	var url = $(this).data('url'); // 获取data-url属性值
 	var param = $(this).data('param'); // 获取data-param属性值
-	
+
 	// 构建带参数的URL
 	var fullUrl = url + '?type=' + encodeURIComponent(param);
-	
+
 	// 在新窗口中打开URL
 	window.open(fullUrl, '_blank');
 });

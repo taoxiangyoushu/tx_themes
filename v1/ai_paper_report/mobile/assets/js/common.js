@@ -291,7 +291,9 @@ function typefun(goods_info) {
 			selling_price: goods_info[i].selling_price,
 			unit_type: goods_info[i].unit_type,
 			unit_count: goods_info[i].unit_count,
-			name: goods_info[i].name
+			name: goods_info[i].name,
+            calc_price_type: goods_info[i].calc_price_type,
+            selling_price_list: goods_info[i].selling_price_list,
 		}
 		short_name_data[goods_info[i].short_name] = {
 			goods_id: goods_info[i].goods_id

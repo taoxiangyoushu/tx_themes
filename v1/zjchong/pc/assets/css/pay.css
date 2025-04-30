@@ -771,6 +771,20 @@
   color: #D81E06;
   display: none;
 }
+.order-cont .titlesRight .amount .tiered_pricing {
+  display: none;
+}
+.order-cont .titlesRight .amount .originalprice {
+  font-size: 12px;
+  color: #999999;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+.order-cont .titlesRight .amount .Total_discounts {
+  font-weight: 400;
+  font-size: 12px;
+  color: #DB7D25;
+}
 .order-cont .titlesRight .payTypes {
   height: 30px;
   line-height: 30px;
@@ -781,10 +795,16 @@
   width: 20px;
   height: 20px;
 }
-.order-cont .titlesRight.payTypeClass .payTypes {
+.order-cont .titlesRight .payTypes .UnitPrice {
+  display: none;
+}
+.order-cont .titlesRight .payTypes .Step_price {
+  display: none;
+}
+.order-cont.payTypeClass .payTypes {
   margin-top: 6px;
 }
-.order-cont .titlesRight.payTypeClass .amount {
+.order-cont.payTypeClass .amount {
   margin: 14px 0;
 }
 .order-cont .auxiliary {
@@ -1096,4 +1116,3 @@
     width: 46%;
   }
 }
-/*# sourceMappingURL=pay.css.map */

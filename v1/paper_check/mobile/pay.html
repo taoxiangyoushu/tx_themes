@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
     <link rel="stylesheet" href="../mobile/assets/css/common.css">
-    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0027">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
@@ -78,10 +78,12 @@
                 <div class="infoRight" id="dateTime">正在获取</div>
                 <div class="infoLeft">订单编号</div>
                 <div class="infoRight" id="orderIdText">正在获取</div>
-                <div class="infoLeft noPayWay">单价</div>
-                <div class="infoRight noPayWay" id="priceTetx2"></div>
+<!--                <div class="infoLeft noPayWay">单价</div>-->
+<!--                <div class="infoRight noPayWay" id="priceTetx2"></div>-->
                 <div class="infoLeft noPayWay">订单金额</div>
                 <div class="infoRight noPayWay amountTextBox2">￥<span id="amountText2"></span></div>
+                <div class="infoLeft ">单价</div>
+                <div class="infoRight" id="priceTetx2">正在获取</div>
             </div>
         </div>
         <div class="info couponBox">
@@ -152,10 +154,14 @@
         <div class="payBox">
             <div class="amount">
                 <div class="total">合计 <span class="symbol">￥<span id="amountText" class="partyamount"></span><span id="amountText1" class="partyamount1"></span></span>
-                    <span class="Discountamount">(优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>)</span>
+<!--                    <span class="Discountamount">(优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>)</span>-->
                 </div>
-                <div>计费方式：<span id="priceTetx"></span></div>
-                <div class="">注意：<span class="unitPrice-tip"></span></div>
+<!--                <div>计费方式：<span id="priceTetx"></span></div>-->
+<!--                <div class="">注意：<span class="unitPrice-tip"></span></div>-->
+                <div class="discount">
+                    <span class="originalPrice">原价<span id="original_price"></span></span>
+                    <span class="discountAmount">共优惠<span id="discount_amount"></span></span>
+                </div>
             </div>
             <div class="payBotton">
                 立即支付
@@ -275,10 +281,10 @@
 <script src="../mobile/assets/js/bootstrap.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
 <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0027"></script>
 <script src="../mobile/assets/js/message.js"></script>
-<script src="../mobile/assets/js/ap.js?v=m24.0026"></script>
-<script src="../mobile/assets/js/orderInfo.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/ap.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/orderInfo.js?v=m24.0027"></script>
 <script>
     var orderInfoData = {}
     // 微信浏览器并且有微信支付
@@ -308,6 +314,8 @@
     var noPayWay = false
     var openid = ''
     var is_wxApplet = false
+    var price_index = ''
+    var price_stairs = ''
 
     function isWx() {
         var ua = navigator.userAgent.toLowerCase();
@@ -335,7 +343,7 @@
         }
     });
 
-    Readjust()
+    // Readjust()
     // 控制支付方式选中
     function typeSelect(type, use) {
         if(type == 'wxPublicNum' || type == 'wxWap') {
@@ -537,6 +545,7 @@
 
     function payWay(goods_info , pay_way) {
         refreshPageWx()
+        Readjust()
         for(var i=0;i<goods_info.length;i++){
             if(getQueryVariable('goodsid') == goods_info[i].goods_id) {
                 // $("#priceTetx").text(typeData[i].selling_price + '元/' +typeData[i].unit_count + typeData[i].unit_type)
@@ -556,6 +565,27 @@
                     explain = '不满' + unit + goods_info[i].unit_type + '按' + unit + goods_info[i].unit_type + '计算'
                 }
                 $("#priceTetx").text( goods_info[i].selling_price + '元/' + unit + goods_info[i].unit_type)
+                if(goods_info[i].calc_price_type == '2') {
+                    for (var j=0; j<goods_info[i].selling_price_list.length;j++){
+                        if(Number(getQueryVariable('wordNum')) >= Number(goods_info[i].selling_price_list[goods_info[i].selling_price_list.length-1].word)){
+                            price_index = goods_info[i].selling_price_list.length-1
+                            price_stairs = goods_info[i].selling_price_list[goods_info[i].selling_price_list.length-1].price
+                            break
+                        }
+                        if(Number(getQueryVariable('wordNum')) <= Number(goods_info[i].selling_price_list[0].word)){
+                            price_index = 0
+                            price_stairs = goods_info[i].selling_price_list[0].price
+                            break
+                        }
+                        if(Number(getQueryVariable('wordNum')) > Number(goods_info[i].selling_price_list[j].word) && Number(getQueryVariable('wordNum')) <= Number(goods_info[i].selling_price_list[j+1].word) ){
+                            price_index = j+1
+                            price_stairs = goods_info[i].selling_price_list[j+1].price
+                        }
+                    }
+                    $("#priceTetx2").text(goods_info[i].selling_price_list[price_index].price +'元/篇')
+                }else{
+                    $("#priceTetx2").text( goods_info[i].selling_price + '元/' + unit + goods_info[i].unit_type)
+                }
                 $(".unitPrice-tip").text(explain)
             }
         }
@@ -1090,6 +1120,13 @@
                     $('#dateTime').text(res.data.created)
                     $('#orderIdText').text(res.data.order_sn)
                     $(".oid_pop").text(res.data.order_sn)
+                    $('#original_price').text(res.data.old_amount)
+                    if(Number(res.data.old_amount) - Number(price_stairs) > 0 && price_stairs){
+                        $('#discount_amount').text((Number(res.data.old_amount) - Number(price_stairs) + Number(res.data.coupon_money)).toFixed(2) + '元')
+                        $(".amount .discount").show()
+                    }else{
+                        $(".amount .discount").hide()
+                    }
                     payStatus(order_sn)
                     if(Number(res.data.order_amount) == 0) {
                         $(".mask").show();
@@ -1166,6 +1203,13 @@
                     $('#orderIdText').text(res.data.order_sn)
                     $(".oid_pop").text(res.data.order_sn)
                     $('#amountText1').text(res.data.order_money)
+                    $('#original_price').text(res.data.old_amount)
+                    if(Number(res.data.old_amount) - Number(price_stairs) > 0 && price_stairs ){
+                        $('#discount_amount').text((Number(res.data.old_amount) - Number(price_stairs) + Number(res.data.coupon_money)).toFixed(2) + '元')
+                        $(".amount .discount").show()
+                    }else{
+                        $(".amount .discount").hide()
+                    }
                     payStatus(order_sn)
                 }else{
                     $(".errTip_p").text(res.codeMsg)

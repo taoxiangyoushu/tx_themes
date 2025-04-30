@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI大师写作 - 确认订单</title>
     <link rel="shortcut icon" href="../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css?v=p24.0123">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0123">
-    <link rel="stylesheet" href="../pc/assets/css/editor.css?v=p24.0123">
-    <link rel="stylesheet" href="../pc/assets/css/ProfessionalEdition.css?v=p24.0123">
-    <link rel="stylesheet" href="../pc/assets/css/OutlineEditingKTBG.css?v=p24.0123">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0123">
-    <link rel="stylesheet" href="../pc/assets/css/leftCss.css?v=p24.0123">
+    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css?v=p24.0126">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0126">
+    <link rel="stylesheet" href="../pc/assets/css/editor.css?v=p24.0126">
+    <link rel="stylesheet" href="../pc/assets/css/ProfessionalEdition.css?v=p24.0126">
+    <link rel="stylesheet" href="../pc/assets/css/OutlineEditingKTBG.css?v=p24.0126">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0126">
+    <link rel="stylesheet" href="../pc/assets/css/leftCss.css?v=p24.0126">
     <!-- v2版本独立css -->
-    <link rel="stylesheet" href="../pc/assets/css/commonv2.css?v=p24.0123">
-    <link rel="stylesheet" href="../pc/assets/css/pay_v2.css?v=p24.0123">
+    <link rel="stylesheet" href="../pc/assets/css/commonv2.css?v=p24.0126">
+    <link rel="stylesheet" href="../pc/assets/css/pay_v2.css?v=p24.0126">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz';
@@ -281,10 +281,18 @@
                                 <p class="tips">提示：扫码支付,请勿刷新页面</p>
                             </div>
                             <div class="pull-left titlesRight payTypeClass">
-                                <div class="payTypes">单价: <span class="UnitPrice">暂无</span> </div>
+                                <div class="payTypes">单价:
+                                    <span class="UnitPrice">暂无</span>
+                                    <span class="Step_price">暂无</span>
+
+                                </div>
 
                                 <div class="amount">应付金额 <span><b>￥</b><span class="orderAmount">00.00</span></span>
                                     <span class="Discountamount">（优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>）</span>
+                                    <span class="tiered_pricing">
+                                        <span class="originalprice">原价：<span class="originalprice" id="original_price"></span></span>
+                                        <span class="Total_discounts">共优惠：<span class="Total_discounts" id="Discount_amount1">00.00</span></span>
+                                    </span>
                                 </div>
 
                                 <p class="auxiliary">剩余支付时间 <span class="time"><span class="payTime">120</span>秒</span>，<span class="next">已支付下一步</span></p>
@@ -455,18 +463,18 @@
 </div> -->
 
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
-<script src="../pc/assets/js/jquery.min.js?v=p24.0123"></script>
+<script src="../pc/assets/js/jquery.min.js?v=p24.0126"></script>
 <script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.2"></script>
-<script src="../pc/assets/js/bootstrap.min.js?v=p24.0123"></script>
-<script src="../pc/assets/js/qrcode.min.js?v=p24.0123"></script>
+<script src="../pc/assets/js/bootstrap.min.js?v=p24.0126"></script>
+<script src="../pc/assets/js/qrcode.min.js?v=p24.0126"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0123"></script>
-<script src="../pc/assets/js/editor.js?v=p24.0123"></script>
-<script src="../pc/assets/js/ProfessionalEdition.js?v=p24.0123"></script>
-<script src="../pc/assets/js/outlineEditingKTBG.js?v=p24.0123"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0123"></script>
-<script src="../pc/assets/js/pay.js?v=p24.0123"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0123"></script>
+<script src="../pc/assets/js/common.js?v=p24.0126"></script>
+<script src="../pc/assets/js/editor.js?v=p24.0126"></script>
+<script src="../pc/assets/js/ProfessionalEdition.js?v=p24.0126"></script>
+<script src="../pc/assets/js/outlineEditingKTBG.js?v=p24.0126"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0126"></script>
+<script src="../pc/assets/js/pay.js?v=p24.0126"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0126"></script>
 <script>
     function dropDownType(e) {
     var selectObjV2 = $(".spType .ul1");

@@ -1583,7 +1583,7 @@
 .instructions .btn-demo-a,
 .instructions .btn-demo-b {
   height: 4.2rem;
-  line-height: 4.2rem;
+  line-height: 4rem;
   border-radius: 0.8rem;
   text-align: center;
   color: #fff;
@@ -1682,4 +1682,16 @@
 }
 .type-pop .example_item .exam-img img {
   max-width: 100%;
+}
+.price_aigc_t {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.price_jc_t {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

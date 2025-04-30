@@ -47,9 +47,9 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/select2.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0026">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0026">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0026">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0027">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
@@ -339,7 +339,7 @@
 <script src="../mobile/assets/js/select2.min.js"></script>
 <script src="../mobile/assets/js/typed.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0026"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0027"></script>
 <script>
 
     // 封装url参数获取
@@ -510,11 +510,20 @@
         var is_first = true
         for(var i=0; i<$(".system-item").length; i++){
             if(typeData.hasOwnProperty( $($(".system-item")[i]).data('name') )){
-
+                var Price_Check=''
+                var unitCount=''
+                if(typeData[$($(".system-item")[i]).data('name')][0].calc_price_type==2){
+                    Price_Check=Number(typeData[$($(".system-item")[i]).data('name')][0].selling_price_list[0].price).toFixed(2)
+                    unitCount=typeData[$($(".system-item")[i]).data('name')][0].selling_price_list[0].word
+                }
+                else{
+                    Price_Check=typeData[$($(".system-item")[i]).data('name')][0].selling_price
+                    unitCount=typeData[$($(".system-item")[i]).data('name')][0].unit_count
+                }
                 $($(".system-item")[i]).show()
                 $($(".system-item")[i]).css('display','inline-block')
                 // 价格
-                $($(".system-item")[i]).find('.system-price').text(typeData[$($(".system-item")[i]).data('name')][0].selling_price + '元/' + typeData[$($(".system-item")[i]).data('name')][0].unit_count + typeData[$($(".system-item")[i]).data('name')][0].unit_type)
+                $($(".system-item")[i]).find('.system-price').text(Price_Check + '元/' + unitCount + typeData[$($(".system-item")[i]).data('name')][0].unit_type)
             }else{
                 if($($(".system-item")[i]).hasClass('system-contrast')){
                     $($(".system-item")[i]).show()
@@ -606,75 +615,125 @@
             selectObj.find("option:not(:first)").remove();
             if($(this).attr('data-name') == 'turnitin') {
                 for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
+                    var Price_Check=''
+                    var unitCount=''
+                    if(typeData[$(this).attr('data-name')][i].calc_price_type==2){
+                        Price_Check=Number(typeData[$(this).attr('data-name')][i].selling_price_list[0].price).toFixed(2)
+                        unitCount=typeData[$(this).attr('data-name')][i].selling_price_list[0].word
+                    }
+                    else{
+                        Price_Check=typeData[$(this).attr('data-name')][i].selling_price
+                        unitCount=typeData[$(this).attr('data-name')][i].unit_count
+                    }
                     if(typeData[$(this).attr('data-name')][i].short_name == "turnitin") {
-                        selectObj.append(new Option('国际版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）',typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('国际版（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）',typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "turnitinuk") {
-                        selectObj.append(new Option('UK版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('UK版（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "turnitinai") {
-                        selectObj.append(new Option('国际版+AI（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('国际版+AI（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                 }
             }
             if($(this).attr('data-name') == 'wanfang') {
                 for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
+                    var Price_Check=''
+                    var unitCount=''
+                    if(typeData[$(this).attr('data-name')][i].calc_price_type==2){
+                        Price_Check=Number(typeData[$(this).attr('data-name')][i].selling_price_list[0].price).toFixed(2)
+                        unitCount=typeData[$(this).attr('data-name')][i].selling_price_list[0].word
+                    }
+                    else{
+                        Price_Check=typeData[$(this).attr('data-name')][i].selling_price
+                        unitCount=typeData[$(this).attr('data-name')][i].unit_count
+                    }
                     if(typeData[$(this).attr('data-name')][i].short_name == "wanfangbd") {
-                        selectObj.append(new Option('本科版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）',typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('本科版（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）',typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "wanfangmd") {
-                        selectObj.append(new Option('硕博版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('硕博版（'+Price_Check+ '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "wanfangpu") {
-                        selectObj.append(new Option('职称版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('职称版（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "wanfanggl") {
-                        selectObj.append(new Option('通用版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('通用版（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "wanfangaigc") {
-                        selectObj.append(new Option('AIGC检测（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('AIGC检测（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                 }
             }
             if($(this).attr('data-name') == 'weipu') {
                 for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
+                    var Price_Check=''
+                    var unitCount=''
+                    if(typeData[$(this).attr('data-name')][i].calc_price_type==2){
+                        Price_Check=Number(typeData[$(this).attr('data-name')][i].selling_price_list[0].price).toFixed(2)
+                        unitCount=typeData[$(this).attr('data-name')][i].selling_price_list[0].word
+                    }
+                    else{
+                        Price_Check=typeData[$(this).attr('data-name')][i].selling_price
+                        unitCount=typeData[$(this).attr('data-name')][i].unit_count
+                    }
                     if(typeData[$(this).attr('data-name')][i].short_name == "cqvip") {
-                        selectObj.append(new Option('本科版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）',typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('本科版（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）',typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "cqvipmd") {
-                        selectObj.append(new Option('硕博版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('硕博版（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "cqvipzc") {
-                        selectObj.append(new Option('职称版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('职称版（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "cqvipbj") {
-                        selectObj.append(new Option('编辑部版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('编辑部版（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "cqvipaigc") {
-                        selectObj.append(new Option('AIGC检测（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('AIGC检测（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "cqvipgs") {
-                        selectObj.append(new Option('格式检测大学生版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('格式检测大学生版（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                 }
             }
             if($(this).attr('data-name') == 'yuanwenjian') {
                 for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
+                    var Price_Check=''
+                    var unitCount=''
+                    if(typeData[$(this).attr('data-name')][i].calc_price_type==2){
+                        Price_Check=Number(typeData[$(this).attr('data-name')][i].selling_price_list[0].price).toFixed(2)
+                        unitCount=typeData[$(this).attr('data-name')][i].selling_price_list[0].word
+                    }
+                    else{
+                        Price_Check=typeData[$(this).attr('data-name')][i].selling_price
+                        unitCount=typeData[$(this).attr('data-name')][i].unit_count
+                    }
                     if(typeData[$(this).attr('data-name')][i].short_name == "ywjbd") {
-                        selectObj.append(new Option('本科版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）',typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('本科版（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）',typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "ywjmd") {
-                        selectObj.append(new Option('硕博版（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('硕博版（'+ Price_Check+ '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                 }
             }
             if($(this).attr('data-name') == 'daya') {
                 for(var i=0; i<typeData[$(this).attr('data-name')].length; i++){
+                    var Price_Check=''
+                    var unitCount=''
+                    if(typeData[$(this).attr('data-name')][i].calc_price_type==2){
+                        Price_Check=Number(typeData[$(this).attr('data-name')][i].selling_price_list[0].price).toFixed(2)
+                        unitCount=typeData[$(this).attr('data-name')][i].selling_price_list[0].word
+                    }
+                    else{
+                        Price_Check=typeData[$(this).attr('data-name')][i].selling_price
+                        unitCount=typeData[$(this).attr('data-name')][i].unit_count
+                    }
                     if(typeData[$(this).attr('data-name')][i].short_name == "daya") {
-                        selectObj.append(new Option('相似度检测（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）',typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('相似度检测（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）',typeData[$(this).attr('data-name')][i].short_name));
                     }
                     if(typeData[$(this).attr('data-name')][i].short_name == "dyai") {
-                        selectObj.append(new Option('AIGC检测（'+ typeData[$(this).attr('data-name')][i].selling_price + '元/' + typeData[$(this).attr('data-name')][i].unit_count + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
+                        selectObj.append(new Option('AIGC检测（'+ Price_Check + '元/' + unitCount + typeData[$(this).attr('data-name')][i].unit_type  +'）', typeData[$(this).attr('data-name')][i].short_name));
                     }
                 }
             }
@@ -704,14 +763,22 @@
             // $(".unit-price").text(typeData[$(this).attr('data-name')][0].selling_price +'元/'+typeData[$(this).attr('data-name')][0].unit_count+typeData[$(this).attr('data-name')][0].unit_type + '    ' +  explain)
             $(".unit-price").text(explain)
             //限制条件
+            if(typeData[$(this).attr('data-name')][0].calc_price_type==2){
+                var lastindex=typeData[$(this).attr('data-name')][0].selling_price_list.length-1
+                $("#content").attr('maxlength', typeData[$(this).attr('data-name')][0].selling_price_list[lastindex].word)
+                $(".tips-block .p2").text('字数范围在 '+ typeData[$(this).attr('data-name')][0].data.min_words +'字~'+ typeData[$(this).attr('data-name')][0].selling_price_list[lastindex].word +'字内')
+                maxWords = typeData[$(this).attr('data-name')][0].selling_price_list[lastindex].word
+            }
+            else{
+                $("#content").attr('maxlength', typeData[$(this).attr('data-name')][0].data.max_words)
+                $(".tips-block .p2").text('字数范围在 '+ typeData[$(this).attr('data-name')][0].data.min_words +'字~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字内')
+                maxWords = typeData[$(this).attr('data-name')][0].data.max_words
+            }
             $("#title").attr('maxlength', typeData[$(this).attr('data-name')][0].data.title_maxlength)
             $("#title").attr('placeholder','请填写您的论文题目，'+ typeData[$(this).attr('data-name')][0].data.title_maxlength +'字内')
             $("#author").attr('maxlength', typeData[$(this).attr('data-name')][0].data.author_maxlength)
             $("#author").attr('placeholder','请填写您的论文作者'+ typeData[$(this).attr('data-name')][0].data.author_maxlength +'字内')
-            $("#content").attr('maxlength', typeData[$(this).attr('data-name')][0].data.max_words)
-            $(".tips-block .p2").text('字数范围在 '+ typeData[$(this).attr('data-name')][0].data.min_words +'字~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字内')
             minWords =  typeData[$(this).attr('data-name')][0].data.min_words
-            maxWords = typeData[$(this).attr('data-name')][0].data.max_words
             // 提交方式
             if( typeData[$(this).attr('data-name')][0].data.support_submit_types.content && !typeData[$(this).attr('data-name')][0].data.support_submit_types.file) {
                 $(".contentBox").addClass('onlyContent')
@@ -759,6 +826,16 @@
             if(typeData[$(".system-item.active").attr('data-name')][i].short_name == $(this).val()){
                 var explain = ''
                 var unit = ''
+                var Price_Check=''
+                var unitCount=''
+                if(typeData[$(".system-item.active").attr('data-name')][i].calc_price_type==2){
+                    Price_Check=Number(typeData[$(".system-item.active").attr('data-name')][i].selling_price_list[0].price).toFixed(2)
+                    unitCount=typeData[$(".system-item.active").attr('data-name')][i].selling_price_list[0].word
+                }
+                else{
+                    Price_Check=typeData[$(".system-item.active").attr('data-name')][i].selling_price
+                    unitCount=typeData[$(".system-item.active").attr('data-name')][i].unit_count
+                }
                 if(typeData[$(".system-item.active").attr('data-name')][i].unit_type == '篇'){
                     explain = typeData[$(".system-item.active").attr('data-name')][i].selling_price +'元/篇'
                 }else{
@@ -772,16 +849,26 @@
                 }
                 // $(".unit-price").text(typeData[$(".system-item.active").attr('data-name')][i].selling_price +'元/'+typeData[$(".system-item.active").attr('data-name')][i].unit_count+typeData[$(".system-item.active").attr('data-name')][i].unit_type + '    ' +  explain)
                 $(".unit-price").text(explain)
-                $(".system-item.active").find('.system-price').text( typeData[$(".system-item.active").attr('data-name')][i].selling_price +'元/'+typeData[$(".system-item.active").attr('data-name')][i].unit_count+typeData[$(".system-item.active").attr('data-name')][i].unit_type )
+                $(".system-item.active").find('.system-price').text( Price_Check +'元/'+unitCount+typeData[$(".system-item.active").attr('data-name')][i].unit_type )
                 //限制条件
                 $("#title").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].data.title_maxlength)
                 $("#title").attr('placeholder','请填写您的论文题目，'+ typeData[$(".system-item.active").attr('data-name')][i].data.title_maxlength +'字内')
                 $("#author").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].data.author_maxlength)
                 $("#author").attr('placeholder','请填写您的论文作者'+ typeData[$(".system-item.active").attr('data-name')][i].data.author_maxlength +'字内')
-                $("#content").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].data.max_words)
-                $(".tips-block .p2").text('字数范围在 '+ typeData[$(".system-item.active").attr('data-name')][i].data.min_words +'字~'+ typeData[$(".system-item.active").attr('data-name')][i].data.max_words +'字内')
+                if(typeData[$(".system-item.active").attr('data-name')][i].calc_price_type==2){
+                    var lastindex=typeData[$(".system-item.active").attr('data-name')][i].selling_price_list.length-1
+                    $("#content").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].selling_price_list[lastindex].word)
+                    $(".tips-block .p2").text('字数范围在 '+ typeData[$(".system-item.active").attr('data-name')][i].data.min_words +'字~'+ typeData[$(".system-item.active").attr('data-name')][i].selling_price_list[lastindex].word +'字内')
+                    maxWords = typeData[$(".system-item.active").attr('data-name')][i].selling_price_list[lastindex].word
+
+                }
+                else{
+                    $("#content").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].data.max_words)
+                    $(".tips-block .p2").text('字数范围在 '+ typeData[$(".system-item.active").attr('data-name')][i].data.min_words +'字~'+ typeData[$(".system-item.active").attr('data-name')][i].data.max_words +'字内')
+                    maxWords = typeData[$(".system-item.active").attr('data-name')][i].data.max_words
+
+                }
                 minWords =  typeData[$(".system-item.active").attr('data-name')][i].data.min_words
-                maxWords = typeData[$(".system-item.active").attr('data-name')][i].data.max_words
                 // 提交方式
                 if( typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.content && !typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file) {
                     $(".contentBox").addClass('onlyContent')
@@ -1121,10 +1208,10 @@
                         }else{
                             pathName = pathName + 'pay.html'
                         }
-                        location.href = './pay.html?commitId=' + data.data.order_sn + '&goodsid='+ formData.goods_id + '&getOpenId=true';
+                        location.href = './pay.html?commitId=' + data.data.order_sn + '&goodsid='+ formData.goods_id + '&wordNum=' + data.data.word_num + '&getOpenId=true';
                         return
                     }
-                    location.href = './pay.html?commitId=' + data.data.order_sn + '&goodsid='+ formData.goods_id;
+                    location.href = './pay.html?commitId=' + data.data.order_sn + '&goodsid='+ formData.goods_id + '&wordNum=' + data.data.word_num;
                 } else {
                     throttling = true
                     toast(data.codeMsg)

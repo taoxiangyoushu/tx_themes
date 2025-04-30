@@ -12,8 +12,8 @@
 	<link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0039">
-	<link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0039">
+	<link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0040">
+	<link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0040">
 	<!-- <link rel="stylesheet" href="../assets/css/styles.css" /> -->
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!--[if lt IE 9]>
@@ -125,8 +125,8 @@
 							<div class="rower content-block">
 								<div class="content-box">
 									<div class="text-box">
-										<textarea id="content-text" autocomplete="off"></textarea>
-										<span class="Paste_Tips">内容字数 200~30万字，提交内容建议去除封面、目录，<span>仅提交中文正文内容</span></span>
+										<textarea id="content-text" autocomplete="off" maxlength="300000"></textarea>
+										<span class="Paste_Tips">内容字数 <span class="WORD_LIMIT"></span>，提交内容建议去除封面、目录，<span>仅提交中文正文内容</span></span>
 									</div>
 									<div class="file-box">
 										<input type="file" id="content-file" accept=".doc,.docx,.txt">
@@ -305,8 +305,8 @@
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../pc/assets/js/bootstrap.min.js"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0039"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0039"></script>
+<script src="../pc/assets/js/common.js?v=p24.0040"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0040"></script>
 <script>
 	$("#title").on('input', function (){
 		$(".titleNumber").text($(this).val().length)
@@ -357,9 +357,27 @@
 		}
 	})
 
+
 	function setPriceInfo(data){
+		for(let k=0;k<typeData.length;k++){
+			if(typeData[k].calc_price_type==2){
+				var lastindex=typeData[k].selling_price_list.length-1
+				$("#content-text").attr('maxlength', typeData[k].selling_price_list[lastindex].word)
+				$(".WORD_LIMIT").text('200~'+typeData[k].selling_price_list[lastindex].word+'字')
+			}
+			else{
+				$("#content-text").attr('maxlength', 300000)
+				$(".WORD_LIMIT").text('200~30万字')
+			}
+		}
 		var unitType = (data.unit_count / 10000) + '万'
-		$(".price-text").text(data.selling_price + '元/' + unitType + data.unit_type)
+		if(data.calc_price_type==2){
+			unitType=(data.selling_price_list[0].word/10000)+'万'
+			$(".price-text").text(data.selling_price_list[0].price + '元/' +unitType+ data.unit_type)
+		}
+		else{
+			$(".price-text").text(data.selling_price + '元/' + unitType + data.unit_type)
+		}
 		if(data.unit_type == '字'){
 			$(".price-tip").text('不满'+ unitType + data.unit_type +'按'+ unitType + data.unit_type +'计算')
 		}

@@ -26,6 +26,8 @@ var isTips = true
 var noPayWay = false
 var openid = ''
 var is_wxApplet = false
+var price_index = ''
+var price_stairs = ''
 
 // 判断是否微信小程序内
 function isWx() {
@@ -47,7 +49,6 @@ function isWx() {
     }
 }
 
-
 isWx().then(type => {
     if (type == "wx") {
     }
@@ -55,9 +56,6 @@ isWx().then(type => {
         is_wxApplet = true
     }
 });
-
-// 微信支付获取openID
-
 
 // 控制支付方式选中
 function typeSelect(type,use) {
@@ -339,13 +337,11 @@ function payWay(goods_info , pay_way) {
             toastNone()
             $('#amountText').text(getQueryVariable('order_amount'))
             $('#amountText2').text(getQueryVariable('order_amount'))
-            $('#amountText1').text(getQueryVariable('order_amount'))
         }
     }else {
         toastNone()
         $('#amountText').text(getQueryVariable('order_amount'))
         $('#amountText2').text(getQueryVariable('order_amount'))
-        $('#amountText1').text(getQueryVariable('order_amount'))
     }
 
     if(!pay_way.alipay && !pay_way.wx && !pay_way.scanCodeRich && !pay_way.taobao&&!pay_way.kLenovoAiMiniPay){
@@ -361,13 +357,34 @@ function payWay(goods_info , pay_way) {
     llqType(pay_way)
 
     if(typeData2){
-        if(typeData2.unit_type == '字') {
-            $('#priceTetx').text(typeData2.selling_price+'元/'+typeData2.unit_count+typeData2.unit_type)
-            $('#priceTetx2').text(typeData2.selling_price+'元/'+typeData2.unit_count+typeData2.unit_type)
+        if(typeData2.calc_price_type == 2) {
+            for (var i=0; i<typeData2.selling_price_list.length;i++){
+                if(Number(getQueryVariable('wordNum')) >= Number(typeData2.selling_price_list[typeData2.selling_price_list.length-1].word)){
+                    price_index = typeData2.selling_price_list.length-1
+                    price_stairs = typeData2.selling_price_list[typeData2.selling_price_list.length-1].price
+                    break
+                }
+                if(Number(getQueryVariable('wordNum')) <= Number(typeData2.selling_price_list[0].word)){
+                    price_index = 0
+                    price_stairs = typeData2.selling_price_list[0].price
+                    break
+                }
+                if(Number(getQueryVariable('wordNum')) > Number(typeData2.selling_price_list[i].word) && Number(getQueryVariable('wordNum')) <= Number(typeData2.selling_price_list[i+1].word) ){
+                    price_index = i+1
+                    price_stairs = typeData2.selling_price_list[i+1].price
+                }
+            }
             $('.NumberWordsBox').show()
-        }else {
-            $('#priceTetx').text(typeData2.selling_price+'元/每'+typeData2.unit_type)
-            $('#priceTetx2').text(typeData2.selling_price+'元/每'+typeData2.unit_type)
+            $('#priceTetx2').text(typeData2.selling_price_list[price_index].price+'元/篇')
+        }else{
+            if(typeData2.unit_type == '字') {
+                $('#priceTetx').text(typeData2.selling_price+'元/'+typeData2.unit_count+typeData2.unit_type)
+                $('#priceTetx2').text(typeData2.selling_price+'元/'+typeData2.unit_count+typeData2.unit_type)
+                $('.NumberWordsBox').show()
+            }else {
+                $('#priceTetx').text(typeData2.selling_price+'元/每'+typeData2.unit_type)
+                $('#priceTetx2').text(typeData2.selling_price+'元/每'+typeData2.unit_type)
+            }
         }
     }
     if(window.localStorage.getItem('CouponUltimate')){
@@ -615,7 +632,7 @@ $(".taobao-payBtn").click(function (){
             order_sn: order_sn,
             goods: goods().toString()
         })
-        
+
         $.ajax({
             type: 'post',
             url: urls + '/api/client/order/variation/order',
@@ -630,6 +647,13 @@ $(".taobao-payBtn").click(function (){
                     order_sn = res.data.order_sn
                     $('#amountText').text(res.data.order_amount)
                     $('#amountText2').text(res.data.order_amount)
+                    $('#original_price').text(res.data.old_amount + '元')
+                    if(Number(res.data.old_amount) - Number(price_stairs) > 0 && price_stairs) {
+                        $('#discount_amount').text((Number(res.data.old_amount) - Number(price_stairs) + Number(res.data.coupon_money)).toFixed(2) + '元')
+                        $(".amount .discount").show()
+                    }else{
+                        $(".amount .discount").hide()
+                    }
                     $('#dateTime').text(res.data.created)
                     $('#orderIdText').text(res.data.order_sn)
                     $('#amountText1').text(res.data.order_money)
@@ -755,6 +779,7 @@ $(".appreciationUL").on('click','.appreciationLI',function(){
     $('#coupon').val('')
     $('.use_now').removeClass('active')
     $('.eliminateCoupon').hide()
+    $(".amount .discount").hide()
 
     var formData = getFormData({
         order_sn: order_sn,
@@ -774,6 +799,13 @@ $(".appreciationUL").on('click','.appreciationLI',function(){
                 order_sn = res.data.order_sn
                 $('#amountText').text(res.data.order_amount)
                 $('#amountText2').text(res.data.order_amount)
+                $('#original_price').text(res.data.old_amount + '元')
+                if(Number(res.data.old_amount) - Number(price_stairs) > 0 && price_stairs) {
+                    $('#discount_amount').text((Number(res.data.old_amount) - Number(price_stairs) + Number(res.data.coupon_money)).toFixed(2) + '元')
+                    $(".amount .discount").show()
+                }else{
+                    $(".amount .discount").hide()
+                }
                 $('#dateTime').text(res.data.created)
                 $('#orderIdText').text(res.data.order_sn)
                 $('#amountText1').text(res.data.order_money)
@@ -870,6 +902,13 @@ function variationOrder() {
                 $('#dateTime').text(res.data.created)
                 $('#orderIdText').text(res.data.order_sn)
                 $('#amountText1').text(res.data.order_money)
+                $('#original_price').text(res.data.old_amount + '元')
+                if(Number(res.data.old_amount) - Number(price_stairs) > 0 && price_stairs) {
+                    $('#discount_amount').text((Number(res.data.old_amount) - Number(price_stairs) + Number(res.data.coupon_money)).toFixed(2) + '元')
+                    $(".amount .discount").show()
+                }else{
+                    $(".amount .discount").hide()
+                }
                 payStatus(order_sn)
             }
             contentTypeIs=true
@@ -1084,6 +1123,13 @@ $(".use_now").on('click',function (){
                 $('#dateTime').text(res.data.created)
                 $('#orderIdText').text(res.data.order_sn)
                 $(".oid_pop").text(res.data.order_sn)
+                $('#original_price').text(res.data.old_amount + '元')
+                if(Number(res.data.old_amount) - Number(price_stairs) > 0 && price_stairs) {
+                    $('#discount_amount').text((Number(res.data.old_amount) - Number(price_stairs) + Number(res.data.coupon_money)).toFixed(2) + '元')
+                    $(".amount .discount").show()
+                }else{
+                    $(".amount .discount").hide()
+                }
                 payStatus(order_sn)
                 if(Number(res.data.order_amount) == 0) {
                     $(".mask").show();
@@ -1150,6 +1196,13 @@ $('.Deduction').on('click',function(){
                 $('#orderIdText').text(res.data.order_sn)
                 $('#amountText1').text(res.data.order_money)
                 $(".oid_pop").text(res.data.order_sn)
+                $('#original_price').text(res.data.old_amount + '元')
+                if(Number(res.data.old_amount) - Number(price_stairs) > 0 && price_stairs) {
+                    $('#discount_amount').text((Number(res.data.old_amount) - Number(price_stairs) + Number(res.data.coupon_money)).toFixed(2) + '元')
+                    $(".amount .discount").show()
+                }else{
+                    $(".amount .discount").hide()
+                }
                 payStatus(order_sn)
             }else{
                 $(".errTip_p").text(res.codeMsg)

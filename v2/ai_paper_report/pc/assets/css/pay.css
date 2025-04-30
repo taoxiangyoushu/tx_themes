@@ -197,11 +197,25 @@ a {
   font-size: 18px;
   margin-left: 16px;
 }
+.main .titlesRight .amount .tiered_pricing {
+  display: none;
+}
 .main .titlesRight .amount .Discountamount {
   font-weight: 400;
   font-size: 12px;
-  color: #D81E06;
+  color: #D81E06 !important;
   display: none;
+}
+.main .titlesRight .amount .originalprice {
+  font-size: 12px;
+  color: #999999;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+.main .titlesRight .amount .Total_discounts {
+  font-weight: 400;
+  font-size: 12px;
+  color: #DB7D25;
 }
 .main .titlesRight .payTypes {
   height: 30px;
@@ -649,7 +663,7 @@ a {
 }
 .appreciationUL .appreciationLI .logo-services span img {
   vertical-align: text-top;
-  margin-top: 3px;
+  margin-top: 0px;
   margin-right: 2px;
 }
 .appreciationUL .appreciationLI .logo-services .s-example {
@@ -719,7 +733,6 @@ a {
 }
 .appreciationUL .appreciationLI.szsjzz .must_read > img {
   vertical-align: text-top;
-  margin-top: 3px;
   margin-right: 2px;
 }
 .appreciationUL .appreciationLI.szsjzz .must_read .szsj_tips_block {
@@ -950,6 +963,12 @@ a {
 }
 .payTypeClass .payTypes {
   margin-top: 10px;
+}
+.payTypeClass .Step_price {
+  display: none;
+}
+.payTypeClass .UnitPrice {
+  display: none;
 }
 .payTypeClass .amount {
   margin: 10px 0;

@@ -671,10 +671,6 @@ function unifiedCreate(form_data, hasKtbg){
             // toastNone()
             if (data.code == 200) {
                 throttling = true
-                if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器
-                    location.href = './pay.html?commitId=' + data.data.order_sn + '&order_amount=' + data.data.order_amount+ '&contentType=' + form_data.get('goods_id') + '&goods=&payId=' + '&zxktbg=' + hasKtbg + '&getOpenId=true';
-                    return
-                }
                 // 降aigc的使用后端返回的文字，其他使用自己输入的文字数
                 var NumberWords = 0
                 var PaperTypeName = ''
@@ -684,7 +680,11 @@ function unifiedCreate(form_data, hasKtbg){
                 }else {
                     NumberWords = form_data.get('data[word_num][value]')
                 }
-                location.href = './pay.html?commitId=' + data.data.order_sn + '&order_amount=' + data.data.order_amount+ '&contentType=' + form_data.get('goods_id') + '&goods=&payId=' + '&zxktbg=' + hasKtbg;
+                if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器
+                    location.href = './pay.html?commitId=' + data.data.order_sn + '&order_amount=' + data.data.order_amount+ '&contentType=' + form_data.get('goods_id') + '&goods=&payId=' + '&zxktbg=' + hasKtbg + '&wordNum=' + NumberWords + '&getOpenId=true';
+                    return
+                }
+                location.href = './pay.html?commitId=' + data.data.order_sn + '&order_amount=' + data.data.order_amount+ '&contentType=' + form_data.get('goods_id') + '&goods=&payId=' + '&zxktbg=' + hasKtbg + '&wordNum=' + NumberWords;
             } else {
                 throttling = true
                 toast(data.codeMsg)

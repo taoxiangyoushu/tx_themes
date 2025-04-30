@@ -45,10 +45,10 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0019">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0019">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0019">
-    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0019">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0020">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0020">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0020">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0020">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'aigc_check'
@@ -105,7 +105,7 @@
                     <div class="Thesis">
                         <div class="InputBox">
                             <textarea name="textareaName" id="textareaText" maxlength="300000" autocomplete="off"></textarea>
-							<span class="Paste_Tips">内容字数 200~30万字，提交内容建议去除封面、目录，<span>仅提交中文正文内容</span></span>
+							<span class="Paste_Tips">内容字数 <span class="WORD_LIMIT"></span>，提交内容建议去除封面、目录，<span>仅提交中文正文内容</span></span>
                         </div>
                         <div class="UploadBox">
                             <input name="docUpload" id="ThesisInput" type="file" single ref="docUpload" file-upload=""
@@ -344,79 +344,94 @@
 <script src="../mobile/assets/js/common.js?v=1.1"></script>
 <script src="../mobile/assets/js/bootstrap-select.js"></script>
 <script src="../mobile/assets/js/bootstrapValidator.min.js"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.0019"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0020"></script>
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/Drag.js"></script>
 <script>
 
+    var Maximum=''
     function setPriceInfo(){
-
+        for(let k=0;k<typeData.length;k++){
+			if(typeData[k].calc_price_type==2){
+				var lastindex=typeData[k].selling_price_list.length-1
+				$("#textareaText").attr('maxlength', typeData[k].selling_price_list[lastindex].word)
+				$(".WORD_LIMIT").text('200~'+typeData[k].selling_price_list[lastindex].word+'字')
+                Maximum=typeData[k].selling_price_list[lastindex].word
+			}
+			else{
+				$("#textareaText").attr('maxlength', 300000)
+				$(".WORD_LIMIT").text('200~30万字')
+                Maximum=300000
+			}
+		}
     }
 
-    $("#ContainerTo").bootstrapValidator({
-        excluded: [':disabled', ':hidden'], //[':disabled', ':hidden', ':not(:visible)'] //设置隐藏组件可验证
-        feedbackIcons: {
-            valid: 'glyphicon',
-            invalid: 'glyphicon',
-            validating: 'glyphicon'
-        },
-        fields: {
-            contenteditable2: {
-                container: "#contenteditable2_err",
-                validators: {
-                    callback: {
-                        message: '论文标题不能为空且最多60个字',
-                        callback: function (value, validator, $field) {
-                            if (value.length >= 1 && value.length <= 60) {
-                                return true
-                            } else {
-                                return false
+    setTimeout(function(){
+        $("#ContainerTo").bootstrapValidator({
+            excluded: [':disabled', ':hidden'], //[':disabled', ':hidden', ':not(:visible)'] //设置隐藏组件可验证
+            feedbackIcons: {
+                valid: 'glyphicon',
+                invalid: 'glyphicon',
+                validating: 'glyphicon'
+            },
+            fields: {
+                contenteditable2: {
+                    container: "#contenteditable2_err",
+                    validators: {
+                        callback: {
+                            message: '论文标题不能为空且最多60个字',
+                            callback: function (value, validator, $field) {
+                                if (value.length >= 1 && value.length <= 60) {
+                                    return true
+                                } else {
+                                    return false
+                                }
                             }
                         }
                     }
-                }
-            },
-            contenteditable3: {
-                container: "#contenteditable3_err",
-                validators: {
-                    callback: {
-                        message: '论文作者不能为空且最多15个字',
-                        callback: function (value, validator, $field) {
-                            if (value.length >= 1 && value.length <= 15) {
-                                return true
-                            } else {
-                                return false
+                },
+                contenteditable3: {
+                    container: "#contenteditable3_err",
+                    validators: {
+                        callback: {
+                            message: '论文作者不能为空且最多15个字',
+                            callback: function (value, validator, $field) {
+                                if (value.length >= 1 && value.length <= 15) {
+                                    return true
+                                } else {
+                                    return false
+                                }
                             }
                         }
                     }
-                }
-            },
-            textareaName: {
-                container: "#jiangAIGCContent_err",
-                validators: {
-                    callback: {
-                        message: '内容长度需要在[200-300000]字之间',
-                        callback: function (value, validator, $field) {
-                            if (value.length >= 200 && value.length <= 300000) {
-                                return true
-                            } else {
-                                return false
+                },
+                textareaName: {
+                    container: "#jiangAIGCContent_err",
+                    validators: {
+                        callback: {
+                            message: '内容长度需要在[200-'+Maximum+']字之间',
+                            callback: function (value, validator, $field) {
+                                if (value.length >= 200 && value.length <= Maximum) {
+                                    return true
+                                } else {
+                                    return false
+                                }
                             }
                         }
                     }
-                }
-            },
-            docUpload: {
-                container: "#jiangAIGCContent_err2",
-                validators: {
-                    notEmpty: {
-                        message: '文档不能为空'
+                },
+                docUpload: {
+                    container: "#jiangAIGCContent_err2",
+                    validators: {
+                        notEmpty: {
+                            message: '文档不能为空'
+                        }
                     }
                 }
-            }
 
-        }
-    });
+            }
+        });
+    },2000)
     let throttling = true;
     if (getQueryVariable('qhclickid')) {
         window.localStorage.setItem('qhclickid', getQueryVariable('qhclickid'))
@@ -525,11 +540,11 @@
                                         } else {
                                             pathName = pathName + 'pay.html'
                                         }
-                                        location.href = './pay.html?order_sn=' + resData.data.order_sn + '&getOpenId=true';
+                                        location.href = './pay.html?order_sn=' + resData.data.order_sn + '&getOpenId=true' + '&wordNum=' + resData.data.word_num;
                                         return
                                     }
 
-                                    location.href = './pay.html?order_sn=' + resData.data.order_sn;
+                                    location.href = './pay.html?order_sn=' + resData.data.order_sn + '&wordNum=' + resData.data.word_num;
                                 } else {
                                     throttling = true
                                     toast(resData.codeMsg)

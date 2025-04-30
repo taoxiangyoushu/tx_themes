@@ -175,6 +175,17 @@ $(".tb-payOrder").click(function (){
                     $("#orderAmount2").text(res.data.order_amount)
                     $('#dateTime').text(res.data.created)
                     $('#orderIdText').text(res.data.order_sn)
+                    if(typeData2.calc_price_type==2){
+                        if(res.data.old_amount-typeData2.selling_price_list[price_index].price>0){
+                            $('.tiered_pricing').show()
+                            $('#Discount_amount1').text(Number((res.data.old_amount )- Number(typeData2.selling_price_list[price_index].price) + Number(res.data.coupon_money)).toFixed(2))
+                        }
+                    }
+                    else{
+                        $('.tiered_pricing').hide()
+                    }
+                    $('#original_price').text(res.data.old_amount)
+
                     order_sn = res.data.order_sn
                     thirdParty(closeMsgTb)
                 }else {
@@ -267,6 +278,10 @@ function placeholder() {
     }
 }
 
+var unit_price=''
+var price_index = ''
+
+
 // 初始化默认支付
 function payWay(pay_way , goods_info, scanCodeRichInfo) {
     // 默认支付方式
@@ -339,7 +354,12 @@ function payWay(pay_way , goods_info, scanCodeRichInfo) {
     }
 
     typeData2 = typeData[getQueryVariable('contentType')] // 拿到当前版本的info参数
-
+    if(typeData2.calc_price_type==2){
+        $('.Step_price').show()
+    }
+    else{
+        $('.UnitPrice').show()
+    }
     /**
      TODO
      判断是否有增值业务,
@@ -395,16 +415,44 @@ function payWay(pay_way , goods_info, scanCodeRichInfo) {
             }
             payOrder(pay_type)
         }
+    }  
+    
+    if(typeData2.calc_price_type == 2) {
+        for (var i=0; i<typeData2.selling_price_list.length;i++){
+            if(Number(getQueryVariable('wordNum')) >= Number(typeData2.selling_price_list[typeData2.selling_price_list.length-1].word)){
+                price_index = typeData2.selling_price_list.length-1
+                break
+            }
+            if(Number(getQueryVariable('wordNum')) <= Number(typeData2.selling_price_list[0].word)){
+                price_index = 0
+                break
+            }
+            if(Number(getQueryVariable('wordNum')) > Number(typeData2.selling_price_list[i].word) && Number(getQueryVariable('wordNum')) <= Number(typeData2.selling_price_list[i+1].word) ){
+                price_index = i+1
+            }
+        }
+        $('.NumberWordsBox').show()
+        $('.Step_price').text(typeData2.selling_price_list[price_index].price+'元/篇')
+    }else{
+        if(typeData2.unit_type == '字') {
+            $('.UnitPrice').text(typeData2.selling_price+'元/'+typeData2.unit_count+typeData2.unit_type+"（不满千字按千字计算）")
+            $('#UnitPrice2').text(typeData2.selling_price+'元/'+typeData2.unit_count+typeData2.unit_type+"（不满千字按千字计算）")
+            $('.NumberWordsBox').show()
+        }else {
+            $('.UnitPrice').text(typeData2.selling_price+'元/每'+typeData2.unit_type)
+            $('#UnitPrice2').text(typeData2.selling_price+'元/每'+typeData2.unit_type)
+        }
     }
 
-    if(typeData2.unit_type == '字') {
-        $('.UnitPrice').text(typeData2.selling_price+'元/'+typeData2.unit_count+typeData2.unit_type+"（不满千字按千字计算）")
-        $('#UnitPrice2').text(typeData2.selling_price+'元/'+typeData2.unit_count+typeData2.unit_type+"（不满千字按千字计算）")
-        $('.NumberWordsBox').show()
-    }else {
-        $('.UnitPrice').text(typeData2.selling_price+'元/每'+typeData2.unit_type)
-        $('#UnitPrice2').text(typeData2.selling_price+'元/每'+typeData2.unit_type)
-    }
+
+    // if(typeData2.unit_type == '字') {
+    //     $('.UnitPrice').text(typeData2.selling_price+'元/'+typeData2.unit_count+typeData2.unit_type+"（不满千字按千字计算）")
+    //     $('#UnitPrice2').text(typeData2.selling_price+'元/'+typeData2.unit_count+typeData2.unit_type+"（不满千字按千字计算）")
+    //     $('.NumberWordsBox').show()
+    // }else {
+    //     $('.UnitPrice').text(typeData2.selling_price+'元/每'+typeData2.unit_type)
+    //     $('#UnitPrice2').text(typeData2.selling_price+'元/每'+typeData2.unit_type)
+    // }
     window.setHeight()
     if(window.localStorage.getItem('CouponUltimate')){
         $('#coupon').val(window.localStorage.getItem('CouponUltimate'))
@@ -413,6 +461,7 @@ function payWay(pay_way , goods_info, scanCodeRichInfo) {
         $(".activityTip").show();
     }
 }
+
 
 function payStatus() { // 轮询
     clearTimeout(Timeout);
@@ -588,6 +637,17 @@ $(".appreciationUL").on('click','.appreciationLI',function(){
                 $("#orderAmount2").text(res.data.order_amount)
                 $('#dateTime').text(res.data.created)
                 $("#Total_amount").text(res.data.order_money)
+                if(typeData2.calc_price_type==2){
+                    if(res.data.old_amount-typeData2.selling_price_list[price_index].price>0){
+                        $('.tiered_pricing').show()
+                        $('#Discount_amount1').text(Number((res.data.old_amount )- Number(typeData2.selling_price_list[price_index].price) + Number(res.data.coupon_money)).toFixed(2))
+                    }
+                }
+                else{
+                    $('.tiered_pricing').hide()
+                }
+                $('#original_price').text(res.data.old_amount)
+
                 if(pay_type!='thirdparty') {
                     payOrder()
                 }else {
@@ -639,8 +699,19 @@ function variationOrder(variationOrderId) {
                 order_sn = res.data.order_sn
                 order_amount = res.data.order_amount
                 $('.orderAmount').text( res.data.order_amount || '0.00')
+                if(typeData2.calc_price_type==2){
+                    if(res.data.old_amount-typeData2.selling_price_list[price_index].price>0){
+                        $('.tiered_pricing').show()
+                        $('#Discount_amount1').text(Number((res.data.old_amount )- Number(typeData2.selling_price_list[price_index].price) + Number(res.data.coupon_money)).toFixed(2))
+                    }
+                }
+                else{
+                    $('.tiered_pricing').hide()
+                }
+                $('#original_price').text(res.data.old_amount)
                 $('#dateTime').text(res.data.created)
                 $('#Total_amount').text(res.data.order_money)
+
             }else {
                 $('.appreciationLI').removeClass('selected')
             }
@@ -739,10 +810,21 @@ $(".use_now").on('click',function() {
             canClick = true
             closeMsg()
             if (res.code == 200) {
+                
                 order_sn = res.data.order_sn
                 $('.orderId_pop').text(res.data.order_sn)
                 $('#orderIdText').text(res.data.order_sn)
                 $('#Discount_amount').text(res.data.coupon_money)
+                if(typeData2.calc_price_type==2){
+                    if(res.data.old_amount-typeData2.selling_price_list[price_index].price>0){
+                        $('.tiered_pricing').show()
+                        $('#Discount_amount1').text(Number((res.data.old_amount )- Number(typeData2.selling_price_list[price_index].price) + Number(res.data.coupon_money)).toFixed(2))
+                    }
+                }
+                else{
+                    $('.tiered_pricing').hide()
+                }
+                $('#original_price').text(res.data.old_amount)
                 $('.Exchange_loading').hide()
                 if(Number(res.data.order_amount) == 0) {
                     $(".coupon_pop").show();
@@ -758,7 +840,9 @@ $(".use_now").on('click',function() {
                         $('.use_now').removeClass('can')
                         $('.errorTip1').show()
                         $('.Exchange_hidden').hide()
-                        $('.Discountamount').show()
+                        if(typeData2.calc_price_type!=2){
+                            $('.Discountamount').show()
+                        }
                         $('#After_discounts').text(res.data.coupon_money)
                     }
                 }
@@ -980,6 +1064,16 @@ function Readjust(){
                 $('.orderAmount').text( res.data.order_amount || '0.00')
                 $("#orderAmount2").text(res.data.order_amount)
                 $('#dateTime').text(res.data.created)
+                if(typeData2.calc_price_type==2){
+                    if(res.data.old_amount-typeData2.selling_price_list[price_index].price>0){
+                        $('.tiered_pricing').show()
+                        $('#Discount_amount1').text((Number(res.data.old_amount) - Number(typeData2.selling_price_list[price_index].price) + Number(res.data.coupon_money)).toFixed(2))
+                    }
+                }
+                else{
+                    $('.tiered_pricing').hide()
+                }
+                $('#original_price').text(res.data.old_amount)
                 payOrder()
                 clearTimeout(Timeout);
             }else {

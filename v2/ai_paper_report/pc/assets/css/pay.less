@@ -201,11 +201,25 @@ a {
                 font-size: 18px;
                 margin-left: 16px;
             }
+            .tiered_pricing{
+                display: none;
+            }
             .Discountamount{
                 font-weight: 400;
                 font-size: 12px;
-                color: #D81E06;
+                color: #D81E06 !important;
                 display: none;
+            }
+            .originalprice{
+                font-size: 12px;
+                color: #999999;
+                font-weight: 400;
+                text-decoration: line-through;
+            }
+            .Total_discounts{
+                font-weight: 400;
+                font-size: 12px;
+                color: #DB7D25;
             }
         }
         .payTypes {
@@ -674,7 +688,7 @@ a {
                 }
                 img{
                     vertical-align: text-top;
-                    margin-top: 3px;
+                    margin-top: 0px;
                     margin-right: 2px;
                 }
             }
@@ -744,7 +758,7 @@ a {
                 vertical-align: top;
                 &>img {
                     vertical-align: text-top;
-                    margin-top: 3px;
+                    //margin-top: -0.5px;
                     margin-right: 2px;
                 }
                 .szsj_tips_block {
@@ -993,6 +1007,12 @@ a {
 .payTypeClass {
     .payTypes {
         margin-top: 10px;
+    }
+    .Step_price{
+        display: none;
+    }
+    .UnitPrice{
+        display: none;
     }
     .amount {
         margin: 10px 0;

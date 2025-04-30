@@ -8,8 +8,8 @@
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/reset.css">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0060">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0060">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0063">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0063">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -142,10 +142,17 @@
                                                 <p class="tips">提示：扫码支付,请勿刷新页面</p>
                                             </div>
                                             <div class="pull-left titlesRight payTypeClass">
-                                                <div class="payTypes">单价: <span class="UnitPrice">暂无</span> </div>
+                                                <div class="payTypes">单价:
+                                                    <span class="UnitPrice">暂无</span>
+                                                    <span class="Step_price">暂无</span>
+                                                </div>
 
                                                 <div class="amount">应付金额 <span><b>￥</b><span class="orderAmount">00.00</span></span>
                                                     <span class="Discountamount">（优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>）</span>
+                                                    <span class="tiered_pricing">
+                                                        <span class="originalprice">原价：<span class="originalprice" id="original_price"></span></span>
+                                                        <span class="Total_discounts">共优惠：<span class="Total_discounts" id="Discount_amount1">00.00</span></span>
+                                                    </span>
                                                 </div>
 
                                                 <p class="auxiliary">剩余支付时间 <span class="time"><span class="payTime">--</span>秒</span>，<span class="next">已支付下一步</span></p>
@@ -566,10 +573,10 @@
 <script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0060"></script>
+<script src="../pc/assets/js/common.js?v=p24.0063"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0060"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0060"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0063"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0063"></script>
 <script>
     var orderInfoData = {}
     var uploadType = 'content'
@@ -609,11 +616,18 @@
 
     var price_lwjc = ''
     var price_aigc = ''
+    // console.log(this.typeData)
     function setPriceTips(){
         for(var i=0; i<typeData.length; i++){
             if( typeData[i].goods_id == getQueryVariable('goodsid') ){
                 var unitCount = ( (typeData[i].unit_count / 1000)==1?'':(typeData[i].unit_count / 1000) )+ '千'
-                $(".price-unit").text(typeData[i].selling_price + '元/' + unitCount + '字')
+                if(typeData[i].calc_price_type==2){
+                    $('.Step_price').show()
+                }
+                else{
+                    $('.UnitPrice').show()
+                    $(".price-unit").text(typeData[i].selling_price + '元/' + unitCount + '字')
+                }
                 $(".UnitPrice").text(typeData[i].selling_price + '元/' + unitCount + '字' + '（不满' + unitCount +'字按' + unitCount + '字计算）')
             }
             if(typeData[i].short_name == 'lwjc'){
@@ -1125,7 +1139,18 @@
                             // $('.use_now').text('已兑换')
                             $('.use_now').removeClass('can')
                             $('.errorTip1').show()
-                            $('.Discountamount').show()
+                            for(let k=0;k<typeData.length;k++){
+                                if(typeData[k].goods_id == getQueryVariable('goodsid')){
+                                    if(typeData[k].calc_price_type==2){
+                                        $('.tiered_pricing').show()
+                                    }
+                                    else{
+                                        $('.Discountamount').show()
+                                    }
+                                }
+                            }
+                            $('#Discount_amount1').text((res.data.old_amount-res.data.order_amount).toFixed(2))
+                            $('#original_price').text(res.data.old_amount)
                             $('#After_discounts').text(res.data.coupon_money)
                             $('#Discount_amount').text(res.data.coupon_money)
 
@@ -1274,6 +1299,17 @@ function Readjust(){
                     $(".oid").text(res.data.order_sn)
                     $('.order-oid').text(res.data.order_sn)
                     $('.orderAmount').text(res.data.order_amount)
+                    for(let k=0;k<typeData.length;k++){
+                        if(typeData[k].goods_id == getQueryVariable('goodsid')&&typeData[k].calc_price_type==2){
+                            if(res.data.old_amount-res.data.order_amount>0){
+                                $('.tiered_pricing').show()
+                            }
+                            $('.price-unit').text(res.data.order_money+'元/篇')
+                        }
+                    }
+                    $('#Discount_amount1').text((res.data.old_amount-res.data.order_amount).toFixed(2))
+                    $('#original_price').text(res.data.old_amount)
+                    $('.Step_price').text(res.data.order_money+'元/篇')
                     $('#Total_amount').text(res.data.order_money)
                 }else {
                     // cocoMessage.error(res.codeMsg, 2000);

@@ -120,6 +120,15 @@
   color: #999999;
   font-size: 1.14rem;
 }
+.payBox .amount .discount {
+  display: none;
+}
+.payBox .amount .originalPrice {
+  text-decoration: line-through;
+}
+.payBox .amount .discountAmount {
+  color: #ffaf00;
+}
 .payBox .payBotton {
   width: 42%;
   background-color: #0073ff;

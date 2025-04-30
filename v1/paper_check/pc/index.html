@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../pc/assets/css/select2.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0056">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0056">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0057">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0057">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
@@ -318,9 +318,9 @@
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/select2.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0056"></script>
+<script src="../pc/assets/js/common.js?v=p24.0057"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0056"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0057"></script>
 <script>
     $('#date').datetimepicker({minView: 2, language: "zh-CN"});
     var typed = new Typed('.switch-text', {
@@ -346,7 +346,7 @@
     var cqvip_getFormatTemplate = []
     function getFormaTemplate() {
         $.ajax({
-            type: 'post',   
+            type: 'post',
             url: urls + "/api/tool/get_types?scenes_id=get_paper_check_params_data",
             data: {
                 type: 'cqvip_getFormatTemplate',
@@ -484,7 +484,19 @@
                 }
                 explain = '不满' + unit + typeData[$(this).attr('data-name')][0].unit_type + '按' + unit + typeData[$(this).attr('data-name')][0].unit_type + '计算'
             }
-            $(".unit-price").text(typeData[$(this).attr('data-name')][0].selling_price +'元/'+typeData[$(this).attr('data-name')][0].unit_count+typeData[$(this).attr('data-name')][0].unit_type)
+
+            var Price_Check=''
+            var unitCount=''
+            if(typeData[$(this).attr('data-name')][0].calc_price_type==2){
+                Price_Check=Number(typeData[$(this).attr('data-name')][0].selling_price_list[0].price).toFixed(2)
+                unitCount=typeData[$(this).attr('data-name')][0].selling_price_list[0].word
+            }
+            else{
+                Price_Check=typeData[$(this).attr('data-name')][0].selling_price
+                unitCount=typeData[$(this).attr('data-name')][0].unit_count
+            }
+
+            $(".unit-price").text(Price_Check +'元/'+unitCount+typeData[$(this).attr('data-name')][0].unit_type)
             $(".unit-tips").text(explain)
             //右侧介绍
             $(".system-name").text(systemInfo[$(this).attr('data-name')].name)
@@ -539,14 +551,27 @@
             $("#title").attr('placeholder','必填，最大字符'+ typeData[$(this).attr('data-name')][0].data.title_maxlength +'字'+noNum)
             $("#author").attr('maxlength', typeData[$(this).attr('data-name')][0].data.author_maxlength)
             $("#author").attr('placeholder','必填，最大字符'+ typeData[$(this).attr('data-name')][0].data.author_maxlength +'字'+noNum)
-            $("#textareaText").attr('maxlength', typeData[$(this).attr('data-name')][0].data.max_words)
-            if($(this).attr('data-name')=='dashichachong' || $(this).attr('data-name')=='weipu' || $(this).attr('data-name')=='turnitin' || $(this).attr('data-name')=='checkPass' || $(this).attr('data-name')=='paperyy' || $(this).attr('data-name')=='daya' ){
-                $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。')
-            }else{
-                $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。' + prohibitEn)
+            if(typeData[$(this).attr('data-name')][0].calc_price_type==2){
+                var lastindex=typeData[$(this).attr('data-name')][0].selling_price_list.length-1
+                if($(this).attr('data-name')=='dashichachong' || $(this).attr('data-name')=='weipu' || $(this).attr('data-name')=='turnitin' || $(this).attr('data-name')=='checkPass' || $(this).attr('data-name')=='paperyy' || $(this).attr('data-name')=='daya' ){
+                    $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].selling_price_list[lastindex].word +'字，提交内容建议去除封面，目录，仅提交正文。')
+                }else{
+                    $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].selling_price_list[lastindex].word +'字，提交内容建议去除封面，目录，仅提交正文。' + prohibitEn)
+                }
+                $("#textareaText").attr('maxlength', typeData[$(this).attr('data-name')][0].selling_price_list[lastindex].word)
+                maxWords = typeData[$(this).attr('data-name')][0].selling_price_list[lastindex].word
             }
+            else{
+                $("#textareaText").attr('maxlength', typeData[$(this).attr('data-name')][0].data.max_words)
+                if($(this).attr('data-name')=='dashichachong' || $(this).attr('data-name')=='weipu' || $(this).attr('data-name')=='turnitin' || $(this).attr('data-name')=='checkPass' || $(this).attr('data-name')=='paperyy' || $(this).attr('data-name')=='daya' ){
+                    $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。')
+                }else{
+                    $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(this).attr('data-name')][0].data.min_words +'~'+ typeData[$(this).attr('data-name')][0].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。' + prohibitEn)
+                }
+                maxWords = typeData[$(this).attr('data-name')][0].data.max_words
+            }
+
             minWords =  typeData[$(this).attr('data-name')][0].data.min_words
-            maxWords = typeData[$(this).attr('data-name')][0].data.max_words
 
             // 提交方式
             if( typeData[$(this).attr('data-name')][0].data.support_submit_types.content) {
@@ -586,7 +611,17 @@
         //价格
         for(var i=0; i<typeData[$(".system-item.active").attr('data-name')].length; i++){
             if(typeData[$(".system-item.active").attr('data-name')][i].short_name == $(this).attr('data-type')) {
-                $(".system-item.active").find('.system-price').text(typeData[$(".system-item.active").attr('data-name')][i].selling_price + '元/' + typeData[$(".system-item.active").attr('data-name')][i].unit_count + typeData[$(".system-item.active").attr('data-name')][i].unit_type)
+                var Price_Check=''
+                var unitCount=''
+                if(typeData[$(".system-item.active").attr('data-name')][i].calc_price_type==2){
+                    Price_Check=Number(typeData[$(".system-item.active").attr('data-name')][i].selling_price_list[0].price).toFixed(2)
+                    unitCount=typeData[$(".system-item.active").attr('data-name')][i].selling_price_list[0].word
+                }
+                else{
+                    Price_Check=typeData[$(".system-item.active").attr('data-name')][i].selling_price
+                    unitCount=typeData[$(".system-item.active").attr('data-name')][i].unit_count
+                }
+                $(".system-item.active").find('.system-price').text(Price_Check + '元/' + unitCount + typeData[$(".system-item.active").attr('data-name')][i].unit_type)
                 if(typeData[$(".system-item.active").attr('data-name')][i].unit_type != '字'){
                     // explain = '不满一件按一件计算'
                 }else{
@@ -598,7 +633,7 @@
                     }
                     explain = '不满' + unit + typeData[$(".system-item.active").attr('data-name')][i].unit_type + '按' + unit + typeData[$(".system-item.active").attr('data-name')][i].unit_type + '计算'
                 }
-                $(".unit-price").text(typeData[$(".system-item.active").attr('data-name')][i].selling_price +'元/'+typeData[$(".system-item.active").attr('data-name')][i].unit_count+typeData[$(".system-item.active").attr('data-name')][i].unit_type)
+                $(".unit-price").text(Price_Check +'元/'+unitCount+typeData[$(".system-item.active").attr('data-name')][i].unit_type)
                 $(".unit-tips").text(explain)
                 //限制条件
                 var noNum = ''
@@ -610,14 +645,28 @@
                 $("#title").attr('placeholder','必填，最大字符'+ typeData[$(".system-item.active").attr('data-name')][i].data.title_maxlength +'字' + noNum)
                 $("#author").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].data.author_maxlength)
                 $("#author").attr('placeholder','必填，最大字符'+ typeData[$(".system-item.active").attr('data-name')][i].data.author_maxlength +'字' + noNum)
-                $("#textareaText").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].data.max_words)
-                if($(".system-item.active").attr('data-name')=='dashichachong' || $(".system-item.active").attr('data-name')=='weipu' || $(".system-item.active").attr('data-name')=='ithenticate' || $(".system-item.active").attr('data-name')=='turnitin' || $(".system-item.active").attr('data-name')=='checkPass' ){
-                    $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(".system-item.active").attr('data-name')][i].data.min_words +'~'+ typeData[$(".system-item.active").attr('data-name')][i].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。')
-                }else{
-                    $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(".system-item.active").attr('data-name')][i].data.min_words +'~'+ typeData[$(".system-item.active").attr('data-name')][i].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。' + prohibitEn)
+                if(typeData[$(".system-item.active").attr('data-name')][i].calc_price_type==2){
+                    var lastindex=typeData[$(".system-item.active").attr('data-name')][i].selling_price_list.length-1
+                    if($(".system-item.active").attr('data-name')=='dashichachong' || $(".system-item.active").attr('data-name')=='weipu' || $(".system-item.active").attr('data-name')=='ithenticate' || $(".system-item.active").attr('data-name')=='turnitin' || $(".system-item.active").attr('data-name')=='checkPass' ){
+                        $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(".system-item.active").attr('data-name')][i].data.min_words +'~'+ typeData[$(".system-item.active").attr('data-name')][i].selling_price_list[lastindex].word +'字，提交内容建议去除封面，目录，仅提交正文。')
+                    }else{
+                        $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(".system-item.active").attr('data-name')][i].data.min_words +'~'+ typeData[$(".system-item.active").attr('data-name')][i].selling_price_list[lastindex].word +'字，提交内容建议去除封面，目录，仅提交正文。' + prohibitEn)
+                    }
+                    $("#textareaText").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].selling_price_list[lastindex].word)
+                    maxWords = typeData[$(".system-item.active").attr('data-name')][i].selling_price_list[lastindex].word
                 }
+                else{
+                    $("#textareaText").attr('maxlength', typeData[$(".system-item.active").attr('data-name')][i].data.max_words)
+                    if($(".system-item.active").attr('data-name')=='dashichachong' || $(".system-item.active").attr('data-name')=='weipu' || $(".system-item.active").attr('data-name')=='ithenticate' || $(".system-item.active").attr('data-name')=='turnitin' || $(".system-item.active").attr('data-name')=='checkPass' ){
+                        $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(".system-item.active").attr('data-name')][i].data.min_words +'~'+ typeData[$(".system-item.active").attr('data-name')][i].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。')
+                    }else{
+                        $("#textareaText").attr('placeholder','内容字数 '+ typeData[$(".system-item.active").attr('data-name')][i].data.min_words +'~'+ typeData[$(".system-item.active").attr('data-name')][i].data.max_words +'字，提交内容建议去除封面，目录，仅提交正文。' + prohibitEn)
+                    }
+                    maxWords = typeData[$(".system-item.active").attr('data-name')][i].data.max_words
+                }
+
                 minWords = typeData[$(".system-item.active").attr('data-name')][i].data.min_words
-                maxWords = typeData[$(".system-item.active").attr('data-name')][i].data.max_words
+
 
                 // 提交方式
                 if( typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.content) {
@@ -788,42 +837,42 @@
         var elegance=['daya','dyai']
         var items = sequenceArr;
         var condition = function(item) {
-            return item === Weight_reduction; 
+            return item === Weight_reduction;
         };
 
         if(turnitin.includes(Weight_reduction)){
              condition=function(item) {
-                return item === 'turnitin'; 
+                return item === 'turnitin';
             };
         }
         if(Wanfang_version.includes(Weight_reduction)){
             condition=function(item) {
-                return item === 'wanfang'; 
+                return item === 'wanfang';
             };
         }
         if(VIP_version.includes(Weight_reduction)){
             condition=function(item) {
-                return item === 'weipu'; 
+                return item === 'weipu';
             };
         }
         if(Source.includes(Weight_reduction)){
             condition=function(item) {
-                return item === 'yuanwenjian'; 
+                return item === 'yuanwenjian';
             };
         }
         if(elegance.includes(Weight_reduction)){
             condition=function(item) {
-                return item === 'daya'; 
+                return item === 'daya';
             };
         }
         if(Weight_reduction=='checkpass'){
             condition=function(item) {
-                return item === 'checkPass'; 
+                return item === 'checkPass';
             };
         }
         if(Weight_reduction=='paperpass'){
             condition=function(item) {
-                return item === 'paperPass'; 
+                return item === 'paperPass';
             };
         }
 
@@ -833,7 +882,7 @@
             items.unshift(itemToMove);
         }
 
-        
+
         for(var i=0; i<sequenceArr.length; i++) {
             if (active) {
                 systemEl += ' <div class="system-item active" data-name="'+ sequenceArr[i] +'">\n' +
@@ -864,8 +913,19 @@
            if(typeData.hasOwnProperty($($(".system-item")[i]).data('name'))){
                $($(".system-item")[i]).show()
                $($(".system-item")[i]).css('display','inline-block')
+               var Price_Check=''
+                var unitCount=''
+                if(typeData[$($(".system-item")[i]).data('name')][0].calc_price_type==2){
+                    Price_Check=Number(typeData[$($(".system-item")[i]).data('name')][0].selling_price_list[0].price).toFixed(2)
+                    unitCount=typeData[$($(".system-item")[i]).data('name')][0].selling_price_list[0].word
+
+                }
+                else{
+                    Price_Check=typeData[$($(".system-item")[i]).data('name')][0].selling_price
+                    unitCount=typeData[$($(".system-item")[i]).data('name')][0].unit_count
+                }
                // 价格
-               $($(".system-item")[i]).find('.system-price').text(typeData[$($(".system-item")[i]).data('name')][0].selling_price + '元/' + typeData[$($(".system-item")[i]).data('name')][0].unit_count + typeData[$($(".system-item")[i]).data('name')][0].unit_type)
+               $($(".system-item")[i]).find('.system-price').text(Price_Check + '元/' + unitCount + typeData[$($(".system-item")[i]).data('name')][0].unit_type)
            }else{
                $($(".system-item")[i]).hide()
            }
@@ -877,7 +937,7 @@
            }
         }
         setClassStyle()
-        
+
         var elements = $('.system-item');
         var specificElement = elements.filter(function() {
             return $(this).data('name') === Weight_reduction;
@@ -1103,6 +1163,7 @@
             'data[author][value]': info.author,
             customer_invitation: dct_code,
         }
+        var stairs_type=typeData[$(".system-item.active").attr('data-name')][0].type
         $.ajax({
             type: 'post',
             url: urls + '/api/client/order/unified/create?user_token='+ USER_TOKEN + '&jane_name='+ JANE_NAME+(suffix?'&'+suffix:'') + (suffix2?'&'+suffix2:''),
@@ -1119,7 +1180,7 @@
                     $(".deleteFileThesis").click()
                     $($(".toCheck")[0]).click()
                     // word_num.log('./pay.html?order_sn=' + resData.data.order_sn + '&NumberWords=' + data.word_num  +  '&created=' + resData.data.created + '&order_amount=' + resData.data.order_amount + '&pay_wap_url=' + resData.data.pay_wap_url + '&title=' + info.title + '&author='+ info.author)
-                    location.href = './pay.html?commitId=' + resData.data.order_sn + '&goodsid='+ form_data.goods_id;
+                    location.href = './pay.html?commitId=' + resData.data.order_sn + '&goodsid='+ form_data.goods_id+'&type='+stairs_type;
                 } else {
                     throttling = true
                     closeMsg();

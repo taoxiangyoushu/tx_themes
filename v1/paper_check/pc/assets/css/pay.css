@@ -789,6 +789,20 @@ html body .pay_page {
   color: #D81E06;
   display: none;
 }
+.block-right .r-content .block-pay .pay-box .titlesRight .amount .tiered_pricing {
+  display: none;
+}
+.block-right .r-content .block-pay .pay-box .titlesRight .amount .originalprice {
+  font-size: 12px;
+  color: #999999;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+.block-right .r-content .block-pay .pay-box .titlesRight .amount .Total_discounts {
+  font-weight: 400;
+  font-size: 12px;
+  color: #DB7D25;
+}
 .block-right .r-content .block-pay .pay-box .titlesRight .payTypes {
   height: 30px;
   line-height: 30px;
@@ -798,6 +812,12 @@ html body .pay_page {
 .block-right .r-content .block-pay .pay-box .titlesRight .payTypes img {
   width: 20px;
   height: 20px;
+}
+.block-right .r-content .block-pay .pay-box .titlesRight .payTypes .UnitPrice {
+  display: none;
+}
+.block-right .r-content .block-pay .pay-box .titlesRight .payTypes .Step_price {
+  display: none;
 }
 .block-right .r-content .block-pay .pay-box .titlesRight.payTypeClass {
   padding-top: 6px;

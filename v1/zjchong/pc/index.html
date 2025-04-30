@@ -9,9 +9,9 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0060">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0060">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0060">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0063">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0063">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0063">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -135,14 +135,14 @@
                                         <div class="upload_notes aigc_notes">
                                             <p class="notes_subtitle">上传须知：</p>
                                             <p class="p2">仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
-                                            <p class="p3">目前仅支持中文，暂不支持图片、表格、公式、代码降AIGC</p>
+                                            <p class="p3">目前仅支持中文，暂不支持其他语言以及图片、表格、代码等内容降AIGC</p>
                                             <p class="p3">如有AIGC检测报告，建议使用报告上传</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="content_block form_block">
                                     <div class="border_box">
-                                        <textarea class="form-control" autocomplete="off" name="text_content" id="textContent" placeholder="内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。"></textarea>
+                                        <textarea class="form-control" autocomplete="off" name="text_content" id="textContent" placeholder="内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。" maxlength="300000"></textarea>
                                         <span class="counter">
                                         当前已输入<i class="impl">0</i>字符</span><br/>
                                         </span>
@@ -410,7 +410,7 @@
                             <li>1、上传文档/文本粘贴：仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</li>
                             <li>2、上传报告：仅支持.zip、部分.pdf或部分.html格式的文件上传</li>
                             <li class="system_text_jc">3、目前仅支持中英文，暂不支持其他语言、图片、表格、公式、代码降重</li>
-                            <li class="system_text_aigc">3、目前仅支持中文，暂不支持图片、表格、公式、代码降AIGC</li>
+                            <li class="system_text_aigc">3、目前仅支持中文，暂不支持其他语言以及图片、表格、代码等内容降AIGC</li>
                             <li>4、下载的内容仅用于参考，不作为毕业、发表使用</li>
                             <li>5、pdf格式不稳定，可能会出现乱码，请确认后再提交</li>
                         </ul>
@@ -742,7 +742,7 @@
 <script src="../pc/assets/js/jszip.min.js"></script>
 <script src="../pc/assets/js/common.js?v=p24.005"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0060"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0063"></script>
 <script>
     var uploadType = 'content';
     var domain = '303';
@@ -767,7 +767,21 @@
             $(".upload_notes.aigc_notes").show()
             $(".system_text_jc").hide()
             $(".system_text_aigc").show()
-            $("#text_content").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交！')
+            $("#textContent").val('')
+            for(let i=0;i<typeData.length;i++){
+                if(typeData[i].short_name==$(this).data('type')){
+                    if(typeData[i].calc_price_type==2){
+                        var lastindex=typeData[i].selling_price_list.length-1
+                        $("#textContent").attr('placeholder','内容字数在200-'+typeData[i].selling_price_list[lastindex].word+'字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交！')
+                        $("#textContent").attr('maxlength',typeData[i].selling_price_list[lastindex].word)
+                    }
+                    else{
+                        $("#textContent").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交！')
+                        $("#textContent").attr('maxlength',300000)
+                    }
+                }
+            }
+
         }else if($(this).data('type') == 'lwjc'){
             $('.recommend').hide()
             jc_type = 'lwjc'
@@ -784,7 +798,20 @@
             $(".upload_notes.aigc_notes").hide()
             $(".system_text_jc").show()
             $(".system_text_aigc").hide()
-            $("#text_content").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。')
+            $("#textContent").val('')
+            for(let i=0;i<typeData.length;i++){
+                if(typeData[i].short_name==$(this).data('type')){
+                    if(typeData[i].calc_price_type==2){
+                        var lastindex=typeData[i].selling_price_list.length-1
+                        $("#textContent").attr('placeholder','内容字数在200-'+typeData[i].selling_price_list[lastindex].word+'字，提交内容建议去除封面，目录，仅提交正文。')
+                        $("#textContent").attr('maxlength',typeData[i].selling_price_list[lastindex].word)
+                    }
+                    else{
+                        $("#textContent").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。')
+                        $("#textContent").attr('maxlength',300000)
+                    }
+                }
+            }
         }
         $(".uploadTy_btn.active").click()
         $(".upload_block .deleteFile").click()
@@ -1010,18 +1037,34 @@
                         unitCount = "千"
                     }
                 }
+                var Price_Check=''
+                Price_Check=typeData[i].selling_price
+                if(typeData[i].calc_price_type==2){
+                    for(let k=0;k<typeData[i].selling_price_list.length;k++){
+                        Price_Check=Number(typeData[i].selling_price_list[0].price).toFixed(2)
+                        unitCount=typeData[i].selling_price_list[0].word/1000 + "千"
+                        if(typeData[i].selling_price_list[0].word/1000 == 1){
+                            unitCount = "千"
+                        }
+                    }
+                }
+
                 text += "<div class=\""+lwjcClassArr+"\" goodsid=\""+typeData[i].goods_id+"\" data-type=\"lwjc\">";
                 text += "    <div class=\"edition\">";
                 text += "        <div>";
                 text += "            <img src=\"../pc/assets/img/Normal.png\" alt=\"\">";
-                text += "            <span class=\"name_s\">降查重率<span>(<span class=\"price-d\">"+typeData[i].selling_price+"</span>元/<span class=\"unit-d\">"+unitCount+"</span>字)</span> </span>";
+                text += "            <span class=\"name_s\">降查重率<span>(<span class=\"price-d\">"+Price_Check+"</span>元/<span class=\"unit-d\">"+unitCount+"</span>字)</span> </span>";
                 text += "        </div>";
                 text += "    </div>";
                 text += "    <div class=\"edition_tips\">";
                 text += "        <span>轻松搞定“查重系统”的重复率</span>";
                 text += "    </div>";
                 text += "</div>";
-                price_lwjc = typeData[i].selling_price + '元/' + (typeData[i].unit_count/1000 == 1?'':typeData[i].unit_count/1000) + '千字'
+                if(typeData[i].calc_price_type==2){
+                    price_lwjc=Number(typeData[i].selling_price_list[0].price).toFixed(2) + '元/' + (typeData[i].selling_price_list[0].word/1000 == 1?'':typeData[i].selling_price_list[0].word/1000) + '千字'
+                }else{
+                    price_lwjc = typeData[i].selling_price + '元/' + (typeData[i].unit_count/1000 == 1?'':typeData[i].unit_count/1000) + '千字'
+                }
             }
             if(typeData[i].short_name == 'aigclwjc'){
                 var aigclwjcClassArr = i==0? 'Select card aigclwjc':'card aigclwjc'
@@ -1032,12 +1075,24 @@
                         unitCount = "千"
                     }
                 }
+                var Price_Check=''
+                Price_Check=typeData[i].selling_price
+                if(typeData[i].calc_price_type==2){
+                    for(let k=0;k<typeData[i].selling_price_list.length;k++){
+                        Price_Check=Number(typeData[i].selling_price_list[0].price).toFixed(2)
+                        unitCount=typeData[i].selling_price_list[0].word/1000 + "千"
+                        if(typeData[i].selling_price_list[0].word/1000 == 1){
+                            unitCount = "千"
+                        }
+                    }
+                }
+
                 text += "<div class=\""+aigclwjcClassArr+"\" goodsid=\""+typeData[i].goods_id+"\" data-type=\"aigclwjc\">";
                 text += "    <div class=\"edition\">";
                 text += "        <div>";
                 text += "            <img class=\"icon-new\" src=\"../pc/assets/img/new-icon.png\" alt=\"\">";
                 text += "            <img src=\"../pc/assets/img/aigc.png\" alt=\"\">";
-                text += "            <span class=\"name_s\">降AIGC率<span>(<span class=\"price-d\">"+typeData[i].selling_price+"</span>元/<span class=\"unit-d\">"+unitCount+"</span>字)</span></span>";
+                text += "            <span class=\"name_s\">降AIGC率<span>(<span class=\"price-d\">"+Price_Check+"</span>元/<span class=\"unit-d\">"+unitCount+"</span>字)</span></span>";
                 text += "        </div>";
                 text += "    </div>";
                 text += "    <div class=\"edition_tips\">";
@@ -1057,7 +1112,11 @@
                 text += "        </span>";
                 text += "    </div>";
                 text += "</div>";
-                price_aigc = typeData[i].selling_price + '元/' + (typeData[i].unit_count/1000 == 1?'':typeData[i].unit_count/1000) + '千字'
+                if(typeData[i].calc_price_type==2){
+                    price_aigc=Number(typeData[i].selling_price_list[0].price).toFixed(2) + '元/' + (typeData[i].selling_price_list[0].word/1000 == 1?'':typeData[i].selling_price_list[0].word/1000)  + '千字'
+                }else{
+                    price_aigc = typeData[i].selling_price + '元/' + (typeData[i].unit_count/1000 == 1?'':typeData[i].unit_count/1000) + '千字'
+                }
             }
             $('#typeSelect').append(text)
             if(getQueryVariable('sw')){

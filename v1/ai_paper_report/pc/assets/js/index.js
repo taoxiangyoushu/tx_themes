@@ -736,6 +736,7 @@ function professionalSubmitted() { // 开题报告专业版参数
     }
 }
 function unifiedCreate(form_data, goods_id , outline) {
+    NumberWords1=$("#NumberWords").val()
     var hasKtbg = fid?(!!fid):ktbg_generate
     var closeMsg = cocoMessage.loading('正在提交,请稍后...');
     $.ajax({
@@ -752,7 +753,7 @@ function unifiedCreate(form_data, goods_id , outline) {
                 localStorage.setItem('reviewData', (outline? JSON.stringify(outline) : ''))
                 throttling = true
                 closeMsg();
-                location.href = './pay.html?order_sn=' + data.data.order_sn + '&contentType=' + form_data.get('goods_id') + '&zxktbg=' + hasKtbg;
+                location.href = './pay.html?order_sn=' + data.data.order_sn + '&contentType=' + form_data.get('goods_id') + '&zxktbg=' + hasKtbg+'&wordNum='+NumberWords1;
             } else {
                 throttling = true
                 closeMsg();

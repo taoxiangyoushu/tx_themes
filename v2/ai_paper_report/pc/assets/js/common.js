@@ -281,7 +281,7 @@ function infoData(result) {
 		JANE_NAME: JANE_NAME,
 		success_info: function(e){ // 获取用户成功回调
 			if($('.queryApp').length) {
-				if(!getQueryVariable('oid')) {
+				if(!getQueryVariable('oid')){
 					query(e)
 				}
 			}
@@ -355,7 +355,9 @@ function typefun(goods_info) {
 			unit_type: goods_info[i].unit_type,
 			unit_count: goods_info[i].unit_count,
 			name: goods_info[i].name,
-			type: goods_info[i].type
+			type: goods_info[i].type,
+			calc_price_type:goods_info[i].calc_price_type,
+			selling_price_list:goods_info[i].selling_price_list
 		}
 		short_name_data[goods_info[i].short_name] = {
 			goods_id: goods_info[i].goods_id

@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0039">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0039">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0040">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0040">
     <!-- <link rel="stylesheet" href="../assets/css/styles.css" /> -->
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!--[if lt IE 9]>
@@ -162,10 +162,17 @@
                                 <p class="tips">提示：扫码支付,请勿刷新页面</p>
                             </div>
                             <div class="pull-left titlesRight payTypeClass">
-                                <div class="payTypes">单价: <span class="UnitPrice">暂无</span> </div>
+                                <div class="payTypes">单价:
+                                    <span class="UnitPrice">暂无</span>
+                                    <span class="Step_price">暂无</span>
+                                </div>
 
                                 <div class="amount">应付金额 <span><b>￥</b><span class="orderAmount">00.00</span></span>
                                     <span class="Discountamount">（优惠￥<span class="Discountamount" id="Discount_amount">00.00</span>）</span>
+                                    <span class="tiered_pricing">
+                                        <span class="originalprice">原价：<span class="originalprice" id="original_price"></span></span>
+                                        <span class="Total_discounts">共优惠：<span class="Total_discounts" id="Discount_amount1">00.00</span></span>
+                                    </span>
                                 </div>
 
                                 <p class="auxiliary">剩余支付时间 <span class="time"><span class="payTime">--</span>秒</span>，<span class="next">已支付下一步</span></p>
@@ -408,9 +415,9 @@
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0039"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0039"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0039"></script>
+<script src="../pc/assets/js/common.js?v=p24.0040"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0040"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0040"></script>
 <script>
     var orderInfoData = {}
     var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -462,11 +469,22 @@
     function tacitPay(goods_info, pay_way, scanCodeRichInfo) {
         pay_way_public = pay_way
         var unitType = (goods_info.unit_count / 10000) + '万'
-        if(goods_info.unit_count == 1000) {
-            $(".order-unitPrice").text(goods_info.selling_price + '元/' + '千' + goods_info.unit_type)
-        }else {
-            $(".order-unitPrice").text(goods_info.selling_price + '元/' + unitType + goods_info.unit_type)
+        for(let k=0;k<typeData.length;k++){
+            if(typeData[k].calc_price_type==2){
+                $('.UnitPrice').hide()
+                $('.Step_price').show()
+            }
+            else{
+                $('.UnitPrice').show()
+                $('.Step_price').hide()
+                if(goods_info.unit_count == 1000) {
+                    $(".order-unitPrice").text(goods_info.selling_price + '元/' + '千' + goods_info.unit_type)
+                }else {
+                    $(".order-unitPrice").text(goods_info.selling_price + '元/' + unitType + goods_info.unit_type)
+                }
+            }
         }
+
         if(goods_info.unit_type == '字') {
             $('.UnitPrice').text(goods_info.selling_price+'元/'+ unitType + goods_info.unit_type+"（不满"+ unitType +"字按"+ unitType +"字计算）")
         }else {
@@ -934,7 +952,16 @@
                         if(res.data.coupon_money>0){
                          $('.use_now').removeClass('can')
                          $('.errorTip1').show()
-                         $('.Discountamount').show()
+                         for(let k=0;k<typeData.length;k++){
+                                if(typeData[k].calc_price_type==2){
+                                    $('.tiered_pricing').show()
+                                }
+                                else{
+                                    $('.Discountamount').show()
+                                }
+                        }
+                         $('#Discount_amount1').text((res.data.old_amount-res.data.order_amount).toFixed(2))
+                         $('#original_price').text(res.data.old_amount)
                          $('.Exchange_hidden').hide()
                          $('#After_discounts').text(res.data.coupon_money)
                          $('#Discount_amount').text(res.data.coupon_money)
@@ -1067,6 +1094,18 @@ function Readjust(){
                     $('.order-oid').text(res.data.order_sn)
                     $('.orderAmount').text(res.data.order_amount)
                     $('#Total_amount').text(res.data.order_money)
+                    for(let k=0;k<typeData.length;k++){
+                        if(typeData[k].calc_price_type==2){
+                            if(res.data.old_amount-res.data.order_amount>0){
+                                $('.tiered_pricing').show()
+
+                            }
+                        $(".order-unitPrice").text(res.data.order_money+'元/篇')
+                        }
+                    }
+                    $('#Discount_amount1').text((res.data.old_amount-res.data.order_amount).toFixed(2))
+                    $('#original_price').text(res.data.old_amount)
+                    $('.Step_price').text(res.data.order_money+'元/篇')
                 }else {
                     // cocoMessage.error(res.codeMsg, 2000);
                     $(".errorTip span").text(res.codeMsg)
