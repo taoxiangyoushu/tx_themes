@@ -1179,6 +1179,7 @@
             frontNotifyUrl: window.location.origin+ pathName + '?oid=#outTradeNo#',
             domain_record: window.location.origin, // 本地测试需要替换写死, 上线前切记恢复自动获取
             source: /MicroMessenger/.test(window.navigator.userAgent)? 2:7,
+            customer_invitation: dct_code,
             'data[rid][label]': '记录id',
             'data[rid][value]': data.pay_id,
             'data[title][label]':'论文标题',
