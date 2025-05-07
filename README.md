@@ -84,7 +84,7 @@
 
 解决方案：
 
-    1.反向代理：将https://api.yourdomain.com（建议使用https），<u>反向代理</u>到https://api.taoxiangyoushu.com
+    1.反向代理：将https://api.yourdomain.com（建议使用https），反向代理到https://api.taoxiangyoushu.com
     
     2.替换链接: 搜索所有HTML文件，替换以下**LOGIN_API_URL**值为https://api.yourdomain.com
 
