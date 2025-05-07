@@ -229,7 +229,10 @@
     // }
 
     function startQuerying(){
-        order_openid = getQueryVariable('openid')
+        if(getQueryVariable('openid')){
+            window.sessionStorage.setItem('openid', getQueryVariable('openid'))
+        }
+        order_openid = getQueryVariable('openid') || window.sessionStorage.getItem('openid')
         if(!order_openid){
             if(/MicroMessenger/.test(window.navigator.userAgent) && threeMsg.wx){
                 location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + threeMsg.wx + '&otherUrl=' + encodeURIComponent(window.location.href)

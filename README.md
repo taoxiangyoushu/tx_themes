@@ -59,16 +59,16 @@
 
 ###  🔨 部署前必读
 
-#### 一、替换USER_TOKEN
+#### 一、替换USER_TOKEN <font color=Red>*</font>
 
 1.获取自己的USER_TOKEN值：淘项有术后台-->开放平台-->API开放-->前端开放
 
 2.搜索所有HTML文件，替换以下**USER_TOKEN**值为自己的USER_TOKEN值
 
     <script>
-        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz';
-        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';  //用户登录接口
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';  //用户登录接口域名
     </script>
 
 #### 二、解决登录跨域（非必）
@@ -84,7 +84,7 @@
 
 解决方案：
 
-    1.反向代理：将https://api.yourdomain.com（建议使用https），反向代理到https://api.taoxiangyoushu.com
+    1.反向代理：将https://api.yourdomain.com（建议使用https），<u>反向代理</u>到https://api.taoxiangyoushu.com
     
     2.替换链接: 搜索所有HTML文件，替换以下**LOGIN_API_URL**值为https://api.yourdomain.com
 

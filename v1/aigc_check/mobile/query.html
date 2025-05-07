@@ -189,7 +189,10 @@
 <script src="../mobile/assets/js/Drag.js"></script>
 <script>
     var order_openid = ''
-    order_openid = getQueryVariable('openid')
+    if(getQueryVariable('openid')){
+        window.sessionStorage.setItem('openid', getQueryVariable('openid'))
+    }
+    order_openid = getQueryVariable('openid') || window.sessionStorage.getItem('openid')
 
     if(/MicroMessenger/.test(window.navigator.userAgent)) {
         $(".down_pop").addClass('wxBro')

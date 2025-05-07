@@ -1,8 +1,11 @@
 var orderInfoData = {}
 // 微信浏览器并且有微信支付
 function refreshPageWx() {
+    if(getQueryVariable('openid')){
+        window.sessionStorage.setItem('openid_pay', getQueryVariable('openid'))
+    }
     if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器 且 有微信支付
-        if(getQueryVariable('getOpenId') == 'true'){
+        if(getQueryVariable('getOpenId') == 'true' && !openid){
             location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.href.replace('getOpenId=true','getOpenId=false'))
         }
     }
@@ -24,7 +27,7 @@ var payId = getQueryVariable('payId')
 var payIs = false
 var isTips = true
 var noPayWay = false
-var openid = ''
+var openid = getQueryVariable('openid') || window.sessionStorage.getItem('openid_pay')
 var is_wxApplet = false
 var price_index = ''
 var price_stairs = ''
@@ -97,7 +100,7 @@ function llqType(pay_way) {
             }
             if (/MicroMessenger/.test(window.navigator.userAgent)) {  // 微信浏览器
                 $('#wx-pay').attr('data-payType','wxPublicNum')
-                if(!getQueryVariable('openid')){
+                if(!openid){
                     $('#wx-pay').hide()
                 }
             }
@@ -150,14 +153,13 @@ function llqType(pay_way) {
             $('#wx-pay').attr('data-payType','wxPublicNum')
             source = 2
 
-            if(getQueryVariable('openid')){
+            if(openid){
                 $('.payType').show()
                 payIs = true
                 $('#wx-pay').show()
-                openid = getQueryVariable('openid')
             }
             if(pay_way.wx){
-                if(getQueryVariable('openid')){
+                if(openid){
                     typeSelect('wxPublicNum')
                 }else{
                     $('#wx-pay').hide()
