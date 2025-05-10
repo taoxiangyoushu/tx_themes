@@ -81,7 +81,6 @@ a {
   padding-right: 40px;
   width: calc(100% - 150px);
   float: left;
-  border-right: 1px solid #ffffff;
 }
 .main .leftText {
   color: #999999;
@@ -1336,3 +1335,4 @@ input#tbTid-2:-ms-input-placeholder {
 .EditPopup.EditPopupPay .editMain > div {
   height: calc(100% - 8px);
 }
+/*# sourceMappingURL=pay.css.map */
