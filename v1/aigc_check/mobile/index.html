@@ -45,10 +45,10 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0020">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0020">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0020">
-    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0020">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0021">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0021">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0021">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0021">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'aigc_check'
@@ -93,6 +93,14 @@
                            placeholder="请正确填写作者姓名(15字内)" autocomplete="off" id="contenteditable3" class="form-control"/>
                 </div>
                 <span id="contenteditable3_err"></span>
+            </div>
+            <div class="form-group form-group_s card card3 Conditions" style="margin-top: 2rem;">
+                <label class="label_s">附加: </label>
+                <div class="additional_block">
+                    <input id="additional" type="checkbox"/>
+                    <span class="additional-text">其它AIGC预测（知W/维P/万F）</span>
+                    <span class="sample-text">样例</span>
+                </div>
             </div>
 
             <div class="form-group form-group_s short card card4 jiangAIGCContent">
@@ -280,6 +288,11 @@
             </div>
         </div>
     </div>
+
+    <div class="sample-sl">
+        <img src="../mobile/assets/img/delete3.png" class="close-sl" alt="">
+        <img src="../mobile/assets/img/aigc_sl_img.png" alt="">
+    </div>
 </div>
 <!-- 推广赚钱 -->
 <a class="distributionEntrance" id="promotion" href="./fx/init.html">
@@ -344,7 +357,7 @@
 <script src="../mobile/assets/js/common.js?v=1.1"></script>
 <script src="../mobile/assets/js/bootstrap-select.js"></script>
 <script src="../mobile/assets/js/bootstrapValidator.min.js"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.0020"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0021"></script>
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/Drag.js"></script>
 <script>
@@ -498,7 +511,8 @@
 
             var formData_1 = {
                 title: $("#contenteditable2").val(),
-                author: $("#contenteditable3").val()
+                author: $("#contenteditable3").val(),
+                check_type: $("#additional").is(':checked')?2:1,
             }
             if($('.AIGCContentType.Select').attr('id-key') == '1'){
                 formData_1.content = $("#textareaText").val()
@@ -727,6 +741,19 @@
 		    $('.Paste_Tips').show()
 		}
 	})
+
+    $('.additional-text').click(function() {
+        $(".additional_block #additional").click()
+    })
+
+    $(".sample-text").click(function (){
+        $(".sample-sl").show();
+        $(".mask").show()
+    })
+    $(".close-sl").click(function (){
+        $(".sample-sl").hide();
+        $(".mask").hide()
+    })
 </script>
 </body>
 </html>

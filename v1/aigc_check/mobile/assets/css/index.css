@@ -1395,3 +1395,43 @@ button.btn-default,
   line-height: 3rem;
   color: #bebebe;
 }
+.additional_block {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  margin-left: 6px;
+}
+.additional_block input {
+  margin: 0 2px 0 0;
+}
+.additional_block .additional-text {
+  color: #8b8b8b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1;
+}
+.additional_block .sample-text {
+  line-height: 1;
+  color: #b7b7b7;
+  text-decoration: underline;
+  padding: 0 4px;
+}
+.sample-sl {
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 3rem 1.2rem 2rem;
+  border-radius: 6px;
+  display: none;
+}
+.sample-sl .close-sl {
+  position: absolute;
+  width: 1.4rem;
+  top: 1rem;
+  right: 1.2rem;
+}
+/*# sourceMappingURL=index.css.map */

@@ -37,6 +37,7 @@ $(".mask").on('click',function (){
 	$(".myProblems").hide()
 	$(".dashi_fz").hide();
 	$(".complainForm").hide();
+	$(".sample-sl").hide();
 	document.body.style.height = 'unset'
 	document.body.style['overflow-y'] = 'auto'
 })

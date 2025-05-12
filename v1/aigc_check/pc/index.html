@@ -12,8 +12,8 @@
 	<link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0041">
-	<link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0041">
+	<link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0042">
+	<link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0042">
 	<!-- <link rel="stylesheet" href="../assets/css/styles.css" /> -->
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!--[if lt IE 9]>
@@ -109,6 +109,20 @@
 								</div>
 							</div>
 						</div>
+                        <div class="form-group">
+                            <label for="author" class="control-label">附加</label>
+                            <div class="rower">
+                                <span class="additional">
+                                    <input id="additional" type="checkbox"/> 其它AIGC预测 （知W/维P/万F）
+                                </span>
+                                <div class="additional_example">
+                                    <img src="../pc/assets/img/yl_icon.png" alt="">示例
+                                    <div class="example_block">
+                                        <img src="../pc/assets/img/aigc_sl_img.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 						<div class="form-group">
 							<label class="control-label">内容</label>
 							<ul class="way-content">
@@ -305,8 +319,8 @@
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../pc/assets/js/bootstrap.min.js"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0041"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0041"></script>
+<script src="../pc/assets/js/common.js?v=p24.0042"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0042"></script>
 <script>
 	$("#title").on('input', function (){
 		$(".titleNumber").text($(this).val().length)
@@ -437,7 +451,8 @@
 			closeMsg = cocoMessage.loading('正在提交,请稍后...');
 			var data = {
 				title: $("#title").val(),
-				author: $("#author").val()
+				author: $("#author").val(),
+                check_type: $("#additional").is(':checked')?2:1,
 			}
 			if($('.way-content .active').data('formtype') == 'text'){
 				data.content = $("#content-text").val()
@@ -520,5 +535,12 @@
 			$('.Paste_Tips').show()
 		}
 	})
+
+    $(".additional input").on('click',function (event){
+        event.stopPropagation()
+    })
+    $('.additional').click(function() {
+        $(".additional input").click()
+    })
 </script>
 </html>
