@@ -934,11 +934,11 @@
             success: function (res) {
                 canClick = true
                 closeMsg()
+                $('.Exchange_loading').hide()
                 if (res.code == 200) {
                     order_sn = res.data.order_sn
                     $('.orderId_pop').text(res.data.order_sn)
                     $('.order-oid').text(res.data.order_sn)
-                    $('.Exchange_loading').hide()
 
                     if(Number(res.data.order_amount) == 0) {
                         $(".coupon_pop").show();
