@@ -465,6 +465,8 @@
         $.ajax({
             type: 'post',
             url: urls + "/api/client/activity/getCoupons?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME + '&activity_type='+ $(".coupons-item.active").attr('data-type') +'&applicant=',
+            processData : false,
+            contentType : false,
             xhrFields: {
                 withCredentials: true
             },

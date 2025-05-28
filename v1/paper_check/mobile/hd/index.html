@@ -436,6 +436,7 @@
         jiance: '../../mobile/hd/assets/img/jiance.png',
         jiangchong: '../../mobile/hd/assets/img/jiangchong.png',
         xiezuo: '../../mobile/hd/assets/img/xiezuo.png',
+        aitool:'../../mobile/hd/assets/img/aitool.png'
     }
 
     var mySwiper = new Swiper ('.swiper', {
@@ -594,7 +595,11 @@
                                $($(".level-item")[s]).find('.coupon-name .zk').text(res.data[i].award[s].discount)
                                if(res.data[i].award[s].type_sec == 'AIGC检测券'){
                                    $($(".level-item")[s]).find('.coupon-name .qm').text('检测券')
-                               }else{
+                               }
+                               else if(res.data[i].award[s].type_sec == 'AI工具券'){
+                                    $($(".level-item")[s]).find('.coupon-name .qm').text('AI券')
+                                }
+                               else{
                                    $($(".level-item")[s]).find('.coupon-name .qm').text(res.data[i].award[s].type_sec)
                                }
                                $($(".level-item")[s]).find('.coupon-nn').text(res.data[i].award[s].goods_name+' x1')
@@ -606,7 +611,9 @@
                                    $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.jiangchong)
                                }else if(res.data[i].award[s].type_sec == '写作券') {
                                    $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.xiezuo)
-                               }
+                               }else if(res.data[i].award[s].type_sec == 'AI工具券') {
+                                    $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.aitool)
+                                }
                                $($(".level-item")[s]).show()
                                $($(".level-item")[s]).css('display', 'inline-block')
                            }
@@ -801,7 +808,7 @@
 
     function receiveCoupon() {
         $.ajax({
-            type: 'get',
+            type: 'post',
             url: urls + "/api/client/activity/getCoupons?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME + '&activity_type=activity_tg&_session_type=user&applicant=',
             xhrFields: {
                 withCredentials: true
@@ -825,7 +832,11 @@
                         $($(".level-item")[i]).find('.coupon-name .zk').text(res.data[i].coupon_discount)
                         if(res.data[i].coupon_type == 'AIGC检测券'){
                             $($(".level-item")[i]).find('.coupon-name .qm').text('检测券')
-                        }else{
+                        }
+                        else if(res.data[i].coupon_type == 'AI工具券'){
+                            $($(".level-item")[i]).find('.coupon-name .qm').text('AI券')
+                        }
+                        else{
                             $($(".level-item")[i]).find('.coupon-name .qm').text(res.data[i].coupon_type)
                         }
                         $($(".level-item")[i]).find('.coupon-nn').text(res.data[i].coupon_goods_name+' x1')
@@ -835,8 +846,10 @@
                             $($(".level-item")[i]).find('.level-iconBox>img').attr('src', coupon_ico.chachong)
                         }else if(res.data[i].coupon_type == '降重券') {
                             $($(".level-item")[i]).find('.level-iconBox>img').attr('src', coupon_ico.jiangchong)
-                        }else if(res.data[i].coupon_typ == '写作券') {
+                        }else if(res.data[i].coupon_type == '写作券') {
                             $($(".level-item")[i]).find('.level-iconBox>img').attr('src', coupon_ico.xiezuo)
+                        }else if(res.data[i].coupon_type == 'AI工具券') {
+                            $($(".level-item")[i]).find('.level-iconBox>img').attr('src', coupon_ico.aitool)
                         }
                     }
                     $(".level-item").removeClass('invitation')
