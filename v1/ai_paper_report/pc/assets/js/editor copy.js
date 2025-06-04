@@ -1,4 +1,5 @@
 
+// 不使用后端验证版本
 // 第一步复制copy文件代码黏贴到editor.js
 // 第二步修改editor.js代码, 测试完整
 // 第三步将editor.js代码复制到copy文件

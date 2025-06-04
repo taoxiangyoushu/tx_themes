@@ -1,4 +1,5 @@
 
+// 现用未压缩代码
 // 第一步复制copy文件代码黏贴到editor.js
 // 第二步修改editor.js代码, 测试完整
 // 第三步将editor.js代码复制到copy文件
@@ -16,7 +17,7 @@ $('#editor , #editor2').on('keydown', function(e) {
         var text = $(this).text()
         $(this).text('').removeClass('editorBox')
         if(!keyNo.includes(e.keyCode)) {
-            if(upkey==17 && e.keyCode==86) { // ctrl + v 给原始p标签
+            if((upkey==17 && e.keyCode==86) || (upkey==86 && e.keyCode==86)) { // ctrl + v 给原始p标签
                 $(this).append('<p>'+text+'</br></p>')
             }else { // 键盘输入给指定p标签
                 $(this).append('<p class="outline-title outline-lv1 aidashi" data-lv="1" data-lvl="0" data-lvt="第一章">'+text+'</br></p>')

@@ -161,6 +161,7 @@ function llqType(pay_way) {
             if(pay_way.wx){
                 if(openid){
                     typeSelect('wxPublicNum')
+                    $("#ali-pay").before($("#wx-pay"))
                 }else{
                     $('#wx-pay').hide()
                     typeSelect('alipayWap')
