@@ -155,6 +155,8 @@ body {
             padding: 24px;
             font-size: 0;
             margin-bottom: 26px;
+            display: flex;
+            align-items: center;
             //display: none;
             .coupon-details {
                 display: inline-block;
@@ -212,10 +214,14 @@ body {
                 vertical-align: middle;
                 margin-left: 24px;
                 width: calc(100% - 348px);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 .c_db_t {
                     color: #4C1623;
                     font-size: 14px;
                     float: left;
+                    padding-right: 40px;
                     .c_db_p1 {
                         line-height: 36px;
                     }
@@ -230,7 +236,7 @@ body {
                     text-align: center;
                     line-height: 40px;
                     float: right;
-                    margin-top: 34px;
+                    // margin-top: 34px;
                     display: none;
                 }
                 .c_db_wc {
@@ -243,7 +249,7 @@ body {
                     text-align: center;
                     line-height: 40px;
                     float: right;
-                    margin-top: 34px;
+                    // margin-top: 34px;
                     cursor: pointer;
                     display: none;
                 }
@@ -607,7 +613,7 @@ body {
                         font-size: 0;
                         position: relative;
                         #link {
-                            width: 320px;
+                            width: calc(100% - 92px);
                             height: 100%;
                             padding-left: 8px;
                             padding-right: 26px;
@@ -650,7 +656,7 @@ body {
             &.hasLink {
                 height: 184px;
                 .link_block {
-                    display: block;
+                    display: flex;
                 }
             }
             &.successBox {

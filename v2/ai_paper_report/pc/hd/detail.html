@@ -59,6 +59,7 @@
                             <p class="c_db_p1">活动时间：<span class="acTime"></span> </p>
                             <p class="c_db_p1">参与次数：<span class="acFrequency">每个账号仅支持参加一次</span></p>
                             <p class="c_db_p1">发放方式：<span class="acGrant"></span></p>
+                            <p class="c_db_p1 instructionsForUse" style="display: none;">使用说明：<span class="instructionsForUse_content"></span></p>
                         </div>
                         <div class="c_db_cs">
                             <div class="c_db_csBtn">未完成</div>
@@ -222,8 +223,13 @@
         </div>
         <div class="c-b"></div>
     </div>
-    <p class="p1">您的券码：<span class="c-code"></span><span class="copyT">复制</span></p>
-    <p class="p2">核销地址：<a href="" target="_blank"><span class="link_text"></span></a></p>
+    <div id="successful">
+        <p class="p1">您的券码：<span class="c-code"></span><span class="copyT">复制</span></p>
+        <p class="p2">核销地址：<a href="" target="_blank"><span class="link_text"></span></a></p>
+    </div>
+    <div id="failure" style="text-align: center;color: red;font-size: 22px;margin-top: 20px;display: none;">
+        产品已下线，请联系客服处理
+    </div>
     <input type="text" id="copyInput">
     <div class="btn_block">
         <span class="btn_1">我知道了</span>
@@ -336,9 +342,18 @@
 
         for(var i=0;i<activityInfo.length;i++){
             if(activityInfo[i].type == $(this).attr('data-type')){
-                $(".coupon-details .c_d_p1").text(activityInfo[i].award[0].type_sec)
-                $(".coupon-details .c_d_p3").text(activityInfo[i].award[0].goods_name)
-                $(".coupon-details .c_d_p4").text( activityInfo[i].award[0].discount)
+                if(activityInfo[i].award[0].type != 'three_coupon') {
+                    $(".coupon-details .c_d_p1").text(activityInfo[i].award[0].type_sec)
+                    $(".coupon-details .c_d_p3").text(activityInfo[i].award[0].goods_name)
+                    $(".coupon-details .c_d_p4").text( activityInfo[i].award[0].discount)
+                    $('.instructionsForUse').hide()
+                }else {
+                    $(".coupon-details .c_d_p1").text(activityInfo[i].award[0].three_coupon_jane)
+                    $(".coupon-details .c_d_p3").text(activityInfo[i].award[0].three_coupon_name)
+                    $(".coupon-details .c_d_p4").hide()
+                    $('.instructionsForUse').show()
+                    $('.instructionsForUse .instructionsForUse_content').text(activityInfo[i].award[0].three_coupon_detail)
+                }
                 $(".coupon-details .deadline").text( '长期有效' )
                 if(activityInfo[i].award[0].end_time){
                     $(".coupon_describe .acTime").text( activityInfo[i].award[0].end_time + '截止' )
@@ -426,14 +441,25 @@
                         //     $(".coupon_describe .acTime").text( '长期有效' )
                         // }
                         if(res.data[i].type != 'activity_tg'){
-                            element += ' <div class="coupons-item" data-type="'+ res.data[i].type +'">\n' +
-                                '                <p class="c-name">'+  res.data[i].award[0].type_sec +'</p>\n' +
-                                '                <p class="c-t-name">'+ res.data[i].award[0].goods_name +'  '+ res.data[i].award[0].discount +'</p>\n' +
-                                '                <div class="taskBrief-block">\n' +
-                                '                    <p class="p-task">'+ res.data[i].type_des +'</p>\n' +
-                                '                    <p class="p-consuming">活动预计耗时：3秒</p>\n' +
-                                '                </div>\n' +
-                                '            </div>'
+                            if(res.data[i].award[0].type != 'three_coupon') {
+                                element += ' <div class="coupons-item" data-total="'+res.data[i].award[0].num_total+'" data-type="'+ res.data[i].type +'">\n' +
+                                    '                <p class="c-name">'+  res.data[i].award[0].type_sec +'</p>\n' +
+                                    '                <p class="c-t-name">'+ res.data[i].award[0].goods_name +'  '+ res.data[i].award[0].discount +'</p>\n' +
+                                    '                <div class="taskBrief-block">\n' +
+                                    '                    <p class="p-task">'+ res.data[i].type_des +'</p>\n' +
+                                    '                    <p class="p-consuming">活动预计耗时：3秒</p>\n' +
+                                    '                </div>\n' +
+                                    '            </div>'
+                            }else {
+                                element += ' <div class="coupons-item" data-total="'+res.data[i].award[0].num_total+'" data-type="'+ res.data[i].type +'">\n' +
+                                    '                <p class="c-name">'+escapeHtml(res.data[i].award[0].three_coupon_jane) +'</p>\n' +
+                                    '                <p class="c-t-name">'+escapeHtml(res.data[i].award[0].three_coupon_name) +'</p>\n' +
+                                    '                <div class="taskBrief-block">\n' +
+                                    '                    <p class="p-task">'+ res.data[i].type_des +'</p>\n' +
+                                    '                    <p class="p-consuming">活动预计耗时：3秒</p>\n' +
+                                    '                </div>\n' +
+                                    '            </div>'
+                            }
                         }
                     }
                     $(".couponsType-block").append(element)
@@ -481,12 +507,25 @@
                         $(".submit_link").addClass('submitN')
                         $(".img_block").hide()
                         $(".coupon_pop .c-code").text(res.data.coupon_code)
-                        $(".coupon_pop .p_title span").text(res.data.coupon_type)
-                        $(".coupon_performance .c_type_p").text(res.data.coupon_type)
-                        $(".coupon_performance .c_name_p1").text(res.data.coupon_goods_name)
-                        $(".coupon_performance .c_name_p2").text(res.data.coupon_discount)
-                        $(".coupon-details .c_d_p1").text(res.data.coupon_type)
-                        $(".coupon-details .c_d_p3").text(res.data.coupon_goods_name)
+                        if(res.data.award_status === 0) {
+                           $('#successful').hide()
+                           $('#failure').show()
+                        }
+                        if(res.data.award_type != 'three_coupon') { // 非自定义券
+                            $(".coupon_pop .p_title span").text(res.data.coupon_type)
+                            $(".coupon_performance .c_type_p").text(res.data.coupon_type)
+                            $(".coupon_performance .c_name_p1").text(res.data.coupon_goods_name)
+                            $(".coupon_performance .c_name_p2").text(res.data.coupon_discount)
+                            $(".coupon-details .c_d_p1").text(res.data.coupon_type)
+                            $(".coupon-details .c_d_p3").text(res.data.coupon_goods_name)
+                        }else { // 自定义券
+                            $(".coupon_pop .p_title span").text(res.data.three_coupon_jane)
+                            $(".coupon_performance .c_type_p").text(res.data.three_coupon_jane)
+                            $(".coupon_performance .c_name_p1").text(res.data.three_coupon_name)
+                            $(".coupon_performance .c_name_p2").hide()
+                            $(".coupon-details .c_d_p1").text(res.data.three_coupon_jane)
+                            $(".coupon-details .c_d_p3").text(res.data.three_coupon_name)
+                        }
                         $(".coupon-details .c_d_p4").text(res.data.coupon_discount)
                         if(res.data.coupon_expired) {
                             var dataArr = res.data.coupon_expired.split('-')
@@ -549,6 +588,18 @@
                 }else if(res.code == '-1'){
                     $(".c_db_csL").hide()
                     $(".c_db_cs").show()
+                    if($('.coupons-item.active').data('total') <= 0) {
+                        $("#link , #exampleInputFile").attr('disabled', 'disabled').attr('placeholder' , '该优惠券已被领完!')
+                        $(".submit_block").addClass('successBox')
+                        $(".submit_link").addClass('submitN')
+                        setTimeout(function() {
+                            $('.deadline').text('活动已下线!')
+                        }, 100)
+                        $('.s_block').hide()
+                        $(".c_db_csL").hide()
+                        $(".c_db_cs").show()
+                        return
+                    }
                 }else{
                     $(".c_db_csL").hide()
                     $(".c_db_cs").show()
@@ -656,7 +707,8 @@
             'act_bind_link': $("#link").val(),
             'image_list[0]': fid,
             'activity_type': $(".coupons-item.active").attr('data-type'),
-            'applicant': ''
+            'applicant': '',
+            // 'domain_record': 'dashixiezuo.local' // 本地测试打开
         }
         $(".submit_link").text('提交中...')
         $(".submit_link").addClass('submitN')

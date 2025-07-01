@@ -197,6 +197,21 @@ p {
   text-align: center;
   white-space: nowrap;
 }
+.a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .coupon-name.custom {
+  background-image: none !important;
+  background: rgba(255, 224, 224, 0.2);
+  border: 1px solid #f8c9c9;
+  border-bottom-left-radius: 0.625rem;
+  border-bottom-right-radius: 0.625rem;
+  box-sizing: content-box;
+  margin-left: -1px;
+}
+.a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .coupon-name.custom .zk {
+  display: none;
+}
+.a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .coupon-name.custom .qm {
+  width: 100%;
+}
 .a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .l-i-mask {
   position: absolute;
   width: 5.5rem;

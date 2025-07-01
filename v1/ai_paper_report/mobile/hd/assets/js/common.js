@@ -114,7 +114,7 @@ window.onload = function (){
 				}else{
 					$(".noCustomer").hide()
 				}
-				
+
 				threeMsg = data.project[0].threeMsg
 				if(data.domain_config && data.domain_config.distribution_status) {
 					$('.recruit_block').show()
@@ -182,4 +182,12 @@ function verification(this_) {
 			this_.val('1')
 		}
 	}
+}
+function escapeHtml(unsafe) {
+	return unsafe
+	.replace(/&/g, "&amp;")
+	.replace(/</g, "&lt;")
+	.replace(/>/g, "&gt;")
+	.replace(/"/g, "&quot;")
+	.replace(/'/g, "&#039;");
 }

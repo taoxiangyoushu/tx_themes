@@ -12,8 +12,8 @@
 	<link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0044">
-	<link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0044">
+	<link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0045">
+	<link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0045">
 	<!-- <link rel="stylesheet" href="../assets/css/styles.css" /> -->
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!--[if lt IE 9]>
@@ -140,7 +140,7 @@
 								<div class="content-box">
 									<div class="text-box">
 										<textarea id="content-text" autocomplete="off" maxlength="300000"></textarea>
-										<span class="Paste_Tips">内容字数 <span class="WORD_LIMIT"></span>，提交内容建议去除封面、目录，<span>仅提交中文正文内容</span></span>
+										<span class="Paste_Tips">内容字数 <span class="WORD_LIMIT"></span>，提交内容建议去除封面、目录，<span>仅支持提交中英文内容检测</span></span>
 									</div>
 									<div class="file-box">
 										<input type="file" id="content-file" accept=".doc,.docx,.txt">
@@ -149,7 +149,7 @@
 											<div class="Upload_paper"><img src="../pc/assets/img/Upload_paper.svg" alt=""> 上传论文</div>
 											<p class="p1"><span class="blueText">点击上传，拖动文件到框内上传</span></p>
 											<p class="p2">支持文档格式：txt、doc(x)文件格式，文档大小不超过10M</p>
-											<p class="p3">注：当前仅支持检测中文文本内容</p>
+											<p class="p3">注：当前仅支持检测中英文文本内容</p>
 										</div>
 										<div class="file-block">
 											<img class="file-icon" src="../pc/assets/img/files.png" alt="">
@@ -268,7 +268,7 @@
 						</div>
 					</div>
 					<div class="MustReadBox">
-						<p>当前版本<span>仅支持中文内容</span>检测，英文数字等非中文内容自动忽略</p>
+						<p>当前版本<span>仅支持中英文内容</span>检测，特殊字符、图表、公式等内容暂不支持</p>
 						<p>支持上传<span> doc、docx、txt</span>格式，文本不超过100万字符</p>
 						<p>文件大小<span>不超过 10M</span>，若超过10M导致上传失败，建议您删除送检文献中图片、图表、表格后，再进行上传</p>
 						<p><span>为了不影响检测结果，</span>让系统准确识别参考文献，请在正文后标明<span>“参考文献”</span>字样，并在之后按照《信息与文献参考文献著录规则》(GBIT7714-2015)规范参考文献格式</p>
@@ -319,8 +319,8 @@
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../pc/assets/js/bootstrap.min.js"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0044"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0044"></script>
+<script src="../pc/assets/js/common.js?v=p24.0045"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0045"></script>
 <script>
 	$("#title").on('input', function (){
 		$(".titleNumber").text($(this).val().length)

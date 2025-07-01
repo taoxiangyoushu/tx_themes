@@ -135,14 +135,14 @@
                                         <div class="upload_notes aigc_notes">
                                             <p class="notes_subtitle">上传须知：</p>
                                             <p class="p2">仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
-                                            <p class="p3">目前仅支持中文，暂不支持其他语言以及图片、表格、代码等内容降AIGC</p>
+                                            <p class="p3">目前仅支持中英文，暂不支持其他语言以及图片、表格、代码等内容降AIGC</p>
                                             <p class="p3">如有AIGC检测报告，建议使用报告上传</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="content_block form_block">
                                     <div class="border_box">
-                                        <textarea class="form-control" autocomplete="off" name="text_content" id="textContent" placeholder="内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。" maxlength="300000"></textarea>
+                                        <textarea class="form-control" autocomplete="off" name="text_content" id="textContent" placeholder="内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。仅支持中英文。" maxlength="300000"></textarea>
                                         <span class="counter">
                                         当前已输入<i class="impl">0</i>字符</span><br/>
                                         </span>
@@ -410,7 +410,7 @@
                             <li>1、上传文档/文本粘贴：仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</li>
                             <li>2、上传报告：仅支持.zip、部分.pdf或部分.html格式的文件上传</li>
                             <li class="system_text_jc">3、目前仅支持中英文，暂不支持其他语言、图片、表格、公式、代码降重</li>
-                            <li class="system_text_aigc">3、目前仅支持中文，暂不支持其他语言以及图片、表格、代码等内容降AIGC</li>
+                            <li class="system_text_aigc">3、目前仅支持中英文，暂不支持其他语言以及图片、表格、代码等内容降AIGC</li>
                             <li>4、下载的内容仅用于参考，不作为毕业、发表使用</li>
                             <li>5、pdf格式不稳定，可能会出现乱码，请确认后再提交</li>
                             <li class="system_text_aigc">6、Paper系列等免费平台AIGC检测结果暂时无法保证有效降低</li>
@@ -773,11 +773,11 @@
                 if(typeData[i].short_name==$(this).data('type')){
                     if(typeData[i].calc_price_type==2){
                         var lastindex=typeData[i].selling_price_list.length-1
-                        $("#textContent").attr('placeholder','内容字数在200-'+typeData[i].selling_price_list[lastindex].word+'字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交！')
+                        $("#textContent").attr('placeholder','内容字数在200-'+typeData[i].selling_price_list[lastindex].word+'字，提交内容建议去除封面，目录，仅提交正文。仅支持中英文。')
                         $("#textContent").attr('maxlength',typeData[i].selling_price_list[lastindex].word)
                     }
                     else{
-                        $("#textContent").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交！')
+                        $("#textContent").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。仅支持中英文。')
                         $("#textContent").attr('maxlength',300000)
                     }
                 }
@@ -804,11 +804,11 @@
                 if(typeData[i].short_name==$(this).data('type')){
                     if(typeData[i].calc_price_type==2){
                         var lastindex=typeData[i].selling_price_list.length-1
-                        $("#textContent").attr('placeholder','内容字数在200-'+typeData[i].selling_price_list[lastindex].word+'字，提交内容建议去除封面，目录，仅提交正文。')
+                        $("#textContent").attr('placeholder','内容字数在200-'+typeData[i].selling_price_list[lastindex].word+'字，提交内容建议去除封面，目录，仅提交正文。仅支持中英文。')
                         $("#textContent").attr('maxlength',typeData[i].selling_price_list[lastindex].word)
                     }
                     else{
-                        $("#textContent").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。')
+                        $("#textContent").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。仅支持中英文。')
                         $("#textContent").attr('maxlength',300000)
                     }
                 }

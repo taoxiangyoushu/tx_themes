@@ -382,7 +382,8 @@
         jiance: '../../pc/hd/assets/img/jiance.png',
         jiangchong: '../../pc/hd/assets/img/jiangchong.png',
         xiezuo: '../../pc/hd/assets/img/xiezuo.png',
-        aitool:'../../pc/hd/assets/img/aitool.png'
+        aitool:'../../pc/hd/assets/img/aitool.png',
+        three_coupon: '../../pc/hd/assets/img/zdy.png',
     }
 
     function infoSuccess(data) {
@@ -509,9 +510,15 @@
                                 if(res.data[i].enable){
                                     $($('.entrance-item')[j]).show()
                                     $($('.entrance-item')[j]).css('display', 'inline-block')
-                                    $($('.entrance-item')[j]).find('.couponName').text(res.data[i].award[0].type_sec)
-                                    $($('.entrance-item')[j]).find('.goodsName').text(res.data[i].award[0].goods_name)
-                                    $($('.entrance-item')[j]).find('.discount').text(res.data[i].award[0].discount)
+                                    if(res.data[i].award[0].type != 'three_coupon') {
+                                        $($('.entrance-item')[j]).find('.couponName').text(res.data[i].award[0].type_sec)
+                                        $($('.entrance-item')[j]).find('.goodsName').text(res.data[i].award[0].goods_name)
+                                        $($('.entrance-item')[j]).find('.discount').text(res.data[i].award[0].discount)
+                                    }else {
+                                        $($('.entrance-item')[j]).find('.couponName').text(res.data[i].award[0].three_coupon_jane)
+                                        $($('.entrance-item')[j]).find('.goodsName').text(res.data[i].award[0].three_coupon_name)
+                                        $($('.entrance-item')[j]).find('.discount').hide()
+                                    }
                                 }
                             }
                         }
@@ -523,17 +530,26 @@
                                 $(".getCoupons-block").hide()
                             }
                             for(var s=0;s<res.data[i].award.length;s++) {
-                                $($(".level-item")[s]).find('.coupon-name .zk').text(res.data[i].award[s].discount)
+                                if(res.data[i].award[s].type != "three_coupon") {
+                                    $($(".level-item")[s]).find('.coupon-name .zk').text(res.data[i].award[s].discount)
+                                    $($(".level-item")[s]).find('.coupon-nn').text(res.data[i].award[s].goods_name+ ' x1')
+                                }else {
+                                    $($(".level-item")[s]).find('.coupon-name').addClass('custom')
+                                    $($(".level-item")[s]).find('.coupon-nn').text(res.data[i].award[s].three_coupon_name+ ' x1')
+                                }
+                                
                                 if(res.data[i].award[s].type_sec == 'AIGC检测券'){
                                     $($(".level-item")[s]).find('.coupon-name .qm').text('检测券')
                                 }
                                 else if(res.data[i].award[s].type_sec == 'AI工具券'){
                                     $($(".level-item")[s]).find('.coupon-name .qm').text('AI券')
                                 }
+                                else if(res.data[i].award[s].type_sec == '自定义券码'){
+                                    $($(".level-item")[s]).find('.coupon-name .qm').text(res.data[i].award[s].three_coupon_jane)
+                                }
                                 else{
                                     $($(".level-item")[s]).find('.coupon-name .qm').text(res.data[i].award[s].type_sec)
                                 }
-                                $($(".level-item")[s]).find('.coupon-nn').text(res.data[i].award[s].goods_name+ ' x1')
                                 if(res.data[i].award[s].type_sec == 'AIGC检测券') {
                                     $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.jiance)
                                 }else if(res.data[i].award[s].type_sec == '查重券') {
@@ -544,6 +560,8 @@
                                     $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.xiezuo)
                                 }else if(res.data[i].award[s].type_sec == 'AI工具券') {
                                     $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.aitool)
+                                }else if(res.data[i].award[s].type_sec == '自定义券码') {
+                                    $($(".level-item")[s]).find('.level-iconBox>img').attr('src', coupon_ico.three_coupon)
                                 }
                                 $($(".level-item")[s]).show()
                                 $($(".level-item")[s]).css('display', 'inline-block')
@@ -771,7 +789,7 @@
                         }else if(res.data[i].coupon_type == 'AI工具券') {
                             $($(".level-item")[i]).find('.level-iconBox>img').attr('src', coupon_ico.aitool)
                         }
-
+                        
                     }
                     $(".level-item").removeClass('invitation')
                     $($(".level-item")[res.data.length]).addClass('invitation')

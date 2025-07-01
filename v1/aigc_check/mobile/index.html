@@ -45,10 +45,10 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0021">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0021">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0021">
-    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0021">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0022">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0022">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0022">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0022">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'aigc_check'
@@ -113,7 +113,7 @@
                     <div class="Thesis">
                         <div class="InputBox">
                             <textarea name="textareaName" id="textareaText" maxlength="300000" autocomplete="off"></textarea>
-							<span class="Paste_Tips">内容字数 <span class="WORD_LIMIT"></span>，提交内容建议去除封面、目录，<span>仅提交中文正文内容</span></span>
+							<span class="Paste_Tips">内容字数 <span class="WORD_LIMIT"></span>，提交内容建议去除封面、目录，<span>仅支持提交中英文内容检测</span></span>
                         </div>
                         <div class="UploadBox">
                             <input name="docUpload" id="ThesisInput" type="file" single ref="docUpload" file-upload=""
@@ -122,7 +122,7 @@
                                 <!-- <img src="../mobile/assets/img/uploadfiles.png" alt="上传"> -->
                                  <div class="Upload_paper"><img src="../mobile/assets/img/Upload_paper.png" alt="">上传论文</div>
                                  <span>支持txt、doc(x)文件格式，文档大小不超过10M </span>
-                                 <p><span>注：当前仅支持检测中文文本内容</span></p>
+                                 <p><span>注：当前仅支持检测中英文文本内容</span></p>
                             </div>
                             <div class="Complete">
                                 <div class="CompleteBox">
@@ -145,7 +145,7 @@
 
 
             <div class="form-group groupSubmit">
-                <button id="generate" class="btn btn-primary generate">立即检测</button>
+                <button id="generate" class="btn btn-primary generate" type="button">立即检测</button>
                 <div class="btn-newblock">
                     <button type="button" class="btn btn-primary query">查询结果</button>
                     <button type="button" class="btn btn-primary swatch">
@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="form-group form-group_s short card checkbox">
-                <input class="inputCheck" type="checkbox" checked="checked"> 我已阅读并同意: 当前仅支持识别中文文本，检测结果由
+                <input class="inputCheck" type="checkbox" checked="checked"> 我已阅读并同意: 当前仅支持识别中英文内容，检测结果由
                 系统自动生成，为您提供的是相关线索而非判断依据和 （或者）判断标准，仅供参考。
             </div>
             <div class="case realTime">
@@ -276,7 +276,7 @@
                     </div>
                 </div>
                 <div class="MustReadBox">
-                    <p>当前版本<span>仅支持中文内容</span>检测，英文数字等非中文内容自动忽略</p>
+                    <p>当前版本<span>仅支持中英文内容</span>检测，特殊字符、图表、公式等内容暂不支持</p>
                     <p>支持上传<span> doc、docx、pdf、txt</span>格式，文本不超过100万字符</p>
                     <p>文件大小<span>不超过 10M</span>，若超过10M导致上传失败，建议您删除送检文献中图片、图表、表格后，再进行上传
                     </p>
@@ -357,7 +357,7 @@
 <script src="../mobile/assets/js/common.js?v=1.1"></script>
 <script src="../mobile/assets/js/bootstrap-select.js"></script>
 <script src="../mobile/assets/js/bootstrapValidator.min.js"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.0021"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0022"></script>
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/Drag.js"></script>
 <script>

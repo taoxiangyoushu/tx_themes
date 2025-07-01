@@ -156,6 +156,19 @@ p {
   text-align: center;
   white-space: nowrap;
 }
+.a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .coupon-name.custom {
+  background-image: none !important;
+  background: rgba(255, 224, 224, 0.2);
+  border: 1px solid #f8c9c9;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .coupon-name.custom .zk {
+  display: none;
+}
+.a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .coupon-name.custom .qm {
+  width: 100%;
+}
 .a-content .getCoupons-block .gc-c-block .level-block .level-item .level-iconBox .l-i-mask {
   position: absolute;
   width: 88px;
@@ -985,4 +998,3 @@ p {
     transform: scale(1.2, 1);
   }
 }
-/*# sourceMappingURL=activity.css.map */

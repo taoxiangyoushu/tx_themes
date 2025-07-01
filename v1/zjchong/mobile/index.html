@@ -120,7 +120,7 @@
                         </div>
                     </div>
                     <div class="content_block">
-                        <textarea id="contentTxt" autocomplete="off" placeholder="内容字数在200-300000字，提交内容建议去除封面、目录，仅提交正文" maxlength="300000"></textarea>
+                        <textarea id="contentTxt" autocomplete="off" placeholder="内容字数在200-300000字，提交内容建议去除封面、目录，仅提交正文。仅支持中英文。" maxlength="300000"></textarea>
                         <div class="content_tips">
                             当前已输入<span class="content_count">0</span>字符
                         </div>
@@ -289,7 +289,7 @@
                                             2、上传报告：仅支持.zip、部分.pdf或部分.html格式的文件上传；
                                         </span>
                                         <span>
-                                            3、目前仅支持中文，暂不支持其他语言以及图片、表格、代码等内容降AIGC；
+                                            3、目前仅支持中英文，暂不支持其他语言以及图片、表格、代码等内容降AIGC；
                                         </span>
                                         <span>
                                             4、下载的内容仅用于参考，不作为毕业、发表使用。
@@ -864,11 +864,11 @@
                 if(typeData[i].short_name==$(this).data('type')){
                     if(typeData[i].calc_price_type==2){
                         var lastindex=typeData[i].selling_price_list.length-1
-                        $("#contentTxt").attr('placeholder','内容字数在200-'+typeData[i].selling_price_list[lastindex].word+'字，提交内容建议去除封面，目录，仅提交正文。')
+                        $("#contentTxt").attr('placeholder','内容字数在200-'+typeData[i].selling_price_list[lastindex].word+'字，提交内容建议去除封面，目录，仅提交正文。仅支持中英文。')
                         $("#contentTxt").attr('maxlength',typeData[i].selling_price_list[lastindex].word)
                     }
                     else{
-                        $("#contentTxt").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。')
+                        $("#contentTxt").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。仅支持中英文。')
                         $("#contentTxt").attr('maxlength',300000)
                     }
                 }
@@ -901,11 +901,11 @@
                 if(typeData[i].short_name==$(this).data('type')){
                     if(typeData[i].calc_price_type==2){
                         var lastindex=typeData[i].selling_price_list.length-1
-                        $("#contentTxt").attr('placeholder','内容字数在200-'+typeData[i].selling_price_list[lastindex].word+'字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交！')
+                        $("#contentTxt").attr('placeholder','内容字数在200-'+typeData[i].selling_price_list[lastindex].word+'字，提交内容建议去除封面，目录，仅提交正文。仅支持中英文。')
                         $("#contentTxt").attr('maxlength',typeData[i].selling_price_list[lastindex].word)
                     }
                     else{
-                        $("#contentTxt").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交！')
+                        $("#contentTxt").attr('placeholder','内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。仅支持中英文。')
                         $("#contentTxt").attr('maxlength',300000)
                     }
                 }
