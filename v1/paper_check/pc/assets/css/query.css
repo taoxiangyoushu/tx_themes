@@ -438,6 +438,12 @@ html body .query_page {
   padding-left: 20px;
   text-align: left;
 }
+.block-right .r-content .resultBox .orderInformation.table tbody tr th.titles {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 90px;
+}
 .block-right .r-content .resultBox .orderInformation.table tbody .titles .error_msg {
   display: none;
   position: absolute;

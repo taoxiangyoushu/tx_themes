@@ -689,4 +689,24 @@ body {
   top: calc(74% - 90px);
   right: 0;
 }
+input[type="checkbox"] {
+  /* 去掉默认样式 */
+  appearance: none;
+  /* 兼容IE浏览器 */
+  -ms-appearance: none ;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid #767676;
+  outline: none;
+}
+input[type="checkbox"]:focus {
+  outline: none;
+}
+input[type="checkbox"]:checked {
+  background: url("../img/check1_pre.png") no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  border: none;
+}
 /*# sourceMappingURL=common.css.map */

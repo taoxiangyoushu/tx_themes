@@ -133,32 +133,43 @@
         outline: 0 !important;
         padding: 0;
     }
-    input[type=checkbox] {
-        width: 13px;
-        height: 13px;
-        margin-right: 10px;
-        position: relative;
+    //input[type=checkbox] {
+    //    width: 13px;
+    //    height: 13px;
+    //    margin-right: 10px;
+    //    position: relative;
+    //}
+    //input[type=checkbox]::after {
+    //    position: absolute;
+    //    top: 0;
+    //    color: #000;
+    //    width: 13px;
+    //    height: 13px;
+    //    display: inline-block;
+    //    visibility: visible;
+    //    padding-left: 0;
+    //    text-align: center;
+    //    content: ' ';
+    //    // border-radius: .03rem;
+    //}
+    //input[type=checkbox]:checked::after {
+    //    content: "✓";
+    //    color: #fff;
+    //    font-size: 12px;
+    //    line-height: 15px;
+    //    font-weight: bold;
+    //    background-color: #7579db;;
+    //}
+    input[type="checkbox"]:checked {
+        background: url("../img/check2_pre.png")no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+        border: none !important;
     }
-    input[type=checkbox]::after {
-        position: absolute;
-        top: 0;
-        color: #000;
-        width: 13px;
-        height: 13px;
-        display: inline-block;
-        visibility: visible;
-        padding-left: 0;
-        text-align: center;
-        content: ' ';
-        // border-radius: .03rem;
-    }
-    input[type=checkbox]:checked::after {
-        content: "✓";
-        color: #fff;
-        font-size: 12px;
-        line-height: 15px;
-        font-weight: bold;
-        background-color: #7579db;;
+    input[type="radio"]:checked {
+        background: url("../img/select2_pre.png")no-repeat;
+        background-size: 100% 100%;
+        border: none;
     }
     .EnglishLiteratureBox {
         input[type=checkbox]:checked::after {

@@ -312,8 +312,6 @@
   cursor: pointer;
 }
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .upload-type .toCheck .SubmissionMode {
-  width: 14px;
-  height: 14px;
   vertical-align: middle;
   margin-top: -2px;
   cursor: pointer;
@@ -768,5 +766,24 @@
 }
 .QRCodeDL {
   line-height: normal !important;
+}
+input[type="radio"] {
+  /* 去掉默认样式 */
+  appearance: none;
+  /* 兼容IE浏览器 */
+  -ms-appearance: none ;
+  width: 16px ;
+  height: 16px ;
+  border-radius: 50px;
+  border: 1px solid #787878;
+  outline: none;
+}
+input[type="radio"]:focus {
+  outline: none;
+}
+input[type="radio"]:checked {
+  background: url("../img/select2_pre.png") no-repeat;
+  background-size: 100% 100%;
+  border: none;
 }
 /*# sourceMappingURL=index.css.map */

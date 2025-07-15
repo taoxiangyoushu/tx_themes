@@ -9,8 +9,8 @@
     <meta name="keywords" content="" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0061">
-    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0061">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0063">
+    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0063">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -156,11 +156,11 @@
                         <table class="orderInformation table" border="1" cellspacing="0">
                             <thead>
                             <tr>
-                                <th width="200">订单号</th>
-                                <th width="300">论文标题</th>
-                                <th width="200">系统</th>
-                                <th width="100">相似度</th>
-                                <th width="230">查重时间</th>
+                                <th width="180">订单号</th>
+                                <th width="220">论文标题</th>
+                                <th width="150">系统</th>
+                                <th width="150">相似度</th>
+                                <th width="200">查重时间</th>
                                 <th width="150">状态</th>
                                 <th width="250">操作</th>
                             </tr>
@@ -238,9 +238,9 @@
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=ts1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0061"></script>
+<script src="../pc/assets/js/common.js?v=p24.0063"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0061"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0063"></script>
 <script>
     function startQuerying(){
         if(getQueryVariable('oid')) {
@@ -322,7 +322,7 @@
                         text += "<tr>";
                         text += "<th class=\"first\">"+ resData.order_sn +"</th>";
                         text += "<th class=\"titles\" title=\""+ resData.place_order_data.title.value +"\">"+ resData.place_order_data.title.value +"</th>";
-                        text += "<th class=\"titles\" title=\""+ SystemName +"\">"+ SystemName +"</th>";
+                        text += "<th class=\"\" title=\""+ SystemName +"\">"+ SystemName +"</th>";
                         var status = resData.order_status_human
                         var styleClass = resData.order_status==60? 'complete': [resData.order_status==61? 'failure':'not']
                         var copy_percent = resData.copy_percent||resData.copy_percent==0?resData.copy_percent+'%':"--"

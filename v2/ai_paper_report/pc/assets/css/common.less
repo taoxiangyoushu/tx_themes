@@ -1063,3 +1063,55 @@ input#contenteditable {
     cursor: pointer;
     display: none;
 }
+
+input[type="checkbox"] {
+    /* 去掉默认样式 */
+    appearance: none;
+    /* 兼容IE浏览器 */
+    -ms-appearance:none ;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    border: 1px solid #767676;
+    outline: none;
+}
+
+input[type="checkbox"]:disabled {
+    border-color: rgba(118, 118, 118, 0.3);
+    background: #f8f8f8;
+}
+
+input[type="checkbox"]:focus {
+    outline: none;
+}
+
+input[type="checkbox"]:checked {
+    background: url("../img/check1_pre.png")no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    border: none !important;
+}
+
+
+input[type="radio"] {
+    /* 去掉默认样式 */
+    appearance: none;
+    /* 兼容IE浏览器 */
+    -ms-appearance:none ;
+    width: 16px ;
+    height: 16px ;
+    border-radius: 50px;
+    border: 1px solid #787878;
+    margin: 0px 2px 0 0 !important;
+    outline: none;
+}
+
+input[type="radio"]:focus {
+    outline: none;
+}
+
+input[type="radio"]:checked {
+    background: url("../img/select1_pre.png")no-repeat;
+    background-size: 100% 100%;
+    border: none;
+}

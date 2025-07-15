@@ -352,12 +352,9 @@ table tbody {
 .mainContainer .jiangAIGCType .contenteditable_s .SubmissionMode,
 .mainContainer .jiangAIGCContent .contenteditable_s .SubmissionMode,
 .mainContainer .xzaigccheck_conditions .contenteditable_s .SubmissionMode {
-  width: 20px;
-  height: 16px;
   vertical-align: text-bottom;
   cursor: pointer;
   margin-top: 0 !important;
-  margin-left: -2px;
 }
 .mainContainer .EnglishLiterature .contenteditable_s .prompt-c,
 .mainContainer .education_c .contenteditable_s .prompt-c,
@@ -865,9 +862,7 @@ label {
 }
 .proposal .proposal-text .proposal-check {
   display: inline-block;
-  border: 1px solid #eee;
   vertical-align: text-top;
-  border-radius: 50%;
   margin-right: 8px;
   box-sizing: border-box;
   margin-top: 1px;
@@ -906,9 +901,7 @@ label {
 .gen_params span.genCode input[type=checkbox],
 .gen_params span.questionnaire input[type=checkbox] {
   display: inline-block;
-  border: 1px solid #eee;
   vertical-align: text-top;
-  border-radius: 50%;
   margin-right: 8px;
   box-sizing: border-box;
   margin-top: 1px;
@@ -1913,3 +1906,4 @@ p.word-prompt .text-num {
 .indexApp .proposal .fileBlock img.deleteFile {
   margin-top: 0;
 }
+/*# sourceMappingURL=index.css.map */
