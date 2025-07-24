@@ -298,6 +298,7 @@ function payWay(pay_way , goods_info, scanCodeRichInfo) {
             if(!scanCodeRichInfo.scanCodeRichAlipay.enabled && pay_way.alipay) {
                 $('#alipay').show()
                 $('#scanCodeRich').show()
+                $('#alipay').before($('#scanCodeRich'))
                 $('#scanCodeRich').addClass('select')
             }
         }
@@ -307,6 +308,7 @@ function payWay(pay_way , goods_info, scanCodeRichInfo) {
             if(!scanCodeRichInfo.scanCodeRichWx.enabled && pay_way.wx) {
                 $('#wx').show()
                 $('#scanCodeRich').show()
+                $('#wx').before($('#scanCodeRich'))
                 $('#scanCodeRich').addClass('select')
             }
         }
@@ -326,6 +328,9 @@ function payWay(pay_way , goods_info, scanCodeRichInfo) {
         if(pay_way.wx) $('#wx').show()
         $('.clearfix2>.payType>div').removeClass('select')
         $('#' + pay_way.default).addClass('select')
+        if(pay_way.default == 'wx'){
+            $("#alipay").before($("#wx"))
+        }
         if(pay_way.taobao || pay_way.redBook) {// 第三方订单展示控制
             if(pay_type != 'taobao' && pay_type!='redBook') $('#thirdparty').show()
 

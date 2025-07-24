@@ -48,10 +48,14 @@
   margin-top: 1.43rem;
   display: none;
 }
+.payApp .payType .tapTypeImg {
+  display: flex;
+  align-items: center;
+}
 .payApp .payType .tapTypeImg img {
   width: 2.1rem;
   height: 2.1rem;
-  margin-right: 1.1rem;
+  margin-right: 1.5rem;
 }
 .payApp .dsf-Pay {
   background-color: #ffffff;

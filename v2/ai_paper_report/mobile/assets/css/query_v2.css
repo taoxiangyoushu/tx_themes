@@ -305,7 +305,8 @@ body {
 }
 .resultBox .resultItem .report-operate .report-download,
 .resultBox .resultItem .report-operate .report-order,
-.resultBox .resultItem .report-operate .report-delete {
+.resultBox .resultItem .report-operate .report-delete,
+.resultBox .resultItem .report-operate .report-generate {
   border-radius: 0.4rem;
   line-height: normal;
   height: auto;
@@ -367,4 +368,3 @@ body {
 .swiper-pagination-bullet {
   margin: 0 0.4rem;
 }
-/*# sourceMappingURL=query_v2.css.map */

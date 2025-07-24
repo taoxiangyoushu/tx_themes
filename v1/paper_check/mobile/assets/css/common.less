@@ -173,13 +173,20 @@ button { cursor: pointer; -webkit-appearance: none; }
   }
 }
 
-#filing-information {
+.footer {
+  display: flex;
+  justify-content: center;
+  #company-name {
+    margin-left: 2px;
+  }
+}
+#filing-information , #company-name {
   color: #999999;
   font-size: 1rem;
   text-align: center;
-  height: 4rem;
+  // height: 4rem;
   line-height: 4rem;
-  border-top: 1px solid #ededed;
+  // border-top: 1px solid #ededed;
   a {
     text-decoration: none;
     color: #8f8f8f;

@@ -186,6 +186,7 @@ body {
 .resultBox .resultItem .report-operate .report-download.downloadable {
   background: #0075ff;
   color: #fff;
+  border: 1px solid #0075ff;
 }
 .resultBox .resultItem .report-operate .report-download.unDownloadable {
   background: #bdbcbc;
@@ -1080,4 +1081,3 @@ body {
   opacity: 0;
   z-index: -1;
 }
-/*# sourceMappingURL=query.css.map */

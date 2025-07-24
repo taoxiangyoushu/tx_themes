@@ -45,9 +45,9 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0031">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0031">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0031">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0032">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0032">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0032">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'zjchong'
@@ -146,6 +146,7 @@
                             <div class="type_item" data-type="gzdAIGC">格Z达 AIGC</div>
                             <div class="type_item" data-type="dyAIGC">D雅 AIGC</div>
                             <div class="type_item" data-type="paperPassAIGC">PP AIGC</div>
+                            <div class="type_item" data-type="zqAIGC">Z雀 AIGC</div>
                             <div class="type_item" data-type="otherAIGC">其它</div>
                         </div>
                         <input class="check_platform" type="text" placeholder="各平台检测机制不同，请提交平台链接">
@@ -180,6 +181,7 @@
                                 <p class="p1 upload_tips_txt" data-type="masterAIGC">需包含文件<span>“xxx---AIGC检测报告.html”</span></p>
                                 <p class="p1 upload_tips_txt" data-type="paperPassAIGC">请下载PP<span>“离线网页版报告”</span>zip</p>
                                 <p class="p1 upload_tips_txt" data-type="gzdAIGC">需包含文件<span>“xxx_AIGC检测报告.pdf”</span></p>
+                                <p class="p1 upload_tips_txt" data-type="zqAIGC">请上传Z雀AIGC检测的文档文件内容</p>
                             </div>
                         </div>
                         <div class="upload_tips">
@@ -188,12 +190,17 @@
                                 <span class="format zip">ZIP</span>
                                 <span class="format pdf">PDF</span>
                                 <span class="format html">HTML</span>
+                                <span class="format docx">DOCX</span>
+                                <span class="format doc">DOC</span>
+                                <span class="format txt">TXT</span>
                                 <span class="size">
                                     <span class="size_tag">
                                        <img src="../mobile/assets/img/check_gs.png" alt="">
                                         大小
                                     </span>
-                                    30MB
+                                    <span class="size_value">
+                                        30MB
+                                    </span>
                                 </span>
                             </p>
                         </div>
@@ -693,8 +700,8 @@
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/jszip.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0031"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.0031"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0032"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0032"></script>
 <script>
     var Weight_reduction=''
     Weight_reduction=getQueryVariable('sw')
@@ -1175,7 +1182,7 @@
                 $(".zip_block .zip_upload").addClass('has-error')
                 return false
             }else{
-                if($("#uploadZip")[0].files[0].type.indexOf('zip')=='-1' && $("#uploadZip")[0].files[0].type.indexOf('html')=='-1' && $("#uploadZip")[0].files[0].type.indexOf('pdf')=='-1'){
+                if($("#uploadZip")[0].files[0].type.indexOf('zip')=='-1' && $("#uploadZip")[0].files[0].type.indexOf('html')=='-1' && $("#uploadZip")[0].files[0].type.indexOf('pdf')=='-1' && $("#uploadZip")[0].files[0].type.indexOf('docx')=='-1' && $("#uploadZip")[0].files[0].type.indexOf('doc')=='-1' && $("#uploadZip")[0].files[0].type.indexOf('txt')=='-1' && $("#uploadZip")[0].files[0].type.indexOf('text')=='-1'){
                     toast({
                         msg: '仅支持'+ reportTypeInfo[reportType_s].zipType.join('、') +'格式',
                         time: 2000
@@ -1309,6 +1316,12 @@
                 formData_1.type = 'aigclwjc'
             }else{
                 formData_1.type = 'lwjc'
+            }
+
+            if(reportType_s == 'zqAIGC') {
+                formData_1.author = '学生'
+                formData_1.domain = '20'
+                delete formData_1.file_type
             }
 
             $.ajax({
@@ -1683,6 +1696,10 @@
             zipType: ['zip', 'pdf', 'html'],
             fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf,.html'
         },
+        zqAIGC: {
+            zipType: ['docx', 'doc', 'txt'],
+            fileAccept: '.doc,.docx,.txt,text/plain,'
+        }
     };
     $(".zip_block .report_type .type_item").click(function (){
         var type_group=$(this).attr('data-type')
@@ -1727,6 +1744,21 @@
         }else{
             $(".zip_block .upload_tips .html").hide()
         }
+        if(reportTypeInfo[reportType_s].zipType.indexOf('docx')>-1) {
+            $(".zip_block .upload_tips .docx").show()
+        }else{
+            $(".zip_block .upload_tips .docx").hide()
+        }
+        if(reportTypeInfo[reportType_s].zipType.indexOf('doc')>-1) {
+            $(".zip_block .upload_tips .doc").show()
+        }else{
+            $(".zip_block .upload_tips .doc").hide()
+        }
+        if(reportTypeInfo[reportType_s].zipType.indexOf('txt')>-1) {
+            $(".zip_block .upload_tips .txt").show()
+        }else{
+            $(".zip_block .upload_tips .txt").hide()
+        }
 
         $(".zip_block #uploadZip").attr('accept', reportTypeInfo[reportType_s].fileAccept)
 
@@ -1736,6 +1768,11 @@
         }else{
             $(".zip_block .check_platform").hide()
             $(".zip_block .upload_tips .p1 span").show()
+        }
+        $(".zip_block .upload_tips .p2 .size_value").text('30MB')
+        if(reportType_s == 'zqAIGC') {
+            $(".zip_block .upload_tips .p1 span").hide()
+            $(".zip_block .upload_tips .p2 .size_value").text('15MB')
         }
     })
 

@@ -582,6 +582,7 @@
   height: 13.6rem;
   text-align: center;
   padding-top: 3rem;
+  border-bottom: 1px solid #ededed;
 }
 .index_app .guide .p1 {
   color: #333333;
@@ -728,4 +729,3 @@
 .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
   margin-right: 0;
 }
-/*# sourceMappingURL=index.css.map */

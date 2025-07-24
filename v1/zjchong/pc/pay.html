@@ -8,8 +8,8 @@
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/reset.css">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0064">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0064">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0065">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0065">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -573,10 +573,10 @@
 <script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0064"></script>
+<script src="../pc/assets/js/common.js?v=p24.0065"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0064"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0064"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0065"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0065"></script>
 <script>
     var orderInfoData = {}
     var uploadType = 'content'
@@ -687,6 +687,7 @@
                 if(!scanCodeRichInfo.scanCodeRichAlipay.enabled && pay_way.alipay) {
                     $('#alipay').show()
                     $('#scanCodeRich').show()
+                    $('#alipay').before($('#scanCodeRich'))
                     $('#scanCodeRich').addClass('select')
                 }
             }
@@ -696,6 +697,7 @@
                 if(!scanCodeRichInfo.scanCodeRichWx.enabled && pay_way.wx) {
                     $('#wx').show()
                     $('#scanCodeRich').show()
+                    $('#wx').before($('#scanCodeRich'))
                     $('#scanCodeRich').addClass('select')
                 }
             }
@@ -715,6 +717,9 @@
             if(pay_way.wx) $('#wx').show()
             $('.clearfix2>.payType>div').removeClass('select')
             $('#' + pay_way.default).addClass('select')
+            if(pay_way.default == 'wx'){
+                $("#alipay").before($("#wx"))
+            }
             if(pay_way.taobao || pay_way.redBook) { // 第三方订单展示控制
                 if(pay_type != 'taobao' && pay_type!='redBook') $('#thirdparty').show()
 

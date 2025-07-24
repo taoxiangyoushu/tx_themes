@@ -750,8 +750,15 @@
 .guide .btn-check a:hover {
   text-decoration: none;
 }
-#filing-information {
-  height: 40px;
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footer #company-name {
+  margin-left: 2px;
+}
+#filing-information,
+#company-name {
   text-align: center;
   line-height: 40px;
   color: #999999;
@@ -786,4 +793,3 @@ input[type="radio"]:checked {
   background-size: 100% 100%;
   border: none;
 }
-/*# sourceMappingURL=index.css.map */
