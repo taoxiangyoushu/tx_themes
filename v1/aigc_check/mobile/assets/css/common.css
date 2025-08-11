@@ -216,7 +216,6 @@ button {
   margin-left: 20px;
 }
 #filing-information {
-  height: 40px;
   color: #707070;
   text-align: center;
   font-size: 12px;
@@ -279,4 +278,9 @@ button {
 }
 #activity {
   display: none;
+}
+.footer .company {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #8f8f8f;
 }

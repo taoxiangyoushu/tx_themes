@@ -903,4 +903,15 @@
     margin-right: 8px !important;
   }
 }
-/*# sourceMappingURL=index.css.map */
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footer #company-name {
+  margin-left: 6px;
+}
+.footer .company {
+  padding: 36px 0 10px 0px;
+  color: #b7b7b7;
+  font-size: 14px;
+}

@@ -889,34 +889,6 @@ input#contenteditable {
 .rightCont {
   position: relative;
 }
-.foot {
-  height: 40px;
-  color: #707070;
-  text-align: center;
-  font-size: 12px;
-  width: 100%;
-  line-height: 40px;
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
-.foot .gongan {
-  width: 16px;
-  margin-top: -4px;
-  margin-right: 4px;
-}
-.foot a {
-  text-decoration: none;
-  color: #8f8f8f;
-  font-size: 12px;
-}
-.foot a:hover {
-  color: #337ab7;
-}
-.foot a.beian {
-  margin-left: 20px;
-}
 @media (max-width: 1280px) {
   .stepMain {
     padding-left: 45px !important;
@@ -1012,4 +984,3 @@ input[type="radio"]:checked {
   background-size: 100% 100%;
   border: none;
 }
-/*# sourceMappingURL=common.css.map */

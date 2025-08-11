@@ -418,4 +418,17 @@
 .rightDiv .problem {
   height: 584px;
 }
-/*# sourceMappingURL=index.css.map */
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footer #company-name {
+  margin-left: 6px;
+}
+.footer .company {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #8f8f8f;
+  font-size: 12px;
+}

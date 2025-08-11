@@ -194,13 +194,13 @@ button {
   white-space: nowrap;
 }
 .foot {
-  height: 40px;
+  height: auto;
   color: #707070;
   background: #f4f8fb;
   text-align: center;
   font-size: 12px;
   width: 100%;
-  line-height: 40px;
+  line-height: 18px;
   overflow: hidden;
 }
 .foot .gongan {
@@ -261,4 +261,16 @@ button {
 }
 li {
   list-style: none;
+}
+.footer {
+  padding-top: 1.25rem;
+  background: #f4f8fb;
+}
+.footer .company {
+  color: #8f8f8f;
+  background: #f4f8fb;
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
 }

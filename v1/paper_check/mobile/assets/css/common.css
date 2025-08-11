@@ -193,7 +193,6 @@ button {
   text-align: center;
   height: 4rem;
   line-height: 4rem;
-  border-top: 1px solid #ededed;
 }
 .foot .gongan {
   width: 16px;
@@ -214,7 +213,7 @@ button {
   justify-content: center;
 }
 .footer #company-name {
-  margin-left: 2px;
+  margin-left: 6px;
 }
 #filing-information,
 #company-name {

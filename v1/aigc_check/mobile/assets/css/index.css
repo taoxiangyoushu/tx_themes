@@ -1249,6 +1249,7 @@ button.btn-default,
   border-radius: 1rem;
   background: #ffffff;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   padding: 0 2rem 2rem;
 }
 .aigcTips .problem .tabHader {
@@ -1391,8 +1392,8 @@ button.btn-default,
 .foot {
   text-align: center;
   font-size: 1.2rem;
-  height: 3rem;
-  line-height: 3rem;
+  height: 2rem;
+  line-height: 2rem;
   color: #bebebe;
 }
 .additional_block {
@@ -1434,4 +1435,3 @@ button.btn-default,
   top: 1rem;
   right: 1.2rem;
 }
-/*# sourceMappingURL=index.css.map */
