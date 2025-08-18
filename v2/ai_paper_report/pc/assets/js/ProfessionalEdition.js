@@ -14,7 +14,7 @@ $('#outline').click(function() {
     $('.editTips , .editTips2').hide()
     if(!$('.inputCheck').prop("checked")) return cocoMessage.error('请确认知晓并同意 "生成的论文范文仅用于参考,不作为毕业、发表使用" 条款!', 3000)
     var bootstrapValidator = $("#ContainerTo").data("bootstrapValidator").validate();
-    if( typeData[$("#type_s2").val()].short_name=='bylwsenior' ){
+    if( typeData[$("#type_s2").val()].short_name=='bylwsenior' || typeData[$("#type_s2").val()].short_name=='qklwsenior'){
         if($("#illustrate").val().length > 0) {
             if($("#illustrate").val().length < 200) {
                 $(".professional").css('borderColor', '#f34f4f')
@@ -102,6 +102,13 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this) {
             formData.references_en_num = $('#NumberEnglishReference').val()
         }else {
             formData.references_en_num =0
+        }
+        //补充说明
+        if($("#illustrate").val().length > 0) {
+            if($("#illustrate").val().length < 200) {
+            }else{
+                formData.reference_content = $("#illustrate").val()
+            }
         }
     }
 

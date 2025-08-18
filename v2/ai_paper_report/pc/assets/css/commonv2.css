@@ -861,3 +861,39 @@ html .ContainerTo {
     max-width: 100%;
   }
 }
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footer #company-name {
+  margin-left: 6px;
+}
+.footer .company {
+  font-size: 12px;
+  position: relative;
+  top: 10px;
+  color: #8f8f8f;
+}
+.foot {
+  color: #707070;
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+  top: 10px;
+}
+.foot .gongan {
+  width: 16px;
+  margin-top: -4px;
+  margin-right: 4px;
+}
+.foot a {
+  text-decoration: none;
+  color: #8f8f8f;
+  font-size: 12px;
+}
+.foot a:hover {
+  color: #337ab7;
+}
+.foot a.beian {
+  margin-left: 20px;
+}

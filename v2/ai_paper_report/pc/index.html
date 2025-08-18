@@ -1242,6 +1242,9 @@
         lwdbppt:'答辩PPT',
         kclw:'课程论文',
         dybg:'调研报告',
+        bylwsenior:'毕业论文',
+        qklwsenior:'期刊论文',
+        ktbgsenior:'开题报告',
 
     }
     function initial() {
@@ -1298,6 +1301,7 @@
             if($(".Toggle2").attr('edition-key') == 'bylwsenior'){
                 // queryGoodsid存在说明是查询结果页面来的, 需赋值后再
                 if(queryGoodsid) {
+                    $('.commodityTypeName').text(titledata[editionKey])
                     window.sessionStorage.removeItem('queryGoodsid')
                     setTimeout(function() {
                         $("#type_s").val(queryGoodsid)
@@ -1369,6 +1373,7 @@
             var editionKey = window.sessionStorage.getItem('editionKey')
             if($(".Toggle2").attr('edition-key') == 'bylw'){
                 if(queryGoodsid) {
+                    $('.commodityTypeName').text(titledata[editionKey])
                     window.sessionStorage.removeItem('queryGoodsid')
                     setTimeout(function() {
                         $("#type_s2").val(queryGoodsid)
