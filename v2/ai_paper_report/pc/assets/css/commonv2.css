@@ -531,7 +531,8 @@ html .ContainerTo {
 .gen_params span.genImg input[type=checkbox],
 .gen_params span.genTab input[type=checkbox],
 .gen_params span.genFormula input[type=checkbox],
-.gen_params span.genCode input[type=checkbox] {
+.gen_params span.genCode input[type=checkbox],
+.gen_params span.questionnaire input[type=checkbox] {
   margin-top: 2px;
 }
 .periodicalTypeCard {

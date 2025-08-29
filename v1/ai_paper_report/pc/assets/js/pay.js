@@ -24,6 +24,7 @@ var typeAll = {
     kLenovoAiMiniPay: 'kLenovoAiMiniPay'
 }
 var source = ''
+$('#orderIdText2').text(getQueryVariable('order_sn'))
 // 先判断是不是微信端打开的
 let client_type = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 if(client_type){
@@ -175,6 +176,7 @@ $(".tb-payOrder").click(function (){
                     $("#orderAmount2").text(res.data.order_amount)
                     $('#dateTime').text(res.data.created)
                     $('#orderIdText').text(res.data.order_sn)
+                    $('#orderIdText2').text(res.data.order_sn)
                     if(typeData2.calc_price_type==2){
                         if(res.data.old_amount-typeData2.selling_price_list[price_index].price>0){
                             $('.tiered_pricing').show()
@@ -573,9 +575,13 @@ $('.clearfix2>.payType>div').click(function () {
                 thirdpartyPayOrder()
                 $('#coupon').attr('disabled' , true)
                 $('.use_now').addClass('disabledCss')
+                $('#orderIdText2').show()
+                $('#orderIdText').hide()
                 return;
             }
             else{
+                $('#orderIdText2').hide()
+                $('#orderIdText').show()
                 $('.Coupondisabled').removeClass('Coupon_dis')
                 $('.Picture_event1').hide()
                 if(window.sessionStorage.getItem('editionKey') == 'bylwsenior'){
@@ -637,6 +643,7 @@ $(".appreciationUL").on('click','.appreciationLI',function(){
         },
         success: function (res) {
             if (res.code == 200) {
+                $('#orderIdText2').text(res.data.order_sn)
                 order_sn = res.data.order_sn
                 $('.orderAmount').text( res.data.order_amount || '0.00')
                 $("#orderAmount2").text(res.data.order_amount)
@@ -701,6 +708,7 @@ function variationOrder(variationOrderId) {
         },
         success: function (res) {
             if (res.code == 200) {
+                $('#orderIdText2').text(res.data.order_sn)
                 order_sn = res.data.order_sn
                 order_amount = res.data.order_amount
                 $('.orderAmount').text( res.data.order_amount || '0.00')
@@ -815,7 +823,7 @@ $(".use_now").on('click',function() {
             canClick = true
             closeMsg()
             if (res.code == 200) {
-                
+                $('#orderIdText2').text(res.data.order_sn)
                 order_sn = res.data.order_sn
                 $('.orderId_pop').text(res.data.order_sn)
                 $('#orderIdText').text(res.data.order_sn)
@@ -1065,6 +1073,7 @@ function Readjust(){
         },
         success: function (res) {
             if (res.code == 200) {
+                $('#orderIdText2').text(res.data.order_sn)
                 order_sn = res.data.order_sn
                 $('.orderAmount').text( res.data.order_amount || '0.00')
                 $("#orderAmount2").text(res.data.order_amount)

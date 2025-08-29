@@ -1,0 +1,321 @@
+.ProfessionalEdition.ktbgsenior#App {
+    #outline {
+        display: inline-block;
+    }
+    #generate {
+        display: none;
+    }
+}
+
+.OutlineEditingKTBG {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    font-size: 14px;
+    .OutlineEditingBox {
+        width: 1098px;
+        height: 838px;
+        background-image: linear-gradient(0deg,
+        #ecf0ff 0%,
+        #ffffff 100%);
+        border-radius: 10px;
+        margin: auto;
+        margin-top: 10vh;
+        height: 89vh;
+        max-height: calc(770px);
+    }
+    .editHader {
+        padding: 28px 29px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .delete {
+        position: absolute;
+        right: 34px;
+        top: 32px;
+        width: 13px;
+        height: 13px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #333;
+    }
+    .mainHader {
+        padding-top: 8px;
+        margin-bottom: 14px;
+        b {
+            font-size: 20px;
+            color: 272E38;
+            font-weight: bold;
+        }
+        p {
+            color: #9091A5;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+    }
+    .OutlineEditingMain {
+        height: calc(100% - 110px);
+        padding: 0 30px;
+        .EstimatedNumberWords {
+            font-size: 14px;
+            line-height: 36px;
+            color: #999;
+            display: none;
+            .NumberWordsKTBG {
+                color: #333;
+                margin-left: 2px;
+            }
+            .NumberWordsTips {
+                display: none;
+                cursor: pointer;
+                font-size: 12px;
+                line-height: 30px;
+                color: #fff;
+                background-color: #000;
+                position: absolute;
+                top: -36px;
+                left: -128px;
+                width: 275px;
+                text-align: center;
+                border-radius: 4px;
+            }
+            .WordsTipsDiv {
+                position: relative;
+                margin-left: 5px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                &:hover {
+                    .NumberWordsTips {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .confirmedKTBGzdy {
+            width: 75px;
+            height: 30px;
+            background: #7371D6;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 14px;
+            color: #fff;
+            float: right;
+            position: relative;
+            top: 0px;
+            cursor: pointer;
+            margin-top: 20px;
+            &:hover {
+                background: #4e4cca;
+            }
+        }
+    }
+    .leftBoxMain , .rightBoxMain {
+        background: #FFFFFF;
+        box-shadow: 0px 0px 13px 0px rgba(225,225,225,0.51);
+        border-radius: 10px;
+        height: 100%;
+        float: left;
+        width: calc(50% - 10px);
+        padding: 16px;
+    }
+    .leftBoxMain {
+        float: left;
+    }
+    .rightBoxMain {
+        float: right;
+    }
+    .original {
+        border-radius: 10px;
+        border: 1px solid #7372D6;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 13px 0px rgba(242,244,251,0.09);
+        height: calc(100% - 76px);
+        padding: 20px 8px 20px 12px;
+        .outlineContent {
+            height: 100%;
+            overflow: auto;
+        }
+    }
+}
+.outlineContent {
+    padding-right: 18px;
+    .aidashi {
+        background: #FFFFFF;
+        border-radius: 4px;
+        border: 1px solid #EEEEEE;
+        line-height: 32px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        position: relative;
+        box-sizing: border-box;
+        &:hover {
+            background-color: #ededff;
+            border: 1px solid #8d8ddf;
+            .add_icon , .subtracting_icon {
+                display: inline-block;
+            }
+        }
+    }
+    .outline-lv1 {
+        padding-left: 16px;
+        position: relative;
+        color: #333;
+        font-weight: bold;
+        &::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 4px;
+            height: 24px;
+            border-radius: 4px;
+            background-color: #7579DB;
+        }
+    }
+    .outline-lv2 {
+        padding-left: 28px;
+    }
+}
+.outlineContent , .previewContent {
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #E5E5E5;
+        border-radius: 20px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        height: 100px;
+        background-color: #ccc;
+    }
+    &::-webkit-scrollbar-button{
+        background-color: #fff;
+        height: 7px;
+    }
+}
+.preview {
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 13px 0px rgba(242,244,251,0.09);
+    border-radius: 10px;
+    border: 1px solid #F5F5F5;
+    height: calc(100% - 126px);
+    position: relative;
+    .previewTips {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #FFF4F4;
+        font-size: 14px;
+        color: #E71717;
+        padding-left: 12px;
+        line-height: 40px;
+        img {
+            margin-right: 6px;
+        }
+    }
+    .previewContent {
+        height: 100%;
+        overflow: auto;
+        padding: 10px 0;
+        .sort {
+            position: absolute;
+            right: 50px;
+            top: 5px;
+            display: none;
+            &>span {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+        .up_lv {
+            background-image: url('../img/up_s.png');
+            background-repeat: no-repeat;
+        }
+        .down_lv {
+            background-image: url('../img/down_s.png');
+            background-repeat: no-repeat;
+        }
+        .up_lv_no {
+            .up_lv {
+                background-image: url('../img/up_n.png');
+            }
+        }
+        .down_lv_no {
+            .down_lv {
+                background-image: url('../img/down_n.png');
+            }
+        }
+    }
+    .aidashi {
+        color: #333;
+        font-size: 14px;
+        line-height: 32px;
+        position: relative;
+        box-sizing: border-box;
+        &:hover {
+            background-color: #ededff;
+            .add_icon , .subtracting_icon {
+                display: inline-block;
+            }
+            .sort {
+                display: inline-block;
+            }
+        }
+    }
+    .outline-lv1 {
+        padding-left: 20px;
+    }
+    
+    .outline-lv2 {
+        padding-left: 46px;
+    }
+
+    .outline-lv3 {
+        padding-left: 58px;
+    }
+}
+.EditPopup.EditPopupPay .recommend.preview {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .subtracting_icon {
+        display: none !important;
+    }
+}
+.EditPopup.EditPopupPay {
+    .sort {
+        display: none !important;
+    }
+}
+.add_icon , .subtracting_icon{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    display: none;
+}
+.add_icon {
+    background: url('../img/add_icon.png') no-repeat;
+    background-position: 50% 50%;
+}
+.subtracting_icon {
+    background: url('../img/subtracting_icon.png') no-repeat;
+    background-position: 50% 50%;
+}

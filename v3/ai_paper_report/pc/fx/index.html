@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>分销中心</title>
+        <link rel="shortcut icon" href="../../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap.min.css?v=pfx24.0048">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrapValidator.min.css?v=pfx24.0048">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-datetimepicker.min.css?v=pfx24.0048">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/bootstrap-select.min.css?v=pfx24.0048">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/common.css">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/index.css">
+        <link rel="stylesheet" href="../../pc/fx/assets/css/withdraw.css">
+
+        <!-- head_script -->
+        <script>
+            var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
+            var JANE_NAME = 'dsxz';
+            var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
+        </script>
+    </head>
+<body>
+    <div class="distributionCenterApp">
+        <div class="content">
+            <div class="headDiv" id="memberCarrier">
+                <a href="/" class="toIndex" rel="noopener noreferrer">网站首页</a>
+            </div>
+            <div class="main">
+                <h3 class="distributionH3">分销中心</h3>
+                <div class="share">
+                    <span class="labels">
+                        分销推广
+                    </span>
+                    <span class="described" style="display: none;">
+                        当前分佣比例：<span id="distribution_config"><span id="ratio"></span><span id="type"></span></span>
+                    </span>
+                    <div class="promotion">
+                        <div class="urlShare">链接分享</div>
+                        <div class="posterShare">海报分享</div>
+                    </div>
+                </div>
+                <div class="amount_info">
+                    <div class="amountDiv">
+                        <div class="amountBox">
+                            <div>
+                                <span class="labels">
+                                    我的钱包
+                                </span>
+                            </div>
+                            <div class="overallData">
+                                <div>
+                                    <div class="income">
+                                        <div class="leftBox">
+                                            <p>今日收益(元)</p>
+                                            <span id="today_profit_money">0.00</span>
+                                        </div>
+                                        <div class="rightBox">
+                                            <div class="textLeft">
+                                                <p>累计收益(元)</p>
+                                                <span id="accumulate_amount">0.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="withdrawal">
+                                        <div class="card1">
+                                            <p>可提现(元)</p>
+                                            <span id="money">0.00</span>
+                                            <span class="GoWithdrawal">去提现</span>
+                                        </div>
+                                        <i class="line"></i>
+                                        <div class="card2">
+                                            <div class="textCenter">
+                                                <p>提现中(元)</p>
+                                                <span id="freeze_money">0.00</span>
+                                                <span class="tips"></span>
+                                            </div>
+                                        </div>
+                                        <i class="line"></i>
+                                        <div class="card3">
+                                            <div class="textLeft">
+                                                <p>已提现(元)</p>
+                                                <span id="withdraw_money">0.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contactInformation">
+                        <div>
+                            <span class="labels">
+                                上级联系人
+                            </span>
+                        </div>
+                        <div class="infoBox">
+                            <div class="text_info">
+                                <p id="name">
+                                    <span>姓名：</span>
+                                    <span class="name_text infoText loadEffect"></span>
+                                </p>
+                                <p id="phone">
+                                    <span>电话：</span>
+                                    <span class="phone_text infoText loadEffect"></span>
+                                </p>
+                                <p id="wx" style="display: none;">
+                                    <span>微信：</span>
+                                    <span class="wx_text infoText loadEffect"></span>
+                                </p>
+                                <p id="qq" style="display: none;">
+                                    <span>Q&nbsp;&nbsp;Q：</span>
+                                    <span class="qq_text infoText loadEffect"></span>
+                                </p>
+                            </div>
+                            <div class="code2">
+                                <div id="qrcode" class="code loadEffect">
+                                    <img src="" alt="">
+                                </div>
+                                <p>扫码加好友</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tableBox">
+                    <div class="tabBox">
+                        <div class="active" data-key="transactionOrders">
+                            成交数据
+                        </div>
+                        <div data-key="WithdrawalRecord">
+                            提现记录
+                        </div>
+                    </div>
+                    <div class="recordTable">
+                        <div class="tableDiv">
+                            <div class="transactionOrders">
+                                <div class="formDiv">
+                                    <div class="timeBox">
+                                        <input type="text" readonly class="form-control" data-date-autoclose="true" data-date-format="yyyy-mm-dd"  autocomplete="off" id="date1" placeholder="交易开始">
+                                        <span>至</span>
+                                        <input type="text" readonly class="form-control" data-date-autoclose="true" data-date-format="yyyy-mm-dd"  autocomplete="off" id="date2" placeholder="交易结束">
+                                        <img class="deleteFile1" src="../../pc/fx/assets/img/deleteFile.png" alt="">
+                                    </div>
+                                    <div class="contenteditable_s typeSelect">
+                                        <input style="position: absolute;width: 0;height: 0;border: 0" class="form-control" id="roleidsxbg" name="roleidsxbg">
+                                        <select id="basic2" class="selectpicker show-tick form-control" title="类型"></select>
+                                    </div>
+                                    <div class="search" id="transactionSearch">
+                                        搜索
+                                    </div>
+                                </div>
+                                <table class="table table-hover">
+                                    <thead class="theads">
+                                        <tr>
+                                            <th class="th" width="120" style="text-align:center;">订单编号</th>
+                                            <th class="th" width="120" style="text-align:center;">交易时间</th>
+                                            <th class="th" width="120" style="text-align:center;">金额</th>
+                                            <th class="th" width="120" style="text-align:center;">类型</th>
+                                            <th class="th" width="100" style="text-align:center;">备注</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table tbodys tbody1">
+                                    </tbody>
+                                    <div class="stateless">
+                                        <img src="../../pc/fx/assets/img/NoDocuments.png" alt="">
+                                        <p>暂无数据</p>
+                                    </div>
+                                    <img class="loading" src="../../pc/fx/assets/img/loading2.gif" alt="正在加载">
+                                </table>
+                            </div>
+
+                            <div class="WithdrawalRecord" style="display: none;">
+                                <div class="formDiv">
+                                    <input type="text" autocomplete="off" class="form-control withdrawal_sn" placeholder="提现ID" id="withdrawal_sn">
+                                    <div class="contenteditable_s typeSelect">
+                                        <input style="position: absolute;width: 0;height: 0;border: 0" class="form-control" id="mode" name="mode">
+                                        <select id="basic3" class="selectpicker show-tick form-control" title="提现方式"></select>
+                                    </div>
+                                    <div class="timeBox">
+                                        <input type="text" readonly class="form-control" data-date-autoclose="true" data-date-format="yyyy-mm-dd"  autocomplete="off" id="date3" placeholder="提现开始">
+                                        <span>至</span>
+                                        <input type="text" readonly class="form-control" data-date-autoclose="true" data-date-format="yyyy-mm-dd"  autocomplete="off" id="date4" placeholder="提现结束 ">
+                                        <img class="deleteFile2" src="../../pc/fx/assets/img/deleteFile.png" alt="">
+                                    </div>
+                                    <!-- <div class="timeBox">
+                                        <input type="text" readonly class="form-control" data-date-autoclose="true" data-date-format="yyyy-mm-dd"  autocomplete="off" id="date5" placeholder="入账开始">
+                                        <span>至</span>
+                                        <input type="text" readonly class="form-control" data-date-autoclose="true" data-date-format="yyyy-mm-dd"  autocomplete="off" id="date6" placeholder="入账结束">
+                                    </div> -->
+                                    <div class="contenteditable_s typeSelect">
+                                        <input style="position: absolute;width: 0;height: 0;border: 0" class="form-control" id="typeStatus" name="status">
+                                        <select id="basic4" class="selectpicker show-tick form-control" title="状态"></select>
+                                    </div>
+                                    <div class="search" id="withdrawalSearch">
+                                        搜索
+                                    </div>
+                                    <div class="derived" id="withdrawalderived">
+                                        导出
+                                    </div>
+                                </div>
+                                <table class="table table-hover">
+                                    <thead class="theads">
+                                        <tr>
+                                            <th class="th" width="120" style="text-align:center;">提现ID</th>
+                                            <th class="th" width="120" style="text-align:center;">提现方式</th>
+                                            <th class="th" width="120" style="text-align:center;">申请金额</th>
+                                            <th class="th" width="120" style="text-align:center;">申请时间</th>
+                                            <th class="th" width="100" style="text-align:center;">更新时间</th>
+                                            <th class="th" width="100" style="text-align:center;">状态</th>
+                                            <th class="th" width="100" style="text-align:center;">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table tbodys tbody2">
+                                    </tbody>
+                                    <div class="stateless">
+                                        <img src="../../pc/fx/assets/img/NoDocuments.png" alt="">
+                                        <p>暂无数据</p>
+                                    </div>
+                                    <img class="loading" src="../../pc/fx/assets/img/loading2.gif" alt="正在加载">
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="paging paging2">
+                            <span style="display: none;" class="PageCountDiv">共<span class="PageCountText"></span>条</span>
+                            <ul class="pagination" id="pagination"></ul>
+                            <!-- 总条数 -->
+                            <input type="hidden" id="PageCount" runat="server" />
+                            <!-- 每页条数 -->
+                            <input type="hidden" id="PageSize" runat="server" value="8"/>
+                            <!-- 总页数 -->
+                            <input type="hidden" id="countindex" runat="server" value="10"/>
+                            <!-- 可见页数 -->
+                            <input type="hidden" id="visiblePages" runat="server" value="7" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="posterShareBox">
+        <div class="mask_body"></div>
+        <div class="contentBox">
+            <img class="close" src="../../pc/fx/assets/img/close.png" alt="">
+            <div class="dialogHead">
+                海报分享
+            </div>
+            <div class="core">
+                <div class="poster" id="imgDiv">
+                    <img id="posterImg" src="../../pc/fx/assets/img/dashixiezuo.jpg" alt="">
+                    <div id="qrcode2"></div>
+                </div>
+                <div class="introduce">
+                    <div class="extendText">
+                        推广渠道：
+                    </div>
+                    <div class="extendTips">
+                        <p><span>① QQ</span>QQ群/QQ空间推广</p>
+                        <p><span>② 微信</span>微信群/朋友圈/视频号推广</p>
+                        <p><span>③ 小红书</span>发布笔记获取流量后推广</p>
+                        <p><span>④ 微博</span>发微博文章引流推广</p>
+                        <p><span>⑤ 抖音</span>发布相关短视频引流推广</p>
+                        <p><span>⑥ 知乎</span>发布知乎文章引流推广</p>
+                        <p><span>⑦ 贴吧</span>发布帖子引流推广</p>
+                        <p><span>⑧ 线下渠道</span>分发宣传单、海报等</p>
+                    </div>
+                    <div class="ButtonBox">
+                        <div class="DownloadPoster copy_pop">
+                            复制连接
+                        </div>
+                        <div class="DownloadPoster" id="btn">
+                            下载海报
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="linkBox">
+        <div class="mask_body"></div>
+        <div class="contentBox">
+            <img class="close" src="../../pc/fx/assets/img/close.png" alt="">
+            <div class="dialogHead">
+                链接分享
+            </div>
+            <div class="core">
+                <div class="GetLinkBox">
+                    <div class="orderId_pop"></div>
+                    <div class="copy_pop">
+                        复制链接
+                    </div>
+                </div>
+                <div class="introduceLink">
+                    <div class="extendText">
+                        推广渠道：
+                    </div>
+                    <div class="extendTips">
+                        <p><span>① QQ</span>QQ群/QQ空间推广</p>
+                        <p><span>② 微信</span>微信群/朋友圈/视频号推广</p>
+                        <p><span>③ 小红书</span>发布笔记获取流量后推广</p>
+                        <p><span>④ 微博</span>发微博文章引流推广</p>
+                        <p><span>⑤ 抖音</span>发布相关短视频引流推广</p>
+                        <p><span>⑥ 知乎</span>发布知乎文章引流推广</p>
+                        <p><span>⑦ 贴吧</span>发布帖子引流推广</p>
+                        <p><span>⑧ 线下渠道</span>分发宣传单、海报等</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="withdrawBox">
+        <div class="mask_body"></div>
+        <div class="withdrawalMain">
+            <div class="dialog__title">
+                <span>去提现</span>
+                <img class="close" src="../../pc/fx/assets/img/close.png" alt="">
+            </div>
+            <div class="dialog__main">
+                <div class="withdrawalFlow">
+                    <p class="title">提现流程：</p>
+                    <div class="mainFlow">
+                        <div class="item1">
+                            <div>
+                                <img src="../../pc/fx/assets/img/1.png" alt="">
+                                <div class="text">
+                                    <b>申请提现</b>
+                                    <p>填写提现方式等信息</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item2">
+                            <div>
+                                <img src="../../pc/fx/assets/img/2.png" alt="">
+                                <div class="text">
+                                    <b>联系上级联系人</b>
+                                    <p>告知上级联系人已发起提现申请</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item3">
+                            <div>
+                                <img src="../../pc/fx/assets/img/3.png" alt="">
+                                <div class="text">
+                                    <b>上级联系人审批打款 </b>
+                                    <p>催促上级联系人及时审批打款</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notice">
+                        <p class="title">分销商须知:</p>
+                        <p>1、请确保提供的银行账户信息准确无误，以避免转账失败。</p>
+                        <p>2、若款项未收到可发起申诉。</p>
+                    </div>
+                </div>
+                <div class="balance">
+                    可提现余额: ￥<span id="balanceMoney">0.00</span>
+                </div>
+                <div class="WithdrawalMethod">
+                    <form class="plagiarismCheck-form" id="ContainerTo">
+                        <div class="form-group check-version">
+                            <label class="label-t label-x"><span>*</span> 提现方式:</label>
+                            <div class="main-container check-version-block">
+                                <div class="version-item active" data-type="zfb" data-form="zfbItem">
+                                    <img src="../../pc/fx/assets/img/zfb_ico.png" alt="">
+                                    <span>支付宝</span>
+                                </div>
+                                <div class="version-item" data-type="wx" data-form="wxItem">
+                                    <img src="../../pc/fx/assets/img/wx_ico.png" alt="">
+                                    <span>微信</span>
+                                </div>
+                                <div class="version-item" data-type="yhk" data-form="yhkItem">
+                                    <img src="../../pc/fx/assets/img/dsf_ico.png" alt="">
+                                    <span>银行卡</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 支付宝 -->
+                        <div class="form-group paper-title zfbItem">
+                            <label class="label-t label-s"><span>*</span> 支付宝账号</label>
+                            <div class="main-container paper-title-block">
+                                <input autocomplete="off" class="form-control" name="zfbName" type="text" placeholder="请输入支付宝账号" id="zfbName"/>
+                            </div>
+                            <span id="zfbName_err"></span>
+                        </div>
+                        <div class="form-group paper-title zfbItem">
+                            <label class="label-t label-s"><span>*</span> 真实姓名</label>
+                            <div class="main-container paper-title-block">
+                                <input autocomplete="off" class="form-control" maxlength="5" name="realName" type="text" placeholder="请输入真实姓名" id="realName"/>
+                            </div>
+                            <span id="realName_err"></span>
+                        </div>
+                        <!-- 微信 -->
+                        <div class="form-group paper-title wxItem">
+                            <label class="label-t label-s"><span>*</span>微信号：</label>
+                            <div class="main-container paper-title-block">
+                                <input autocomplete="off" class="form-control" name="microSignal" type="text" placeholder="请输入微信号" id="microSignal"/>
+                            </div>
+                            <span id="microSignal_err"></span>
+                        </div>
+                        <div class="form-group paper-title wxItem">
+                            <label class="label-t label-s"><span>*</span>微信名：</label>
+                            <div class="main-container paper-title-block">
+                                <input autocomplete="off" class="form-control" maxlength="20" name="WeChatName" type="text" placeholder="请输入微信名" id="WeChatName"/>
+                            </div>
+                            <span id="WeChatName_err"></span>
+                        </div>
+                        <div class="form-group paper-title wxItem">
+                            <label class="label-t label-s"><span>*</span>上传微信收款码：</label>
+                            <div class="main-container paper-title-block uploadDiv">
+                                <div class="uploadBox upload-block">
+                                    <input type="file" id="exampleInputFile" name="collectionCode">
+                                    <span>+</span>
+                                </div>
+                                <div class="preview file-block">
+                                    <img id="collectionCode" src="" alt="">
+                                    <div class="delete-file">
+                                        <img class="delete-img" src="../../pc/fx/assets/img/Deletewd.png" alt="">
+                                    </div>
+                                </div>
+                                <p class="help-block">支持上传png,jpg,gif,jpeg图片格式，最多一张图片</p>
+                            </div>
+                            <span id="collectionCode_err"></span>
+                        </div>
+                        <!-- 银行卡 -->
+                        <div class="form-group paper-title yhkItem">
+                            <label class="label-t label-s"><span>*</span>银行卡卡号：</label>
+                            <div class="main-container paper-title-block">
+                                <input autocomplete="off" class="form-control" maxlength="24" name="bankCardNumber" type="text" placeholder="请输入银行卡卡号" id="bankCardNumber"/>
+                            </div>
+                            <span id="bankCardNumber_err"></span>
+                        </div>
+                        <div class="form-group paper-title yhkItem">
+                            <label class="label-t label-s"><span>*</span>开户支行</label>
+                            <div class="main-container paper-title-block">
+                                <input autocomplete="off" class="form-control" maxlength="20" name="openingBank" type="text" placeholder="请输入开户支行" id="openingBank"/>
+                            </div>
+                            <span id="openingBank_err"></span>
+                        </div>
+                        <div class="form-group paper-title yhkItem">
+                            <label class="label-t label-s"><span>*</span>持卡人姓名：</label>
+                            <div class="main-container paper-title-block">
+                                <input autocomplete="off" class="form-control" maxlength="24" name="cardholderName" type="text" placeholder="请输入持卡人姓名" id="cardholderName"/>
+                            </div>
+                            <span id="cardholderName_err"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-t label-s"><span>*</span> 提现金额</label>
+                            <div class="main-container paper-title-block">
+                                <input autocomplete="off" class="form-control" maxlength="5" name="cashAmount" type="text" placeholder="最低提现金额10元" id="cashAmount"/>
+                            </div>
+                            <span id="cashAmount_err"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="initiated">
+                <span class="amountBox">
+                    到账金额: ￥<span id="amount">0.00</span>
+                </span>
+                <div class="initiatedBt">
+                    发起提现
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ConfirmPopUpWindow">
+        <div class="mask_body"></div>
+        <div class="windowBox">
+            <div class="dialog__title">
+                <img id="closeConfirmPopUpWindow" class="closeConfirmPopUp" src="../../pc/fx/assets/img/close.png" alt="">
+            </div>
+            <p class="title">到账金额</p>
+            <div class="totalAmount">
+                ￥ <span id="WindowAmount">0.00</span>
+            </div>
+            <div class="details">
+                <p class="zfbInfo" style="display: none;">
+                    <span>到账支付宝账号</span>
+                    <span class="rightText AlipayAccount"></span>
+                </p>
+                <p class="zfbInfo" style="display: none;">
+                    <span>真实姓名</span>
+                    <span class="rightText realName"></span>
+                </p>
+                <p class="wxInfo" style="display: none;">
+                    <span>微信号</span>
+                    <span class="rightText microSignal"></span>
+                </p>
+                <p class="wxInfo" style="display: none;">
+                    <span>微信名</span>
+                    <span class="rightText WeChatName"></span>
+                </p>
+                <p class="yhkInfo" style="display: none;">
+                    <span>银行卡卡号</span>
+                    <span class="rightText bankCardNumber"></span>
+                </p>
+                <p class="yhkInfo" style="display: none;">
+                    <span>开户支行</span>
+                    <span class="rightText openingBank"></span>
+                </p>
+                <p class="yhkInfo" style="display: none;">
+                    <span>持卡人姓名</span>
+                    <span class="rightText cardholderName"></span>
+                </p>
+            </div>
+            <div class="confirmed">
+                确认提现
+            </div>
+        </div>
+    </div>
+    <!-- 申诉 -->
+    <div class="complaintsBox">
+        <div class="mask_body"></div>
+        <div class="windowBox">
+            <div class="dialog__title">
+                <span>发起申诉</span>
+                <img class="close" src="../../pc/fx/assets/img/close.png" alt="">
+            </div>
+            <div class="dialog__main">
+                <form class="plagiarismCheck-form" id="complaints">
+                    <div class="form-group paper-title">
+                        <label class="label-t label-s"><span>*</span> 真实姓名</label>
+                        <div class="main-container paper-title-block">
+                            <input autocomplete="off" class="form-control" maxlength="14" name="real_name" type="text" placeholder="请输入真实姓名" id="real_name"/>
+                        </div>
+                        <span id="real_name_err"></span>
+                    </div>
+                    <div class="form-group paper-title">
+                        <label class="label-t label-s"><span>*</span> 手机号</label>
+                        <div class="main-container paper-title-block">
+                            <input autocomplete="off" class="form-control" maxlength="14" name="complaintsPhone" type="text" placeholder="请输入手机号" id="complaintsPhone"/>
+                        </div>
+                        <span id="phone2_err"></span>
+                    </div>
+                    <div class="form-group paper-title">
+                        <label class="label-t label-s"><span>*</span> 申诉内容</label>
+                        <div class="main-container paper-title-block">
+                            <textarea rows="5" class="form-control" name="content" type="text" placeholder="此处填写申诉内容" id="content"></textarea>
+                        </div>
+                        <span id="content_err"></span>
+                    </div>
+
+                    <div class="form-group paper-title">
+                        <label class="label-t label-s"><span>*</span> 相关图片</label>
+                        <div class="main-container paper-title-block uploadDiv">
+                            <div class="imgArr"></div>
+                            <div class="uploadBox upload-block2">
+                                <input type="file" id="exampleInputFile2" name="voucher">
+                                <span>+</span>
+                            </div>
+                            <p class="tipsText">单张图片最大5M，最多上传3张图片</p>
+                        </div>
+                        <span id="voucher_err"></span>
+                    </div>
+                </form>
+                <div class="submitApplication">
+                    提交申诉
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input id="copyInput" type="text">
+</body>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../../pc/fx/assets/js/jquery.min.js?v=pfx24.0048"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
+<script src="../../pc/fx/assets/js/bootstrap.min.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/bootstrapValidator.min.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/qrcode.min.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/coco-message.js?v=cm1.0"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/jqPaginator.min.js?v=1.0"></script>
+<script src="../../pc/fx/assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../../pc/fx/assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../../pc/fx/assets/js/bootstrap-select.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/html2canvas.min.js"></script>
+<script src="../../pc/fx/assets/js/common.js?v=pfx24.0048"></script>
+<script src="../../pc/fx/assets/js/myPage.js?v=1.0"></script>
+<script src="../../pc/fx/assets/js/withdrawa.js?v=1.0"></script>
+<script src="../../pc/fx/assets/js/complaints.js"></script>
+<script src="../../pc/fx/assets/js/configured.js?v=pfx24.0048"></script>
+<script>
+    function infoSuccess(data){
+        if(data.project[0].jane_name == 'dsxz') {
+            $('#posterImg').attr('src' , '../../pc/fx/assets/img/dashixiezuo.png')
+        }else if(data.project[0].jane_name == 'aigc_check') {
+            $('#posterImg').attr('src' , '../../pc/fx/assets/img/masterAi.png')
+            $('#imgDiv #qrcode2').css({
+                bottom: '12px',
+                right: 'auto',
+                left: '15px',
+            })
+        }else if(data.project[0].jane_name == 'paper_platform') {
+            $('#posterImg').attr('src' , '../../pc/fx/assets/img/lwcc.png')
+            $('#imgDiv #qrcode2').css({
+                right: '35px',
+                bottom: '22px',
+            })
+        }else if(data.project[0].jane_name == 'zjchong') {
+            $('#posterImg').attr('src' , '../../pc/fx/assets/img/zjc.png')
+            $('#imgDiv #qrcode2').css({
+                right: '20px',
+                bottom: '13px',
+            })
+        }
+    }
+    // 未登录
+    function complete_info(data , code) {
+        if(code && code == 4003) {
+			location.href = './init.html'
+        }
+    }
+    var tabIsclick = false
+    // 表格tab
+    $('.tabBox>div').click(function() {
+        if(tabIsclick) {
+            $('.tabBox>div').removeClass('active')
+            $(this).addClass('active')
+            isinitialize = true
+            if($(this).data('key') == 'transactionOrders') {
+                getQuery()
+                $('.WithdrawalRecord').hide()
+            }else {
+                withdrawal_list()
+                $('.transactionOrders').hide()
+            }
+            $('.'+$(this).data('key')).show()
+        }
+    })
+
+    function feedback(num) { // 翻页回调
+        var key = $('.tabBox>div.active').data('key')
+        if(key == 'transactionOrders') {
+            getQuery(num)
+        }else if(key == 'WithdrawalRecord') {
+            withdrawal_list(num)
+        }
+    }
+    var limit = $('#PageSize').val()
+    var page = 1
+    var count = 0
+    var isinitialize = true
+    function success_info(e) {
+        if(!e.is_bind_phone) {
+            // memberFu.openBinding()
+        }else if(e.is_distributor) {
+            getQuery()
+            userInfo()
+        }
+    }
+    // 获取分销商信息
+    function userInfo() {
+        $.ajax({
+            type: 'post',
+            url: urls + "/api/client/distribution/user_info?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function(data) {
+                if (data.code == 200) {
+                    var ref = data.data
+                    $('#accumulate_amount').text(ref.accumulate_amount)
+                    $('#freeze_money').text(ref.freeze_money)
+                    $('#withdraw_money').text(ref.withdraw_money)
+                    $('#today_profit_money').text(ref.today_profit_money)
+                    $('#money , #balanceMoney').text(ref.money)
+                    $('.described').show()
+                    $('#distribution_config #ratio').text(ref.distribution_config.ratio)
+                    ref.distribution_config.type && $('#distribution_config #type').text("（" + ref.distribution_config.type + '）')
+                    $('.orderId_pop').text(window.location.protocol + '//' + ref.share_link)
+                    qrcode2.makeCode(window.location.protocol + '//' + ref.share_link);
+                    if(ref.kf_info) {
+                        $('#name , #phone , #wx , #qq' ).show().children('.infoText').removeClass('loadEffect')
+                        if(ref.kf_info.name) {
+                            $('#name .infoText').text(ref.kf_info.name)
+                        }else {
+                            $('#name').hide()
+                        }
+                        if(ref.kf_info.phone) {
+                            $('#phone .infoText').text(ref.kf_info.phone)
+                        }else {
+                            $('#phone').hide()
+                        }
+                        if(ref.kf_info.wx) {
+                            $('#wx').show()
+                            $('#wx .infoText').text(ref.kf_info.wx)
+                        }else {
+                            $('#wx').hide()
+                        }
+                        if(ref.kf_info.qq) {
+                            $('#qq').show()
+                            $('#qq .infoText').text(ref.kf_info.qq)
+                        }else {
+                            $('#qq').hide()
+                        }
+                        if(ref.kf_info.crony_code) {
+                            $('#qrcode img').attr('src' , ref.kf_info.crony_code)
+                            $('#qrcode').removeClass('loadEffect')
+                        }else {
+                            $('.code2').hide()
+                        }
+                    }
+                } else {
+                    cocoMessage.error(data.codeMsg, 2000);
+                }
+            },
+            error: function(err) {
+                cocoMessage.error('数据获取失败,请检查网络', 2000);
+            }
+        });
+    }
+
+    $('#transactionSearch').click(function() {
+        getQuery(1)
+    })
+    // 获取成交订单
+    function getQuery(below) {
+        tabIsclick = false
+        below = below || 1
+        $('.loading').show()
+        $('.stateless').hide()
+        var form_data = {
+            create_date: ($('#date1').val() && $('#date2').val())? ($('#date1').val() + '|' + $('#date2').val()):'',
+            type: $('#basic2').val()
+        }
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/distribution/order_list?page=' + below + '&limit=' + limit + '&user_token='+USER_TOKEN+'&jane_name='+JANE_NAME,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: form_data,
+            success: function(data) {
+                if (data.code == 200) {
+                    if(data.data.length) {
+                        $('.tbody1.table').html(tableHtml(data.data))
+                        count = data.count
+                        page = Number(below)
+                        if(isinitialize) { // 初始化
+                            isinitialize = !isinitialize
+                            loadData(count)
+                            loadpage();
+                        }
+                        $('.loading').hide()
+                        $('.stateless').hide()
+                    }else {
+                        $('.tbody1.table').html('')
+                        $('.loading').hide()
+                        $('.stateless,.has_s').show()
+                    }
+                } else {
+                    $('.tbody1.table').html('')
+                    $('.loading').hide()
+                    $('.stateless,.has_s').show()
+                    cocoMessage.error(data.codeMsg, 2000);
+                }
+            },
+            error: function(err) {
+                $('.tbody1.table').html('')
+                $('.loading').hide()
+                $('.stateless,.has_s').show()
+                cocoMessage.error('数据获取失败,请检查网络', 2000);
+            },
+            complete: function() {
+                tabIsclick = true
+            }
+        });
+    }
+
+    $('#withdrawalSearch').click(function() {
+        withdrawal_list(1)
+    })
+    // 获取提现列表
+    function withdrawal_list(below) {
+        below = below || 1
+        $('.loading').show()
+        $('.stateless').hide()
+        tabIsclick = false
+        var form_data2 = {
+            withdrawal_sn: $('#withdrawal_sn').val(),
+            mode: $('#mode').val(),
+            create_date: ($('#date3').val() && $('#date4').val())? ($('#date3').val() + '|' + $('#date4').val()):'',
+            status: $('#typeStatus').val(),
+        }
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/distribution/withdrawal_list?page=' + below + '&limit=' + limit + '&user_token='+USER_TOKEN+'&jane_name='+JANE_NAME,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: form_data2,
+            success: function(data) {
+                if (data.code == 200) {
+                    if(data.data.length) {
+                        $('.tbody2.table').html(tableHtml2(data.data))
+                        count = data.count
+                        page = Number(below)
+                        if(isinitialize) { // 初始化
+                            isinitialize = !isinitialize
+                            loadData(count)
+                            loadpage();
+                        }
+                        $('.loading').hide()
+                        $('.stateless').hide()
+                    }else {
+                        $('.tbody2.table').html('')
+                        $('.loading').hide()
+                        $('.stateless,.has_s').show()
+                    }
+                } else {
+                    $('.tbody2.table').html('')
+                    $('.loading').hide()
+                    $('.stateless,.has_s').show()
+                    cocoMessage.error(data.codeMsg, 2000);
+                }
+            },
+            error: function(err) {
+                $('.tbody2.table').html('')
+                $('.loading').hide()
+                $('.stateless,.has_s').show()
+                cocoMessage.error('数据获取失败,请检查网络', 2000);
+            },
+            complete: function() {
+                tabIsclick = true
+            }
+        });
+    }
+
+    // 成交订单表格数据处理
+    function tableHtml(data) {
+        var text = ''
+        for (var i = 0; i < data.length; i++) {
+            text += "<tr class=\"td\" style=\"text-align: center; color: #666;\">";
+            text += "	<td>" + data[i].oid + "</td>";
+            text += "	<td>" + data[i].created + "</td>";
+            text += "	<td>" + data[i].transaction_amount + "</td>";
+            text += "	<td>" + data[i].type_human + "</td>";
+            text += "	<td>" + data[i].remark + "</td>";
+            text += "</tr>";
+        }
+        return text
+    }
+
+    // 提现记录表格数据处理
+    function tableHtml2(data) {
+        var text = ''
+        for (var i = 0; i < data.length; i++) {
+            var imgTips = ''
+            if(data[i].remark) {
+                imgTips+='<div class=\'remark\'>'
+                imgTips+='  <img src=\'../../pc/fx/assets/img/tips.png\'></img>'
+                imgTips+='  <div class=\'TipsContent tool_tip tool_tip_bottom\'>'
+                imgTips+=       data[i].remark
+                imgTips+='  </div>'
+                imgTips+='</img>'
+            }
+            var statusClass  = 'status'+data[i].status
+            text += "<tr class=\"td\" style=\"text-align: center; color: #666;\">";
+            text += "	<td>" + data[i].withdrawal_sn + "</td>";
+            text += "	<td>" + data[i].withdrawal_mode_human + "</td>";
+            text += "	<td>" + data[i].withdrawal_amount + "</td>";
+            text += "	<td>" + data[i].created + "</td>";
+            text += "	<td>" + data[i].update + "</td>"
+            text += "	<td><div class=\"status_human\"><span class=\""+statusClass+"\">" + data[i].status_human + "</span>"+ imgTips +"</div></td>";
+            if(data[i].status == 30 ) {
+                text += "	<td class=\"complaints\" data-withdrawalsn=\""+data[i].withdrawal_sn+"\">" + '发起申诉' + "</td>";
+            }else if(data[i].status == 52) {
+                text += "	<td class=\"complaints\" data-withdrawalsn=\""+data[i].withdrawal_sn+"\">" + '再次申诉' + "</td>";
+            }else {
+                text += "	<td>" + '' + "</td>";
+            }
+            text += "</tr>";
+        }
+        return text
+    }
+    $('.close').click(function() {
+        $('.posterShareBox').hide()
+        $('.linkBox').hide()
+        $('.withdrawBox').hide()
+        $('.complaintsBox').hide()
+    })
+    $('.posterShare').click(function() {
+        $('.posterShareBox').show()
+    })
+    $('.urlShare').click(function() {
+        $('.linkBox').show()
+    })
+
+    $('#withdrawalderived').click(function() {
+        this.formData = {
+            withdrawal_sn: $('#withdrawal_sn').val(),
+            mode: $('#mode').val(),
+            create_date: ($('#date3').val() && $('#date4').val())? ($('#date3').val() + '|' + $('#date4').val()):'',
+            status: $('#typeStatus').val(),
+        }
+        let url = "/api/client/distribution/withdrawal_list/export/to_excel?"+'user_token='+USER_TOKEN+'&jane_name='+JANE_NAME+"&_session_type=user&domain="+window.location.origin;
+        if (this.formData) {
+            let form=this.formData
+            let queryArr = [];
+            for (var key in form) {
+                if (form[key] || form[key]==0) {
+                    queryArr.push(`${key}=${form[key]}`);
+                }
+            }
+            url += `?${queryArr.join("&")}`;
+        }
+        window.open(urls + url);
+    })
+
+    $(document).on('mouseenter','.remark',function(){
+        $(this).children('.tool_tip').show()
+        var widthCss = ($(this).children('.tool_tip').width()/2)  - 4
+        $(this).children('.tool_tip').css('left' , '-'+widthCss+'px')
+
+    })
+    $(document).on('mouseleave','.remark',function(){
+        $(this).children('.tool_tip').hide()
+    })
+
+    $('#date1 , #date2').change(function(e) {
+        if($('#date1').val() || $('#date2').val()) {
+            $('.deleteFile1').show()
+        }else {
+            $('.deleteFile1').hide()
+        }
+    })
+    $('.deleteFile1').click(function() {
+        $('#date1 , #date2').val('').change()
+    })
+    $('#date3 , #date4').change(function(e) {
+        if($('#date3').val() || $('#date4').val()) {
+            $('.deleteFile2').show()
+        }else {
+            $('.deleteFile2').hide()
+        }
+    })
+    $('.deleteFile2').click(function() {
+        $('#date3 , #date4').val('').change()
+    })
+</script>
+</html>

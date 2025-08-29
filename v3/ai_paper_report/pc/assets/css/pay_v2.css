@@ -1,0 +1,67 @@
+.rightCont .container {
+  padding: 0 40px;
+}
+.appreciationUL .appreciationLI.szsjzz .must_read > img {
+  position: relative;
+  top: 2px;
+}
+.appreciationUL .appreciationLI .logo-services span img {
+  margin-top: 2px;
+}
+.main .table {
+  background-image: linear-gradient(0deg, #ffffff 0%, #f5f5ff 100%);
+  box-shadow: 0px 0px 13px 0px rgba(117, 120, 218, 0.24);
+}
+.typeTag {
+  color: #7578da;
+  background-color: #eae9ff;
+  border: solid 1px #7579db;
+}
+.main .h3Text i {
+  background-color: #7578da;
+}
+.coupon_box .card .use_now {
+  background-color: #aaacf0;
+}
+.coupon_box .card .use_now.can {
+  background-color: #7578da;
+}
+.coupon_box .card .eliminateCoupon:hover {
+  background-image: url(../img/delete5.png);
+}
+.main .titlesRight .amount b {
+  color: #7579db;
+}
+.main .titlesRight .amount span {
+  color: #7579db;
+}
+.clearfix2 .payType .select {
+  background: url(../img/select2.png) no-repeat;
+}
+.collateImg1,
+.zzImg1,
+.yhqImg1,
+.zfImg1 {
+  display: none;
+}
+.collateImg2,
+.zzImg2,
+.yhqImg2,
+.zfImg2 {
+  display: inline-block;
+}
+.typeTagKTBG {
+  color: #7578da;
+  background-color: #eae9ff;
+  border: solid 1px #7579db;
+}
+.logo_zyb_v2,
+.search_r_zy_icon,
+.logoType2 {
+  display: inline-block;
+}
+.logov2,
+.search_r_icon,
+.logoType {
+  display: none;
+}

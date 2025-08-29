@@ -1,0 +1,164 @@
+.complainBox .complainForm,
+.complainBox .complainRecord {
+  display: none;
+  position: fixed;
+  right: 5%;
+  top: 17vh;
+  width: 90%;
+  background-image: linear-gradient(0deg, #fafdff 0%, #ffffff 100%);
+  box-shadow: 0px 0px 0.4rem 0px rgba(0, 0, 0, 0.09);
+  border-radius: 1rem;
+  text-align: left;
+  z-index: 1000;
+}
+.complainBox .complainRecord .formMain section {
+  text-align: center;
+  padding-top: 10rem;
+}
+.complainBox .complainRecord .formMain #textarea {
+  max-width: 31rem;
+}
+.complainBox .complainRecord .formMain .formMain-sc p.complain-item {
+  text-align: center;
+  font-size: 14px;
+  color: #333333;
+  margin-top: 14rem;
+}
+.complainBox .complainRecord .requestBox,
+.complainBox .complainRecord .answer {
+  padding: 10px 12px 6px;
+}
+.complainBox .complainRecord .answer {
+  background: #f2f5f9;
+  border-radius: 6px;
+}
+.complainBox .complainRecord .requestBox-Img {
+  margin-top: 10px;
+}
+.complainBox .complainRecord .text {
+  position: relative;
+  padding-left: 24px;
+  text-align: justify;
+  color: #333333;
+}
+.complainBox .complainRecord .text span.ask {
+  display: inline-block;
+  color: #006dff;
+  padding: 1px 3px 1px;
+  background: #d7edff;
+  border: 1px solid #006dff;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  line-height: normal;
+}
+.complainBox .complainRecord .text span.reply {
+  display: inline-block;
+  color: #ed8e28;
+  padding: 1px 3px 1px;
+  background: #ffd7ac;
+  border: 1px solid #ed8e28;
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  line-height: normal;
+}
+.complainBox .hader_S {
+  padding: 1.4rem;
+  color: #333333;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #f4f4f4;
+  font-weight: bold;
+}
+.complainBox .hader_S img {
+  float: right;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.5rem;
+}
+.complainBox .formMain {
+  padding: 1.4rem;
+  overflow-y: auto;
+  height: 46rem;
+}
+.complainBox .formMain .label_s {
+  font-weight: 400;
+}
+.complainBox .formMain .label_s span {
+  color: #ff1e1e;
+}
+.complainBox .kind {
+  margin-bottom: 1.2rem;
+}
+.complainBox .radioData .radioBox {
+  overflow: hidden;
+}
+.complainBox .radioData input {
+  display: none;
+}
+.complainBox .radioData .radio {
+  float: left;
+  margin: 0 1rem 0 0;
+}
+.complainBox .radioData .radio label {
+  background-color: #f5f5f5;
+  padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+  color: #666666;
+  font-size: 1.2rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.complainBox .radioData .radio .selected {
+  background-color: #e4f4ff;
+  color: #006dff;
+}
+.complainBox .btn-primary {
+  width: 100%;
+  background-color: #006fff !important;
+  border-radius: 0.4rem;
+  color: #fff;
+  border: 0 !important;
+  outline: auto !important;
+  outline-offset: 0 !important;
+}
+.complainBox .btn-primary:hover {
+  background-color: #035acc !important;
+}
+.complainBox .has-success .form-control {
+  border-color: #ccc !important;
+  box-shadow: none !important;
+}
+.complainBox .btn {
+  padding: 0.8rem 1.2rem;
+}
+.complainBox .form-control {
+  box-shadow: none !important;
+}
+.complainTS {
+  padding: 3rem 0;
+  color: #0075ff;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.complainTS img {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -2px;
+}
+.Picture_s p {
+  color: #8d8d8d;
+  font-size: 12px;
+}
+.feedbackHistory {
+  color: #006fff;
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.feedbackHistory span {
+  cursor: pointer;
+}
+.feedbackHistory span:hover {
+  color: #003b87;
+}
+/*# sourceMappingURL=complain.css.map */

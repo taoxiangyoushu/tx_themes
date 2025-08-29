@@ -1,0 +1,648 @@
+html {
+    font-size: 12px;
+}
+
+#contentMain {
+    margin-top: 4.6875rem;
+}
+.distributionCenterApp {
+    background: url('../img/bg.png') no-repeat;
+    background-color: #F5F5F5;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.labels {
+    font-size: 1.5rem;
+    position: relative;
+    font-weight: bold;
+    color: #333;
+
+    span {
+        display: inline-block;
+        width: .1875rem;
+        height: 1.5rem;
+        background: #FF6347;
+        border-radius: .625rem;
+        position: relative;
+        top: .1875rem;
+        margin-right: .125rem;
+    }
+}
+
+.share {
+    background: #FFFFFF;
+    box-shadow: 0rem 0rem 1rem 0rem rgba(180, 175, 174, 0.1);
+    border-radius: 0.67rem;
+    width: calc(100% - 2rem);
+    margin: 0 auto 1rem;
+    padding: 1.5rem 2.1rem;
+
+    .described {
+        font-size: 1.25rem;
+        color: #333333;
+        margin: 1rem 0 1.2rem 0;
+
+        #ratio,
+        #type {
+            color: #FF6347;
+        }
+    }
+
+    .promotion {
+        display: flex;
+        justify-content: space-between;
+
+        &>div {
+            width: 46%;
+            height: 2.83rem;
+            background: linear-gradient(-30deg, #FF4C2E 0%, #FFB39C 100%);
+            border-radius: 1.42rem;
+            line-height: 2.83rem;
+            text-align: center;
+            color: #fff;
+            font-size: 1.17rem;
+        }
+    }
+}
+
+.amount_info {
+    background: #FFFFFF;
+    box-shadow: 0rem 0rem 1rem 0rem rgba(180, 175, 174, 0.1);
+    border-radius: 0.67rem;
+    width: calc(100% - 2rem);
+    margin: 0 auto 1rem;
+    padding: 1.5rem 1.33rem;
+
+    .labelsBox {
+        padding-left: .75rem;
+    }
+
+    .income {
+        background: #FFFAF9;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 2.1875rem 0 1.5625rem;
+        margin-top: 1.3rem;
+
+        .incomeName {
+            font-size: 1.25rem;
+            color: #333333;
+        }
+
+        #today_profit_money,
+        #accumulate_amount {
+            font-weight: bold;
+            font-size: 2.08rem;
+            color: #333333;
+            margin-top: .625rem;
+            display: inline-block;
+
+            &#today_profit_money {
+                color: #FF6347;
+            }
+        }
+
+        i {
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 3.56rem;
+            background-color: #ededed;
+        }
+    }
+
+    .withdrawal {
+        background: #FFFAF9;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1.6rem 0;
+        margin-top: 0.79rem;
+        font-size: 0.92rem;
+
+        i {
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 3.56rem;
+            background-color: #ededed;
+        }
+
+        .incomeName {
+            font-size: 1.125rem;
+            color: #333333;
+            margin-bottom: .2rem;
+        }
+
+        #money,
+        #freeze_money,
+        #withdraw_money {
+            font-weight: bold;
+            font-size: 1.42rem;
+            color: #383838;
+        }
+
+        .GoWithdrawal {
+            font-size: 1rem;
+            color: #FF6347;
+            vertical-align: middle;
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            top: -0.125rem;
+        }
+    }
+}
+
+.contactInformation {
+    background: #FFFFFF;
+    box-shadow: 0rem 0rem 1rem 0rem rgba(180, 175, 174, 0.1);
+    border-radius: 0.67rem;
+    width: calc(100% - 2rem);
+    margin: 0 auto 1rem;
+    padding: 1.5rem 2.1rem;
+
+    .infoBox {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        font-size: 1.25rem;
+    }
+    #qrcode img {
+        width: 100%;
+    }
+    .text_info {
+        &>p {
+            margin-top: 1.2rem;
+        }
+
+        .infoText {
+            display: inline-block;
+            min-width: 8rem;
+            min-height: 1.17rem;
+            vertical-align: middle;
+        }
+    }
+
+    .code2Box {
+        width: 6.88rem;
+        margin-top: 1.4rem;
+    }
+    .code2 {
+        p {
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        #qrcode {
+            width: 6.88rem;
+            height: 6.88rem;
+        }
+    }
+}
+
+.scrollBox {
+    background: #FFFFFF;
+    box-shadow: 0rem 0rem 1rem 0rem rgba(180, 175, 174, 0.1);
+    border-radius: 0.67rem;
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+
+    .tabBox {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        text-align: center;
+
+        &>div {
+            width: 40%;
+            font-size: 1.25rem;
+            color: #333333;
+            padding: 1.5rem 0;
+        }
+
+        &>.active {
+            color: #FF6347;
+            font-weight: bold;
+
+            span {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    bottom: -0.5rem;
+                    left: 1.8rem;
+                    width: 1.5rem;
+                    height: 0.17rem;
+                    background: #FF6347;
+                    border-radius: 0.08rem;
+                }
+            }
+        }
+    }
+
+    #scroller {
+        height: calc(100vh - 21rem);
+        position: relative;
+        .scroll_div {
+            height: 100%;
+            padding: 0 1rem;
+            overflow: auto;
+
+            li {
+                border-bottom: 1px solid #F5F5F5;
+                padding: .5rem;
+            }
+        }
+
+        .topP,
+        .bottomP {
+            display: flex;
+            justify-content: space-between;
+            line-height: normal;
+            padding: .5rem;
+        }
+
+        .pull-loading {
+            text-align: center;
+            margin: 1rem 0;
+            display: none;
+        }
+        .oid {
+            font-size: 1.17rem;
+            color: #333333;
+        }
+        .transaction_amount {
+            font-weight: bold;
+            font-size: 1.42rem;
+            color: #383838;
+        }
+        .created {
+            font-size: 1rem;
+            color: #999999;
+        }
+        .type_human {
+            font-size: 1rem;
+            color: #999999;
+        }
+    }
+}
+
+#copyInput {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    top: 0;
+}
+
+.linkBox {
+    display: none;
+
+    .contentBox {
+        width: 80%;
+        position: fixed;
+        left: 10%;
+        top: 20vh;
+        background-color: #FFFFFF;
+        z-index: 1000;
+        border-radius: 1.25rem;
+        padding-bottom: 1.25rem;
+
+        .core {
+            padding: 0rem 1.25rem;
+        }
+    }
+
+    .close,
+    .closeConfirmPopUp {
+        position: absolute;
+        right: 1.25rem;
+        top: 1.25rem;
+        opacity: 1;
+        width: .9375rem;
+    }
+
+    .dialogHead {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #333333;
+        text-align: center;
+        padding-top: 1.875rem;
+        padding-bottom: 1rem;
+    }
+
+    .GetLinkBox {
+        width: 100%;
+        max-width: 34.5rem;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .copy_pop , .copy_pop2{
+        width: 28%;
+        height: 2.5rem;
+        font-weight: bold;
+        font-size: 1rem;
+        background: linear-gradient(-30deg, #FF4C2E 0%, #FFB39C 100%);
+        box-shadow: 0px 0px 10px 0px rgba(255, 59, 13, 0.3);
+        border-radius: .5rem;
+        line-height: 2.5rem;
+        text-align: center;
+        color: #fff;
+        float: right;
+        cursor: pointer;
+    }
+
+    .orderId_pop , .orderId_pop2 {
+        width: 70%;
+        height: 2.5rem;
+        background: #FFFFFF;
+        border-radius: .5rem;
+        border: .0625rem solid #EDEDED;
+        float: left;
+        outline: 0 !important;
+        font-size: .875rem;
+        padding-left: 1.25rem;
+        line-height: 2.5rem;
+    }
+    .introduceLink {
+        background-color: #FFF9F7;
+        padding: 1rem 0rem;
+        overflow: hidden;
+        width: 100%;
+        margin: 1.25rem auto 0;
+        border-radius: .625rem;
+
+        p {
+            line-height: 2.5rem;
+            padding-left: 1rem;
+        }
+    }
+
+    .extendText {
+        font-weight: bold;
+        font-size: 1.25rem;
+        color: #333333;
+        text-align: center;
+        margin-bottom: .625rem;
+    }
+
+    .extendTips {
+        color: #333333;
+        font-size: 1.125rem;
+        line-height: 1.875rem;
+        padding-left: .75rem;
+
+        span {
+            color: #F77653;
+            width: 7rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+.posterShareBox {
+    display: none;
+
+    .contentBox {
+        width: 80%;
+        position: fixed;
+        left: 10%;
+        top: 6vh;
+        background-color: #ffffff;
+        z-index: 1000;
+        border-radius: 1.25rem;
+    }
+
+    .close,
+    .closeConfirmPopUp {
+        position: absolute;
+        right: 1.25rem;
+        top: 1.25rem;
+        opacity: 1;
+        width: .9375rem;
+    }
+
+    .dialogHead {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #333333;
+        text-align: center;
+        padding-top: 1.8rem;
+    }
+
+    .core {
+        width: 100%;
+        padding: 1.125rem;
+        overflow: hidden;
+        padding-bottom: 2.5rem;
+    }
+
+    .poster {
+        width: 248px;
+        margin: auto;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .Poster_QRcode {
+            position: absolute;
+            right: 2.2rem;
+            bottom: 1.5rem;
+        }
+    }
+
+    .introduce {
+        position: relative;
+        padding: 0rem 1.75rem;
+        margin: 1.8rem 0rem;
+    }
+
+    .ButtonBox {
+        width: 100%;
+    }
+
+    .DownloadPoster {
+        width: 48%;
+        background: linear-gradient(-30deg, #FF4C2E 0%, #FFB39C 100%);
+        box-shadow: 0rem 0rem .625rem 0rem rgba(255, 59, 13, 0.3);
+        border-radius: .625rem;
+        text-align: center;
+        color: #fff;
+        line-height: 3.125rem;
+        font-size: 1.25rem;
+        cursor: pointer;
+        float: right;
+    }
+
+    .DownloadPoster1 {
+        width: 48%;
+        background: #FFFCFD;
+        border: solid .0625rem #FF6346;
+        border-radius: .625rem;
+        text-align: center;
+        color: #FF6346;
+        line-height: 3.125rem;
+        font-size: 1.25rem;
+        cursor: pointer;
+        float: left;
+    }
+}
+
+.mask_body {
+    position: fixed;
+    background: #000;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    display: none;
+}
+.empty {
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    padding-top: 6rem;
+    display: none;
+    width: 100%;
+    img {
+        width: 60%;
+    }
+}
+
+.Withdrawaldiv {
+
+    display: none;
+    .contentBox {
+        width: 80%;
+        position: fixed;
+        left: 10%;
+        top: 20vh;
+        background-color: #ffffff;
+        z-index: 1000;
+        border-radius: 1.25rem;
+        padding-bottom: 2rem;
+    }
+
+    .close,
+    .closeConfirmPopUp {
+        position: absolute;
+        right: 1.25rem;
+        top: 1.25rem;
+        opacity: 1;
+        width: .9375rem;
+    }
+
+    .dialogHead {
+        text-align: center;
+        margin-top: 3.75rem;
+
+        img {
+            width: 3.75rem;
+        }
+    }
+
+    .tip1 {
+        text-align: center;
+        color: #303030;
+        font-size: 1.5rem;
+        line-height: 3.875rem;
+    }
+
+    .tip2 {
+        text-align: center;
+        color: #888888;
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
+
+    .orderId_pop , .orderId_pop2 {
+        width: 70%;
+        background: #FFFFFF;
+        float: left;
+        outline: 0 !important;
+        font-size: .875rem;
+        padding-left: 1.25rem;
+        border: .0625rem solid #E5E5E5;
+        height: 3rem;
+        border-radius: .5rem 0rem 0rem .5rem;
+        line-height: 3rem;
+        border-right: none;
+    }
+
+    .Copy_link {
+        width: 90%;
+        margin: auto;
+        margin-top: 1.25rem;
+    }
+
+    .copy_pop , .copy_pop2 {
+        float: right;
+        width: 30%;
+        height: 3rem;
+        background: linear-gradient(-30deg, #FF4C2E 0%, #FFB39C 100%);
+        border-radius: 0rem .5rem .5rem 0rem;
+        text-align: center;
+        font-size: 1.25rem;
+        line-height: 3rem;
+        color: #FFFFFF;
+    }
+}
+
+
+.orderId_pop2 {
+    overflow:hidden;
+    text-overflow:ellipsis;//文本溢出显示省略号
+    white-space:nowrap;//文本不会换行
+}
+#wrapper {
+    /* 防止本机Windows上的触摸事件 */
+    -ms-touch-action: none;
+
+    /* 防止callout tap-hold和文本的选择 */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    /* 防止文本调整取向变化对web应用程序很有用 */
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+}
+.ToIndex {
+    line-height: 2.8rem;
+    padding-left: 1.5rem;
+    font-size: 1.4rem;
+    color: #333;
+}
+.linkBox .orderId_pop {
+    line-height: normal;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+#orderId_pop_id {
+    border: 0 !important;
+    width: 100%;
+    vertical-align: middle;
+    height: 100%;
+    outline: 0 !important;
+}

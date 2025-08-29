@@ -1,0 +1,234 @@
+body {
+  background-color: transparent;
+}
+.main .h3Text {
+  font-size: 20px;
+  color: #333333;
+}
+.payApp.indexAppv2 {
+  min-width: auto;
+}
+.payApp.indexAppv2 .rightCont {
+  width: 100%;
+}
+.payApp.indexAppv2 .rightCont .container {
+  padding: 0px 30px;
+}
+.payApp.indexAppv2 i {
+  left: 50.8%;
+}
+.ProfessionalEdition.payApp .main .table {
+  background: #EFF1FF;
+  border-radius: 4px;
+  border: 0;
+  display: flex;
+  padding-bottom: 0;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+  padding: 0 16px;
+  box-shadow: none;
+  color: #999999;
+  font-size: 12px;
+  line-height: 32px;
+}
+.ProfessionalEdition.payApp .main .table #orderIdText,
+.ProfessionalEdition.payApp .main .table #orderIdText2,
+.ProfessionalEdition.payApp .main .table .NumberWordsBox span {
+  color: #333;
+}
+.titles_text {
+  font-size: 16px;
+  color: #3D3D3D;
+  position: relative;
+  padding-left: 12px;
+}
+.titles_text::after {
+  content: '';
+  width: 3px;
+  height: 20px;
+  background: #7578DA;
+  border-radius: 2px 2px 2px 2px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+.appreciationUL .appreciation-block-i {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.appreciationUL .appreciation-block-i .appreciationLI {
+  width: calc(50% - 5px);
+  margin-right: 0;
+}
+.appreciationUL .appreciation-block-i .appreciationLI > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.appreciationUL .appreciation-block-i::after {
+  display: none;
+}
+.ProfessionalEdition.payApp .appreciationUL .appreciationLI {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(66, 66, 81, 0.1);
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid #EEEDF5;
+}
+.ProfessionalEdition.payApp .appreciationUL .appreciationLI.selected {
+  border: 1px solid #7578DA;
+}
+.appreciationUL .appreciationLI {
+  float: none;
+  padding: 0 16px;
+}
+.appreciationUL .appreciationLI .price,
+.appreciationUL .appreciationLI .explain {
+  margin-top: 0;
+}
+.appreciationUL .appreciationLI .price {
+  color: #FF4646;
+  vertical-align: baseline;
+}
+.appreciationUL .appreciationLI.prohibited_modify {
+  display: none;
+  cursor: auto;
+}
+.appreciationUL .appreciationLI.prohibited_modify .must_read .szsj_tips_block {
+  left: -406px;
+  top: -172px;
+}
+.appreciationUL .appreciationLI.left_wd .must_read .szsj_tips_block {
+  left: 40px;
+  top: -110px;
+}
+.appreciationUL .appreciationLI.zjcaigczz {
+  width: 100%;
+  height: auto;
+  padding: 11px 16px;
+}
+.appreciationUL .appreciationLI.zjcaigczz i {
+  margin-top: 0;
+}
+.appreciationUL .appreciationLI .s-logo {
+  height: 24px;
+}
+.appreciationUL .appreciationLI .logo-services {
+  height: auto;
+}
+.appreciationUL .appreciationLI .logo-services span {
+  margin-left: 4px;
+  display: inline-block;
+  height: 24px;
+  line-height: 28px;
+  color: #666666;
+}
+.appreciationUL .appreciationLI .logo-services .s-example {
+  right: -350px;
+  top: 0;
+}
+.appreciationUL .appreciationLI.szsjzz {
+  padding: 0 16px;
+  height: auto;
+  line-height: 42px;
+}
+.appreciationUL .appreciationLI.szsjzz .good_name {
+  font-size: 14px;
+}
+.appreciationUL .appreciationLI.szsjzz i {
+  margin-top: -2px;
+}
+.appreciationUL .appreciationLI.szsjzz .must_read {
+  margin-left: 0;
+  height: auto;
+  line-height: 0;
+  display: inline;
+}
+.appreciationUL .appreciationLI.szsjzz .szsjzz_block {
+  display: flex;
+  align-items: center;
+}
+.appreciationUL .appreciationLI span.good_name {
+  font-weight: bold;
+}
+.appreciationUL .appreciationLI span.currentPrice {
+  color: #FF4646;
+}
+.coupon_box {
+  margin-top: 0;
+}
+.coupon_box .card {
+  height: auto;
+  margin: 20px 0 26px 0;
+}
+.coupon_box .card .form-control {
+  width: calc(100% - 75px);
+}
+.coupon_box .card .Exchange_hidden {
+  width: calc(100% - 200px);
+}
+.coupon_box .card .errorTip1 {
+  width: calc(100% - 200px);
+}
+.coupon_box .preferential {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 8px 12px;
+  background: #FFFFFF;
+  border-radius: 8px 8px 8px 8px;
+}
+.coupon_box .preferential .title_yh {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333333;
+  margin-right: 16px;
+}
+.coupon_box .preferential .title_yh::after {
+  content: '';
+  width: 3px;
+  height: 20px;
+  background: #7578DA;
+  border-radius: 2px 2px 2px 2px;
+  position: absolute;
+  left: 0;
+  top: 13px;
+}
+.coupon_box .card .errorTip {
+  top: 48px;
+  left: 68px;
+}
+.main .code .load {
+  top: 17px;
+}
+.main .code .load img {
+  height: 137px;
+}
+.clearfix2 .tbPay .main {
+  width: 428px;
+}
+.clearfix2 .tbPay .tb-content .tb-idBox .tb-oid {
+  width: 52%;
+}
+.main .payType {
+  margin-right: 30px;
+}
+.main .titlesRight {
+  padding-left: 16px;
+}
+.clearfix2 .tbPay {
+  padding-left: 0px;
+}
+.tipsDiv2 div {
+  width: 118px;
+  display: none;
+}
+.tipsDiv2:hover div {
+  display: block;
+}
+.clearfix2 .tbPay .Options {
+  width: 434px;
+}
+.clearfix2 .tbPay .tb-content .tb-idBox label {
+  margin-right: 0px;
+}

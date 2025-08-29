@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 为移动设备添加 viewport；-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 指定请求和响应遵循的缓存机制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>成为分销商</title>
+    <link rel="shortcut icon" href="../../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../../mobile/fx/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../mobile/fx/assets/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="../../mobile/fx/assets/css/common.css">
+    <link rel="stylesheet" href="../../mobile/fx/assets/css/fxCommon.css">
+    <link rel="stylesheet" href="../../mobile/fx/assets/css/init.css?v=fx1.1">
+    <!-- head_script -->
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY=' // 线上
+        var JANE_NAME = 'dsxz';
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
+    </script>
+</head>
+
+<body>
+    <div class="loginApp">
+        <div class="content">
+            <div class="headDiv" id="memberCarrier">
+
+            </div>
+        </div>
+        <!--  -->
+        <div class="bannerdiv">
+            <div class="container">
+                <!-- 上部分 -->
+                <div class="Content_Box">
+                    <div class="Join_realtime">
+                        <div class="carousel realTime">
+                            <div class="t_news">
+                                <ul class="news_li">
+
+                                </ul>
+                                <ul class="swap"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="bannertxt">成交一单</p>
+                    <p class="bannertxt">成为"专属"推广员</p>
+                    <img src="../../mobile/fx/assets/img/arrow.png" alt="" class="up_arrow ">
+                    <!-- 当前级别 -->
+                    <div class="Level_joining">
+                        <div class="Current_level">
+                            <div class="Current_left">
+                                <span class="Level_label">当前级别</span>
+                                <p>普通用户</p>
+                                <p>0.00%</p>
+                                <p>分佣比例</p>
+                                <li>0分佣</li>
+                                <li>0回报</li>
+                                <li>0收益</li>
+                            </div>
+                            <div class="Current_rigth">
+                                <p>"专属"推广员</p>
+                                <p><span><span class="exclusiveProportion Getinfo loadEffect">00</span>%</span></p>
+                                <p>分佣比例<span class="getProportionType">（<span class="Getinfo loadEffect proportionType proportionType1">按利润额分润</span>）</span></p>
+                                <li><img src="../../mobile/fx/assets/img/tick.png " alt="">轻松得佣金</li>
+                                <li><img src="../../mobile/fx/assets/img/tick.png " alt="">不收取额外费用</li>
+                                <li><img src="../../mobile/fx/assets/img/tick.png " alt="">仅需成功分享一单</li>
+                            </div>
+                            <img src="../../mobile/fx/assets/img/arrow(1).png" alt="" class="Arrow_image">
+                        </div>
+                        <!-- 流程 -->
+                        <div class="Process_Box">
+                            <!-- <img src="../../mobile/fx/assets/img/line.png" alt=""> -->
+                            <div class="Process_Introduction">
+
+                                <div>
+                                    <span></span>
+                                    <p>加入</p>
+                                    <p>点击</p>
+                                    <p>[立即加入]</p>
+                                </div>
+                                <div>
+                                    <span ></span>
+                                    <p>绑定</p>
+                                    <p>绑定手机号</p>
+                                    <p>验证码登录</p>
+                                </div>
+                                <div>
+                                    <span ></span>
+                                    <p>推广</p>
+                                    <p>获取</p>
+                                    <p>海报/链接分享</p>
+                                </div>
+                                <div>
+                                    <span></span>
+                                    <p>下单</p>
+                                    <p>专属链接</p>
+                                    <p>1人完成购买</p>
+                                </div>
+                                <div>
+                                    <span>
+                                        <img src="../../mobile/fx/assets/img/tick1.png" alt="">
+                                    </span>
+                                    <p>成功</p>
+                                    <p>成为</p>
+                                    <p>专属推广员</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 立即加入 -->
+                        <div class="Join_now joinNow loadEffect">立即加入</div>
+                        <div class="distributionCenter">分销中心</div>
+                    </div>
+
+                </div>
+                <!-- 分销介绍 -->
+                <div class="Distribution_Introduction">
+                    <div class="Introduction_Title">
+                        <p><span></span>分销介绍</p>
+                    </div>
+                    <!-- 1.如何赚佣金？ -->
+                    <div>
+                        <p class="Question">1.如何赚佣金？</p>
+                        <table class="Answer_question">
+                            <tr>
+                                <th>① 成功下单：</th>
+                                <td class="Answer_right">成交一单即具备成为“专属”推广员的资格。</td>
+                            </tr>
+                            <tr>
+                                <th>② 专属链接：</th>
+                                <td class="Answer_right">复制您的专属推广链接。</td>
+                            </tr>
+                            <tr>
+                                <th>③ 分享并推广：</th>
+                                <td class="Answer_right1">将您的链接分享给潜在客户，利用社交媒体等渠道推广链接。</td>
+                            </tr>
+                            <tr>
+                                <th>④ 完成首次交易：</th>
+                                <td>有1人通过您的链接完成购买，您就可以立即分得佣金。</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- 2.关于分佣比例 -->
+                    <div>
+                        <p class="Question">2.关于分佣比例</p>
+                        <table class="Answer_question">
+                            <tr class="Getinfo loadEffect rightProportionText">
+                                <th><span class="proportionType"></span>，分佣比例为：<span> <span class="exclusiveProportion">00</span>%</span></th>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- 3.关于佣金提现 -->
+                    <div>
+                        <p class="Question">3.关于佣金提现</p>
+                        <table class="Answer_question1">
+                            <tr>
+                                <th>分销中心 —— 申请提现 —— 上级联系人审批与支付</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="lowermost">
+            Copyright © 2024
+        </div> -->
+    </div>
+</body>
+
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../../mobile/fx/assets/js/jquery.min.js"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
+<script src="../../mobile/fx/assets/js/bootstrap.min.js"></script>
+<script src="../../mobile/fx/assets/js/bootstrapValidator.min.js"></script>
+
+<script src="../../mobile/fx/assets/js/qrcode.min.js"></script>
+<script src="../../mobile/fx/assets/js/coco-message.js?v=cm1.0"></script>
+
+<script src="../../mobile/fx/assets/js/common.js"></script>
+<script src="../../mobile/fx/assets/js/rolling.js"></script>
+
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js"></script>
+<script>
+     function infoSuccess(data) {
+        $('.exclusiveProportion').text(data.domain_config.distribution_ratio)
+        $('.proportionType').text(data.domain_config.distribution_type_human)
+        $('.Getinfo').removeClass('loadEffect')
+    }
+
+    var isJoinNow = false
+    var join_spread = false
+    var prompt_text = '登录成功!正在跳转...'
+    $('.joinNow').click(function() {
+        if(isJoinNow) {
+            if(join_spread) {
+                prompt_text = '加入分销成功!正在跳转...'
+                distributionJoin_spread()
+            }else {
+                prompt_text = '登录成功!正在跳转...'
+                memberFu.openBinding()
+                memberFu.opt.bindingSuccessful = function (){
+                    if(distributionJoin_spread) distributionJoin_spread()
+                }
+            }
+        }
+    })
+     $('.distributionCenter').click(function() {
+         if(isJoinNow) {
+             if(join_spread) {
+                 cocoMessage.error('需加入分销后才可进入分销中心', 2000);
+             }else {
+                 memberFu.openBinding()
+                 memberFu.opt.bindingSuccessful = function (){
+                     cocoMessage.success('登录成功!', 2000);
+                     memberFu.userUserInfo()
+                 }
+             }
+         }
+     })
+    function success_info(e) {
+        if(e.is_bind_phone && e.is_distributor) { // 已绑定手机号且已是分销商
+			location.href = './index.html'
+        }else if(!e.is_bind_phone) { // 未绑定手机号
+            memberFu.opt.bindingText = '绑定手机号'
+            memberFu.opt.bindingButton = '立即绑定'
+            memberFu.opt.loginTips = '未注册手机号验证后自动登录'
+            memberFu.bind_phone()
+        }else if(e.is_bind_phone && !e.is_distributor) { // 已绑定手机号 , 未成为分销商商
+            join_spread = true
+        }
+    }
+    $('#memberCarrier span').click(function() {
+		location.href = '/'
+    })
+    function complete_info(data , code) {
+        isJoinNow = true
+       $('.joinNow').removeClass('loadEffect')
+    }
+    function distributionJoin_spread() {
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/distribution/join_spread?user_token='+USER_TOKEN+'&jane_name='+JANE_NAME,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function(data) {
+                if (data.code == 200) {
+                    cocoMessage.success(prompt_text, 2000);
+                    setTimeout(function() {
+                        location.href = './index.html'
+                    }, 500)
+                } else {
+                    cocoMessage.error(data.codeMsg, 2000);
+                }
+            },
+            error: function(err) {
+                cocoMessage.error('数据获取失败,请检查网络', 2000);
+            }
+        });
+    }
+</script>
+
+</html>

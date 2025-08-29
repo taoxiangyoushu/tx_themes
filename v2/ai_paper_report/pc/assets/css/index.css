@@ -904,7 +904,7 @@ label {
   vertical-align: text-top;
   margin-right: 8px;
   box-sizing: border-box;
-  margin-top: 1px;
+  margin-top: 2px;
   cursor: pointer;
 }
 .gen_params .sample {
@@ -1906,3 +1906,4 @@ p.word-prompt .text-num {
 .indexApp .proposal .fileBlock img.deleteFile {
   margin-top: 0;
 }
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 用于指定双核浏览器默认以何种方式渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 为移动设备添加 viewport；-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 指定请求和响应遵循的缓存机制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>AI大师写作</title>
+    <meta name="description" content="AI大师写作是一个提供论文辅助的全面指导,包括图表、表格、公式等方面的建议。" />
+    <meta name="keywords" content="AI大师写作，论文范文辅助，毕业论文" />
+    <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.0064">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css?v=m24.0064">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css?v=m24.0064">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0064">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0064">
+    <link rel="stylesheet" href="../mobile/assets/css/commonv2.css?v=m24.0064">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0064">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0064">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0064">
+    <link rel="stylesheet" href="../mobile/assets/css/leftCss.css?v=m24.0064">
+    <link rel="stylesheet" href="../mobile/assets/css/index_v2.css?v=m24.0064">
+    <link rel="stylesheet" href="https://api.taoxiangyoushu.com/html/v1/utils/css/smartTopic.css?v=m24.0064">
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        var JANE_NAME = 'dsxz'
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!-- head_script -->
+</head>
+<body>
+<div id="App" class="bylw">
+    <div class="menuBox">
+        <div class="toQuery">
+            <a href="./query.html">查询结果</a>
+        </div>
+        <div class="spType">
+            <ul class="ul1">
+                <li class="loadEffect"></li>
+                <li class="loadEffect"></li>
+                <li class="loadEffect"></li>
+                <li class="loadEffect"></li>
+                <li class="loadEffect"></li>
+                <li class="loadEffect"></li>
+                <li class="loadEffect"></li>
+                <li class="loadEffect"></li>
+                <li class="loadEffect"></li>
+                <li class="loadEffect"></li>
+            </ul>
+<!--            <div class="promotion">-->
+<!--                <div>-->
+<!--                    <a class="distributionEntrance" id="promotion" href="./fx/init.html">-->
+<!--                        <img src="../mobile/assets/img/tg.svg" alt="">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="activityE">-->
+<!--                <div>-->
+<!--                    <a class="activityEntrance" id="activity" href="./hd/index.html">-->
+<!--                        <img src="../mobile/assets/img/fulihuodong.png" alt="">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+    <div class="index_app">
+        <div class="sampleMask"></div>
+        <div class="samplePop">
+            <span class="sampleText">图表生成样例:</span>
+            <img src="../mobile/assets/img/delete.png" class="sampleClose" alt="">
+            <div class="sampleBox">
+                <img src="../mobile/assets/img/sample.png?v=1.3" alt="" class="Sample_Chart">
+                <img src="../mobile/assets/img/sample1.png?v=1.3" alt="" class="Sample_Chart1">
+            </div>
+        </div>
+        <div class="zsbgPop">
+            <span class="sampleText">综述报告样例:</span>
+            <img src="../mobile/assets/img/delete.png" class="sampleClose" alt="">
+            <div class="sampleBox">
+                <img src="../mobile/assets/img/zsbg.png" alt="">
+            </div>
+        </div>
+        <div class="zslwPop">
+            <span class="sampleText">综述论文样例:</span>
+            <img src="../mobile/assets/img/delete.png" class="sampleClose" alt="">
+            <div class="sampleBox">
+                <img src="../mobile/assets/img/zslw.png?v=1.3" alt="">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="../mobile/assets/img/logo.png" alt="">
+            <p>你身边的智能论文导师</p>
+        </div>
+        <!-- 图片提示 -->
+        <div class="describedImg loadEffect"></div>
+        <div class="form">
+            <div class="tabDiv">
+                <div>
+                    <b>极速版</b>
+                </div>
+                <div class="profession">
+                    <b>
+                        专业版
+                        <!-- <img src="../mobile/assets/img/new_icon_03.png" alt=""> -->
+                        <span>推荐</span>
+                    </b>
+                </div>
+            </div>
+            <form class="ContainerTo clearfix" id="ContainerTo">
+                <div class="form-group form-group_s card card3 Conditions Universal">
+                    <label class="label_s">论文标题 <span>*</span></label>
+                    <div class="surrounded">
+                        <div class="inputBox isOptimize">
+                            <input autocomplete="off" maxlength="50" name="contenteditable" type="text" placeholder="输入完整的标题(5-50字内)" id="contenteditable" class="form-control" />
+                            <div class="recommend_title optimize" id="recommend_title">
+                                <img src="../mobile/assets/img/prettify_m.svg" alt="">
+                                <span class="recommend_title_text">推荐标题</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span id="contenteditable_err"></span>
+                </div>
+
+                <!-- aigc标题 -->
+                <div class="form-group form-group_s card card3 Conditions aigcTips">
+                    <label class="label_s">论文标题 <span>*</span></label>
+                    <div class="surrounded">
+                        <div class="inputBox">
+                            <input autocomplete="off" maxlength="60" name="contenteditable2" type="text" placeholder="输入完整的标题(60字内)" id="contenteditable2" class="form-control" />
+                        </div>
+                    </div>
+                    <span id="contenteditable2_err"></span>
+                </div>
+
+                <div class="form-group form-group_s short card card4 Conditions hidden">
+                    <label class="label_s">选择类型</label>
+                    <div class="surrounded">
+                        <div class="type_name inputBox">
+                            <input type="hidden" id="roleid2" name="roleid2">
+                            <select id="type_s" class="selectpicker show-tick form-control" title="请选择类型">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group form-group_s card card3 Conditions proposalBox">
+                    <label class="label_s">开题报告</label>
+                    <div class="upload-block andInterval">
+                        <input class="proposal-check" type="checkbox"/>
+                        <span class="proposal-text">上传自写开题生成论文</span>
+                        <span class="uploadText">上传</span>
+                        <input type="file" single accept=".docx" id="uploadFile">
+                    </div>
+                    <div class="proposal-file">
+                        <span class="tag-get">get</span>
+                        <span class="file-name"></span>
+                        <img class="delete-file" src="../mobile/assets/img/del_icon.svg" alt="">
+                    </div>
+                    <span id="proposal_err"></span>
+                </div>
+
+                <div class="form-group form-group_s short card card4 Conditions educationBox">
+                    <label class="label_s">选择学历</label>
+                    <div class="type_name inputBox andInterval">
+                        <div class="contenteditable_s">
+                            <span class="toCheck dz"><input class="education" type="radio" name="reportType" value="dz"  /><span>大专</span></span>
+                            <span class="toCheck bk"><input class="education" type="radio" name="reportType" value="bk" checked/><span>本科</span></span>
+                            <span class="toCheck ss"><input class="education" type="radio" name="reportType" value="ss" /><span>硕博</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 课程论文的学历, 后期可能要改 -->
+                <div class="EducationalAltitude">
+                    <div class="form-group form-group_s short card card4 Conditions">
+                        <label class="label_s">选择学历</label>
+                        <div class="type_name inputBox andInterval surrounded">
+                            <input type="hidden" id="roleid4" name="roleid4">
+                            <select id="education2" class="selectpicker show-tick form-control bs-select-hidden" title="本科(6000字符左右)">
+                                <option value="8000">硕博(8000字符左右)</option>
+                                <option value="6000">本科(6000字符左右)</option>
+                                <option value="4000">大专(4000字符左右)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="textTips" class="card">
+                        强调批判性思维和理论深度，支持更广泛的主题，含更高层次分析和论证
+                    </div>
+                </div>
+
+                <div class="form-group form-group_s short card card5 Conditions specialityBox">
+                    <label class="label_s">论文专业 <span>*</span></label>
+                    <div class="surrounded">
+                        <div class="inputBox">
+                            <input style="position: absolute;width: 0;height: 0;border: 0" class="form-control" id="roleid" name="roleid">
+                            <select id="basic" class="selectpicker show-tick form-control" title="请选择您的论文专业">
+                            </select>
+                        </div>
+                    </div>
+                    <span id="basic_err"></span>
+                </div>
+
+                <!-- 实践报告的论文专业 -->
+                <div class="form-group form-group_s short card card5 Conditions specialityBoxsxbg">
+                    <label class="label_s">论文专业 <span>*</span></label>
+                    <div class="surrounded">
+                        <div class="inputBox">
+                            <input style="position: absolute;width: 0;height: 0;border: 0" class="form-control" id="roleidsxbg" name="roleidsxbg">
+                            <select id="basic2" class="selectpicker show-tick form-control" title="请选择您的论文专业">
+                            </select>
+                        </div>
+                    </div>
+                    <span id="basic2_err"></span>
+                </div>
+
+                <div class="form-group form-group_s card card3 Conditions keywordBox">
+                    <label class="label_s">关键词</label>
+                    <div class="surrounded">
+                        <div class="inputBox">
+                            <input autocomplete="off" maxlength="160" name="keyword" type="text" placeholder="使用；隔开，最少输入3个，最多输入8个" id="keyword" class="form-control" />
+                        </div>
+                        <span id="keyword_err"></span>
+                    </div>
+                </div>
+
+                <div class="form-group form-group_s card card3 Conditions genIT">
+                    <label class="label_s">
+                        包含内容
+                        <span class="sample">
+                            <img src="../mobile/assets/img/yl_icon.svg" alt="">
+                            样例
+                        </span>
+                    </label>
+                    <div class="andInterval">
+                        <div class="inputBox">
+                            <input type="text" class="parameter form-control hidden" readonly placeholder="请选择以下需要增加的内容">
+                        </div>
+                        <span class="genImg">
+                            <input class="gen_img genImg_input" type="checkbox" autocomplete="off">
+                            <span>图片</span>
+                        </span>
+                        <span class="genTab">
+                            <input class="gen_tab genTab_input" type="checkbox" autocomplete="off">
+                            <span>表格</span>
+                        </span>
+                        <span class="genFormula">
+                            <input class="gen_formula genFormula_input" type="checkbox" autocomplete="off">
+                            <span>公式</span>
+                        </span>
+                        <span class="genCode">
+                            <input class="gen_code genCode_input" type="checkbox" autocomplete="off">
+                            <span>代码</span>
+                        </span>
+                        <span class="questionnaire">
+                            <input class="gen_questionnaire" type="checkbox" autocomplete="off">
+                            <span>问卷调查</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group form-group_s short card Conditions NumberIsShow">
+                    <label class="label_s">字数选择 <span>*</span></label>
+                    <div class="surrounded">
+                        <div class="inputBox">
+                            <input
+                                onkeyup="this.value=this.value.replace(/^(0+)|[^\d]+/g,'') "
+                                onafterpaste="this.value=this.value.replace(/^(0+)|[^\d]+/g,'') "
+                                autocomplete="off" maxlength="30" name="NumberWords"
+                                placeholder="5000-50000字内,不满千字按千字计算"
+                                id="NumberWords"
+                                class="form-control" />
+                        </div>
+                    </div>
+                    <span id="NumberWords_err"></span>
+                </div>
+                <div class="form-group form-group_s short card NumberIsShow">
+                    <div class="contenteditable_s">
+                        <div class="FruitBox">
+                            <input name="Fruit" type="radio" value="5000" id="5000"/><label class="5000 labelTitle" for="5000">5000字</label>
+                            <input name="Fruit" type="radio" value="10000" id="10000"/><label class="10000 labelTitle" for="10000">10000字</label>
+                            <input name="Fruit" type="radio" value="30000" id="30000"/><label class="30000 labelTitle" for="30000">30000字</label>
+                            <input name="Fruit" type="radio" value="50000" id="50000"/><label class="50000 labelTitle" for="50000">50000字</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-group_s card card3 Conditions EnglishReferenceShow">
+                    <label class="label_s">
+                        参考文献
+                        <span class="wenhaoBox">
+                            <img class="wenhao-t" src="../mobile/assets/img/ts_icon_wh.svg" alt="">
+                            <div class="wenhaoTips">
+                                默认全部为中文文献<br>
+                                如填写2，则替换其中2篇为英文文献
+                            </div>
+                        </span>
+                    </label>
+                    <div class="EnglishReference-block">
+                        <div class="EnglishReference">
+                            <input class="EnglishReference-check" type="checkbox"/>
+                            <span class="EnglishReference-text">含英文文献</span>
+                        </div>
+                        <div class="inputBox-en">
+                            <div class="countDiv">
+                                <span class="decreaseBtn">-</span>
+                                <input type="text"
+                                    onkeyup="this.value=this.value.replace(/^(0+)|[^\d]+/g,'') "
+                                    onafterpaste="this.value=this.value.replace(/^(0+)|[^\d]+/g,'')"
+                                    maxlength="3" name="LiteratureInput"
+                                    placeholder="0"
+                                    id="NumberEnglishReference">
+                                <span class="addBtn">+</span>
+                            </div>
+                            <span>篇</span>
+                        </div>
+                    </div>
+                    <span id="LiteratureType_err"></span>
+                </div>
+                <div class="form-group form-group_s short card version-wxzs">
+                    <label class="label_s">选择版本</label>
+                    <div class="version-wxzs-box">
+                        <div class="version-item version-wxzs1">
+                            <img src="../mobile/assets/img/v-checked.svg?v=1.3" class="v-checked" alt="">
+                            <div class="v-top">
+                                <p class="v-title">综述报告</p>
+                                <div class="sampleBox">
+                                    <div class="v-sample sam-zsbg">
+                                        <img src="../mobile/assets/img/yl_icon2.svg" alt="">
+                                        样例
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="v-bottom">
+                                <p class="v-describe">适用于本硕博论文标准模板(约1万字)</p>
+                            </div>
+                        </div>
+                        <div class="version-item version-wxzs2 noMarginRight">
+                            <img src="../mobile/assets/img/v-checked.svg?v=1.3" class="v-checked" alt="">
+                            <div class="v-top">
+                                <p class="v-title">综述论文</p>
+                                <div class="sampleBox">
+                                    <div class="v-sample sam-zslw">
+                                        <img src="../mobile/assets/img/yl_icon2.svg" alt="">
+                                        样例
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="v-bottom">
+                                <p class="v-describe">适用于部分本硕博期刊论文、正文带标引(约2万字)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-group_s short card Conditions xzaigccheck_conditions authorBox">
+                    <label class="label_s">作者 <span>*</span></label>
+                    <div class="surrounded">
+                        <div class="rower inputBox">
+                            <input type="text" maxlength="15" id="author" name="title" autocomplete="off" placeholder="请正确填写作者姓名(15字内)" class="form-control">
+                        </div>
+                    </div>
+                    <span id="title_err"></span>
+                </div>
+<!--                <div class="jiangAIGCType">-->
+<!--                    <div class="form-group form-group_s short card card4 Conditions">-->
+<!--                        <label class="label_s">选择科目</label>-->
+<!--                        <div class="type_name inputBox">-->
+<!--                            <input type="hidden" id="roleid5" name="roleid5">-->
+<!--                            <div class="contenteditable_s">-->
+<!--                                <span class="toCheck toCheck1"><input class="FamilyCategory" type="radio" name="FamilyCategory" value="文科" checked /><span>文科</span></span>-->
+<!--                                <span class="toCheck"><input class="FamilyCategory" type="radio" name="FamilyCategory" value="理科"/><span>理科</span></span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="form-group form-group_s short card card4 jiangAIGCContent">
+                    <div class="divBox">
+                        <div class="AIGCContentTop">
+                            <div class="AIGCContentType Select" id-key="2">上传文档</div>
+                            <div class="AIGCContentType" id-key="1">粘贴文本</div>
+                        </div>
+
+                        <div class="Thesis">
+                            <div class="InputBox">
+                                <textarea name="textareaName" id="textareaText" maxlength="300000" placeholder="内容字数 200~30万字，提交内容建议去除封面，目录，仅提交正文。暂不支持英语等非中文论文，非中文论文请勿提交!"></textarea>
+                            </div>
+                            <div class="UploadBox">
+                                <input name="docUpload" id="ThesisInput" type="file" single ref="docUpload" file-upload="" accept=".doc,.docx,.txt,text/plain">
+                                <div class="Not">
+                                    <img src="../mobile/assets/img/Upload.png" alt="上传">
+                                    <span>文档支持txt、doc(x)，文件大小不得超过<span class="filSize">15</span>M</span>
+                                    <p class="redText">暂不支持英语等非中文论文，非中文论文请勿提交!</p>
+                                </div>
+                                <div class="Complete">
+                                    <div class="CompleteBox">
+                                        <div class="fileIcoBox">
+                                            <img class="fileIco Loading" src="../mobile/assets/img/Middle.png" alt="">
+                                            <img class="fileIco DocumentText" src="../mobile/assets/img/DocumentText.png" alt="">
+                                            <img class="fileIco DocumentWord" src="../mobile/assets/img/DocumentWord.png" alt="">
+                                            <img class="lodingGif Loading" src="../mobile/assets/img/loading2.gif" alt="">
+                                        </div>
+                                        <div class="fileBox">
+                                            <p class="fileNameThesis"></p>
+                                            <div class="statusDIV">
+                                                <div class="UploadedSuccess">
+                                                    <img class="UploadedSuccessfully" src="../mobile/assets/img/UploadedSuccessfully.png" alt="">
+                                                    <span>上传成功</span>
+                                                    <span class="deleteFileThesis deleteFileThesisico"><img src="../mobile/assets/img/Deletewd.png" alt=""> 删除</span>
+                                                </div>
+                                                <div class="UploadFailed">
+                                                    <img class="UploadFailedfully" src="../mobile/assets/img/UploadFailed.png" alt="">
+                                                    <span>上传失败</span>
+                                                    <span class="deleteFileThesis deleteFileThesisText">重新上传</span>
+                                                </div>
+                                                <div class="Loading">
+                                                    <span>正在解析...</span>
+                                                    <span class="deleteFileThesis deleteFileThesisText">重新上传</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <span id="jiangAIGCContent_err"></span>
+                        <span id="jiangAIGCContent_err2"></span>
+                    </div>
+                </div>
+                <div class="form-group form-group_s short card checkbox agreement">
+                    <input class="inputCheck" type="checkbox" checked="checked"> 我已阅读并同意: 本站提供的是文献下载服务，下载的内容仅用于参考，不作为毕业、发表使用
+                </div>
+                <div class="tipsInfo">
+                    <p class="tipsTitle"><img class="warning" src="../mobile/assets/img/warning.png" alt=""> 温馨提示: </p>
+                    <div class="Universal">
+                        <p class="blue">1.采用Multimodal+Global Thought Chain语言模型生成连贯、一致和逻辑性强的长文本技术</p>
+                        <p>2.采用SSL传输加密，绝不泄漏论文的任何信息。</p>
+                        <p class="red">3.支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款。</p>
+                        <p>4.所有论文及文档都应该由本人通过学习后认真撰写，AI范文相关内容仅视为格式参考。</p>
+                        <p>5.系统暂只支持中文写作。</p>
+                    </div>
+                    <div class="aigcTips">
+                        <div class="zjc_aigc_tips">
+                            <p>1、系统仅支持中文，暂不支持英语等非中文，非中文请勿提交！</p>
+                            <p>2、仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
+                            <p>3、支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款。</p>
+                            <p>4、暂不支持图片、表格、公式、代码降重</p>
+                            <p>5、下载的内容仅用于参考，不作为毕业、发表使用</p>
+                        </div>
+                        <div class="jian_aigc_tips">
+                            <p>1. 检测范围：包括但不限于
+                                <img src="../mobile/assets/img/gpt4.png" alt=""><span>ChatGPT</span> <img src="../mobile/assets/img/gemini.png" alt=""><span>Gemini</span> <img src="../mobile/assets/img/claude.png" style="margin-top: -1px;" alt=""><span>Claude</span> <img src="../mobile/assets/img/wyyx.png" style="margin-top: -1px;" alt=""><span>文心一言</span>
+                                <img src="../mobile/assets/img/tyqw.png" alt=""><span>通义千问</span> <img src="../mobile/assets/img/zpai.png" alt=""><span>智谱AI</span> <img src="../mobile/assets/img/BAICHUAN.png" alt=""><span>百川智能</span> <img src="../mobile/assets/img/360.png" alt=""><span>360智脑</span>
+                                <img src="../mobile/assets/img/XFXH.png" alt=""><span>讯飞星火</span> <img src="../mobile/assets/img/DOUBAO.png" alt=""><span>豆包</span> <img src="../mobile/assets/img/KIMI.png" alt=""><span>Kimi</span> <img src="../mobile/assets/img/DS.png" alt=""><span>Deepseek</span>
+                            </p>
+                            <p>2. 系统在检测时会分析论文的上下文关系， 所以请您提交论文正文内容，如果是非正文的检测将不能保证检测的准确性</p>
+                            <p>3. 非正文部分(如标题、公式、图表、参考文献等)建议删除</p>
+                            <p>4. 此系统一旦提交，开始检测后，就会产生成本，不接受退款，多谢理解</p>
+                            <p class="redText">5. 请勿上传目录和封面，否则会检测失败！</p>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div id="company-name"></div>
+                        <div id="filing-information"></div>
+                    </div>
+                </div>
+            </form>
+            <div class="form-group groupSubmit">
+                <button type="button" class="btn btn-primary ViewsSample">查看样例</button>
+                <button id="generate" class="btn btn-primary generate">立即生成</button>
+                <!-- <button type="button" class="btn btn-primary query">查询结果</button> -->
+            </div>
+            <div class="form-loading">
+                <div class="placeholder-line grayBlock"></div>
+                <div class="placeholder-line grayBlock"></div>
+                <div class="placeholder-block grayBlock"></div>
+                <div class="form-group groupSubmit">
+                    <div class="btn grayBlock"></div>
+                    <div class="btn grayBlock"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dashi_wx_box text_a_c">
+        <div class="customerBox">
+            <i class="close-wx"></i>
+            <div class="head">
+                <img src="../mobile/assets/img/kf.png" alt="">
+                <span class="customer-title"></span>
+            </div>
+            <div class="customerCode">
+                <img class="customer-qr" src="" alt="">
+            </div>
+            <div class="segmentation-line"></div>
+            <div class="customerWay">
+                <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+                <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+                <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+                <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+            </div>
+            <p class="noCustomer">商家未设置客服</p>
+            <img class="customBg" src="../mobile/assets/img/bg1.png" alt="">
+        </div>
+    </div>
+    <div class="myProblems">
+        <div class="problem-f">
+            <div class="p-head">常见问题 <img class="close-Pr" src="../mobile/assets/img/pr-close.png" alt=""></div>
+            <div class="p-content">
+                <div class="pro-cont">
+                    <div class="p-item activePr">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">一般多长时间可以生成范文</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a defaultShow">
+                            A：AI是自助下单，您付款以后5-20分钟左右可以生成范文，如果遇到特殊情况时间会顺延，请您耐心等待。如果遇到高峰期及特殊情况，生成结果可能需要30分钟到1个小时，我们是根据提交订单的先后顺序来处理订单的，您可以晚点再来查看生成的进度如何
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">生成的范文的质量如何，会不会有语句不通顺的情况</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：我们的范文是经过专业模型生成，根据用户提交的标题内容产生语句通顺，逻辑连贯，带有学术性质等特点的范文，可以满足初级的本专科和硕博生的需求
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">使用了【早降重--降AIGC】增值产品，用其他AIGC查出来AI疑似率依然很高，这是为什么呢</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：市面上的查重系统和AIGC针对AI的算法会使用多种不同的AI检测模型进行计算，即使是纯人工手写的论文都存在误判虚高的现象；目前我们的产品基于主流知网的AIGC系统进行深度优化和更新，效果更好
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">付款后怎么获取结果</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：范文生成后会在【查询结果】页面为您显示，您可以通过【订单编号】下载文件，建议您用电脑的360浏览器进行操作，如有疑问可以咨询客服。
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">订单号忘记保存怎么下载生成的文件</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：请打开支付宝/微信账单，找到相应的订单支付详情查看，复制微信商户号/支付宝商家订单号，点击页面上的查询结果，在订单号对话框粘贴商家订单编号，下载文件即可。注意系统只保留30天内的订单结果，超过30天则被删除无法下载，请用户在有效期内尽快下载
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">生成的内容是否具有原创性</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：生成范文时，我们强调其原创性和规范性。我们的大模型是基于广泛而多样的训练数据进行训练和试验的，具备了处理各种主题和领域的能力。生成的范文是模型根据用户提交的信息和上下文之间的逻辑关联性，创造性构建的，确保为原创
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">范文的重复率是多少</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：生成的范文是根据提交的信息和上下文的逻辑性构建的，确保在一定引用规范内使用了相关信息，主流系统的重复率在30％以内。市面上的查重系统会使用多种模型进行测算，客观允许在一定范围内存在重复率虚高的情况
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">我有自己的提纲可以根据自己的提纲生成范文吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：用电脑浏览器打开链接，在【提交页】标题右上角切换【专业版】进行操作，系统会根据用户自定义提纲生成范文。
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">生成的范文字数是多少呢</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：我们是根据毕业论文的标准格式生成范文，以生成5000字的范文为例，字数包含的范围有范文标题，中文摘要，范文的正文和致谢，"封面，目录，英文摘要和参考文献"都不计算进范文的生成字数
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">生成的图表会有具体数据和专有针对性吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：因为AI生成的范文主要是为用户提供格式和写作思路参考，正文中涉及到需要用户自己计算和验证的数据，由于AI不能预估用户的心理预期而且因为用户个人具体要求的复杂性和专业要求不同，所以AI范文内生成的图表都是普通格式和相关专业类目的参考形式，没有具体可见的精确数据和专有针对性
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">参考文献是近年的吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：我们主要参考的是近五年的期刊论文和学位论文，为用户提供的参考文献皆为近五年的期刊和学位论文
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">毕业论文的参考文献有英文文献吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：用户在提交时可以在【参考文献】处勾选【含英文文献】输入需要的文献篇数，系统会根据用户提交的信息生成英文参考文献
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">专业版与极速版有什么不同</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：极速版根据用户提交的论文标题和开题报告生成范文。专业版支持用户自行编辑论文提纲或者使用系统根据用户提交的标题推荐的论文提纲，用户还可以使用【补充说明】，根据页面提示补充相关信息，有助于系统生成效果更完善
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">提交自写提纲有什么规范吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：重要提示，系统提纲自带（摘要、英文摘要、关键词、目录、参考文献），强行填写会导致内容重复生成，在提交的时候请根据页面提示的格式规范提交
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">什么专业的参考论文都可以生成吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：系统生成的参考论文专业可包含经济、法律、计算机科学、医药科学、文学教育、建筑科学、工业技术专业等都可全面覆盖，其余专业请选择【其它（自动识别）】
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">调研报告生成的范文字数是多少</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：系统根据用户提交的标题，以每篇为单位，可以生成1.5万字左右的范文。参考文献不计入范文的生成字数
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">用你们的系统安全吗，会有隐私泄露吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：我们采用SSL传输加密，绝不泄漏论文的任何信息
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">不满意结果可以退款吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：提交页面上特意标注了<span class="redText">“支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款”</span>，在线的电子下载商品不适用于7天无理由退款的退货保障，除非因为系统原因没有给用户生成结果的情况才可以给用户退款
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">输入相同的题目，再次生成的范文会是同一篇文章吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：我们的系统经过了大量的模型训练，相同的题目二次或者多次提交，系统都可以随机生成不同的范文，同一个题目在不同时间再次提交，不会出现一模一样的参考范文结果
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">范文中的正文可以和引用的参考文献完全对应吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：引用分为“直接引用”和“间接引用”，AI系统基于保证文章的原创性，采取的是“间接引用”的算法，AI通过自己的算法转述所引用的参考文献的内容，并且重新组织语言表达出来。所以AI的参考范文中的语句采取的都是“间接引用”的算法去排列组织，并不能和所引用参考文献中的原语句一模一样
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashi_fz text_a_c">
+        <i class="close-fz"></i>
+        <div class="attract">
+            <img src="../mobile/assets/img/logo2.png" alt="logo">
+        </div>
+        <div class="copyBox">
+            <div class="copy_url">复制链接至电脑端</div>
+        </div>
+    </div>
+
+    <div class="mask"></div>
+    <div class="fiexBox">
+
+    </div>
+    <!-- 推广赚钱 -->
+    <a class="distributionEntrance" id="promotion" href="./fx/init.html">
+        <div class="extension">
+            <img src="../mobile/assets/img/fenxiao.png?v1" alt="">
+            <p>推广赚钱</p>
+        </div>
+    </a>
+    <!-- 福利活动 -->
+    <a class="activityEntrance" id="activity" href="./hd/index.html">
+        <div class="activity_block">
+            <img src="../mobile/assets/img/fuli.png" alt="">
+            <p>福利活动</p>
+        </div>
+    </a>
+    <div class="fixed-problem">
+        常见问题
+    </div>
+    <div class="customer-wx" id="customer-wx1">
+        <img src="../mobile/assets/img/kfwx.png?v1" alt="客服">
+        <p>联系客服</p>
+    </div>
+    <div class="more-Fbtn-h">
+        <p class="">收起</p>
+        <img src="../mobile/assets/img/shouqi.png" alt="">
+    </div>
+    <div class="more-Fbtn-s">
+        <p class="">展开</p>
+        <img src="../mobile/assets/img/zhankai.png" alt="">
+    </div>
+    <div id="customerOnline"></div>
+
+    <!-- 优惠卷活动 -->
+    <div class="mask_body"></div>
+
+    <!-- 开题报告弹窗 -->
+    <div class="upk_mask"></div>
+    <div class="uploadKTBG_pop">
+        <div class="upk_close">
+            <img src="../mobile/assets/img/close_upk.png" alt="">
+        </div>
+        <div class="upk_head">上传开题报告</div>
+        <div class="line"></div>
+        <div class="upk_content">
+            <ul>
+                <li><span>• 总结开题报告：</span>生成具有关联内容的毕业论文</li>
+                <li><span>• 提取参考文献：</span>作为毕业论文的参考文献（注：如无参考系统自动生成）</li>
+                <li><span>• 暂不提取提纲：</span>需自定义提纲，请切换专业版</li>
+                <li><span>• 开题报告文件：</span>支持docx，大小不超过4M</li>
+            </ul>
+        </div>
+        <div class="upk_btn">
+            <img class="upk_ico" src="../mobile/assets/img/add.png" alt="">
+            <img class="upk_ing" src="../mobile/assets/img/loading1.gif" alt="">
+            <span>上传开题报告</span>
+        </div>
+    </div>
+</div>
+
+<div class="Graduation_Thesis"></div>
+
+
+
+<script src="../mobile/assets/js/jquery.min.js?v=m24.0064"></script>
+<script src="../mobile/assets/js/bootstrap.min.js?v=m24.0064"></script>
+<script src="../mobile/assets/js/clipboard.min.js?v=m24.0064"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0064"></script>
+<script src="../mobile/assets/js/bootstrap-select.js?v=m24.0064"></script>
+<script src="../mobile/assets/js/bootstrapValidator.min.js?v=m24.0064"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0064"></script>
+<script src="../mobile/assets/js/message.js?v=m24.0064"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0064"></script>
+<script src="../mobile/assets/js/index.js?v=m24.0064"></script>
+<!-- 推荐标题 -->
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/smartTopic.js?v=m24.0064"></script>
+
+<script>
+function dropDownType(e, project) {
+    var selectObj = $("#type_s");;
+    var selectObjV2 = $(".spType .ul1");
+    selectObjV2.html('')
+    selectObj.find("option:not(:first)").remove();
+    for (let i=0; i<e.length; i++) {
+        if(e[i].short_name !== 'bylwjigou' && e[i].short_name !== 'bylwsenior' && e[i].short_name !== 'wxzs2' && e[i].short_name !== 'szsjzz' && e[i].short_name !== 'qkszsjzz'&& e[i].short_name !== 'ktbgsenior' && e[i].short_name !== 'qklwsenior'){
+            var optionValue = e[i].goods_id;
+            var optionText =  e[i].type;
+            selectObj.append(new Option(optionText, optionValue));
+            var html = ''
+            html += '<li class="typeLi '+e[i].short_name+'" data-briefName="'+e[i].short_name+'" data-goodsid='+optionValue+'>'
+            html += '   <span>'+optionText+'</span>'
+            html += '</li>'
+            selectObjV2.append(html);
+        }
+        if(e[i].short_name == 'wxzs'){
+            $(".version-wxzs2").attr('data-goodsid', e[i].goods_id)
+        }
+        if(e[i].short_name == 'wxzs2'){
+            $(".version-wxzs1").attr('data-goodsid', e[i].goods_id)
+        }
+    }
+    $("#type_s").val(e[0].goods_id)
+    selectObj.selectpicker('refresh');
+    setTimeout(function() {
+        $("#type_s").val(e[0].goods_id)
+        selectObj.selectpicker('refresh');
+        if(e[0].short_name == 'bylw' || e[0].short_name == 'bylwsenior'){
+            if(parameterSet[e[0].short_name].submit_attribute.value.education.value) {
+                $(".educationBox").show()
+            }else{
+                $(".educationBox").hide()
+            }
+            if(parameterSet[e[0].short_name].submit_attribute.value.keyword.value) {
+                $(".keywordBox").show()
+            }else{
+                $(".keywordBox").hide()
+            }
+            if(parameterSet[e[0].short_name].submit_attribute.value.major.value) {
+                $(".specialityBox").show()
+            }else{
+                $(".specialityBox").hide()
+            }
+        }
+        $('#type_s').change()
+        $(".form-loading").hide()
+        $(".ContainerTo").show()
+    }, 0)
+    insertedImg([{short_name: 'bylw'}])
+    ktbgGenerate()
+    if(project.open_re_title) {
+        $('.isOptimize').attr('id' , 'titleID')
+        aiTopicFu = new aiTopic ({
+            ele	 : '#App', // 插入节点
+            urls : urls, // 接口域名
+            USER_TOKEN: USER_TOKEN,
+            JANE_NAME: JANE_NAME,
+            inputID: '#contenteditable', // 对应的input节点
+            TriggerButton: '#recommend_title', // 触发推荐节点class名称
+            isMobile: true,
+        });
+    }
+}
+
+// 极速版左侧切换
+$(document).on('click','.ul1 .typeLi',function (){
+    var this_ = $(this)
+    insertedImg([{short_name: $(this).data('briefname')}])
+    setTimeout(function() {
+        $("#type_s").val(this_.data('goodsid'))
+        $("#type_s").selectpicker('refresh');
+        $('#type_s').change()
+    }, 0)
+    $('.commodityTypeName').text($(this).text())
+})
+
+function initial() {
+        var text = ''
+		var sw = keyConversion[getQueryVariable('sw')] // 取值改成后端key
+        insertedImg([{short_name: sw}])
+    }
+initial()
+// 接口请求完成后再渲染其他介绍图片
+function insertedImg(e) {
+    for(var i=0; i<e.length; i++) {
+        if(e[i].short_name && e[i].short_name !== 'bylwjigou' && e[i].short_name !== 'wxzs2' && e[i].short_name !== 'szsjzz' && e[i].short_name !== 'qkszsjzz'){
+            var text = ''
+            var short_name = e[i].short_name
+            if(!$('.describedImg .'+short_name+'Box').length) {
+                text+='<img class="img_js '+short_name+'Box" src="../mobile/assets/img/'+short_name+'_js.png?v=1.3" alt="">'
+                $('.describedImg').append(text).removeClass('loadEffect')
+            }
+        }
+    }
+}
+
+$('.wenhaoBox').click(function() {
+    $('.wenhaoTips').show()
+})
+$(document).mouseup(function(e) {
+    if (!$(e.target).closest('.wenhaoTips').length) {
+        $('.wenhaoTips').hide()
+    }
+});
+
+// 以下为兼容,
+$('.toCheck .education').change(function (){
+    education = $("input[name='reportType']:checked").val()
+    // $('.contenteditable_s .toCheck').removeClass('selected')
+    // $('.contenteditable_s .toCheck.'+$("input[name='reportType']:checked").val()).addClass('selected')
+})
+$('.toCheck>span').click(function() {
+    $(this).parent().children('input').click()
+})
+
+// 生成图片和表格
+// 生成图片和表格
+$(".genImg span").on('click',function (){
+    $('.genImg_input').click()
+})
+
+$(".genTab span").on('click',function (){
+    $('.genTab_input').click()
+})
+
+$(".genFormula span").on('click',function (){
+    $('.genFormula_input').click()
+})
+$(".genCode span").on('click',function (){
+    $('.genCode_input').click()
+})
+
+$(".questionnaire span").on('click',function (){
+    $('.gen_questionnaire').click()
+})
+
+function isIOS() {
+    // 获取用户代理信息
+    var userAgent = navigator.userAgent;
+    // 检查 userAgent 是否包含 'iPhone'、'iPad' 或 'iPod'
+    return /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+}
+
+// 初始窗口高度
+let windowHeight = window.innerHeight;
+window.addEventListener('resize', function() {
+    if (!isIOS()) {
+        if (window.innerHeight > windowHeight) {
+            $('.groupSubmit').css('display' , 'block')
+        } else {
+            $('.groupSubmit').css('display' , 'none')
+        }
+        // 更新窗口高度
+        windowHeight = window.innerHeight;
+    }
+});
+$(document).on("click", function(e) {
+    $('.groupSubmit').css('display' , 'block')
+});
+$('.ViewsSample').click(function() {
+    var type = typeData[$('#type_s').val()].short_name
+    var keyConversion = {
+        bylw: 'bylw',
+        wxzs: 'wxzs',
+        ktbg: 'ktbg',
+        rws : 'rws',
+        qklw: 'qklw',
+        sxbg: 'sjbg',
+        lwdbppt: 'dbppt',
+        kclw: 'kclw',
+        dybg: 'dybg',
+        xzaigccheck: 'aigccc',
+        zjcaigc: 'jaigcl'
+    }
+    window.open('/demo.html?type='+keyConversion[type])
+})
+$("#contenteditable").bind("input propertychange", function(){
+    if($(this).val()) {
+        $('#recommend_title .recommend_title_text').text('标题优化')
+    }else {
+        $('#recommend_title .recommend_title_text').text('推荐标题')
+    }
+});
+</script>
+</body>
+</html>

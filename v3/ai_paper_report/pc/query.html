@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI大师写作 - 查询结果</title>
+    <meta name="description" content="AI大师写作是一个提供论文辅助的全面指导,包括图表、表格、公式等方面的建议。" />
+    <meta name="keywords" content="AI大师写作，论文范文辅助，毕业论文" />
+    <link rel="shortcut icon" href="../pc/assets/icon.ico" type="image/vnd.microsoft.icon" />
+`    <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css?v=p24.0151">
+    <link rel="stylesheet" href="../pc/assets/css/loading.css?v=p24.0151">
+    <link rel="stylesheet" href="../pc/assets/css/alert.css?v=p24.0151">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0151">
+    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0151">
+    <link rel="stylesheet" href="../pc/assets/css/ProfessionalEdition.css?v=p24.0151">
+    <link rel="stylesheet" href="../pc/assets/css/problem.css?v=p24.0151">
+    <link rel="stylesheet" href="../pc/assets/css/leftCss.css?v=p24.0151">
+    <!-- v2版本独立css -->
+    <link rel="stylesheet" href="../pc/assets/css/commonv2.css?v=p24.0151">
+    <link rel="stylesheet" href="../pc/assets/css/query_v2.css?v=p24.0151">
+    <script>
+        var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
+        var JANE_NAME = 'dsxz';
+        var LOGIN_API_URL = 'https://api.taoxiangyoushu.com';
+    </script>
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<div class="queryApp clearfix indexAppv2 indexApp" id="App" data-v="v2">
+    <div class="boxLeft">
+        <div class="commodityType">
+            <div class="LeftLoginBox">
+                <a href="./">
+                    <img class="logov2" src="../pc/assets/img/logo_zyb_v2.png" alt="">
+                    <img class="logo_zyb_v2" src="../pc/assets/img/logo_zyb_v2.png" alt="">
+                </a>
+                <a class="queryResults" href="./query.html">
+                    <img class="search_r_icon" src="../pc/assets/img/search_r_zy_icon.svg" alt="">
+                    <img class="search_r_zy_icon" src="../pc/assets/img/search_r_zy_icon.svg" alt="">
+                    <img class="selected_icon" src="../pc/assets/img/jsbsearch_icon.svg" alt="">
+                    查询结果
+                </a>
+            </div>
+            <div class="spType">
+                <ul class="ul1">
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                    <li class="loadEffect"></li>
+                </ul>
+                <ul style="display: none;" class="ul2">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="rightCont">
+        <div class="headBox">
+            <div class="rightFloat" id="memberCarrier">
+                <div class="nav-activity">
+                    <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
+                </div>
+            </div>
+        </div>
+        <div class="collectionBox">
+            <img src="../pc/assets/img/ts.png" alt="">
+            【重要提示】按 <span class="button_css">Ctrl</span> <span>+</span> <span class="button_css button_css2">D</span> 收藏本站，方便下次直接访问
+        </div>
+        <div class="content container">
+            <p class="subtitle">
+                <a href="./" class="Breadcrumb">< 返回提交页</a>
+                <span>查询结果</span>
+            </p>
+            <div class="contentMain">
+                <div class="searchParameters">
+                    <span class="orderId-name">输入订单号：</span>
+                    <div class="queryInput">
+                        <div class="orderIdBox">
+                            <input autocomplete="off" id="inputOrderId" class="orderId form-control" maxlength="30" type="text" placeholder="请输入支付时的订单编号，可在微信/支付宝的订单详情查找" />
+                            <span class="deleteS"></span>
+                        </div>
+                        <div class="searchBtn">立即查询</div>
+                    </div>
+                    <div class="pointOut">
+                        <div class="wxorder pull-left">
+                            <img src="../pc/assets/img/order-alipayId.png" alt="支付宝图标">
+                            <span>支付宝订单号？</span>
+                            <div class="orderImg">
+                                <img src="../pc/assets/img/alinAd.png" alt="支付宝订单" class="orderIMG-s">
+                            </div>
+                        </div>
+                        <div class="aliorder pull-left">
+                            <img src="../pc/assets/img/order-wx.png" alt="微信图标">
+                            <span>微信订单号?</span>
+                            <div class="orderImg zhifubaoOrder">
+                                <img src="../pc/assets/img/alinAd2.jpg" alt="微信订单" class="orderIMG-s">
+                            </div>
+                        </div>
+                        <div class="taobaoOrder pull-left">
+                            <img src="../pc/assets/img/taobao.png" alt="淘宝图标">
+                            <span>淘宝订单号?</span>
+                            <div class="orderImg taobao-Order">
+                                <img src="../pc/assets/img/taobao_oid.png" alt="淘宝订单" class="orderIMG-s">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resultBox">
+                    <div class="tableBox">
+                        <table class="orderInformation table" border="1" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th width="180">订单号</th>
+                                <th width="220">文章标题</th>
+                                <th width="150">类型</th>
+                                <th width="200">下单时间</th>
+                                <th width="150">状态</th>
+                                <th width="400">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="tbody">
+                            </tbody>
+                        </table>
+                        <div class="noData">
+                            <img src="../pc/assets/img/nodata.png" alt="">
+                            <p class="guide">输入订单号/优惠券查询结果</p>
+                        </div>
+                        <div class="loadLine">
+                            <img src="../pc/assets/img/loading2.gif" alt="">
+                            <p>加载中...</p>
+                        </div>
+                    </div>
+
+                    <div class="mb20" id="initTips">
+                        <div class="findOrders">
+                            <div class="findOrdersTop">
+                            <span>如何查找订单号？</span>
+                            <div class="tabSwitching">
+                                <div class="tabCK wxOrders selected" data-type="wx_flowBox">
+                                    <img src="../pc/assets/img/wx_icon.svg" alt="">
+                                    微信订单号
+                                </div>
+                                <div class="tabCK zfbOrders" data-type="zfb_flowBox">
+                                    <img src="../pc/assets/img/zfb_icon.svg" alt="">
+                                    支付宝订单号
+                                </div>
+                            </div>
+                            </div>
+                            <div class="findOrdersMain">
+                                <div class="flowBox">
+                                    <div class="wx_flowBox flowBoxMain">
+                                        <div class="leftIMG">
+                                            <img src="../pc/assets/img/wx_step1.svg" alt="">
+                                            <p>第一步：通过聊天列表的微信支付，或钱包进入[账单]明细列表</p>
+                                            <img class="bz" src="../pc/assets/img/bz.png" alt="">
+                                        </div>
+                                        <div class="centerIMG">
+                                            <img src="../pc/assets/img/wx_step2.svg" alt="">
+                                            <p>第二步：找到微信支付订单，选择[账单详情]</p>
+                                            <img class="bz" src="../pc/assets/img/bz.png" alt="">
+                                        </div>
+                                        <div class="rightIMG">
+                                            <img src="../pc/assets/img/wx_step3.svg" alt="">
+                                            <p>第三步：进入账单详情中点击查看商户单号并复制</p>
+                                        </div>
+                                    </div>
+                                    <div class="zfb_flowBox flowBoxMain">
+                                        <div class="leftIMG">
+                                            <img src="../pc/assets/img/steo1.svg" alt="">
+                                            <p>第一步：通过支付宝进入[消息]查看明细</p>
+                                            <img class="bz" src="../pc/assets/img/bz.png" alt="">
+                                        </div>
+                                        <div class="centerIMG">
+                                            <img src="../pc/assets/img/step2.svg" alt="">
+                                            <p>第二步：找到[消息盒子]-[支付消息]中对应的支付信息[查看详情]</p>
+                                            <img class="bz" src="../pc/assets/img/bz.png" alt="">
+                                        </div>
+                                        <div class="rightIMG">
+                                            <img src="../pc/assets/img/step3.svg" alt="">
+                                            <p>第三步：进入订单详情中点击查看订单号并复制</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="prompt">
+                    <p class="p1">温馨提示：</p>
+                    <p class="p2">1.生成时间：15-30分钟（高峰期订单较多，生成时间会有所延长）</p>
+                    <p class="p3">2.安全保障：系统保留30天以内的订单，超过30天则被删除，确保您的论文不会被覆盖和盗窃，完成后请尽快下载!</p>
+                    <p class="p4">请慎重记录并保管好您的订单号以便日后查询，离开此页则不再显示</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fiexBox">
+    <div class="fiexBoxP">
+        常见问题
+        <div class="problem-f">
+            <div class="p-head">常见问题</div>
+            <div class="p-content">
+                <div class="pro-cont">
+                    <div class="p-item activePr">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">一般多长时间可以生成范文</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a defaultShow">
+                            A：AI是自助下单，您付款以后5-20分钟左右可以生成范文，如果遇到特殊情况时间会顺延，请您耐心等待。如果遇到高峰期及特殊情况，生成结果可能需要30分钟到1个小时，我们是根据提交订单的先后顺序来处理订单的，您可以晚点再来查看生成的进度如何
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">生成的范文的质量如何，会不会有语句不通顺的情况</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：我们的范文是经过专业模型生成，根据用户提交的标题内容产生语句通顺，逻辑连贯，带有学术性质等特点的范文，可以满足初级的本专科和硕博生的需求
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">使用了【早降重--降AIGC】增值产品，用其他AIGC查出来AI疑似率依然很高，这是为什么呢</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：市面上的查重系统和AIGC针对AI的算法会使用多种不同的AI检测模型进行计算，即使是纯人工手写的论文都存在误判虚高的现象；目前我们的产品基于主流知网的AIGC系统进行深度优化和更新，效果更好
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">付款后怎么获取结果</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：范文生成后会在【查询结果】页面为您显示，您可以通过【订单编号】下载文件，建议您用电脑的360浏览器进行操作，如有疑问可以咨询客服。
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">订单号忘记保存怎么下载生成的文件</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：请打开支付宝/微信账单，找到相应的订单支付详情查看，复制微信商户号/支付宝商家订单号，点击页面上的查询结果，在订单号对话框粘贴商家订单编号，下载文件即可。注意系统只保留30天内的订单结果，超过30天则被删除无法下载，请用户在有效期内尽快下载
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">生成的内容是否具有原创性</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：生成范文时，我们强调其原创性和规范性。我们的大模型是基于广泛而多样的训练数据进行训练和试验的，具备了处理各种主题和领域的能力。生成的范文是模型根据用户提交的信息和上下文之间的逻辑关联性，创造性构建的，确保为原创
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">范文的重复率是多少</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：生成的范文是根据提交的信息和上下文的逻辑性构建的，确保在一定引用规范内使用了相关信息，主流系统的重复率在30％以内。市面上的查重系统会使用多种模型进行测算，客观允许在一定范围内存在重复率虚高的情况
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">我有自己的提纲可以根据自己的提纲生成范文吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：在【提交页】标题右上角切换【专业版】进行操作，系统会根据用户自定义提纲生成范文。
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">生成的范文字数是多少呢</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：我们是根据毕业论文的标准格式生成范文，以生成5000字的范文为例，字数包含的范围有范文标题，中文摘要，范文的正文和致谢，"封面，目录，英文摘要和参考文献"都不计算进范文的生成字数
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">生成的图表会有具体数据和专有针对性吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：因为AI生成的范文主要是为用户提供格式和写作思路参考，正文中涉及到需要用户自己计算和验证的数据，由于AI不能预估用户的心理预期而且因为用户个人具体要求的复杂性和专业要求不同，所以AI范文内生成的图表都是普通格式和相关专业类目的参考形式，没有具体可见的精确数据和专有针对性
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">参考文献是近年的吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：我们主要参考的是近五年的期刊论文和学位论文，为用户提供的参考文献皆为近五年的期刊和学位论文
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">毕业论文的参考文献有英文文献吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：用户在提交时可以在【参考文献】处勾选【含英文文献】输入需要的文献篇数，系统会根据用户提交的信息生成英文参考文献
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">专业版与极速版有什么不同</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：极速版根据用户提交的论文标题和开题报告生成范文。专业版支持用户自行编辑论文提纲或者使用系统根据用户提交的标题推荐的论文提纲，用户还可以使用【补充说明】，根据页面提示补充相关信息，有助于系统生成效果更完善
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">提交自写提纲有什么规范吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：重要提示，系统提纲自带（摘要、英文摘要、关键词、目录、参考文献），强行填写会导致内容重复生成，在提交的时候请根据页面提示的格式规范提交
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">什么专业的参考论文都可以生成吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：系统生成的参考论文专业可包含经济、法律、计算机科学、医药科学、文学教育、建筑科学、工业技术专业等都可全面覆盖，其余专业请选择【其它（自动识别）】
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">调研报告生成的范文字数是多少</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：系统根据用户提交的标题，以每篇为单位，可以生成1.5万字左右的范文。参考文献不计入范文的生成字数
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">用你们的系统安全吗，会有隐私泄露吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：我们采用SSL传输加密，绝不泄漏论文的任何信息
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">不满意结果可以退款吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：提交页面上特意标注了<span class="redText">“支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款”</span>，在线的电子下载商品不适用于7天无理由退款的退货保障，除非因为系统原因没有给用户生成结果的情况才可以给用户退款
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">输入相同的题目，再次生成的范文会是同一篇文章吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：我们的系统经过了大量的模型训练，相同的题目二次或者多次提交，系统都可以随机生成不同的范文，同一个题目在不同时间再次提交，不会出现一模一样的参考范文结果
+                        </p>
+                    </div>
+                    <div class="p-item">
+                        <p class="p-q">
+                            <span class="p-question">Q</span>
+                            <span class="p-text">范文中的正文可以和引用的参考文献完全对应吗</span>
+                            <span class="icon-more"></span>
+                        </p>
+                        <p class="p-a">
+                            A：引用分为“直接引用”和“间接引用”，AI系统基于保证文章的原创性，采取的是“间接引用”的算法，AI通过自己的算法转述所引用的参考文献的内容，并且重新组织语言表达出来。所以AI的参考范文中的语句采取的都是“间接引用”的算法去排列组织，并不能和所引用参考文献中的原语句一模一样
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navBtn WX">
+        <img class="wx2" src="../pc/assets/img/wxico.png" alt="wx-logo">
+        <div class="wxKF">
+            <div class="customerBox">
+                <div class="head">
+                    <img src="../pc/assets/img/kf.png" alt="">
+                    <span class="customer-title"></span>
+                </div>
+                <div class="customerCode">
+                    <img class="customer-qr" src="" alt="">
+                </div>
+                <div class="segmentation-line"></div>
+                <div class="customerWay">
+                    <p class="wxText"><span class="s0">微信:</span> <span class="s1"></span></p>
+                    <p class="qqText"><span class="s0">Q Q:</span> <span class="s1"></span></p>
+                    <p class="telephone"><span class="s0">电话:</span> <span class="s1"></span></p>
+                    <p class="mailbox"><span class="s0">邮箱:</span> <span class="s1"></span></p>
+                </div>
+                <p class="noCustomer">商家未设置客服</p>
+                <img class="customBg" src="../pc/assets/img/bg1.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mask_body"></div>
+<div class="aigc-payBox">
+    <div class="introduceAIGC-left pull-left">
+        <p class="p1">轻松降低</p>
+        <div class="p2">AIGC疑似率</div>
+        <p class="p3">支持市面上主流AIGC疑似率系统</p>
+        <div class="p4">
+            <span>降AIGC率<span class="orange">预计</span>优化</span>
+            <span class="rate1">高AI率</span> <img src="../pc/assets/img/arrow.png" alt=""> <span class="rate2">低AI率</span>
+        </div>
+        <p class="p5">
+            <span>降前</span>
+            <span class="p5-s1">降后</span>
+        </p>
+        <img class="article" src="../pc/assets/img/books.png" alt="">
+    </div>
+    <div class="introducePPT-left pull-left">
+        <p class="p1">现有毕业论文</p>
+        <div class="p2">生成匹配答辩PPT</div>
+        <p class="p3">论文秒变PPT，轻松备战毕业季</p>
+        <div class="p4">
+            <span class="orange">精准匹配</span><span>结构清晰</span><span>内容丰富</span>
+        </div>
+        <img class="article" src="../pc/assets/img/introducePPT.png" alt="">
+    </div>
+    <div class="payAIGC-right pull-left">
+        <input  id="copyInput" type="text">
+        <div class="title">
+            <img class="buy-logo" src="" alt="">
+            <span class="buy-text">扫码支付</span>
+            <p class="p-oid">
+                订单编号：<span class="oid-T">获取中</span> <span class="copy-text">复制</span>
+                <img class="oidTips" src="../pc/assets/img/tipsText.png" alt="">
+                <span class="oidText-tip">保留好订单号，关闭弹窗不再显示</span>
+            </p>
+
+            <img class="close-aigc" src="../pc/assets/img/delete.png" alt="">
+        </div>
+        <div class="buy-content">
+            <div class="payType pull-left">
+                <div id="alipay" data-type="alipayScan" style="display: none;">
+                    <img src="../pc/assets/img/Alipay.png" alt="">
+                    <span>支付宝支付</span>
+                </div>
+                <div id="wx" data-type="wxScan" style="display: none;">
+                    <img src="../pc/assets/img/wx.png" alt="">
+                    <span>微信支付</span>
+                </div>
+                <div id="scanCodeRich" data-type="scanCodeRich" style="display: none;">
+                    <img src="../pc/assets/img/scanpay.png" alt="">
+                    <span>扫码支付</span>
+                </div>
+            </div>
+            <div class="pay-code">
+                <div class="scan-pay">
+                    <div id="qrcode"></div>
+                    <div class="load">
+                        <img src="../pc/assets/img/loding.gif" alt="">
+                    </div>
+                    <div class="mask">
+                        <img src="../pc/assets/img/expired.png" alt="">
+                        <p>点击刷新</p>
+                    </div>
+                </div>
+                <p class="tips1">
+                    <img class="wxPay-icon" src="../pc/assets/img/wxpay-ico.png" alt="">
+                    <img class="AliPay-icon" src="../pc/assets/img/alipay-ico.png" alt="">
+                    扫码支付
+                </p>
+                <p class="tips2"><span class="pay-time"> --</span>秒后失效，<span class="next-verify">已支付下一步</span>   </p>
+            </div>
+            <div class="pay-info">
+                <p class="p-price">应付金额： <span class="price-text">￥<span class="price-T">--</span></span></p>
+                <p class="p-wordNum wordNum-T">
+                    字数：<span class="wordNumber"></span>
+                </p>
+                <p class="p-wordNum univalent noMarginTop">
+                    单价：<span class="unit-price"></span>
+                    <img class="priceTips" src="../pc/assets/img/tipsText.png" alt="">
+                    <span class="price-info">不满千字按千字计算</span>
+                </p>
+                <div class="form-group form-group_s card">
+                    <div>
+                        <input autocomplete="off" class="form-control" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="30" name="coupon" type="text" placeholder="请输入优惠券码" id="coupon"/>
+                        <span class="use_now">兑换</span>
+                        <p class="errorTip"><img src="../pc/assets/img/err_tip.png" alt=""><span></span></p>
+                        <p class="confirmCoupon"><img src="../pc/assets/img/err_tip.png" alt="">此为免费券，使用请点击<span class="couponPay">确认</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ktbg-generate">
+    <img class="close-generate" src="../pc/assets/img/close-generate.png" alt="">
+    <p class="title-generate">
+        <span class="text1">现有开题报告</span>生成匹配<span class="text2">【毕业论文】</span>
+    </p>
+    <div class="gen-step1">
+        <div class="s-head">
+            <p>提取开题报告中的内容</p>
+            <div class="stepBox">01</div>
+        </div>
+        <div class="s-cont">
+            <div class="c1">
+                <p class="ktbg-title"></p>
+                <p class="ktbg-time"></p>
+                <p class="ktbg-oid"></p>
+            </div>
+            <div class="c2">
+                <img src="../pc/assets/img/ktbg.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="gen-step2">
+        <div class="s-head">
+            <p>生成精准匹配的毕业论文</p>
+            <div class="stepBox">02</div>
+        </div>
+        <div class="s-cont">
+
+        </div>
+    </div>
+    <div class="generate-now">立即生成</div>
+</div>
+<div class="delete-pop">
+    <div class="pop_top">
+        <div class="pop_title">删除提醒</div>
+        <img class="close_pop" src="../pc/assets/img/delete.png" alt="">
+    </div>
+    <div class="pop_cont">
+        <p class="p1">是否确定删除订单？删除后，无法恢复</p>
+        <div class="back_block">
+            <p class="p2">系统仅保留30天内的订单，</p>
+            <p class="p3">确保您的论文不会被覆盖和盗窃</p>
+        </div>
+    </div>
+    <div class="pop_bottom">
+        <div class="cancel_btn">取消</div>
+        <div class="determine_btn">确定</div>
+    </div>
+</div>
+<div class="SingleDownload">
+    <div class="pop_top">
+        <div class="pop_title">下载结果</div>
+        <img class="close_pop" src="../pc/assets/img/delete.png" alt="">
+    </div>
+    <div class="pop_cont">
+
+    </div>
+    <div class="Loading">
+        <img src="../pc/assets/img/loading2.gif" alt="">
+    </div>
+    <div class="pop_bottom">
+        <div class="determine_package">打包下载</div>
+    </div>
+</div>
+<div id="customerOnline"></div>
+
+
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/IeOutTips.js?code=11.0"></script>
+<script src="../pc/assets/js/jquery.min.js?v=p24.0151"></script>
+<script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.2"></script>
+<script src="../pc/assets/js/bootstrap.min.js?v=p24.0151"></script>
+<script src="../pc/assets/js/bootstrapValidator.min.js?v=p24.0151"></script>
+<script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
+<script src="../pc/assets/js/alert.min.js?v=p24.0151"></script>
+<script src="../pc/assets/js/common.js?v=p24.0151"></script>
+<script src="../pc/assets/js/ProfessionalEdition.js?v=p24.0151"></script>
+<script src="../pc/assets/js/qrcode.min.js?v=p24.0151"></script>
+<script src="../pc/assets/js/order_result.js?v=p24.0151"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=p24.0151"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0151"></script>
+<script src="../pc/assets/js/query.js?v=p24.0151"></script>
+<script>
+function dropDownType(e) {
+    var selectObjV2 = $(".spType .ul1");
+    selectObjV2.html('')
+    for (let i=0; i<e.length; i++) {
+        if(!['ktbg' , 'bylwjigou' , 'bylw' , 'wxzs2' , 'szsjzz' , 'qkszsjzz', 'qklw'].includes(e[i].short_name)) {
+            var optionValue = e[i].goods_id;
+            var optionText =  e[i].type;
+            var html = ''
+            html += '<li class="typeLi '+e[i].short_name+'" data-briefName="'+e[i].short_name+'" data-goodsid='+optionValue+'>'
+            html += '   <img class="'+e[i].short_name+'_css" src="../pc/assets/img/'+e[i].short_name+'_icon.svg" alt="">'
+            html += '   <span>'+optionText+'</span>'
+            html += '</li>'
+            selectObjV2.append(html);
+        }
+    }
+    var selectObj2V2 = $(".spType .ul2");
+    for (let i=0; i<e.length; i++) {
+        if(['bylwsenior' , 'ktbgsenior', 'qklwsenior'].includes(e[i].short_name)) {
+            var optionValue = e[i].goods_id;
+            var optionText =  e[i].type;
+
+            var html = ''
+            html += '<li class="typeLi '+e[i].short_name+'" data-briefName="'+e[i].short_name+'" data-goodsid='+optionValue+'>'
+            html += '   <img src="../pc/assets/img/'+e[i].short_name+'_icon.svg" alt="">'
+            html += '   <span>'+optionText+'</span>'
+            html += '</li>'
+            selectObj2V2.append(html);
+        }
+    }
+    setTimeout(function (){
+        window.setHeight()
+    }, 0)
+}
+// 极速版左侧切换
+$(document).on('click','.ul1 .typeLi',function (){
+    menuClick($(this).attr('data-briefName') , $(this).attr('data-goodsid'))
+})
+// 专业版左侧切换
+$(document).on('click','.ul2 .typeLi',function (){
+    menuClick($(this).attr('data-briefName'), $(this).attr('data-goodsid'))
+})
+function menuClick(edition , goodsid) {
+	window.sessionStorage.setItem('editionKey' , edition)
+	window.sessionStorage.setItem('queryGoodsid' , goodsid)
+	location.href = './index.html'
+}
+$('.tabCK').click(function() {
+    $('.flowBoxMain').hide()
+    $('.tabCK').removeClass('selected')
+    $('.'+$(this).data('type')).show()
+    $(this).addClass('selected')
+})
+
+$('#inputOrderId').on('change input', function() {
+    if($(this).val()) {
+        $('.searchBtn').addClass('valuable')
+    }else {
+        $('.searchBtn').removeClass('valuable')
+    }
+});
+
+$('.deleteS').click(function(){
+    $('.searchBtn').removeClass('valuable')
+})
+
+window.download_post_handle = function (download_dom){
+    //lx_post_handle
+    return download_dom
+}
+</script>
+</body>
+</html>

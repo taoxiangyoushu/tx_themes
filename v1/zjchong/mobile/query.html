@@ -124,7 +124,7 @@
 <!--    <img class="orderTipImg ZhOrder" src="../mobile/assets/img/ali_out_trade_num.png" alt="">-->
 </div>
 <div class="searchBox">
-    <input type="text" id="searchID"placeholder="请输入您的订单号或优惠券">
+    <input type="text" id="searchID"placeholder="请输入您的订单号">
     <span class="deleteS"></span>
     <span class="searchText">搜索</span>
 </div>
@@ -136,7 +136,7 @@
 </div>
 <div class="nodata">
     <img src="../mobile/assets/img/nodata.png" alt="">
-    <p class="toSearch">输入订单号/优惠券查询结果</p>
+    <p class="toSearch">输入订单号查询结果</p>
     <div class="toHome">
         <a href="./index.html">去提交</a>
     </div>
@@ -315,10 +315,10 @@
 
     function aaa(){
         if(!$('#searchID').val()){
-            toast('请输入订单号或优惠券!')
+            toast('请输入订单号!')
             $('.resultBox').hide()
             $('.nodata').show()
-            $(".toSearch").html("输入订单号/优惠券查询结果")
+            $(".toSearch").html("输入订单号查询结果")
             return;
         }
         query(true)

@@ -357,7 +357,8 @@ $('.editGenerate').click(function(e) {
             var form_data = getFormData({
                 rid,
                 outline,
-                must: true
+                must: true,
+                version: 'v2'
             })
             $.ajax({
                 type: 'post',

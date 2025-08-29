@@ -1,0 +1,131 @@
+html::-webkit-scrollbar {
+  width: 0px;
+  background: #eee;
+}
+html::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+  border-radius: 0.15rem;
+}
+html::-webkit-scrollbar-thumb {
+  border-radius: 0.15rem;
+  height: 5rem;
+  background-color: #a7a7a7;
+}
+html .ContainerTo {
+  font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+}
+#App {
+  display: flex;
+}
+#App .menuBox {
+  width: 8.3rem;
+  min-height: 100vh;
+  background-color: #F3F5F9;
+  height: 100vh;
+  overflow: auto;
+}
+#App .index_app {
+  width: calc(100% - 8.3rem);
+  height: 100vh;
+  overflow: auto;
+}
+.menuBox .toQuery {
+  border: 1px solid #0C55F5;
+  color: #0C55F5;
+  background-color: #F2F9FF;
+  width: calc(100% - 1.4rem);
+  font-size: 1.2rem;
+  line-height: normal;
+  text-align: center;
+  margin: auto;
+  border-radius: 0.4rem;
+  padding: 0.35rem 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.menuBox .toQuery a {
+  color: #0C55F5;
+  text-decoration: none;
+}
+.menuBox .ul1 li {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #F1F1F1;
+  min-height: 4.4rem;
+}
+#App.bylw .typeLi.bylw,
+#App.wxzs .typeLi.wxzs,
+#App.ktbg .typeLi.ktbg,
+#App.rws .typeLi.rws,
+#App.qklw .typeLi.qklw,
+#App.sxbg .typeLi.sxbg,
+#App.lwdbppt .typeLi.lwdbppt,
+#App.kclw .typeLi.kclw,
+#App.dybg .typeLi.dybg,
+#App.zjcaigc .typeLi.zjcaigc,
+#App.xzaigccheck .typeLi.xzaigccheck {
+  color: #0C55F5;
+  background-color: #FFFFFF;
+  font-weight: 600;
+  position: relative;
+}
+#App.bylw .typeLi.bylw::after,
+#App.wxzs .typeLi.wxzs::after,
+#App.ktbg .typeLi.ktbg::after,
+#App.rws .typeLi.rws::after,
+#App.qklw .typeLi.qklw::after,
+#App.sxbg .typeLi.sxbg::after,
+#App.lwdbppt .typeLi.lwdbppt::after,
+#App.kclw .typeLi.kclw::after,
+#App.dybg .typeLi.dybg::after,
+#App.zjcaigc .typeLi.zjcaigc::after,
+#App.xzaigccheck .typeLi.xzaigccheck::after {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 0.4rem;
+  height: 1.6rem;
+  background-color: #006CFF;
+  border-radius: 0px 0.3rem 0.3rem 0px;
+  left: 0;
+  top: 1.4rem;
+}
+#App .img_js {
+  display: none;
+}
+#App.bylw .bylwBox,
+#App.wxzs .wxzsBox,
+#App.ktbg .ktbgBox,
+#App.rws .rwsBox,
+#App.qklw .qklwBox,
+#App.sxbg .sxbgBox,
+#App.lwdbppt .lwdbpptBox,
+#App.kclw .kclwBox,
+#App.dybg .dybgBox,
+#App.zjcaigc .zjcaigcBox,
+#App.xzaigccheck .xzaigccheckBox {
+  display: block;
+}
+.loadEffect {
+  background: linear-gradient(90deg, #ffffff11 33%, #d7d7d755 50%, #efefef11 66%) #f7f7f7;
+  background-size: 300% 100%;
+  animation: l1 1s infinite linear;
+  overflow: hidden;
+}
+@keyframes l1 {
+  0% {
+    background-position: right;
+  }
+}
+.index_app .loadEffect {
+  color: transparent !important;
+}
+.index_app .loadEffect.describedImg {
+  background-size: 300% 100%;
+  width: 100%;
+  min-height: 16.6rem;
+}
