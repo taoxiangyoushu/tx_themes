@@ -283,6 +283,7 @@ function init() { // 初始化
     throttling2 = true
     rid = '';
     reference_list = [] // 已选文献
+    $('#NumberWords , #NumberWords2').val('')
     init3()
 }
 function init3 () {
@@ -731,7 +732,7 @@ $('.Insert_window .Insert_sure').click(function(e) {
         throttling2 = true
         return
     }
-
+    $('#NumberWords3').removeClass('errColor')
     // 开始检验提纲
     var outline = []
     var closeMsg = cocoMessage.loading('正在提交提纲,请稍后...');
@@ -1077,6 +1078,7 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this , gen_qu
                     $('.rightCont').attr('id', 'OperationSteps2');
                     $(".rightCont").scrollTop(0)
                     $(".submittedH3 .title_text .paper_title").text(contenteditable)
+                    $(".recommend_l .operate_btn .check_all").addClass('disabled_btn')
                     getLiterature(contenteditable, NumberWords, $("input[name='reportType']:checked").val())
                 }else {
                     $('#NumberWords').val($("#NumberWords3").val())
@@ -1087,6 +1089,7 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this , gen_qu
             } else {
                 throttling2 = true
                 cocoMessage.error(data.codeMsg, 3000);
+                $('#NumberWords3').addClass('errColor')
             }
         },
         error: function(err) {
@@ -1099,6 +1102,7 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this , gen_qu
 // 现在要求的效果是: 减少字数后不给清空已选择的小图标
 $('#NumberWords3').on('input',function () {
     numberControl.emptiedTips(true)
+    $(this).removeClass('errColor')
     // numberControl.uncheck(['tb_operation' , 'bg_operation' , 'tp_operation' , 'gs_operation' , 'dm_operation'])
 })
 $('.Lower , .up').on('click',function () {

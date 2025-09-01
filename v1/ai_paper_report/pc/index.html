@@ -2141,6 +2141,17 @@
 
         ktbgGenerate()
     }
+
+    // 浏览器后退多次  专业选择框
+    $(document).ready(function() {
+        // 监听 pageshow 事件，处理浏览器后退
+        window.addEventListener('pageshow', function(event) {
+            $('#basic').selectpicker('refresh');
+            if($('#basic').val()){
+                $(".btn-default[data-id='basic'] .filter-option").css('color', '#333')
+            }
+        });
+    });
 </script>
 </body>
 </html>

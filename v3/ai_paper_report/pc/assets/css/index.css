@@ -2347,6 +2347,7 @@ p.word-prompt .text-num {
 }
 .rightCont .step2_C .recommend_l .operate_btn div.check_all.disabled_btn {
   cursor: no-drop;
+  pointer-events: none;
 }
 .rightCont .step2_C .recommend_l .operate_btn div.check_all.disabled_btn input {
   cursor: no-drop;
