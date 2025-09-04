@@ -64,6 +64,7 @@ html .ContainerTo {
 #App.qklw .typeLi.qklw,
 #App.sxbg .typeLi.sxbg,
 #App.lwdbppt .typeLi.lwdbppt,
+#App.scirs .typeLi.scirs,
 #App.kclw .typeLi.kclw,
 #App.dybg .typeLi.dybg,
 #App.zjcaigc .typeLi.zjcaigc,
@@ -80,6 +81,7 @@ html .ContainerTo {
 #App.qklw .typeLi.qklw::after,
 #App.sxbg .typeLi.sxbg::after,
 #App.lwdbppt .typeLi.lwdbppt::after,
+#App.scirs .typeLi.scirs::after,
 #App.kclw .typeLi.kclw::after,
 #App.dybg .typeLi.dybg::after,
 #App.zjcaigc .typeLi.zjcaigc::after,
@@ -107,7 +109,8 @@ html .ContainerTo {
 #App.kclw .kclwBox,
 #App.dybg .dybgBox,
 #App.zjcaigc .zjcaigcBox,
-#App.xzaigccheck .xzaigccheckBox {
+#App.xzaigccheck .xzaigccheckBox,
+#App.scirs .scirsBox {
   display: block;
 }
 .loadEffect {
@@ -129,3 +132,4 @@ html .ContainerTo {
   width: 100%;
   min-height: 16.6rem;
 }
+/*# sourceMappingURL=commonv2.css.map */

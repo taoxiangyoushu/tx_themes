@@ -818,6 +818,12 @@
 .V3_Theme.qklwsenior .qklwseniorBox {
   display: block;
 }
+.V3_Theme.scirs .scirsBox {
+  display: block;
+}
+.V3_Theme.scirs .example {
+  display: none;
+}
 .ktbgseniorBox {
   width: 390px;
   margin: auto;
@@ -1401,3 +1407,4 @@
   position: absolute;
   top: -1px;
 }
+/*# sourceMappingURL=V3_Theme.css.map */

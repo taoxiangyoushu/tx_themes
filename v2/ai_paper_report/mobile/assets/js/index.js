@@ -146,7 +146,7 @@ Gettitle()
 
 function changeType(this_ , this_val) {
     var val = this_.val() || this_val
-    var permit_name = ['rws' , 'ktbg' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt' , 'xzaigccheck']
+    var permit_name = ['rws' , 'ktbg' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt' , 'xzaigccheck', 'scirs']
     var this_short_name = typeData[val].short_name
 
     // 标题处理
@@ -192,7 +192,7 @@ function changeType(this_ , this_val) {
         $('.NumberIsShow').show()
         $(".version-wxzs").hide()
     }
-    var short_name_arr = ['rws' , 'ktbg' , 'qklw' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt' , 'sxbg' , 'xzaigccheck']
+    var short_name_arr = ['rws' , 'ktbg' , 'qklw' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt' , 'sxbg' , 'xzaigccheck', 'scirs']
     if(short_name_arr.includes(this_short_name)){
         if(this_short_name !== 'dybg'){
             $(".educationBox").hide() // 学历
@@ -302,6 +302,13 @@ function changeType(this_ , this_val) {
     }else {
         $(".specialityBoxsxbg").hide()
     }
+
+    if(this_short_name == 'scirs') { // SCI润色
+        $(".SCI_form").show()
+    }else {
+        $(".SCI_form").hide()
+    }
+
     // 清空报错提示
     $("#ContainerTo").data('bootstrapValidator').resetForm();
 }
@@ -464,6 +471,10 @@ $('.generate').click(function() {
         if(!throttling) return
         if(typeData[$('#type_s').val()].short_name == 'lwdbppt' && $(".AIGCContentType.Select").attr('id-key')=='1'){
             upload_lwdbppt()
+            return
+        }
+        if( typeData[$('#type_s').val()].short_name=='scirs' ){
+            upload_sci()
             return
         }
         var wxzsID = ''
@@ -1209,3 +1220,65 @@ $(".upk_close").on('click', function (){
 $(".uploadKTBG_pop .upk_btn").on('click', function (){
     $("#uploadFile").click()
 })
+
+// sci 润色 部分
+function countWords(str) {
+    // 使用正则表达式匹配所有单词，\b 表示单词边界
+    const words = str.match(/\b\w+\b/g);
+    return words ? words.length : 0;
+}
+
+$("#sci_original").on('input', function (){
+    if($(this).val()){
+        $(this).val($(this).val().replace(/[\u4e00-\u9fa5]/g, ''))
+    }
+    $(".sci_wordCount .sci_word").text(countWords($(this).val()))
+})
+
+function upload_sci(){
+    if(!$("#sci_original").val()){
+        toast('请输入或粘贴内容')
+        return
+    }
+    toast({
+        msg: '正在提交,请稍后...',
+        type: 'loading',
+        time: 20000
+    })
+    throttling = false
+    var formdata = new FormData()
+    formdata.append('content', $("#sci_original").val())
+    formdata.append('type', typeData[$('#type_s').val()].short_name)
+    $.ajax({
+        type: 'POST',
+        url: urls + '/api/project/ai_paper_report/pre_handle/file_upload',
+        processData: false,
+        contentType: false,
+        xhrFields: {
+            withCredentials: true
+        },
+        data: formdata,
+        success: function (res) {
+            if(res.code == 200){
+                var formData = {
+                    goods_id: $("#type_s").val(),
+                    domain_record: window.location.origin,
+                    source: 1,
+                    customer_invitation: dct_code,
+                }
+                formData['data[file_path][label]'] = '文件地址'
+                formData['data[file_path][value]'] = res.data.path
+                unifiedCreate(getFormData(formData))
+            }else{
+                if(res.codeMsg){
+                    cocoMessage.error(res.codeMsg, 3000);
+                }else{
+                    cocoMessage.error('论文提交失败，请重试', 3000);
+                }
+            }
+        },
+        error: function (){
+            cocoMessage.error('论文提交失败，请重试', 3000);
+        }
+    })
+}

@@ -41,18 +41,18 @@
     <meta name="description" content="AI大师写作是一个提供论文辅助的全面指导,包括图表、表格、公式等方面的建议。" />
     <meta name="keywords" content="AI大师写作，论文范文辅助，毕业论文" />
     <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.0064">
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css?v=m24.0064">
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css?v=m24.0064">
-    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0064">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0064">
-    <link rel="stylesheet" href="../mobile/assets/css/commonv2.css?v=m24.0064">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0064">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0064">
-    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0064">
-    <link rel="stylesheet" href="../mobile/assets/css/leftCss.css?v=m24.0064">
-    <link rel="stylesheet" href="../mobile/assets/css/index_v2.css?v=m24.0064">
-    <link rel="stylesheet" href="https://api.taoxiangyoushu.com/html/v1/utils/css/smartTopic.css?v=m24.0064">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.0067">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css?v=m24.0067">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css?v=m24.0067">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0067">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0067">
+    <link rel="stylesheet" href="../mobile/assets/css/commonv2.css?v=m24.0067">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0067">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0067">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0067">
+    <link rel="stylesheet" href="../mobile/assets/css/leftCss.css?v=m24.0067">
+    <link rel="stylesheet" href="../mobile/assets/css/index_v2.css?v=m24.0067">
+    <link rel="stylesheet" href="https://api.taoxiangyoushu.com/html/v1/utils/css/smartTopic.css?v=m24.0067">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz'
@@ -468,6 +468,15 @@
                         <span id="jiangAIGCContent_err2"></span>
                     </div>
                 </div>
+                <!-- SCI润色 -->
+                <div class="form-group form-group_s short card card4 SCI_form">
+                    <p class="sci_tips">输入/粘贴论文内容：</p>
+                    <div class="sci_original_block">
+                        <textarea id="sci_original" placeholder="请输入/粘贴需要润色的内容，限2000单词以内（不支持中文）"></textarea>
+                        <div class="sci_wordCount"><span class="sci_word">0</span>/2000</div>
+                    </div>
+                </div>
+
                 <div class="form-group form-group_s short card checkbox agreement">
                     <input class="inputCheck" type="checkbox" checked="checked"> 我已阅读并同意: 本站提供的是文献下载服务，下载的内容仅用于参考，不作为毕业、发表使用
                 </div>
@@ -499,6 +508,11 @@
                             <p>4. 此系统一旦提交，开始检测后，就会产生成本，不接受退款，多谢理解</p>
                             <p class="redText">5. 请勿上传目录和封面，否则会检测失败！</p>
                         </div>
+                    </div>
+                    <div class="sciTips">
+                        <p>1.采用SSL传输加密，绝不泄漏论文的任何信息。</p>
+                        <p style="color: #ff2121;">2.支付之前，请确认能接受机器生成带来的误差和局限性，再支付费用，确认支付后不接受任何形式退款。</p>
+                        <p>3.所有论文及文档都应该由本人通过学习后认真撰写，AI范文相关内容仅视为格式参考。</p>
                     </div>
                     <div class="footer">
                         <div id="company-name"></div>
@@ -829,18 +843,18 @@
 
 
 
-<script src="../mobile/assets/js/jquery.min.js?v=m24.0064"></script>
-<script src="../mobile/assets/js/bootstrap.min.js?v=m24.0064"></script>
-<script src="../mobile/assets/js/clipboard.min.js?v=m24.0064"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0064"></script>
-<script src="../mobile/assets/js/bootstrap-select.js?v=m24.0064"></script>
-<script src="../mobile/assets/js/bootstrapValidator.min.js?v=m24.0064"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.0064"></script>
-<script src="../mobile/assets/js/message.js?v=m24.0064"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.0064"></script>
-<script src="../mobile/assets/js/index.js?v=m24.0064"></script>
+<script src="../mobile/assets/js/jquery.min.js?v=m24.0067"></script>
+<script src="../mobile/assets/js/bootstrap.min.js?v=m24.0067"></script>
+<script src="../mobile/assets/js/clipboard.min.js?v=m24.0067"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0067"></script>
+<script src="../mobile/assets/js/bootstrap-select.js?v=m24.0067"></script>
+<script src="../mobile/assets/js/bootstrapValidator.min.js?v=m24.0067"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0067"></script>
+<script src="../mobile/assets/js/message.js?v=m24.0067"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0067"></script>
+<script src="../mobile/assets/js/index.js?v=m24.0067"></script>
 <!-- 推荐标题 -->
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/smartTopic.js?v=m24.0064"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/smartTopic.js?v=m24.0067"></script>
 
 <script>
 function dropDownType(e, project) {

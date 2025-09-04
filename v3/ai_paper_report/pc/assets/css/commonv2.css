@@ -380,6 +380,10 @@ html .ContainerTo {
 }
 .commodityTypeNameSvg img {
   display: none;
+  height: 100%;
+}
+.commodityTypeNameSvg img.scirsText {
+  height: 29px;
 }
 .img_js.selected {
   display: inline-block;
@@ -410,7 +414,8 @@ html .ContainerTo {
 .menuCanSelect.xzaigccheck .typeLi.xzaigccheck,
 .menuCanSelect.ktbgsenior .typeLi.ktbgsenior,
 .menuCanSelect.bylwsenior .typeLi.bylwsenior,
-.menuCanSelect.qklwsenior .typeLi.qklwsenior {
+.menuCanSelect.qklwsenior .typeLi.qklwsenior,
+.menuCanSelect.scirs .typeLi.scirs {
   border-radius: 10px;
   background: #F6F6FF;
   border-radius: 10px 10px 10px 10px;
@@ -574,7 +579,8 @@ html .ContainerTo {
 .bylwsenior .bylwText,
 .ktbgsenior .ktbgText,
 .qklwsenior .qklwText,
-.xzaigccheck .xzaigccheckText {
+.xzaigccheck .xzaigccheckText,
+.scirs .scirsText {
   display: inline-block;
 }
 .AltitudeCardBox {
@@ -915,3 +921,9 @@ html .ContainerTo {
 .foot a.beian {
   margin-left: 20px;
 }
+.menuCanSelect.xzaigccheck .checkbox,
+.menuCanSelect.zjcaigc .checkbox,
+.menuCanSelect.scirs .checkbox {
+  display: none;
+}
+/*# sourceMappingURL=commonv2.css.map */

@@ -415,7 +415,7 @@ $('.Toggle2').click(function () {
 });
 
 function editionType(edition , is) {
-	$('#App').removeClass('bylw ktbgsenior bylwsenior wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt qklwsenior xzaigccheck')
+	$('#App').removeClass('bylw ktbgsenior bylwsenior wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt qklwsenior xzaigccheck scirs')
 	$('#App').addClass(edition)
 	window.sessionStorage.setItem('editionKey' , edition)
 	if(edition == "bylwsenior"||edition == "ktbgsenior"||edition == "qklwsenior") {
@@ -439,14 +439,21 @@ function editionType(edition , is) {
 			$('.Universal').hide()
 			$('#generate').text('提交检测')
 			$('.aigcTips').show()
+            $(".sciTips").hide()
 		}else if(edition == 'zjcaigc') {
 			$('.Universal').hide()
 			$('.aigcTips').show()
 			$('#generate').text('开始降AIGC率')
-		}else {
+            $(".sciTips").hide()
+		}else if(edition == 'scirs') {
+            $('.Universal').hide()
+            $('.aigcTips').hide()
+            $(".sciTips").show()
+        }else {
 			$('.Universal').show()
 			$('.aigcTips').hide()
 			$('#generate').text('立即生成')
+            $(".sciTips").hide()
 		}
 		// $('#App').removeClass('V3_Theme')
 		// $('.leftFloat').hide()
@@ -455,6 +462,17 @@ function editionType(edition , is) {
 		$('.generate').show()
 
 	}
+    if(edition == 'scirs') {
+        $("h3.submittedInfo").hide()
+        $(".groupSubmit").hide()
+        $(".SCI_form").show()
+        $(".case.realTime").hide()
+    }else{
+        $("h3.submittedInfo").show()
+        $(".groupSubmit").show()
+        $(".SCI_form").hide()
+        $(".case.realTime").show()
+    }
 	$(function() {
 		setTimeout(function(){
 			window.setHeight()

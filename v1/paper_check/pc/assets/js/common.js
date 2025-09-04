@@ -384,7 +384,7 @@ window.onload = function (){
 				}
 				if($('.home_page').length) {
 					dropDownType(typeData)
-					getFormaTemplate()
+					// getFormaTemplate()
 				}
 				payWayInfo = data.project[0].pay_way
 

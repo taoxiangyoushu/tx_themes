@@ -102,7 +102,12 @@ function payOrder(payType,price) {
                     cocoMessage.success('订单已支付', 2000)
                         if (window.parent && $('#App').hasClass('AppV3')) {
                             window.parent.closePopup();
-                            window.parent.location.href = "./query.html?oid=" + order_sn;
+                            if(getQueryVariable('is_sci') == 'scirs'){
+                                window.parent.getResult_sci(order_sn)
+                                window.parent.initial_sci(order_sn)
+                            }else{
+                                window.parent.location.href = "./query.html?oid=" + order_sn;
+                            }
                         }else {
                             window.location.href = "./query.html?oid=" + order_sn;
                         }
@@ -511,7 +516,12 @@ function payStatus() { // 轮询
                 clearTimeout(Timeout);
                 if (window.parent && $('#App').hasClass('AppV3')) {
                     window.parent.closePopup();
-                    window.parent.location.href = "./query.html?oid=" + order_sn;
+                    if(getQueryVariable('is_sci') == 'scirs'){
+                        window.parent.getResult_sci(order_sn)
+                        window.parent.initial_sci(order_sn)
+                    }else{
+                        window.parent.location.href = "./query.html?oid=" + order_sn;
+                    }
                 }else {
                     window.location.href = "./query.html?oid=" + order_sn;
                 }
@@ -567,7 +577,12 @@ $('.next').click(function() {
                 cocoMessage.success('订单已支付', 2000)
                 if (window.parent && $('#App').hasClass('AppV3')) {
                     window.parent.closePopup();
-                    window.parent.location.href = "./query.html?oid=" + order_sn;
+                    if(getQueryVariable('is_sci') == 'scirs'){
+                        window.parent.getResult_sci(order_sn)
+                        window.parent.initial_sci(order_sn)
+                    }else{
+                        window.parent.location.href = "./query.html?oid=" + order_sn;
+                    }
                 }else {
                     window.location.href = "./query.html?oid=" + order_sn;
                 }
@@ -948,7 +963,12 @@ function couponsPay() {
                 cocoMessage.success('订单已支付', 2000)
                 if (window.parent && $('#App').hasClass('AppV3')) {
                     window.parent.closePopup();
-                    window.parent.location.href = "./query.html?oid=" + order_sn;
+                    if(getQueryVariable('is_sci') == 'scirs'){
+                        window.parent.getResult_sci(order_sn)
+                        window.parent.initial_sci(order_sn)
+                    }else{
+                        window.parent.location.href = "./query.html?oid=" + order_sn;
+                    }
                 }else {
                     window.location.href = "./query.html?oid=" + order_sn;
                 }

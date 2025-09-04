@@ -506,6 +506,9 @@ input[type="checkbox"] {
 .form .groupSubmit button.generate {
   width: calc(100% - 13rem);
 }
+.form .groupSubmit button.generate.scirs_btn {
+  width: calc(100% - 3rem);
+}
 .promotion {
   text-align: center;
 }

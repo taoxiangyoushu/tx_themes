@@ -2039,7 +2039,7 @@
         var selectObj = $("#type_s");
         selectObj.find("option:not(:first)").remove();
         for (let i=0; i<e.length; i++) {
-            if(!['ktbgsenior' , 'bylwjigou' , 'bylwsenior' , 'wxzs2' , 'szsjzz' , 'qkszsjzz', 'qklwsenior'].includes(e[i].short_name)) {
+            if(!['ktbgsenior' , 'bylwjigou' , 'bylwsenior' , 'wxzs2' , 'szsjzz' , 'qkszsjzz', 'qklwsenior', 'scirs'].includes(e[i].short_name)) {
                 var optionValue = e[i].goods_id;
                 var optionText =  e[i].type;
                 selectObj.append(new Option(optionText, optionValue));

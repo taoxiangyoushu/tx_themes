@@ -116,6 +116,12 @@ function query(e) {
                         word_num = '--'
                         showWord = 'hide-word'
                     }
+                    if(res.data[i].goods_short_name == 'scirs'){
+                        res.data[i].place_order_data.title = {
+                            label: '',
+                            value: '--'
+                        }
+                    }
                     if(res.data[i].isPartDownload) {
                         operateText =   '<div class="report-operate">' +
                                 '            <div data-goodsname="'+res.data[i].goods_name+'" data-id="'+res.data[i].order_sn+'" data-endProduct="'+ res.data[i].end_product +'" class="report-download downloadable DownloadSeparately titles">' +

@@ -378,6 +378,10 @@ html {
     vertical-align:middle;
     img {
         display: none;
+        height: 100%;
+        &.scirsText {
+            height: 29px;
+        }
     }
 }
 .img_js.selected {
@@ -409,7 +413,8 @@ html {
     &.xzaigccheck .typeLi.xzaigccheck,
     &.ktbgsenior .typeLi.ktbgsenior,
     &.bylwsenior .typeLi.bylwsenior,
-    &.qklwsenior .typeLi.qklwsenior {
+    &.qklwsenior .typeLi.qklwsenior,
+    &.scirs .typeLi.scirs {
         border-radius: 10px;
         background: #F6F6FF;
         border-radius: 10px 10px 10px 10px;
@@ -610,7 +615,8 @@ html {
 .bylwsenior .bylwText,
 .ktbgsenior .ktbgText,
 .qklwsenior .qklwText,
-.xzaigccheck .xzaigccheckText {
+.xzaigccheck .xzaigccheckText,
+.scirs .scirsText {
     display: inline-block;
 }
 .AltitudeCardBox {
@@ -970,5 +976,13 @@ html {
         &.beian {
             margin-left: 20px;
         }
+    }
+}
+
+.menuCanSelect{
+    &.xzaigccheck .checkbox,
+    &.zjcaigc .checkbox,
+    &.scirs .checkbox{
+        display: none;
     }
 }

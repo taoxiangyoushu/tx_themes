@@ -100,7 +100,15 @@ function payOrder(payType,price) {
                     countdown()
                 }else if(data.code == 3001) {
                     cocoMessage.success('订单已支付', 2000)
-                    window.location.href = "./query.html?oid=" + order_sn ;
+                    if (window.parent && $('#App').hasClass('AppV3')) {
+                        window.parent.closePopup();
+                        if(getQueryVariable('is_sci') == 'scirs'){
+                            window.parent.getResult_sci(order_sn)
+                            window.parent.initial_sci(order_sn)
+                        }else{
+                            window.location.href = "./query.html?oid=" + order_sn ;
+                        }
+                    }
                 }else if(data.code == -1 && data.codeMsg == '不支持的该支付方式'){
 
                 }else {
@@ -491,7 +499,17 @@ function payStatus() { // 轮询
                 }
             }else {
                 clearTimeout(Timeout);
-                window.location.href = "./query.html?oid=" + pay_id ;
+                if (window.parent && $('#App').hasClass('AppV3')) {
+                    window.parent.closePopup();
+                    if(getQueryVariable('is_sci') == 'scirs'){
+                        window.parent.getResult_sci(order_sn)
+                        window.parent.initial_sci(order_sn)
+                    }else{
+                        window.parent.location.href = "./query.html?oid=" + order_sn;
+                    }
+                }else{
+                    window.location.href = "./query.html?oid=" + pay_id ;
+                }
             }
         },
         error: function () {
@@ -542,7 +560,17 @@ $('.next').click(function() {
             if (res.code == 3001) {
                 cocoMessage.destroyAll();
                 cocoMessage.success('订单已支付', 2000)
-                window.location.href = "./query.html?oid=" + pay_id;
+                if (window.parent && $('#App').hasClass('AppV3')) {
+                    window.parent.closePopup();
+                    if(getQueryVariable('is_sci') == 'scirs'){
+                        window.parent.getResult_sci(order_sn)
+                        window.parent.initial_sci(order_sn)
+                    }else{
+                        window.parent.location.href = "./query.html?oid=" + order_sn;
+                    }
+                }else{
+                    window.location.href = "./query.html?oid=" + pay_id;
+                }
             }else {
                 cocoMessage.destroyAll();
                 cocoMessage.error("您的订单未支付", 2000);
@@ -917,7 +945,17 @@ function couponsPay() {
 
             }else if(res.code == 3001) {
                 cocoMessage.success('订单已支付', 2000)
-                window.location.href = "./query.html?oid=" + order_sn ;
+                if (window.parent && $('#App').hasClass('AppV3')) {
+                    window.parent.closePopup();
+                    if(getQueryVariable('is_sci') == 'scirs'){
+                        window.parent.getResult_sci(order_sn)
+                        window.parent.initial_sci(order_sn)
+                    }else{
+                        window.parent.location.href = "./query.html?oid=" + order_sn;
+                    }
+                }else{
+                    window.location.href = "./query.html?oid=" + order_sn ;
+                }
             }else {
                 cocoMessage.error(res.codeMsg, 2000);
                 closeMsg()

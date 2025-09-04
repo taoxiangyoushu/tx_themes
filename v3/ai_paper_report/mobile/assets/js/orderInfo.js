@@ -22,6 +22,12 @@
                     $('.Subject').hide()
                     $('#PaperTypeName').text('')
                 }
+                if(orderInfoData.short_name == 'scirs'){
+                    $(".title_block").hide()
+                    is_SCIRS = true
+                }else{
+                    $(".title_block").show()
+                }
             }else if(result.code == 3001) {
                 toast({msg: '订单已支付'})
                 window.location.href = "./query.html?oid=" + (getQueryVariable('order_sn') || getQueryVariable('commitId'));

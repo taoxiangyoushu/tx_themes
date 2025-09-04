@@ -221,7 +221,7 @@ window.onload = function (){
 				if($(".home").length) {
 					// setPriceInfo()
 					dropDownType(typeData)
-					getFormaTemplate()
+					// getFormaTemplate()
 				}
 
 				if($(".resultBox").length) {

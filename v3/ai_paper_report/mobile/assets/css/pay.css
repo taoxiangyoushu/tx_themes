@@ -172,6 +172,9 @@
 .NumberWordsBox {
   display: none;
 }
+.title_block {
+  display: none;
+}
 .info.appreciationInfo {
   margin-top: 1.5rem;
 }

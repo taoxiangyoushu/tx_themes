@@ -1576,7 +1576,7 @@ function dropDownType(e) {
     var selectObj = $("#type_s");
     selectObj.find("option:not(:first)").remove();
     for (let i=0; i<e.length; i++) {
-        if(e[i].short_name !== 'bylwjigou' && e[i].short_name !== 'bylwsenior' && e[i].short_name !== 'wxzs2' && e[i].short_name !== 'szsjzz' && e[i].short_name !== 'qkszsjzz'&& e[i].short_name !== 'ktbgsenior' && e[i].short_name !== 'qklwsenior'){
+        if(e[i].short_name !== 'bylwjigou' && e[i].short_name !== 'bylwsenior' && e[i].short_name !== 'wxzs2' && e[i].short_name !== 'szsjzz' && e[i].short_name !== 'qkszsjzz'&& e[i].short_name !== 'ktbgsenior' && e[i].short_name !== 'qklwsenior' && e[i].short_name !== 'scirs'){
             var optionValue = e[i].goods_id;
             var optionText =  e[i].type;
             selectObj.append(new Option(optionText, optionValue));

@@ -1070,3 +1070,13 @@
   align-items: center;
   justify-content: space-between;
 }
+.scirs .NormalBox {
+  display: none;
+}
+.scirs .scirsBox {
+  display: block;
+}
+.scirs .example {
+  display: none;
+}
+/*# sourceMappingURL=leftCss.css.map */

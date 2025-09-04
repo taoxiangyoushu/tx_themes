@@ -115,6 +115,12 @@ function query(e) {
                     if(resData.end_product && resData.added_value_goods_names.indexOf('答辩PPT') == -1 && resData.goods_name.indexOf("毕业论文") !== -1 && hasDbppt && resData.son_order_goods_names.indexOf('dbppt') == -1){
                         btnNum = btnNum +1
                     }
+                    if(resData.goods_short_name == 'scirs'){
+                        resData.place_order_data.title = {
+                            label: '',
+                            value: '--'
+                        }
+                    }
                     btnNC = 'btnN' + btnNum
                     text += "<tr>";
                     text += "<th class=\"first\">"+ resData.order_sn +"</th>";

@@ -435,6 +435,9 @@ $('.payBotton').click(function() {
                     toast(resX.codeMsg)
                     if(resX.code == 3001){
                         toast('订单已支付')
+                        if(is_SCIRS){
+                            getResult_sci(order_sn)
+                        }
                         window.location.href = "./query.html?oid=" + order_sn;
                     }
                     return
@@ -545,6 +548,9 @@ $('.payBotton').click(function() {
                     editUrl(data.data.pay_id)
                 }else if(data.code == 3001) {
                     toast('订单已支付')
+                    if(is_SCIRS){
+                        getResult_sci(order_sn)
+                    }
                     window.location.href = "./query.html?oid=" + order_sn;
                 } else {
                     toast({
@@ -704,6 +710,9 @@ function thirdParty() {
             }else{
                 if(data.code == 3001){
                     toast('支付成功')
+                    if(is_SCIRS){
+                        getResult_sci(order_sn)
+                    }
                     window.location.href = "./query.html?oid=" + order_sn;
                     return
                 }else{
@@ -745,6 +754,9 @@ function payStatus(id) { // 轮询
                     payStatus(id);
                 }, 1000);
             }else {
+                if(is_SCIRS){
+                    getResult_sci(order_sn)
+                }
                 window.location.href = "./pay_result.html?oid=" + id + "&price= "+$('#amountText').text()+"" + "&payType="+ payType + "" ;
             }
         },
@@ -1043,6 +1055,9 @@ function couponsPay(){
                 replaceParamVal('payId' , data.data.pay_id , 0)
             }else if(data.code == 3001) {
                 toast('订单已支付')
+                if(is_SCIRS){
+                    getResult_sci(order_sn)
+                }
                 window.location.href = "./query.html?oid=" + order_sn;
             } else {
                 toast({
@@ -1245,3 +1260,30 @@ $(".closeTips").click(function (){
     $(".mask").hide()
     $(".szsj-tips-block").hide()
 })
+
+var is_SCIRS = false
+
+function getResult_sci(order_sn) {
+    if(typeof(EventSource) !== "undefined") {
+        var source = new EventSource("https://outline.taoxiangyoushu.com/api/polish/polish_generate?order_sn="+ order_sn) ;
+        source.onmessage = function(event) {
+            // 处理服务器发送的消息
+            if(event.data == '[error]') {
+                source.close()
+            }else if (event.data == '[complete]'){
+
+            }else if (event.data == '[DONE]'){
+                source.close()
+            }else if (event.data == '[fail]'){
+                getResult_sci(order_sn)
+            }else {
+
+            }
+        };
+        source.onerror = function(event){
+
+        };
+    } else {
+        console.log("错误");
+    }
+}

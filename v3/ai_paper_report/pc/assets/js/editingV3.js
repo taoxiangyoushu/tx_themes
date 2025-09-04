@@ -846,6 +846,7 @@ $('.Insert_window .Insert_sure').click(function(e) {
                         previewResults(outline)
                         $('.unlock').click(function() {
                             if(!$('.inputCheck2').prop("checked")) return cocoMessage.error('请确认知晓并同意 "生成的论文范文仅用于参考,不作为毕业、发表使用" 条款!', 3000)
+                            $(".pay_window .pay_box iframe").css('height', '720px')
                             $('.pay_window').show()
                             $('.pay_box iframe').attr('src', './window_pay.html?order_sn=' + data.order_sn + '&contentType=' + goods_id + '&zxktbg=' + hasKtbg+'&wordNum='+NumberWords1+'&szsj_check='+($(".empiricalData input[type=checkbox]").is(':checked')? 1:0))
                         })

@@ -61,7 +61,7 @@ function changeType(this_ , this_val) {
             }
         }
     }
-    var permit_name = ['rws' , 'ktbg' ,'ktbgsenior' , 'wxzs' , 'kclw' , 'zjcaigc' , 'dybg', 'lwdbppt' , 'xzaigccheck']
+    var permit_name = ['rws' , 'ktbg' ,'ktbgsenior' , 'wxzs' , 'kclw' , 'zjcaigc' , 'dybg', 'lwdbppt' , 'xzaigccheck', 'scirs']
     var this_short_name = typeData[val].short_name
     if(permit_name.includes(this_short_name)) {
         $('.NumberIsShow').hide()
@@ -471,7 +471,9 @@ $('.generate').click(function() {
     if(!$('#type_s').val()){
         return;
     }
-    if(!$('.inputCheck').prop("checked")) return cocoMessage.error('请确认知晓并同意 "生成的论文范文仅用于参考,不作为毕业、发表使用" 条款!', 3000)
+    if(typeData[$('#type_s').val()].short_name != 'xzaigccheck' && typeData[$('#type_s').val()].short_name != 'zjcaigc' && typeData[$('#type_s').val()].short_name != 'scirs'){
+        if(!$('.inputCheck').prop("checked")) return cocoMessage.error('请确认知晓并同意 "生成的论文范文仅用于参考,不作为毕业、发表使用" 条款!', 3000)
+    }
     if(typeData[$('#type_s').val()].short_name == 'wxzs' && $(".version-wxzs2").attr('data-goodsid')) {
         if(!$(".version-item.active").attr('data-goodsid')){
             $(".version-wxzs .version-wxzs-err").show()
@@ -735,7 +737,7 @@ function professionalSubmitted() { // 开题报告专业版参数
         unifiedCreate(form_data , $("#type_s2").val() , previewData)
     }
 }
-function unifiedCreate(form_data, goods_id , outline) {
+function unifiedCreate(form_data, goods_id , outline, callback) {
     NumberWords1=$("#NumberWords").val()
     var hasKtbg = fid?(!!fid):ktbg_generate
     var closeMsg = cocoMessage.loading('正在提交,请稍后...');
@@ -753,15 +755,21 @@ function unifiedCreate(form_data, goods_id , outline) {
                 localStorage.setItem('reviewData', (outline? JSON.stringify(outline) : ''))
                 throttling = true
                 closeMsg();
-                location.href = './pay.html?order_sn=' + data.data.order_sn + '&contentType=' + form_data.get('goods_id') + '&zxktbg=' + hasKtbg+'&wordNum='+NumberWords1;
+                if(callback) {
+                    return callback(data.data , form_data.get('goods_id') , hasKtbg , NumberWords1)
+                }else {
+                    location.href = './pay.html?order_sn=' + data.data.order_sn + '&contentType=' + form_data.get('goods_id') + '&zxktbg=' + hasKtbg + '&wordNum=' + NumberWords1;
+                }
             } else {
                 throttling = true
                 closeMsg();
                 cocoMessage.error(data.codeMsg, 3000);
             }
+            throttling_sci = false
         },
         error: function(err) {
             throttling = true
+            throttling_sci = false
             closeMsg();
             cocoMessage.error("请求失败!请检查网络", 2000);
         }
@@ -1262,3 +1270,199 @@ function upload_lwdbppt() {
         }
     })
 }
+
+// SCI润色
+var throttling_sci = false
+$("#sci_original").on('focus', function (){
+    $(".sci_original_block").addClass('active')
+})
+
+$("#sci_original").on('blur', function (){
+    $(".sci_original_block").removeClass('active')
+})
+
+function countWords(str) {
+    // 使用正则表达式匹配所有单词，\b 表示单词边界
+    const words = str.match(/\b\w+\b/g);
+    return words ? words.length : 0;
+}
+
+$(".clear_sciO").on('click', function (){
+    $("#sci_original").val('')
+    $("#sci_original").trigger('input')
+    $("#sci_original").trigger('change')
+})
+
+$("#sci_original").on('input', function (){
+    if($(this).val()){
+        $(this).val($(this).val().replace(/[\u4e00-\u9fa5]/g, ''))
+        if($(this).val().replace(/[\u4e00-\u9fa5]/g, '').length > 0){
+            $(".clear_sciO").show()
+            $(".SCI_form .polish").addClass('active')
+        }else{
+            $(".clear_sciO").hide()
+            $(".SCI_form .polish").removeClass('active')
+        }
+    }else{
+        $(".clear_sciO").hide()
+    }
+    $(".sci_wordCount .sci_word").text(countWords($(this).val()))
+})
+
+// $("#sci_original").on('change', function (){
+//     if($(this).val()){
+//         $(".SCI_form .polish").addClass('active')
+//     }else{
+//         $(".SCI_form .polish").removeClass('active')
+//     }
+// })
+
+
+
+$("#polish").on('click',function (){
+    if(!countWords($("#sci_original").val())) {
+        cocoMessage.error('请输入内容', 3000);
+        return;
+    }
+    if (throttling_sci) {
+        return;
+    }
+    var closeMsg = cocoMessage.loading('正在提交,请稍后...');
+    var formdata = new FormData()
+    formdata.append('type', typeData[$("#type_s").val()].short_name)
+    formdata.append('content', $("#sci_original").val())
+    throttling_sci = true
+    $.ajax({
+        type: 'POST',
+        url: urls + '/api/project/ai_paper_report/pre_handle/file_upload',
+        processData: false,
+        contentType: false,
+        xhrFields: {
+            withCredentials: true
+        },
+        data: formdata,
+        success: function (res) {
+            closeMsg();
+            if(res.code == 200){
+                var formData = {
+                    goods_id: $("#type_s").val(),
+                    domain_record: window.location.origin,
+                    source: 1,
+                    customer_invitation: dct_code,
+                }
+                formData['data[file_path][label]'] = '文件地址'
+                formData['data[file_path][value]'] = res.data.path
+                unifiedCreate(getFormData(formData), $("#type_s").val(), '',function  callback(data, goods_id){
+                    throttling_sci = false
+                    $('.pay_window').show()
+                    $(".pay_window .pay_box iframe").css('height', '480px')
+                    $('.pay_box iframe').attr('src', './window_pay.html?order_sn=' + data.order_sn + '&contentType=' + goods_id + '&is_sci=scirs' )
+                })
+            }else{
+                if(res.codeMsg){
+                    cocoMessage.error(res.codeMsg, 3000);
+                }else{
+                    cocoMessage.error('论文提交失败，请重试', 3000);
+                }
+                throttling_sci = false
+            }
+        },
+        error: function (){
+            closeMsg();
+            cocoMessage.error('论文提交失败，请重试', 3000);
+            throttling_sci = false
+        }
+    })
+})
+
+var sci_data = ['']
+var data_index = 0
+var punctuationRegex = /[.,;!?。，；！？、]/;
+function initial_sci() {
+    sci_data = ['']
+    data_index = 0
+    $(".sci_result_block .sci_result_data").html('')
+    $(".sci_result_block .no_data").show()
+}
+function getResult_sci(order_sn) {
+    if(typeof(EventSource) !== "undefined") {
+        $("#polish_result").text('润色中...')
+        var source = new EventSource("https://outline.taoxiangyoushu.com/api/polish/polish_generate?order_sn="+ order_sn) ;
+        source.onmessage = function(event) {
+            // 处理服务器发送的消息
+            if(event.data == '[error]') {
+                source.close()
+                $("#polish_result").text('复制结果')
+                cocoMessage.error('你的请求过于频繁，请稍后再来试试吧~', 3000);
+            }else if (event.data == '[complete]'){
+                // 跳转查询订单
+                window.location.href = "./query.html?oid=" + order_sn;
+            }else if (event.data == '[DONE]'){
+                source.close()
+                $("#polish_result").text('复制结果')
+                $("#polish_result").addClass('active')
+            }else if (event.data == '[fail]'){
+                sci_data = ['']
+                data_index = 0
+                $(".sci_result_block .sci_result_data").html('')
+                $(".sci_result_block .no_data").show()
+                getResult_sci(order_sn)
+            }else {
+                if(event.data) {
+                    if(event.data!='[NN]') {
+                        if(punctuationRegex.test(event.data)){
+                            sci_data[data_index] += event.data
+                        }else{
+                            sci_data[data_index] += (' '+event.data)
+                        }
+                        exhibit_sci(sci_data)
+                    }else {
+                        data_index += 1
+                        sci_data[data_index] = ''
+                    }
+
+                }
+            }
+        };
+        source.onerror = function(event){
+            source.close()
+            console.error("SSE error:", event);
+            cocoMessage.error('程序异常, 请手动查询结果', 3000);
+        };
+    } else {
+        console.log("错误");
+    }
+}
+
+function exhibit_sci(data) {
+    $(".sci_result_block .no_data").hide()
+    var html = ''
+    for(var i=0;i<data.length;i++){
+        html += "<p>" + data[i] +"</p>"
+    }
+    $(".sci_result_block .sci_result_data").html(html)
+}
+
+$("#polish_result").on('click',function (){
+    if(!$(".sci_result_data>p").length){
+        return;
+    }
+    var text = ''
+    for(var i=0;i<$(".sci_result_data p").length;i++){
+        text += $($(".sci_result_data>p")[i]).text()
+    }
+    $("#sci_result_input").val(text)
+    $("#sci_result_input").select()
+    try {
+        var state = document.execCommand("copy");
+    } catch (err) {
+        var state = false;
+    }
+    if (state) {
+        cocoMessage.success(1000, "复制成功", function() {
+        });
+    } else {
+        cocoMessage.error(1000, "复制失败", function() {
+        });
+    }
+})
