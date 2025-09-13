@@ -63,6 +63,7 @@ dropDown()
 var education = 'bk'
 $('#education').change(function (){
     education = $(this).val()
+    change_defaultReferences()
 })
 
 // 学历2
@@ -105,6 +106,7 @@ $(".FruitBox").on('click','input',function(){
     $('#NumberWords').val($(this).val())
     // 清空报错提示
     $("#ContainerTo").data('bootstrapValidator').resetForm();
+    change_defaultReferences()
 });
 $('#NumberWords').keyup(function() {
     $('.labelTitle').removeClass('selected')
@@ -219,12 +221,14 @@ function changeType(this_ , this_val) {
         $('.genIT').show()
         $(".addParameters").show()
         $('.genCode').show()
+        $('.genaiimg').show()
         $('.Sample_Chart').show()
         $('.Sample_Chart1').hide()
         var questionnaire =  $('.questionnaire').find('span').text()
         var genCode =  $('.genCode').find('span').text()
         if(this_short_name =='kclw'){
             $('.genCode').hide()
+            $('.genaiimg').hide()
             $('.Sample_Chart1').show()
             $('.Sample_Chart').hide()
             $('.questionnaire').hide()
@@ -544,6 +548,8 @@ $('.generate').click(function() {
                 formData['data[gen_code][value]'] =  $(".gen_code").is(':checked')?1:0
                 formData['data[questionnaire][label]'] = '生成调查问卷'
                 formData['data[questionnaire][value]'] =  $(".gen_questionnaire").is(':checked')?1:0
+                formData['data[gen_ai_img][label]'] = '生成图片'
+                formData['data[gen_ai_img][value]'] =  $(".gen_ai_img").is(':checked')?1:0
             }
        }
        if(typeData[$('#type_s').val()].short_name == 'bylw' && !$(".proposal-check").is(':checked')) {
@@ -1222,4 +1228,33 @@ $(".upk_close").on('click', function (){
 
 $(".uploadKTBG_pop .upk_btn").on('click', function (){
     $("#uploadFile").click()
+})
+
+$('input[type="radio"][name="reportType"]').change(function() {
+    change_defaultReferences()
+});
+
+// 默认参考文献数量显示
+var  defaultReferences_num = 20
+function change_defaultReferences() {
+    if($('#NumberWords').val()<=6000) {
+        defaultReferences_num = 20
+    }
+    if($('#NumberWords').val()>6000 && $('#NumberWords').val()<=20000) {
+        defaultReferences_num = 25
+    }
+    if($('#NumberWords').val()>20000) {
+        defaultReferences_num = Math.ceil($('#NumberWords').val()/10000*10) + 5
+    }
+    if($('#education').val() == 'ss'){
+        defaultReferences_num += 5
+    }
+    $(".defaultReferences_num").text(defaultReferences_num + '篇')
+    if(defaultReferences_num > 200){
+        $(".defaultReferences_num").text('全部为')
+    }
+}
+
+$('#NumberWords').on('input', function() {
+    change_defaultReferences()
 })

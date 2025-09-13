@@ -316,6 +316,7 @@ function editionType(edition) {
 		$('#generate').text('立即生成')
 		$('.Universal').show()
 		$('.aigcTips').hide()
+        $(".sciTips").hide()
 		$('#App').addClass('bylw')
 	}else {
 		if(edition == 'xzaigccheck') {
@@ -340,7 +341,7 @@ function editionType(edition) {
             $(".sciTips").hide()
 		}
         if(edition == 'scirs') {
-            $(".ViewsSample").hide()
+            // $(".ViewsSample").hide()
             $('#generate').addClass('scirs_btn')
         }else{
             $(".ViewsSample").show()

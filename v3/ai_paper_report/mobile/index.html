@@ -41,18 +41,18 @@
     <meta name="description" content="AI大师写作是一个提供论文辅助的全面指导,包括图表、表格、公式等方面的建议。" />
     <meta name="keywords" content="AI大师写作，论文范文辅助，毕业论文" />
     <link rel="shortcut icon" href="../mobile/assets/icon.ico" type="image/vnd.microsoft.icon" />
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.0067">
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css?v=m24.0067">
-    <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css?v=m24.0067">
-    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0067">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0067">
-    <link rel="stylesheet" href="../mobile/assets/css/commonv2.css?v=m24.0067">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0067">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0067">
-    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0067">
-    <link rel="stylesheet" href="../mobile/assets/css/leftCss.css?v=m24.0067">
-    <link rel="stylesheet" href="../mobile/assets/css/index_v2.css?v=m24.0067">
-    <link rel="stylesheet" href="https://api.taoxiangyoushu.com/html/v1/utils/css/smartTopic.css?v=m24.0067">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css?v=m24.0071">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css?v=m24.0071">
+    <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css?v=m24.0071">
+    <link rel="stylesheet" href="../mobile/assets/css/base.css?v=m24.0071">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0071">
+    <link rel="stylesheet" href="../mobile/assets/css/commonv2.css?v=m24.0071">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0071">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0071">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0071">
+    <link rel="stylesheet" href="../mobile/assets/css/leftCss.css?v=m24.0071">
+    <link rel="stylesheet" href="../mobile/assets/css/index_v2.css?v=m24.0071">
+    <link rel="stylesheet" href="https://api.taoxiangyoushu.com/html/v1/utils/css/smartTopic.css?v=m24.0071">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'dsxz'
@@ -111,8 +111,8 @@
             <span class="sampleText">图表生成样例:</span>
             <img src="../mobile/assets/img/delete.png" class="sampleClose" alt="">
             <div class="sampleBox">
-                <img src="../mobile/assets/img/sample.png?v=1.3" alt="" class="Sample_Chart">
-                <img src="../mobile/assets/img/sample1.png?v=1.3" alt="" class="Sample_Chart1">
+                <img src="../mobile/assets/img/sample.png?v=1.4" alt="" class="Sample_Chart">
+                <img src="../mobile/assets/img/sample1.png?v=1.4" alt="" class="Sample_Chart1">
             </div>
         </div>
         <div class="zsbgPop">
@@ -126,7 +126,7 @@
             <span class="sampleText">综述论文样例:</span>
             <img src="../mobile/assets/img/delete.png" class="sampleClose" alt="">
             <div class="sampleBox">
-                <img src="../mobile/assets/img/zslw.png?v=1.3" alt="">
+                <img src="../mobile/assets/img/zslw.png?v=1.4" alt="">
             </div>
         </div>
         <div class="logo">
@@ -279,11 +279,15 @@
                         </div>
                         <span class="genImg">
                             <input class="gen_img genImg_input" type="checkbox" autocomplete="off">
-                            <span>图片</span>
+                            <span>图表</span>
                         </span>
                         <span class="genTab">
                             <input class="gen_tab genTab_input" type="checkbox" autocomplete="off">
                             <span>表格</span>
+                        </span>
+                        <span class="genaiimg">
+                            <input class="gen_ai_img genaiimg_input" type="checkbox" autocomplete="off">
+                            <span>插图</span>
                         </span>
                         <span class="genFormula">
                             <input class="gen_formula genFormula_input" type="checkbox" autocomplete="off">
@@ -331,7 +335,7 @@
                         <span class="wenhaoBox">
                             <img class="wenhao-t" src="../mobile/assets/img/ts_icon_wh.svg" alt="">
                             <div class="wenhaoTips">
-                                默认全部为中文文献<br>
+                                默认<span class="defaultReferences_num">20篇</span>中文文献<br>
                                 如填写2，则替换其中2篇为英文文献
                             </div>
                         </span>
@@ -361,7 +365,7 @@
                     <label class="label_s">选择版本</label>
                     <div class="version-wxzs-box">
                         <div class="version-item version-wxzs1">
-                            <img src="../mobile/assets/img/v-checked.svg?v=1.3" class="v-checked" alt="">
+                            <img src="../mobile/assets/img/v-checked.svg?v=1.4" class="v-checked" alt="">
                             <div class="v-top">
                                 <p class="v-title">综述报告</p>
                                 <div class="sampleBox">
@@ -376,7 +380,7 @@
                             </div>
                         </div>
                         <div class="version-item version-wxzs2 noMarginRight">
-                            <img src="../mobile/assets/img/v-checked.svg?v=1.3" class="v-checked" alt="">
+                            <img src="../mobile/assets/img/v-checked.svg?v=1.4" class="v-checked" alt="">
                             <div class="v-top">
                                 <p class="v-title">综述论文</p>
                                 <div class="sampleBox">
@@ -476,7 +480,6 @@
                         <div class="sci_wordCount"><span class="sci_word">0</span>/2000</div>
                     </div>
                 </div>
-
                 <div class="form-group form-group_s short card checkbox agreement">
                     <input class="inputCheck" type="checkbox" checked="checked"> 我已阅读并同意: 本站提供的是文献下载服务，下载的内容仅用于参考，不作为毕业、发表使用
                 </div>
@@ -843,18 +846,18 @@
 
 
 
-<script src="../mobile/assets/js/jquery.min.js?v=m24.0067"></script>
-<script src="../mobile/assets/js/bootstrap.min.js?v=m24.0067"></script>
-<script src="../mobile/assets/js/clipboard.min.js?v=m24.0067"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0067"></script>
-<script src="../mobile/assets/js/bootstrap-select.js?v=m24.0067"></script>
-<script src="../mobile/assets/js/bootstrapValidator.min.js?v=m24.0067"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.0067"></script>
-<script src="../mobile/assets/js/message.js?v=m24.0067"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.0067"></script>
-<script src="../mobile/assets/js/index.js?v=m24.0067"></script>
+<script src="../mobile/assets/js/jquery.min.js?v=m24.0071"></script>
+<script src="../mobile/assets/js/bootstrap.min.js?v=m24.0071"></script>
+<script src="../mobile/assets/js/clipboard.min.js?v=m24.0071"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0071"></script>
+<script src="../mobile/assets/js/bootstrap-select.js?v=m24.0071"></script>
+<script src="../mobile/assets/js/bootstrapValidator.min.js?v=m24.0071"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0071"></script>
+<script src="../mobile/assets/js/message.js?v=m24.0071"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0071"></script>
+<script src="../mobile/assets/js/index.js?v=m24.0071"></script>
 <!-- 推荐标题 -->
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/smartTopic.js?v=m24.0067"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/smartTopic.js?v=m24.0071"></script>
 
 <script>
 function dropDownType(e, project) {
@@ -947,7 +950,7 @@ function insertedImg(e) {
             var text = ''
             var short_name = e[i].short_name
             if(!$('.describedImg .'+short_name+'Box').length) {
-                text+='<img class="img_js '+short_name+'Box" src="../mobile/assets/img/'+short_name+'_js.png?v=1.3" alt="">'
+                text+='<img class="img_js '+short_name+'Box" src="../mobile/assets/img/'+short_name+'_js.png?v=1.4" alt="">'
                 $('.describedImg').append(text).removeClass('loadEffect')
             }
         }
@@ -956,6 +959,7 @@ function insertedImg(e) {
 
 $('.wenhaoBox').click(function() {
     $('.wenhaoTips').show()
+    change_defaultReferences()
 })
 $(document).mouseup(function(e) {
     if (!$(e.target).closest('.wenhaoTips').length) {
@@ -985,6 +989,10 @@ $(".genTab span").on('click',function (){
 
 $(".genFormula span").on('click',function (){
     $('.genFormula_input').click()
+})
+
+$(".genaiimg span").on('click',function (){
+    $('.genaiimg_input').click()
 })
 $(".genCode span").on('click',function (){
     $('.genCode_input').click()
@@ -1030,7 +1038,8 @@ $('.ViewsSample').click(function() {
         kclw: 'kclw',
         dybg: 'dybg',
         xzaigccheck: 'aigccc',
-        zjcaigc: 'jaigcl'
+        zjcaigc: 'jaigcl',
+        scirs:'scirs'
     }
     window.open('/demo.html?type='+keyConversion[type])
 })

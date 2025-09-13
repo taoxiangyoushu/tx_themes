@@ -559,4 +559,19 @@ body {
 .xzaigccheckbox #Content_sliding {
   padding-top: 18px;
 }
-/*# sourceMappingURL=dissertation.css.map */
+.scirsbox .Sample_Graduation_Thesis .All_contentsample {
+  margin: 80px auto 0px;
+  float: none;
+}
+.scirsbox .Example_leftnavigation {
+  display: none;
+}
+.scirsbox .spacing_box {
+  margin-top: 0px !important;
+}
+.scirsbox .Image_Introduction {
+  box-shadow: none;
+}
+.scirsbox .Details_papercontent {
+  margin-top: 20px;
+}

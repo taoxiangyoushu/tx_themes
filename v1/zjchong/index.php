@@ -3,13 +3,6 @@
 use MobileDetect\Mobile_Detect;
 include "./Mobile_Detect.php";
 
-3800+1100+3600  = 8.5    4000+3100+1800 = 8.9    ==  75.65
-
-7.2 *  2000+3600+1100+3800+1200  =  11.7  == 84.24
-
-1800+3600+1600  =  7 * 3.4  == 23.8
-
-
 $path = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
 $route = [
     '/'=>[

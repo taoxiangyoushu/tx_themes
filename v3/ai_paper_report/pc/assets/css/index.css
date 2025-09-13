@@ -1575,6 +1575,11 @@ label {
   text-align: left;
   position: relative;
 }
+.SCI_form .sci_left .sci_tips img {
+  margin-right: 8px ;
+  position: relative;
+  top: -1px;
+}
 .SCI_form .sci_left .sci_tips .clear_sciO {
   font-weight: normal;
   color: #7579db;
@@ -1663,6 +1668,9 @@ label {
   font-weight: bold;
   margin-bottom: 10px;
   text-align: left;
+}
+.SCI_form .sci_right .sci_tips img {
+  margin-right: 8px;
 }
 .SCI_form .sci_right .sci_result_block {
   width: 100%;
@@ -3221,4 +3229,3 @@ p.word-prompt .text-num {
 .abScrollBar-box .bar {
   background: #c5cad56e;
 }
-/*# sourceMappingURL=index.css.map */

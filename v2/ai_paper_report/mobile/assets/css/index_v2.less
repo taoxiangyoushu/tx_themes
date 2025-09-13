@@ -295,7 +295,7 @@ input[type=radio] {
     .andInterval {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
     .kclw_box.andInterval {
         justify-content: flex-start;
@@ -368,6 +368,9 @@ input[type=radio] {
                 height: 0;
                 left: 2rem;
                 bottom: -.4rem;
+            }
+            .defaultReferences_num {
+                color: #fff;
             }
         }
     }
@@ -480,8 +483,8 @@ input[type="checkbox"] {
     height: 1.2rem;
     border: 1px solid #D1D5DB;
 }
-.genImg , .genTab , .genFormula , .genCode, .questionnaire {
-    margin-right: 1.6rem;
+.genImg , .genTab , .genFormula , .genCode, .questionnaire, .genaiimg {
+    margin-right: 2.3rem;
     margin-bottom: 1.2rem;
     line-height: normal;
     input {
@@ -508,7 +511,7 @@ input[type="checkbox"] {
     &.generate {
         width: calc(100% - 13rem);
         &.scirs_btn {
-            width: calc(100% - 3rem);
+            // width: calc(100% - 3rem);
         }
     }
 }

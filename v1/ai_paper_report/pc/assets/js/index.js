@@ -93,10 +93,12 @@ function changeType(this_ , this_val) {
     }else{
         $('.gen_params').show()
         $('.genCode').show()
+        $('.gen_ai_img').show()
         $('.Sample_Chart').show()
         $('.Sample_Chart1').hide()
         if(this_short_name =='kclw'){
             $('.genCode').hide()
+            $('.gen_ai_img').hide()
             $('.questionnaire').hide()
             $('.Sample_Chart1').show()
             $('.Sample_Chart').hide()
@@ -309,6 +311,10 @@ $(".genCode").on('click',function (){
     $(this).find('input').click()
 })
 
+$(".gen_ai_img").on('click',function (){
+    $(this).find('input').click()
+})
+
 $(".questionnaire").on('click',function (){
     $(this).find('input').click()
 })
@@ -325,6 +331,7 @@ $(".FruitBox").on('click','input',function(){
     NumberChange($(this).val())
     // 清空报错提示
     $("#ContainerTo").data('bootstrapValidator').resetForm();
+    change_defaultReferences()
 });
 $('#NumberWords').keyup(function() {
     $('.labelTitle').removeClass('selected')
@@ -547,6 +554,9 @@ $('.generate').click(function() {
                 formData['data[questionnaire][value]'] =  $(".gen_questionnaire").is(':checked')?1:0
                 formData['data[gen_code][label]'] = '生成代码'
                 formData['data[gen_code][value]'] =  $(".gen_code").is(':checked')?1:0
+                formData['data[gen_ai_img][label]'] = '生成图片'
+                formData['data[gen_ai_img][value]'] =  $(".gen_ai_img").is(':checked')?1:0
+                
             }
             if($(".education_c").is(':visible') && typeData[$('#type_s').val()].short_name == 'bylw'){
                 formData['data[education][label]'] = '学历'
@@ -1185,9 +1195,35 @@ setTimeout(function() {
     showType($('.SubmissionMode:checked').val())
 } , 500)
 
+$('input[type="radio"][name="reportType"]').change(function() {
+    change_defaultReferences()
+});
+
+// 默认参考文献数量显示
+var  defaultReferences_num = 20
+function change_defaultReferences() {
+    if($('#NumberWords').val()<=6000) {
+        defaultReferences_num = 20
+    }
+    if($('#NumberWords').val()>6000 && $('#NumberWords').val()<=20000) {
+        defaultReferences_num = 25
+    }
+    if($('#NumberWords').val()>20000) {
+        defaultReferences_num = Math.ceil($('#NumberWords').val()/10000*10) + 5
+    }
+    if($("input[name='reportType']:checked").val() == 'ss'){
+        defaultReferences_num += 5
+    }
+    $(".defaultReferences_num").text(defaultReferences_num + '篇')
+    if(defaultReferences_num > 200) {
+        $(".defaultReferences_num").text('全部为')
+    }
+}
+
 // 英文参考逻辑
 $("input[name='LiteratureType']").change(function() {
     if($(this).is(':checked')){
+        change_defaultReferences()
         $('.inputQuantity').css('display' , 'inline-block')
     }else{
         $('.inputQuantity').hide()
@@ -1202,6 +1238,7 @@ $('#NumberEnglishReference').on('input', function() {
 
 $('#NumberWords').on('input', function() {
     NumberChange($(this).val())
+    change_defaultReferences()
 })
 function NumberChange(this_) {
     LiteratureFU()

@@ -560,7 +560,7 @@ li a {
   color: #a94442;
   left: 0px;
   margin-left: 0;
-  bottom: -10px;
+  bottom: -15px;
   font-size: 12px;
   display: none;
 }
@@ -888,6 +888,7 @@ label {
 .gen_params span.genTab,
 .gen_params span.genFormula,
 .gen_params span.genCode,
+.gen_params span.gen_ai_img,
 .gen_params span.questionnaire {
   cursor: pointer;
   font-size: 14px;
@@ -899,6 +900,7 @@ label {
 .gen_params span.genTab input[type=checkbox],
 .gen_params span.genFormula input[type=checkbox],
 .gen_params span.genCode input[type=checkbox],
+.gen_params span.gen_ai_img input[type=checkbox],
 .gen_params span.questionnaire input[type=checkbox] {
   display: inline-block;
   vertical-align: text-top;
@@ -1906,3 +1908,4 @@ p.word-prompt .text-num {
 .indexApp .proposal .fileBlock img.deleteFile {
   margin-top: 0;
 }
+/*# sourceMappingURL=index.css.map */

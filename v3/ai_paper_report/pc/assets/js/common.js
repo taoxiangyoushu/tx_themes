@@ -426,6 +426,7 @@ function editionType(edition , is) {
 		$('.Universal').show()
 		$('.aigcTips').hide() 
 		$('.generate').hide()
+        $(".sciTips").hide()
 		$('.next_step').text('下一步')
 		if(edition == "ktbgsenior"){
 			$('.Step_diagram').hide()

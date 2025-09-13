@@ -425,6 +425,7 @@ function editionType(edition , is) {
 		$('#generate').text('立即生成')
 		$('.Universal').show()
 		$('.aigcTips').hide()
+        $(".sciTips").hide()
 		if(is) changeType($('#type_s'))
 	}else if(edition == "bylwsenior") { // 毕业论文专业版
 		$('#App').addClass('ProfessionalEdition')

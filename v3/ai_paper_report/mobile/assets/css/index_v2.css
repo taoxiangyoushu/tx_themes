@@ -286,7 +286,7 @@ input[type=radio] {
 .genIT .andInterval {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .genIT .kclw_box.andInterval {
   justify-content: flex-start;
@@ -361,6 +361,9 @@ input[type=radio] {
   height: 0;
   left: 2rem;
   bottom: -0.4rem;
+}
+.EnglishReferenceShow .wenhaoBox .wenhaoTips .defaultReferences_num {
+  color: #fff;
 }
 .EnglishReferenceShow .EnglishReference-block {
   justify-content: flex-start;
@@ -473,8 +476,9 @@ input[type="checkbox"] {
 .genTab,
 .genFormula,
 .genCode,
-.questionnaire {
-  margin-right: 1.6rem;
+.questionnaire,
+.genaiimg {
+  margin-right: 2.3rem;
   margin-bottom: 1.2rem;
   line-height: normal;
 }
@@ -482,7 +486,8 @@ input[type="checkbox"] {
 .genTab input,
 .genFormula input,
 .genCode input,
-.questionnaire input {
+.questionnaire input,
+.genaiimg input {
   vertical-align: text-top;
 }
 .contenteditable_s {
@@ -505,9 +510,6 @@ input[type="checkbox"] {
 }
 .form .groupSubmit button.generate {
   width: calc(100% - 13rem);
-}
-.form .groupSubmit button.generate.scirs_btn {
-  width: calc(100% - 3rem);
 }
 .promotion {
   text-align: center;
@@ -692,4 +694,3 @@ input[type=checkbox] {
 .uploadKTBG_pop .upk_btn.upking {
   background: #69A8FF;
 }
-/*# sourceMappingURL=index_v2.css.map */
