@@ -92,6 +92,7 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this) {
         gen_code: $(".gen_code").is(':checked')?1:0,
         questionnaire: $(".gen_questionnaire").is(':checked')?1:0,
         goods_id: $('#type_s2').val(),
+        
     }
     if( typeData[$('#type_s2').val()].short_name == 'qklwsenior' ) {
         formData.is_paper_type = $(".periodicalType.select").attr('data-type')
@@ -358,7 +359,8 @@ $('.editGenerate').click(function(e) {
                 rid,
                 outline,
                 must: true,
-                version: 'v3'
+                version: 'v3',
+                theme:'v3'
             })
             $.ajax({
                 type: 'post',
@@ -377,6 +379,7 @@ $('.editGenerate').click(function(e) {
                             goods_id: $("#type_s2").val(),
                             domain_record: window.location.origin,
                             customer_invitation: dct_code,
+                            theme:'v3'
                         }
                         formData['data[rid][label]'] = '记录ID'
                         formData['data[rid][value]'] = rid

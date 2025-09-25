@@ -185,7 +185,7 @@ var keyConversion = {
 	kclw: 'kclw',
 	dybg: 'dybg',
 	aigccc: 'xzaigccheck',
-	jaigcl: 'zjcaigc'
+	jaigcl: 'zjcaigc',
 }
 
 window.onload = function (){
@@ -308,6 +308,9 @@ function infoData(result) {
 		})
 	}else{
 		var sw = keyConversion[getQueryVariable('short_name') || getQueryVariable('sw')]
+        if(sw == 'bylw') sw = 'bylwsenior'
+        if(sw == 'ktbg') sw = 'ktbgsenior'
+        if(sw == 'qklw') sw = 'qklwsenior'
 		if(sw) defaultType(sw) // 默认选中版本
 	}
 

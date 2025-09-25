@@ -528,6 +528,7 @@ $('.generate').click(function() {
             domain_record: window.location.origin,
             source: 1,
             customer_invitation: dct_code,
+            theme:'v2'
         }
         if(typeData[$('#type_s').val()].short_name == 'wxzs' && $(".version-wxzs2").attr('data-goodsid')) {
             if(!$(".version-item.active").attr('data-goodsid')){
@@ -707,6 +708,7 @@ function professionalSubmitted() { // 开题报告专业版参数
             domain_record: window.location.origin,
             source: 1,
             customer_invitation: dct_code,
+            theme:'v2'
         }
         formData['data[title][label]'] = '论文标题'
         formData['data[title][value]'] = $('#contenteditable').val()

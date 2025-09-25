@@ -536,6 +536,7 @@ $('.generate').click(function() {
             domain_record: window.location.origin,
             source: 1,
             customer_invitation: dct_code,
+            theme:'v3'
         }
         if(typeData[$('#type_s').val()].short_name == 'wxzs' && $(".version-wxzs2").attr('data-goodsid')) {
             if(!$(".version-item.active").attr('data-goodsid')){
@@ -713,6 +714,7 @@ function professionalSubmitted() { // 开题报告专业版参数
             domain_record: window.location.origin,
             source: 1,
             customer_invitation: dct_code,
+            theme:'v3'
         }
         formData['data[title][label]'] = '论文标题'
         formData['data[title][value]'] = $('#contenteditable').val()
@@ -1885,7 +1887,7 @@ $(document).on('click','.analyze_literature .literature_item .remove_analyzeLite
 
 // 获取推荐文献
 function getLiterature(contenteditable, NumberWords, education) {
-    if(6000 <= NumberWords && NumberWords < 20000){
+    if(6000 <= NumberWords && NumberWords <= 20000){
         literature_maxNum = 25
     }
     if(NumberWords > 20000){

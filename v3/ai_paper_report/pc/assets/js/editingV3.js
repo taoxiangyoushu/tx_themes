@@ -788,7 +788,8 @@ $('.Insert_window .Insert_sure').click(function(e) {
             outline,
             must: true,
             szGoodsId: $(".empiricalData input[type=checkbox]").is(':checked') ? $('.empiricalData').attr('data-goodsid') : '',
-            version: 'v3'
+            version: 'v3',
+            theme:'v3',
         })
         $.ajax({
             type: 'post',
@@ -808,6 +809,7 @@ $('.Insert_window .Insert_sure').click(function(e) {
                         goods_id: $("#type_s").val(),
                         domain_record: window.location.origin,
                         customer_invitation: dct_code,
+                        theme:'v3'
                     }
                     formData['data[rid][label]'] = '记录ID'
                     formData['data[rid][value]'] = rid
@@ -1001,6 +1003,7 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this , gen_qu
     var formData = {
         title: contenteditable,
         word_num: NumberWords,
+        theme:'v3',
         gen_img: $(".gen_img").is(':checked')?1:0,
         gen_tab:  $(".gen_tab").is(':checked')?1:0,
         gen_formula: $(".gen_formula").is(':checked')?1:0,

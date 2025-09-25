@@ -509,6 +509,7 @@ $('.generate').click(function() {
             domain_record: window.location.origin, // 本地测试需要替换写死, 上线前切记恢复自动获取
             source: /MicroMessenger/.test(window.navigator.userAgent)? 2:7,
             customer_invitation: dct_code,
+            theme:'v2'
         }
         if(typeData[$('#type_s').val()].short_name == 'wxzs' && wxzsID){
             formData.goods_id = wxzsID

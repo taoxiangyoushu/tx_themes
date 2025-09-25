@@ -358,7 +358,9 @@ $('.editGenerate').click(function(e) {
                 rid,
                 outline,
                 must: true,
-                version: 'v2'
+                version: 'v2',
+                theme:'v2'
+
             })
             $.ajax({
                 type: 'post',
@@ -377,6 +379,7 @@ $('.editGenerate').click(function(e) {
                             goods_id: $("#type_s2").val(),
                             domain_record: window.location.origin,
                             customer_invitation: dct_code,
+                            theme:'v2'
                         }
                         formData['data[rid][label]'] = '记录ID'
                         formData['data[rid][value]'] = rid
