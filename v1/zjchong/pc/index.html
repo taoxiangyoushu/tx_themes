@@ -9,9 +9,9 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0067">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0067">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0067">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0068">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0068">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0068">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -249,7 +249,23 @@
                                         </div>
                                     </div>
                                     <div class="zip_description Other_Styles" data-type="otherAIGC">通过上传对应的AIGC检测报告，降AI率效果更好</div>
-                                    <div class="zip_description Other_Styles" data-type="zqAIGC">请上传Z雀AIGC检测的文档文件内容</div>
+                                    <div class="zip_description Other_Styles" data-type="zqAIGC">
+                                        <span class="exampleFile_name">请上传Z雀AIGC检测文档文件内容</span>，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/doc_icon.png" alt="">
+                                            xxx.doc
+                                        </span>
+                                        <div class="file_exampleBlock zqAIGC">
+                                            <div>
+                                                <p>1. 在Z雀AIGC检测完AI浓度后，【复制】检测完的文本，【粘贴】到WPS<span class="blue">保存docx/doc/txt格式</span></p>
+                                                <img src="" alt="">
+                                            </div>
+                                            <div>
+                                                <p>2. 上传文档降重</p>
+                                                <img class="aigc_zq_img2" src="" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="zip_description" data-type="masterAIGC">
                                         需包含文件<span class="exampleFile_name">“xxx---AIGC检测报告.html”</span>，示例：
                                         <span class="example_file">
@@ -751,7 +767,7 @@
 <script src="../pc/assets/js/jszip.min.js"></script>
 <script src="../pc/assets/js/common.js?v=p24.005"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0067"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0068"></script>
 <script>
     var uploadType = 'content';
     var domain = '303';
@@ -1517,6 +1533,8 @@
         'weipuAIGC': '../pc/assets/img/aigc_wp_img.png?v=1',
         'gzdAIGC': '../pc/assets/img/aigc_gzd_img.png',
         'dyAIGC': '../pc/assets/img/aigc_dy_img.png',
+        'zqAIGC':'../pc/assets/img/aigc_zq_img1.png',
+        'zqAIGC1':'../pc/assets/img/aigc_zq_img2.png',
     }
 
     $(".report_type .report_type_item").click(function (){   //  报告类型选择
@@ -1558,6 +1576,9 @@
                 $($(".zip_description")[i]).show()
                 if($($(".zip_description")[i]).find('.file_exampleBlock img').attr('src') == '') {
                     $($(".zip_description")[i]).find('.file_exampleBlock img').attr('src', reportSampleData[reportType_s])
+                    if(reportType_s == 'zqAIGC'){
+                        $($(".zip_description")[i]).find('.file_exampleBlock .aigc_zq_img2').attr('src', reportSampleData['zqAIGC1'])
+                    }
                 }
                 if(reportType_s == 'all' || reportType_s == 'otherAIGC'){
                     $(".platform_utl").show()

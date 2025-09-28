@@ -45,9 +45,9 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0035">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0035">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0035">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0036">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0036">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0036">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'zjchong'
@@ -640,6 +640,14 @@
                 <img src="" alt="">
             </div>
         </div>
+        <div class="example_item" data-type="zqAIGC" >
+            <P class="subtitle">【Z雀-检测文档】上传示例</P>
+            <p class="reportTip">支持上传docx/doc/txt，以便系统解析降AIGC内容</p>
+            <div class="exam-img">
+                <img src="" alt="">
+            </div>
+        </div>
+        
     </div>
 
 </div>
@@ -703,8 +711,8 @@
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/jszip.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0035"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.0035"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0036"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0036"></script>
 <script>
     var Weight_reduction=''
     Weight_reduction=getQueryVariable('sw')
@@ -826,6 +834,7 @@
         'weipuAIGC': '../mobile/assets/img/ex-wpAIGC.png?v=1',
         'gzdAIGC': '../mobile/assets/img/ex-gzdAIGC.png',
         'dyAIGC': '../mobile/assets/img/ex-dyAIGC.png',
+        'zqAIGC':'../mobile/assets/img/ex-zqaigc.png'
     }
 
     // 版本选择
@@ -1774,7 +1783,7 @@
         }
         $(".zip_block .upload_tips .p2 .size_value").text('30MB')
         if(reportType_s == 'zqAIGC') {
-            $(".zip_block .upload_tips .p1 span").hide()
+            // $(".zip_block .upload_tips .p1 span").hide()
             $(".zip_block .upload_tips .p2 .size_value").text('15MB')
         }
     })

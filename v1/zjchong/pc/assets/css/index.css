@@ -445,7 +445,6 @@
 }
 .form-upload .zipFile_block .zip_description .file_exampleBlock {
   width: 676px;
-  height: 332px;
   background: #fff;
   z-index: 100;
   position: absolute;
@@ -455,6 +454,8 @@
   border-radius: 4px;
   border: 1px solid #E4E7ED;
   padding: 10px;
+  text-align: left;
+  color: #5B5B5B;
   display: none;
 }
 .form-upload .zipFile_block .zip_description .file_exampleBlock:before {
@@ -563,6 +564,9 @@
 }
 .form-upload .zipFile_block .zip_description .file_exampleBlock.paperpassaigc:after {
   left: 284px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock .blue {
+  color: #2070D6;
 }
 .form-upload .zipFile_block .Other_Styles {
   color: #1D4B88 !important;
@@ -881,7 +885,7 @@
 .noMarginRight {
   margin-right: 0 !important;
 }
-@media screen and (max-width: 1574px) {
+@media screen and(max-width: 1574px) {
   .form-upload .upload_block .upload_file {
     width: 44%;
   }
@@ -889,7 +893,7 @@
     width: 44%;
   }
 }
-@media screen and (max-width: 1518px) {
+@media screen and(max-width: 1518px) {
   .form-upload .upload_block .upload_tips .upload_notes .p2 {
     font-size: 13px;
   }
