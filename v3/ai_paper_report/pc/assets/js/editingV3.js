@@ -65,6 +65,24 @@ $('.prevStep').on('click', function() {
     init3()
 })
 
+// 开题报告 第三步返回第二步
+$('.stepBtn_KTBG .prevStep_KTBG').on('click', function() {
+    $('.rightCont').attr('id', 'OperationSteps2');
+    init3_KTBG()
+})
+
+// 开题报告 选大纲下一步按钮
+$('.stepBtn_KTBG .nextStep_KTBG').on('click', function() {
+    if(previewData.length<least) {
+        $('.previewTips').show()
+    }else {
+        ktbgProfessional= []
+        $('.previewContent div').filter('.aidashi').each(function() {
+            ktbgProfessional.push($(this).text().replace(/\s+$/, ''))
+        });
+        UpdateKTBGV3()
+    }
+})
 
 // 回车换行
 $(document).on('keydown', '.editingInput', function(e) {
@@ -297,6 +315,14 @@ function init3 () {
     $('.zdy_editMain #ImportantHint').css('display' , 'block')
     $('.outlineTab>div').removeClass('selected')
     $('.outlineTab .zdy_tab').click()
+}
+
+function init3_KTBG() {
+    $('.previewContent').html('')
+    // 清空预览大纲
+    previewData = []
+    previewOutline(previewData)
+    $(".OutlineEditingMain .original .outlineContent .hidden").removeClass('hidden')
 }
 
 function dataIsCorrectV3(outline) {
@@ -895,6 +921,26 @@ function previewResults(outline) {
     }
 }
 
+function previewResultsKTBG() {
+    var textArr = []
+    var element = ''
+    $(".previewResults .template_ktbg .content_ktbg").html('')
+    for (var i=0; i<previewData.length; i++) {
+        if(previewData[i].dataLvl == 1 && previewData[i].level == 1) {
+            textArr.push(previewData[i])
+        }
+        if(previewData[i].dataLvl == 2 && previewData[i].level == 1) {
+            textArr.push(previewData[i])
+        }
+    }
+    for (var i=0; i<textArr.length; i++) {
+        element += '<p class="outline_1">'+ textArr[i].dataLvl +'.'+ textArr[i].outline +'</p>' +
+            '           <div class="div1">本段文字为占位文字,非生成内容,本研究针对具体研究问题/领域中存在的某些关键挑战与局限性，展开系统探究。通过综合运用方法论A、方法论B及技术C等核心方法，构建了一个新型的理论框架/模型/分析体系。研究过程着重关注了核心变量X、影响因素Y与现象Z之间的内在关联与作用机制。基于对数据类型数据的采集与分析（样本量 N=数值），结合严谨的统计方法/仿真验证，这些发现不仅深化了对研究主题的理解，也为相关应用领域提供了潜在的优化路径与理论支撑。非生成内容......</div>' +
+            '           <div class="div1">本段文字为占位文字,非生成内容,本研究针对具体研究问题/领域中存在的某些关键挑战与局限性，展开系统探究。基于对数据类型数据的采集与分析（样本量 N=数值），结合严谨的统计方法/仿真验证，结果表明：所提出的方法/框架在关键性能指标1（提升约模糊数值%）和关键性能指标2（降低模糊数值）方面展现出显著效果，有效克服了现有对比方法的不足。这些发现不仅深化了对研究主题的理解，也为相关应用领域提供了潜在的优化路径与理论支撑。非生成内容......</div>'
+    }
+    $(".previewResults .template_ktbg .content_ktbg").append(element)
+}
+
 $('.pay_close').on('click', function () {
     closePopup()
 })
@@ -915,6 +961,61 @@ function outlineStage(data) {
         $('.empiricalData , .Insert_szsj').hide()
     }
     numberControl.emptiedTips()
+}
+
+//开题报告  第三步
+function EditingOutlineKTBG() {
+    $('.rightCont').attr('id', 'OperationSteps3');
+    $(".rightCont").scrollTop(0)
+    EditingKTBG()
+}
+
+// 开题报告创建订单
+function UpdateKTBGV3() {
+    var bootstrapValidator = $("#ContainerTo").data("bootstrapValidator").validate();
+    if (bootstrapValidator.isValid()) {
+        if(!throttling) return
+        var formData = {
+            goods_id: $("#type_s").val(),
+            domain_record: window.location.origin,
+            source: 1,
+            customer_invitation: dct_code,
+            theme:'v3'
+        }
+        formData['data[title][label]'] = '论文标题'
+        formData['data[title][value]'] = $('#contenteditable').val()
+        if(typeData[$('#type_s').val()].short_name == 'ktbgsenior') { // 开题报告专业版
+            formData['data[education][label]'] = '学历'
+            formData['data[education][value]'] = $(".selectDegree .cardSelect").data('education')
+            if(ktbgProfessional.length) {
+                formData['data[outlines][label]'] = '提纲'
+                for(var kt=0; kt<ktbgProfessional.length; kt++) {
+                    formData['data[outlines][value]['+kt+']'] = ktbgProfessional[kt]
+                }
+            }else {
+                return cocoMessage.error("请编辑自定义提纲!", 2000);
+            }
+            formData['data[reference_list][label]'] = '参考文献'
+            formData['data[reference_list][value]'] = reference_list
+            unifiedCreate(getFormData(formData) , $("#type_s").val() , previewData, function callback(data , goods_id , hasKtbg , NumberWords1){
+                var money=data.order_amount
+                var parts = money.split('.');
+                var integerPart = parts[0]; // 整数部分
+                var decimalPart = parts[1] || '0';
+                $('.Before_amount').text(integerPart)
+                $('.After_amount').text("."+decimalPart)
+                // 第四步
+                $('.rightCont').attr('id', 'OperationSteps4');
+                previewResultsKTBG()
+                $('.unlock').click(function() {
+                    if(!$('.inputCheck2').prop("checked")) return cocoMessage.error('请确认知晓并同意 "生成的论文范文仅用于参考,不作为毕业、发表使用" 条款!', 3000)
+                    $(".pay_window .pay_box iframe").css('height', '500px')
+                    $('.pay_window').show()
+                    $('.pay_box iframe').attr('src', './window_pay.html?order_sn=' + data.order_sn + '&contentType=' + goods_id + '&zxktbg=' + hasKtbg+'&wordNum='+NumberWords1+'&szsj_check='+($(".empiricalData input[type=checkbox]").is(':checked')? 1:0))
+                })
+            })
+        }
+    }
 }
 
 // 预下单,生成提纲id
@@ -947,7 +1048,8 @@ $("#next_step").on('click',function (){
     }
     if (bootstrapValidator.isValid()) {
         if( typeData[$("#type_s").val()].short_name=='ktbgsenior' ){ // 开题报告直接跳转
-            EditingKTBG()
+            LiteratureSelectionKTBG()
+            // EditingKTBG()
             return
         }
         if(typeData[$('#type_s').val()].short_name == 'qklwsenior') {
@@ -1101,6 +1203,14 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this , gen_qu
             cocoMessage.error("请求失败!请检查网络", 2000);
         }
     });
+}
+
+function LiteratureSelectionKTBG() {
+    $('.rightCont').attr('id', 'OperationSteps2');
+    $(".rightCont").scrollTop(0)
+    $(".submittedH3 .title_text .paper_title").text($('#contenteditable').val())
+    $(".recommend_l .operate_btn .check_all").addClass('disabled_btn')
+    getLiterature($('#contenteditable').val(), 'KTBG')
 }
 
 // 现在要求的效果是: 减少字数后不给清空已选择的小图标

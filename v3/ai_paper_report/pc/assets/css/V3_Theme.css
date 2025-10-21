@@ -99,7 +99,7 @@
 .V3_Theme .FruitBox {
   position: absolute;
   left: 366px;
-  width: 100%;
+  width: 450px;
   top: 4px;
 }
 .V3_Theme .FruitBox .selected {
@@ -337,33 +337,40 @@
 .V3_Theme .v3_box {
   padding: 0px 28px;
 }
-.V3_Theme .Step_diagram .Step_layout {
+.V3_Theme .Step_diagram .Step_layout,
+.V3_Theme .Step_diagram .Step_layout_ktbg {
   width: 672px;
   margin: auto;
   margin-top: 52px;
   margin-bottom: 40px;
   display: flex;
 }
-.V3_Theme .Step_diagram .Step_layout div {
+.V3_Theme .Step_diagram .Step_layout div,
+.V3_Theme .Step_diagram .Step_layout_ktbg div {
   width: 168px;
 }
-.V3_Theme .Step_diagram .Step_layout div:last-child li {
+.V3_Theme .Step_diagram .Step_layout div:last-child li,
+.V3_Theme .Step_diagram .Step_layout_ktbg div:last-child li {
   border-radius: 0px 2px 2px 0px;
 }
-.V3_Theme .Step_diagram .Step_layout div:first-child li {
+.V3_Theme .Step_diagram .Step_layout div:first-child li,
+.V3_Theme .Step_diagram .Step_layout_ktbg div:first-child li {
   border-radius: 2px 0px 0px 2px;
 }
-.V3_Theme .Step_diagram .Step_layout .Next_steps {
+.V3_Theme .Step_diagram .Step_layout .Next_steps,
+.V3_Theme .Step_diagram .Step_layout_ktbg .Next_steps {
   position: relative;
 }
-.V3_Theme .Step_diagram .Step_layout .Next_steps li {
+.V3_Theme .Step_diagram .Step_layout .Next_steps li,
+.V3_Theme .Step_diagram .Step_layout_ktbg .Next_steps li {
   width: 100%;
   height: 4px;
   background: #D8D8D8;
   list-style: none;
   margin-bottom: 22px;
 }
-.V3_Theme .Step_diagram .Step_layout .Next_steps span {
+.V3_Theme .Step_diagram .Step_layout .Next_steps span,
+.V3_Theme .Step_diagram .Step_layout_ktbg .Next_steps span {
   display: inline-block;
   width: 24px;
   height: 24px;
@@ -377,10 +384,14 @@
   left: 43%;
   top: -11px;
 }
-.V3_Theme .Step_diagram .Step_layout .Next_steps p {
+.V3_Theme .Step_diagram .Step_layout .Next_steps p,
+.V3_Theme .Step_diagram .Step_layout_ktbg .Next_steps p {
   font-size: 12px;
   color: #666666;
   text-align: center;
+}
+.V3_Theme .Step_diagram .Step_layout_ktbg div {
+  width: 224px;
 }
 .V3_Theme .headType {
   background-image: url(../img/zyb_bg.png) !important;
@@ -1403,4 +1414,23 @@
 .previewResults .checkbox input[type="checkbox"]:checked {
   position: absolute;
   top: -1px;
+}
+.previewResults .template_ktbg .content_ktbg .outline_1 {
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  line-height: 32px;
+}
+.previewResults .template_ktbg .content_ktbg .div1 {
+  width: 100%;
+  margin-bottom: 6px;
+  -webkit-filter: blur(2.8px) contrast(0.7);
+  filter: blur(2.8px) contrast(0.7);
+  overflow: hidden;
+  text-align: left;
+  text-indent: 2em;
+  font-size: 14px;
+  color: #5a5a5a;
+  user-select: none;
+  line-height: 24px;
 }

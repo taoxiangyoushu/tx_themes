@@ -3,7 +3,7 @@
     .mainContainer {
         display: block;
     }
-    .step2_C , .adjustmentContent , .previewResults {
+    .step2_C , .adjustmentContent , .previewResults, .selectOutlineKTBG {
         display: none;
     }
     .submittedH3 {
@@ -19,7 +19,7 @@
     .step2_C {
         display: block;
     }
-    .mainContainer , .adjustmentContent , .previewResults {
+    .mainContainer , .adjustmentContent , .previewResults, .selectOutlineKTBG {
         display: none;
     }
     .submittedH3 {
@@ -30,7 +30,7 @@
 
 }
 #OperationSteps3 {
-    .adjustmentContent {
+    .adjustmentContent, .selectOutlineKTBG {
         display: block;
     }
     .mainContainer , .step2_C , .previewResults {
@@ -41,7 +41,7 @@
     .previewResults {
         display: block;
     }
-    .mainContainer , .step2_C , .adjustmentContent , .submittedH3 {
+    .mainContainer , .step2_C , .adjustmentContent , .submittedH3, .selectOutlineKTBG {
         display: none;
     }
 }
@@ -88,6 +88,204 @@
         font-size: 12px;
         color: #7579DB;
         text-align: center;
+    }
+}
+
+// 开题报告/毕业论文  步骤显示控制
+.indexApp {
+    &.ktbgsenior {
+        #OperationSteps3 {
+            .adjustmentContent {
+                display: none;
+            }
+            .selectOutlineKTBG {
+                display: block;
+            }
+        }
+        #OperationSteps4 {
+            .template_bylw {
+                display: none;
+            }
+            .template_ktbg {
+                display: block;
+            }
+        }
+    }
+    &.bylwsenior, &.qklwsenior {
+        #OperationSteps3 {
+            .adjustmentContent {
+                display: block;
+            }
+            .selectOutlineKTBG {
+                display: none;
+            }
+        }
+        #OperationSteps4 {
+            .template_bylw {
+                display: block;
+            }
+            .template_ktbg {
+                display: none;
+            }
+        }
+    }
+    .selectOutlineKTBG {
+        .OutlineEditingBox {
+            width: 100%;
+            height: 760px;
+            border-radius: 10px;
+            margin: auto;
+            max-height: calc(760px);
+        }
+        .editHader {
+            overflow: hidden;
+            position: relative;
+            font-size: 14px;
+            width: 86%;
+            max-width: 1140px;
+            margin: 0px auto 20px;
+        }
+
+        .delete {
+            position: absolute;
+            right: 34px;
+            top: 32px;
+            width: 13px;
+            height: 13px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+        }
+        .mainHader {
+            padding-top: 8px;
+            margin-bottom: 14px;
+            b {
+                font-size: 20px;
+                color: 272E38;
+                font-weight: bold;
+            }
+            p {
+                color: #9091A5;
+                font-size: 12px;
+                margin-top: 4px;
+            }
+        }
+        .OutlineEditingMain {
+            height: calc(100% - 170px);
+            width: 86%;
+            max-width: 1140px;
+            margin: 0px auto 40px;
+            .EstimatedNumberWords {
+                font-size: 14px;
+                line-height: 44px;
+                color: #999;
+                display: none;
+                .NumberWordsKTBG {
+                    color: #333;
+                    margin-left: 2px;
+                }
+                .NumberWordsTips {
+                    display: none;
+                    cursor: pointer;
+                    font-size: 12px;
+                    line-height: 30px;
+                    color: #fff;
+                    background-color: #000;
+                    position: absolute;
+                    top: -36px;
+                    left: -128px;
+                    width: 275px;
+                    text-align: center;
+                    border-radius: 4px;
+                }
+                .WordsTipsDiv {
+                    position: relative;
+                    margin-left: 5px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    &:hover {
+                        .NumberWordsTips {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .confirmedKTBGzdy {
+                width: 75px;
+                height: 30px;
+                background: #7371D6;
+                border-radius: 4px;
+                text-align: center;
+                line-height: 30px;
+                font-size: 14px;
+                color: #fff;
+                float: right;
+                position: relative;
+                top: 0px;
+                cursor: pointer;
+                margin-top: 20px;
+                &:hover {
+                    background: #4e4cca;
+                }
+            }
+        }
+        .leftBoxMain , .rightBoxMain {
+            background: #FFFFFF;
+            box-shadow: 0px 0px 13px 0px rgba(225,225,225,0.51);
+            border-radius: 10px;
+            height: 100%;
+            float: left;
+            width: calc(50% - 10px);
+            padding: 16px;
+        }
+        .leftBoxMain {
+            float: left;
+        }
+        .rightBoxMain {
+            float: right;
+        }
+        .original {
+            border-radius: 10px;
+            border: 1px solid #7372D6;
+            background: #FFFFFF;
+            box-shadow: 0px 0px 13px 0px rgba(242,244,251,0.09);
+            height: calc(100% - 76px);
+            padding: 20px 8px 20px 12px;
+            .outlineContent {
+                height: 100%;
+                overflow: auto;
+            }
+        }
+        .preview {
+            height: calc(100% - 100px);
+        }
+        .stepBtn_KTBG {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            div {
+                width: 144px;
+                border-radius: 4px 4px 4px 4px;
+                font-size: 16px;
+                padding: 12px 0;
+                text-align: center;
+                margin: 0 7px;
+                line-height: normal;
+                cursor: pointer;
+            }
+            .prevStep_KTBG {
+                border: 1px solid #7579DB;
+                background: #FFFFFF;
+                color: #7579DB;
+            }
+            .nextStep_KTBG {
+                background: linear-gradient(90deg, #7C97EF 0%, #7579DB 100%);
+                border: 1px solid #7579DB;
+                color: #fff;
+            }
+        }
     }
 }
 

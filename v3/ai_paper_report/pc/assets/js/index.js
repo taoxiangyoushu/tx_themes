@@ -132,7 +132,7 @@ function changeType(this_ , this_val) {
         }
 
         //v3 隐藏文献数量
-        if(this_short_name == 'bylwsenior' || this_short_name == 'qklwsenior' ){
+        if(this_short_name == 'bylwsenior' || this_short_name == 'qklwsenior' || this_short_name == 'ktbgsenior'){
             $('.EnglishLiterature').hide()
         }
     }
@@ -174,7 +174,8 @@ function changeType(this_ , this_val) {
             }else{
                 $(".EnglishLiterature").addClass('displayHide')
             }
-            if(this_short_name !== 'qklwsenior' && this_short_name !== 'bylwsenior'){
+            //  自选文献  隐藏英文文献数量显示判断
+            if(this_short_name !== 'qklwsenior' && this_short_name !== 'bylwsenior' && this_short_name !== 'ktbgsenior'){
                 $(".proposal-check").trigger('change')
             }
         }
@@ -1388,8 +1389,13 @@ $(".literature_confirmPop .close_l_c").on('click', function (){
 $(".literature_confirmPop .lc_save").on('click', function (){
     $(".literature_confirmPop").hide()
     $(".mask_body").hide()
-    // editingV3.js 提纲处理
-    outlineStage(refernce_data)
+    if(typeData[$("#type_s").val()].short_name == 'ktbgsenior') {
+        // 开题报告  大纲
+        EditingOutlineKTBG()
+    }else{
+        // editingV3.js 提纲处理
+        outlineStage(refernce_data)
+    }
 })
 // function dropDown2() {
 //     var selectObj = $("#thesaurus_select");
@@ -1887,14 +1893,18 @@ $(document).on('click','.analyze_literature .literature_item .remove_analyzeLite
 
 // 获取推荐文献
 function getLiterature(contenteditable, NumberWords, education) {
-    if(6000 <= NumberWords && NumberWords <= 20000){
-        literature_maxNum = 25
-    }
-    if(NumberWords > 20000){
-        literature_maxNum = Math.ceil(NumberWords/10000*10) + 5
-    }
-    if(education == 'ss'){
-        literature_maxNum += 5
+    if(NumberWords == 'KTBG') {
+        literature_maxNum = 30
+    }else{
+        if(6000 <= NumberWords && NumberWords <= 20000){
+            literature_maxNum = 25
+        }
+        if(NumberWords > 20000){
+            literature_maxNum = Math.ceil(NumberWords/10000*10) + 5
+        }
+        if(education == 'ss'){
+            literature_maxNum += 5
+        }
     }
     $(".submittedH3 .quantity_reminder .total_literature").text(literature_maxNum)
 

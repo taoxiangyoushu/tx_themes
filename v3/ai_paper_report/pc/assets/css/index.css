@@ -3,7 +3,8 @@
 }
 #OperationSteps1 .step2_C,
 #OperationSteps1 .adjustmentContent,
-#OperationSteps1 .previewResults {
+#OperationSteps1 .previewResults,
+#OperationSteps1 .selectOutlineKTBG {
   display: none;
 }
 #OperationSteps1 .submittedH3 .commodityTypeName {
@@ -17,13 +18,15 @@
 }
 #OperationSteps2 .mainContainer,
 #OperationSteps2 .adjustmentContent,
-#OperationSteps2 .previewResults {
+#OperationSteps2 .previewResults,
+#OperationSteps2 .selectOutlineKTBG {
   display: none;
 }
 #OperationSteps2 .submittedH3 .quantity_reminder {
   display: inline-block;
 }
-#OperationSteps3 .adjustmentContent {
+#OperationSteps3 .adjustmentContent,
+#OperationSteps3 .selectOutlineKTBG {
   display: block;
 }
 #OperationSteps3 .mainContainer,
@@ -37,7 +40,8 @@
 #OperationSteps4 .mainContainer,
 #OperationSteps4 .step2_C,
 #OperationSteps4 .adjustmentContent,
-#OperationSteps4 .submittedH3 {
+#OperationSteps4 .submittedH3,
+#OperationSteps4 .selectOutlineKTBG {
   display: none;
 }
 #OperationSteps2 .submittedH3 .commodityTypeName,
@@ -114,6 +118,188 @@
   font-size: 12px;
   color: #7579DB;
   text-align: center;
+}
+.indexApp.ktbgsenior #OperationSteps3 .adjustmentContent {
+  display: none;
+}
+.indexApp.ktbgsenior #OperationSteps3 .selectOutlineKTBG {
+  display: block;
+}
+.indexApp.ktbgsenior #OperationSteps4 .template_bylw {
+  display: none;
+}
+.indexApp.ktbgsenior #OperationSteps4 .template_ktbg {
+  display: block;
+}
+.indexApp.bylwsenior #OperationSteps3 .adjustmentContent,
+.indexApp.qklwsenior #OperationSteps3 .adjustmentContent {
+  display: block;
+}
+.indexApp.bylwsenior #OperationSteps3 .selectOutlineKTBG,
+.indexApp.qklwsenior #OperationSteps3 .selectOutlineKTBG {
+  display: none;
+}
+.indexApp.bylwsenior #OperationSteps4 .template_bylw,
+.indexApp.qklwsenior #OperationSteps4 .template_bylw {
+  display: block;
+}
+.indexApp.bylwsenior #OperationSteps4 .template_ktbg,
+.indexApp.qklwsenior #OperationSteps4 .template_ktbg {
+  display: none;
+}
+.indexApp .selectOutlineKTBG .OutlineEditingBox {
+  width: 100%;
+  height: 760px;
+  border-radius: 10px;
+  margin: auto;
+  max-height: calc(760px);
+}
+.indexApp .selectOutlineKTBG .editHader {
+  overflow: hidden;
+  position: relative;
+  font-size: 14px;
+  width: 86%;
+  max-width: 1140px;
+  margin: 0px auto 20px;
+}
+.indexApp .selectOutlineKTBG .delete {
+  position: absolute;
+  right: 34px;
+  top: 32px;
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+.indexApp .selectOutlineKTBG .mainHader {
+  padding-top: 8px;
+  margin-bottom: 14px;
+}
+.indexApp .selectOutlineKTBG .mainHader b {
+  font-size: 20px;
+  color: 272E38;
+  font-weight: bold;
+}
+.indexApp .selectOutlineKTBG .mainHader p {
+  color: #9091A5;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.indexApp .selectOutlineKTBG .OutlineEditingMain {
+  height: calc(100% - 170px);
+  width: 86%;
+  max-width: 1140px;
+  margin: 0px auto 40px;
+}
+.indexApp .selectOutlineKTBG .OutlineEditingMain .EstimatedNumberWords {
+  font-size: 14px;
+  line-height: 44px;
+  color: #999;
+  display: none;
+}
+.indexApp .selectOutlineKTBG .OutlineEditingMain .EstimatedNumberWords .NumberWordsKTBG {
+  color: #333;
+  margin-left: 2px;
+}
+.indexApp .selectOutlineKTBG .OutlineEditingMain .EstimatedNumberWords .NumberWordsTips {
+  display: none;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 30px;
+  color: #fff;
+  background-color: #000;
+  position: absolute;
+  top: -36px;
+  left: -128px;
+  width: 275px;
+  text-align: center;
+  border-radius: 4px;
+}
+.indexApp .selectOutlineKTBG .OutlineEditingMain .EstimatedNumberWords .WordsTipsDiv {
+  position: relative;
+  margin-left: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.indexApp .selectOutlineKTBG .OutlineEditingMain .EstimatedNumberWords .WordsTipsDiv:hover .NumberWordsTips {
+  display: block;
+}
+.indexApp .selectOutlineKTBG .OutlineEditingMain .confirmedKTBGzdy {
+  width: 75px;
+  height: 30px;
+  background: #7371D6;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  color: #fff;
+  float: right;
+  position: relative;
+  top: 0px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.indexApp .selectOutlineKTBG .OutlineEditingMain .confirmedKTBGzdy:hover {
+  background: #4e4cca;
+}
+.indexApp .selectOutlineKTBG .leftBoxMain,
+.indexApp .selectOutlineKTBG .rightBoxMain {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 13px 0px rgba(225, 225, 225, 0.51);
+  border-radius: 10px;
+  height: 100%;
+  float: left;
+  width: calc(50% - 10px);
+  padding: 16px;
+}
+.indexApp .selectOutlineKTBG .leftBoxMain {
+  float: left;
+}
+.indexApp .selectOutlineKTBG .rightBoxMain {
+  float: right;
+}
+.indexApp .selectOutlineKTBG .original {
+  border-radius: 10px;
+  border: 1px solid #7372D6;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 13px 0px rgba(242, 244, 251, 0.09);
+  height: calc(100% - 76px);
+  padding: 20px 8px 20px 12px;
+}
+.indexApp .selectOutlineKTBG .original .outlineContent {
+  height: 100%;
+  overflow: auto;
+}
+.indexApp .selectOutlineKTBG .preview {
+  height: calc(100% - 100px);
+}
+.indexApp .selectOutlineKTBG .stepBtn_KTBG {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.indexApp .selectOutlineKTBG .stepBtn_KTBG div {
+  width: 144px;
+  border-radius: 4px 4px 4px 4px;
+  font-size: 16px;
+  padding: 12px 0;
+  text-align: center;
+  margin: 0 7px;
+  line-height: normal;
+  cursor: pointer;
+}
+.indexApp .selectOutlineKTBG .stepBtn_KTBG .prevStep_KTBG {
+  border: 1px solid #7579DB;
+  background: #FFFFFF;
+  color: #7579DB;
+}
+.indexApp .selectOutlineKTBG .stepBtn_KTBG .nextStep_KTBG {
+  background: linear-gradient(90deg, #7C97EF 0%, #7579DB 100%);
+  border: 1px solid #7579DB;
+  color: #fff;
 }
 .displayHide {
   display: none !important;
@@ -3229,3 +3415,4 @@ p.word-prompt .text-num {
 .abScrollBar-box .bar {
   background: #c5cad56e;
 }
+/*# sourceMappingURL=index.css.map */

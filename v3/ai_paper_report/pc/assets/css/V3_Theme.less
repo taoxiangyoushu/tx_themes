@@ -120,7 +120,7 @@
     .FruitBox{
         position: absolute;
         left: 366px;
-        width: 100%;
+        width: 450px;
         top: 4px;
     }
     .FruitBox .selected {
@@ -460,7 +460,7 @@
         padding: 0px 28px;
     }
     .Step_diagram{
-        .Step_layout{
+        .Step_layout, .Step_layout_ktbg{
             width: 672px;
             margin: auto;
             margin-top: 52px;
@@ -507,6 +507,11 @@
                     color: #666666;
                     text-align: center;
                 }
+            }
+        }
+        .Step_layout_ktbg {
+            div{
+                width: 224px;
             }
         }
     }
@@ -1580,6 +1585,29 @@
         input[type="checkbox"]:checked{
             position: absolute;
             top: -1px;
+        }
+    }
+    .template_ktbg {
+        .content_ktbg {
+            .outline_1 {
+                text-align: left;
+                font-size: 14px;
+                color: #333;
+                line-height: 32px;
+            }
+            .div1 {
+                width: 100%;
+                margin-bottom: 6px;
+                -webkit-filter: blur(2.8px) contrast(0.7);
+                filter: blur(2.8px) contrast(0.7);
+                overflow: hidden;
+                text-align: left;
+                text-indent: 2em;
+                font-size: 14px;
+                color: #5a5a5a;
+                user-select: none;
+                line-height: 24px;
+            }
         }
     }
 }

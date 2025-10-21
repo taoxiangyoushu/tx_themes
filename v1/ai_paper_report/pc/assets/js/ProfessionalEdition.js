@@ -358,7 +358,7 @@ $('.editGenerate').click(function(e) {
                 rid,
                 outline,
                 must: true,
-                version: 'v1',
+                version: 'v3',
                 theme:'v1'
             })
             $.ajax({

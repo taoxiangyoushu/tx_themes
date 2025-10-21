@@ -333,16 +333,16 @@ function infoData(result) {
 var typeData = {}
 var short_name_data = {}
 var WordCount_data = {
-	bylw: [5000 , 10000 , 30000 , 50000],
+	bylw: [5000 , 10000 , 50000 , 100000],
 	qklw: [3000 , 8000 , 10000 , 20000],
-	bylwsenior: [5000 , 10000 , 30000 , 50000],
+	bylwsenior: [5000 , 10000 , 50000 ,100000],
 	sxbg: [1000 , 3000 , 5000 , 10000],
 	qklwsenior: [3000 , 8000 , 10000 , 20000],
 }
 var Radius_data = {
-	bylw: [5000 , 50000],
+	bylw: [5000 , 100000],
 	qklw: [3000 , 20000],
-	bylwsenior: [5000 , 50000],
+	bylwsenior: [5000 , 100000],
 	sxbg: [1000 , 30000],
 	qklwsenior: [3000 , 20000],
 }
@@ -425,6 +425,8 @@ function editionType(edition , is) {
 		$('#App').addClass('V3_Theme')
 		$('.leftFloat').show()
 		$('.Step_diagram').show()
+        $('.Step_diagram .Step_layout .Next_steps3 p').text('提纲')
+        $('.Step_diagram .Step_layout .Next_steps4 p').text('生成论文')
 		$('.next_step').show()
 		$('.Universal').show()
 		$('.aigcTips').hide() 
@@ -432,8 +434,10 @@ function editionType(edition , is) {
         $(".sciTips").hide()
 		$('.next_step').text('下一步')
 		if(edition == "ktbgsenior"){
-			$('.Step_diagram').hide()
-			$('.next_step').text('下一步，选大纲')
+			// $('.Step_diagram').hide()
+			// $('.next_step').text('下一步，选大纲')
+			$('.Step_diagram .Step_layout .Next_steps3 p').text('大纲')
+			$('.Step_diagram .Step_layout .Next_steps4 p').text('生成报告')
 		}
 		if(edition == "bylwsenior"){
 			if(is) changeType($('#type_s2'))

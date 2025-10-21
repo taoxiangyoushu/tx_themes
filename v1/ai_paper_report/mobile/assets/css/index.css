@@ -534,6 +534,7 @@ button.btn-default,
 }
 .FruitBox {
   display: flex;
+  flex-wrap: wrap;
 }
 .FruitBox input {
   display: none;

@@ -3,7 +3,7 @@
     var maxlenght = 0
     function EditingKTBG() {
         if(!LiteratureFU()) return;
-        $('.OutlineEditingKTBG').show()
+        // $('.OutlineEditingKTBG').show()
         if(educationKTBG != $('.selectDegree .cardSelect').data('education')) {
             educationKTBG = $('.selectDegree .cardSelect').data('education')
             maxlenght = $('.selectDegree .cardSelect').data('key')

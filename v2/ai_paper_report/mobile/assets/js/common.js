@@ -269,15 +269,15 @@ window.onload = function (){
 var typeData = {}
 var short_name_data = {}
 var WordCount_data = {
-	bylw: [5000 , 10000 , 30000 , 50000],
+	bylw: [5000 , 10000  , 50000 , 100000],
 	qklw: [3000 , 8000 , 10000 , 20000],
-	bylwsenior: [5000 , 10000 , 30000 , 50000],
+	bylwsenior: [5000 , 10000  , 50000 ,100000],
 	sxbg: [1000 , 3000 , 5000 , 10000]
 }
 var Radius_data = {
-	bylw: [5000 , 50000],
+	bylw: [5000 , 100000],
 	qklw: [3000 , 20000],
-	bylwsenior: [5000 , 50000],
+	bylwsenior: [5000 , 100000],
 	sxbg: [1000 , 30000]
 }
 function typefun(goods_info) {

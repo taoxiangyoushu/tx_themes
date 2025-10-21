@@ -659,7 +659,7 @@ input[type="number"] {
   line-height: 38px;
   color: #999999;
   position: absolute;
-  width: 287px;
+  width: 290px;
   padding-left: 10px;
   right: -274px;
   top: 0;
@@ -1908,4 +1908,3 @@ p.word-prompt .text-num {
 .indexApp .proposal .fileBlock img.deleteFile {
   margin-top: 0;
 }
-/*# sourceMappingURL=index.css.map */
