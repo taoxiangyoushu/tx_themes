@@ -132,19 +132,23 @@
   display: block;
 }
 .indexApp.bylwsenior #OperationSteps3 .adjustmentContent,
-.indexApp.qklwsenior #OperationSteps3 .adjustmentContent {
+.indexApp.qklwsenior #OperationSteps3 .adjustmentContent,
+.indexApp.bylwsenior_zrb #OperationSteps3 .adjustmentContent {
   display: block;
 }
 .indexApp.bylwsenior #OperationSteps3 .selectOutlineKTBG,
-.indexApp.qklwsenior #OperationSteps3 .selectOutlineKTBG {
+.indexApp.qklwsenior #OperationSteps3 .selectOutlineKTBG,
+.indexApp.bylwsenior_zrb #OperationSteps3 .selectOutlineKTBG {
   display: none;
 }
 .indexApp.bylwsenior #OperationSteps4 .template_bylw,
-.indexApp.qklwsenior #OperationSteps4 .template_bylw {
+.indexApp.qklwsenior #OperationSteps4 .template_bylw,
+.indexApp.bylwsenior_zrb #OperationSteps4 .template_bylw {
   display: block;
 }
 .indexApp.bylwsenior #OperationSteps4 .template_ktbg,
-.indexApp.qklwsenior #OperationSteps4 .template_ktbg {
+.indexApp.qklwsenior #OperationSteps4 .template_ktbg,
+.indexApp.bylwsenior_zrb #OperationSteps4 .template_ktbg {
   display: none;
 }
 .indexApp .selectOutlineKTBG .OutlineEditingBox {

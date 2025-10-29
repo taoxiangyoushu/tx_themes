@@ -967,3 +967,13 @@
   width: 2.28rem;
   margin-right: 0.8rem;
 }
+.uploadKTBG_pop .bylw_zrb_pt {
+  display: none;
+}
+.bylw_zrb .uploadKTBG_pop .bylw_pt {
+  display: none;
+}
+.bylw_zrb .uploadKTBG_pop .bylw_zrb_pt {
+  display: inline;
+}
+/*# sourceMappingURL=leftCss.css.map */

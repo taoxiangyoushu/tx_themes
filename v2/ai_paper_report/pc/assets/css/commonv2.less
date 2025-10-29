@@ -370,7 +370,7 @@ html {
 .img_js.selected {
     display: inline-block;
 }
-.bylw .bylwBox , .bylwsenior .bylwseniorBox{
+.bylw .bylwBox , .bylwsenior .bylwseniorBox, .bylwsenior_zrb .bylwsenior_zrbBox{
     display: inline-block;
 }
 .main h3 {
@@ -386,6 +386,7 @@ html {
 }
 .menuCanSelect {
     &.bylw .typeLi.bylw,
+    &.bylw_zrb .typeLi.bylw_zrb,
     &.wxzs .typeLi.wxzs,
     &.ktbg .typeLi.ktbg,
     &.rws .typeLi.rws,
@@ -406,6 +407,7 @@ html {
     }
     &.ktbgsenior .typeLi.ktbgsenior,
     &.bylwsenior .typeLi.bylwsenior,
+    &.bylwsenior_zrb .typeLi.bylwsenior_zrb,
     &.qklwsenior .typeLi.qklwsenior {
         color: #585DD0;
         font-weight: bold;
@@ -577,6 +579,8 @@ html {
 
 .wxzs .wxzsText,
 .bylw .bylwText,
+.bylw_zrb .bylw_zrbText,
+.bylw_zrb .bylwsenior_zrbText,
 .ktbg .ktbgText,
 .rws .rwsText,
 .qklw .qklwText,
@@ -586,6 +590,8 @@ html {
 .dybg .dybgText,
 .zjcaigc .zjcaigcText,
 .bylwsenior .bylwText,
+.bylwsenior_zrb .bylw_zrbText,
+.bylwsenior_zrb .bylwsenior_zrbText,
 .ktbgsenior .ktbgText,
 .qklwsenior .qklwText,
 .xzaigccheck .xzaigccheckText,
@@ -731,7 +737,7 @@ html {
     -moz-user-select:none;
     -ms-user-select:none;
 }
-.bylw #titleID , .bylwsenior #titleID {
+.bylw #titleID , .bylwsenior #titleID, .bylw_zrb #titleID {
     .optimize {
         display: block;
         width: 98px;
@@ -813,7 +819,7 @@ html {
 .quantity {
     top: 13px;
 }
-.bylw #titleID .optimize, .bylwsenior #titleID .optimize {
+.bylw #titleID .optimize, .bylwsenior #titleID .optimize, .bylw_zrb #titleID .optimize{
     top: 7px;
     height: 32px;
     line-height: 32px;
@@ -888,7 +894,7 @@ html {
         }
     }
 }
-.bylwsenior .Toggle2 {
+.bylwsenior .Toggle2, .bylwsenior_zrb .Toggle2, .ktbgsenior .Toggle2, .qklwsenior .Toggle2 {
     .switchingImg {
         background: url('../img/qjsb_nol.png') no-repeat;
         background-size: 100% 100%;

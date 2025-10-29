@@ -828,8 +828,8 @@
         <div class="line"></div>
         <div class="upk_content">
             <ul>
-                <li><span>• 总结开题报告：</span>生成具有关联内容的毕业论文</li>
-                <li><span>• 提取参考文献：</span>作为毕业论文的参考文献（注：如无参考系统自动生成）</li>
+                <li><span>• 总结开题报告：</span>生成具有关联内容的<span class="bylw_pt">毕业论文</span><span class="bylw_zrb_pt">专升本论文</span></li>
+                <li><span>• 提取参考文献：</span>作为<span class="bylw_pt">毕业论文</span><span class="bylw_zrb_pt">专升本论文</span>的参考文献（注：如无参考系统自动生成）</li>
                 <li><span>• 暂不提取提纲：</span>需自定义提纲，请切换专业版</li>
                 <li><span>• 开题报告文件：</span>支持docx，大小不超过4M</li>
             </ul>
@@ -866,9 +866,12 @@ function dropDownType(e, project) {
     selectObjV2.html('')
     selectObj.find("option:not(:first)").remove();
     for (let i=0; i<e.length; i++) {
-        if(e[i].short_name !== 'bylwjigou' && e[i].short_name !== 'bylwsenior' && e[i].short_name !== 'wxzs2' && e[i].short_name !== 'szsjzz' && e[i].short_name !== 'qkszsjzz'&& e[i].short_name !== 'ktbgsenior' && e[i].short_name !== 'qklwsenior'){
+        if(e[i].short_name !== 'bylwjigou' && e[i].short_name !== 'bylwsenior' && e[i].short_name !== 'bylwsenior_zrb' && e[i].short_name !== 'wxzs2' && e[i].short_name !== 'szsjzz' && e[i].short_name !== 'qkszsjzz'&& e[i].short_name !== 'ktbgsenior' && e[i].short_name !== 'qklwsenior'){
             var optionValue = e[i].goods_id;
             var optionText =  e[i].type;
+            if(e[i].short_name == "bylw_zrb") {
+                optionText = '专升本'
+            }
             selectObj.append(new Option(optionText, optionValue));
             var html = ''
             html += '<li class="typeLi '+e[i].short_name+'" data-briefName="'+e[i].short_name+'" data-goodsid='+optionValue+'>'
@@ -1039,7 +1042,8 @@ $('.ViewsSample').click(function() {
         dybg: 'dybg',
         xzaigccheck: 'aigccc',
         zjcaigc: 'jaigcl',
-        scirs:'scirs'
+        scirs:'scirs',
+        bylw_zrb: 'bylw_zrb',
     }
     window.open('/demo.html?type='+keyConversion[type])
 })

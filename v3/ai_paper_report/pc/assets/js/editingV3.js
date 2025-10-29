@@ -1027,7 +1027,7 @@ $("#next_step").on('click',function (){
     var bootstrapValidator = $("#ContainerTo").data("bootstrapValidator").validate();
 
     // 补充说明字数验证
-    if( typeData[$("#type_s").val()].short_name=='bylwsenior' || typeData[$("#type_s").val()].short_name=='qklwsenior'){
+    if( typeData[$("#type_s").val()].short_name=='bylwsenior' || typeData[$("#type_s").val()].short_name=='bylwsenior_zrb' || typeData[$("#type_s").val()].short_name=='qklwsenior'){
         if($("#illustrate").val().length > 0) {
             if($("#illustrate").val().length < 200) {
                 $(".professional").css('borderColor', '#f34f4f')
@@ -1132,7 +1132,7 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this , gen_qu
         }
     }
 
-    if( typeData[$('#type_s').val()].short_name == 'bylwsenior' ) {
+    if( typeData[$('#type_s').val()].short_name == 'bylwsenior' || typeData[$('#type_s').val()].short_name == 'bylwsenior_zrb'  ) {
         if($("#illustrate").val().length > 0) {
             if($("#illustrate").val().length < 200) {
             }else{
@@ -1142,7 +1142,7 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this , gen_qu
         if($(".education_c").css('display') !== 'none'){
             formData.education = $("input[name='reportType']:checked").val()
         }
-        if(typeData[$('#type_s').val()].short_name == 'bylwsenior' && $("#basic").val() && $("#basic").val() !== 'A'){
+        if((typeData[$('#type_s').val()].short_name == 'bylwsenior' || typeData[$('#type_s').val()].short_name == 'bylwsenior_zrb') && $("#basic").val() && $("#basic").val() !== 'A'){
             if($(".major").css('display') !== 'none'){
                 formData.paper_type = configs[$("#basic").val()]
             }

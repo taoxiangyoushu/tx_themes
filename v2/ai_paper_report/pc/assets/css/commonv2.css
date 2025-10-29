@@ -375,7 +375,8 @@ html .ContainerTo {
   display: inline-block;
 }
 .bylw .bylwBox,
-.bylwsenior .bylwseniorBox {
+.bylwsenior .bylwseniorBox,
+.bylwsenior_zrb .bylwsenior_zrbBox {
   display: inline-block;
 }
 .main h3 {
@@ -390,6 +391,7 @@ html .ContainerTo {
   margin-right: 4px;
 }
 .menuCanSelect.bylw .typeLi.bylw,
+.menuCanSelect.bylw_zrb .typeLi.bylw_zrb,
 .menuCanSelect.wxzs .typeLi.wxzs,
 .menuCanSelect.ktbg .typeLi.ktbg,
 .menuCanSelect.rws .typeLi.rws,
@@ -410,6 +412,7 @@ html .ContainerTo {
 }
 .menuCanSelect.ktbgsenior .typeLi.ktbgsenior,
 .menuCanSelect.bylwsenior .typeLi.bylwsenior,
+.menuCanSelect.bylwsenior_zrb .typeLi.bylwsenior_zrb,
 .menuCanSelect.qklwsenior .typeLi.qklwsenior {
   color: #585DD0;
   font-weight: bold;
@@ -541,6 +544,8 @@ html .ContainerTo {
 }
 .wxzs .wxzsText,
 .bylw .bylwText,
+.bylw_zrb .bylw_zrbText,
+.bylw_zrb .bylwsenior_zrbText,
 .ktbg .ktbgText,
 .rws .rwsText,
 .qklw .qklwText,
@@ -550,6 +555,8 @@ html .ContainerTo {
 .dybg .dybgText,
 .zjcaigc .zjcaigcText,
 .bylwsenior .bylwText,
+.bylwsenior_zrb .bylw_zrbText,
+.bylwsenior_zrb .bylwsenior_zrbText,
 .ktbgsenior .ktbgText,
 .qklwsenior .qklwText,
 .xzaigccheck .xzaigccheckText,
@@ -688,7 +695,8 @@ html .ContainerTo {
   -ms-user-select: none;
 }
 .bylw #titleID .optimize,
-.bylwsenior #titleID .optimize {
+.bylwsenior #titleID .optimize,
+.bylw_zrb #titleID .optimize {
   display: block;
   width: 98px;
   height: 28px;
@@ -704,15 +712,18 @@ html .ContainerTo {
   cursor: pointer;
 }
 .bylw #titleID .optimize:hover,
-.bylwsenior #titleID .optimize:hover {
+.bylwsenior #titleID .optimize:hover,
+.bylw_zrb #titleID .optimize:hover {
   background: linear-gradient(110deg, #3792FF 0%, #35AAFF 100%);
 }
 .bylw #titleID .optimize img,
-.bylwsenior #titleID .optimize img {
+.bylwsenior #titleID .optimize img,
+.bylw_zrb #titleID .optimize img {
   margin-top: -2px;
 }
 .bylw #titleID .quantity,
-.bylwsenior #titleID .quantity {
+.bylwsenior #titleID .quantity,
+.bylw_zrb #titleID .quantity {
   right: 114px;
 }
 .ProfessionalEdition #titleID .optimize {
@@ -778,7 +789,8 @@ html .ContainerTo {
   top: 13px;
 }
 .bylw #titleID .optimize,
-.bylwsenior #titleID .optimize {
+.bylwsenior #titleID .optimize,
+.bylw_zrb #titleID .optimize {
   top: 7px;
   height: 32px;
   line-height: 32px;
@@ -838,11 +850,17 @@ html .ContainerTo {
   background: url('../img/qzyb_pre.png') no-repeat;
   background-size: 100% 100%;
 }
-.bylwsenior .Toggle2 .switchingImg {
+.bylwsenior .Toggle2 .switchingImg,
+.bylwsenior_zrb .Toggle2 .switchingImg,
+.ktbgsenior .Toggle2 .switchingImg,
+.qklwsenior .Toggle2 .switchingImg {
   background: url('../img/qjsb_nol.png') no-repeat;
   background-size: 100% 100%;
 }
-.bylwsenior .Toggle2:hover .switchingImg {
+.bylwsenior .Toggle2:hover .switchingImg,
+.bylwsenior_zrb .Toggle2:hover .switchingImg,
+.ktbgsenior .Toggle2:hover .switchingImg,
+.qklwsenior .Toggle2:hover .switchingImg {
   background: url('../img/qjsb_pre.png') no-repeat;
   background-size: 100% 100%;
 }
@@ -931,3 +949,4 @@ html .ContainerTo {
 .menuCanSelect.scirs .checkbox {
   display: none;
 }
+/*# sourceMappingURL=commonv2.css.map */

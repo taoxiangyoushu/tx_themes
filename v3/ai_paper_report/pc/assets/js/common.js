@@ -334,15 +334,19 @@ var typeData = {}
 var short_name_data = {}
 var WordCount_data = {
 	bylw: [5000 , 10000 , 50000 , 100000],
+	bylw_zrb: [5000 , 10000 , 50000 , 100000],
 	qklw: [3000 , 8000 , 10000 , 20000],
 	bylwsenior: [5000 , 10000 , 50000 ,100000],
+    bylwsenior_zrb: [5000 , 10000 , 50000 ,100000],
 	sxbg: [1000 , 3000 , 5000 , 10000],
 	qklwsenior: [3000 , 8000 , 10000 , 20000],
 }
 var Radius_data = {
 	bylw: [5000 , 100000],
+	bylw_zrb: [5000 , 100000],
 	qklw: [3000 , 20000],
 	bylwsenior: [5000 , 100000],
+    bylwsenior_zrb: [5000 , 100000],
 	sxbg: [1000 , 30000],
 	qklwsenior: [3000 , 20000],
 }
@@ -418,10 +422,10 @@ $('.Toggle2').click(function () {
 });
 
 function editionType(edition , is) {
-	$('#App').removeClass('bylw ktbgsenior bylwsenior wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt qklwsenior xzaigccheck scirs')
+	$('#App').removeClass('bylw bylw_zrb ktbgsenior bylwsenior bylwsenior_zrb wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt qklwsenior xzaigccheck scirs')
 	$('#App').addClass(edition)
 	window.sessionStorage.setItem('editionKey' , edition)
-	if(edition == "bylwsenior"||edition == "ktbgsenior"||edition == "qklwsenior") {
+	if(edition == "bylwsenior"||edition == "ktbgsenior"||edition == "qklwsenior"||edition == 'bylwsenior_zrb') {
 		$('#App').addClass('V3_Theme')
 		$('.leftFloat').show()
 		$('.Step_diagram').show()

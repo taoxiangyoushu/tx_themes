@@ -331,18 +331,28 @@ var typeData = {}
 var short_name_data = {}
 var WordCount_data = {
 	bylw: [5000 , 10000  , 50000 ,100000],
+	bylw_zrb: [5000 , 10000  , 50000 ,100000],
 	qklw: [3000 , 8000 , 10000 , 20000],
 	bylwsenior: [5000 , 10000  , 50000 ,100000],
+    bylwsenior_zrb: [5000 , 10000  , 50000 ,100000],
 	sxbg: [1000 , 3000 , 5000 , 10000],
 	qklwsenior: [3000 , 8000 , 10000 , 20000],
 }
 var Radius_data = {
 	bylw: [5000 , 100000],
+	bylw_zrb: [5000 , 100000],
 	qklw: [3000 , 20000],
 	bylwsenior: [5000 , 100000],
+	bylwsenior_zrb: [5000 , 100000],
 	sxbg: [1000 , 30000],
 	qklwsenior: [3000 , 20000],
 }
+
+var targetShortNames = [];
+var shortName=[]
+var shortName1=[]
+var shortName2=[]
+
 function typefun(goods_info) {
 	for(var i=0; i<goods_info.length; i++) {
 		typeData[goods_info[i].goods_id] = {
@@ -362,6 +372,32 @@ function typefun(goods_info) {
 		short_name_data[goods_info[i].short_name] = {
 			goods_id: goods_info[i].goods_id
 		}
+		if(goods_info[i].type=='毕业论文'){
+			shortName.push(goods_info[i].short_name)
+		}
+		if(goods_info[i].type=='期刊论文'){
+			shortName1.push(goods_info[i].short_name);
+			
+		}
+		if(goods_info[i].type=='开题报告'){
+			shortName2.push(goods_info[i].short_name)
+		}
+	}
+	if (shortName.includes('bylw') && shortName.includes('bylwsenior')) {
+		targetShortNames.push('bylw'); 
+		targetShortNames.push('bylwsenior'); 
+	}
+	if (shortName.includes('bylwsenior_zrb') && shortName.includes("bylw_zrb")) {
+		targetShortNames.push('bylwsenior_zrb'); 
+		targetShortNames.push('bylw_zrb'); 
+	}
+	if (shortName1.includes('qklw') && shortName1.includes('qklwsenior')) {
+		targetShortNames.push('qklw'); 
+		targetShortNames.push('qklwsenior'); 
+	}
+	if (shortName2.includes('ktbgsenior') && shortName2.includes('ktbg')) {
+		targetShortNames.push('ktbgsenior'); 
+		targetShortNames.push('ktbg'); 
 	}
 }
 function setArguments(info) {
@@ -415,7 +451,7 @@ $('.Toggle2').click(function () {
 });
 
 function editionType(edition , is) {
-	$('#App').removeClass('bylw ktbgsenior bylwsenior wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt qklwsenior xzaigccheck')
+	$('#App').removeClass('bylw bylw_zrb ktbgsenior bylwsenior bylwsenior_zrb wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt qklwsenior xzaigccheck')
 	$('#App').addClass(edition)
 	window.sessionStorage.setItem('editionKey' , edition)
 	if(edition == "bylw") { // 毕业论文极速版
@@ -432,7 +468,13 @@ function editionType(edition , is) {
 		$('.Toggle2').attr('edition-key' , 'bylw')
 		$('#outline').text('下一步，选提纲')
 		if(is) changeType($('#type_s2'))
-	}else if(edition == 'ktbgsenior') { // 开题报告专业版
+	}else if(edition == "bylwsenior_zrb") { // 专升本专业版  与毕业论文一致
+        $('#App').addClass('ProfessionalEdition')
+        $('.editionText').text('极速版')
+        $('.Toggle2').attr('edition-key' , 'bylw')
+        $('#outline').text('下一步，选提纲')
+        if(is) changeType($('#type_s2'))
+    }else if(edition == 'ktbgsenior') { // 开题报告专业版
 		$('#App').addClass('ProfessionalEdition')
 		$('.editionText').text('极速版')
 		$('.Toggle2').attr('edition-key' , 'bylw')
@@ -487,6 +529,8 @@ function typeSwitching(e) {
 		'ktbg': 'ktbgsenior',
 		'bylw': 'bylwsenior',
 		'bylwsenior': 'bylw',
+        'bylw_zrb': 'bylwsenior_zrb',
+        'bylwsenior_zrb': 'bylw_zrb',
 		'qklw': 'qklwsenior',
 		'qklwsenior': 'qklw',
 	}

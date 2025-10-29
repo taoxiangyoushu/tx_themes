@@ -270,14 +270,18 @@ var typeData = {}
 var short_name_data = {}
 var WordCount_data = {
 	bylw: [5000 , 10000  , 50000 , 100000],
+	bylw_zrb: [5000 , 10000  , 50000 , 100000],
 	qklw: [3000 , 8000 , 10000 , 20000],
 	bylwsenior: [5000 , 10000  , 50000 , 100000],
+	bylwsenior_zrb: [5000 , 10000  , 50000 , 100000],
 	sxbg: [1000 , 3000 , 5000 , 10000]
 }
 var Radius_data = {
 	bylw: [5000 , 100000],
+	bylw_zrb: [5000 , 100000],
 	qklw: [3000 , 20000],
 	bylwsenior: [5000 , 100000],
+	bylwsenior_zrb: [5000 , 100000],
 	sxbg: [1000 , 30000]
 }
 function typefun(goods_info) {
@@ -308,7 +312,7 @@ function setArguments(info) {
 }
 
 function editionType(edition) {
-	$('#App').removeClass('bylwsenior wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt xzaigccheck')
+	$('#App').removeClass('bylwsenior bylw_zrb wxzs ktbg rws qklw kclw dybg zjcaigc sxbg lwdbppt xzaigccheck')
 	if(edition == "Normal") {
 		$('#App').removeClass('ProfessionalEdition')
 		$('#App').removeClass('zjcaigc')

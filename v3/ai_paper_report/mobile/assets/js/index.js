@@ -211,9 +211,12 @@ function changeType(this_ , this_val) {
         if(parameterSet[this_short_name].submit_attribute.value.major.value){
             $(".specialityBox").show()
         }
+        if(this_short_name == 'bylw_zrb') {
+            $(".educationBox").hide()
+        }
     }
 
-    if(this_short_name !== 'bylw' && this_short_name !== 'qklw'&& this_short_name !== 'kclw') {   //图表
+    if(this_short_name !== 'bylw' && this_short_name !== 'bylw_zrb' && this_short_name !== 'qklw'&& this_short_name !== 'kclw') {   //图表
         $('.genIT').hide()
         $(".addParameters").hide()
     }else{
@@ -241,7 +244,7 @@ function changeType(this_ , this_val) {
         $('.EducationalAltitude').hide()
     }
 
-    if(['bylw'].includes(this_short_name)){
+    if(['bylw', 'bylw_zrb'].includes(this_short_name)){
         $(".proposalBox  , .tabDiv").show();
     }else{
         $(".proposalBox  , .tabDiv").hide();
@@ -278,13 +281,13 @@ function changeType(this_ , this_val) {
         $('.filSize').text(15)
     }
 
-    if(this_short_name !== 'bylw' && this_short_name !== 'ktbg' && this_short_name !== 'kclw' && this_short_name !== 'qklw'){    //参考文献
+    if(this_short_name !== 'bylw' && this_short_name != 'bylw_zrb' && this_short_name !== 'ktbg' && this_short_name !== 'kclw' && this_short_name !== 'qklw'){    //参考文献
         $(".EnglishReferenceShow").hide()
         $(".EnglishReferenceTip").hide()
     }else {
         $(".EnglishReferenceShow").show()
         $(".EnglishReferenceTip").show()
-        if(this_short_name == 'bylw' || this_short_name == 'qklw') {
+        if(this_short_name == 'bylw' || this_short_name == 'bylw_zrb' || this_short_name == 'qklw') {
             $('.EnglishReference-check').attr('checked', false)
             $(".inputBox-en").hide()
         }
@@ -461,7 +464,7 @@ $('.generate').click(function() {
         toast('请确认知晓并同意 "生成的论文范文仅用于参考,不作为毕业、发表使用" 条款!', 3000)
         return
     }
-    if( typeData[$('#type_s').val()].short_name=='bylw' && $(".proposal-check").is(':checked') && !fid && !ktbg_generate) {
+    if( (typeData[$('#type_s').val()].short_name=='bylw' || typeData[$('#type_s').val()].short_name=='bylw_zrb') && $(".proposal-check").is(':checked') && !fid && !ktbg_generate) {
         $("#proposal_err").text('请上传开题报告')
         $("#proposal_err").show();
         return;
@@ -515,7 +518,7 @@ $('.generate').click(function() {
             formData.goods_id = wxzsID
         }
 
-        if((typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'lwdbppt' || typeData[$('#type_s').val()].short_name == 'sxbg') && $("#basic").val() && $("#basic").val() !== 'A'){
+        if((typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb' || typeData[$('#type_s').val()].short_name == 'lwdbppt' || typeData[$('#type_s').val()].short_name == 'sxbg') && $("#basic").val() && $("#basic").val() !== 'A'){
             if($(".specialityBox").is(':visible')){
                 formData['data[paper_type][label]'] = '论文类型'
                 formData['data[paper_type][value]'] = configs[$("#basic").val()]
@@ -525,7 +528,7 @@ $('.generate').click(function() {
         var KEYWORD = []
         slicing($("#keyword").val(),KEYWORD)
 
-       if(typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'qklw'||typeData[$('#type_s').val()].short_name == 'kclw'){
+        if(typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb' || typeData[$('#type_s').val()].short_name == 'qklw'||typeData[$('#type_s').val()].short_name == 'kclw'){
             if($(".keywordBox").is(':visible')){
                 formData['data[keyword][label]'] = '关键词'
                 formData['data[keyword][value]'] = KEYWORD.join('；')
@@ -549,7 +552,7 @@ $('.generate').click(function() {
                 formData['data[gen_ai_img][value]'] =  $(".gen_ai_img").is(':checked')?1:0
             }
        }
-       if(typeData[$('#type_s').val()].short_name == 'bylw' && !$(".proposal-check").is(':checked')) {
+        if((typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb') && !$(".proposal-check").is(':checked')) {
             // 判断英文参考文献
             if(!LiteratureFU()) return;
             // 英文参考
@@ -594,7 +597,7 @@ $('.generate').click(function() {
         if(window.localStorage.getItem('bd_vid')) {
             formData['bd_vid'] =  window.localStorage.getItem('bd_vid')
         }
-        if($(".proposal-check").is(':checked') && typeData[$('#type_s').val()].short_name == 'bylw'){
+        if($(".proposal-check").is(':checked') && (typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb')){
             if(fid){
                 formData['data[gen_ktbg][label]'] = '开题报告';
                 formData['data[gen_ktbg][value]'] = $(".proposal-check").is(':checked')?1:0;
@@ -1089,7 +1092,7 @@ $(".EnglishReference-text").on('click',function (){
 
 $(".EnglishReference-check").on('click',function (event){
     event.stopPropagation()
-    if(!$("#NumberWords").val() && (typeData[$('#type_s').val()].short_name=='bylw' || typeData[$('#type_s').val()].short_name=='qklw')){
+    if(!$("#NumberWords").val() && (typeData[$('#type_s').val()].short_name=='bylw' || typeData[$('#type_s').val()].short_name=='bylw_zrb' || typeData[$('#type_s').val()].short_name=='qklw')){
         $('.EnglishReference-check').attr('checked', false)
         toast('请先选择字数', 2000)
         return

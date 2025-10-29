@@ -1035,3 +1035,31 @@
   width: 2.28rem;
   margin-right: 0.8rem;
 }
+.stepMain .bylw_zrb {
+  display: none;
+}
+.stepMain .longText.bylw_zrbBox {
+  display: none;
+}
+.uploadKTBG_pop .bylw_zrb_pt {
+  display: none;
+}
+.bylw_zrb .stepMain .example.myLink.Sample_window {
+  display: none;
+}
+.bylw_zrb .stepMain .example.myLink.Sample_window.bylw_zrb {
+  display: inline-block;
+}
+.bylw_zrb .longText.bylw_zrbBox {
+  display: block;
+}
+.bylw_zrb .longText.bylwBox {
+  display: none;
+}
+.bylw_zrb .uploadKTBG_pop .bylw_pt {
+  display: none;
+}
+.bylw_zrb .uploadKTBG_pop .bylw_zrb_pt {
+  display: inline;
+}
+/*# sourceMappingURL=leftCss.css.map */

@@ -1794,7 +1794,7 @@ p.word-prompt .text-num {
   background-color: #8987E8;
 }
 .openingReport {
-  width: 506px;
+  width: 512px;
   min-height: 262px;
   background: #fff;
   position: fixed;
@@ -1908,3 +1908,4 @@ p.word-prompt .text-num {
 .indexApp .proposal .fileBlock img.deleteFile {
   margin-top: 0;
 }
+/*# sourceMappingURL=index.css.map */

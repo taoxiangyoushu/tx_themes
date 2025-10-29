@@ -1074,3 +1074,59 @@
   align-items: center;
   justify-content: space-between;
 }
+.stepMain .bylw_zrb {
+  display: none;
+}
+.stepMain .longText.bylw_zrbBox {
+  display: none;
+}
+.stepMain .top4 .topHader.bylw_zrbBox {
+  display: none;
+}
+.proposal .contenteditable_s .bylw_zrb_pt {
+  display: none;
+}
+.openingReport .pop_cont .bylw_zrb_pt {
+  display: none;
+}
+.bylw_zrb .stepMain .example.myLink.Sample_window,
+.bylwsenior_zrb .stepMain .example.myLink.Sample_window {
+  display: none;
+}
+.bylw_zrb .stepMain .example.myLink.Sample_window.bylw_zrb,
+.bylwsenior_zrb .stepMain .example.myLink.Sample_window.bylw_zrb {
+  display: inline-block;
+}
+.bylw_zrb .stepMain .longText.bylw_zrbBox,
+.bylwsenior_zrb .stepMain .longText.bylw_zrbBox {
+  display: block;
+}
+.bylw_zrb .stepMain .longText.bylwBox,
+.bylwsenior_zrb .stepMain .longText.bylwBox {
+  display: none;
+}
+.bylw_zrb .stepMain .top4 .topHader.bylwBox,
+.bylwsenior_zrb .stepMain .top4 .topHader.bylwBox {
+  display: none;
+}
+.bylw_zrb .stepMain .top4 .topHader.bylw_zrbBox,
+.bylwsenior_zrb .stepMain .top4 .topHader.bylw_zrbBox {
+  display: block;
+}
+.bylw_zrb .proposal .contenteditable_s .bylw_pt,
+.bylwsenior_zrb .proposal .contenteditable_s .bylw_pt {
+  display: none;
+}
+.bylw_zrb .proposal .contenteditable_s .bylw_zrb_pt,
+.bylwsenior_zrb .proposal .contenteditable_s .bylw_zrb_pt {
+  display: inline;
+}
+.bylw_zrb .openingReport .pop_cont .bylw_pt,
+.bylwsenior_zrb .openingReport .pop_cont .bylw_pt {
+  display: none;
+}
+.bylw_zrb .openingReport .pop_cont .bylw_zrb_pt,
+.bylwsenior_zrb .openingReport .pop_cont .bylw_zrb_pt {
+  display: inline;
+}
+/*# sourceMappingURL=leftCss.css.map */

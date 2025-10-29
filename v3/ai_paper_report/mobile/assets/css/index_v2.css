@@ -596,13 +596,16 @@ input[type=checkbox] {
 .optimize {
   display: none;
 }
-#App.bylw .form #contenteditable {
+#App.bylw .form #contenteditable,
+#App.bylw_zrb .form #contenteditable {
   width: 100%;
 }
-#App.bylw #titleID .optimize {
+#App.bylw #titleID .optimize,
+#App.bylw_zrb #titleID .optimize {
   display: inline-block;
 }
-#App.bylw #titleID #contenteditable {
+#App.bylw #titleID #contenteditable,
+#App.bylw_zrb #titleID #contenteditable {
   width: calc(100% - 8.6rem - 0.8rem);
 }
 .upk_mask {
@@ -695,3 +698,4 @@ input[type=checkbox] {
 .uploadKTBG_pop .upk_btn.upking {
   background: #69A8FF;
 }
+/*# sourceMappingURL=index_v2.css.map */

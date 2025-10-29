@@ -1076,3 +1076,48 @@
 .scirs .scirsBox {
   display: block;
 }
+.indexAppv2 .described .stepMain .example.myLink.Sample_window.bylw_zrb {
+  display: none;
+}
+.indexAppv2 .described .stepMain .longText.bylw_zrbBox {
+  display: none;
+}
+.indexAppv2 .proposal .contenteditable_s .bylw_zrb_pt {
+  display: none;
+}
+.indexAppv2 .openingReport .pop_cont .bylw_zrb_pt {
+  display: none;
+}
+.bylw_zrb .described .stepMain .example.myLink.Sample_window,
+.bylwsenior_zrb .described .stepMain .example.myLink.Sample_window {
+  display: none;
+}
+.bylw_zrb .described .stepMain .example.myLink.Sample_window.bylw_zrb,
+.bylwsenior_zrb .described .stepMain .example.myLink.Sample_window.bylw_zrb {
+  display: inline-block;
+}
+.bylw_zrb .described .stepMain .longText.bylw_zrbBox,
+.bylwsenior_zrb .described .stepMain .longText.bylw_zrbBox {
+  display: block;
+}
+.bylw_zrb .described .stepMain .longText.bylwBox,
+.bylwsenior_zrb .described .stepMain .longText.bylwBox {
+  display: none;
+}
+.bylw_zrb .proposal .contenteditable_s .bylw_pt,
+.bylwsenior_zrb .proposal .contenteditable_s .bylw_pt {
+  display: none;
+}
+.bylw_zrb .proposal .contenteditable_s .bylw_zrb_pt,
+.bylwsenior_zrb .proposal .contenteditable_s .bylw_zrb_pt {
+  display: inline;
+}
+.bylw_zrb .openingReport .pop_cont .bylw_pt,
+.bylwsenior_zrb .openingReport .pop_cont .bylw_pt {
+  display: none;
+}
+.bylw_zrb .openingReport .pop_cont .bylw_zrb_pt,
+.bylwsenior_zrb .openingReport .pop_cont .bylw_zrb_pt {
+  display: inline;
+}
+/*# sourceMappingURL=leftCss.css.map */

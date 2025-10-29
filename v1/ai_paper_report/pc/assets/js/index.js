@@ -88,7 +88,7 @@ function changeType(this_ , this_val) {
         $(".version-wxzs").hide()
         // $('.editTitle>.title').text(typeData[val].name)
     }
-    if(this_short_name !== 'bylw' && this_short_name !== 'qklw' && this_short_name !== 'bylwsenior' && this_short_name !== 'qklwsenior' && this_short_name !== 'kclw'){    //图表
+    if(this_short_name !== 'bylw' && this_short_name !== 'bylw_zrb' && this_short_name !== 'qklw' && this_short_name !== 'bylwsenior' && this_short_name !== 'bylwsenior_zrb' && this_short_name !== 'qklwsenior' && this_short_name !== 'kclw'){    //图表
         $('.gen_params').hide()
     }else{
         $('.gen_params').show()
@@ -106,10 +106,10 @@ function changeType(this_ , this_val) {
             $('.questionnaire').show()
         }
     }
-    if(this_short_name !== 'bylw' && this_short_name !== 'bylwsenior' && this_short_name !== 'ktbg' && this_short_name !== 'ktbgsenior' && this_short_name !== 'kclw' && this_short_name !== 'qklw' && this_short_name !== 'qklwsenior'){ // 参考文献
+    if(this_short_name !== 'bylw' && this_short_name !== 'bylw_zrb' && this_short_name !== 'bylwsenior' && this_short_name !== 'bylwsenior_zrb' && this_short_name !== 'ktbg' && this_short_name !== 'ktbgsenior' && this_short_name !== 'kclw' && this_short_name !== 'qklw' && this_short_name !== 'qklwsenior'){ // 参考文献
         $('.EnglishLiterature').hide()
     }else {
-        if(this_short_name == 'bylw' || this_short_name == 'bylwsenior' || this_short_name == 'qklw' || this_short_name == 'qklwsenior'){
+        if(this_short_name == 'bylw' || this_short_name == 'bylw_zrb' || this_short_name == 'bylwsenior' || this_short_name == 'bylwsenior_zrb' || this_short_name == 'qklw' || this_short_name == 'qklwsenior'){
             if(!$(".proposal-check").is(':checked')){
                 $('.EnglishLiterature').show()
                 $('#NumberWords').trigger('input')
@@ -129,7 +129,7 @@ function changeType(this_ , this_val) {
     }
 
     // 写作辅助的可配置参数
-    if(this_short_name == 'bylw' || this_short_name == 'bylwsenior' || this_short_name == 'qklwsenior' || this_short_name == 'kclw' || this_short_name == 'ktbg' || this_short_name == 'ktbgsenior' || this_short_name == 'qklw'){
+    if(this_short_name == 'bylw' || this_short_name == 'bylw_zrb' || this_short_name == 'bylwsenior' || this_short_name == 'bylwsenior_zrb' || this_short_name == 'qklwsenior' || this_short_name == 'kclw' || this_short_name == 'ktbg' || this_short_name == 'ktbgsenior' || this_short_name == 'qklw'){
         if(parameterSet[this_short_name] && parameterSet[this_short_name].submit_attribute) {
             if(parameterSet[this_short_name].submit_attribute.value.education && parameterSet[this_short_name].submit_attribute.value.education.value){
                 $(".education_c").show()
@@ -161,6 +161,9 @@ function changeType(this_ , this_val) {
             if(this_short_name !== 'qklwsenior'){
                 $(".proposal-check").trigger('change')
             }
+            if(this_short_name == 'bylw_zrb' || this_short_name == 'bylwsenior_zrb') {
+                $(".education_c").hide()
+            }
         }
     }else{
         $(".education_c").hide()
@@ -170,7 +173,7 @@ function changeType(this_ , this_val) {
         $(".EnglishLiterature").addClass('displayHide')
     }
 
-    if(['ktbgsenior' , 'ktbg' , 'bylw' , 'bylwsenior', 'qklw', 'qklwsenior'].includes(this_short_name)){
+    if(targetShortNames.includes(this_short_name)){
         $(".Toggle2").show();
     }else {
         $(".Toggle2").hide();
@@ -180,7 +183,7 @@ function changeType(this_ , this_val) {
         $(".education_c").show()
     }
 
-    if(this_short_name == 'bylw' || this_short_name == 'bylwsenior'){
+    if(this_short_name == 'bylw' || this_short_name == 'bylw_zrb' || this_short_name == 'bylwsenior' || this_short_name == 'bylwsenior_zrb'){
         $(".proposal").show()
     }else{
         $(".proposal").hide()
@@ -537,13 +540,13 @@ $('.generate').click(function() {
                 formData.goods_id = $(".version-item.active").attr('data-goodsid')
             }
         }
-        if(typeData[$('#type_s').val()].short_name == 'bylw' && $("#basic").val() && $("#basic").val() !== 'A'){
+        if((typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb') && $("#basic").val() && $("#basic").val() !== 'A'){
             if($(".major").is(':visible')){
                 formData['data[paper_type][label]'] = '论文类型'
                 formData['data[paper_type][value]'] = configs[$("#basic").val()]
             }
         }
-        if(typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'qklw'|| typeData[$('#type_s').val()].short_name == 'kclw') {
+        if(typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb' || typeData[$('#type_s').val()].short_name == 'qklw'|| typeData[$('#type_s').val()].short_name == 'kclw') {
             formData['data[gen_tab][label]'] = '生成表格'
             formData['data[gen_tab][value]'] = $(".gen_tab").is(':checked')?1:0
             formData['data[gen_img][label]'] = '生成图片'
@@ -559,18 +562,18 @@ $('.generate').click(function() {
                 formData['data[gen_ai_img][value]'] =  $(".gen_ai_img").is(':checked')?1:0
                 
             }
-            if($(".education_c").is(':visible') && typeData[$('#type_s').val()].short_name == 'bylw'){
+            if($(".education_c").is(':visible') && (typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb')){
                 formData['data[education][label]'] = '学历'
                 formData['data[education][value]'] = $("input[name='reportType']:checked").val();
             }
-            if($(".keywordBox").is(':visible') && typeData[$('#type_s').val()].short_name == 'bylw'){
+            if($(".keywordBox").is(':visible') && (typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb')){
                 formData['data[keyword][label]'] = '关键词'
                 formData['data[keyword][value]'] = keyWord
             }
         }
 
         // 英文参考
-        if(typeData[$('#type_s').val()].short_name == 'bylw' && !$(".proposal-check").is(':checked')) {
+        if((typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb') && !$(".proposal-check").is(':checked')) {
             // 判断英文参考文献
             if(!LiteratureFU()) {
                 throttling = true
@@ -623,7 +626,7 @@ $('.generate').click(function() {
         }
 
         // 自写开题报告
-        if($(".proposal-check").is(':checked') && typeData[$('#type_s').val()].short_name == 'bylw'){
+        if($(".proposal-check").is(':checked') && (typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb')){
             if(fid){
                 formData['data[gen_ktbg][label]'] = '开题报告';
                 formData['data[gen_ktbg][value]'] = $(".proposal-check").is(':checked')?1:0;

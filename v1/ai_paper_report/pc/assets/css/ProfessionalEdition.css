@@ -629,7 +629,8 @@
 .qklwseniorBox {
   display: none;
 }
-.ProfessionalEdition.bylwsenior .advancedBox {
+.ProfessionalEdition.bylwsenior .advancedBox,
+.ProfessionalEdition.bylwsenior_zrb .advancedBox {
   display: block;
 }
 .ProfessionalEdition.ktbgsenior .ktbgseniorBox {

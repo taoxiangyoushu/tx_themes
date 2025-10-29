@@ -515,7 +515,10 @@
             <div class="step2">
                 <img src="../mobile/assets/img/step123.png" alt="">
                 <div class="stepMain">
-                    <p>AI原创范文<a class="example Sample_window myLink" href="/demo.html?type=bylw" target="_blank" data-url="demo.html" data-param="bylw">样例</a></p>
+                    <p>AI原创范文
+                        <a class="example Sample_window myLink" href="/demo.html?type=bylw" target="_blank" data-url="demo.html" data-param="bylw">样例</a>
+                        <a class="example Sample_window myLink bylw_zrb" href="/demo.html?type=bylw_zrb" target="_blank" data-url="demo.html" data-param="bylw">样例</a>
+                    </p>
                     <div class="stepCard">
                         <div class="col-md-12">
                             标题：<span class="economy">经济管理与财富发展</span>
@@ -529,7 +532,8 @@
                         </div>
                     </div>
 
-                    <p class="longText">毕业论文附带查重报告</p>
+                    <p class="longText bylwBox">毕业论文附带查重报告</p>
+                    <p class="longText bylw_zrbBox">专升本论文附带查重报告</p>
                     <div class="reportCheck">
                         <p>重复率<30%</p>
                     </div>
@@ -1494,8 +1498,8 @@
         <div class="line"></div>
         <div class="upk_content">
             <ul>
-                <li><span>• 总结开题报告：</span>生成具有关联内容的毕业论文</li>
-                <li><span>• 提取参考文献：</span>作为毕业论文的参考文献（注：如无参考系统自动生成）</li>
+                <li><span>• 总结开题报告：</span>生成具有关联内容的<span class="bylw_pt">毕业论文</span><span class="bylw_zrb_pt">专升本论文</span></li>
+                <li><span>• 提取参考文献：</span>作为<span class="bylw_pt">毕业论文</span><span class="bylw_zrb_pt">专升本论文</span>的参考文献（注：如无参考系统自动生成）</li>
                 <li><span>• 暂不提取提纲：</span>需自定义提纲，请切换专业版</li>
                 <li><span>• 开题报告文件：</span>支持docx，大小不超过4M</li>
             </ul>
@@ -1592,9 +1596,12 @@ function dropDownType(e) {
     var selectObj = $("#type_s");
     selectObj.find("option:not(:first)").remove();
     for (let i=0; i<e.length; i++) {
-        if(e[i].short_name !== 'bylwjigou' && e[i].short_name !== 'bylwsenior' && e[i].short_name !== 'wxzs2' && e[i].short_name !== 'szsjzz' && e[i].short_name !== 'qkszsjzz'&& e[i].short_name !== 'ktbgsenior' && e[i].short_name !== 'qklwsenior' && e[i].short_name !== 'scirs'){
+        if(e[i].short_name !== 'bylwjigou' && e[i].short_name !== 'bylwsenior' && e[i].short_name !== 'bylwsenior_zrb' && e[i].short_name !== 'wxzs2' && e[i].short_name !== 'szsjzz' && e[i].short_name !== 'qkszsjzz'&& e[i].short_name !== 'ktbgsenior' && e[i].short_name !== 'qklwsenior' && e[i].short_name !== 'scirs'){
             var optionValue = e[i].goods_id;
             var optionText =  e[i].type;
+            if(e[i].short_name == "bylw_zrb") {
+                optionText = '专升本'
+            }
             selectObj.append(new Option(optionText, optionValue));
         }
         if(e[i].short_name == 'wxzs'){

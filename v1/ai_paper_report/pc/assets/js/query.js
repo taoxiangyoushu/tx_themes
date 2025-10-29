@@ -101,7 +101,7 @@ function query(e) {
                     var hasAIGC = false
                     var hasDbppt = false
                     for(key in typeData){
-                        if( res.data[i].goods_name.indexOf('毕业论文')>-1 && typeData[key].name == res.data[i].goods_name){
+                        if( (res.data[i].goods_name.indexOf('毕业论文')>-1 || res.data[i].goods_name.indexOf('专升本')>-1) && typeData[key].name == res.data[i].goods_name){
                             if(typeData[key].increment_goods_infos.zjcaigczz){
                                 hasAIGC = true
                             }
@@ -110,10 +110,10 @@ function query(e) {
                             }
                         }
                     }
-                    if(resData.end_product && resData.added_value_goods_names.indexOf('早降重-降AIGC率') == -1 && resData.goods_name.indexOf("毕业论文") !== -1 && hasAIGC && resData.son_order_goods_names.indexOf('zjcaigczz') == -1){
+                    if(resData.end_product && resData.added_value_goods_names.indexOf('早降重-降AIGC率') == -1 && (resData.goods_name.indexOf("毕业论文") !== -1 || resData.goods_name.indexOf("专升本") !== -1) && hasAIGC && resData.son_order_goods_names.indexOf('zjcaigczz') == -1){
                         btnNum = btnNum +1
                     }
-                    if(resData.end_product && resData.added_value_goods_names.indexOf('答辩PPT') == -1 && resData.goods_name.indexOf("毕业论文") !== -1 && hasDbppt && resData.son_order_goods_names.indexOf('dbppt') == -1){
+                    if(resData.end_product && resData.added_value_goods_names.indexOf('答辩PPT') == -1 && (resData.goods_name.indexOf("毕业论文") !== -1 || resData.goods_name.indexOf("专升本") !== -1) && hasDbppt && resData.son_order_goods_names.indexOf('dbppt') == -1){
                         btnNum = btnNum +1
                     }
                     btnNC = 'btnN' + btnNum
@@ -159,7 +159,7 @@ function query(e) {
                         var is_supper_added_goods=true
                         var more=''
                         if(is_supper_added_goods){
-                            if(resData.end_product && resData.added_value_goods_names.indexOf('早降重-降AIGC率') == -1 && resData.goods_name.indexOf("毕业论文") !== -1 && hasAIGC && resData.son_order_goods_names.indexOf('zjcaigczz') == -1){
+                            if(resData.end_product && resData.added_value_goods_names.indexOf('早降重-降AIGC率') == -1 && (resData.goods_name.indexOf("毕业论文") !== -1 || resData.goods_name.indexOf("专升本") !== -1) && hasAIGC && resData.son_order_goods_names.indexOf('zjcaigczz') == -1){
                                 text += "<div class='aigc-btn purchasing "+ btnNC +"' data-goodsname='zjcaigczz' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>降AIGC率</span>" +
                                     "   <div class='aigc-introduce'>" +
                                     "       <p>AIGC疑似率是有效识别文本是否部分或全部由AI模型生成，结果与论文质量无关、仅表示论文中内容片段存在Al生成可能性的概率。</p>" +
@@ -168,7 +168,7 @@ function query(e) {
                                     "</div> ";
                                 more += "<div class='purchasing "+ btnNC +"' data-goodsname='zjcaigczz' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>降AIGC率</span></div>"
                             }
-                            if(resData.end_product && resData.added_value_goods_names.indexOf('答辩PPT') == -1 && resData.goods_name.indexOf("毕业论文") !== -1 && hasDbppt && resData.son_order_goods_names.indexOf('dbppt') == -1){
+                            if(resData.end_product && resData.added_value_goods_names.indexOf('答辩PPT') == -1 && (resData.goods_name.indexOf("毕业论文") !== -1 || resData.goods_name.indexOf("专升本") !== -1) && hasDbppt && resData.son_order_goods_names.indexOf('dbppt') == -1){
                                 text += "<div class='dbppt-btn purchasing "+ btnNC +"' data-goodsname='dbppt' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>生成PPT</span></div> ";  
                                 more += "<div class='purchasing "+ btnNC +"' data-goodsname='dbppt' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>生成PPT</span></div> ";  
                             }

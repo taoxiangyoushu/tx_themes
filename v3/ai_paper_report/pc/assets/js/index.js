@@ -89,11 +89,11 @@ function changeType(this_ , this_val) {
         $(".version-wxzs").hide()
         // $('.editTitle>.title').text(typeData[val].name)
     }
-    if(this_short_name !== 'bylw' && this_short_name !== 'qklw' && this_short_name !== 'bylwsenior' && this_short_name !== 'qklwsenior' && this_short_name !== 'kclw'){    //图表
+    if(this_short_name !== 'bylw' && this_short_name !== 'qklw' && this_short_name !== 'bylwsenior' && this_short_name !== 'bylw_zrb' && this_short_name !== 'bylwsenior_zrb' && this_short_name !== 'qklwsenior' && this_short_name !== 'kclw'){    //图表
         $('.gen_params').hide()
     }else{
         $('.gen_params').show()
-       if(this_short_name == 'bylw' || this_short_name == 'qklw' || this_short_name == 'bylwsenior' || this_short_name == 'qklwsenior'){
+       if(this_short_name == 'bylw' || this_short_name == 'qklw' || this_short_name == 'bylwsenior' || this_short_name == 'bylw_zrb' || this_short_name == 'bylwsenior_zrb' || this_short_name == 'qklwsenior'){
             $('.genImg').hide()
             $('.genTab').hide()
             $('.genFormula').hide()
@@ -116,10 +116,10 @@ function changeType(this_ , this_val) {
             $('.questionnaire').show()
         }
     }
-    if(this_short_name !== 'bylw' && this_short_name !== 'bylwsenior' && this_short_name !== 'ktbg' && this_short_name !== 'ktbgsenior' && this_short_name !== 'kclw' && this_short_name !== 'qklw' && this_short_name !== 'qklwsenior'){ // 参考文献
+    if(this_short_name !== 'bylw' && this_short_name !== 'bylwsenior' && this_short_name !== 'bylw_zrb' && this_short_name !== 'bylwsenior_zrb' && this_short_name !== 'ktbg' && this_short_name !== 'ktbgsenior' && this_short_name !== 'kclw' && this_short_name !== 'qklw' && this_short_name !== 'qklwsenior'){ // 参考文献
         $('.EnglishLiterature').hide()
     }else {
-        if(this_short_name == 'bylw' || this_short_name == 'bylwsenior' || this_short_name == 'qklw' || this_short_name == 'qklwsenior'){
+        if(this_short_name == 'bylw' || this_short_name == 'bylwsenior' || this_short_name == 'bylw_zrb' || this_short_name == 'bylwsenior_zrb' || this_short_name == 'qklw' || this_short_name == 'qklwsenior'){
             if(!$(".proposal-check").is(':checked')){
                 $('.EnglishLiterature').show()
                 $('#NumberWords').trigger('input')
@@ -132,7 +132,7 @@ function changeType(this_ , this_val) {
         }
 
         //v3 隐藏文献数量
-        if(this_short_name == 'bylwsenior' || this_short_name == 'qklwsenior' || this_short_name == 'ktbgsenior'){
+        if(this_short_name == 'bylwsenior' || this_short_name == 'bylwsenior_zrb' || this_short_name == 'qklwsenior' || this_short_name == 'ktbgsenior'){
             $('.EnglishLiterature').hide()
         }
     }
@@ -144,7 +144,7 @@ function changeType(this_ , this_val) {
     }
 
     // 写作辅助的可配置参数
-    if(this_short_name == 'bylw' || this_short_name == 'bylwsenior' || this_short_name == 'qklwsenior' || this_short_name == 'kclw' || this_short_name == 'ktbg' || this_short_name == 'ktbgsenior' || this_short_name == 'qklw'){
+    if(this_short_name == 'bylw' || this_short_name == 'bylwsenior' || this_short_name == 'bylw_zrb' || this_short_name == 'bylwsenior_zrb' || this_short_name == 'qklwsenior' || this_short_name == 'kclw' || this_short_name == 'ktbg' || this_short_name == 'ktbgsenior' || this_short_name == 'qklw'){
         if(parameterSet[this_short_name] && parameterSet[this_short_name].submit_attribute) {
             if(parameterSet[this_short_name].submit_attribute.value.education && parameterSet[this_short_name].submit_attribute.value.education.value){
                 $(".education_c").show()
@@ -168,15 +168,19 @@ function changeType(this_ , this_val) {
             }
 
             if(parameterSet[this_short_name].submit_attribute.value.references_en_num && parameterSet[this_short_name].submit_attribute.value.references_en_num.value) {
-                if(this_short_name != 'bylwsenior' && this_short_name != 'qklwsenior'){
+                if(this_short_name != 'bylwsenior' && this_short_name !== 'bylwsenior_zrb' && this_short_name != 'qklwsenior'){
                     $(".EnglishLiterature").removeClass('displayHide')
                 }
             }else{
                 $(".EnglishLiterature").addClass('displayHide')
             }
             //  自选文献  隐藏英文文献数量显示判断
-            if(this_short_name !== 'qklwsenior' && this_short_name !== 'bylwsenior' && this_short_name !== 'ktbgsenior'){
+            if(this_short_name !== 'qklwsenior' && this_short_name !== 'bylwsenior' && this_short_name !== 'bylwsenior_zrb' && this_short_name !== 'ktbgsenior'){
                 $(".proposal-check").trigger('change')
+            }
+
+            if(this_short_name == 'bylwsenior_zrb'){
+                $(".education_c").hide()
             }
         }
     }else{
@@ -194,7 +198,7 @@ function changeType(this_ , this_val) {
         $(".education_c").show()
     }
 
-    if(this_short_name == 'bylw' || this_short_name == 'bylwsenior'){
+    if(this_short_name == 'bylw' || this_short_name == 'bylwsenior' || this_short_name == 'bylw_zrb' || this_short_name == 'bylwsenior_zrb'){
         $(".proposal").hide()
     }else{
         $(".proposal").hide()
@@ -548,13 +552,13 @@ $('.generate').click(function() {
                 formData.goods_id = $(".version-item.active").attr('data-goodsid')
             }
         }
-        if(typeData[$('#type_s').val()].short_name == 'bylw' && $("#basic").val() && $("#basic").val() !== 'A'){
+        if((typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb') && $("#basic").val() && $("#basic").val() !== 'A'){
             if($(".major").is(':visible')){
                 formData['data[paper_type][label]'] = '论文类型'
                 formData['data[paper_type][value]'] = configs[$("#basic").val()]
             }
         }
-        if(typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'qklw'|| typeData[$('#type_s').val()].short_name == 'kclw') {
+        if(typeData[$('#type_s').val()].short_name == 'bylw' || typeData[$('#type_s').val()].short_name == 'bylw_zrb' || typeData[$('#type_s').val()].short_name == 'qklw'|| typeData[$('#type_s').val()].short_name == 'kclw') {
             formData['data[gen_tab][label]'] = '生成表格'
             formData['data[gen_tab][value]'] = $(".gen_tab").is(':checked')?1:0
             formData['data[gen_img][label]'] = '生成图片'

@@ -14,7 +14,7 @@ $('#outline').click(function() {
     $('.editTips , .editTips2').hide()
     if(!$('.inputCheck').prop("checked")) return cocoMessage.error('请确认知晓并同意 "生成的论文范文仅用于参考,不作为毕业、发表使用" 条款!', 3000)
     var bootstrapValidator = $("#ContainerTo").data("bootstrapValidator").validate();
-    if( typeData[$("#type_s2").val()].short_name=='bylwsenior' || typeData[$("#type_s2").val()].short_name=='qklwsenior'){
+    if( typeData[$("#type_s2").val()].short_name=='bylwsenior' || typeData[$("#type_s2").val()].short_name=='bylwsenior_zrb' || typeData[$("#type_s2").val()].short_name=='qklwsenior'){
         if($("#illustrate").val().length > 0) {
             if($("#illustrate").val().length < 200) {
                 $(".professional").css('borderColor', '#f34f4f')
@@ -112,7 +112,7 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this) {
         }
     }
 
-    if( typeData[$('#type_s2').val()].short_name == 'bylwsenior' ) {
+    if( (typeData[$('#type_s2').val()].short_name == 'bylwsenior' || typeData[$('#type_s2').val()].short_name == 'bylwsenior_zrb') ) {
         if($("#illustrate").val().length > 0) {
             if($("#illustrate").val().length < 200) {
             }else{
@@ -122,7 +122,7 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this) {
         if($(".education_c").is(':visible')){
             formData.education = $("input[name='reportType']:checked").val()
         }
-        if(typeData[$('#type_s2').val()].short_name == 'bylwsenior' && $("#basic").val() && $("#basic").val() !== 'A'){
+        if((typeData[$('#type_s2').val()].short_name == 'bylwsenior' || typeData[$('#type_s2').val()].short_name == 'bylwsenior_zrb') && $("#basic").val() && $("#basic").val() !== 'A'){
             if($(".major").is(':visible')){
                 formData.paper_type = configs[$("#basic").val()]
             }

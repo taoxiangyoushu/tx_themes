@@ -59,24 +59,6 @@ $route = [
         'mobile'=>__DIR__ . '/mobile/hd/detail.html'
     ],
 ];
-
-$route1 = [
-    'pc'=>[
-        '/'=>'/pc/index.html',
-        '/index.html'=>__DIR__ . '/pc/index.html',
-        '/pay.html'=>__DIR__ . '/pc/pay.html',
-
-    ],
-    'mobile'=>[
-        '/'=>'/mobile/index.html'
-
-
-    ],
-
-];
-
-
-
 $m = new Mobile_Detect();
 if (isset($route[$path])){
     $routeConfig = $route[$path];

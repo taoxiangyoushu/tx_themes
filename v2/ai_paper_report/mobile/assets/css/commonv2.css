@@ -58,6 +58,7 @@ html .ContainerTo {
   min-height: 4.4rem;
 }
 #App.bylw .typeLi.bylw,
+#App.bylw_zrb .typeLi.bylw_zrb,
 #App.wxzs .typeLi.wxzs,
 #App.ktbg .typeLi.ktbg,
 #App.rws .typeLi.rws,
@@ -75,6 +76,7 @@ html .ContainerTo {
   position: relative;
 }
 #App.bylw .typeLi.bylw::after,
+#App.bylw_zrb .typeLi.bylw_zrb::after,
 #App.wxzs .typeLi.wxzs::after,
 #App.ktbg .typeLi.ktbg::after,
 #App.rws .typeLi.rws::after,
@@ -100,6 +102,7 @@ html .ContainerTo {
   display: none;
 }
 #App.bylw .bylwBox,
+#App.bylw_zrb .bylw_zrbBox,
 #App.wxzs .wxzsBox,
 #App.ktbg .ktbgBox,
 #App.rws .rwsBox,
