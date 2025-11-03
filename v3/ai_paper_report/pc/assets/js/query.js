@@ -177,10 +177,10 @@ function query(e) {
                                 text += "<div class='dbppt-btn purchasing "+ btnNC +"' data-goodsname='dbppt' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>生成PPT</span></div> ";  
                                 more += "<div class='purchasing "+ btnNC +"' data-goodsname='dbppt' data-orderid="+res.data[i].order_sn+" data-name="+res.data[i].goods_name+" data-wordNum="+res.data[i].place_order_data.word_num.value+"><span>生成PPT</span></div> ";  
                             }
-                            if(resData.end_product && ["ktbg" , 'ktbgsenior'].includes(resData.goods_short_name) && resData.son_order_goods_names.indexOf('bylw') == -1){
-                                text += "<div class='generate-btn Paper_Box ' data-orderid='"+res.data[i].order_sn+"'  data-title='"+ res.data[i].place_order_data.title.value +"' data-time='"+ res.data[i].created +"'><span>生成论文</span>" + "</div> ";
-                                more += "<div class='Paper_Box ' data-orderid='"+res.data[i].order_sn+"'  data-title='"+ res.data[i].place_order_data.title.value +"' data-time='"+ res.data[i].created +"'><span>生成论文</span>" + "</div> ";
-                            }
+                            // if(resData.end_product && ["ktbg" , 'ktbgsenior'].includes(resData.goods_short_name) && resData.son_order_goods_names.indexOf('bylw') == -1){
+                            //     text += "<div class='generate-btn Paper_Box ' data-orderid='"+res.data[i].order_sn+"'  data-title='"+ res.data[i].place_order_data.title.value +"' data-time='"+ res.data[i].created +"'><span>生成论文</span>" + "</div> ";
+                            //     more += "<div class='Paper_Box ' data-orderid='"+res.data[i].order_sn+"'  data-title='"+ res.data[i].place_order_data.title.value +"' data-time='"+ res.data[i].created +"'><span>生成论文</span>" + "</div> ";
+                            // }
                         }
                         if(resData.end_product) {
                             text += "<div class='delete-btn delete_method "+ btnNC +"' data-orderid='"+ res.data[i].order_sn +"'><span>删除订单</span></div> ";
@@ -418,15 +418,15 @@ $(".complainForm .complaint-oid").mouseleave(function (){
     $(".complaint-orderId").hide();
 })
 
-//开题报告生成论文
-$(document).on('click','.Paper_Box',function (){
-    // window.location.href = './index.html?ktbg=' + $(this).data('orderid') + '&title=' + $(this).data('title')
-    $(".ktbg-generate").show();
-    $(".mask_body").show();
-    $(".ktbg-title").text($(this).data('title'))
-    $(".ktbg-time").text($(this).data('time'))
-    $(".ktbg-oid").text($(this).data('orderid'))
-})
+//开题报告生成论文  V3版本不支持
+// $(document).on('click','.Paper_Box',function (){
+//     // window.location.href = './index.html?ktbg=' + $(this).data('orderid') + '&title=' + $(this).data('title')
+//     $(".ktbg-generate").show();
+//     $(".mask_body").show();
+//     $(".ktbg-title").text($(this).data('title'))
+//     $(".ktbg-time").text($(this).data('time'))
+//     $(".ktbg-oid").text($(this).data('orderid'))
+// })
 
 $(".close-generate").on('click',function (){
     $(".ktbg-generate").hide()
