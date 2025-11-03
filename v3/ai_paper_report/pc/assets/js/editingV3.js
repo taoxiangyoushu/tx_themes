@@ -925,6 +925,7 @@ function previewResultsKTBG() {
     var textArr = []
     var element = ''
     $(".previewResults .template_ktbg .content_ktbg").html('')
+    $('.previewResults .title_yl span').text($('#contenteditable').val());
     for (var i=0; i<previewData.length; i++) {
         if(previewData[i].dataLvl == 1 && previewData[i].level == 1) {
             textArr.push(previewData[i])

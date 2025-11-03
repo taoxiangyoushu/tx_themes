@@ -293,6 +293,7 @@
 }
 .V3_Theme .headBox .leftFloat {
   float: left;
+  display: inline;
 }
 .V3_Theme .commodityTypeName {
   font-size: 22px !important;
@@ -1435,4 +1436,3 @@
   user-select: none;
   line-height: 24px;
 }
-/*# sourceMappingURL=V3_Theme.css.map */

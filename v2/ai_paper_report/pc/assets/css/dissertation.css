@@ -216,24 +216,35 @@ body {
   padding: 18px 18px 23px 36px;
 }
 .content_validity .content_valbody li {
-  list-style-type: circle;
+  list-style-type: none;
+  display: flex;
+  align-items: start;
+  justify-content: start;
   line-height: 24px;
+  position: relative;
 }
-.content_validity .content_valbody li::marker {
-  font-size: 20px;
+.content_validity .content_valbody li .circle_self {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: inherit;
+  border-width: 2px;
+  margin-top: 7px;
+  position: absolute;
+  left: -20px;
 }
-.content_validity .content_valbody li span:nth-child(1) {
+.content_validity .content_valbody li span:nth-child(2) {
   font-size: 14px;
   font-weight: bold;
   position: relative;
-  left: -12px;
-  top: -2px;
+  margin-right: 10px;
 }
-.content_validity .content_valbody li span:nth-child(2) {
+.content_validity .content_valbody li span:nth-child(3) {
   font-size: 12px;
   font-weight: 400;
   position: relative;
-  top: -2px;
 }
 .Image_Introduction {
   box-shadow: 0px 0px 7px 0px rgba(104, 104, 104, 0.1);
@@ -303,10 +314,13 @@ body {
 .Color_paper_contentbody li::marker {
   color: #0052C2;
 }
-.Color_paper_contentbody li span:nth-child(1) {
-  color: #0052C2;
+.Color_paper_contentbody li .circle_self {
+  color: #1780FF;
 }
 .Color_paper_contentbody li span:nth-child(2) {
+  color: #0052C2;
+}
+.Color_paper_contentbody li span:nth-child(3) {
   color: #457CBF;
   display: inline-block;
   vertical-align: text-top;
@@ -349,16 +363,16 @@ body {
 #bg .Color_paper_contentbody li::marker {
   color: #C43300;
 }
-#sjfxtw .Color_paper_contentbody li span:nth-child(1),
-#xtyj .Color_paper_contentbody li span:nth-child(1),
-#yjxz .Color_paper_contentbody li span:nth-child(1),
-#zyyjnr .Color_paper_contentbody li span:nth-child(1),
-#yjffjfx .Color_paper_contentbody li span:nth-child(1),
-#csjdjwx .Color_paper_contentbody li span:nth-child(1),
-#pbgsbd .Color_paper_contentbody li span:nth-child(1),
-#gs .Color_paper_contentbody li span:nth-child(1),
-#bg .Color_paper_contentbody li span:nth-child(1) {
-  color: #C43300;
+#sjfxtw .Color_paper_contentbody li .circle_self,
+#xtyj .Color_paper_contentbody li .circle_self,
+#yjxz .Color_paper_contentbody li .circle_self,
+#zyyjnr .Color_paper_contentbody li .circle_self,
+#yjffjfx .Color_paper_contentbody li .circle_self,
+#csjdjwx .Color_paper_contentbody li .circle_self,
+#pbgsbd .Color_paper_contentbody li .circle_self,
+#gs .Color_paper_contentbody li .circle_self,
+#bg .Color_paper_contentbody li .circle_self {
+  color: #FF6137;
 }
 #sjfxtw .Color_paper_contentbody li span:nth-child(2),
 #xtyj .Color_paper_contentbody li span:nth-child(2),
@@ -369,6 +383,17 @@ body {
 #pbgsbd .Color_paper_contentbody li span:nth-child(2),
 #gs .Color_paper_contentbody li span:nth-child(2),
 #bg .Color_paper_contentbody li span:nth-child(2) {
+  color: #C43300;
+}
+#sjfxtw .Color_paper_contentbody li span:nth-child(3),
+#xtyj .Color_paper_contentbody li span:nth-child(3),
+#yjxz .Color_paper_contentbody li span:nth-child(3),
+#zyyjnr .Color_paper_contentbody li span:nth-child(3),
+#yjffjfx .Color_paper_contentbody li span:nth-child(3),
+#csjdjwx .Color_paper_contentbody li span:nth-child(3),
+#pbgsbd .Color_paper_contentbody li span:nth-child(3),
+#gs .Color_paper_contentbody li span:nth-child(3),
+#bg .Color_paper_contentbody li span:nth-child(3) {
   color: #AD8172;
   display: inline-block;
   vertical-align: text-top;
@@ -413,14 +438,14 @@ body {
 #ctyl .Color_paper_contentbody li::marker {
   color: #30306E;
 }
-#lcjg .Color_paper_contentbody li span:nth-child(1),
-#sxgsmx .Color_paper_contentbody li span:nth-child(1),
-#fxbg .Color_paper_contentbody li span:nth-child(1),
-#dmsl .Color_paper_contentbody li span:nth-child(1),
-#pzssl .Color_paper_contentbody li span:nth-child(1),
-#wjdc .Color_paper_contentbody li span:nth-child(1),
-#ctyl .Color_paper_contentbody li span:nth-child(1) {
-  color: #30306E;
+#lcjg .Color_paper_contentbody li .circle_self,
+#sxgsmx .Color_paper_contentbody li .circle_self,
+#fxbg .Color_paper_contentbody li .circle_self,
+#dmsl .Color_paper_contentbody li .circle_self,
+#pzssl .Color_paper_contentbody li .circle_self,
+#wjdc .Color_paper_contentbody li .circle_self,
+#ctyl .Color_paper_contentbody li .circle_self {
+  color: #5F5FFA;
 }
 #lcjg .Color_paper_contentbody li span:nth-child(2),
 #sxgsmx .Color_paper_contentbody li span:nth-child(2),
@@ -429,6 +454,15 @@ body {
 #pzssl .Color_paper_contentbody li span:nth-child(2),
 #wjdc .Color_paper_contentbody li span:nth-child(2),
 #ctyl .Color_paper_contentbody li span:nth-child(2) {
+  color: #30306E;
+}
+#lcjg .Color_paper_contentbody li span:nth-child(3),
+#sxgsmx .Color_paper_contentbody li span:nth-child(3),
+#fxbg .Color_paper_contentbody li span:nth-child(3),
+#dmsl .Color_paper_contentbody li span:nth-child(3),
+#pzssl .Color_paper_contentbody li span:nth-child(3),
+#wjdc .Color_paper_contentbody li span:nth-child(3),
+#ctyl .Color_paper_contentbody li span:nth-child(3) {
   color: #575780;
   display: inline-block;
   vertical-align: text-top;
@@ -453,10 +487,13 @@ body {
 #ckwxyzx .Color_paper_contentbody li::marker {
   color: #01775A;
 }
-#ckwxyzx .Color_paper_contentbody li span:nth-child(1) {
-  color: #01775A;
+#ckwxyzx .Color_paper_contentbody li .circle_self {
+  color: #0B9372;
 }
 #ckwxyzx .Color_paper_contentbody li span:nth-child(2) {
+  color: #01775A;
+}
+#ckwxyzx .Color_paper_contentbody li span:nth-child(3) {
   color: #578A7D;
 }
 #ckwxyzx .catalogue_content_color {
@@ -575,3 +612,4 @@ body {
 .scirsbox .Details_papercontent {
   margin-top: 20px;
 }
+/*# sourceMappingURL=dissertation.css.map */

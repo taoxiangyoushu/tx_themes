@@ -263,26 +263,40 @@ body {
         padding: 18px 18px 23px 36px;
 
         li {
-            list-style-type: circle;
+            list-style-type: none;
+            display: flex;
+            align-items: start;
+            justify-content: start;
             line-height: 24px;
+            position: relative;
+            //&::marker {
+            //    font-size: 20px;
+            //}
 
-            &::marker {
-                font-size: 20px;
-            }
-
-            span:nth-child(1) {
-                font-size: 14px;
-                font-weight: bold;
-                position: relative;
-                left: -12px;
-                top: -2px;
+            .circle_self {
+                width: 6px;
+                height: 6px;
+                display: inline-block;
+                border-radius: 50%;
+                border-style: solid;
+                border-color: inherit;
+                border-width: 2px;
+                margin-top: 7px;
+                position: absolute;
+                left: -20px;
             }
 
             span:nth-child(2) {
+                font-size: 14px;
+                font-weight: bold;
+                position: relative;
+                margin-right: 10px;
+            }
+
+            span:nth-child(3) {
                 font-size: 12px;
                 font-weight: 400;
                 position: relative;
-                top: -2px;
             }
         }
     }
@@ -371,11 +385,15 @@ body {
             color: #0052C2;
         }
 
-        span:nth-child(1) {
-            color: #0052C2;
+        .circle_self {
+            color: #1780FF;
         }
 
         span:nth-child(2) {
+            color: #0052C2;
+        }
+
+        span:nth-child(3) {
             color: #457CBF;
             display: inline-block;
             vertical-align: text-top;
@@ -403,11 +421,15 @@ body {
                 color: #C43300;
             }
 
-            span:nth-child(1) {
-                color: #C43300;
+            .circle_self {
+                color: #FF6137;
             }
 
             span:nth-child(2) {
+                color: #C43300;
+            }
+
+            span:nth-child(3) {
                 color: #AD8172;
                 display: inline-block;
                 vertical-align: text-top;
@@ -435,12 +457,16 @@ body {
             &::marker {
                 color: #30306E;
             }
-    
-            span:nth-child(1) {
-                color: #30306E;
+
+            .circle_self {
+                color: #5F5FFA;
             }
     
             span:nth-child(2) {
+                color: #30306E;
+            }
+    
+            span:nth-child(3) {
                 color: #575780;
                 display: inline-block;
                 vertical-align: text-top;
@@ -467,12 +493,16 @@ body {
             &::marker {
                 color: #01775A;
             }
-    
-            span:nth-child(1) {
-                color: #01775A;
+
+            .circle_self {
+                color: #0B9372;
             }
     
             span:nth-child(2) {
+                color: #01775A;
+            }
+    
+            span:nth-child(3) {
                 color: #578A7D;
             }
         }

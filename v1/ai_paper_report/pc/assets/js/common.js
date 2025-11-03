@@ -185,7 +185,8 @@ var keyConversion = {
 	kclw: 'kclw',
 	dybg: 'dybg',
 	aigccc: 'xzaigccheck',
-	jaigcl: 'zjcaigc'
+	jaigcl: 'zjcaigc',
+    zrb: 'bylw_zrb',
 }
 
 window.onload = function (){
@@ -352,6 +353,7 @@ var targetShortNames = [];
 var shortName=[]
 var shortName1=[]
 var shortName2=[]
+var shortName3=[]
 
 function typefun(goods_info) {
 	for(var i=0; i<goods_info.length; i++) {
@@ -382,12 +384,15 @@ function typefun(goods_info) {
 		if(goods_info[i].type=='开题报告'){
 			shortName2.push(goods_info[i].short_name)
 		}
+        if(goods_info[i].type=='专升本'){
+            shortName3.push(goods_info[i].short_name)
+        }
 	}
 	if (shortName.includes('bylw') && shortName.includes('bylwsenior')) {
 		targetShortNames.push('bylw'); 
 		targetShortNames.push('bylwsenior'); 
 	}
-	if (shortName.includes('bylwsenior_zrb') && shortName.includes("bylw_zrb")) {
+	if (shortName3.includes('bylwsenior_zrb') && shortName3.includes("bylw_zrb")) {
 		targetShortNames.push('bylwsenior_zrb'); 
 		targetShortNames.push('bylw_zrb'); 
 	}

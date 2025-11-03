@@ -186,6 +186,8 @@ var keyConversion = {
 	dybg: 'dybg',
 	aigccc: 'xzaigccheck',
 	jaigcl: 'zjcaigc',
+    zrb: 'bylw_zrb',
+    scirs: 'scirs'
 }
 
 window.onload = function (){
@@ -311,6 +313,7 @@ function infoData(result) {
         if(sw == 'bylw') sw = 'bylwsenior'
         if(sw == 'ktbg') sw = 'ktbgsenior'
         if(sw == 'qklw') sw = 'qklwsenior'
+        if(sw == 'bylw_zrb') sw = 'bylwsenior_zrb'
 		if(sw) defaultType(sw) // 默认选中版本
 	}
 
