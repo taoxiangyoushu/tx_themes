@@ -76,7 +76,7 @@ if(dct_code){
 	suffix2 = 'dct_code='+ dct_code
 }
 
-var urls = 'https://api.taoxiangyoushu.com'//http://api.project_libraries.report
+var urls = LOGIN_API_URL //https://api.taoxiangyoushu.com
 function getFormData(object) {
 	// 转FromData 对象
 	var formData = new FormData();
