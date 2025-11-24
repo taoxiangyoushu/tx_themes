@@ -639,10 +639,19 @@ function generated_row(item) {
             lastTopBox.find('.operationAddChild').trigger('click')
             $('.editingBox .topBox').last().find('.editingInput').val(current.title.trim())
         } else if(current.lv < box_lv) {
-            // 往上推
-            let parentElement = lastTopBox.parent('.topBox');
-            parentElement.children('.dsxz_row').find('.operationAddBrother').trigger('click')
-            $('.editingBox .topBox').last().find('.editingInput').val(current.title.trim())
+            let parentElement = lastTopBox;
+            const levelDiff = box_lv - current.lv;
+            for (let i = 0; i < levelDiff && i < 4; i++) { // 往上找到同级提纲
+                parentElement = parentElement.parent('.topBox');
+                if (!parentElement.length) break;
+            }
+            if (parentElement && parentElement.length) {
+                parentElement.children('.dsxz_row').find('.operationAddBrother').trigger('click');
+                const lastEditingBox = $('.editingBox .topBox').last();
+                if (lastEditingBox.length) {
+                    lastEditingBox.find('.editingInput').val(current.title.trim());
+                }
+            }
         }
     }
     if(allow_dm) {
@@ -965,7 +974,8 @@ function outlineStage(data) {
 }
 
 //开题报告  第三步
-function EditingOutlineKTBG() {
+function EditingOutlineKTBG(data) {
+    reference_list = data
     $('.rightCont').attr('id', 'OperationSteps3');
     $(".rightCont").scrollTop(0)
     EditingKTBG()

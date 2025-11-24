@@ -1395,7 +1395,7 @@ $(".literature_confirmPop .lc_save").on('click', function (){
     $(".mask_body").hide()
     if(typeData[$("#type_s").val()].short_name == 'ktbgsenior') {
         // 开题报告  大纲
-        EditingOutlineKTBG()
+        EditingOutlineKTBG(refernce_data)
     }else{
         // editingV3.js 提纲处理
         outlineStage(refernce_data)
