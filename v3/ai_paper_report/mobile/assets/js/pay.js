@@ -100,8 +100,10 @@ function llqType(pay_way) {
             }
             if (/MicroMessenger/.test(window.navigator.userAgent)) {  // 微信浏览器
                 $('#wx-pay').attr('data-payType','wxPublicNum')
-                if(!openid){
-                    $('#wx-pay').hide()
+                if(window.sessionStorage.getItem('simulationPay') == 'simulationPay') {
+                    typeSelect('wxPublicNum')
+                    window.sessionStorage.removeItem('simulationPay')
+                    $('.payBotton').click()
                 }
             }
         }
@@ -149,7 +151,6 @@ function llqType(pay_way) {
         // $('.linkUrl').text(window.location.href)
     }else {
         if (/MicroMessenger/.test(window.navigator.userAgent) && !is_wxApplet) {    // 微信浏览器
-            typeSelect('wxPublicNum')
             $('#wx-pay').attr('data-payType','wxPublicNum')
             source = 2
 
@@ -158,13 +159,20 @@ function llqType(pay_way) {
                 payIs = true
                 $('#wx-pay').show()
             }
-            if(pay_way.wx){
-                if(openid){
-                    typeSelect('wxPublicNum')
-                    $("#ali-pay").before($("#wx-pay"))
-                }else{
-                    $('#wx-pay').hide()
+            if(pay_way.default == 'alipay') {
+                if(window.sessionStorage.getItem('simulationPay') != 'simulationPay'){
                     typeSelect('alipayWap')
+                }
+            }
+            if(pay_way.default == 'wx') {
+                typeSelect('wxPublicNum')
+                $("#ali-pay").before($("#wx-pay"))
+            }
+            if(pay_way.wx){
+                if(window.sessionStorage.getItem('simulationPay') == 'simulationPay') {
+                    typeSelect('wxPublicNum')
+                    window.sessionStorage.removeItem('simulationPay')
+                    $('.payBotton').click()
                 }
             }else {
                 $('#wx-pay').hide()
@@ -172,9 +180,8 @@ function llqType(pay_way) {
             }
         }else { // 除微信浏览器, 其他浏览器默认选中支付宝支付
             if(pay_way.alipay) {
-                typeSelect('alipayWap')
+
             }else if(pay_way.wx) {
-                typeSelect('wxWap')
                 $(".btn_transferPay").attr('data-type', 'wxScan')
                 $(".btn_transferPay .p_tips1").text('(微信扫码支付)')
                 $(".btn_clone .p_tips1").text('(微信或电脑端打开)')
@@ -183,6 +190,13 @@ function llqType(pay_way) {
                     isTips = true
                 }
                 $('.linkUrl').text(window.location.href)
+            }
+            if(pay_way.default == 'alipay') {
+                typeSelect('alipayWap')
+            }
+            if(pay_way.default == 'wx') {
+                $("#wx-pay").click()
+                $("#ali-pay").before($("#wx-pay"))
             }
         }
         if(pay_way.alipay || pay_way.wx) {
@@ -275,7 +289,6 @@ $('#orderIdText').text(order_sn)
 if(!order_sn) location.href='./index.html'
 
 function payWay(goods_info , pay_way) {
-    refreshPageWx()
     if(getQueryVariable('contentType')){
         var typeData2 = typeData[getQueryVariable('contentType')] // 拿到当前版本的info参数
        if(typeData2){
@@ -411,6 +424,11 @@ $('.payBotton').click(function() {
             return toast({msg: '请刷新页面重试'})
         }
     }else if(payType == 'wxPublicNum'){
+        if(!openid) {
+            window.sessionStorage.setItem('simulationPay', 'simulationPay')
+            refreshPageWx()
+            return
+        }
         if( is_wxApplet ){
             window.location.href = './transfer_pay.html?pay_url=' + encodeURIComponent(orderInfoData.pay_wap_url) + '&order_sn=' + order_sn + '&amount=' + $('#amountText').text() + '&payType=wxScan&sourceT=3'
             return
