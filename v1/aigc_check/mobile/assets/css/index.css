@@ -1011,6 +1011,19 @@ button.btn-default,
   padding: 0 1rem 1rem 1rem;
   position: relative;
 }
+.Thesis .InputBox .inputContent {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  border: 1px solid #f3f3f3;
+}
+.Thesis .InputBox .inputContent.focusCss {
+  box-shadow: inset 0 0px 4px rgba(78, 78, 78, 0.1);
+  border: 1px solid #ececec;
+}
 .Thesis .InputBox #textareaText {
   width: 100%;
   height: 100%;
@@ -1018,6 +1031,9 @@ button.btn-default,
   outline: 0;
   resize: none;
   font-size: 1.2rem;
+  position: relative;
+  z-index: 100;
+  background: transparent;
 }
 .Thesis .InputBox .Paste_Tips {
   display: inline-block;
@@ -1026,9 +1042,15 @@ button.btn-default,
   vertical-align: middle;
   line-height: normal;
   position: absolute;
-  top: 0rem;
-  left: 4%;
+  top: 1.2rem;
+  left: 0.8rem;
   width: 92%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
 }
 .Thesis .InputBox .Paste_Tips span {
   color: #FF2C1E;

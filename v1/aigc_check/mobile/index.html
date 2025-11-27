@@ -45,10 +45,10 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0027">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0027">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0027">
-    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0027">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0029">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0029">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0029">
+    <link rel="stylesheet" href="../mobile/assets/css/problem.css?v=m24.0029">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'aigc_check'
@@ -112,8 +112,10 @@
 
                     <div class="Thesis">
                         <div class="InputBox">
-                            <textarea name="textareaName" id="textareaText" maxlength="300000" autocomplete="off"></textarea>
-							<span class="Paste_Tips">内容字数 <span class="WORD_LIMIT"></span>，提交内容建议去除封面、目录，<span>仅支持提交中英文内容检测</span></span>
+                            <div class="inputContent">
+                                <textarea name="textareaName" id="textareaText" maxlength="300000" autocomplete="off"></textarea>
+							    <span class="Paste_Tips">内容字数 <span class="WORD_LIMIT"></span>，提交内容建议去除封面、目录，<span>仅支持提交中英文内容检测</span></span>
+                            </div>
                         </div>
                         <div class="UploadBox">
                             <input name="docUpload" id="ThesisInput" type="file" single ref="docUpload" file-upload=""
@@ -354,10 +356,10 @@
 <script src="../mobile/assets/js/jquery.min.js"></script>
 <script src="../mobile/assets/js/bootstrap.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0029"></script>
 <script src="../mobile/assets/js/bootstrap-select.js"></script>
 <script src="../mobile/assets/js/bootstrapValidator.min.js"></script>
-<script src="../mobile/assets/js/rotograph.js?v=m24.0027"></script>
+<script src="../mobile/assets/js/rotograph.js?v=m24.0029"></script>
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/Drag.js"></script>
 <script>
@@ -741,7 +743,19 @@
 		    $('.Paste_Tips').show()
 		}
 	})
-
+    $('#textareaText').on('focus', function() {
+        if($('.Paste_Tips').is(':visible')) {
+            $('.Paste_Tips').css('opacity', '0.5');
+        }
+        $('.inputContent').addClass('focusCss')
+    })
+    
+    $('#textareaText').on('blur', function() {
+        if($('.Paste_Tips').is(':visible')) {
+            $('.Paste_Tips').css('opacity', '1');
+        }
+        $('.inputContent').removeClass('focusCss')
+    })
     $('.additional-text').click(function() {
         $(".additional_block #additional").click()
     })

@@ -1018,6 +1018,19 @@ body {
         height: 100%;
         padding: 0 1rem 1rem 1rem;
         position: relative;
+        .inputContent {
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: .3rem;
+            padding: 1rem;
+            border: 1px solid #f3f3f3;
+            &.focusCss {
+                box-shadow: inset 0 0px 4px rgba(78, 78, 78, 0.1);
+                border: 1px solid #ececec;
+            }
+        }
         #textareaText {
             width: 100%;
             height: 100%;
@@ -1025,6 +1038,9 @@ body {
             outline: 0;
             resize: none;
             font-size: 1.2rem;
+            position: relative;
+            z-index: 100;
+            background: transparent;
         }
         .Paste_Tips{
             display: inline-block;
@@ -1033,9 +1049,15 @@ body {
             vertical-align: middle;
             line-height: normal;
             position: absolute;
-            top: 0rem;
-            left: 4%;
+            top: 1.2rem;
+            left: .8rem;
             width: 92%;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
             span{
                 color: #FF2C1E;
             }
