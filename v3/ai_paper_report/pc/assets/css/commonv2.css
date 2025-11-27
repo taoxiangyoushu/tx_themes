@@ -168,7 +168,9 @@ html .ContainerTo {
 .indexAppv2 .LeftLoginBox {
   text-align: center;
 }
-.indexAppv2 .LeftLoginBox > img {
+.indexAppv2 .LeftLoginBox > img,
+.indexAppv2 .LeftLoginBox .logo_zyb_v2,
+.indexAppv2 .LeftLoginBox .logov2 {
   max-width: 94px;
 }
 .indexAppv2 .selected_icon {
@@ -937,4 +939,3 @@ html .ContainerTo {
 .menuCanSelect.scirs .checkbox {
   display: none;
 }
-/*# sourceMappingURL=commonv2.css.map */
