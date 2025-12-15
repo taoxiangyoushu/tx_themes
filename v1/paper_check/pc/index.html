@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../pc/assets/css/select2.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0065">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0065">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0066">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0066">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
@@ -120,7 +120,8 @@
                                             <div class="Not">
                                                 <img src="../pc/assets/img/Upload.png" alt="上传">
                                                 <p>点击或拖拽文件到此处上传</p>
-                                                <span>文档支持txt、doc(x)，文件大小不得超过15M</span>
+                                                <span class="upload-restrictionText">文档支持txt、doc(x)，文件大小不得超过15M</span>
+                                                <p class="tip-pdf">PDF格式不稳定，有一定概率出现乱码，请确认后再提交</p>
                                             </div>
                                             <div class="Complete">
                                                 <div class="CompleteBox">
@@ -321,9 +322,9 @@
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/select2.min.js"></script>
-<script src="../pc/assets/js/common.js?v=p24.0065"></script>
+<script src="../pc/assets/js/common.js?v=p24.0066"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0065"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0066"></script>
 <script>
     $('#date').datetimepicker({minView: 2, language: "zh-CN"});
     var typed = new Typed('.switch-text', {
@@ -383,6 +384,9 @@
         $(".check-system-block .system-item").removeClass('active')
         $(this).addClass('active')
         $(".date-block").fadeOut()
+        $('#ThesisInput').attr('accept', '.doc,.docx,.txt,text/plain')
+        $('.Not .upload-restrictionText').text('文档支持txt、doc(x)，文件大小不得超过15M')
+        $('.Not .tip-pdf').hide()
         if( (typeData[$(this).attr('data-name')].length >= 1) && ($(this).attr('data-name') == 'turnitin' || $(this).attr('data-name') == 'wanfang' || $(this).attr('data-name') == 'weipu' || $(this).attr('data-name') == 'yuanwenjian' || $(this).attr('data-name') == 'daya') ){
             if($(this).attr('data-name') == 'turnitin'){
                 var versionDom = ''
@@ -584,6 +588,30 @@
             }
             if( typeData[$(this).attr('data-name')][0].data.support_submit_types.file) {
                 $("#file").parent().show()
+                if(typeData[$(this).attr('data-name')][0].data.support_submit_types.file.supportFileType){
+                    var supportFileType = ''
+                    var supportFileTypeArr = typeData[$(this).attr('data-name')][0].data.support_submit_types.file.supportFileType.split('|')
+                    var supportFileTypeText = typeData[$(this).attr('data-name')][0].data.support_submit_types.file.supportFileType.split('|').join('、')
+                    for(var i=0; i<supportFileTypeArr.length; i++) {
+                        if(supportFileTypeArr[i] == 'txt') {
+                            supportFileType += '.txt,text/plain,'
+                        }else{
+                            supportFileType += ( '.'+supportFileTypeArr[i]+',')
+                        }
+                    }
+                    supportFileType = supportFileType.slice(0,-1)
+                    $('#ThesisInput').attr('accept', supportFileType)
+                    if(typeData[$(this).attr('data-name')][0].data.support_submit_types.file.uploadMaxFileSize){
+                        $('.Not .upload-restrictionText').text('文档支持'+supportFileTypeText+'，文件大小不得超过'+typeData[$(this).attr('data-name')][0].data.support_submit_types.file.uploadMaxFileSize/1024/1024+'M')
+                    }else{
+                        $('.Not .upload-restrictionText').text('文档支持'+supportFileTypeText+'，文件大小不得超过15M')
+                    }
+                    if(supportFileTypeArr.indexOf('pdf') > -1){
+                        $('.Not .tip-pdf').show()
+                    }else{
+                        $('.Not .tip-pdf').hide()
+                    }
+                }
             }else{
                 $("#file").parent().hide()
             }
@@ -679,6 +707,30 @@
                 }
                 if( typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file) {
                     $("#file").parent().show()
+                    if(typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file.supportFileType){
+                        var supportFileType = ''
+                        var supportFileTypeArr = typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file.supportFileType.split('|')
+                        var supportFileTypeText = typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file.supportFileType.split('|').join('、')
+                        for(var j=0; j<supportFileTypeArr.length; j++) {
+                            if(supportFileTypeArr[j] == 'txt') {
+                                supportFileType += '.txt,text/plain,'
+                            }else{
+                                supportFileType += ( '.'+supportFileTypeArr[j]+',')
+                            }
+                        }
+                        supportFileType = supportFileType.slice(0,-1)
+                        $('#ThesisInput').attr('accept', supportFileType)
+                        if(typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file.uploadMaxFileSize){
+                            $('.Not .upload-restrictionText').text('文档支持'+supportFileTypeText+'，文件大小不得超过'+typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file.uploadMaxFileSize/1024/1024+'M')
+                        }else{
+                            $('.Not .upload-restrictionText').text('文档支持'+supportFileTypeText+'，文件大小不得超过15M')
+                        }
+                        if(supportFileTypeArr.indexOf('pdf') > -1){
+                            $('.Not .tip-pdf').show()
+                        }else{
+                            $('.Not .tip-pdf').hide()
+                        }
+                    }
                 }else{
                     $("#file").parent().hide()
                 }
@@ -1072,6 +1124,9 @@
             }
             if(uploadType== 'file'){
                 data.file = $("#ThesisInput")[0].files[0]
+                if($("#ThesisInput")[0].files[0].type.indexOf('pdf') != '-1'){
+                    data.file_type = 'pdf'
+                }
             }
             if($(".check-version").is(':visible')){
                 data.check_name = $(".version-item.active").attr('data-type')

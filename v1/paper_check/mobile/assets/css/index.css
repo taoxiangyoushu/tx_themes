@@ -358,6 +358,11 @@
   color: #999999;
   font-size: 1.1rem;
 }
+.index_app .check-form .ContainerTo .form-group .contentBox .upload-block .upload-tip .tip-pdf {
+  color: #d70a0a;
+  font-size: 1.1rem;
+  display: none;
+}
 .index_app .check-form .ContainerTo .form-group .contentBox.onlyFile #content {
   display: none;
 }
@@ -729,3 +734,4 @@
 .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
   margin-right: 0;
 }
+/*# sourceMappingURL=index.css.map */

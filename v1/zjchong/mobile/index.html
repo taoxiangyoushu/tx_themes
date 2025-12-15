@@ -45,9 +45,9 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0037">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0037">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0037">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0038">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0038">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0038">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'zjchong'
@@ -142,11 +142,12 @@
                             <div class="type_item" data-type="cnkiAIGC">知W AIGC<span class="Report_label">支持V2.13</span></div>
                             <div class="type_item" data-type="wanfangAIGC">万F AIGC<span class="Report_label">实时更新</span></div>
                             <div class="type_item" data-type="weipuAIGC">维P AIGC<span class="Report_label">支持V2.26</span></div>
+                            <div class="type_item" data-type="turnitinAIGC">Turnitin AIGC<span class="Report_label">支持V10.14</span></div>
                             <div class="type_item" data-type="masterAIGC">Master AIGC</div>
                             <div class="type_item" data-type="gzdAIGC">格Z达 AIGC</div>
                             <div class="type_item" data-type="dyAIGC">D雅 AIGC</div>
                             <div class="type_item" data-type="paperPassAIGC">PP AIGC</div>
-                            <div class="type_item" data-type="zqAIGC">Z雀 AIGC</div>
+                            <div class="type_item" data-type="zqAIGC">TX朱雀 AIGC</div>
                             <div class="type_item" data-type="otherAIGC">其它</div>
                         </div>
                         <input class="check_platform" type="text" placeholder="各平台检测机制不同，请提交平台链接">
@@ -181,7 +182,8 @@
                                 <p class="p1 upload_tips_txt" data-type="masterAIGC">需包含文件<span>“xxx---AIGC检测报告.html”</span></p>
                                 <p class="p1 upload_tips_txt" data-type="paperPassAIGC">请下载PP<span>“离线网页版报告”</span>zip</p>
                                 <p class="p1 upload_tips_txt" data-type="gzdAIGC">需包含文件<span>“xxx_AIGC检测报告.pdf”</span></p>
-                                <p class="p1 upload_tips_txt" data-type="zqAIGC">请上传Z雀AIGC检测的文档文件内容</p>
+                                <p class="p1 upload_tips_txt" data-type="zqAIGC">请上传TX朱雀AIGC检测的文档文件内容</p>
+                                <p class="p1 upload_tips_txt" data-type="turnitinAIGC">仅支持上传zip，需包含文件<span>“Originality_Report_ai.pdf”</span></p>
                             </div>
                         </div>
                         <div class="upload_tips">
@@ -641,8 +643,16 @@
             </div>
         </div>
         <div class="example_item" data-type="zqAIGC" >
-            <P class="subtitle">【Z雀-检测文档】上传示例</P>
+            <P class="subtitle">【TX朱雀-检测文档】上传示例</P>
             <p class="reportTip">支持上传docx/doc/txt，以便系统解析降AIGC内容</p>
+            <div class="exam-img">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="example_item" data-type="turnitinAIGC" >
+            <P class="subtitle">【Turnitin-AIGC报告】上传示例</P>
+            <p class="reportTip">仅支持上传zip，需包含文件<span>“Originality_Report_ai.pdf”</span></p>
+            <p class="reportTip">以便系统解析降AIGC内容</p>
             <div class="exam-img">
                 <img src="" alt="">
             </div>
@@ -711,8 +721,8 @@
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/jszip.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0037"></script>
-<script src="../mobile/assets/js/Drag.js?v=m24.0037"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0038"></script>
+<script src="../mobile/assets/js/Drag.js?v=m24.0038"></script>
 <script>
     var Weight_reduction=''
     Weight_reduction=getQueryVariable('sw')
@@ -834,7 +844,8 @@
         'weipuAIGC': '../mobile/assets/img/ex-wpAIGC.png?v=1',
         'gzdAIGC': '../mobile/assets/img/ex-gzdAIGC.png',
         'dyAIGC': '../mobile/assets/img/ex-dyAIGC.png',
-        'zqAIGC':'../mobile/assets/img/ex-zqaigc.png'
+        'zqAIGC':'../mobile/assets/img/ex-zqaigc.png?v=1',
+        'turnitinAIGC': '../mobile/assets/img/ex-turnitinaigc.png',
     }
 
     // 版本选择
@@ -1336,6 +1347,10 @@
                 delete formData_1.file_type
             }
 
+            if(reportType_s == 'turnitinAIGC') {
+                formData_1.domain = '30'
+            }
+
             $.ajax({
                 type: 'POST',
                 url: urls+ '/api/project/zjchong/pre_handle/upload?user_token='+USER_TOKEN+'&jane_name='+JANE_NAME+'&domain_record='+ window.location.origin,
@@ -1711,6 +1726,10 @@
         zqAIGC: {
             zipType: ['docx', 'doc', 'txt'],
             fileAccept: '.doc,.docx,.txt,text/plain,'
+        },
+        turnitinAIGC: {
+            zipType: ['zip'],
+            fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
         }
     };
     $(".zip_block .report_type .type_item").click(function (){
@@ -1721,7 +1740,7 @@
         else{
             $('.copywriting').hide()
         }
-        if(type_group=='cnkiAIGC'||type_group=='wanfangAIGC'||type_group=='weipuAIGC'){
+        if(type_group=='cnkiAIGC'||type_group=='wanfangAIGC'||type_group=='weipuAIGC'||type_group=='turnitinAIGC'){
             $(".zip_block .report_type .type_item").removeClass('active')
             $(".zip_block .report_type .type_item").removeClass('special')
             $(this).addClass('special')

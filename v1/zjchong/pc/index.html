@@ -9,9 +9,9 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0068">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0068">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0068">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0070">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0070">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0070">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -250,17 +250,17 @@
                                     </div>
                                     <div class="zip_description Other_Styles" data-type="otherAIGC">通过上传对应的AIGC检测报告，降AI率效果更好</div>
                                     <div class="zip_description Other_Styles" data-type="zqAIGC">
-                                        <span class="exampleFile_name">请上传Z雀AIGC检测文档文件内容</span>，示例：
+                                        <span class="exampleFile_name">请上传TX朱雀AIGC检测文档文件内容</span>，示例：
                                         <span class="example_file">
                                             <img src="../pc/assets/img/doc_icon.png" alt="">
                                             xxx.doc
                                         </span>
                                         <div class="file_exampleBlock zqAIGC">
-                                            <div>
-                                                <p>1. 在Z雀AIGC检测完AI浓度后，【复制】检测完的文本，【粘贴】到WPS<span class="blue">保存docx/doc/txt格式</span></p>
+                                            <div class="fe-s-1">
+                                                <p>1. 在TX朱雀AIGC检测完AI浓度后，【复制】检测完的文本，【粘贴】到WPS<span class="blue">保存docx/doc/txt格式</span></p>
                                                 <img src="" alt="">
                                             </div>
-                                            <div>
+                                            <div class="fe-s-2">
                                                 <p>2. 上传文档降重</p>
                                                 <img class="aigc_zq_img2" src="" alt="">
                                             </div>
@@ -350,6 +350,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="zip_description" data-type="turnitinAIGC">
+                                        仅支持上传zip，需包含文件<span class="exampleFile_name">“Originality_Report_ai.pdf”</span>，示例：
+                                        <span class="example_file">
+                                            <img src="../pc/assets/img/icon_zip.png" alt="">
+                                              Originality_Report_ai.zip
+                                        </span>
+                                        <div class="file_exampleBlock turnitinAIGC">
+                                            <div>
+                                                <img src="" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="zipFile_upload">
                                         <div class="upload_file">
@@ -385,11 +397,12 @@
                                                 <div class="report_type_item" data-brand="cnkiAIGC">知W AIGC<span class="Report_label">支持V2.13</span></div>
                                                 <div class="report_type_item" data-brand="wanfangAIGC">万F AIGC<span class="Report_label">实时更新</span></div>
                                                 <div class="report_type_item" data-brand="weipuAIGC">维P AIGC<span class="Report_label">支持V2.26</span></div>
-                                                <div class="report_type_item" data-brand="masterAIGC">Master AIGC</div>
-                                                <div class="report_type_item noMarginRight" data-brand="gzdAIGC">格Z达 AIGC</div>
+                                                <div class="report_type_item" data-brand="turnitinAIGC">Turnitin AIGC<span class="Report_label">支持V10.14</span></div>
+                                                <div class="report_type_item noMarginRight" data-brand="masterAIGC">Master AIGC</div>
+                                                <div class="report_type_item" data-brand="gzdAIGC">格Z达 AIGC</div>
                                                 <div class="report_type_item" data-brand="dyAIGC">D雅 AIGC</div>
                                                 <div class="report_type_item" data-brand="paperPassAIGC">PP AIGC</div>
-                                                <div class="report_type_item" data-brand="zqAIGC">Z雀 AIGC</div>
+                                                <div class="report_type_item" data-brand="zqAIGC">TX朱雀 AIGC</div>
                                                 <div class="report_type_item" data-brand="otherAIGC">其它</div>
                                             </div>
                                             <input type="text" class="platform_utl" placeholder="各平台检测机制不同，请提交平台链接">
@@ -767,7 +780,7 @@
 <script src="../pc/assets/js/jszip.min.js"></script>
 <script src="../pc/assets/js/common.js?v=p24.005"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0068"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0070"></script>
 <script>
     var uploadType = 'content';
     var domain = '303';
@@ -1313,6 +1326,9 @@
                     data.domain = '20'
                     delete data.file_type
                 }
+                if(reportType_s == 'turnitinAIGC') {
+                    data.domain = '30'
+                }
             }
             uploadPre(data)
         }
@@ -1470,6 +1486,10 @@
                 zipType: ['docx', 'doc', 'txt'],
                 fileAccept: '.doc,.docx,.txt,text/plain,'
             },
+            turnitinAIGC: {
+                zipType: ['zip'],
+                fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+            },
             otherAIGC: {
                 zipType: ['zip', 'pdf', 'html'],
                 fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf,.html'
@@ -1535,11 +1555,12 @@
         'dyAIGC': '../pc/assets/img/aigc_dy_img.png',
         'zqAIGC':'../pc/assets/img/aigc_zq_img1.png',
         'zqAIGC1':'../pc/assets/img/aigc_zq_img2.png',
+        'turnitinAIGC': '../pc/assets/img/aigc_turnitin_img.png?v=1',
     }
 
     $(".report_type .report_type_item").click(function (){   //  报告类型选择
         var type_group=$(this).attr('data-brand')
-        if(type_group=='cnkiAIGC'||type_group=='wanfangAIGC'||type_group=='weipuAIGC'){
+        if(type_group=='cnkiAIGC'||type_group=='wanfangAIGC'||type_group=='weipuAIGC'||type_group=='turnitinAIGC'){
             $(".report_type .report_type_item").removeClass('active')
             $(".report_type .report_type_item").removeClass('special')
             $(this).addClass('special')

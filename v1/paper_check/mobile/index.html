@@ -47,9 +47,9 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/select2.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0032">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0032">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0032">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0033">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0033">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0033">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
@@ -153,6 +153,7 @@
                                <div class="upload-tip">
                                    <p class="p1">点击图标上传</p>
                                    <p class="p2">文档支持txt、doc(x)，文件大小不得超过15M</p>
+                                   <p class="tip-pdf">PDF格式不稳定，有一定概率出现乱码</p>
                                </div>
                            </div>
                        </div>
@@ -342,7 +343,7 @@
 <script src="../mobile/assets/js/select2.min.js"></script>
 <script src="../mobile/assets/js/typed.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0032"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0033"></script>
 <script>
 
     // 封装url参数获取
@@ -380,7 +381,7 @@
         'weipu': '适合各类本科、专科、硕士、博士、职称、期刊、MBA论文',
         'paperPass': '适合各类本科、专科、硕博论文',
         'ithenticate': '适合留学生、SCI论文、EI论文、英文写作论文',
-        'turnitin': '国际版适合留学生、SCI论文、EI论文、英文写作论文,UK版适合英国留学生专用检测',
+        'turnitin': '国际版适合留学生、SCI论文、EI论文、英文写作论文；UK版适合英国留学生专用检测；AI率检测仅支持英文，其它语言无法检测，也无法出AI率报告',
         'zaojiance': '适合各类本科、专科、硕士、博士论文',
         'checkPass': '适合各类本科、专科、硕士、博士、职称、期刊、MBA论文',
         'dashichachong': '适合各类本科、专科、硕士、博士论文',
@@ -613,6 +614,9 @@
         $(".DateBox").fadeOut()
         $(".tempSelect").fadeOut()
         $(".suitability-tips span").text(system_range[$(this).attr('data-name')])
+        $('#file').attr('accept', '.doc,.docx,.txt,text/plain')
+        $('.upload-tip .p2').text('文档支持txt、doc(x)，文件大小不得超过15M')
+        $('.upload-tip .tip-pdf').hide()
         if(typeData[$(this).attr('data-name')].length >= 1 && ( $(this).attr('data-name') == 'turnitin' || $(this).attr('data-name') == 'wanfang' || $(this).attr('data-name') == 'weipu' || $(this).attr('data-name') == 'yuanwenjian' || $(this).attr('data-name') == 'daya' )) {
             var selectObj = $("#type_s");
             selectObj.find("option:not(:first)").remove();
@@ -809,6 +813,30 @@
                 if(typeData[$(this).attr('data-name')][0].data.support_submit_types.content) {
                     $(".upload-block").css('display', 'flex')
                 }
+                if(typeData[$(this).attr('data-name')][0].data.support_submit_types.file.supportFileType){
+                    var supportFileType = ''
+                    var supportFileTypeArr = typeData[$(this).attr('data-name')][0].data.support_submit_types.file.supportFileType.split('|')
+                    var supportFileTypeText = typeData[$(this).attr('data-name')][0].data.support_submit_types.file.supportFileType.split('|').join('、')
+                    for(var j=0; j<supportFileTypeArr.length; j++) {
+                        if(supportFileTypeArr[j] == 'txt') {
+                            supportFileType += '.txt,text/plain,'
+                        }else{
+                            supportFileType += ( '.'+supportFileTypeArr[j]+',')
+                        }
+                    }
+                    supportFileType = supportFileType.slice(0,-1)
+                    $('#file').attr('accept', supportFileType)
+                    if(typeData[$(this).attr('data-name')][0].data.support_submit_types.file.uploadMaxFileSize){
+                        $('.upload-tip .p2').text('文档支持'+supportFileTypeText+'，文件大小不得超过'+typeData[$(this).attr('data-name')][0].data.support_submit_types.file.uploadMaxFileSize/1024/1024+'M')
+                    }else{
+                        $('.upload-tip .p2').text('文档支持'+supportFileTypeText+'，文件大小不得超过15M')
+                    }
+                    if(supportFileTypeArr.indexOf('pdf') > -1){
+                        $('.upload-tip .tip-pdf').show()
+                    }else{
+                        $('.upload-tip .tip-pdf').hide()
+                    }
+                }
                 $("#content").change()
             }
         }
@@ -899,6 +927,30 @@
                     if(typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.content) {
                         $(".upload-block").css('display', 'flex')
                         $("#content").change()
+                    }
+                    if(typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file.supportFileType){
+                        var supportFileType = ''
+                        var supportFileTypeArr = typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file.supportFileType.split('|')
+                        var supportFileTypeText = typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file.supportFileType.split('|').join('、')
+                        for(var j=0; j<supportFileTypeArr.length; j++) {
+                            if(supportFileTypeArr[j] == 'txt') {
+                                supportFileType += '.txt,text/plain,'
+                            }else{
+                                supportFileType += ( '.'+supportFileTypeArr[j]+',')
+                            }
+                        }
+                        supportFileType = supportFileType.slice(0,-1)
+                        $('#file').attr('accept', supportFileType)
+                        if(typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file.uploadMaxFileSize){
+                            $('.upload-tip .p2').text('文档支持'+supportFileTypeText+'，文件大小不得超过'+typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.file.uploadMaxFileSize/1024/1024+'M')
+                        }else{
+                            $('.upload-tip .p2').text('文档支持'+supportFileTypeText+'，文件大小不得超过15M')
+                        }
+                        if(supportFileTypeArr.indexOf('pdf') > -1){
+                            $('.upload-tip .tip-pdf').show()
+                        }else{
+                            $('.upload-tip .tip-pdf').hide()
+                        }
                     }
                 }
             }
@@ -1079,6 +1131,9 @@
             }
             if($("#file").val()){
                 data.file = $("#file")[0].files[0]
+                if($("#file")[0].files[0].type.indexOf('pdf') != '-1'){
+                    data.file_type = 'pdf'
+                }
             }
             if( $(".system-item.active").attr('data-name')=='wanfang'&&$("#type_s").val() == 'wanfangpu' || $(".system-item.active").attr('data-name')=='weipu'&&$("#type_s").val() == 'cqvipzc') {
                 data.date =  $("#date").val()

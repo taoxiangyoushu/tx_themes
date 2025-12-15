@@ -486,7 +486,7 @@
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
   border: 1px solid transparent;
   box-sizing: border-box;
 }
@@ -1696,3 +1696,4 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/*# sourceMappingURL=index.css.map */

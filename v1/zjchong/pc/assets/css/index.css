@@ -443,6 +443,9 @@
 .form-upload .zipFile_block .zip_description .example_file:hover ~ .file_exampleBlock {
   display: block;
 }
+.form-upload .zipFile_block .zip_description .example_file:hover ~ .file_exampleBlock.zqAIGC {
+  display: flex;
+}
 .form-upload .zipFile_block .zip_description .file_exampleBlock {
   width: 676px;
   background: #fff;
@@ -564,6 +567,24 @@
 }
 .form-upload .zipFile_block .zip_description .file_exampleBlock.paperpassaigc:after {
   left: 284px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.zqAIGC {
+  width: 1100px;
+  left: 70px;
+  justify-content: space-between;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.zqAIGC:before {
+  left: 584px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.zqAIGC:after {
+  left: 582px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.zqAIGC .fe-s-1 img {
+  width: 530px;
+}
+.form-upload .zipFile_block .zip_description .file_exampleBlock.zqAIGC .fe-s-2 img {
+  width: 540px;
+  margin-top: 20px;
 }
 .form-upload .zipFile_block .zip_description .file_exampleBlock .blue {
   color: #2070D6;
@@ -885,7 +906,7 @@
 .noMarginRight {
   margin-right: 0 !important;
 }
-@media screen and(max-width: 1574px) {
+@media screen and (max-width: 1574px) {
   .form-upload .upload_block .upload_file {
     width: 44%;
   }
@@ -893,7 +914,7 @@
     width: 44%;
   }
 }
-@media screen and(max-width: 1518px) {
+@media screen and (max-width: 1518px) {
   .form-upload .upload_block .upload_tips .upload_notes .p2 {
     font-size: 13px;
   }
@@ -919,3 +940,31 @@
   color: #b7b7b7;
   font-size: 14px;
 }
+@media screen and (max-width: 1574px) {
+  .form-upload .zipFile_block .zipFile_upload .upload_file {
+    width: 44%;
+  }
+  .form-upload .upload_block .upload_file {
+    width: 44%;
+  }
+}
+@media screen and (max-width: 1518px) {
+  .form-upload .upload_block .upload_tips .upload_notes .p2 {
+    font-size: 13px;
+  }
+  .form-upload .upload_block .upload_tips .upload_notes .p3 {
+    font-size: 13px;
+  }
+  .form-upload .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item.noMarginRight {
+    margin-right: 8px !important;
+  }
+  .form-upload .zipFile_block .zipFile_upload .upload_tips {
+    margin-top: -2px;
+  }
+}
+@media screen and (max-width: 1420px) {
+  .order-cont .order-msg .row-cont .msg-list li > div.special .tit {
+    width: 38%;
+  }
+}
+/*# sourceMappingURL=index.css.map */

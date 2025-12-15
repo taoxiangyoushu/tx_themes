@@ -446,6 +446,13 @@
   font-size: 12px;
   margin-top: 2px;
 }
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Not .tip-pdf {
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-top: 0px;
+  color: #d70a0a;
+  display: none;
+}
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .Not span {
   font-size: 12px;
   color: #999999;
@@ -793,3 +800,4 @@ input[type="radio"]:checked {
   background-size: 100% 100%;
   border: none;
 }
+/*# sourceMappingURL=index.css.map */
