@@ -691,7 +691,7 @@ function unifiedCreate(form_data, hasKtbg){
                     NumberWords = form_data.get('data[word_num][value]')
                 }
                 if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器
-                    location.href = './pay.html?commitId=' + data.data.order_sn + '&order_amount=' + data.data.order_amount+ '&contentType=' + form_data.get('goods_id') + '&goods=&payId=' + '&zxktbg=' + hasKtbg + '&wordNum=' + NumberWords + '&getOpenId=true';
+                    location.href = './pay.html?commitId=' + data.data.order_sn + '&order_amount=' + data.data.order_amount+ '&contentType=' + form_data.get('goods_id') + '&goods=&payId=' + '&zxktbg=' + hasKtbg + '&wordNum=' + NumberWords;
                     return
                 }
                 location.href = './pay.html?commitId=' + data.data.order_sn + '&order_amount=' + data.data.order_amount+ '&contentType=' + form_data.get('goods_id') + '&goods=&payId=' + '&zxktbg=' + hasKtbg + '&wordNum=' + NumberWords;

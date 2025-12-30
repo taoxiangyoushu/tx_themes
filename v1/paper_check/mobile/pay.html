@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
     <link rel="stylesheet" href="../mobile/assets/css/common.css">
-    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0033">
+    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0034">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
@@ -150,7 +150,7 @@
     </div>
 
     <div class="bottomBox">
-        <p>请在30分钟内完成支付，如未支付完成该订单将自动取消</p>
+        <p>请在30分钟内完成支付，未支付订单将自动取消  <span class="verifyPayment-btn">已支付,下一步</span></p>
         <div class="payBox">
             <div class="amount">
                 <div class="total">合计 <span class="symbol">￥<span id="amountText" class="partyamount"></span><span id="amountText1" class="partyamount1"></span></span>
@@ -281,10 +281,10 @@
 <script src="../mobile/assets/js/bootstrap.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
 <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0033"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0034"></script>
 <script src="../mobile/assets/js/message.js"></script>
-<script src="../mobile/assets/js/ap.js?v=m24.0033"></script>
-<script src="../mobile/assets/js/orderInfo.js?v=m24.0033"></script>
+<script src="../mobile/assets/js/ap.js?v=m24.0034"></script>
+<script src="../mobile/assets/js/orderInfo.js?v=m24.0034"></script>
 <script>
     var orderInfoData = {}
     // 微信浏览器并且有微信支付
@@ -293,8 +293,8 @@
             window.sessionStorage.setItem('openid_pay', getQueryVariable('openid'))
         }
         if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器 且 有微信支付
-            if(getQueryVariable('getOpenId') == 'true' && !openid){
-                location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.href.replace('getOpenId=true','getOpenId=false'))
+            if(!openid){
+                location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.href)
             }
         }
     }
@@ -387,7 +387,11 @@
                     if(window.sessionStorage.getItem('simulationPay') == 'simulationPay') {
                         typeSelect('wxPublicNum')
                         window.sessionStorage.removeItem('simulationPay')
-                        $('.payBotton').click()
+                        if(window.sessionStorage.getItem('couponCode')){
+                            simulation_wxPay()
+                        }else{
+                            $('.payBotton').click()
+                        }
                     }
                 }
             }
@@ -454,7 +458,11 @@
                     if(window.sessionStorage.getItem('simulationPay') == 'simulationPay') {
                         typeSelect('wxPublicNum')
                         window.sessionStorage.removeItem('simulationPay')
-                        $('.payBotton').click()
+                        if(window.sessionStorage.getItem('couponCode')){
+                            simulation_wxPay()
+                        }else{
+                            $('.payBotton').click()
+                        }
                     }
                 }else {
                     $('#wx-pay').hide()
@@ -516,6 +524,80 @@
 
     }
 
+    function simulation_wxPay() {
+        $("#coupon").val(window.sessionStorage.getItem('couponCode'))
+        window.sessionStorage.removeItem('couponCode')
+        canClick = false
+        contentTypeIs = false
+        toast({
+            msg: '正在兑换优惠券...',
+            type: 'loading',
+            time: 20000
+        })
+        var formData = getFormData({
+            order_sn: order_sn,
+            code: $("#coupon").val()
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/order/variation/order',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (res) {
+                toastNone()
+                if (res.code == 200) {
+                    order_sn = res.data.order_sn
+                    $('#dateTime').text(res.data.created)
+                    $('#orderIdText').text(res.data.order_sn)
+                    $(".oid_pop").text(res.data.order_sn)
+                    $('#original_price').text(res.data.old_amount)
+                    if(Number(res.data.old_amount) - Number(price_stairs) > 0  && price_stairs){
+                        $('#discount_amount').text((Number(res.data.old_amount) - Number(price_stairs) + Number(res.data.coupon_money)).toFixed(2) + '元')
+                        $(".amount .discount").show()
+                    }else{
+                        $(".amount .discount").hide()
+                    }
+                    payStatus(order_sn)
+                    if(Number(res.data.order_amount) == 0) {
+                        $(".mask").show();
+                        $(".coupons_pop").show()
+                    }else{
+                        if(res.data.coupon_money>0){
+                            $('.Deduction').show()
+                            $('.couponBox').hide()
+                            $('.Discountamount').show()
+                            $('#After_discounts').text(res.data.coupon_money)
+                            $('#Discount_amount').text(res.data.coupon_money)
+                        }
+                        $('#amountText2').text(res.data.order_amount)
+                        $('#amountText').text(res.data.order_amount)
+                    }
+                    $('.payBotton').click()
+                }else{
+                    $(".errTip_p").text(res.codeMsg)
+                    $(".errTipBox").show();
+                    $(".mask").show();
+                }
+                contentTypeIs=true
+                canClick = true
+            },
+            error: function () {
+                toastNone()
+                toast({
+                    msg: "请求失败!请检查网络",
+                    type: 'error',
+                    time: 2000
+                })
+                contentTypeIs=true
+                canClick = true
+            },
+        })
+    }
+
     $('.payTypeBox').click(function() {
         $('.payTypeBox .img').attr('src','../mobile/assets/img/noselect.png')
         $(this).children().children('.img').attr('src','../mobile/assets/img/select.png')
@@ -558,7 +640,7 @@
     if(!order_sn) location.href='./index.html'
 
     function payWay(goods_info , pay_way) {
-        Readjust()
+        // Readjust()
         for(var i=0;i<goods_info.length;i++){
             if(getQueryVariable('goodsid') == goods_info[i].goods_id) {
                 // $("#priceTetx").text(typeData[i].selling_price + '元/' +typeData[i].unit_count + typeData[i].unit_type)
@@ -633,6 +715,9 @@
         }else if(payType == 'wxPublicNum'){
             if(!openid) {
                 window.sessionStorage.setItem('simulationPay', 'simulationPay')
+                if($("#coupon").val() &&  $('.Deduction').css('display') == 'block'){
+                    window.sessionStorage.setItem('couponCode', $("#coupon").val())
+                }
                 refreshPageWx()
                 return
             }
@@ -1249,6 +1334,42 @@
             },
         })
     }
+
+    var isVerify = false;
+    $(".verifyPayment-btn").on('click', function (){
+        if(isVerify) return
+        isVerify = true
+        setTimeout(() => {
+            isVerify = false
+        },3000)
+        var form_data = getFormData({
+            pay_id: order_sn
+        })
+        $.ajax({
+            type: 'post',
+            url: urls + '/api/client/pay/verifyOrder',
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: form_data,
+            success: function (res) {
+                if (res.code == 3001) {
+                    toast({msg: '订单已支付'})
+                    window.location.href = "./query.html?oid=" + order_sn;
+                }else {
+                    toast({msg: '您的订单未支付'})
+                }
+            },
+            error: function () {
+                toast({msg: '请求失败!请检查网络'})
+            },
+            complete: function () {
+                isVerify = false
+            }
+        });
+    })
 </script>
 </body>
 </html>

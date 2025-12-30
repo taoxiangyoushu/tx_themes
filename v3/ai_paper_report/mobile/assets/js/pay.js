@@ -5,8 +5,8 @@ function refreshPageWx() {
         window.sessionStorage.setItem('openid_pay', getQueryVariable('openid'))
     }
     if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器 且 有微信支付
-        if(getQueryVariable('getOpenId') == 'true' && !openid){
-            location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.href.replace('getOpenId=true','getOpenId=false'))
+        if(!openid){
+            location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.href)
         }
     }
 }
@@ -101,9 +101,7 @@ function llqType(pay_way) {
             if (/MicroMessenger/.test(window.navigator.userAgent)) {  // 微信浏览器
                 $('#wx-pay').attr('data-payType','wxPublicNum')
                 if(window.sessionStorage.getItem('simulationPay') == 'simulationPay') {
-                    typeSelect('wxPublicNum')
-                    window.sessionStorage.removeItem('simulationPay')
-                    $('.payBotton').click()
+                    variationOrder_wxPay()
                 }
             }
         }
@@ -170,9 +168,7 @@ function llqType(pay_way) {
             }
             if(pay_way.wx){
                 if(window.sessionStorage.getItem('simulationPay') == 'simulationPay') {
-                    typeSelect('wxPublicNum')
-                    window.sessionStorage.removeItem('simulationPay')
-                    $('.payBotton').click()
+                    variationOrder_wxPay()
                 }
             }else {
                 $('#wx-pay').hide()
@@ -348,7 +344,9 @@ function payWay(goods_info , pay_way) {
                     }
                 }
             }
-            variationOrder()
+            if(window.sessionStorage.getItem('simulationPay') != 'simulationPay') {
+                variationOrder()
+            }
         }else {
             toastNone()
             $('#amountText').text(getQueryVariable('order_amount'))
@@ -426,6 +424,9 @@ $('.payBotton').click(function() {
     }else if(payType == 'wxPublicNum'){
         if(!openid) {
             window.sessionStorage.setItem('simulationPay', 'simulationPay')
+            if($("#coupon").val() &&  $('.Deduction').css('display') == 'block'){
+                window.sessionStorage.setItem('couponCode', $("#coupon").val())
+            }
             refreshPageWx()
             return
         }
@@ -960,6 +961,139 @@ function variationOrder() {
     });
 }
 
+// 先默认选中增值服务  再直接唤起微信支付
+function variationOrder_wxPay() {
+    $('#amountText').text('0.00')
+    contentTypeIs = false
+    var formData = getFormData({
+        order_sn: order_sn,
+        goods: goods().toString(),
+    })
+    $.ajax({
+        type: 'post',
+        url: urls + '/api/client/order/variation/order',
+        data: formData,
+        contentType: false,
+        processData: false,
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (res) {
+            if (res.code == 200) {
+                order_sn = res.data.order_sn
+                $('#amountText').text(res.data.order_amount)
+                $('#amountText2').text(res.data.order_amount)
+                $('#dateTime').text(res.data.created)
+                $('#orderIdText').text(res.data.order_sn)
+                $('#amountText1').text(res.data.order_money)
+                $('#original_price').text(res.data.old_amount + '元')
+                if(Number(res.data.old_amount) - Number(price_stairs) > 0 && price_stairs) {
+                    $('#discount_amount').text((Number(res.data.old_amount) - Number(price_stairs) + Number(res.data.coupon_money)).toFixed(2) + '元')
+                    $(".amount .discount").show()
+                }else{
+                    $(".amount .discount").hide()
+                }
+                typeSelect('wxPublicNum')
+                window.sessionStorage.removeItem('simulationPay')
+                if(window.sessionStorage.getItem('couponCode')){
+                    simulation_wxPay()
+                }else{
+                    $('.payBotton').click()
+                    payStatus(order_sn)
+                }
+            }
+            contentTypeIs=true
+        },
+        error: function () {
+            toastNone()
+            toast({
+                msg: "请求失败!请检查网络",
+                type: 'error',
+                time: 2000
+            })
+            contentTypeIs=true
+            toastNone()
+        },
+    });
+}
+
+function simulation_wxPay() {
+    $("#coupon").val(window.sessionStorage.getItem('couponCode'))
+    window.sessionStorage.removeItem('couponCode')
+    canClick = false
+    contentTypeIs = false
+    toast({
+        msg: '正在兑换优惠券...',
+        type: 'loading',
+        time: 20000
+    })
+    var formData = getFormData({
+        order_sn: order_sn,
+        goods: goods().toString(),
+        code: $("#coupon").val()
+    })
+    $.ajax({
+        type: 'post',
+        url: urls + '/api/client/order/variation/order',
+        data: formData,
+        contentType: false,
+        processData: false,
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (res) {
+            toastNone()
+            if (res.code == 200) {
+                order_sn = res.data.order_sn
+                // $('#amountText2').text(res.data.order_amount)
+                // $('#amountText').text(res.data.order_amount)
+                $('#dateTime').text(res.data.created)
+                $('#orderIdText').text(res.data.order_sn)
+                $(".oid_pop").text(res.data.order_sn)
+                $('#original_price').text(res.data.old_amount + '元')
+                if(Number(res.data.old_amount) - Number(price_stairs) > 0 && price_stairs) {
+                    $('#discount_amount').text((Number(res.data.old_amount) - Number(price_stairs) + Number(res.data.coupon_money)).toFixed(2) + '元')
+                    $(".amount .discount").show()
+                }else{
+                    $(".amount .discount").hide()
+                }
+                payStatus(order_sn)
+                if(Number(res.data.order_amount) == 0) {
+                    $(".mask").show();
+                    $(".coupons_pop").show()
+                }else{
+                    if(res.data.coupon_money>0){
+                        $('.couponBox').hide()
+                        $('.Deduction').show()
+                        $('.Discountamount').show()
+                        $('#Discount_amount').text(res.data.coupon_money)
+                        $('#After_discounts').text(res.data.coupon_money)
+                    }
+                    $('#amountText2').text(res.data.order_amount)
+                    $('#amountText').text(res.data.order_amount)
+                }
+                $('.payBotton').click()
+            }else{
+                $(".errTip_p").text(res.codeMsg)
+                $(".errTipBox").show();
+                $(".mask").show();
+            }
+            contentTypeIs=true
+            canClick = true
+        },
+        error: function () {
+            toastNone()
+            toast({
+                msg: "请求失败!请检查网络",
+                type: 'error',
+                time: 2000
+            })
+            contentTypeIs=true
+            canClick = true
+        },
+    })
+}
+
 var clipboard = new Clipboard('.btn_clone', {
     text: function () {
         return $('.linkUrl').text();
@@ -1305,3 +1439,39 @@ function getResult_sci(order_sn) {
         console.log("错误");
     }
 }
+
+var isVerify = false;
+$(".verifyPayment-btn").on('click', function (){
+    if(isVerify) return
+    isVerify = true
+    setTimeout(() => {
+        isVerify = false
+    },3000)
+    var form_data = getFormData({
+        pay_id: order_sn
+    })
+    $.ajax({
+        type: 'post',
+        url: urls + '/api/client/pay/verifyOrder',
+        processData: false,
+        contentType: false,
+        xhrFields: {
+            withCredentials: true
+        },
+        data: form_data,
+        success: function (res) {
+            if (res.code == 3001) {
+                toast({msg: '订单已支付'})
+                window.location.href = "./query.html?oid=" + order_sn;
+            }else {
+                toast({msg: '您的订单未支付'})
+            }
+        },
+        error: function () {
+            toast({msg: '请求失败!请检查网络'})
+        },
+        complete: function () {
+            isVerify = false
+        }
+    });
+})

@@ -390,7 +390,7 @@
 .home .main-tab-bar .submitContent .form_block .files_upload .upload_tips .p2 .size {
   display: inline-block;
   vertical-align: middle;
-  width: 9.8rem;
+  padding: 0 0.6rem;
   height: 2.4rem;
   line-height: 2.4rem;
   font-size: 1.6rem;
@@ -631,7 +631,7 @@
 .home .main-tab-bar .submitContent .form_block .zip_block .upload_tips .p2 .size {
   display: inline-block;
   vertical-align: middle;
-  width: 9.8rem;
+  padding: 0 0.6rem;
   height: 2.4rem;
   line-height: 2.4rem;
   font-size: 1.6rem;
