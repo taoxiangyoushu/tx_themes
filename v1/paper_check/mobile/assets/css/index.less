@@ -221,6 +221,7 @@
                 margin-bottom: 2rem;
                 &.content-block {
                     height: 21.2rem;
+                    padding: 0;
                 }
                 &.check-version {
                     a {
@@ -302,6 +303,16 @@
                 }
                 .contentBox {
                     position: relative;
+                    padding: 0 1.5rem;
+                    border: 1px solid transparent;
+                    &.focusCss {
+                        box-shadow: inset 0 0px 20px 4px #dad2ff96;
+                        border: 1px solid #ceceffa6;
+                        border-radius: 0.8rem;
+                        .tips-block {
+                            opacity: 0.4;
+                        }
+                    }
                     #content {
                         width: 100%;
                         height: 21.2rem;
@@ -309,6 +320,8 @@
                         padding: 1rem 0;
                         border: none;
                         box-shadow: none;
+                        background: transparent;
+                        resize: none;
                         &:focus {
                             box-shadow: none;
                         }
@@ -316,6 +329,7 @@
                     .tips-block {
                         position: absolute;
                         top: 1rem;
+                        opacity: 1;
                         .p1 {
                             color: #404760;
                             font-size: 1.5rem;
@@ -360,6 +374,7 @@
                             .p2 {
                                 color: #999999;
                                 font-size: 1.1rem;
+                                width: 96%;
                             }
                             .tip-pdf {
                                 color: #d70a0a;
@@ -404,6 +419,7 @@
                     background: #ffffff;
                     justify-content: center;
                     align-items: center;
+                    border-radius: 0.8rem;
                     display: none;
                     .file-icon {
                         position: relative;

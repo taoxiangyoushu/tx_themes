@@ -322,6 +322,7 @@
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/select2.min.js"></script>
+<script src="../pc/assets/js/word-calculator.js?v=p24.0066"></script>
 <script src="../pc/assets/js/common.js?v=p24.0066"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0066"></script>
@@ -379,6 +380,7 @@
     var uploadType = 'content'
     var minWords = ''
     var maxWords = ''
+    var currentSystemName = '' // 当前选中的查重系统名称
 
     $(document).on('click',".check-system-block .system-item",function (){
         $(".check-system-block .system-item").removeClass('active')
@@ -387,6 +389,9 @@
         $('#ThesisInput').attr('accept', '.doc,.docx,.txt,text/plain')
         $('.Not .upload-restrictionText').text('文档支持txt、doc(x)，文件大小不得超过15M')
         $('.Not .tip-pdf').hide()
+        
+        // 设置当前选中的系统名称
+        currentSystemName = typeData[$(this).attr('data-name')][0].short_name
         if( (typeData[$(this).attr('data-name')].length >= 1) && ($(this).attr('data-name') == 'turnitin' || $(this).attr('data-name') == 'wanfang' || $(this).attr('data-name') == 'weipu' || $(this).attr('data-name') == 'yuanwenjian' || $(this).attr('data-name') == 'daya') ){
             if($(this).attr('data-name') == 'turnitin'){
                 var versionDom = ''
@@ -579,6 +584,15 @@
             }
 
             minWords =  typeData[$(this).attr('data-name')][0].data.min_words
+            
+            // 更新当前系统名称
+            currentSystemName = typeData[$(this).attr('data-name')][0].short_name
+            
+            // 重新计算当前输入的字数
+            if($("#textareaText").val()){
+                var wordCount = WordCalculator.calculate($("#textareaText").val(), currentSystemName)
+                $(".word-num").text(wordCount)
+            }
 
             // 提交方式
             if( typeData[$(this).attr('data-name')][0].data.support_submit_types.content) {
@@ -698,6 +712,15 @@
 
                 minWords = typeData[$(".system-item.active").attr('data-name')][i].data.min_words
 
+                // 更新当前系统名称
+                currentSystemName = typeData[$(".system-item.active").attr('data-name')][i].short_name
+                
+                // 重新计算当前输入的字数
+                if($("#textareaText").val()){
+                    var wordCount = WordCalculator.calculate($("#textareaText").val(), currentSystemName)
+                    $(".word-num").text(wordCount)
+                }
+
 
                 // 提交方式
                 if( typeData[$(".system-item.active").attr('data-name')][i].data.support_submit_types.content) {
@@ -813,7 +836,10 @@
     })
 
     $("#textareaText").on('input', function (){
-        $(".word-num").text($(this).val().length)
+        // 使用 WordCalculator 根据当前系统计算字数
+        var wordCount = WordCalculator.calculate($(this).val(), currentSystemName)
+        $(".word-num").text(wordCount)
+        
         if($(this).val().length>0){
             $($("#textareaText").parent()).removeClass('error')
         }
@@ -1072,7 +1098,9 @@
         }
 
         if( uploadType == 'content'){
-            if($("#textareaText").val().length <= minWords || $("#textareaText").val().length > maxWords ){
+            // 使用 WordCalculator 计算字数
+            var currentWordCount = WordCalculator.calculate($("#textareaText").val(), currentSystemName)
+            if(currentWordCount <= minWords || currentWordCount > maxWords ){
                 $($("#textareaText").parent()).addClass('error')
                 cocoMessage.error("内容字数在"+ minWords +"~"+ maxWords +"字符", 2000);
                 return false

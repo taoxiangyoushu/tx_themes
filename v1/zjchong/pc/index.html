@@ -9,9 +9,9 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0071">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0071">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0071">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0072">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -75,80 +75,77 @@
                                 <div class="uploadTy_btn active" data-type="files">
                                     <img class="icon_a" src="../pc/assets/img/icon_document_pre.png" alt="">
                                     <img class="icon_n" src="../pc/assets/img/icon_document.png" alt="">
-                                    文档
-                                </div>
-                                <div class="uploadTy_btn" data-type="words">
-                                    <img class="icon_a" src="../pc/assets/img/icon_text_pre.png" alt="" style="width: 15px">
-                                    <img class="icon_n" src="../pc/assets/img/icon_text.png" alt=""  style="width: 15px">
-                                    文本
+                                    <span>原文文档</span>
                                 </div>
                                 <div class="uploadTy_btn" data-type="zips">
                                     <img class="icon_a" src="../pc/assets/img/icon_report_pre.png" alt="">
                                     <img class="icon_n" src="../pc/assets/img/icon_report.png" alt="">
                                     <span class="recommend">推荐</span>
-                                    报告
+                                    <span class="upload-t-t">查重报告</span>
                                 </div>
                             </div>
                             <form class="form-upload">
                                 <div class="upload_block form_block">
-                                    <div class="upload_file">
-                                        <input type="file"
-                                               class="file_upload" id="docUpload"
-                                               accept=".doc,.docx,.txt,text/plain,">
-
-                                        <div class="upload_btn">
-                                            <img class="upload-icon" src="../pc/assets/img/icon_uploading.png" alt="">
-                                            <img class="uploading-icon" src="../pc/assets/img/waiting.gif" alt="">
-                                            <span>上传文件</span>
+                                    <div class="chose_platform">
+                                        <div class="uploadTy_text">需要适配的平台：</div>
+                                        <div class="report_type_f">
+                                            <div class="report_type_item" data-brand="cnkiAIGC" data-domain="40">知W<span class="Report_label">支持V2.13</span></div>
+                                            <div class="report_type_item" data-brand="wanfangAIGC" data-domain="60">万F<span class="Report_label">实时更新</span></div>
+                                            <div class="report_type_item" data-brand="weipuAIGC" data-domain="50">维P<span class="Report_label">支持V2.26</span></div>
+                                            <div class="report_type_item" data-brand="turnitinAIGC" data-domain="30">Turnitin<span class="Report_label">支持V10.14</span></div>
+                                            <div class="report_type_item" data-brand="masterAIGC" data-domain="70">MasterAIGC</div>
+                                            <div class="report_type_item" data-brand="gzdAIGC" data-domain="10">格子达</div>
+                                            <div class="report_type_item" data-brand="dyAIGC" data-domain="80">大雅</div>
+                                            <div class="report_type_item" data-brand="paperPassAIGC" data-domain="90">PaperPass</div>
+                                            <div class="report_type_item" data-brand="zqAIGC" data-domain="20">朱雀AIGC</div>
                                         </div>
-                                        <p class="upload_tipText">点击或拖拽文件上传</p>
-                                        <p class="upload_fileInfo">
-                                            <img class="upCheck" src="../pc/assets/img/upcheck.png" alt="">
-                                            <img class="upLose" src="../pc/assets/img/uplose.png" alt="">
-                                            <span class="files_nameText"></span>
-                                            <span class="deleteFile">删除</span>
-                                        </p>
-                                        <p class="errTips">  </p>
                                     </div>
-                                    <div class="upload_tips">
-                                        <p class="p1">文件格式支持：</p>
-                                        <div class="format_size">
-                                            <div class="format_block">
-                                                <div class="format_item">DOC</div>
-                                                <div class="format_item">DOCX</div>
-                                                <div class="format_item">TXT</div>
-                                                <!-- <div class="format_item">PDF</div> -->
+                                    <div class="flex_box">
+                                        <div class="upload_file">
+                                            <input type="file"
+                                                   class="file_upload" id="docUpload"
+                                                   accept=".doc,.docx,.txt,text/plain,">
+
+                                            <div class="upload_btn">
+                                                <img class="upload-icon" src="../pc/assets/img/icon_uploading.png" alt="">
+                                                <img class="uploading-icon" src="../pc/assets/img/waiting.gif" alt="">
+                                                <span>上传文件</span>
                                             </div>
-                                            <div class="size_block">
+                                            <!--                                        <p class="upload_tipText">点击或拖拽文件上传</p>-->
+                                            <div class="format_size">
+                                                <div class="format_block">
+                                                    <div class="format_item">DOC</div>
+                                                    <div class="format_item">DOCX</div>
+                                                    <div class="format_item">TXT</div>
+                                                    <!-- <div class="format_item">PDF</div> -->
+                                                </div>
+                                                <div class="size_block">
                                                 <span class="size_text">
                                                     <img src="../pc/assets/img/icon_check.png" alt=""> 大小
                                                 </span>
-                                                <span class="size_value">15MB</span>
+                                                    <span class="size_value">15MB</span>
+                                                </div>
+                                            </div>
+
+                                            <p class="upload_fileInfo">
+                                                <img class="upCheck" src="../pc/assets/img/upcheck.png" alt="">
+                                                <img class="upLose" src="../pc/assets/img/uplose.png" alt="">
+                                                <span class="files_nameText"></span>
+                                                <span class="deleteFile">删除</span>
+                                            </p>
+                                            <p class="errTips">  </p>
+                                        </div>
+                                        <div class="dividing_line"></div>
+                                        <div class="right_content">
+                                            <div class="border_box">
+                                                <textarea class="form-control" autocomplete="off" name="text_content" id="textContent" placeholder="内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。仅支持中英文。" maxlength="300000"></textarea>
+                                                <span class="counter">
+                                                    当前已输入<i class="impl">0</i>字符</span><br/>
+                                                </span>
                                             </div>
                                         </div>
-                                        <div class="upload_notes jc_notes">
-                                            <p class="notes_subtitle">上传须知：</p>
-                                            <p class="p2">仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
-                                            <p class="p3">目前仅支持中英文，暂不支持其他语言、图片、表格、公式、代码降重</p>
-                                            <p class="p3">如有查重报告，建议使用报告上传</p>
-                                        </div>
-                                        <div class="upload_notes aigc_notes">
-                                            <p class="notes_subtitle">上传须知：</p>
-                                            <p class="p2">仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</p>
-                                            <p class="p3">目前仅支持中英文，暂不支持其他语言以及图片、表格、代码等内容降AIGC</p>
-                                            <p class="p3">如有AIGC检测报告，建议使用报告上传</p>
-                                        </div>
                                     </div>
-                                </div>
-                                <div class="content_block form_block">
-                                    <div class="border_box">
-                                        <textarea class="form-control" autocomplete="off" name="text_content" id="textContent" placeholder="内容字数在200-300000字，提交内容建议去除封面，目录，仅提交正文。仅支持中英文。" maxlength="300000"></textarea>
-                                        <span class="counter">
-                                        当前已输入<i class="impl">0</i>字符</span><br/>
-                                        </span>
-                                    </div>
-                                    <span class="err-info errType_1">请填写论文内容</span>
-                                    <span class="err-info errType_2">内容字数200字~300000字</span>
+                                    <div class="content_errTip"> </div>
                                 </div>
                                 <div class="zipFile_block form_block">
                                     <div class="zip_description" data-type="all">系统支持各大查重报告，未识别的报告请反馈给客服处理</div>
@@ -399,10 +396,10 @@
                                                 <div class="report_type_item" data-brand="weipuAIGC">维P AIGC<span class="Report_label">支持V2.26</span></div>
                                                 <div class="report_type_item" data-brand="turnitinAIGC">Turnitin AIGC<span class="Report_label">支持V10.14</span></div>
                                                 <div class="report_type_item noMarginRight" data-brand="masterAIGC">Master AIGC</div>
-                                                <div class="report_type_item" data-brand="gzdAIGC">格Z达 AIGC</div>
-                                                <div class="report_type_item" data-brand="dyAIGC">D雅 AIGC</div>
-                                                <div class="report_type_item" data-brand="paperPassAIGC">PP AIGC</div>
-                                                <div class="report_type_item" data-brand="zqAIGC">TX朱雀 AIGC</div>
+                                                <div class="report_type_item" data-brand="gzdAIGC">格子达 AIGC</div>
+                                                <div class="report_type_item" data-brand="dyAIGC">大雅 AIGC</div>
+                                                <div class="report_type_item" data-brand="paperPassAIGC">PaperPass AIGC</div>
+                                                <div class="report_type_item" data-brand="zqAIGC">朱雀 AIGC</div>
                                                 <div class="report_type_item" data-brand="otherAIGC">其它</div>
                                             </div>
                                             <input type="text" class="platform_utl" placeholder="各平台检测机制不同，请提交平台链接">
@@ -443,11 +440,13 @@
                         <ul>
                             <li>1、上传文档/文本粘贴：仅上传正文，删除内容中的封面、摘要、目录、参考文献、致谢、附录等</li>
                             <li>2、上传报告：仅支持.zip、部分.pdf或部分.html格式的文件上传</li>
-                            <li class="system_text_jc">3、目前仅支持中英文，暂不支持其他语言、图片、表格、公式、代码降重</li>
-                            <li class="system_text_aigc">3、目前仅支持中英文，暂不支持其他语言以及图片、表格、代码等内容降AIGC</li>
-                            <li>4、下载的内容仅用于参考，不作为毕业、发表使用</li>
-                            <li>5、pdf格式不稳定，可能会出现乱码，请确认后再提交</li>
-                            <li class="system_text_aigc">6、Paper系列等免费平台AIGC检测结果暂时无法保证有效降低</li>
+                            <li class="system_text_jc">3、如有查重报告，建议使用报告上传</li>
+                            <li class="system_text_aigc">3、如有AIGC检测报告，建议使用报告上传</li>
+                            <li class="system_text_jc">4、目前仅支持中英文，暂不支持其他语言、图片、表格、公式、代码降重</li>
+                            <li class="system_text_aigc">4、目前仅支持中英文，暂不支持其他语言以及图片、表格、代码等内容降AIGC</li>
+                            <li>5、下载的内容仅用于参考，不作为毕业、发表使用</li>
+                            <li>6、pdf格式不稳定，可能会出现乱码，请确认后再提交</li>
+                            <li class="system_text_aigc">7、Paper系列等免费平台AIGC检测结果暂时无法保证有效降低</li>
                         </ul>
                     </div>
                 </div>
@@ -524,20 +523,19 @@
                             <div class="c-bbdb">
                                 <div class="my-table clearfix">
                                     <div class="my-table-col col-0">
-                                        <div>报告版本</div>
+                                        <div >报告版本</div>
                                         <div class="bg-skyblue">单价</div>
-                                        <div>耗时</div>
-                                        <div class="bg-skyblue">建议</div>
-                                        <div>数据训练</div>
-                                        <div class="bg-skyblue">网络模型</div>
-                                        <div >导出word</div>
-                                        <div class="bg-skyblue">评分</div>
-                                        <div>原文对比</div>
-                                        <div class="bg-skyblue">导出txt</div>
-                                        <div >同义词</div>
-                                        <div class="bg-skyblue">在线修改</div>
-                                        <div >分布图</div>
-                                        <div class="bg-skyblue">报告样例</div>
+                                        <div >耗时</div>
+                                        <div class="bg-skyblue">数据训练</div>
+                                        <div >网络模型</div>
+                                        <div class="bg-skyblue">导出word</div>
+                                        <div >评分</div>
+                                        <div class="bg-skyblue">原文对比</div>
+                                        <div >导出txt</div>
+                                        <div class="bg-skyblue">同义词</div>
+                                        <div >在线修改</div>
+                                        <div class="bg-skyblue">分布图</div>
+                                        <div >报告样例</div>
                                     </div>
                                     <div class="my-table-col col-1">
                                         <div class="bg-blue">降AIGC率</div>
@@ -549,17 +547,16 @@
                                                 </span>
                                         </div>
                                         <div class="fs-blue">5min/千字</div>
-                                        <div class="bg-skyblue">1条</div>
-                                        <div >上亿</div>
-                                        <div class="bg-skyblue">全新算法</div>
-                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue">上亿</div>
+                                        <div >全新算法</div>
                                         <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
                                         <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
                                         <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
                                         <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
                                         <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
                                         <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
-                                        <div class="bg-skyblue"><span class="sample-a"><a href="./demo_aigc_compare.html" target="_blank">查看</a></span></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><span class="sample-a"><a href="./demo_aigc_compare.html" target="_blank">查看</a></span></div>
                                     </div>
                                     <div class="my-table-col col-2">
                                         <div class="bg-blue">降查重率</div>
@@ -571,17 +568,16 @@
                                                 </span>
                                         </div>
                                         <div class="fs-blue">3min/千字</div>
-                                        <div class="bg-skyblue">2条</div>
-                                        <div>上亿</div>
-                                        <div class="bg-skyblue">第六代</div>
-                                        <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div class="bg-skyblue">上亿</div>
+                                        <div >第六代</div>
                                         <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
                                         <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
                                         <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
                                         <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
                                         <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
                                         <div ><img src="../pc/assets/img/img-gou.png" alt=""></div>
-                                        <div class="bg-skyblue"><span class="sample-a"><a href="./demo_cc_compare.html" target="_blank">查看</a></span></div>
+                                        <div class="bg-skyblue"><img src="../pc/assets/img/img-gou.png" alt=""></div>
+                                        <div ><span class="sample-a"><a href="./demo_cc_compare.html" target="_blank">查看</a></span></div>
                                     </div>
                                 </div>
                             </div>
@@ -780,9 +776,9 @@
 <script src="../pc/assets/js/jszip.min.js"></script>
 <script src="../pc/assets/js/common.js?v=p24.005"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0071"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0072"></script>
 <script>
-    var uploadType = 'content';
+    var uploadType = '';
     var domain = '303';
     var fileInputType = 'words';
     var jc_type = 'aigclwjc'
@@ -806,6 +802,7 @@
             $(".system_text_jc").hide()
             $(".system_text_aigc").show()
             $("#textContent").val('')
+            $(".upload-t-t").text('AIGC报告')
             for(let i=0;i<typeData.length;i++){
                 if(typeData[i].short_name==$(this).data('type')){
                     if(typeData[i].calc_price_type==2){
@@ -837,6 +834,7 @@
             $(".system_text_jc").show()
             $(".system_text_aigc").hide()
             $("#textContent").val('')
+            $(".upload-t-t").text('查重报告')
             for(let i=0;i<typeData.length;i++){
                 if(typeData[i].short_name==$(this).data('type')){
                     if(typeData[i].calc_price_type==2){
@@ -1280,7 +1278,7 @@
             var data = {
             }
             if(jc_type == 'aigclwjc'){
-                data.domain = '0'
+                // data.domain = '0'
                 data.type = 'aigclwjc'
             }else{
                 data.type = 'lwjc'
@@ -1289,11 +1287,17 @@
                 data.title = $("#textContent").val().slice(0,30)
                 data.author = '学生'
                 data.content = $("#textContent").val()
+                if(aigc_file_domain){
+                    data.domain = aigc_file_domain
+                }
             }
             if(uploadType == 'files'){
                 data.title = $("#docUpload")[0].files[0].name.slice(0, $("#docUpload")[0].files[0].name.lastIndexOf('.'))
                 data.author = '学生'
                 data.file = $("#docUpload")[0].files[0]
+                if(aigc_file_domain){
+                    data.domain = aigc_file_domain
+                }
             }
             if(uploadType == 'zips'){
                 data.title = $("#docUpload2")[0].files[0].name.slice(0, $("#docUpload2")[0].files[0].name.lastIndexOf('.'))
@@ -1495,9 +1499,10 @@
                 fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf,.html'
             },
         };
-    var uploadType = 'files'
+    uploadType = 'files'
     var uploading = false;
     var reportType_s = ''
+    var aigc_file_domain = ''
 
 
     $(".uploadTy_btn").click(function (){
@@ -1506,6 +1511,8 @@
             $(".zipFile_block .deleteFile").click()
         }
         $(".attention-list").removeClass('s-height')
+        $(".attention-list").removeClass('x-height')
+        $(".intro-tab .r-bar-ctn").removeClass('x-height')
         $(".uploadTy_btn").removeClass('active')
         $(this).addClass('active')
         uploadType = $(this).attr('data-type')
@@ -1518,6 +1525,10 @@
         if(uploadType == 'files') {
             $(".upload_block").show()
             fileInputType = 'files'
+            if($(".card.Select").data('type') == 'aigclwjc'){
+                $(".attention-list").addClass('x-height')
+                $(".intro-tab .r-bar-ctn").addClass('x-height')
+            }
         }
         if(uploadType == 'zips') {
             fileInputType = 'zips'
@@ -1627,6 +1638,10 @@
             $('.upload_block .upload_fileInfo .files_nameText').text(file.name)
             $('.upload_block .upload_fileInfo .files_nameText').attr('title', file.name)
             $('.upload_block .upload_fileInfo').show()
+            $(".upload_block .upload_file .format_size").hide()
+            $(".upload_block .upload_file").addClass('active')
+            $("#textContent").val('').trigger('input')
+            uploadType = 'files'
             setTimeout(function (){
                 $('.upload_block .upload_btn .upload-icon').show()
                 $('.upload_block .upload_btn .uploading-icon').hide()
@@ -1647,6 +1662,8 @@
             $('.upload_block .upload_fileInfo .deleteFile').hide()
             $('.upload_block .upload_fileInfo').hide()
             $(".btn.btn-submit").addClass('prohibitBtn')
+            $(".upload_block .upload_file .format_size").show()
+            $(".upload_block .upload_file").removeClass('active')
         }
     })
 
@@ -1707,11 +1724,38 @@
 
 
     $("#textContent").on('input',function (){
-        $(".content_block .counter .impl").text($("#textContent").val().length)
+        $(".border_box .counter .impl").text($("#textContent").val().length)
+        if($("#textContent").val().length > 0){
+            $(".upload_block .right_content .border_box").addClass('active')
+            $(".upload_block .deleteFile").click()
+            uploadType = 'words'
+        }else{
+            $(".upload_block .right_content .border_box").removeClass('active')
+        }
         if($("#textContent").val().length >= 200) {
             $(".btn.btn-submit.prohibitBtn").removeClass('prohibitBtn')
         }else{
             $(".btn.btn-submit").addClass('prohibitBtn')
+        }
+    })
+
+    $(".chose_platform .report_type_item").on('click', function (){
+        if($(this).hasClass('special') || $(this).hasClass('active')){
+            aigc_file_domain=''
+            $(this).removeClass('active special')
+            return
+        }
+        var type_group=$(this).attr('data-brand')
+        aigc_file_domain=$(this).attr('data-domain')
+        if(type_group=='cnkiAIGC'||type_group=='wanfangAIGC'||type_group=='weipuAIGC'||type_group=='turnitinAIGC'){
+            $(".chose_platform .report_type_item").removeClass('active')
+            $(".chose_platform .report_type_item").removeClass('special')
+            $(this).addClass('special')
+        }
+        else{
+            $(".chose_platform .report_type_item").removeClass('active')
+            $(".chose_platform .report_type_item").removeClass('special')
+            $(this).addClass('active')
         }
     })
 </script>

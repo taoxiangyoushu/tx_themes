@@ -266,7 +266,10 @@ body {
 }
 .app .app-body .intro-bar .intro-tab .r-bar-ctn {
   padding: 24px 0;
-  min-height: 680px;
+  min-height: 706px;
+}
+.app .app-body .intro-bar .intro-tab .r-bar-ctn.x-height {
+  min-height: 736px;
 }
 .app .app-body .intro-bar .intro-tab .r-bar-ctn > div {
   padding: 0 10px;
@@ -308,6 +311,13 @@ body {
 }
 .app .app-body .intro-bar .intro-tab .r-bar-ctn .my-table > .my-table-col > div.fs-blue.bbbold {
   font-weight: bold;
+}
+.app .app-body .intro-bar .intro-tab .r-bar-ctn .my-table > .my-table-col .sample-a {
+  color: #2170d6;
+  text-decoration: underline;
+}
+.app .app-body .intro-bar .intro-tab .r-bar-ctn .my-table > .my-table-col .sample-a a {
+  color: inherit;
 }
 .app .app-body .intro-bar .intro-tab .r-bar-ctn .my-table > .my-table-col a {
   color: #FF7237;
