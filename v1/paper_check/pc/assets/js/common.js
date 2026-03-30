@@ -111,6 +111,36 @@ var systemInfo = {
 		reportSample: '',
 		applyUser: '',
 	},
+    cqvipzpqk: {
+        name: '维普智评-期刊版',
+        comparisonLibrary: '基于维普海量的期刊数据构建的学科语义网络，用于分析逻辑连贯性、创新点识别。利用AI技术提供多维度的学术评价。',
+        detectionAlgorithm: '',
+        Language: '中文、英文',
+        detectionScope: '职称、期刊论文',
+        timeConsuming: '10-30分钟',
+        reportSample: '',
+        applyUser: '',
+    },
+    cqvipzpbd: {
+        name: '维普智评-本科版',
+        comparisonLibrary: '收录了主要的学术会议论文和主流报纸文章，基于维普海量的数据构建的学科语义网络，用于分析逻辑连贯性、创新点识别。利用AI技术提供多维度的学术评价。',
+        detectionAlgorithm: '',
+        Language: '中文、英文',
+        detectionScope: '专科、本科论文',
+        timeConsuming: '10-30分钟',
+        reportSample: '',
+        applyUser: '',
+    },
+    cqvipzpmd: {
+        name: '维普智评-硕博版',
+        comparisonLibrary: '收录了主要的学术会议论文和主流报纸文章，基于维普海量的数据构建的学科语义网络，用于分析逻辑连贯性、创新点识别。利用AI技术提供多维度的学术评价。',
+        detectionAlgorithm: '',
+        Language: '中文、英文',
+        detectionScope: '硕士、博士、MBA论文',
+        timeConsuming: '10-30分钟',
+        reportSample: '',
+        applyUser: '',
+    },
 	paperPass: {
 		name: 'PaerPass',
 		comparisonLibrary: '学术期刊（1990-2019）、学位论文（硕博库1990-2019）、会议论文（1990-2019）、书籍数据（1990-2017）、互联网资源',
@@ -250,7 +280,27 @@ var systemInfo = {
 		timeConsuming: '10-30分钟',
 		reportSample: '',
 		applyUser: '',
-	}
+	},
+    cnkipmlc: {
+        name: '知网本科',
+        comparisonLibrary: '包括期刊、会议论文、学位论文、图书、报纸等海量比对资源， 持续动态更新',
+        detectionAlgorithm: '自主研发核心技术获得多项专利，传输存储过程可靠，保障数据安全',
+        Language: '中文、英文',
+        detectionScope: '专科、本科论文',
+        timeConsuming: '10-30分钟',
+        reportSample: '',
+        applyUser: '',
+    },
+    cnkiaigc: {
+        name: '知网AIGC',
+        comparisonLibrary: 'AIGC检测是一种技术，对AIGC（Artificial Intelligence Generated Content）即人工智能生成内容，进行检测，判断内容是否是由人工智能创作的。大雅AIGC检测不仅可以精确识别AI生成的内容，还可以为用户提供简洁版和全文版的检测报告，方便查看疑似AIGC内容的比例和分布。',
+        detectionAlgorithm: '',
+        Language: '中文、英文',
+        detectionScope: '',
+        timeConsuming: '10-30分钟',
+        reportSample: '',
+        applyUser: '',
+    }
 }
 
 // 封装url参数获取

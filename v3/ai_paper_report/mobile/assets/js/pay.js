@@ -6,6 +6,10 @@ function refreshPageWx() {
     }
     if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器 且 有微信支付
         if(!openid){
+            if (typeof Timeout !== 'undefined') {
+                clearTimeout(Timeout);
+                Timeout = null;
+            }
             location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.href)
         }
     }

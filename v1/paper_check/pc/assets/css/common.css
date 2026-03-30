@@ -282,3 +282,18 @@ p {
 .foot a.beian {
   margin-left: 20px;
 }
+#icp-filing {
+  color: #707070;
+  text-align: center;
+  font-size: 12px;
+  line-height: 30px;
+}
+#icp-filing a {
+  text-decoration: none;
+  color: #8f8f8f;
+  font-size: 12px;
+}
+#icp-filing a:hover {
+  color: #337ab7;
+}
+/*# sourceMappingURL=common.css.map */

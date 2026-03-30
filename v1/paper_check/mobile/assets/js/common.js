@@ -59,6 +59,16 @@ var systemInfo = {
 		Language: '中文、英文',
 		timeConsuming: '10-30分钟',
 	},
+    cnki: {
+        comparisonLibrary: '包括期刊、会议论文、学位论文、图书、报纸等海量比对资源， 持续动态更新。自主研发核心技术获得多项专利，传输存储过程可靠，保障数据安全。',
+        Language: '中文、英文',
+        timeConsuming: '10-30分钟',
+    },
+    lunwengaixie: {
+        comparisonLibrary: '包括期刊、会议论文、学位论文、图书、报纸等海量比对资源， 持续动态更新。自主研发核心技术获得多项专利，传输存储过程可靠，保障数据安全。',
+        Language: '中文、英文',
+        timeConsuming: '10-30分钟',
+    }
 }
 // 封装url参数获取
 function getQueryVariable(variable){

@@ -89,9 +89,10 @@
                                     <div class="chose_platform">
                                         <div class="uploadTy_text">需要适配的平台：</div>
                                         <div class="report_type_f">
+                                            <div class="report_type_item active" data-brand="" data-domain="">通用</div>
                                             <div class="report_type_item" data-brand="cnkiAIGC" data-domain="40">知W<span class="Report_label">支持V2.13</span></div>
                                             <div class="report_type_item" data-brand="wanfangAIGC" data-domain="60">万F<span class="Report_label">实时更新</span></div>
-                                            <div class="report_type_item" data-brand="weipuAIGC" data-domain="50">维P<span class="Report_label">支持V2.26</span></div>
+                                            <div class="report_type_item" data-brand="weipuAIGC" data-domain="50">维P<span class="Report_label">支持V2.5</span></div>
                                             <div class="report_type_item" data-brand="turnitinAIGC" data-domain="30">Turnitin<span class="Report_label">支持V10.14</span></div>
                                             <div class="report_type_item" data-brand="masterAIGC" data-domain="70">MasterAIGC</div>
                                             <div class="report_type_item" data-brand="gzdAIGC" data-domain="10">格子达</div>
@@ -393,7 +394,7 @@
                                             <div class="report_type aigc_typeBtn">
                                                 <div class="report_type_item" data-brand="cnkiAIGC">知W AIGC<span class="Report_label">支持V2.13</span></div>
                                                 <div class="report_type_item" data-brand="wanfangAIGC">万F AIGC<span class="Report_label">实时更新</span></div>
-                                                <div class="report_type_item" data-brand="weipuAIGC">维P AIGC<span class="Report_label">支持V2.26</span></div>
+                                                <div class="report_type_item" data-brand="weipuAIGC">维P AIGC<span class="Report_label">支持V2.5</span></div>
                                                 <div class="report_type_item" data-brand="turnitinAIGC">Turnitin AIGC<span class="Report_label">支持V10.14</span></div>
                                                 <div class="report_type_item noMarginRight" data-brand="masterAIGC">Master AIGC</div>
                                                 <div class="report_type_item" data-brand="gzdAIGC">格子达 AIGC</div>
@@ -1740,11 +1741,6 @@
     })
 
     $(".chose_platform .report_type_item").on('click', function (){
-        if($(this).hasClass('special') || $(this).hasClass('active')){
-            aigc_file_domain=''
-            $(this).removeClass('active special')
-            return
-        }
         var type_group=$(this).attr('data-brand')
         aigc_file_domain=$(this).attr('data-domain')
         if(type_group=='cnkiAIGC'||type_group=='wanfangAIGC'||type_group=='weipuAIGC'||type_group=='turnitinAIGC'){

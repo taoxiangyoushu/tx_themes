@@ -178,10 +178,26 @@
                 padding-left: 44px;
                 .form-group {
                     font-size: 0;
+                    &.check-system {
+                        margin-bottom: 0;
+                    }
+                    &.paper-title {
+                        margin-top: 15px;
+                    }
                     &.check-version {
+                        margin-top: 5px;
                         display: none;
                     }
                     &.paper-temp {
+                        display: none;
+                    }
+                    &.school-select {
+                        display: none;
+                    }
+                    &.class-select {
+                        display: none;
+                    }
+                    &.type-select {
                         display: none;
                     }
                     .form-control{
@@ -202,7 +218,7 @@
                         width: 80px;
                         vertical-align: top;
                         &.label-x {
-                            margin-top: 7px;
+                            margin-top: 16px;
                         }
                         &.label-s {
                             margin-top: 9px;
@@ -231,6 +247,9 @@
                                 img {
                                     vertical-align: middle;
                                     max-width: 100%;
+                                    &.cnki-img {
+                                        width: 100px;
+                                    }
                                 }
                             }
                             .system-bottom {
@@ -273,6 +292,7 @@
                             line-height: 32px;
                             cursor: pointer;
                             padding: 0 14px;
+                            margin-top: 10px;
                             &.active {
                                 background-color: #7a5af8;
                                 color: #ffffff;
@@ -537,6 +557,81 @@
                                     display: none;
                                 }
                             }
+                            .UploadBox_multiple {
+                                display: none;
+                                border: 1px dashed #d5d5d5;
+                                border-radius: 4px;
+                                padding: 8px;
+                                margin: 10px 0;
+                                .tips-F {
+                                    font-size: 12px;
+                                }
+                                p.tipsO {
+                                    color: #015792;
+                                    line-height: normal;
+                                    margin: 12px 0 4px;
+                                    img {
+                                        vertical-align: middle;
+                                        margin-top: -4px;
+                                        margin-right: 10px;
+                                    }
+                                }
+                                .tipsS {
+                                    color: #393939;
+                                    font-weight: bold;
+                                    line-height: 22px;
+                                }
+                                p.tipsT {
+                                    color: #a2a2a2;
+                                    line-height: 22px;
+                                }
+                                p.tipsF {
+                                    color: #a2a2a2;
+                                    text-indent: 2em;
+                                    line-height: 22px;
+                                }
+                                .multiple-btns {
+                                    margin: 10px 0;
+                                    .multiple-selectFiles {
+                                        background: linear-gradient(90deg, #0576c2, #005792);
+                                        width: 138px;
+                                        height: 36px;
+                                        line-height: 36px;
+                                        color: #fff;
+                                        border-radius: 4px;
+                                        text-align: center;
+                                        cursor: pointer;
+                                        font-size: 12px;
+                                        position: relative;
+                                        display: inline-block;
+                                        img {
+                                            margin-top: -4px;
+                                            margin-right: 2px;
+                                        }
+                                        input {
+                                            width: 138px;
+                                            position: absolute;
+                                            top: 0;
+                                            opacity: 0;
+                                            height: 100%;
+                                            cursor: pointer !important;
+                                        }
+                                    }
+                                    .cancel-multipleFiles {
+                                        background: linear-gradient(180deg, #E85A56, #C73E38);
+                                        width: 140px;
+                                        height: 36px;
+                                        line-height: 36px;
+                                        color: #fff;
+                                        border-radius: 4px;
+                                        text-align: center;
+                                        cursor: pointer;
+                                        margin-left: 20px;
+                                        font-size: 12px;
+                                        display: inline-block;
+                                    }
+                                }
+                            }
                         }
                         .submit-block {
                             .submit-btn {
@@ -609,7 +704,7 @@
             .i-text {
                 color: #666666;
                 font-size: 12px;
-                text-align: justify;
+                text-align: left;
                 line-height: 24px;
             }
         }
@@ -814,4 +909,10 @@ input[type="radio"]:checked {
     background: url("../img/select2_pre.png")no-repeat;
     background-size: 100% 100%;
     border: none;
+}
+
+.type-select {
+    .select2-selection__rendered {
+        color: #555555 !important;
+    }
 }

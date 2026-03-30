@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
     <link rel="stylesheet" href="../mobile/assets/css/common.css">
-    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0037">
+    <link rel="stylesheet" href="../mobile/assets/css/pay.css?v=m24.0040">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
@@ -281,10 +281,10 @@
 <script src="../mobile/assets/js/bootstrap.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
 <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0037"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0040"></script>
 <script src="../mobile/assets/js/message.js"></script>
-<script src="../mobile/assets/js/ap.js?v=m24.0037"></script>
-<script src="../mobile/assets/js/orderInfo.js?v=m24.0037"></script>
+<script src="../mobile/assets/js/ap.js?v=m24.0040"></script>
+<script src="../mobile/assets/js/orderInfo.js?v=m24.0040"></script>
 <script>
     var orderInfoData = {}
     // 微信浏览器并且有微信支付
@@ -294,6 +294,10 @@
         }
         if (/MicroMessenger/.test(window.navigator.userAgent) && payWay_Info.wx && payWay_Info.wx_jsapi) {  // 微信浏览器 且 有微信支付
             if(!openid){
+                if (typeof Timeout !== 'undefined') {
+                    clearTimeout(Timeout);
+                    Timeout = null;
+                }
                 location.href = 'https://api.taoxiangyoushu.com/weixin/getOpenId?appid=' + payWay_Info.wx_jsapi + '&otherUrl=' + encodeURIComponent(window.location.href)
             }
         }

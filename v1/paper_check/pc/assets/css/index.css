@@ -180,10 +180,26 @@
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group {
   font-size: 0;
 }
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group.check-system {
+  margin-bottom: 0;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group.paper-title {
+  margin-top: 15px;
+}
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group.check-version {
+  margin-top: 5px;
   display: none;
 }
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group.paper-temp {
+  display: none;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group.school-select {
+  display: none;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group.class-select {
+  display: none;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group.type-select {
   display: none;
 }
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .form-control {
@@ -203,7 +219,7 @@
   vertical-align: top;
 }
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .label-t.label-x {
-  margin-top: 7px;
+  margin-top: 16px;
 }
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .label-t.label-s {
   margin-top: 9px;
@@ -234,6 +250,9 @@
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item .system-top img {
   vertical-align: middle;
   max-width: 100%;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item .system-top img.cnki-img {
+  width: 100px;
 }
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .system-item .system-bottom {
   height: 39px;
@@ -272,6 +291,7 @@
   line-height: 32px;
   cursor: pointer;
   padding: 0 14px;
+  margin-top: 10px;
 }
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .version-item.active {
   background-color: #7a5af8;
@@ -536,6 +556,81 @@
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox .DocumentWord {
   display: none;
 }
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple {
+  display: none;
+  border: 1px dashed #d5d5d5;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 10px 0;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple .tips-F {
+  font-size: 12px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple p.tipsO {
+  color: #015792;
+  line-height: normal;
+  margin: 12px 0 4px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple p.tipsO img {
+  vertical-align: middle;
+  margin-top: -4px;
+  margin-right: 10px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple .tipsS {
+  color: #393939;
+  font-weight: bold;
+  line-height: 22px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple p.tipsT {
+  color: #a2a2a2;
+  line-height: 22px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple p.tipsF {
+  color: #a2a2a2;
+  text-indent: 2em;
+  line-height: 22px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple .multiple-btns {
+  margin: 10px 0;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple .multiple-btns .multiple-selectFiles {
+  background: linear-gradient(90deg, #0576c2, #005792);
+  width: 138px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12px;
+  position: relative;
+  display: inline-block;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple .multiple-btns .multiple-selectFiles img {
+  margin-top: -4px;
+  margin-right: 2px;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple .multiple-btns .multiple-selectFiles input {
+  width: 138px;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  height: 100%;
+  cursor: pointer !important;
+}
+.content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .text-upload .UploadBox_multiple .multiple-btns .cancel-multipleFiles {
+  background: linear-gradient(180deg, #E85A56, #C73E38);
+  width: 140px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 12px;
+  display: inline-block;
+}
 .content .plagiarismCheck-block .system-submit .plagiarismCheck-form .form-group .main-container .submit-block .submit-btn {
   width: 106px;
   height: 38px;
@@ -602,7 +697,7 @@
 .content .system-introduce .introduce-item .i-text {
   color: #666666;
   font-size: 12px;
-  text-align: justify;
+  text-align: left;
   line-height: 24px;
 }
 .content .system-introduce .parameter {
@@ -799,5 +894,8 @@ input[type="radio"]:checked {
   background: url("../img/select2_pre.png") no-repeat;
   background-size: 100% 100%;
   border: none;
+}
+.type-select .select2-selection__rendered {
+  color: #555555 !important;
 }
 /*# sourceMappingURL=index.css.map */

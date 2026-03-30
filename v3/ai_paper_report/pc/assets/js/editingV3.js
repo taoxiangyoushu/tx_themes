@@ -230,9 +230,10 @@ function editingChage() {
             const hasChildren = $child.children(`[data-lv="${level+1}"]`).length > 0;
             $child.toggleClass('not_operation_button', hasChildren);
 
-            // 引言 , 绪论 , 结语 , 结论 , 结束语 , 总结 这些提纲下的子项不能添加(后端要求强匹配)
+            // 引言 , 绪论 , 结语 , 结论 , 结束语 , 总结 这些提纲下的子项不能添加(后端要求强匹配), 26.3.11改为包含关系
             setTimeout(() => {
-                const isInhibitInsertion = ['引言' , '绪论' , '结语' , '结论' , '结束语' , '总结'].includes($child.find('.editingInput').val())
+                // const isInhibitInsertion = ['引言' , '绪论' , '结语' , '结论' , '结束语' , '总结'].includes($child.find('.editingInput').val())
+                const isInhibitInsertion = ['引言' , '绪论' , '结语' , '结论' , '结束语' , '总结'].some(item => $child.find('.editingInput').val().includes(item))
                 $child.toggleClass('completely_banned', isInhibitInsertion);
             }, 100);
 
@@ -1242,7 +1243,7 @@ var numberControl = {
     },
     emptiedTips: function(is) {
         // 图片, 表格 , 公式 , 代码准插入量设置
-        var total = $("#NumberWords3").val()<=10000? 1:$("#NumberWords3").val()<=20000? 2:3
+        var total = $("#NumberWords3").val()<15000? 1:$("#NumberWords3").val()<30000? 2:3
         $('.operationPrompt .total').text(total)
         if(!is) $('.operationPrompt .has').text(0)
     }

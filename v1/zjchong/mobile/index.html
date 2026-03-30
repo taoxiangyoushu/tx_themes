@@ -92,13 +92,14 @@
                         <div class="report_type aigc-file-type">
                             <div class="type_item" data-domain="40">知W<span class="Report_label">支持V2.13</span></div>
                             <div class="type_item" data-domain="60">万F<span class="Report_label">实时更新</span></div>
-                            <div class="type_item" data-domain="50">维P<span class="Report_label">支持V2.26</span></div>
+                            <div class="type_item" data-domain="50">维P<span class="Report_label">支持V2.5</span></div>
                             <div class="type_item" data-domain="30">Turnitin<span class="Report_label">支持V10.14</span></div>
                             <div class="type_item" data-domain="70">MasterAIGC</div>
                             <div class="type_item" data-domain="10">格子达</div>
                             <div class="type_item" data-domain="80">大雅</div>
                             <div class="type_item" data-domain="90">PaperPass</div>
                             <div class="type_item" data-domain="20">朱雀AIGC</div>
+                            <div class="type_item active" data-domain="">通用</div>
                         </div>
                         <div class="file_upload">
                             <input type="file" class="upload_files" id="uploadFiles" accept=".doc, .docx, .txt, text/plain">
@@ -136,13 +137,14 @@
                         <div class="report_type aigc-file-type">
                             <div class="type_item" data-domain="40">知W<span class="Report_label">支持V2.13</span></div>
                             <div class="type_item" data-domain="60">万F<span class="Report_label">实时更新</span></div>
-                            <div class="type_item" data-domain="50">维P<span class="Report_label">支持V2.26</span></div>
+                            <div class="type_item" data-domain="50">维P<span class="Report_label">支持V2.5</span></div>
                             <div class="type_item" data-domain="30">Turnitin<span class="Report_label">支持V10.14</span></div>
                             <div class="type_item" data-domain="70">MasterAIGC</div>
                             <div class="type_item" data-domain="10">格子达</div>
                             <div class="type_item" data-domain="80">大雅</div>
                             <div class="type_item" data-domain="90">PaperPass</div>
                             <div class="type_item" data-domain="20">朱雀AIGC</div>
+                            <div class="type_item active" data-domain="">通用</div>
                         </div>
                         <div class="content_block_c">
                             <textarea id="contentTxt" autocomplete="off" placeholder="内容字数在200-300000字，提交内容建议去除封面、目录，仅提交正文。仅支持中英文。" maxlength="300000"></textarea>
@@ -167,7 +169,7 @@
                         <div class="report_type aigcType">
                             <div class="type_item" data-type="cnkiAIGC">知W AIGC<span class="Report_label">支持V2.13</span></div>
                             <div class="type_item" data-type="wanfangAIGC">万F AIGC<span class="Report_label">实时更新</span></div>
-                            <div class="type_item" data-type="weipuAIGC">维P AIGC<span class="Report_label">支持V2.26</span></div>
+                            <div class="type_item" data-type="weipuAIGC">维P AIGC<span class="Report_label">支持V2.5</span></div>
                             <div class="type_item" data-type="turnitinAIGC">Turnitin AIGC<span class="Report_label">支持V10.14</span></div>
                             <div class="type_item" data-type="masterAIGC">Master AIGC</div>
                             <div class="type_item" data-type="gzdAIGC">格Z达 AIGC</div>
@@ -923,6 +925,7 @@
             $(".form_block .aigc-file-type").hide()
             $(".submitContent .form_block").addClass('lwcc-f')
             $(".form_block .aigc-file-type .type_item").removeClass('active special')
+            $(".form_block .aigc-file-type .type_item[data-domain='']").addClass('active')
             aigc_file_domain = ''
             for(let i=0;i<typeData.length;i++){
                 if(typeData[i].short_name==$(this).data('type')){
@@ -1639,6 +1642,7 @@
                 $(".report_type .type_item[data-type='otherAIGC']").click()
             }
             $(".form_block .aigc-file-type .type_item").removeClass('active special')
+            $(".form_block .aigc-file-type .type_item[data-domain='']").addClass('active')
             aigc_file_domain = ''
         }
     })
@@ -1856,18 +1860,13 @@
     })
 
     $(".form_block .aigc-file-type .type_item").click(function (){
-        if(aigc_file_domain == $(this).attr('data-domain')){
-            aigc_file_domain = ''
-            $(".form_block .aigc-file-type .type_item").removeClass('active special')
-            return
-        }
-        let domian = $(this).attr('data-domain')
+        let domian = $(this).attr('data-domain') || ''
         aigc_file_domain = $(this).attr('data-domain')
         $(".form_block .aigc-file-type .type_item").removeClass('active special')
-        if($(".form_block .aigc-file-type .type_item[data-domain="+ domian +"]").find(".Report_label")[0]){
-            $(".form_block .aigc-file-type .type_item[data-domain="+ domian +"]").addClass('special')
+        if($(".form_block .aigc-file-type .type_item[data-domain='"+ domian +"']").find(".Report_label")[0]){
+            $(".form_block .aigc-file-type .type_item[data-domain='"+ domian +"']").addClass('special')
         }else{
-            $(".form_block .aigc-file-type .type_item[data-domain="+ domian +"]").addClass('active')
+            $(".form_block .aigc-file-type .type_item[data-domain='"+ domian +"']").addClass('active')
         }
     })
 
