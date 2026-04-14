@@ -578,8 +578,9 @@ function generated_row(item) {
     const box_lv = Number(lastTopBox.attr('data-lv'))
     // 相同等级直接添加,再赋值, 如果下一个等级低于当前等级就加子提纲, 如果高于就往上推
     const current = textProcessing(item)
-    // “设计”、“开发”、“编程” 允许插入代码
-    const allow_dm = current.title.indexOf('设计') != -1 || current.title.indexOf('开发') != -1 || current.title.indexOf('编程') != -1;
+    // 允许插入代码的关键词：实现、代码、模块、功能、算法、设计、开发、技术、清洗、存储、特征
+    const allowCodeKeywords = ['实现', '代码', '模块', '功能', '算法', '设计', '开发', '技术', '清洗', '存储', '特征', '编程'];
+    const allow_dm = allowCodeKeywords.some(keyword => current.title.indexOf(keyword) != -1);
     if($('.editingBox').children('.topBox').length == 0) {
         var text = "";
         text += "<div class=\"topBox editing-lv1\" data-lv=\"1\" data-lvl=\"0\">";

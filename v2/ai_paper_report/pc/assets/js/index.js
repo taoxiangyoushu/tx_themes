@@ -39,6 +39,9 @@ $('#type_s , #type_s2').change(function() {
 })
 function changeType(this_ , this_val) {
     var val = this_.val() || this_val
+    if(!val) {
+        return
+    }
     $(".version-wxzs .version-wxzs-err").hide()
     $(".selectPeriodical .periodical-err").hide();
     $(".literatureNum .literatureNum-err").hide();

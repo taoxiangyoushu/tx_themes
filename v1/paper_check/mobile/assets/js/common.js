@@ -68,7 +68,12 @@ var systemInfo = {
         comparisonLibrary: '包括期刊、会议论文、学位论文、图书、报纸等海量比对资源， 持续动态更新。自主研发核心技术获得多项专利，传输存储过程可靠，保障数据安全。',
         Language: '中文、英文',
         timeConsuming: '10-30分钟',
-    }
+    },
+    crosscheck: {
+        comparisonLibrary: '一个基于全球学术出版物所组成的庞大数据库和一个基于网页的检验工具。提前检测可避免重复率过高被拒稿的风险，已经为业界无数的出版商、编辑、研究人员以及作者提供了良好的检测服务',
+        Language: '中文、英文',
+        timeConsuming: '10-30分钟',
+    },
 }
 // 封装url参数获取
 function getQueryVariable(variable){

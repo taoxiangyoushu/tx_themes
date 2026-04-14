@@ -29,6 +29,10 @@ html .ContainerTo {
   height: 100vh;
   overflow: auto;
 }
+#App .menu-link:focus {
+  outline: none;
+  text-decoration: none;
+}
 .menuBox .toQuery {
   border: 1px solid #0C55F5;
   color: #0C55F5;

@@ -614,7 +614,13 @@
             cursor: pointer;
             position: relative;
             margin-right: 10px;
-            &:hover , &.selected {
+            &:hover {
+                .bg_nor , .tb_nor , .gs_nor , .dm_nor , .tp_nor {
+                    display: block;
+                    box-shadow: 0 0 6px 0px #999;
+                }
+            }
+            &.selected {
                 .bg_nor , .tb_nor , .gs_nor , .dm_nor , .tp_nor {
                     display: none;
                 }

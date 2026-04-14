@@ -146,9 +146,11 @@ Gettitle()
 
 function changeType(this_ , this_val) {
     var val = this_.val() || this_val
+    if(!val) {
+        return
+    }
     var permit_name = ['rws' , 'ktbg' , 'wxzs' , 'kclw' , 'zjcaigc', 'dybg', 'lwdbppt' , 'xzaigccheck', 'scirs']
     var this_short_name = typeData[val].short_name
-
     // 标题处理
     if(typeData[val].short_name == 'xzaigccheck' || typeData[val].short_name == 'zjcaigc'){
         if(title_record[val]){

@@ -204,6 +204,14 @@ html .ContainerTo {
   vertical-align: text-top;
   border-radius: 50%;
 }
+.indexAppv2 .typeLi .paper_platform_css,
+.indexAppv2 .typeLi .zjchong_css {
+  width: 20px;
+}
+.indexAppv2 .menu-link:focus {
+  outline: none;
+  text-decoration: none;
+}
 .indexAppv2 .described {
   padding: 0 20px;
   padding-top: 36px;

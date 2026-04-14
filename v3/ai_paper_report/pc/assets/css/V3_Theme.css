@@ -1436,3 +1436,49 @@
   user-select: none;
   line-height: 24px;
 }
+.prompt {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+.prompt img {
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+  margin-left: 4px;
+  margin-top: -2px;
+}
+.prompt .tips {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.5;
+  width: 194px;
+  white-space: normal;
+  word-wrap: break-word;
+  z-index: 1000;
+  transition: opacity 0.3s, visibility 0.3s;
+  margin-bottom: 8px;
+}
+.prompt .tips::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+}
+.prompt:hover .tips {
+  visibility: visible;
+  opacity: 1;
+}
