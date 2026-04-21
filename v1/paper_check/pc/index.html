@@ -394,34 +394,47 @@
     // }
 
     // 维普格式检测大学生版  模板获取
-    var cqvip_getFormatTemplate = []
+    var cqvip_getFormatTemplate = [{
+        "id": 1,
+        "tempId": 9, //模板ID
+        "tempName": "国家标准GB7713（本科）", //模板名称
+        "type": 2
+    }]
     function getFormaTemplate() {
-        $.ajax({
-            type: 'post',
-            url: urls + "/api/tool/get_types?scenes_id=get_paper_check_params_data",
-            data: {
-                type: 'cqvip_getFormatTemplate',
-                temp_type: '2'
-            },
-            success: function (res){
-                if(res.code == 200){
-                    cqvip_getFormatTemplate = res.data
-                    $("#selectTemp").append("<option disabled='true' value='' selected>请选择或输入关键词搜索模板</option>");
-                    for(var i=0;i<res.data.length;i++) {
-                        $("#selectTemp").append("<option value='"+ res.data[i].tempId +"'>"+ res.data[i].tempName +"</option>");
+        if(!cqvip_getFormatTemplate.length) {
+            $.ajax({
+                type: 'post',
+                url: urls + "/api/tool/get_types?scenes_id=get_paper_check_params_data",
+                data: {
+                    type: 'cqvip_getFormatTemplate',
+                    temp_type: '2'
+                },
+                success: function (res){
+                    if(res.code == 200){
+                        cqvip_getFormatTemplate = res.data
+                        $("#selectTemp").append("<option disabled='true' value='' selected>请选择或输入关键词搜索模板</option>");
+                        for(var i=0;i<res.data.length;i++) {
+                            $("#selectTemp").append("<option value='"+ res.data[i].tempId +"'>"+ res.data[i].tempName +"</option>");
+                        }
+                        if($('#selectTemp')[0]){
+                            $('#selectTemp').select2();
+                        }
+                    }else{
+                        cocoMessage.error( res.codeMsg, 2000);
                     }
-                    if($('#selectTemp')[0]){
-                        $('#selectTemp').select2();
-                    }
-                }else{
-                    cocoMessage.error( res.codeMsg, 2000);
-                }
-            },
-            error: function (err){
+                },
+                error: function (err){
 
+                }
+            })
+        }else{
+            for(var i=0;i<cqvip_getFormatTemplate.length;i++) {
+                $("#selectTemp").append("<option value='"+ cqvip_getFormatTemplate[i].tempId +"'>"+ cqvip_getFormatTemplate[i].tempName +"</option>");
             }
-        })
+        }
     }
+
+    getFormaTemplate()
 
 
     $("#selectSchool").on('change', function (){

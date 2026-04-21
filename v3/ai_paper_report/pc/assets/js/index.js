@@ -165,9 +165,9 @@ function changeType(this_ , this_val) {
                 $(".major").hide()
             }
             if(parameterSet[this_short_name].submit_attribute.value.reference_content && parameterSet[this_short_name].submit_attribute.value.reference_content.value) {
-                $(".supplement").show()
+                $(".Explanation").show()
             }else{
-                $(".supplement").hide()
+                $(".Explanation").hide()
             }
 
             if(parameterSet[this_short_name].submit_attribute.value.references_en_num && parameterSet[this_short_name].submit_attribute.value.references_en_num.value) {
@@ -190,7 +190,7 @@ function changeType(this_ , this_val) {
         $(".education_c").hide()
         $(".major").hide()
         $(".keywordBox").hide()
-        $(".supplement").hide()
+        $(".Explanation").hide()
         $(".EnglishLiterature").addClass('displayHide')
     }
 

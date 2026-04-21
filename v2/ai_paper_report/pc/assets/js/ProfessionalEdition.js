@@ -14,15 +14,16 @@ $('#outline').click(function() {
     $('.editTips , .editTips2').hide()
     if(!$('.inputCheck').prop("checked")) return cocoMessage.error('请确认知晓并同意 "生成的论文范文仅用于参考,不作为毕业、发表使用" 条款!', 3000)
     var bootstrapValidator = $("#ContainerTo").data("bootstrapValidator").validate();
-    if( typeData[$("#type_s2").val()].short_name=='bylwsenior' || typeData[$("#type_s2").val()].short_name=='bylwsenior_zrb' || typeData[$("#type_s2").val()].short_name=='qklwsenior'){
-        if($("#illustrate").val().length > 0) {
-            if($("#illustrate").val().length < 200) {
-                $(".professional").css('borderColor', '#f34f4f')
-                $(".professional-err").show()
-                return;
-            }
-        }
-    }
+    // 补充说明字数验证
+    // if( typeData[$("#type_s2").val()].short_name=='bylwsenior' || typeData[$("#type_s2").val()].short_name=='bylwsenior_zrb' || typeData[$("#type_s2").val()].short_name=='qklwsenior'){
+    //     if($("#illustrate").val().length > 0) {
+    //         if($("#illustrate").val().length < 200) {
+    //             $(".professional").css('borderColor', '#f34f4f')
+    //             $(".professional-err").show()
+    //             return;
+    //         }
+    //     }
+    // }
     if(typeData[$('#type_s2').val()].short_name == 'qklwsenior') {
         if(!$(".periodicalType.select")[0]){
             $(".selectPeriodical .periodical-err").show();
@@ -104,21 +105,21 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this) {
             formData.references_en_num =0
         }
         //补充说明
-        if($("#illustrate").val().length > 0) {
-            if($("#illustrate").val().length < 200) {
-            }else{
-                formData.reference_content = $("#illustrate").val()
-            }
-        }
+        // if($("#illustrate").val().length > 0) {
+        //     if($("#illustrate").val().length < 200) {
+        //     }else{
+        //         formData.reference_content = $("#illustrate").val()
+        //     }
+        // }
     }
 
     if( (typeData[$('#type_s2').val()].short_name == 'bylwsenior' || typeData[$('#type_s2').val()].short_name == 'bylwsenior_zrb') ) {
-        if($("#illustrate").val().length > 0) {
-            if($("#illustrate").val().length < 200) {
-            }else{
-                formData.reference_content = $("#illustrate").val()
-            }
-        }
+        // if($("#illustrate").val().length > 0) {
+        //     if($("#illustrate").val().length < 200) {
+        //     }else{
+        //         formData.reference_content = $("#illustrate").val()
+        //     }
+        // }
         if($(".education_c").is(':visible')){
             formData.education = $("input[name='reportType']:checked").val()
         }
@@ -143,6 +144,16 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this) {
         }
     }
 
+    if(['qklwsenior' , 'bylwsenior' , 'bylwsenior_zrb'].includes(typeData[$('#type_s2').val()].short_name)) {
+        if($(".Explanation-check").data('type') == 'text') {
+            formData.reference_content = $("#illustrate").val()
+        }else if($(".Explanation-check").data('type') == 'file') {
+            let getUploadedFiles = window.getUploadedFiles()
+            for(let i = 0; i < getUploadedFiles.length; i++) {
+                formData['fids['+i+']'] = getUploadedFiles[i].fid
+            }
+        }
+    }
     if($(".keywordBox").is(':visible')){
        formData.keyword = keyWordZy
     }

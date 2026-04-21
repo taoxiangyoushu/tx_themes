@@ -1040,15 +1040,15 @@ $("#next_step").on('click',function (){
     var bootstrapValidator = $("#ContainerTo").data("bootstrapValidator").validate();
 
     // 补充说明字数验证
-    if( typeData[$("#type_s").val()].short_name=='bylwsenior' || typeData[$("#type_s").val()].short_name=='bylwsenior_zrb' || typeData[$("#type_s").val()].short_name=='qklwsenior'){
-        if($("#illustrate").val().length > 0) {
-            if($("#illustrate").val().length < 200) {
-                $(".professional").css('borderColor', '#f34f4f')
-                $(".professional-err").show()
-                return;
-            }
-        }
-    }
+    // if( typeData[$("#type_s").val()].short_name=='bylwsenior' || typeData[$("#type_s").val()].short_name=='bylwsenior_zrb' || typeData[$("#type_s").val()].short_name=='qklwsenior'){
+    //     if($("#illustrate").val().length > 0) {
+    //         if($("#illustrate").val().length < 200) {
+    //             $(".professional").css('borderColor', '#f34f4f')
+    //             $(".professional-err").show()
+    //             return;
+    //         }
+    //     }
+    // }
 
     // 期刊论文
     if(typeData[$('#type_s').val()].short_name == 'qklwsenior') {
@@ -1137,21 +1137,21 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this , gen_qu
         //     formData.references_en_num =0
         // }
         //补充说明
-        if($("#illustrate").val().length > 0) {
-            if($("#illustrate").val().length < 200) {
-            }else{
-                formData.reference_content = $("#illustrate").val()
-            }
-        }
+        // if($("#illustrate").val().length > 0) {
+        //     if($("#illustrate").val().length < 200) {
+        //     }else{
+        //         formData.reference_content = $("#illustrate").val()
+        //     }
+        // }
     }
 
     if( typeData[$('#type_s').val()].short_name == 'bylwsenior' || typeData[$('#type_s').val()].short_name == 'bylwsenior_zrb'  ) {
-        if($("#illustrate").val().length > 0) {
-            if($("#illustrate").val().length < 200) {
-            }else{
-                formData.reference_content = $("#illustrate").val()
-            }
-        }
+        // if($("#illustrate").val().length > 0) {
+        //     if($("#illustrate").val().length < 200) {
+        //     }else{
+        //         formData.reference_content = $("#illustrate").val()
+        //     }
+        // }
         if($(".education_c").css('display') !== 'none'){
             formData.education = $("input[name='reportType']:checked").val()
         }
@@ -1176,6 +1176,16 @@ function pre_handlePreOrder(contenteditable , NumberWords , button_this , gen_qu
         }
     }
 
+    if(['qklwsenior' , 'bylwsenior' , 'bylwsenior_zrb'].includes(typeData[$('#type_s').val()].short_name)) {
+        if($(".Explanation-check").data('type') == 'text') {
+            formData.reference_content = $("#illustrate").val()
+        }else if($(".Explanation-check").data('type') == 'file') {
+            let getUploadedFiles = window.getUploadedFiles()
+            for(let i = 0; i < getUploadedFiles.length; i++) {
+                formData['fids['+i+']'] = getUploadedFiles[i].fid
+            }
+        }
+    }
     if($(".keywordBox").css('display') !== 'none'){
        formData.keyword = keyWordZy
     }

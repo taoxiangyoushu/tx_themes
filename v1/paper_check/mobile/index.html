@@ -422,34 +422,51 @@
     }
 
     // 维普格式检测大学生版  模板获取
-    var cqvip_getFormatTemplate = []
+    var cqvip_getFormatTemplate = [{
+        "id": 1,
+        "tempId": 9, //模板ID
+        "tempName": "国家标准GB7713（本科）", //模板名称
+        "type": 2
+    }]
     function getFormaTemplate() {
-        $.ajax({
-            type: 'post',
-            url: urls + "/api/tool/get_types?scenes_id=get_paper_check_params_data",
-            data: {
-                type: 'cqvip_getFormatTemplate',
-                temp_type: '2'
-            },
-            success: function (res){
-                if(res.code == 200){
-                    cqvip_getFormatTemplate = res.data
-                    $("#selectTemp").append("<option disabled='true' value='' selected>请选择或输入关键词搜索模板</option>");
-                    for(var i=0;i<res.data.length;i++) {
-                        $("#selectTemp").append("<option value='"+ res.data[i].tempId +"'>"+ res.data[i].tempName +"</option>");
+        if(!cqvip_getFormatTemplate.length) {
+            $.ajax({
+                type: 'post',
+                url: urls + "/api/tool/get_types?scenes_id=get_paper_check_params_data",
+                data: {
+                    type: 'cqvip_getFormatTemplate',
+                    temp_type: '2'
+                },
+                success: function (res){
+                    if(res.code == 200){
+                        cqvip_getFormatTemplate = res.data
+                        $("#selectTemp").append("<option disabled='true' value='' selected>请选择或输入关键词搜索模板</option>");
+                        for(var i=0;i<res.data.length;i++) {
+                            $("#selectTemp").append("<option value='"+ res.data[i].tempId +"'>"+ res.data[i].tempName +"</option>");
+                        }
+                        if($('#selectTemp')[0]){
+                            $('#selectTemp').select2();
+                        }
+                    }else{
+                        cocoMessage.error( res.codeMsg, 2000);
                     }
-                    if($('#selectTemp')[0]){
-                        $('#selectTemp').select2();
-                    }
-                }else{
-                    cocoMessage.error( res.codeMsg, 2000);
-                }
-            },
-            error: function (err){
+                },
+                error: function (err){
 
+                }
+            })
+        }else{
+            $("#selectTemp").append("<option disabled='true' value='' selected>请选择模板</option>");
+            for(var i=0;i<cqvip_getFormatTemplate.length;i++) {
+                $("#selectTemp").append("<option value='"+ cqvip_getFormatTemplate[i].tempId +"'>"+ cqvip_getFormatTemplate[i].tempName +"</option>");
             }
-        })
+            if($('#selectTemp')[0]){
+                $('#selectTemp').select2();
+            }
+        }
     }
+
+    getFormaTemplate()
 
     $("#selectSchool").append("<option disabled='true' value='' selected>请选择或输入学校名搜索</option>");
     for(var i=0;i<cqvipzpmd_schoolTemplate.length;i++) {
@@ -1309,10 +1326,10 @@
                 }
             }
             if( $(".system-item.active").attr('data-name')=='wanfang'&&$("#type_s").val() == 'wanfangpu' || $(".system-item.active").attr('data-name')=='weipu'&&$("#type_s").val() == 'cqvipzc') {
-                data.data["check_params[publishdate]"] =  $("#date").val()
+                data["check_params[publishdate]"] =  $("#date").val()
             }
             if( $(".system-item.active").attr('data-name')=='weipu'&&$("#type_s").val() == 'cqvipgs') {
-                data.data["check_params[tempId]"] =  $("#selectTemp").val()
+                data["check_params[tempId]"] =  $("#selectTemp").val()
             }
             if( $(".system-item.active").attr('data-name')=='weipu'&&$("#type_s").val() == 'cqvipzpmd') {
                 data["check_params[school_id]"] =  $("#selectSchool").val()
