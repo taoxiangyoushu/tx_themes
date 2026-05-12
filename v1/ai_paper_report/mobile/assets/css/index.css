@@ -1552,4 +1552,682 @@ button.btn-default,
   line-height: 20px;
   overflow: hidden;
 }
+.jiangAIGCBlock {
+  background: #F6FBFF;
+  padding-top: 0.3rem;
+  min-height: 10rem;
+  margin-top: 1.5rem;
+  display: none;
+}
+.jiangAIGCBlock .type_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 1rem;
+}
+.jiangAIGCBlock .type_head .type_item {
+  color: #5B5B5B;
+  font-size: 1.4rem;
+  width: 33.33%;
+  text-align: center;
+  position: relative;
+  list-style: none;
+}
+.jiangAIGCBlock .type_head .type_item.active {
+  color: #2170D6;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.jiangAIGCBlock .type_head .type_item.active:after {
+  content: '';
+  position: absolute;
+  bottom: -0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.8rem;
+  height: 0.2rem;
+  background: #2170D6;
+  border-radius: 2rem;
+}
+.jiangAIGCBlock .type_head .type_item:before {
+  content: '';
+  position: absolute;
+  height: 1.8rem;
+  width: 0.1rem;
+  background: #CAD4E7;
+  right: 0;
+}
+.jiangAIGCBlock .type_head .type_item:last-child:before {
+  display: none;
+}
+.jiangAIGCBlock .type_head .type_item .recommend {
+  position: absolute;
+  background: #3B68E2;
+  border-radius: 0.75rem 0.75rem 0.75rem 0rem;
+  top: -0.25rem;
+  right: -0.75rem;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0rem 0.5rem 0rem 0.375rem;
+  text-align: center;
+  font-weight: 400;
+  display: none;
+}
+.jiangAIGCBlock .form_block {
+  background: #ffffff;
+  border-radius: 1rem;
+  margin-top: 1.9rem;
+}
+.jiangAIGCBlock .form_block .files_upload .file_upload {
+  background: #FBFBFB;
+  border-radius: 10px;
+  border: 1px dashed #C4C4C4;
+  height: 20rem;
+  position: relative;
+}
+.jiangAIGCBlock .form_block .files_upload .file_upload.has-error {
+  border: 1px solid #d70024;
+}
+.jiangAIGCBlock .form_block .files_upload .file_upload input {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.jiangAIGCBlock .form_block .files_upload .file_upload input.hasFile {
+  z-index: -1;
+}
+.jiangAIGCBlock .form_block .files_upload .file_upload .upload_btn {
+  width: 11rem;
+  height: 4rem;
+  line-height: 4.1rem;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #ffffff;
+  border-radius: 0.6rem;
+  background: linear-gradient(270deg, #1675DD, #2B8FFE);
+  margin: 8rem auto 0;
+}
+.jiangAIGCBlock .form_block .files_upload .file_upload .upload_btn img {
+  width: 1.8rem;
+  vertical-align: middle;
+  margin-top: -0.5rem;
+}
+.jiangAIGCBlock .form_block .files_upload .file_upload .upload_btn .uploading_logo {
+  display: none;
+}
+.jiangAIGCBlock .form_block .files_upload .upload_tips {
+  margin-top: 1.2rem;
+}
+.jiangAIGCBlock .form_block .files_upload .upload_tips .p1 {
+  color: #5B5B5B;
+  font-size: 1.1rem;
+}
+.jiangAIGCBlock .form_block .files_upload .upload_tips .p2 {
+  font-size: 0;
+}
+.jiangAIGCBlock .form_block .files_upload .upload_tips .p2 > span {
+  margin-top: 1rem;
+}
+.jiangAIGCBlock .form_block .files_upload .upload_tips .p2 .format {
+  padding: 0 0.63rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  text-align: center;
+  border-radius: 0.3rem;
+  border: 1px solid #E0E3E9;
+  color: #2C90FF;
+  font-size: 1.1rem;
+  margin-left: 0.6rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.jiangAIGCBlock .form_block .files_upload .upload_tips .p2 .format:first-child {
+  margin-left: 0;
+}
+.jiangAIGCBlock .form_block .files_upload .upload_tips .p2 .size {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 0.6rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  font-size: 1.6rem;
+  color: #ACACAC;
+  font-weight: bold;
+  border: 1px solid #D8D8D8;
+  border-radius: 0.3rem;
+  margin-left: 2.2rem;
+  position: relative;
+}
+.jiangAIGCBlock .form_block .files_upload .upload_tips .p2 .size:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 1px;
+  background: #E0E3E9;
+  position: absolute;
+  left: -1.3rem;
+  top: 0;
+}
+.jiangAIGCBlock .form_block .files_upload .upload_tips .p2 .size .size_tag {
+  display: inline-block;
+  width: 4rem;
+  height: 1.8rem;
+  line-height: 1.9rem;
+  border-radius: 0.3rem;
+  background: #F6F6F6;
+  font-size: 1rem;
+  color: #999999;
+  vertical-align: top;
+  margin-top: 0.2rem;
+  margin-left: 0.3rem;
+}
+.jiangAIGCBlock .form_block .files_upload .upload_tips .p2 .size .size_tag img {
+  width: 1.1rem;
+  margin-left: 0.3rem;
+  margin-top: -0.2rem;
+  vertical-align: middle;
+}
+.jiangAIGCBlock .form_block .files_upload .copywriting-f {
+  position: relative;
+  width: calc(100% + 0rem);
+  left: 0rem;
+  top: -0.6rem;
+  border-radius: 1rem 1rem 0rem 0rem;
+  background: #E5F0FF;
+  color: #1D4B88;
+  font-size: 1rem;
+  text-align: center;
+  height: 3.5rem;
+  line-height: 3.5rem;
+}
+.jiangAIGCBlock .form_block .files_upload .report_type {
+  font-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+.jiangAIGCBlock .form_block .files_upload .report_type .type_item {
+  width: 32%;
+  height: 3rem;
+  margin-right: 2%;
+  border-radius: 0.4rem;
+  background: #F8F9FB;
+  font-size: 1.1rem;
+  color: #666666;
+  text-align: center;
+  line-height: 3rem;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin-bottom: 1.2rem;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+.jiangAIGCBlock .form_block .files_upload .report_type .type_item:nth-child(3n) {
+  margin-right: 0;
+}
+.jiangAIGCBlock .form_block .files_upload .report_type .type_item.active {
+  background: #EBF5FF;
+  background-image: url("../img/check_report.png");
+  background-repeat: no-repeat;
+  background-size: 1.8rem 1.8rem;
+  background-position: calc(100% + 1px) -1px;
+  border: 1px solid #2170D6;
+  color: #2170D6;
+}
+.jiangAIGCBlock .form_block .files_upload .report_type .type_item.special {
+  border: 1px solid #2170D6;
+  background: #EBF5FF;
+  background-repeat: no-repeat;
+  background-position: 100% -1px;
+  color: #2170D6;
+}
+.jiangAIGCBlock .form_block .files_upload .report_type .type_item.special .Report_label {
+  background: #006FFF;
+  color: #fff;
+}
+.jiangAIGCBlock .form_block .files_upload .report_type .type_item .Report_label {
+  position: absolute;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #2C7AFF;
+  display: inline-block;
+  top: -1rem;
+  right: -0.125rem;
+  background: #E0EEFE;
+  border-radius: 0.5rem 0.5rem 0rem 0.5rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  padding: 0rem 0.375rem;
+}
+.jiangAIGCBlock .form_block .content_block {
+  display: none;
+}
+.jiangAIGCBlock .form_block .content_block .content_block_c {
+  height: 26rem;
+  background: #FBFBFB;
+  border: 1px dashed #C4C4C4;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.jiangAIGCBlock .form_block .content_block .content_block_c.has-error {
+  border: 1px solid #ee0a24;
+}
+.jiangAIGCBlock .form_block .content_block textarea {
+  width: 100%;
+  height: 94%;
+  color: #999999;
+  font-size: 1.2rem;
+  background: #fbfbfb;
+  resize: none;
+  text-align: justify;
+  border: none;
+  outline: none;
+}
+.jiangAIGCBlock .form_block .content_block textarea::placeholder {
+  color: #999999;
+}
+.jiangAIGCBlock .form_block .content_block .content_tips {
+  font-size: 1.1rem;
+  color: #999999;
+  text-align: right;
+}
+.jiangAIGCBlock .form_block .content_block .content_tips span {
+  color: #db0001;
+}
+.jiangAIGCBlock .form_block .content_block .copywriting-f {
+  position: relative;
+  width: calc(100% + 0rem);
+  left: 0rem;
+  top: -0.6rem;
+  border-radius: 1rem 1rem 0rem 0rem;
+  background: #E5F0FF;
+  color: #1D4B88;
+  font-size: 1rem;
+  text-align: center;
+  height: 3.5rem;
+  line-height: 3.5rem;
+}
+.jiangAIGCBlock .form_block .content_block .report_type {
+  font-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+.jiangAIGCBlock .form_block .content_block .report_type .type_item {
+  width: 32%;
+  height: 3rem;
+  margin-right: 2%;
+  border-radius: 0.4rem;
+  background: #F8F9FB;
+  font-size: 1.1rem;
+  color: #666666;
+  text-align: center;
+  line-height: 3rem;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin-bottom: 1.2rem;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+.jiangAIGCBlock .form_block .content_block .report_type .type_item:nth-child(3n) {
+  margin-right: 0;
+}
+.jiangAIGCBlock .form_block .content_block .report_type .type_item.active {
+  background: #EBF5FF;
+  background-image: url("../img/check_report.png");
+  background-repeat: no-repeat;
+  background-size: 1.8rem 1.8rem;
+  background-position: calc(100% + 1px) -1px;
+  border: 1px solid #2170D6;
+  color: #2170D6;
+}
+.jiangAIGCBlock .form_block .content_block .report_type .type_item.special {
+  border: 1px solid #2170D6;
+  background: #EBF5FF;
+  background-repeat: no-repeat;
+  background-position: 100% -1px;
+  color: #2170D6;
+}
+.jiangAIGCBlock .form_block .content_block .report_type .type_item.special .Report_label {
+  background: #006FFF;
+  color: #fff;
+}
+.jiangAIGCBlock .form_block .content_block .report_type .type_item .Report_label {
+  position: absolute;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #2C7AFF;
+  display: inline-block;
+  top: -1rem;
+  right: -0.125rem;
+  background: #E0EEFE;
+  border-radius: 0.5rem 0.5rem 0rem 0.5rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  padding: 0rem 0.375rem;
+}
+.jiangAIGCBlock .form_block .zip_block {
+  display: none;
+}
+.jiangAIGCBlock .form_block .zip_block .report_type {
+  font-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+.jiangAIGCBlock .form_block .zip_block .report_type .type_item {
+  width: 32%;
+  height: 3rem;
+  margin-right: 2%;
+  border-radius: 0.4rem;
+  background: #F8F9FB;
+  font-size: 1.1rem;
+  color: #666666;
+  text-align: center;
+  line-height: 3rem;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin-bottom: 1.2rem;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+.jiangAIGCBlock .form_block .zip_block .report_type .type_item:nth-child(3n) {
+  margin-right: 0;
+}
+.jiangAIGCBlock .form_block .zip_block .report_type .type_item.active {
+  background: #EBF5FF;
+  background-image: url("../img/check_report.png");
+  background-repeat: no-repeat;
+  background-size: 1.8rem 1.8rem;
+  background-position: calc(100% + 1px) -1px;
+  border: 1px solid #2170D6;
+  color: #2170D6;
+}
+.jiangAIGCBlock .form_block .zip_block .report_type .type_item.special {
+  border: 1px solid #2170D6;
+  background: #EBF5FF;
+  background-repeat: no-repeat;
+  background-position: 100% -1px;
+  color: #2170D6;
+}
+.jiangAIGCBlock .form_block .zip_block .report_type .type_item.special .Report_label {
+  background: #006FFF;
+  color: #fff;
+}
+.jiangAIGCBlock .form_block .zip_block .report_type .type_item .Report_label {
+  position: absolute;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #2C7AFF;
+  display: inline-block;
+  top: -1rem;
+  right: -0.125rem;
+  background: #E0EEFE;
+  border-radius: 0.5rem 0.5rem 0rem 0.5rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  padding: 0rem 0.375rem;
+}
+.jiangAIGCBlock .form_block .zip_block .check_platform {
+  height: 3.6rem;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  border: 1px solid #E0E3E9;
+  font-size: 1.2rem;
+  width: 100%;
+  padding-left: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  display: block;
+}
+.jiangAIGCBlock .form_block .zip_block .check_platform::placeholder {
+  color: #B5B5B5;
+}
+.jiangAIGCBlock .form_block .zip_block .zip_upload {
+  background: #FBFBFB;
+  border-radius: 1rem;
+  border: 1px dashed #C4C4C4;
+  height: 15rem;
+  position: relative;
+  margin-top: 1rem;
+}
+.jiangAIGCBlock .form_block .zip_block .zip_upload.has-error {
+  border: 1px solid #d70024;
+}
+.jiangAIGCBlock .form_block .zip_block .zip_upload input {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.jiangAIGCBlock .form_block .zip_block .zip_upload input.hasFile {
+  z-index: -1;
+}
+.jiangAIGCBlock .form_block .zip_block .zip_upload .upload_btn {
+  width: 11rem;
+  height: 4rem;
+  line-height: 4.1rem;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #ffffff;
+  border-radius: 0.6rem;
+  background: linear-gradient(270deg, #1675DD, #2B8FFE);
+  margin: 4.4rem auto 0;
+}
+.jiangAIGCBlock .form_block .zip_block .zip_upload .upload_btn img {
+  width: 1.8rem;
+  vertical-align: middle;
+  margin-top: -0.4rem;
+}
+.jiangAIGCBlock .form_block .zip_block .zip_upload .upload_btn .uploading_logo {
+  display: none;
+}
+.jiangAIGCBlock .form_block .zip_block .zip_upload .p1 {
+  color: #999999;
+  font-size: 1rem;
+  margin-top: 0.7rem;
+  text-align: center;
+  display: none;
+}
+.jiangAIGCBlock .form_block .zip_block .zip_upload .p1 span {
+  color: #5B5B5B;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips {
+  color: #5B5B5B;
+  font-size: 1.1rem;
+  margin-top: 1.2rem;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips span {
+  color: #2C90FF;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips .p1 {
+  color: #5B5B5B;
+  font-size: 1.1rem;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips .p2 {
+  font-size: 0;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips .p2 > span {
+  margin-top: 1rem;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips .p2 .format {
+  width: 4.5rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  text-align: center;
+  border-radius: 0.3rem;
+  border: 1px solid #E0E3E9;
+  color: #2C90FF;
+  font-size: 1.1rem;
+  margin-right: 0.6rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips .p2 .format:first-child {
+  margin-left: 0;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips .p2 .size {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 0.6rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  font-size: 1.6rem;
+  color: #ACACAC;
+  font-weight: bold;
+  border: 1px solid #D8D8D8;
+  border-radius: 0.3rem;
+  margin-left: 1.4rem;
+  position: relative;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips .p2 .size:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 1px;
+  background: #E0E3E9;
+  position: absolute;
+  left: -1.1rem;
+  top: 0;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips .p2 .size .size_tag {
+  display: inline-block;
+  width: 4rem;
+  height: 1.8rem;
+  line-height: 1.9rem;
+  border-radius: 0.3rem;
+  background: #F6F6F6;
+  font-size: 1rem;
+  color: #999999;
+  vertical-align: top;
+  margin-top: 0.2rem;
+  margin-left: 0.3rem;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips .p2 .size .size_tag img {
+  width: 1.1rem;
+  margin-left: 0.3rem;
+  margin-top: -0.2rem;
+  vertical-align: middle;
+}
+.jiangAIGCBlock .form_block .zip_block .upload_tips .p2 .size .size_value {
+  color: #ACACAC;
+}
+.jiangAIGCBlock .form_block .zip_block .copywriting {
+  position: relative;
+  width: calc(100% + 0rem);
+  left: 0rem;
+  top: -0.6rem;
+  border-radius: 1rem 1rem 0rem 0rem;
+  background: #E5F0FF;
+  color: #1D4B88;
+  font-size: 1rem;
+  text-align: center;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  display: none;
+}
+.jiangAIGCBlock .form_block .file_info {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  display: none;
+}
+.jiangAIGCBlock .form_block .file_info img {
+  width: 1.6rem;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+  margin-top: -0.2rem;
+  display: none;
+}
+.jiangAIGCBlock .form_block .file_info .file_nameText {
+  color: #666666;
+  font-size: 1.2rem;
+  max-width: 15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+.jiangAIGCBlock .form_block .file_info .deleteText {
+  color: #999999;
+  font-size: 1.2rem;
+  margin-left: 1.5rem;
+  display: none;
+}
+.jiangAIGCBlock .form_block.aigc-f .content_block .content_block_c {
+  height: 19rem;
+}
+.mask-pop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  opacity: 0.5;
+  display: none;
+}
+.type-pop {
+  position: fixed;
+  bottom: -36rem;
+  height: 36rem;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  transition: all 0.4s;
+  overflow: auto;
+  padding: 2.4rem 1.5rem 0;
+}
+.type-pop.aigcHigh {
+  height: 25rem;
+}
+.type-pop .closePop {
+  position: absolute;
+  right: 2rem;
+  top: 1.6rem;
+  width: 1.6rem;
+}
+.type-pop .example_item {
+  display: none;
+}
+.type-pop .example_item .subtitle {
+  font-size: 1.8rem;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.type-pop .example_item .reportTip {
+  color: #999999;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.type-pop .example_item .reportTip span {
+  color: #5b5b5b;
+}
+.type-pop .example_item .exam-img {
+  margin-top: 1.5rem;
+}
+.type-pop .example_item .exam-img img {
+  max-width: 100%;
+}
 /*# sourceMappingURL=index.css.map */

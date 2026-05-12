@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0049">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0049">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0051">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0051">
     <!-- <link rel="stylesheet" href="../assets/css/styles.css" /> -->
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!--[if lt IE 9]>
@@ -414,9 +414,9 @@
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0049"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0049"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0049"></script>
+<script src="../pc/assets/js/common.js?v=p24.0051"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0051"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0051"></script>
 <script>
     var orderInfoData = {}
     var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -577,7 +577,7 @@
             $(".activityTip").text('已自动填写活动优惠券码，请点击兑换使用')
             $(".activityTip").show();
         }
-        Readjust()
+        // Readjust()
     }
 
     function payOrder(payType,price) {
@@ -1074,57 +1074,22 @@
 
 
 function Readjust(){
-    var formData = getFormData({
-            order_sn: order_sn || getQueryVariable('order_sn'),
-            code: $("#coupon").val()
-        })
-
-        $.ajax({
-            type: 'post',
-            url: urls + '/api/client/order/variation/order',
-            data: formData,
-            contentType: false,
-            processData: false,
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function (res) {
-                canClick = true
-                closeMsg()
-                if (res.code == 200) {
-                    order_sn = res.data.order_sn
-                    payOrder('',res.data.order_amount)
-                    $('.orderId_pop').text(res.data.order_sn)
-                    $('.order-oid').text(res.data.order_sn)
-                    $('.orderAmount').text(res.data.order_amount)
-                    $('#Total_amount').text(res.data.order_money)
-                    for(let k=0;k<typeData.length;k++){
-                        if(typeData[k].calc_price_type==2){
-                            if(res.data.old_amount-res.data.order_amount>0){
-                                $('.tiered_pricing').show()
-
-                            }
-                        $(".order-unitPrice").text(res.data.order_money+'元/篇')
-                        }
-                    }
-                    $('#Discount_amount1').text((res.data.old_amount-res.data.order_amount).toFixed(2))
-                    $('#original_price').text(res.data.old_amount)
-                    $('.Step_price').text(res.data.order_money+'元/篇')
-                }else {
-                    // cocoMessage.error(res.codeMsg, 2000);
-                    $(".errorTip span").text(res.codeMsg)
-                    $(".errorTip").show();
-                    $(".activityTip").hide()
-                    closeMsg()
-                }
-            },
-            error: function () {
-                cocoMessage.error("请求失败!请检查网络", 2000);
-                contentTypeIs = true
-                closeMsg()
-                canClick = true
-            },
-        });
+    payOrder('',orderInfoData.order_amount)
+    $('.orderId_pop').text(orderInfoData.order_sn)
+    $('.order-oid').text(orderInfoData.order_sn)
+    $('.orderAmount').text(orderInfoData.order_amount)
+    $('#Total_amount').text(orderInfoData.order_amount)
+    for(let k=0;k<typeData.length;k++){
+        if(typeData[k].calc_price_type==2){
+            if(Number(orderInfoData.old_amount)-Number(orderInfoData.order_amount)>0){
+                $('.tiered_pricing').show()
+            }
+            $(".order-unitPrice").text(orderInfoData.order_amount+'元/篇')
+        }
+    }
+    $('#Discount_amount1').text((Number(orderInfoData.old_amount)-Number(orderInfoData.order_amount)).toFixed(2))
+    $('#original_price').text(Number(orderInfoData.old_amount).toFixed(2))
+    $('.Step_price').text(orderInfoData.old_amount+'元/篇')
 }
 
 </script>

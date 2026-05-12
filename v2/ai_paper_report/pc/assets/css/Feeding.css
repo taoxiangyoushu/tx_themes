@@ -1,0 +1,395 @@
+.Explanation {
+  margin-bottom: 18px;
+  height: 40px;
+}
+.Explanation .uploadBlock .uploadTips {
+  display: none;
+  margin-top: -6px;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-left: 4px;
+  opacity: 0;
+}
+.Explanation .uploadBlock .uploadTips img:hover + .upload-tips-limit {
+  opacity: 1;
+}
+.Explanation .uploadBlock .uploadTips .upload-tips-limit {
+  font-size: 12px;
+  color: #999;
+  line-height: normal;
+  vertical-align: bottom;
+  display: inline-block;
+  opacity: 0;
+  margin-top: 0.5px;
+}
+.Explanation .fileBlock {
+  font-size: 14px;
+  color: #999999;
+  line-height: 42px;
+  display: none;
+}
+.Explanation .fileBlock .tag-get {
+  color: #ff4f35;
+  background: #ffefed;
+  padding: 1px 5px;
+  border: 1px solid #ff5e3a;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: normal;
+  margin-right: 4px;
+  display: none;
+  vertical-align: inherit;
+}
+.Explanation .fileBlock .fileName {
+  cursor: default;
+  max-width: 400px;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 14px;
+  vertical-align: text-top;
+}
+.Explanation .fileBlock .fileName.hasError {
+  color: #a94442;
+}
+.Explanation .fileBlock img.deleteFile {
+  margin-left: 10px;
+  margin-top: -5px;
+  cursor: pointer;
+}
+.Explanation .fileBlock .file-uploading {
+  color: #0072ff;
+  margin-left: 20px;
+  display: none;
+}
+.Explanation .fileBlock .file-uploadErr {
+  margin-left: 20px;
+  color: #a94442;
+  display: none;
+}
+.Explanation .fileBlock .file-uploadSuc {
+  margin-left: 20px;
+  color: #0a9d54;
+  line-height: 12px;
+  overflow: hidden;
+  display: none;
+}
+.Explanation .fileBlock.active .tag-get {
+  display: inline-block;
+}
+.Explanation .fileBlock.active .fileName {
+  color: #006eff;
+}
+.Explanation .Explanation-err {
+  position: absolute;
+  color: #b94a48;
+  font-size: 12px;
+  left: 134px;
+  top: 30px;
+  display: none;
+}
+.Explanation .Explanation-text {
+  cursor: pointer;
+  font-size: 14px;
+  color: #999999;
+  padding-right: 20px;
+  line-height: 40px;
+}
+.Explanation .Explanation-text .Explanation-check {
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: 8px;
+  box-sizing: border-box;
+  margin-top: 1px;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: none;
+}
+.Explanation .uploadBox {
+  color: #0074ff;
+  font-size: 12px;
+  margin-left: -14px;
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+}
+.Explanation #uploadFile-ktbg {
+  display: none;
+}
+.caiReport {
+  display: none;
+  width: 700px;
+  min-height: 262px;
+  background: #fff;
+  position: fixed;
+  z-index: 1004;
+  top: 38%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -180px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.caiReport .pop_top {
+  height: 54px;
+  border-bottom: 1px solid #ebebeb;
+  padding: 0 20px;
+}
+.caiReport .pop_top .pop_title {
+  float: left;
+  font-size: 18px;
+  color: #3D3D3D;
+  line-height: 54px;
+}
+.caiReport .pop_top img {
+  width: 14px;
+  vertical-align: middle;
+  float: right;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.caiReport .pop_cont p {
+  line-height: 22px;
+}
+.caiReport .pop_cont > .tips {
+  background: #F4F9FF;
+  border-radius: 2px 2px 2px 2px;
+  padding: 6px 16px;
+  font-size: 12px;
+  color: #2A3541;
+}
+.caiReport .pop_cont > .tips i {
+  color: #2A3541;
+  font-size: 18px;
+  font-style: normal;
+  position: relative;
+  top: 2px;
+}
+.caiReport .pop_cont > .tips span {
+  color: #606266;
+}
+.caiReport .pop_cont .switchingZYB {
+  color: #FF6100;
+  cursor: pointer;
+}
+.caiReport .pop_cont .feed-tab-container {
+  padding: 10px 20px;
+  background-color: transparent;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tabs {
+  display: flex;
+  border-bottom: 2px solid #e8e8e8;
+  margin-bottom: 16px;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tabs .feed-tab {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tabs .feed-tab:hover {
+  color: #7579db;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tabs .feed-tab.active {
+  color: #7579db;
+  font-weight: 600;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tabs .feed-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #7579db;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-tab-pane {
+  display: none;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-tab-pane.active {
+  display: block;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-textarea-wrapper {
+  position: relative;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-textarea-wrapper .feed-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 12px;
+  padding-bottom: 30px;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-textarea-wrapper .feed-textarea:focus {
+  border-color: #0072FF;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-textarea-wrapper .feed-textarea::placeholder {
+  color: #c0c4cc;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-textarea-wrapper .feed-textarea::-webkit-scrollbar {
+  width: 6px;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-textarea-wrapper .feed-textarea::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 3px;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-textarea-wrapper .feed-textarea::-webkit-scrollbar-thumb {
+  background: #c4c8fa;
+  border-radius: 3px;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-textarea-wrapper .feed-textarea::-webkit-scrollbar-thumb:hover {
+  background: #aeb4f3;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-textarea-wrapper .feed-textarea-count {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  font-size: 12px;
+  color: #999;
+  pointer-events: none;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-content-file .upload-box {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fafafa;
+  border: 2px dashed #dcdfe6;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-content-file .upload-box:hover {
+  border-color: #0072FF;
+  background: #f0f7ff;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-content-file .upload-box .upfile-b {
+  margin-bottom: 12px;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-content-file .upload-box .upfile-tip {
+  font-size: 13px;
+  color: #909399;
+  margin: 6px 0;
+  line-height: 1.5;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-content-file .drag_box .drag_box_mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-content-file .drag_box .drag_box_mask input[type="file"] {
+  display: none;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list {
+  margin-top: 12px;
+  max-height: 132px;
+  overflow: auto;
+  margin-right: -6px;
+  padding-right: 6px;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list::-webkit-scrollbar {
+  width: 4px;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 2px;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2px;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list .feed-file-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  color: #666;
+  transition: all 0.2s;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list .feed-file-item .feed-file-icon {
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list .feed-file-item .feed-file-icon svg {
+  display: block;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list .feed-file-item .feed-file-icon svg path {
+  stroke: #666;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list .feed-file-item .feed-file-name {
+  flex: 1;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list .feed-file-item .feed-file-delete {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list .feed-file-item .feed-file-delete:hover {
+  background: #f0f0f0;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list .feed-file-item .feed-file-delete svg {
+  display: block;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list .feed-file-item .feed-file-delete svg path {
+  stroke: #999;
+  transition: all 0.2s;
+}
+.caiReport .pop_cont .feed-tab-container .feed-tab-content .feed-file-list .feed-file-item .feed-file-delete:hover svg path {
+  stroke: #666;
+}
+.caiReport .pop_cont .feed-pop-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background-color: transparent;
+}
+.caiReport .pop_cont .feed-pop-footer .feed-btn {
+  min-width: 80px;
+  height: 36px;
+  padding: 0 20px;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.caiReport .pop_cont .feed-pop-footer .feed-btn:hover {
+  opacity: 0.8;
+}
+.caiReport .pop_cont .feed-pop-footer .feed-btn-reset {
+  background: #fff;
+  color: #606266;
+}
+.caiReport .pop_cont .feed-pop-footer .feed-btn-reset:hover {
+  color: #6164d3;
+  border-color: #6164d3;
+}
+.caiReport .pop_cont .feed-pop-footer .feed-btn-confirm {
+  background: #7579DB;
+  color: #fff;
+  border-color: #7579DB;
+}
+.caiReport .pop_cont .feed-pop-footer .feed-btn-confirm:hover {
+  background: #6164d3;
+  border-color: #6164d3;
+}

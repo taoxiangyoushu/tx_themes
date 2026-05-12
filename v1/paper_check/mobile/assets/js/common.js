@@ -75,6 +75,20 @@ var systemInfo = {
         timeConsuming: '10-30分钟',
     },
 }
+
+var menuLinkData = {
+    'dsxz': {
+        name: '智能写作',
+        ico: '📑',
+        introduction: '学术模型,真实文献'
+    },
+    'zjchong': {
+        name: '论文降重/降AI',
+        ico: '📉',
+        introduction: '降查重率、降AI率'
+    }
+}
+
 // 封装url参数获取
 function getQueryVariable(variable){
 	var query = window.location.search.substring(1);
@@ -235,7 +249,7 @@ window.onload = function (){
 
 				if($(".home").length) {
 					// setPriceInfo()
-					dropDownType(typeData)
+					dropDownType(typeData, data.project[0].menu_list)
 					// getFormaTemplate()
 				}
 

@@ -3419,3 +3419,1098 @@ p.word-prompt .text-num {
 .abScrollBar-box .bar {
   background: #c5cad56e;
 }
+.jiangAIGCBlock .uploadTy_label .uploadTy_text {
+  color: #5B5B5B;
+  font-size: 16px;
+  display: inline-block;
+  padding-left: 16px;
+  position: relative;
+  margin-right: 10px;
+}
+.jiangAIGCBlock .uploadTy_label .uploadTy_text:after {
+  content: "";
+  position: absolute;
+  background: #2070d6;
+  left: 0;
+  top: 1px;
+  width: 4px;
+  height: 20px;
+  border-radius: 8px;
+}
+.jiangAIGCBlock .uploadTy_label .uploadTy_btn {
+  display: inline-block;
+  width: 98px;
+  height: 32px;
+  border: 1px solid #e4e7ed;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666666;
+  position: relative;
+}
+.jiangAIGCBlock .uploadTy_label .uploadTy_btn img {
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-right: 2px;
+  width: 16px;
+}
+.jiangAIGCBlock .uploadTy_label .uploadTy_btn img.icon_a {
+  display: none;
+}
+.jiangAIGCBlock .uploadTy_label .uploadTy_btn img.icon_n {
+  display: inline-block;
+}
+.jiangAIGCBlock .uploadTy_label .uploadTy_btn.active {
+  color: #2070D6;
+  border-color: #2070D6;
+  background: #ECF5FE;
+}
+.jiangAIGCBlock .uploadTy_label .uploadTy_btn.active .icon_a {
+  display: inline-block;
+}
+.jiangAIGCBlock .uploadTy_label .uploadTy_btn.active .icon_n {
+  display: none;
+}
+.jiangAIGCBlock .uploadTy_label .uploadTy_btn .recommendX {
+  width: 36px;
+  height: 18px;
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  background: #3B68E2;
+  border-radius: 9px 9px 9px 0px;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 18px;
+  display: inline-block;
+}
+.jiangAIGCBlock .upload_block {
+  background: #f8faff;
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  font-size: 0;
+  position: relative;
+  height: 376px;
+  padding: 86px 20px 30px 20px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.jiangAIGCBlock .upload_block .chose_platform {
+  background: #e5f0ff;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 10px 18px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.jiangAIGCBlock .upload_block .chose_platform .uploadTy_text {
+  color: #1d4b88;
+  font-size: 12px;
+  margin-top: 12px;
+  flex-shrink: 0;
+}
+.jiangAIGCBlock .upload_block .chose_platform .report_type_f .report_type_item {
+  width: 80px;
+  height: 30px;
+  line-height: 28px;
+  background: #f6fbff;
+  text-align: center;
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 10px;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid #e4e7ed;
+  position: relative;
+}
+.jiangAIGCBlock .upload_block .chose_platform .report_type_f .report_type_item.active {
+  border: 1px solid #2170D6;
+  background: #c7ddff;
+  background-image: url("../img/check_aigc.png");
+  background-repeat: no-repeat;
+  background-position: 100% -1px;
+  color: #2170D6;
+}
+.jiangAIGCBlock .upload_block .chose_platform .report_type_f .report_type_item.noClick {
+  pointer-events: none;
+  cursor: no-drop;
+}
+.jiangAIGCBlock .upload_block .chose_platform .report_type_f .report_type_item.special {
+  border: 1px solid #2170D6;
+  background: #c7ddff;
+  background-repeat: no-repeat;
+  background-position: 100% -1px;
+  color: #2170D6;
+}
+.jiangAIGCBlock .upload_block .chose_platform .report_type_f .report_type_item.special .Report_label {
+  background: #006FFF;
+  color: #fff;
+}
+.jiangAIGCBlock .upload_block .chose_platform .report_type_f .report_type_item .Report_label {
+  position: absolute;
+  display: inline-block;
+  top: -14px;
+  right: -1px;
+  background: #c7dfff;
+  border-radius: 6px 6px 0px 6px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 12px;
+  color: #2C7AFF;
+  padding: 0px 6px;
+}
+.jiangAIGCBlock .upload_block .flex_box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file {
+  width: 48%;
+  height: 100%;
+  border: 1px dashed #d2d2d2;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  background: #fff;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file.active {
+  border: 1px solid #2b88ff;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file.active:hover {
+  border: 1px solid #2b88ff;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file.active .upload_btn {
+  margin-top: 94px;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file:hover {
+  border: 1px dashed #2b88ff;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .format_size {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .format_size .format_block {
+  font-size: 0;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .format_size .format_block .format_item {
+  width: 60px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  text-align: center;
+  line-height: 28px;
+  color: #2C90FF;
+  border: 1px solid #E0E3E9;
+  border-radius: 4px;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .format_size .size_block {
+  width: 130px;
+  height: 30px;
+  line-height: 28px;
+  color: #acacac;
+  font-size: 22px;
+  font-weight: 700;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  margin-left: 14px;
+  position: relative;
+  font-size: 0;
+  margin-top: 10px;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .format_size .size_block:before {
+  content: '';
+  position: absolute;
+  background: #E0E3E9;
+  width: 1px;
+  height: 28px;
+  left: -13px;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .format_size .size_block .size_value {
+  font-size: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 21px;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .format_size .size_block .size_text {
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  color: #999;
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  background: #f6f6f6;
+  font-weight: 400;
+  margin: 0 4px 0 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .format_size .size_block .size_text img {
+  margin-top: -2px;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file.has-error {
+  border: 1px solid #ff3636;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file.has-error:hover {
+  border: 1px dashed #ff3636;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .file_upload {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .upload_btn {
+  width: 140px;
+  height: 56px;
+  line-height: 56px;
+  background: linear-gradient(90deg, #2B8FFE, #1675DD);
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 76px;
+  cursor: pointer;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .upload_btn img {
+  margin-top: 16px;
+  margin-right: 2px;
+  vertical-align: top;
+  width: 24px;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .upload_btn .upload-icon {
+  display: inline-block;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .upload_btn .uploading-icon {
+  display: none;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .upload_btn.uploading .upload-icon {
+  display: none;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .upload_btn.uploading .uploading-icon {
+  display: inline-block;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .upload_tipText {
+  font-size: 12px;
+  color: #8B8B8B;
+  margin-top: 10px;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .upload_fileInfo {
+  font-size: 12px;
+  color: #8B8B8B;
+  margin-top: 10px;
+  display: none;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .upload_fileInfo .files_nameText {
+  margin: 0 10px;
+  color: #666;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .upload_fileInfo > img {
+  vertical-align: middle;
+  margin-top: -3px;
+  display: none;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .upload_fileInfo .deleteFile {
+  cursor: pointer;
+}
+.jiangAIGCBlock .upload_block .flex_box .upload_file .errTips {
+  color: #ff3636;
+  font-size: 12px;
+  display: none;
+}
+.jiangAIGCBlock .upload_block .flex_box .dividing_line {
+  width: 1px;
+  height: 100%;
+  background: #f0f0f0;
+  margin: 0px 20px;
+  position: relative;
+}
+.jiangAIGCBlock .upload_block .flex_box .dividing_line:after {
+  position: absolute;
+  content: "或";
+  font-size: 14px;
+  background: #fff;
+  color: #666666;
+  height: 26px;
+  line-height: 26px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content {
+  width: 48%;
+  height: 100%;
+  position: relative;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content .border_box {
+  border: 1px dashed #d2d2d2;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  padding: 8px 8px 30px 2px;
+  background: #fff;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content .border_box:hover {
+  border: 1px dashed #2b88ff;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content .border_box.active {
+  border: 1px solid #2b88ff;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content .border_box.active:hover {
+  border: 1px solid #2b88ff;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content .border_box.has-error {
+  border: 1px solid #DC0000;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content .border_box.has-error:hover {
+  border: 1px dashed #DC0000;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content #textContent {
+  resize: none;
+  border: none;
+  height: 100%;
+  padding-top: 0;
+  padding-right: 12px;
+  color: #555;
+  text-align: justify;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content #textContent:focus {
+  box-shadow: none;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content #textContent::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content #textContent::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #ccc;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content #textContent::-webkit-scrollbar {
+  width: 5px;
+  background: #eee;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content .counter {
+  position: absolute;
+  right: 20px;
+  bottom: 8px;
+  line-height: normal;
+  color: #999;
+  font-size: 12px;
+}
+.jiangAIGCBlock .upload_block .flex_box .right_content .counter i.impl {
+  font-style: normal;
+  color: #dc0000;
+}
+.jiangAIGCBlock .upload_block .content_errTip {
+  color: #ff3636;
+  position: absolute;
+  right: 20px;
+  bottom: 6px;
+  font-size: 14px;
+  display: none;
+}
+.jiangAIGCBlock .upload_block .upload_tips {
+  margin-left: 2%;
+  display: inline-block;
+  vertical-align: top;
+}
+.jiangAIGCBlock .upload_block .upload_tips .p1 {
+  color: #5B5B5B;
+  font-size: 14px;
+  margin-top: 40px;
+}
+.jiangAIGCBlock .upload_block .upload_tips .format_size {
+  align-items: center;
+}
+.jiangAIGCBlock .upload_block .upload_tips .format_size .format_block {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+}
+.jiangAIGCBlock .upload_block .upload_tips .format_size .format_block .format_item {
+  width: 60px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  text-align: center;
+  line-height: 28px;
+  color: #2C90FF;
+  border: 1px solid #E0E3E9;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+.jiangAIGCBlock .upload_block .upload_tips .format_size .size_block {
+  display: inline-block;
+  vertical-align: top;
+  width: 130px;
+  height: 30px;
+  line-height: 28px;
+  color: #acacac;
+  font-size: 22px;
+  font-weight: 700;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  margin-left: 30px;
+  position: relative;
+  font-size: 0;
+}
+.jiangAIGCBlock .upload_block .upload_tips .format_size .size_block:before {
+  content: '';
+  position: absolute;
+  background: #E0E3E9;
+  width: 1px;
+  height: 28px;
+  left: -21px;
+}
+.jiangAIGCBlock .upload_block .upload_tips .format_size .size_block .size_value {
+  font-size: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 21px;
+}
+.jiangAIGCBlock .upload_block .upload_tips .format_size .size_block .size_text {
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  color: #999;
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  background: #f6f6f6;
+  font-weight: 400;
+  margin: 0 4px 0 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+.jiangAIGCBlock .upload_block .upload_tips .format_size .size_block .size_text img {
+  margin-top: -2px;
+}
+.jiangAIGCBlock .upload_block .upload_tips .upload_notes {
+  margin-top: 34px;
+}
+.jiangAIGCBlock .upload_block .upload_tips .upload_notes .notes_subtitle {
+  color: #5B5B5B;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+.jiangAIGCBlock .upload_block .upload_tips .upload_notes .p2 {
+  color: #999999;
+  font-size: 14px;
+  position: relative;
+  padding-left: 12px;
+}
+.jiangAIGCBlock .upload_block .upload_tips .upload_notes .p2:after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #d8d8d8;
+  border-radius: 50%;
+  left: 0;
+  top: 50%;
+  margin-top: -3px;
+}
+.jiangAIGCBlock .upload_block .upload_tips .upload_notes .p3 {
+  color: #999999;
+  font-size: 14px;
+  position: relative;
+  padding-left: 12px;
+}
+.jiangAIGCBlock .upload_block .upload_tips .upload_notes .p3:after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #d8d8d8;
+  border-radius: 50%;
+  left: 0;
+  top: 50%;
+  margin-top: -3px;
+}
+.jiangAIGCBlock .content_block {
+  background: #fff;
+  width: 100%;
+  height: 320px;
+  border-radius: 10px;
+  padding: 30px 20px 30px 20px;
+  position: relative;
+  display: none;
+}
+.jiangAIGCBlock .content_block .border_box {
+  border: 1px dashed #c4c4c4;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  padding: 8px 8px 30px 2px;
+  background: #fbfbfb;
+}
+.jiangAIGCBlock .content_block .border_box.has-error {
+  border: 1px solid #DC0000;
+}
+.jiangAIGCBlock .content_block .border_box.has-error:hover {
+  border: 1px dashed #DC0000;
+}
+.jiangAIGCBlock .content_block #textContent {
+  resize: none;
+  border: none;
+  height: 100%;
+  background: #fbfbfb;
+  padding-top: 0;
+  padding-right: 12px;
+  color: #555;
+  text-align: justify;
+}
+.jiangAIGCBlock .content_block #textContent:focus {
+  box-shadow: none;
+}
+.jiangAIGCBlock .content_block #textContent::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+.jiangAIGCBlock .content_block #textContent::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #ccc;
+}
+.jiangAIGCBlock .content_block #textContent::-webkit-scrollbar {
+  width: 5px;
+  background: #eee;
+}
+.jiangAIGCBlock .content_block .counter {
+  position: absolute;
+  right: 34px;
+  bottom: 38px;
+  line-height: normal;
+  color: #999999;
+}
+.jiangAIGCBlock .content_block .err-info {
+  color: #DC0000;
+  font-size: 12px;
+  margin-top: 6px;
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block {
+  background: #f8faff;
+  width: 100%;
+  height: 348px;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 16px;
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zip_description {
+  height: 40px;
+  line-height: 40px;
+  background: #E5F0FF;
+  text-align: center;
+  color: #999999;
+  font-size: 12px;
+  margin-top: 16px;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .exampleFile_name {
+  color: #5B5B5B;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .example_file {
+  display: inline-block;
+  background: #fff;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 4px;
+  color: #5B5B5B;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .example_file img {
+  margin-top: -4px;
+  margin-right: 2px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .example_file:hover ~ .file_exampleBlock {
+  display: block;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .example_file:hover ~ .file_exampleBlock.zqAIGC {
+  display: flex;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock {
+  width: 676px;
+  background: #fff;
+  z-index: 100;
+  position: absolute;
+  right: 0;
+  top: 46px;
+  box-shadow: 0 0 8px 0 #e6eaef;
+  border-radius: 4px;
+  border: 1px solid #E4E7ED;
+  padding: 10px;
+  text-align: left;
+  color: #5B5B5B;
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock:before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 362px;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-bottom: 8px solid currentColor;
+  color: #ffffff;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 360px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom: 10px solid currentColor;
+  color: #e4e7ed;
+  z-index: -1;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.cnki:before {
+  left: 372px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.cnki:after {
+  left: 370px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.wanfang:before {
+  left: 298px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.wanfang:after {
+  left: 296px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.weipu:before {
+  left: 320px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.weipu:after {
+  left: 318px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.zaojiance:before {
+  left: 309px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.zaojiance:after {
+  left: 307px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.checkpass:before {
+  left: 323px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.checkpass:after {
+  left: 321px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.mastercheck:before {
+  left: 323px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.mastercheck:after {
+  left: 321px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.paperpass:before {
+  left: 287px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.paperpass:after {
+  left: 285px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.yuanwenjian:before {
+  left: 329px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.yuanwenjian:after {
+  left: 327px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.cnkiaigc:before {
+  left: 224px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.cnkiaigc:after {
+  left: 222px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.masteraigc:before {
+  left: 238px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.masteraigc:after {
+  left: 236px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.wanfangaigc:before {
+  left: 242px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.wanfangaigc:after {
+  left: 240px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.weipuaigc:before {
+  left: 220px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.weipuaigc:after {
+  left: 218px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.gzdaigc:before {
+  left: 238px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.gzdaigc:after {
+  left: 236px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.paperpassaigc:before {
+  left: 218px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.paperpassaigc:after {
+  left: 216px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.zqAIGC {
+  width: 1100px;
+  left: 70px;
+  justify-content: space-between;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.zqAIGC:before {
+  left: 610px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.zqAIGC:after {
+  left: 608px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.zqAIGC .fe-s-1 img {
+  width: 530px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.zqAIGC .fe-s-2 img {
+  width: 540px;
+  margin-top: 20px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.turnitinAIGC:before {
+  left: 286px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock.turnitinAIGC:after {
+  left: 284px;
+}
+.jiangAIGCBlock .zipFile_block .zip_description .file_exampleBlock .blue {
+  color: #2070D6;
+}
+.jiangAIGCBlock .zipFile_block .Other_Styles {
+  color: #1D4B88 !important;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload {
+  display: flex;
+  align-items: start;
+  margin-top: 24px;
+  padding: 0 0 0 20px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file {
+  width: 46%;
+  height: 260px;
+  border: 1px dashed #c4c4c4;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  flex-shrink: 0;
+  background: #fff;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file.has-error {
+  border: 1px solid #ff3636;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file.has-error:hover {
+  border: 1px dashed #ff3636;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .file_upload {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_btn {
+  width: 140px;
+  height: 56px;
+  line-height: 56px;
+  background: linear-gradient(90deg, #2B8FFE, #1675DD);
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 101px;
+  cursor: pointer;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_btn img {
+  margin-top: 16px;
+  margin-right: 2px;
+  vertical-align: top;
+  width: 24px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_btn .upload-icon {
+  display: inline-block;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_btn .uploading-icon {
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_btn.uploading .upload-icon {
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_btn.uploading .uploading-icon {
+  display: inline-block;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_tipText {
+  font-size: 12px;
+  color: #8B8B8B;
+  margin-top: 10px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .uploading_tipText {
+  font-size: 12px;
+  color: #8B8B8B;
+  margin-top: 10px;
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_fileInfo {
+  font-size: 12px;
+  color: #8B8B8B;
+  margin-top: 10px;
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_fileInfo .files_nameText {
+  margin: 0 10px;
+  color: #666;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_fileInfo > img {
+  vertical-align: middle;
+  margin-top: -3px;
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_fileInfo .deleteFile {
+  cursor: pointer;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .errTips {
+  color: #ff3636;
+  font-size: 12px;
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips {
+  margin-left: 2%;
+  padding-right: 20px;
+  margin-top: 10px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips.centered {
+  margin-top: 30px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .p1 {
+  color: #5B5B5B;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .report_type {
+  font-size: 0;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .report_type.cc_typeBtn {
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .report_type.aigc_typeBtn {
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item {
+  width: 100px;
+  height: 30px;
+  line-height: 28px;
+  background: #e8efff;
+  text-align: center;
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 10px;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid #f8f9fb;
+  position: relative;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item.active {
+  border: 1px solid #2170D6;
+  background: #EBF5FF;
+  background-image: url("../img/check_aigc.png");
+  background-repeat: no-repeat;
+  background-position: 100% -1px;
+  color: #2170D6;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item.special {
+  border: 1px solid #2170D6;
+  background: #EBF5FF;
+  background-repeat: no-repeat;
+  background-position: 100% -1px;
+  color: #2170D6;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item.special .Report_label {
+  background: #006FFF;
+  color: #fff;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item.noClick {
+  pointer-events: none;
+  cursor: no-drop;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .report_type .report_type_item .Report_label {
+  position: absolute;
+  display: inline-block;
+  top: -14px;
+  right: -1px;
+  background: #E0EEFE;
+  border-radius: 6px 6px 0px 6px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 12px;
+  color: #2C7AFF;
+  padding: 0px 6px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .platform_utl {
+  border: 1px solid #E4E7ED;
+  height: 32px;
+  line-height: 32px;
+  margin-top: 10px;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  padding-left: 10px;
+  color: #666666;
+  font-size: 12px;
+  display: none;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .platform_utl::placeholder {
+  color: #999999;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .fileType_text {
+  margin-top: 20px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .format_size {
+  display: flex;
+  align-items: center;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .format_size .format_block {
+  font-size: 0;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .format_size .format_block .format_item {
+  width: 60px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  text-align: center;
+  line-height: 28px;
+  color: #2C90FF;
+  border: 1px solid #E0E3E9;
+  border-radius: 4px;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .format_size .size_block {
+  width: 130px;
+  height: 30px;
+  line-height: 28px;
+  color: #acacac;
+  font-size: 22px;
+  font-weight: 700;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  margin-left: 30px;
+  position: relative;
+  font-size: 0;
+  margin-top: 10px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .format_size .size_block:before {
+  content: '';
+  position: absolute;
+  background: #E0E3E9;
+  width: 1px;
+  height: 28px;
+  left: -21px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .format_size .size_block .size_value {
+  font-size: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 21px;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .format_size .size_block .size_text {
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  color: #999;
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  background: #f6f6f6;
+  font-weight: 400;
+  margin: 0 4px 0 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+.jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips .format_size .size_block .size_text img {
+  margin-top: -2px;
+}
+@media (max-width: 1715px) {
+  .jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips {
+    margin-top: -8px;
+  }
+  .jiangAIGCBlock .upload_block {
+    height: 410px;
+    padding: 120px 20px 30px 20px;
+  }
+}
+@media (max-width: 1709px) {
+  .jiangAIGCBlock .zipFile_block .zipFile_upload .upload_tips {
+    margin-top: -8px;
+  }
+}
+@media (max-width: 1572px) {
+  .jiangAIGCBlock .zipFile_block {
+    height: 390px;
+  }
+  .jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file {
+    height: 310px;
+  }
+  .jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_btn {
+    margin-top: 120px;
+  }
+  .jiangAIGCBlock .upload_block .flex_box .upload_file .upload_fileInfo .files_nameText {
+    width: 180px;
+  }
+}
+@media (max-width: 1420px) {
+  .jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file {
+    width: 40%;
+  }
+}
+@media (max-width: 1332px) {
+  .jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file {
+    width: 35%;
+  }
+  .jiangAIGCBlock .zipFile_block .zipFile_upload .upload_file .upload_fileInfo .files_nameText {
+    max-width: 100px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

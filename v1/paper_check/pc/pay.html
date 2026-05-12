@@ -9,8 +9,8 @@
     <meta name="keywords" content="" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0077">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0077">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -309,10 +309,10 @@
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0072"></script>
+<script src="../pc/assets/js/common.js?v=p24.0077"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0072"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0072"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0077"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0077"></script>
 <script>
     var orderInfoData = {}
     var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -480,7 +480,7 @@
             }
             // payOrder(pay_type,orderInfoData.order_amount)
         }
-        Readjust()
+        // Readjust()
     }
 
     function payOrder(payType,price) {
@@ -1019,57 +1019,24 @@
 
 
 function Readjust(){
-    var formData = getFormData({
-            order_sn: order_sn || getQueryVariable('commitId'),
-            code: $("#coupon").val()
-        })
-
-        $.ajax({
-            type: 'post',
-            url: urls + '/api/client/order/variation/order',
-            data: formData,
-            contentType: false,
-            processData: false,
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function (res) {
-                canClick = true
-                closeMsg()
-                if (res.code == 200) {
-                    order_sn = res.data.order_sn
-                    payOrder('',res.data.order_amount)
-                    $('#Total_amount').text(res.data.order_money)
-                    $('.orderId-t').text(res.data.order_sn)
-                    $('.time-t').text(res.data.created)
-                    $('.orderAmount').text(res.data.order_amount)
-                    var stairs=getQueryVariable('type')
-                    for(let k=0;k<typeData[stairs].length;k++){
-                        if(typeData[stairs][k].goods_id==getQueryVariable('goodsid')&&typeData[stairs][k].calc_price_type==2){
-                            $('.billing-t').text(res.data.order_money+'元/篇')
-                            if(res.data.old_amount-res.data.order_amount>0){
-                                $('.tiered_pricing').show()
-                            }
-                        }
-                    }
-                    $('#Discount_amount1').text((res.data.old_amount-res.data.order_amount).toFixed(2))
-                    $('#original_price').text(res.data.old_amount)
-                    $('.Step_price').text(res.data.order_money+'元/篇')
-                }else {
-                    // cocoMessage.error(res.codeMsg, 2000);
-                    $(".errorTip span").text(res.codeMsg)
-                    $(".errorTip").css('display','inline-block');
-                    closeMsg()
-                }
-            },
-            error: function () {
-                cocoMessage.error("请求失败!请检查网络", 2000);
-                contentTypeIs = true
-                closeMsg()
-                canClick = true
-            },
-        });
+    payOrder('',orderInfoData.order_amount)
+    $('#Total_amount').text(orderInfoData.order_amount)
+    $('.orderId-t').text(orderInfoData.order_sn)
+    $('.time-t').text(orderInfoData.created)
+    $('.orderAmount').text(orderInfoData.order_amount)
+    var stairs=getQueryVariable('type')
+    for(let k=0;k<typeData[stairs].length;k++){
+        if(typeData[stairs][k].goods_id==getQueryVariable('goodsid')&&typeData[stairs][k].calc_price_type==2){
+            $('.billing-t').text(orderInfoData.order_amount+'元/篇')
+            if(Number(orderInfoData.old_amount)-Number(orderInfoData.order_amount)>0){
+                $('.tiered_pricing').show()
+            }
+        }
     }
+    $('#Discount_amount1').text((Number(orderInfoData.old_amount)-Number(orderInfoData.order_amount)).toFixed(2))
+    $('#original_price').text(Number(orderInfoData.old_amount).toFixed(2))
+    $('.Step_price').text(orderInfoData.order_amount+'元/篇')
+}
 </script>
 </body>
 </html>

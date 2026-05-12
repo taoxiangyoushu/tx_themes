@@ -47,9 +47,9 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/select2.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0041">
-    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0041">
-    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0041">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0046">
+    <link rel="stylesheet" href="../mobile/assets/css/common.css?v=m24.0046">
+    <link rel="stylesheet" href="../mobile/assets/css/index.css?v=m24.0046">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
         var JANE_NAME = 'paper_platform';
@@ -371,8 +371,8 @@
 <script src="../mobile/assets/js/typed.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
 <script src="../mobile/assets/js/data.js"></script>
-<script src="../mobile/assets/js/word-calculator.js?v=m24.0041"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0041"></script>
+<script src="../mobile/assets/js/word-calculator.js?v=m24.0046"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0046"></script>
 <script>
 
     // 封装url参数获取
@@ -502,7 +502,7 @@
     }
 
     // 显示数据
-    function dropDownType(typeData){
+    function dropDownType(typeData, menuList){
         var systemEl = ''
         var active = true
 
@@ -585,6 +585,19 @@
             }
             active = false
         }
+        for(var i=0;i<menuList.length;i++) {
+            if(['dsxz', 'zjchong'].includes(menuList[i].jane_name)) {
+                systemEl += ' <div class="system-item '+ menuList[i].jane_name +'" data-janename="'+ menuList[i].jane_name +'" data-link="'+ menuList[i].link +'">\n' +
+                    '             <a target="_blank" href="'+ menuList[i].link +'"></a>\n'+
+                    '             <div class="system-top">\n' +
+                    '                 <span>'+ menuLinkData[menuList[i].jane_name].ico +'</span><span class="name-m">'+ menuLinkData[menuList[i].jane_name].name +'</span> \n' +
+                    '             </div>\n' +
+                    '             <div class="system-bottom">\n' +
+                    '                 <p class="system-price">'+ menuLinkData[menuList[i].jane_name].introduction +'</p>\n' +
+                    '             </div>\n' +
+                    '         </div>'
+            }
+        }
         systemEl += '<div class="system-item system-contrast" >\n' +
             '            <p class="p1">品牌对比</p>\n' +
             '            <p class="p2">不知道选看我</p>\n' +
@@ -613,6 +626,10 @@
                     $($(".system-item")[i]).show()
                 }else{
                     $($(".system-item")[i]).hide()
+                }
+                if($($(".system-item")[i]).data('janename')){
+                    $($(".system-item")[i]).show()
+                    $($(".system-item")[i]).css('display','inline-block')
                 }
             }
 
@@ -689,6 +706,10 @@
             $(".system-contrast-pop").show()
             return
         }
+        // if($(this).attr('data-janename')){
+        //     window.open($(this).attr('data-link'))
+        //     return
+        // }
         $(".system-item").removeClass('active')
         $(this).addClass('active')
         $(".DateBox").fadeOut()

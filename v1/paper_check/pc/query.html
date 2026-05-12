@@ -9,8 +9,8 @@
     <meta name="keywords" content="" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon"/>
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0077">
+    <link rel="stylesheet" href="../pc/assets/css/query.css?v=p24.0077">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -39,6 +39,12 @@
         <div class="nav f-r" id="memberCarrier">
             <div class="nav-activity">
                 <a href="./hd/index.html" target="_blank"><img src="../pc/assets/img/welfare.png" alt="">福利活动</a>
+            </div>
+            <div class="upload-h link-dsxz" data-janename="dsxz">
+                <a href="" target="_blank">智能写作</a>
+            </div>
+            <div class="upload-h link-zjc" data-janename="zjchong">
+                <a href="" target="_blank">降重/降AI</a>
             </div>
             <div class="upload-h">
                 <a href="./index.html">提交论文</a>
@@ -159,8 +165,8 @@
                                 <th width="180">订单号</th>
                                 <th width="220">论文标题</th>
                                 <th width="150">系统</th>
-                                <th width="150">相似度</th>
-                                <th width="200">查重时间</th>
+                                <th width="150">结果</th>
+                                <th width="200">时间</th>
                                 <th width="150">状态</th>
                                 <th width="250">操作</th>
                             </tr>
@@ -238,9 +244,9 @@
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=ts1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0072"></script>
+<script src="../pc/assets/js/common.js?v=p24.0077"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0072"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0077"></script>
 <script>
     function startQuerying(){
         if(getQueryVariable('oid')) {
@@ -325,7 +331,12 @@
                         text += "<th class=\"\" title=\""+ SystemName +"\">"+ SystemName +"</th>";
                         var status = resData.order_status_human
                         var styleClass = resData.order_status==60? 'complete': [resData.order_status==61? 'failure':'not']
-                        var copy_percent = resData.copy_percent||resData.copy_percent==0?resData.copy_percent+'%':"--"
+                        var copy_percent = ''
+                        if(['cqvipzpbd','cqvipzpqk','cqvipzpmd'].includes(resData.goods_short_name)) {
+                            copy_percent = resData.copy_percent||resData.copy_percent==0?resData.copy_percent:"--"
+                        }else {
+                            copy_percent = resData.copy_percent||resData.copy_percent==0?resData.copy_percent+'%':"--"
+                        }
                         text += "<th class=\"titles\">"+ copy_percent +"</th>";
                         text += "<th>"+ resData.created +"</th>";
                         text += "<th class=\"titles "+styleClass+"\">";

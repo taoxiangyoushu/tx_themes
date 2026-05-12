@@ -1,4 +1,4 @@
-(function() {
+function getOrderInfo() {
     $.ajax({
         type: 'post',
         url: urls + "/api/client/order/order_tmp/order_id?user_token="+USER_TOKEN+"&jane_name="+JANE_NAME ,
@@ -24,6 +24,7 @@
                 cocoMessage.success('订单已支付', 2000)
                 window.location.href = "./query.html?oid=" + (getQueryVariable('order_sn') || getQueryVariable('commitId'));
             }
+            Readjust()
         }
     });
-})()
+}

@@ -357,6 +357,7 @@
 .leftDiv .ContentMain .submit-form .note .p2 span {
   color: #616161;
   margin-right: 8px;
+  display: inline-block;
 }
 .leftDiv .ContentMain .submit-form .note .p2.redText {
   color: #f56c6c;
@@ -432,3 +433,4 @@
   color: #8f8f8f;
   font-size: 12px;
 }
+/*# sourceMappingURL=index.css.map */

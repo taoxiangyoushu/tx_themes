@@ -122,6 +122,10 @@ html body .query_page {
   position: relative;
   top: -3px;
 }
+.head .nav .link-dsxz,
+.head .nav .link-zjc {
+  display: none;
+}
 .content-block {
   padding: 0 15px;
 }

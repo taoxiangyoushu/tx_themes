@@ -327,7 +327,7 @@ function editionType(edition) {
 		}else if(edition == "zjcaigc"){
 			$('#generate').text('开始降AIGC率')
 			$('.Universal').hide()
-			$('.aigcTips').show()
+			$('.aigcTips').hide()
 		}else {
 			$('#generate').text('立即生成')
 			$('.Universal').show()

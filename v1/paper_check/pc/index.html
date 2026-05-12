@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../pc/assets/css/select2.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/common.css?v=p24.0077">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0077">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
     <script>
         var USER_TOKEN = 'RmlETkdPdjYzZmVjNTVhMDAyYzY='
@@ -367,10 +367,10 @@
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
 <script src="../pc/assets/js/typed.min.js"></script>
 <script src="../pc/assets/js/select2.min.js"></script>
-<script src="../pc/assets/js/word-calculator.js?v=p24.0072"></script>
-<script src="../pc/assets/js/common.js?v=p24.0072"></script>
+<script src="../pc/assets/js/word-calculator.js?v=p24.0077"></script>
+<script src="../pc/assets/js/common.js?v=p24.0077"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0072"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0077"></script>
 <script>
     $('#date').datetimepicker({minView: 2, language: "zh-CN"});
     var typed = new Typed('.switch-text', {
@@ -490,6 +490,9 @@
     var currentSystemName = '' // 当前选中的查重系统名称
 
     $(document).on('click',".check-system-block .system-item",function (){
+        if($(this).attr('data-janename')){
+            return
+        }
         $(".check-system-block .system-item").removeClass('active')
         $(this).addClass('active')
         $(".date-block").fadeOut()
@@ -1072,7 +1075,7 @@
 
 
     // 显示数据
-    function dropDownType(typeData){
+    function dropDownType(typeData, menuList){
         var systemEl = ''
         var active = true
         var turnitin=['turnitinuk','turnitinai']
@@ -1162,6 +1165,19 @@
             }
             active = false
         }
+        for(var i=0;i<menuList.length;i++) {
+            if(['dsxz', 'zjchong'].includes(menuList[i].jane_name)) {
+                systemEl += ' <div class="system-item '+ menuList[i].jane_name +'" data-janename="'+ menuList[i].jane_name +'" data-link="'+ menuList[i].link +'">\n' +
+                    '             <a target="_blank" href="'+ menuList[i].link +'"></a>\n'+
+                    '             <div class="system-top">\n' +
+                    '                 <span>'+ menuLinkData[menuList[i].jane_name].ico +'</span><span class="name-m">'+ menuLinkData[menuList[i].jane_name].name +'</span> \n' +
+                    '             </div>\n' +
+                    '             <div class="system-bottom">\n' +
+                    '                 <p class="system-price">'+ menuLinkData[menuList[i].jane_name].introduction +'</p>\n' +
+                    '             </div>\n' +
+                    '         </div>'
+            }
+        }
         $(".check-system-block").append(systemEl)
         var is_first = true
         for(var i=0; i<$(".system-item").length; i++){
@@ -1183,6 +1199,10 @@
                $($(".system-item")[i]).find('.system-price').text(Price_Check + '元/' + unitCount + typeData[$($(".system-item")[i]).data('name')][0].unit_type)
            }else{
                $($(".system-item")[i]).hide()
+               if($($(".system-item")[i]).data('janename')){
+                   $($(".system-item")[i]).show()
+                   $($(".system-item")[i]).css('display','inline-block')
+               }
            }
            $(".loading-block").hide()
            $(".plagiarismCheck-block").show()

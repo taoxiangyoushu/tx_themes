@@ -238,6 +238,7 @@
                             cursor: pointer;
                             position: relative;
                             padding: 0 10px;
+                            vertical-align: middle;
                             display: none;
                             .system-top {
                                 height: 50px;
@@ -248,6 +249,15 @@
                                     vertical-align: middle;
                                     max-width: 100%;
                                     &.cnki-img {
+                                        width: 100px;
+                                    }
+                                    &.zjchong {
+                                        background: #0074ff;
+                                        padding: 5px 8px;
+                                        border-radius: 4px;
+                                        height: 28px;
+                                    }
+                                    &.dsxz {
                                         width: 100px;
                                     }
                                 }
@@ -276,6 +286,63 @@
                                 box-shadow: 0 0 6px 0px #c2b2ff;
                                 .checked {
                                     display: block;
+                                }
+                            }
+                            &.linkBox {
+                                text-align: center;
+                                line-height: 84px;
+                                span {
+                                    font-size: 18px;
+                                    font-weight: bold;
+                                    color: #483c6e;
+                                }
+                            }
+                            &.dsxz {
+                                a {
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    top: 0;
+                                    left: 0;
+                                    outline: none;
+                                }
+                                .system-top {
+                                    span {
+                                        font-size: 16px;
+                                        color: #7d55fc;
+                                    }
+                                    .name-m {
+                                        margin-left: 1px;
+                                    }
+                                }
+                                .system-bottom {
+                                    .system-price {
+                                        color: #838383;
+                                    }
+                                }
+                            }
+                            &.zjchong {
+                                a {
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    top: 0;
+                                    left: 0;
+                                    outline: none;
+                                }
+                                .system-top {
+                                    span {
+                                        font-size: 16px;
+                                        color: #f66157;
+                                    }
+                                    .name-m {
+                                        margin-left: 1px;
+                                    }
+                                }
+                                .system-bottom {
+                                    .system-price {
+                                        color: #838383;
+                                    }
                                 }
                             }
                         }

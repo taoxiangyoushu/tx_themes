@@ -101,6 +101,7 @@ body {
 }
 .form .tipsInfo p span {
   margin-right: 0.5rem;
+  display: inline-block;
 }
 .form .tipsInfo p.redText {
   color: #f56c6c;
@@ -1457,3 +1458,4 @@ button.btn-default,
   top: 1rem;
   right: 1.2rem;
 }
+/*# sourceMappingURL=index.css.map */

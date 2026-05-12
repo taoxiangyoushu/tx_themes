@@ -9,9 +9,9 @@
     <meta name="description" content="早降重论文降重系统使用第六代人工智能神经网络降重模型，能够准确快速的一键解决毕业论文重复率高，相似率高的问题，系统保证语句通顺度、连贯性、上下文结构，相比上一代系统提升30%效果，500万大学生降低论文重复率高问题的首选系统。" />
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/reset.css?v=p24.0074">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0074">
+    <link rel="stylesheet" href="../pc/assets/css/index.css?v=p24.0074">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -743,7 +743,7 @@
                                 <dl>
                                     <dt>降AIGC疑似率效果</dt>
                                     <dd>
-                                        市面上的查重系统和AICG针对AI的算法会使用多种不同的AI检测模型进行计算，即使是纯人工手写的论文都存在误判虚高的现象；目前我们的产品基于主流知W的AIGC系统进行深度优化和更新，效果更好。
+                                        市面上的查重系统和AIGC针对AI的算法会使用多种不同的AI检测模型进行计算，即使是纯人工手写的论文都存在误判虚高的现象；目前我们的产品基于主流知W的AIGC系统进行深度优化和更新，效果更好。
                                     </dd>
                                 </dl>
                                 <dl>
@@ -777,7 +777,7 @@
 <script src="../pc/assets/js/jszip.min.js"></script>
 <script src="../pc/assets/js/common.js?v=p24.005"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0072"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0074"></script>
 <script>
     var uploadType = '';
     var domain = '303';
@@ -1143,7 +1143,8 @@
                 text += "                    <p class='p_title p_title_2'>降AIGC率范围：包括但不限于</p>";
                 text += "                    <p class='p1 p_img'><img src='../pc/assets/img/gpt3.png' style='' alt=''><span>ChatGPT-3.5</span><img class='i-m' src='../pc/assets/img/gpt4.png' alt=''><span>ChatGPT-4.0</span> <img class='i-m' src='../pc/assets/img/gemini.png' alt=''><span>Gemini</span> <img class='i-m' src='../pc/assets/img/claude.png' style='margin-top: -1px;' alt=''><span>Claude</span></p>";
                 text += "                    <p class='p1 p_img'><img src='../pc/assets/img/wyyx.png' style='margin-top: -1px;' alt=''><span>文心一言</span><img class='i-m' src='../pc/assets/img/tyqw.png' alt=''><span>通义千问</span> <img class='i-m' src='../pc/assets/img/zpai.png' alt=''><span>智谱AI</span> <img class='i-m' src='../pc/assets/img/BAICHUAN.png' style='margin-top: -1px;' alt=''><span>百川智能</span> <img class='i-m' src='../pc/assets/img/zhinao.png' style='margin-top: -1px;' alt=''><span>360智脑</span></p>";
-                text += "                    <p class='p1 p_img'><img src='../pc/assets/img/XFXH.png' alt=''><span>讯飞星火</span> <img class='i-m' src='../pc/assets/img/DOUBAO.png' alt=''><span>豆包</span><img class='i-m' src='../pc/assets/img/KIMI.png' alt=''><span>Kimi</span><img class='i-m' src='../pc/assets/img/DS.png' alt=''><span>Deepseek</span></p>";
+                text += "                    <p class='p1 p_img'><img src='../pc/assets/img/XFXH.png' alt=''><span>讯飞星火</span> <img class='i-m' src='../pc/assets/img/DOUBAO.png' alt=''><span>豆包</span><img class='i-m' src='../pc/assets/img/KIMI.png' alt=''><span>Kimi</span><img class='i-m' src='../pc/assets/img/DS.png' alt=''><span>Deepseek</span><img class='i-m' src='../pc/assets/img/grok.png' alt=''><span>Grok</span></p>";
+                text += "                    <p class='p1 p_img'><img src='../pc/assets/img/minimax.jpg' alt=''><span>MiniMax</span> <img class='i-m' src='../pc/assets/img/txhy.png' alt=''><span>腾讯混元</span> <img class='i-m' src='../pc/assets/img/yb.jpg' alt=''><span>元宝</span></p>";
                 text += "                </div>";
                 text += "            </span>";
                 text += "        </span>";
@@ -1624,6 +1625,9 @@
         if(reportType_s == 'zqAIGC'){
             $(".zipFile_upload .upload_tips .size_value").text('15MB')
         }
+
+        //切换报告类型  清空已上传报告
+        $(".zipFile_block .deleteFile").click()
     })
 
     $("#docUpload").change(function (){

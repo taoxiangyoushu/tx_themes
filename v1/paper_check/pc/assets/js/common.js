@@ -323,6 +323,19 @@ var systemInfo = {
     }
 }
 
+var menuLinkData = {
+    'dsxz': {
+        name: '智能写作',
+        ico: '📑',
+        introduction: '学术模型,真实文献'
+    },
+    'zjchong': {
+        name: '论文降重/降AI',
+        ico: '📉',
+        introduction: '降查重率、降AI率'
+    }
+}
+
 // 封装url参数获取
 function getQueryVariable(variable){
 	var query = window.location.search.substring(1);
@@ -449,13 +462,26 @@ window.onload = function (){
 				isclick = true
 
 				if($(".pay_page").length > 0){
+                    getOrderInfo()
 					tacitPay(typeData, data.project[0].pay_way, data.pay_config)
 					setPriceTips(data.project[0].goods_info)
 				}
 				if($('.home_page').length) {
-					dropDownType(typeData)
+					dropDownType(typeData, data.project[0].menu_list)
 					// getFormaTemplate()
 				}
+                if($('.resultBox').length){
+                    for (var i=0;i<data.project[0].menu_list.length;i++) {
+                        if(data.project[0].menu_list[i].jane_name == "zjchong") {
+                            $(".link-zjc a").attr('href', data.project[0].menu_list[i].link)
+                            $(".link-zjc").show().css('display', 'inline-block')
+                        }
+                        if(data.project[0].menu_list[i].jane_name == "dsxz") {
+                            $(".link-dsxz a").attr('href', data.project[0].menu_list[i].link)
+                            $(".link-dsxz").show().css('display', 'inline-block')
+                        }
+                    }
+                }
 				payWayInfo = data.project[0].pay_way
 
 				memberFu = new member ({

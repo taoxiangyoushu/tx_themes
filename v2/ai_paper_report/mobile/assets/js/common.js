@@ -329,7 +329,7 @@ function editionType(edition) {
 		}else if(edition == "zjcaigc"){
 			$('#generate').text('开始降AIGC率')
 			$('.Universal').hide()
-			$('.aigcTips').show()
+			// $('.aigcTips').show()
             $(".sciTips").hide()
 		}else if(edition == "scirs"){
             $('.Universal').hide()

@@ -262,7 +262,8 @@ function changeType(this_ , this_val) {
     var shortName = this_short_name
     if(shortName == 'zjcaigc') {
         editionType(shortName)
-        $('.jiangAIGCContent').show()
+        $('.jiangAIGCContent').hide()
+        $('.jiangAIGCBlock').show()
         file_path = ''
         if($("#ThesisInput").val()){
             $(".deleteFileThesis").click()
@@ -270,6 +271,7 @@ function changeType(this_ , this_val) {
     }else {
         editionType(shortName == 'bylw'? 'Normal':shortName)
         $('.jiangAIGCContent').hide()
+        $('.jiangAIGCBlock').hide()
     }
 
     if(this_short_name == 'xzaigccheck') { // aigc查重
@@ -494,6 +496,30 @@ $('.generate').click(function() {
                 wxzsID = $(".version-item.active").attr('data-goodsid')
             }
         }
+        if(typeData[$('#type_s').val()].short_name == 'zjcaigc') {
+            if(uploadType_s == 'files') {
+                if(!$("#uploadFiles").val() || !file_path){
+                    toast('请上传文件', 2000)
+                    return;
+                }
+            }
+            if(uploadType_s == 'content') {
+                if(!$("#contentTxt").val()){
+                    toast('请输入内容', 2000)
+                    return;
+                }
+                if($("#contentTxt").val().length < 200) {
+                    toast('论文内容最低字数为200', 2000)
+                    return;
+                }
+            }
+            if(uploadType_s == 'zips') {
+                if(!$("#uploadZip").val() || !file_path){
+                    toast('请上传报告', 2000)
+                    return;
+                }
+            }
+        }
         toast({
             msg: '正在提交,请稍后...',
             type: 'loading',
@@ -616,15 +642,59 @@ $('.generate').click(function() {
         formData['data[title][label]'] = '论文标题'
         // 降aigc
         if(typeData[$('#type_s').val()].short_name == 'zjcaigc') {
-            formData['data[title][value]'] = $('#contenteditable2').val()
-            // formData['data[paper_type][label]'] = '论文类型';
-            // formData['data[paper_type][value]'] = $("input[name='FamilyCategory']:checked").val();
-            formData['upload_type'] = $('.AIGCContentType.Select').attr('id-key');
-            if($('.AIGCContentType.Select').attr('id-key') == 1) {
-                formData['content'] = $('#textareaText').val();
-            }else {
+            // formData['data[title][value]'] = $('#contenteditable2').val()
+            // // formData['data[paper_type][label]'] = '论文类型';
+            // // formData['data[paper_type][value]'] = $("input[name='FamilyCategory']:checked").val();
+            // formData['upload_type'] = $('.AIGCContentType.Select').attr('id-key');
+            // if($('.AIGCContentType.Select').attr('id-key') == 1) {
+            //     formData['content'] = $('#textareaText').val();
+            // }else {
+            //     formData['data[file_path][label]'] = '文件地址';
+            //     formData['data[file_path][value]'] = file_path;
+            // }
+            if(uploadType_s == 'files'){
+                formData['upload_type'] = 2;
+                formData['data[title][label]'] = '论文标题';
+                formData['data[title][value]'] = $("#uploadFiles")[0].files[0].name.slice(0, $("#uploadFiles")[0].files[0].name.lastIndexOf('.')).slice(0, 60);
                 formData['data[file_path][label]'] = '文件地址';
                 formData['data[file_path][value]'] = file_path;
+                if(aigc_file_domain){
+                    formData['data[domain][label]'] = '报告类型';
+                    formData['data[domain][value]'] = aigc_file_domain;
+                }
+            }
+            if(uploadType_s == 'content'){
+                formData['upload_type'] = 1;
+                formData['data[title][label]'] = '论文标题';
+                formData['data[title][value]'] = $("#contentTxt").val().slice(0, 30);
+                formData['content'] = $("#contentTxt").val();
+                if(aigc_file_domain){
+                    formData['data[domain][label]'] = '报告类型';
+                    formData['data[domain][value]'] = aigc_file_domain;
+                }
+            }
+            if(uploadType_s == 'zips'){
+                formData['upload_type'] = 2;
+                formData['data[title][label]'] = '论文标题';
+                formData['data[title][value]'] = $("#uploadZip")[0].files[0].name.slice(0, $("#uploadZip")[0].files[0].name.lastIndexOf('.'));
+                formData['data[file_path][label]'] = '文件地址';
+                formData['data[file_path][value]'] = file_path;
+                formData['data[file_type][label]'] = '报告类型';
+                formData['data[file_type][value]'] = reportType_s;
+                if(reportType_s == 'zqAIGC') {
+                    formData['data[domain][label]'] = '报告类型';
+                    formData['data[domain][value]'] = '20';
+                    delete formData['data[file_type][label]']
+                    delete formData['data[file_type][value]']
+                }
+                if(reportType_s == 'turnitinAIGC') {
+                    formData['data[domain][label]'] = '报告类型';
+                    formData['data[domain][value]'] = '30';
+                }
+                if(reportType_s == 'otherAIGC' && $(".check_platform").val()) {
+                    formData['data[check_platform][label]'] = '检查平台';
+                    formData['data[check_platform][value]'] = $(".check_platform").val();
+                }
             }
         }else {
             formData['data[title][value]'] = $('#contenteditable').val()
@@ -1314,3 +1384,437 @@ function change_defaultReferences() {
         $(".defaultReferences_num").text('全部为')
     }
 }
+
+// 降AIGC率
+var uploadType_s = 'files'
+var aigc_file_domain = ''
+var reportTypeInfo =  {
+    all: {
+        zipType: ['zip', 'pdf', 'html'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf,.html'
+    },
+    cnki: {
+        zipType: ['zip', 'pdf'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
+    },
+    wanfang: {
+        zipType: ['zip', 'pdf'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
+    },
+    zaojiance: {
+        zipType: ['zip'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+    },
+    weipu: {
+        zipType: ['zip', 'pdf'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
+    },
+    checkPass: {
+        zipType: ['zip'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+    },
+    paperPass: {
+        zipType: ['zip'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+    },
+    MasterCheck: {
+        zipType: ['zip'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+    },
+    yuanwenjian: {
+        zipType: ['zip'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+    },
+    cnkiAIGC: {
+        zipType: ['zip', 'pdf'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf'
+    },
+    weipuAIGC: {
+        zipType: ['zip','html','pdf'],
+        fileAccept: '.html,application/zip,application/x-zip,application/x-zip-compressed,.pdf'
+    },
+    gzdAIGC: {
+        zipType: ['pdf'],
+        fileAccept: '.pdf'
+    },
+    wanfangAIGC: {
+        zipType: ['pdf'],
+        fileAccept: '.pdf'
+    },
+    masterAIGC: {
+        zipType: ['zip'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+    },
+    dyAIGC: {
+        zipType: ['pdf'],
+        fileAccept: '.pdf'
+    },
+    paperPassAIGC: {
+        zipType: ['zip'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+    },
+    otherAIGC: {
+        zipType: ['zip', 'pdf', 'html'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed,.pdf,.html'
+    },
+    zqAIGC: {
+        zipType: ['docx', 'doc', 'txt'],
+        fileAccept: '.doc,.docx,.txt,text/plain,'
+    },
+    turnitinAIGC: {
+        zipType: ['zip'],
+        fileAccept: 'application/zip,application/x-zip,application/x-zip-compressed'
+    }
+};
+$(".jiangAIGCBlock .type_head .type_item").click(function () {
+    $(".jiangAIGCBlock .type_head .type_item").removeClass('active')
+    $(".jiangAIGCBlock .file_upload .file_info .deleteText").click()
+    $(this).addClass('active')
+    $(".jiangAIGCBlock .form_block>div").hide()
+    uploadType_s = $(this).attr('data-type')
+    $(".jiangAIGCBlock .content_block").removeClass('has-error')
+    if( $(this).attr('data-type')=='files' ){
+        $(".jiangAIGCBlock .form_block .files_upload").show()
+    }
+    if( $(this).attr('data-type')=='content' ){
+        $(".jiangAIGCBlock .form_block .content_block").show()
+    }
+    if( $(this).attr('data-type')=='zips' ){
+        $(".jiangAIGCBlock .form_block .zip_block").show()
+        $(".jiangAIGCBlock .report_type .type_item[data-type='otherAIGC']").click()
+        $(".jiangAIGCBlock .form_block .aigc-file-type .type_item").removeClass('active special')
+        $(".jiangAIGCBlock .form_block .aigc-file-type .type_item[data-domain='']").addClass('active')
+        aigc_file_domain = ''
+    }
+})
+
+$(".form_block .aigc-file-type .type_item").click(function (){
+    let domian = $(this).attr('data-domain') || ''
+    aigc_file_domain = $(this).attr('data-domain')
+    $(".jiangAIGCBlock .form_block .aigc-file-type .type_item").removeClass('active special')
+    if($(".jiangAIGCBlock .form_block .aigc-file-type .type_item[data-domain='"+ domian +"']").find(".Report_label")[0]){
+        $(".jiangAIGCBlock .form_block .aigc-file-type .type_item[data-domain='"+ domian +"']").addClass('special')
+    }else{
+        $(".jiangAIGCBlock .form_block .aigc-file-type .type_item[data-domain='"+ domian +"']").addClass('active')
+    }
+})
+
+$(".zip_block .report_type .type_item").click(function (){
+    var type_group=$(this).attr('data-type')
+    if(type_group=='otherAIGC'){
+        $('.copywriting').show()
+    }
+    else{
+        $('.copywriting').hide()
+    }
+    if(type_group=='cnkiAIGC'||type_group=='wanfangAIGC'||type_group=='weipuAIGC'||type_group=='turnitinAIGC'){
+        $(".zip_block .report_type .type_item").removeClass('active')
+        $(".zip_block .report_type .type_item").removeClass('special')
+        $(this).addClass('special')
+    }
+    else{
+        $(".zip_block .report_type .type_item").removeClass('active')
+        $(".zip_block .report_type .type_item").removeClass('special')
+        $(this).addClass('active')
+    }
+    $(".zip_upload .file_info .deleteText").click()
+    reportType_s = $(this).attr('data-type')
+    $(".upload_tips_txt").hide()
+    $(".upload_tips_txt").removeClass('active')
+    for(var i=0;i< $(".upload_tips_txt").length;i++) {
+        if( $($(".upload_tips_txt")[i]).attr('data-type') == reportType_s ){
+            $($(".upload_tips_txt")[i]).show()
+            $($(".upload_tips_txt")[i]).addClass('active')
+        }
+    }
+    if(reportTypeInfo[reportType_s].zipType.indexOf('zip')>-1) {
+        $(".zip_block .upload_tips .zip").show()
+    }else{
+        $(".zip_block .upload_tips .zip").hide()
+    }
+    if(reportTypeInfo[reportType_s].zipType.indexOf('pdf')>-1) {
+        $(".zip_block .upload_tips .pdf").show()
+    }else{
+        $(".zip_block .upload_tips .pdf").hide()
+    }
+    if(reportTypeInfo[reportType_s].zipType.indexOf('html')>-1) {
+        $(".zip_block .upload_tips .html").show()
+    }else{
+        $(".zip_block .upload_tips .html").hide()
+    }
+    if(reportTypeInfo[reportType_s].zipType.indexOf('docx')>-1) {
+        $(".zip_block .upload_tips .docx").show()
+    }else{
+        $(".zip_block .upload_tips .docx").hide()
+    }
+    if(reportTypeInfo[reportType_s].zipType.indexOf('doc')>-1) {
+        $(".zip_block .upload_tips .doc").show()
+    }else{
+        $(".zip_block .upload_tips .doc").hide()
+    }
+    if(reportTypeInfo[reportType_s].zipType.indexOf('txt')>-1) {
+        $(".zip_block .upload_tips .txt").show()
+    }else{
+        $(".zip_block .upload_tips .txt").hide()
+    }
+
+    $(".zip_block #uploadZip").attr('accept', reportTypeInfo[reportType_s].fileAccept)
+
+    if(reportType_s == 'all' || reportType_s == 'otherAIGC'){
+        $(".zip_block .check_platform").show()
+        $(".zip_block .upload_tips .p1 span").hide()
+    }else{
+        $(".zip_block .check_platform").hide()
+        $(".zip_block .upload_tips .p1 span").show()
+    }
+    $(".zip_block .upload_tips .p2 .size_value").text('30MB')
+    if(reportType_s == 'zqAIGC') {
+        // $(".zip_block .upload_tips .p1 span").hide()
+        $(".zip_block .upload_tips .p2 .size_value").text('15MB')
+    }
+})
+
+$("#uploadFiles").change(function (){
+    $(".files_upload .file_upload").removeClass('has-error')
+    if($(this)[0].files[0]){
+        $(".file_upload .upload_files").css('zIndex', '-1')
+        $(".file_upload .file_info .file_nameText").text( $(this)[0].files[0].name )
+        $(".file_upload .upload_btn .upload_logo").hide()
+        $(".file_upload .upload_btn .uploading_logo").show()
+        $(".file_upload .file_info").show().css('display', 'flex')
+        // $(".file_upload").addClass('hasFile')
+        var formdata = new FormData()
+        formdata.append('file', $("#uploadFiles")[0].files[0])
+        formdata.append('type', typeData[$('#type_s').val()].short_name)
+        $.ajax({
+            type: 'POST',
+            url: urls + '/api/project/ai_paper_report/pre_handle/file_upload',
+            processData: false,
+            contentType: false,
+            xhrFields: {
+                withCredentials: true
+            },
+            data: formdata,
+            success: function (res){
+                if(res.code == 200){
+                    file_path = res.data.path
+                    $(".file_upload .file_info .uploaded_logo").show()
+                    $(".file_upload .file_info .uplose_logo").hide()
+                    $(".file_upload .file_info .deleteText").show()
+                    $(".file_upload .upload_btn .upload_logo").show()
+                    $(".file_upload .upload_btn .uploading_logo").hide()
+                    $(".file_upload .upload_btn span").text('重新上传')
+                }else{
+                    $(".file_upload .file_info .uploaded_logo").hide()
+                    $(".file_upload .file_info .uplose_logo").show()
+                    $(".file_upload .file_info .deleteText").show()
+                    $(".file_upload .upload_btn .upload_logo").show()
+                    $(".file_upload .upload_btn .uploading_logo").hide()
+                    $(".file_upload .upload_btn span").text('重新上传')
+                    if(res.codeMsg){
+                        toast({
+                            msg: res.codeMsg,
+                            type: 'error',
+                            time: 2000
+                        })
+                    }else{
+                        toast({
+                            msg: '文件上传失败，请重试',
+                            type: 'error',
+                            time: 2000
+                        })
+                    }
+                }
+            },
+            error: function() {
+                UploadFailed()
+                toast({
+                    msg: '文件上传失败，请重试',
+                    type: 'error',
+                    time: 2000
+                })
+            }
+        })
+    }else{
+        file_path = ''
+        $(".file_upload .upload_files").css('zIndex', '1')
+        $(".file_upload .file_info .file_nameText").text('')
+        $(".file_upload .upload_btn .upload_logo").show()
+        $(".file_upload .upload_btn .uploading_logo").hide()
+        $(".file_upload .file_info").hide()
+        $(".file_upload .file_info .uploaded_logo").hide()
+        $(".file_upload .file_info .uplose_logo").hide()
+        $(".file_upload .file_info .deleteText").show()
+        $(".file_upload .upload_btn span").text('上传文件')
+        $(".btn-sub").addClass('prohibitBtn')
+        // $(".file_upload").removeClass('hasFile')
+    }
+})
+
+$(".file_upload .file_info .deleteText").click(function (){
+    $("#uploadFiles").val('')
+    $("#uploadFiles").trigger('change')
+})
+
+$(".file_upload .upload_btn").click(function (){
+    $("#uploadFiles").val('')
+    $("#uploadFiles").trigger('change')
+    $("#uploadFiles").click()
+})
+
+// 文本粘贴
+$(".content_block #contentTxt").on('input',function (){
+    $(".content_block .content_count").text($(this).val().length)
+    $(".content_block").removeClass('has-error')
+})
+
+$("#uploadZip").change(function (){
+    $(".zip_block .zip_upload").removeClass('has-error')
+    var file = $(this)[0].files[0]
+    if($(this)[0].files[0]){
+        $(".zip_upload #uploadZip").css('zIndex', '-1')
+        $(".zip_upload .file_info .file_nameText").text( $(this)[0].files[0].name )
+        $(".zip_upload .upload_btn .upload_logo").hide()
+        $(".zip_upload .upload_btn .uploading_logo").show()
+        $(".zip_block .upload_tips_txt").hide()
+        $(".zip_upload .file_info").show().css('display', 'flex')
+        // setTimeout(function (){
+        //     $(".zip_upload .file_info .uploaded_logo").show()
+        //     $(".zip_upload .file_info .deleteText").show()
+        //     $(".zip_upload .upload_btn .upload_logo").show()
+        //     $(".zip_upload .upload_btn .uplose_logo").hide()
+        //     $(".zip_upload .upload_btn .uploading_logo").hide()
+        //     $(".zip_upload .upload_btn span").text('重新上传')
+        //     $(".btn-sub.prohibitBtn").removeClass('prohibitBtn')
+        // },300)
+        var formdata = new FormData()
+        // formdata.append('file', $("#uploadZip")[0].files[0])
+        // formdata.append('type', typeData[$('#type_s').val()].short_name)
+        if($("#uploadZip")[0].files[0].type.indexOf('html') > -1){
+            var fileName =  $("#uploadZip")[0].files[0].name.replace(/\.[^/.]+$/,'')
+            var content = $("#uploadZip")[0].files[0];
+            var zip = new JSZip();
+            if(reportType_s == 'weipuAIGC'){
+                zip.file(fileName+"_AIGC统计报告.html", content);
+            }else{
+                zip.file(fileName+".html", content);
+            }
+            zip.generateAsync({type:"blob"})
+                .then(function (content){
+                    formdata.append('file', new File([content] , fileName+".zip",{type: 'application/zip',}))
+                    formdata.append('type', typeData[$("#type_s").val()].short_name)
+                    uploadPre(formdata)
+                })
+        }else{
+            formdata.append('file',file)
+            formdata.append('type', typeData[$("#type_s").val()].short_name)
+            uploadPre(formdata)
+        }
+
+    }else{
+        file_path = ''
+        $(".zip_upload #uploadZip").css('zIndex', '1')
+        $(".zip_upload .file_info .file_nameText").text('')
+        $(".zip_upload .upload_btn .upload_logo").show()
+        $(".zip_upload .upload_btn .uploading_logo").hide()
+        $(".zip_upload .file_info").hide()
+        $(".zip_upload .file_info .uploaded_logo").hide()
+        $(".zip_upload .file_info .uplose_logo").hide()
+        $(".zip_upload .file_info .deleteText").show()
+        $(".zip_block .upload_tips_txt.active").show()
+        $(".zip_upload .upload_btn span").text('上传文件')
+        $(".btn-sub").addClass('prohibitBtn')
+    }
+})
+
+$(".zip_upload .file_info .deleteText").click(function (){
+    $("#uploadZip").val('')
+    $("#uploadZip").trigger('change')
+})
+
+$(".zip_upload .upload_btn").click(function (){
+    $("#uploadZip").val('')
+    $("#uploadZip").trigger('change')
+    $("#uploadZip").click()
+})
+
+function uploadPre(formdata) {
+    console.log(formdata.get('file'))
+    $.ajax({
+        type: 'POST',
+        url: urls + '/api/project/ai_paper_report/pre_handle/file_upload',
+        processData: false,
+        contentType: false,
+        xhrFields: {
+            withCredentials: true
+        },
+        data: formdata,
+        success: function (res){
+            if(res.code == 200){
+                file_path = res.data.path
+                $(".zip_upload .file_info .uploaded_logo").show()
+                $(".zip_upload .file_info .uplose_logo").hide()
+                $(".zip_upload .file_info .deleteText").show()
+                $(".zip_upload .upload_btn .upload_logo").show()
+                $(".zip_upload .upload_btn .uploading_logo").hide()
+                $(".zip_upload .upload_btn span").text('重新上传')
+            }else{
+                $(".zip_upload .file_info .uploaded_logo").hide()
+                $(".zip_upload .file_info .uplose_logo").show()
+                $(".zip_upload .file_info .deleteText").show()
+                $(".zip_upload .upload_btn .upload_logo").show()
+                $(".zip_upload .upload_btn .uploading_logo").hide()
+                $(".zip_upload .upload_btn span").text('重新上传')
+                if(res.codeMsg){
+                    toast({
+                        msg: res.codeMsg,
+                        type: 'error',
+                        time: 2000
+                    })
+                }else{
+                    toast({
+                        msg: '文件上传失败，请重试',
+                        type: 'error',
+                        time: 2000
+                    })
+                }
+            }
+        },
+        error: function() {
+            UploadFailed()
+            toast({
+                msg: '文件上传失败，请重试',
+                type: 'error',
+                time: 2000
+            })
+        }
+    })
+}
+
+// 报告样例
+$(".zip_block .upload_tips .p1 span").click(function (){
+    $(".type-pop .example_item").hide()
+    for(var i=0; i<$(".type-pop .example_item").length; i++) {
+        if($($(".type-pop .example_item")[i]).attr('data-type') == reportType_s) {
+            if($($(".type-pop .example_item")[i]).find('.exam-img img').attr('src') == '') {
+                $($(".type-pop .example_item")[i]).find('.exam-img img').attr('src', reportSampleData[reportType_s])
+            }
+            $($(".type-pop .example_item")[i]).show()
+        }
+    }
+    $(".mask-pop").show()
+    $(".type-pop").css('bottom', '0')
+})
+
+function closePop() {
+    $(".mask-pop").hide()
+    $(".type-pop").css('bottom', '-36rem')
+}
+
+$(".closePop").on('click',function (){
+    closePop()
+})
+
+$(".mask-pop").on('click',function (){
+    closePop()
+})

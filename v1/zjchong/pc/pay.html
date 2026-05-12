@@ -8,8 +8,8 @@
     <link rel="shortcut icon" href="../pc/assets/favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="../pc/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../pc/assets/css/reset.css">
-    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0072">
-    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0072">
+    <link rel="stylesheet" href="../pc/assets/css/home.css?v=p24.0074">
+    <link rel="stylesheet" href="../pc/assets/css/pay.css?v=p24.0074">
     <link rel="stylesheet" href="../pc/assets/css/bootstrapValidator.min.css">
 
     <script>
@@ -244,7 +244,7 @@
                     <div>
                         <a class="a-link a-blue pull-left" href="./query.html">提取报告</a>
                         <a class="a-link a-yellow pull-right jcReport" href="./demo.html" target="_blank">报告样例</a>
-                        <a class="a-link a-yellow pull-right aigcReport" href="./demo.html" target="_blank">报告样例</a>
+                        <a class="a-link a-yellow pull-right aigcReport" style="display: none" href="./demo.html" target="_blank">报告样例</a>
                     </div>
                 </div>
                 <div class="intro-step">
@@ -509,7 +509,7 @@
                                 <dl>
                                     <dt>降AIGC疑似率效果</dt>
                                     <dd>
-                                        市面上的查重系统和AICG针对AI的算法会使用多种不同的AI检测模型进行计算，即使是纯人工手写的论文都存在误判虚高的现象；目前我们的产品基于主流知W的AIGC系统进行深度优化和更新，效果更好。
+                                        市面上的查重系统和AIGC针对AI的算法会使用多种不同的AI检测模型进行计算，即使是纯人工手写的论文都存在误判虚高的现象；目前我们的产品基于主流知W的AIGC系统进行深度优化和更新，效果更好。
                                     </dd>
                                 </dl>
                                 <dl>
@@ -570,10 +570,10 @@
 <script src="https://cdn.taoxiangyoushu.com/tools/safari_handle.js?code=11.8"></script>
 <script src="../pc/assets/js/qrcode.min.js"></script>
 <script src="../pc/assets/js/coco-message.js?v=cm1.0"></script>
-<script src="../pc/assets/js/common.js?v=p24.0072"></script>
+<script src="../pc/assets/js/common.js?v=p24.0074"></script>
 <script src="../pc/assets/js/bootstrapValidator.min.js"></script>
-<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0072"></script>
-<script src="../pc/assets/js/orderInfo.js?v=p24.0072"></script>
+<script src="https://cdn.taoxiangyoushu.com/html/v1/utils/js/MemberSystem.js?v=p24.0074"></script>
+<script src="../pc/assets/js/orderInfo.js?v=p24.0074"></script>
 <script>
     var orderInfoData = {}
     var uploadType = 'content'
@@ -759,7 +759,7 @@
             $(".activityTip").text('已自动填写活动优惠券码，请点击兑换使用')
             $(".activityTip").show();
         }
-        Readjust()
+        // Readjust()
     }
 
     function payOrder(payType,price) {
@@ -1278,56 +1278,22 @@
 
 
 function Readjust(){
-    var formData = getFormData({
-            order_sn: order_sn || getQueryVariable('order_sn'),
-            code: $("#coupon").val()
-        })
-
-        $.ajax({
-            type: 'post',
-            url: urls + '/api/client/order/variation/order',
-            data: formData,
-            contentType: false,
-            processData: false,
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function (res) {
-                canClick = true
-                closeMsg()
-                if (res.code == 200) {
-                    order_sn = res.data.order_sn
-                    payOrder('',res.data.order_amount)
-                    $(".oid").text(res.data.order_sn)
-                    $('.order-oid').text(res.data.order_sn)
-                    $('.orderAmount').text(res.data.order_amount)
-                    for(let k=0;k<typeData.length;k++){
-                        if(typeData[k].goods_id == getQueryVariable('goodsid')&&typeData[k].calc_price_type==2){
-                            if(res.data.old_amount-res.data.order_amount>0){
-                                $('.tiered_pricing').show()
-                            }
-                            $('.price-unit').text(res.data.order_money+'元/篇')
-                        }
-                    }
-                    $('#Discount_amount1').text((res.data.old_amount-res.data.order_amount).toFixed(2))
-                    $('#original_price').text(res.data.old_amount)
-                    $('.Step_price').text(res.data.order_money+'元/篇')
-                    $('#Total_amount').text(res.data.order_money)
-                }else {
-                    // cocoMessage.error(res.codeMsg, 2000);
-                    $(".errorTip span").text(res.codeMsg)
-                    $(".errorTip").css('display','inline-block');
-                    $(".activityTip").hide()
-                    closeMsg()
-                }
-            },
-            error: function () {
-                cocoMessage.error("请求失败!请检查网络", 2000);
-                contentTypeIs = true
-                closeMsg()
-                canClick = true
-            },
-        });
+    payOrder('',orderInfoData.order_amount)
+    $(".oid").text(orderInfoData.order_sn)
+    $('.order-oid').text(orderInfoData.order_sn)
+    $('.orderAmount').text(orderInfoData.order_amount)
+    for(let k=0;k<typeData.length;k++){
+        if(typeData[k].goods_id == getQueryVariable('goodsid')&&typeData[k].calc_price_type==2){
+            if(Number(orderInfoData.old_amount)-Number(orderInfoData.order_amount)>0){
+                $('.tiered_pricing').show()
+            }
+            $('.price-unit').text(orderInfoData.order_amount+'元/篇')
+        }
+    }
+    $('#Discount_amount1').text((Number(orderInfoData.old_amount)-Number(orderInfoData.order_amount)).toFixed(2))
+    $('#original_price').text(Number(orderInfoData.old_amount).toFixed(2))
+    $('.Step_price').text(orderInfoData.order_amount+'元/篇')
+    $('#Total_amount').text(orderInfoData.order_amount)
     }
 </script>
 </body>

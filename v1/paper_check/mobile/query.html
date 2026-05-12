@@ -44,8 +44,8 @@
     <link rel="stylesheet" href="../mobile/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../mobile/assets/css/base.css">
     <link rel="stylesheet" href="../mobile/assets/css/alert.css">
-    <link rel="stylesheet" href="../mobile/assets/css/query.css?v=m24.0041">
-    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0041">
+    <link rel="stylesheet" href="../mobile/assets/css/query.css?v=m24.0046">
+    <link rel="stylesheet" href="../mobile/assets/css/kefu.css?v=m24.0046">
     <link rel="stylesheet" href="../mobile/assets/css/complain.css">
     <link rel="stylesheet" href="../mobile/assets/css/problem.css">
     <script>
@@ -182,7 +182,7 @@
 <script src="../mobile/assets/js/message.js"></script>
 <script src="../mobile/assets/js/alert.min.js"></script>
 <script src="../mobile/assets/js/clipboard.min.js"></script>
-<script src="../mobile/assets/js/common.js?v=m24.0041"></script>
+<script src="../mobile/assets/js/common.js?v=m24.0046"></script>
 <script src="../mobile/assets/js/bootstrapValidator.min.js"></script>
 <script src="../mobile/assets/js/order_result.js"></script>
 <script src="https://api.taoxiangyoushu.com/html/v1/utils/js/complainTS.js?v=ts1.0"></script>
@@ -355,7 +355,12 @@
                     for(var i=0; i<res.data.length; i++) {
                         var SystemName = system_name[res.data[i].goods_short_name]?system_name[res.data[i].goods_short_name]:res.data[i].goods_name
                         var statusColor = res.data[i].order_status == 60? 'completed' : [res.data[i].order_status == 80? 'processed':'']
-                        var copy_percent=res.data[i].copy_percent?res.data[i].copy_percent+'%':'--'
+                        var copy_percent= ''
+                        if(['cqvipzpbd','cqvipzpqk','cqvipzpmd'].includes(res.data[i].goods_short_name)) {
+                            copy_percent = res.data[i].copy_percent?res.data[i].copy_percent:'--'
+                        }else {
+                            copy_percent = res.data[i].copy_percent?res.data[i].copy_percent+'%':'--'
+                        }
                         var operateText = ''
 
                         if(res.data[i].end_product){
@@ -392,11 +397,11 @@
                             '                <span class="report-id">'+ res.data[i].place_order_data.word_num.value +'</span>' +
                             '            </p>' +
                             '            <p class="report-text">' +
-                            '                <span class="t-label"><span class="space3">相似</span>度：' +
+                            '                <span class="t-label"><span class="space2">结</span>果：' +
                             '                <span class="report-id">'+ copy_percent +'</span>' +
                             '            </p>' +
                             '            <p class="report-text">' +
-                            '                <span class="t-label">提交时间：</span>' +
+                            '                <span class="t-label"><span class="space2">时</span>间：</span>' +
                             '                <span class="report-id">'+ res.data[i].created +'</span>' +
                             '            </p>' +
                             '        </div>' +

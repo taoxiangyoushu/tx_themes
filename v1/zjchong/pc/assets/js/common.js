@@ -130,6 +130,7 @@ window.onload = function (){
                 }
 
                 if($(".payBox").length > 0){
+                    getOrderInfo()
                     tacitPay(data.project[0].goods_info, data.project[0].pay_way, data.pay_config)
                 }
 
